@@ -1,0 +1,13 @@
+@use '../utils/variables' as *;
+
+.menuBurger__bar, .menuBurger__bar::before, .menuBurger__bar::after {
+    content: "";
+    background-color: $color-primary-white;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    transition: all 0.4s ease-in-out;
+
+}

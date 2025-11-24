@@ -1,0 +1,23 @@
+{
+  "name": "mbaa-project",
+  "version": "1.0.0",
+  "description": "Site web du Musée des Beaux-Arts et d'Archéologie",
+  "scripts": {
+    "sass": "sass css/styles.scss style.css",
+    "sass:watch": "sass --watch css/styles.scss:style.css",
+    "sass:prod": "sass css/styles.scss style.css --style compressed"
+  },
+  "keywords": [
+    "museum",
+    "sass",
+    "bem"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.69.0"
+  },
+  "dependencies": {
+    "jQuery": "^1.7.4"
+  }
+}

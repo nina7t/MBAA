@@ -1,0 +1,32 @@
+@use '../utils/variables' as *;
+
+.filtre{
+    margin: 2rem;
+}
+
+
+.filtre__list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.filtre__list-item{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.filtre__list-img{
+    width: auto;
+    height: 30px;
+
+}
+
+
+.filtre__list__drag-img{
+    width: auto;
+    height: 20px;
+    
+}
