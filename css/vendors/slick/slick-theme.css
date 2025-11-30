@@ -25,7 +25,6 @@
 
     position: absolute;
     top: 50%;
-
     display: block;
 
     width: 20px;
@@ -117,7 +116,7 @@
 /* Dots */
 .slick-dotted.slick-slider
 {
-    margin-bottom: 30px;
+    margin: 5rem;
 }
 
 .slick-dots
@@ -129,7 +128,7 @@
 
     width: 100%;
     padding: 0;
-    margin: 0;
+    margin: 1rem;
 
     list-style: none;
 

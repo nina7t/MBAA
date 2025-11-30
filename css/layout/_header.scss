@@ -1,94 +1,420 @@
-@use '../utils/variables' as *;
+@use "../utils/variables" as *;
 
-header {
-    background-color: $color-primary-dark;
-}
-
-
-.home {
+.header {
     width: 100%;
-    background-color: black !important;
-    color: #FFFDF3;
-  
-    &__nav-bar {
-        padding: 1.5rem;
-    }
-    
-    &__list {
+    background-color: $color-primary-dark;
+    color: $color-primary-white;
+    position: relative;
+    padding: 2rem;
+
+    &__container{
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        gap: 1.5rem;
+        padding: 1rem;
+        gap: 2rem;
+        
+        @media (min-width: 860px) {
+            gap: 4rem;
+        }
     }
-    
-    &__list-img {
-        filter: brightness(0) saturate(100%) invert(100%) sepia(65%) saturate(348%) hue-rotate(342deg) brightness(106%) contrast(108%);
+    //  TOP BAR (Logo + Burger + Nav)
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $spacing-xl;
+
+        @media ((min-width: 860px) ) {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 2rem;
+        }
     }
-    
-    &__list-link {
+
+
+    //  LOGO
+
+    &__logo-link {
         display: flex;
         align-items: center;
-        font-size: 1rem;
-        font-weight: 500;
-        padding: 0.5rem;
+        z-index: 2;
+        flex-shrink: 0;
     }
+
+    &__logo-img {
+        height: 40px;
+        width: auto;
+    }
+
+    //  BOUTON MENU BURGER
+
+    &__menu-toggle {
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        background: none;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+
+        @media ((min-width: 860px) ) {
+            display: none;
+        }
+    }
+
+    &__menu-bar {
+        &,
+        &::before,
+        &::after {
+            content: "";
+            background-color: $color-primary-white;
+            display: inline-block;
+            position: absolute;
+            height: 5px;
+            left: 0;
+            width: 100%;
+            transition: all 0.4s ease;
+        }
+
+        &::before {
+            top: -10px;
+        }
+
+        &::after {
+            top: 10px;
+        }
+    }
+
+    // Animation burger ouvert
+
+    &__menu-toggle[aria-expanded="true"] &__menu-bar {
+        &,
+        &::before,
+        &::after {
+            background-color: $color-primary-white;
+            transform: rotate(135deg);
+        }
+
+        &::before,
+        &::after {
+            top: 0;
+            transform: rotate(90deg);
+        }
+    }
+
+    //  NAVIGATION
+    // Mobile : menu en overlay
+
+    &__nav {
+        visibility: hidden;
+        background-color: $color-text-secondary;
+        color: $color-primary-white;
+        position: fixed;
+        z-index: 1;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: $spacing-3xl $spacing-xl $spacing-xl;
+        transform: translateX(100vw);
+        transition: all 0.3s ease;
+
+        // Menu ouvert
+        &[aria-hidden="false"] {
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        // Desktop : navigation visible en ligne
+
+        @media ((min-width: 860px) ) {
+            visibility: visible;
+            position: static;
+            transform: none;
+            background-color: transparent;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+            width: 100%;
+            flex: 1;
+        }
+    }
+
+    &__nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        @media ((min-width: 860px) ) {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        // Navigation principale (liens texte)
+
+        &--main {
+            @media ((min-width: 860px) ) {
+                flex: 1;
+                justify-content: center;
+                gap: 3rem;
+            }
+        }
+
+        // Navigation secondaire (icônes)
+
+        &--secondary {
+            margin-top: $spacing-xl;
+
+            @media ((min-width: 860px) ) {
+                margin-top: 0;
+                gap: 1.5rem;
+                flex-shrink: 0;
+            }
+        }
+    }
+
+    &__nav-item {
+        margin-bottom: $spacing-xl;
+        padding-bottom: $spacing-lg;
+        border-bottom: 1px solid $color-primary-white;
+
+        @media ((min-width: 860px) ) {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+            position: relative;
+        }
+    }
+
+    // Points décoratifs avant les liens principaux (desktop uniquement)
+
+    &__nav-list--main &__nav-item {
+        @media ((min-width: 860px) ) {
+            padding-left: 1.2em;
+
+            &::before {
+                content: "";
+
+            }
+        }
+    }
+
+    &__nav-link {
+        color: $color-primary-white;
+        text-decoration: none;
+        display: block;
+        transition: opacity 0.3s ease;
+        white-space: nowrap;
     
-    &__list-img {
+        @media ((min-width: 860px) ) {
+            font-size: 1rem;
+            position: relative; // Ajoutez ceci
+    
+            &::before { // Utilisez ::before au lieu de :hover
+                content: "";
+                position: absolute;
+                width: 13px;
+                height: 13px;
+                border-radius: 50%;
+                background: $bg-or;
+                left: -20px; // Position à gauche du texte
+                top: 50%;
+                transform: translateY(-50%);
+                opacity: 0; // rend invisible mes puces par défaut
+                transition: opacity 0.3s ease-in-out;
+            }
+    
+            &:hover::before {
+                opacity: 1; // Visible au hover
+                color: $bg-or;
+            }
+        }
+    }
+
+    // Liens secondaires en mobile
+
+    &__nav-list--secondary &__nav-item {
+        border-bottom: none;
+    }
+
+    &__nav-list--secondary &__nav-link {
+        font-size: $font-size-body;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        @media ((min-width: 860px) ) {
+            font-size: inherit;
+        }
+    }
+
+    &__nav-icon {
         width: 24px;
         height: 24px;
-        object-fit: contain;
+        filter: brightness(0) saturate(100%) invert(100%) sepia(65%) saturate(348%) hue-rotate(342deg) brightness(106%)
+            contrast(108%);
     }
-    
-    &__titre {
+
+    //  HERO SECTION (Titre)
+  
+    &__hero {
+        position: relative;
         text-align: start;
         padding: 2rem;
-        margin: 3rem;
+        margin: 3rem 0;
+        min-height: 600px;
+        overflow: hidden;
+    
+        @media (min-width: 1024px) {
+            padding: 4rem;
+            margin: 4rem 0;
+            min-height: 800px;
+        }
     }
     
-    &__titre-title {
-        font-size: 4rem;
+    &__hero-parallax {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 2rem;
+    
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    }
+    
+    // Modifiez uniquement cette partie dans votre fichier _header.scss
+
+&__hero-background {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transform: scale(1.2);
+    }
+
+    // Image 1 - Plus petite
+    &--layer1 {
+        height: 250px;
+        width: auto;
+        align-self: start;
+
+        @media (min-width: 768px) {
+            height: 380px;
+            transform: translateX(20px);
+        }
+
+        @media (min-width: 1024px) {
+            height: 420px;
+        }
+    }
+
+    // Image 2 - Grande (centrale)
+    &--layer2 {
+        height: 280px;
+        align-self: center;
+
+        @media (min-width: 768px) {
+            height: 550px;
+        }
+
+        @media (min-width: 1024px) {
+            height: 650px;
+        }
+    }
+
+    // Image 3 - Moyenne
+    &--layer3 {
+        height: 250px;
+        width: auto;
+        align-self: end;
+
+        @media (min-width: 768px) {
+            height: 450px;
+        }
+
+        @media (min-width: 1024px) {
+            height: 500px;
+        }
+    }
+}
+    
+    &__hero-content {
+        position: relative;
+        z-index: 1;
+        margin-top: 420px;
+        padding: 2rem;
+        border-radius: 12px;
+    
+        @media (min-width: 768px) {
+            margin-top: 500px;
+            padding: 3rem;
+        }
+    }
+
+
+    &__title {
         font-weight: 700;
         text-transform: uppercase;
         margin-bottom: 1rem;
     }
-    
-    &__titre-subtitle {
-        font-size: 2rem;
+
+    &__subtitle {
         font-weight: 500;
         text-transform: lowercase;
         margin-bottom: 0.5rem;
     }
-    
-    &__arrow {
+
+    //  SCROLL ARROW
+    &__scroll {
         display: flex;
         justify-content: center;
-        padding: 1.5rem;
+        padding-bottom: $spacing-xl;
+        animation: bounce 2s infinite;
     }
-    
-    &__arrow-img {
-        width: 32px;
-        height: 32px;
+
+    &__scroll-icon {
+        width: 6rem;
+        height: 6rem;
         cursor: pointer;
+        filter: brightness(0) saturate(100%) invert(100%);
     }
-    
-    &__tag {
-        display: inline-block;
-        padding-left: 1.2em;
-        position: relative;
-        line-height: 1;
-        
-        &::before {
-            content: "";
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #191919;
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
+
+    @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-10px);
+        }
+        60% {
+            transform: translateY(-5px);
         }
     }
 }

@@ -1,4 +1,4 @@
-/* POLICES */
+/* POLICES */    
 
 @font-face {
     font-family: 'ClashDisplay-Variable';
@@ -13,14 +13,14 @@
 
   
 
-/* VARIABLES CSS */
+/* VARIABLES CSS */    
 
-    /* Polices */
+    /* Polices */    
     $font-primary: 'ClashDisplay-Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     $font-secondary: 'Futura PT', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     $font-fallback: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     
-    /* Couleurs */
+    /* Couleurs */    
     $color-white:rgb(253, 253, 253)3;
     $color-primary-white: #FFFDF3;
     $color-primary-dark: #191919;
@@ -37,7 +37,7 @@
     $color-dark-svg: brightness(0) saturate(100%) invert(0%) sepia(17%) saturate(23%) hue-rotate(345deg) brightness(96%) contrast(80%);
 
 
-    /* Typographie - Tailles (Mobile First */
+    /* Typographie - Tailles (Mobile First */    
     $font-size-h1-mobile: 3rem;
     $font-size-h1-desktop: 9.375rem;
     $font-size-h2-mobile: 2rem;
@@ -50,19 +50,19 @@
     $font-size-body-small: 0.875rem;
     $font-size-body-large: 1.125rem;
     
-    /* Hauteurs de ligne */
+    /* Hauteurs de ligne */    
     $line-height-tight: 1.2;
     $line-height-normal: 1.5;
     $line-height-relaxed: 1.75;
     
-    /* Poids de police */
+    /* Poids de police */    
     $font-weight-light: 300;
     $font-weight-normal: 400;
     $font-weight-medium: 500;
     $font-weight-semibold: 600;
     $font-weight-bold: 700;
     
-    /* Espacements */
+    /* Espacements */    
     $spacing-xs: 0.5rem;
     $spacing-sm: 1rem;
     $spacing-md: 1.5rem;
@@ -71,25 +71,25 @@
     $spacing-2xl: 4rem;
     $spacing-3xl: 6rem;
     
-    /* Breakpoints */
+    /* Breakpoints */    
     $breakpoint-sm: 36rem;
     $breakpoint-md: 48rem;
     $breakpoint-lg: 62rem;
     $breakpoint-xl: 75rem;
     
-    /* Hauteurs viewport */
+    /* Hauteurs viewport */      
     $viewport-full: 100vh;
     $viewport-hero: 90vh;
     $viewport-half: 50vh;
 
-/* TYPOGRAPHIE */
+/* TYPOGRAPHIE */    
 
-/* Block: heading */
+/* Block: heading */    
 .heading {
     font-family: $font-primary;
 }
 
-/* Element: heading__title (h1 */
+/* Element: heading__title (h1 */    
 .heading__title {
     font-size: $font-size-h1-mobile;
     font-weight: $font-weight-bold;
@@ -102,7 +102,7 @@
     }
 }
 
-/* Element: heading__subtitle (h2 */
+/* Element: heading__subtitle (h2 */    
 .heading__subtitle {
     font-size: $font-size-h2-mobile;
     font-weight: $font-weight-semibold;
@@ -115,64 +115,64 @@
     }
 }
 
-/* Element: heading__section (h3 */
+/* Element: heading__section (h3 */    
 .heading__section {
     font-family: $font-primary;
     line-height: $line-height-normal;
 }
 
-/* Modifier: heading__section$large */
+/* Modifier: heading__section$large */    
 .heading__section--large {
     font-size: $font-size-h3-large;
     font-weight: $font-weight-medium;
 }
 
-/* Modifier: heading__section$medium */
+/* Modifier: heading__section$medium */    
 .heading__section--medium {
     font-size: $font-size-h3-medium;
     font-weight: $font-weight-medium;
 }
 
-/* Modifier: heading__section$small */
+/* Modifier: heading__section$small */    
 .heading__section--small {
     font-size: $font-size-h3-small;
     font-weight: $font-weight-light;
 }
 
-/* Element: heading__subsection (h4 */
+/* Element: heading__subsection (h4 */    
 .heading__subsection {
     font-size: $font-size-h4;
     font-weight: $font-weight-medium;
     line-height: $line-height-normal;
 }
 
-/* Block: text */
+/* Block: text */    
 .text {
     font-family: $font-primary;
 }
 
-/* Element: text__body (paragraphe par défaut */
+/* Element: text__body (paragraphe par défaut */    
 .text__body {
     font-size: $font-size-body;
     font-weight: $font-weight-light;
     line-height: $line-height-relaxed;
 }
 
-/* Modifier: text__body$small */
+/* Modifier: text__body$small */    
 .text__body--small {
     font-size: $font-size-body-small;
     font-weight: $font-weight-normal;
     line-height: $line-height-relaxed;
 }
 
-/* Element: text__highlight (texte Futura PT */
+/* Element: text__highlight (texte Futura PT */    
 .text__highlight {
     font-family: $font-secondary;
     font-size: $font-size-body-large;
     font-weight: $font-weight-bold;
 }
 
-/* COMPOSANTS */
+/* COMPOSANTS */    
 
 .hero {
     min-height: $viewport-hero;

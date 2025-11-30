@@ -26,7 +26,18 @@
         border: 1px solid rgba($color-primary, 0.1);
         border-radius: 8px;
         margin-bottom: $spacing-lg;
+
+        &-agencement{
+            display: flex;
+            flex-direction: row;
+        }
+
+        @media (min-width: 768px) {
+           display: flex;
+           flex-direction: row;
+        }
     }
+
 
     &__card-img {
         width: 100%;
