@@ -48,7 +48,98 @@ sass --watch scss/styles.scss:style.css
 
 1. Installer les dépendances :
 ```bash
+npm install# MBAA - Musée des Beaux-Arts
+
+## 📋 Description
+
+Site web du Musée des Beaux-Arts de Besançon (MBAA). Ce projet présente les collections, les événements et les informations pratiques du musée.
+
+## 🚀 Technologies utilisées
+
+- HTML5
+- CSS3 / SCSS
+- JavaScript
+- Slick Carousel
+- Google Maps API
+
+## 📁 Structure du projet
+
+```
+MBAA/
+├── asset/
+│   ├── Img/              # Images du site
+│   │   ├── Evenement/    # Images des événements
+│   │   ├── tableaux/     # Images des œuvres
+│   │   ├── svg/          # Icônes et illustrations vectorielles
+│   │   └── logo/         # Logos du musée
+│   └── fonts/            # Polices personnalisées
+├── css/
+│   ├── base/             # Styles de base
+│   ├── component/        # Composants réutilisables
+│   ├── layout/           # Structure des pages
+│   ├── utils/            # Variables et utilitaires
+│   ├── vendors/          # Librairies externes (Slick)
+│   └── styles.scss       # Fichier principal SCSS
+├── js/
+│   ├── scroll-hero.js    # Animations de scroll
+│   └── slick.min.js      # Carrousel
+├── index.html            # Page d'accueil
+├── collections.html      # Page des collections
+└── README.md
+```
+
+## 💻 Installation
+
+1. Cloner le repository
+```bash
+git clone https://github.com/nina7t/MBAA.git
+```
+
+2. Accéder au dossier du projet
+```bash
+cd MBAA
+```
+
+3. Ouvrir le fichier `index.html` dans votre navigateur
+
+## 📦 Dépendances
+
+Les dépendances sont incluses dans le projet :
+- Slick Carousel (pour les carrousels d'images)
+- Polices personnalisées (Clash Display)
+
+## 🔧 Compilation SCSS
+
+Si vous souhaitez modifier les styles SCSS :
+
+```bash
 npm install
+```
+
+Puis compiler avec :
+```bash
+npm run sass
+```
+
+## 🌐 Déploiement
+
+Le site peut être déployé sur :
+- GitHub Pages
+- Netlify
+
+
+## 👥 Auteur
+
+Nina Tonnaire - [@nina7t](https://github.com/nina7t)
+
+## 📄 Licence
+
+Ce projet est sous licence MIT.
+
+
+---
+
+© 2024 Musée des Beaux-Arts de Besançon
 ```
 
 2. Compiler le Sass :
@@ -75,10 +166,6 @@ La typographie Clash Display Variable est configurée dans `scss/_variables.scss
 
 - [Fontshare](https://www.fontshare.com/fonts/clash-display)
 - [Indian Type Foundry](https://indiantypefoundry.com/fonts/clash-display)
-
-### Alternative temporaire :
-
-Si vous n'avez pas encore les fichiers de police, la police de secours (sans-serif) sera utilisée. Vous pouvez décommenter la ligne dans `_variables.scss` pour utiliser une police système en attendant.
 
 ## Structure des fichiers Sass
 
