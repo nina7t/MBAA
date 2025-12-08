@@ -1,0 +1,80 @@
+// Layout - Main
+.main {
+    width: 100%;
+    padding: $spacing-xl $spacing-md;
+
+    &__programmation-banner {
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+        padding: $spacing-md;
+    }
+
+    &__programmation-img {
+        width: 24px;
+        height: 24px;
+    }
+
+    &__programmation-title {
+        font-size: 2rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    &__card {
+        padding: $spacing-lg;
+        border: 1px solid rgba($color-primary, 0.1);
+        border-radius: 8px;
+        margin-bottom: $spacing-lg;
+
+        &-agencement{
+            display: flex;
+            flex-direction: row;
+        }
+
+        @media (min-width: 768px) {
+           display: flex;
+           flex-direction: row;
+        }
+    }
+
+
+    &__card-img {
+        width: 100%;
+        height: auto;
+        margin-bottom: $spacing-md;
+        border-radius: 4px;
+    }
+
+    &__card-title {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: $spacing-md;
+        text-transform: uppercase;
+    }
+
+    &__card-subtitle {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: $spacing-sm;
+    }
+
+    &__card-text {
+        font-size: 1rem;
+        margin-bottom: $spacing-sm;
+        color: $color-text-light;
+    }
+
+    &__card-description {
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: $spacing-md;
+        color: $color-text;
+    }
+
+    &__banner-img{
+        width: 100px;
+        height: 100px;
+    }
+}
+

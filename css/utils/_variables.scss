@@ -1,0 +1,194 @@
+/* POLICES */    
+
+@font-face {
+    font-family: 'ClashDisplay-Variable';
+    src: url('../../asset/fonts/ClashDisplay-Variable.woff2') format('woff2'),
+         url('../../asset/fonts/ClashDisplay-Variable.woff') format('woff'),
+         url('../../asset/fonts/ClashDisplay-Variable.ttf') format('truetype');
+         font-weight: 200 700;
+         font-display: swap;
+         font-style: normal;
+  }
+
+// Images de fond par page
+$bg-home: url('/asset/Img/trois_statue.jpg');
+$bg-collections: url('/asset/Img/bg-collections.jpg');
+$bg-events: url('/asset/Img/bg-events.jpg');
+$bg-contact: url('/asset/Img/bg-contact.jpg');
+
+    /* Polices */    
+    $font-primary: 'ClashDisplay-Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    $font-secondary: 'Futura PT', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    $font-fallback: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
+    /* Couleurs */    
+    $color-white:rgb(253, 253, 253)3;
+    $color-primary-white: #FFFDF3;
+    $color-primary-dark: #191919;
+    $color-secondary-gold: #957E18;
+    $color-tertiary-green: #47564F;
+    $color-text-primary: #333333;
+    $color-text-secondary: #666666;
+    $color-text-secondary-gray: #b3b3b3;
+    $bg-white: #e6e6e6;
+    $bg-or: #957E18;
+
+
+    $color-white-svg: brightness(0) saturate(100%) invert(100%) sepia(65%) saturate(348%) hue-rotate(342deg) brightness(106%) contrast(108%);
+    $color-dark-svg: brightness(0) saturate(100%) invert(0%) sepia(17%) saturate(23%) hue-rotate(345deg) brightness(96%) contrast(80%);
+
+
+    /* Typographie - Tailles (Mobile First */    
+    $font-size-h1-mobile: 4rem;
+    $font-size-h1-desktop: 10rem;
+    $font-size-h2-mobile: 2rem;
+    $font-size-h2-desktop: 3.125rem;
+    $font-size-h3-large: 2.1875rem;
+    $font-size-h3-medium: 1.625rem;
+    $font-size-h3-small: 1.5625rem;
+    $font-size-h4: 1.25rem;
+    $font-size-body: 1rem;
+    $font-size-body-small: 0.875rem;
+    $font-size-body-large: 1.125rem;
+    
+    /* Hauteurs de ligne */    
+    $line-height-tight: 1.2;
+    $line-height-normal: 1.5;
+    $line-height-relaxed: 1.75;
+    
+    /* Poids de police */    
+    $font-weight-light: 300;
+    $font-weight-normal: 400;
+    $font-weight-medium: 500;
+    $font-weight-semibold: 600;
+    $font-weight-bold: 700;
+    
+    /* Espacements */    
+    $spacing-xs: 0.5rem;
+    $spacing-sm: 1rem;
+    $spacing-md: 1.5rem;
+    $spacing-lg: 2rem;
+    $spacing-xl: 3rem;
+    $spacing-2xl: 4rem;
+    $spacing-3xl: 6rem;
+    
+    /* Breakpoints */    
+    $breakpoint-sm: 36rem;
+    $breakpoint-md: 48rem;
+    $breakpoint-lg: 62rem;
+    $breakpoint-xl: 75rem;
+    
+    /* Hauteurs viewport */      
+    $viewport-full: 100vh;
+    $viewport-hero: 90vh;
+    $viewport-half: 50vh;
+
+/* TYPOGRAPHIE */    
+
+/* Block: heading */    
+
+p{
+    font-family: 'Futura Prt', sans-serif;
+}
+.heading {
+    font-family: $font-primary;
+}
+
+.header__title {
+    font-size: 2rem;        // ← Taille de base : mobile
+    font-weight: 900;       
+   
+    
+    @media (min-width: 768px) {
+        font-size: 5rem;    // ← Tablette : 4rem 
+    }
+    
+    @media (min-width: 1024px) {
+        font-size: 10rem;    // ← Desktop : 5rem 
+    }
+}
+
+/* Element: heading__subtitle (h2 */    
+.heading__subtitle {
+    font-size: $font-size-h2-mobile;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-normal;
+}
+
+@media (min-width: 48rem) {
+    .heading__subtitle {
+        font-size: $font-size-h2-desktop;
+    }
+}
+
+/* Element: heading__section (h3 */    
+.heading__section {
+    font-family: $font-primary;
+    line-height: $line-height-normal;
+}
+
+/* Modifier: heading__section$large */    
+.heading__section--large {
+    font-size: $font-size-h3-large;
+    font-weight: $font-weight-medium;
+}
+
+/* Modifier: heading__section$medium */    
+.heading__section--medium {
+    font-size: $font-size-h3-medium;
+    font-weight: $font-weight-medium;
+}
+
+/* Modifier: heading__section$small */    
+.heading__section--small {
+    font-size: $font-size-h3-small;
+    font-weight: $font-weight-light;
+}
+
+/* Element: heading__subsection (h4 */    
+.heading__subsection {
+    font-size: $font-size-h4;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-normal;
+}
+
+/* Block: text */    
+.text {
+    font-family: $font-primary;
+}
+
+/* Element: text__body (paragraphe par défaut */    
+.text__body {
+    font-size: $font-size-body;
+    font-weight: $font-weight-light;
+    line-height: $line-height-relaxed;
+}
+
+/* Modifier: text__body$small */    
+.text__body--small {
+    font-size: $font-size-body-small;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-relaxed;
+}
+
+/* Element: text__highlight (texte Futura PT */    
+.text__highlight {
+    font-family: $font-secondary;
+    font-size: $font-size-body-large;
+    font-weight: $font-weight-bold;
+}
+
+/* COMPOSANTS */    
+
+.hero {
+    min-height: $viewport-hero;
+    display: flex;
+    flex-direction: column;
+    padding: $spacing-lg;
+    background-color: $color-primary-dark;
+}
+
+.hero__content {
+    max-width: 75rem;
+    width: 100%;
+}

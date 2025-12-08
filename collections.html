@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="./asset/Img/logo/logoMAT.png" />
+  <link rel="stylesheet" href="./css/styles.css" />
+
+  <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+crossorigin=""/>
+
+  <title>MBAA - Musée des Beaux-Arts et d'Archéologie de Besançon</title>
+ 
+</head>
+<body>
+  <header class="header__container" data-bg="collections">
+    <div class="header__container">
+      <!-- Logo -->
+      <a class="header__logo-link" href="index.html">
+        <img class="header__logo-img" src="./asset/Img/logo/logoMAT.png" alt="Logo MBAA" />
+      </a>
+  
+      <!-- Bouton menu burger -->
+      <button class="header__menu-toggle" aria-label="menu" aria-expanded="false" aria-controls="headerNav">
+        <span class="header__menu-bar"></span>
+      </button>
+  
+      <!-- Navigation -->
+      <nav class="header__nav" id="headerNav" aria-hidden="true">
+        <ul class="header__nav-list header__nav-list--main">
+        
+          <li class="header__nav-item header__nav-item--has-submenu">
+            <a class="header__nav-link" href="/collections.html">
+              Infos pratiques
+            </a>
+            
+            <!-- Sous-menu -->
+            <ul class="header__submenu">
+              <li class="header__submenu-item">
+                <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
+                <a class="header__submenu-link" href="infos-pratiques.html">Tarifs & horaires</a>
+              </li>
+              
+              <li class="header__submenu-item">
+                <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
+                <a class="header__submenu-link" href="/collections.html#sculptures">Visites guidées</a>
+              </li>
+              <li class="header__submenu-item">
+                <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
+                <a class="header__submenu-link" href="/collections.html#archeologie">Groupes & scolaires</a>
+              </li>
+              <li class="header__submenu-item">
+                <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
+                <a class="header__submenu-link" href="/collections.html#arts-graphiques">Accessibilité</a>
+              </li>
+            </ul>
+          </li>
+          
+          <!-- Menu Collections -->
+
+          <li class="header__nav-item header__nav-item--has-submenu">
+            <a class="header__nav-link" href="/collections.html">
+              Collections
+      
+            </a>
+            
+            <!-- Sous-menu -->
+            <ul class="header__submenu">
+              <li class="header__submenu-item">
+                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
+                <a class="header__submenu-link" href="/collections.html#peintures">Explorer en ligne</a>
+              </li>
+              <li class="header__submenu-item">
+                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
+                <a class="header__submenu-link" href="/collections.html#sculptures">Arts graphiques</a>
+              </li>
+              <li class="header__submenu-item">
+                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
+                <a class="header__submenu-link" href="/collections.html#archeologie">Arts en volume</a>
+              </li>
+              <li class="header__submenu-item">
+                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
+                <a class="header__submenu-link" href="/collections.html#arts-graphiques">Archéologie</a>
+              </li>
+            </ul>
+          </li>
+        
+          <li class="header__nav-item header__nav-item--has-submenu">
+            <a class="header__nav-link" href="/collections.html">
+              Évènements             
+            </a>
+            
+            <!-- Sous-menu -->
+            <ul class="header__submenu">
+              <li class="header__submenu-item">
+                    <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
+                <a class="header__submenu-link" href="/collections.html#peintures">Explorer en ligne</a>
+              </li>
+              <li class="header__submenu-item">
+                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
+                <a class="header__submenu-link" href="/collections.html#sculptures">Arts graphiques</a>
+              </li>
+              <li class="header__submenu-item">
+                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
+                <a class="header__submenu-link" href="/collections.html#archeologie">Arts en volume</a>
+              </li>
+              <li class="header__submenu-item">
+                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
+                <a class="header__submenu-link" href="/collections.html#arts-graphiques">Archéologie</a>
+              </li>
+            </ul>
+          </li>
+          
+
+        
+          <li class="header__nav-item header__nav-item--has-submenu">
+            <a class="header__nav-link" href="/collections.html">
+              Le musée      
+            </a>
+            
+            <!-- Sous-menu -->
+            <ul class="header__submenu">
+              <li class="header__submenu-item">
+                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
+                <a class="header__submenu-link" href="/collections.html#peintures">Histoire</a>
+  
+              </li>
+              <li class="header__submenu-item">
+                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
+                <a class="header__submenu-link" href="/collections.html#sculptures">L'équipe</a>
+              </li>
+              <li class="header__submenu-item">
+                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
+                <a class="header__submenu-link" href="/collections.html#archeologie">Partenaires</a>
+              </li>
+              <li class="header__submenu-item">
+                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
+                <a class="header__submenu-link" href="/collections.html#arts-graphiques">Archives</a>
+              </li>
+            </ul>
+          </li>
+          
+          <li class="header__nav-item nav-dot">
+            <a class="header__nav-link nav-dot" href="#">Contact</a>
+          </li>
+        </ul>
+
+        
+  
+        <ul class="header__nav-list header__nav-list--secondary">
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#" aria-label="Connexion">
+              <img class="header__nav-icon" src="./asset/Img/svg/connexion.svg" alt="" />
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#" aria-label="Billetterie">
+              <img class="header__nav-icon" src="./asset/Img/svg/ticket.svg" alt="" />
+            </a>
+          </li>
+        
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#" aria-label="Recherche">
+              <img class="header__nav-icon" src="./asset/Img/svg/Search.svg" alt="" />
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">FR
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">EN
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  
+  
+  <div class="header__hero-content">
+    <h1 class="header__title">Musée 
+      <br>des beaux<br>arts</h1>
+    <h2 class="header__subtitle">et d'archéologie</h2>
+    <h2 class="header__subtitle">de besançon</h2>
+  </div>
+</div>
+  
+    <!-- Flèche de scroll -->
+    <div class="header__scroll">
+      <img class="header__scroll-icon" src="./asset/Img/svg/icon-arrow_bas.svg" alt="Défiler vers le bas" />
+    </div>
+  </header>
+
+<main>
+  <section class="main__explore">
+    <section class="main__banner">
+      <section class="main__banner--explore">
+        <img class="main__banner-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
+
+        <h2 class="main__banner-title">
+          LA COLLECTIONS<br>
+          DES BEAUX ARTS
+        </h2>
+      </section>
+      <section class="main__banner-content">
+        <h3 class="main__banner-subtitle">
+          Bibliothèque et ressources en images des collections des Beaux-Arts
+        </h3>
+        <p class="main__banner-description">
+          Parcourez les collections des Beaux-Arts du musée : œuvres exposées, archives, peintures, sculptures et dessins conservés dans nos réserves. Cette bibliothèque d’images vous invite à découvrir, explorer et mieux comprendre la richesse du patrimoine artistique conservé au musée.
+        </p>
+      </section>
+    </section>
+  </section>
+</main>
+
+
+
+
+</body>
+</html>
+
+

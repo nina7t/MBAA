@@ -1,0 +1,90 @@
+@use '../utils/variables' as *;
+
+// Mixin pour les propriétés de base uniquement
+@mixin button-base {
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+// Mixin pour le responsive (à appeler à la fin)
+@mixin button-responsive {
+    @media (min-width: 1024px) {
+        padding: 20px 50px;
+        font-size: 1.1rem;
+        max-width: 250px;
+    }
+}
+
+.main__button--savoir-white{
+    @include button-base;
+    color: $color-primary-white;
+    max-width: 150px;
+    border: 3px solid $color-primary-white;
+    
+    &:hover{
+        color: $color-primary-dark;
+        background-color: $color-primary-white;
+    }
+    
+    @include button-responsive;
+}
+
+.main__button--infos-or{
+    @include button-base;
+    color: $bg-or;
+    max-width: 200px;
+    border: 3px solid $bg-or;
+    
+    &:hover{
+        color: $color-primary-white;
+        background-color: $color-primary-dark;
+        border-color: $color-primary-dark;
+    }
+    
+    @include button-responsive;
+}
+
+.main__button--visite-black{
+    @include button-base;
+    color: $color-primary-dark;
+    max-width: 150px;
+    border: 3px solid $color-primary-dark;
+    
+    &:hover{
+        color: $color-primary-white;
+        background-color: $color-primary-dark;
+    }
+    
+    @include button-responsive;
+}
+
+.main__button--explore-black{
+    @include button-base;
+    color: $color-primary-dark;
+    max-width: 150px;
+    border: 3px solid $color-primary-dark;
+    
+    &:hover{
+        color: $color-primary-white;
+        background-color: $color-primary-dark;
+    }
+    
+    @include button-responsive;
+}
+
+.main__button--evenement-black{
+    @include button-base;
+    color: $color-primary-dark;
+    max-width: 150px;
+    border: 3px solid $color-primary-dark;
+    
+    &:hover{
+        color: $color-primary-white;
+        background-color: $color-primary-dark;
+    }
+    
+    @include button-responsive;
+}

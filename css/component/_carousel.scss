@@ -1,0 +1,51 @@
+@use "../utils/variables" as *;
+
+.carousel__item__container {
+  padding-inline: 20px;
+}
+
+.carousel__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: 700px;
+  height: 700px !important;
+  width: auto;
+  justify-content: space-between;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  color: $color-primary-white;
+
+  // Overlay sombre par-dessus l'image
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #2b2b2b70; // Noir à 40% d'opacité
+    z-index: 0;
+    border-radius: 10px;
+  }
+
+  // Contenu au-dessus de l'overlay
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.carousel__item-meta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.carousel__button {
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+  margin: 1rem;
+}

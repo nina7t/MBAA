@@ -1,0 +1,27 @@
+// Fichier principal Sass
+// @use des variables
+@use 'utils/variables';
+
+// @use des styles de base
+@use 'base/base';
+
+
+// @use des layouts
+@use 'layout/header';
+@use 'layout/body';
+@use 'layout/section';
+@use 'layout/footer';
+
+// @use des composants
+@use 'component/button';
+@use 'component/card';
+@use 'component/article';
+@use 'component/list';
+@use 'component/carousel';
+@use 'component/filtre';
+@use 'component/grid';
+@use 'component/maps';
+
+
+@use 'vendors/slick/slick.css';
+@use 'vendors/slick/slick-theme.css';

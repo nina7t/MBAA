@@ -1,0 +1,109 @@
+@use '../utils/variables' as *;
+
+// Banner principal
+.main__banner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #957e18;
+    color: #fffdf3;
+    padding: 50px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    &-title {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: $color-primary-white;
+    }
+
+    &-subtitle{
+        font-weight: 400;
+    }
+
+    &-title-black { 
+        color: $color-dark-svg;
+    }
+    &-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-img {
+        max-width: 100%;
+        border-radius: 10px;
+
+        &-black {
+            background-color: $color-dark-svg;
+        }
+    }
+
+    @media (min-width: 704px) {
+        width: 30rem;
+        
+    }
+
+
+    @media (min-width: 904px) {
+        width: 50rem;
+        
+    }
+
+    @media (min-width: 1024px) {
+        width: 70rem;
+        
+    }
+
+    @media (min-width: 1600px) {
+        width: 90rem;
+        
+    }
+}
+
+// Variante pour la section programmation
+.main__banner-prog {
+    background-color: transparent;
+}
+
+// Layouts spécifiques (les conteneurs directs dans les banners)
+.main__banner--visite {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.main__banner--programmation {
+    display: flex;
+    flex-direction: row;
+    background-color: $color-dark-svg;
+    gap: 20px;
+}
+
+.main__banner--evenement {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.main__banner--infos {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+}
+
+.main__banner--explore {
+    display: flex;
+    flex-direction: row;
+align-items: center;
+    gap: 20px;
+}
+
+// Section programmation
+.main__programmation {
+    margin: 100px 60px;
+}
+

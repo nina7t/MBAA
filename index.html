@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="./asset/Img/logo/logoMAT.png" />
+  <link rel="stylesheet" href="./css/styles.css" />
+
+  <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+crossorigin=""/>
+
+  <title>MBAA - Musée des Beaux-Arts et d'Archéologie de Besançon</title>
+ 
+</head>
+<body>
+  <header class="header">
+    <div class="header__container">
+      <!-- Logo -->
+      <a class="header__logo-link" href="#">
+        <img class="header__logo-img" src="./asset/Img/logo/logoMAT.png" alt="Logo MBAA" />
+      </a>
+  
+      <!-- Bouton menu burger -->
+      <button class="header__menu-toggle" aria-label="menu" aria-expanded="false" aria-controls="headerNav">
+        <span class="header__menu-bar"></span>
+      </button>
+  
+      <!-- Navigation -->
+      <nav class="header__nav" id="headerNav" aria-hidden="true">
+        <ul class="header__nav-list header__nav-list--main">
+          <li class="header__nav-item nav-dot">
+            <a class="header__nav-link nav-dot" href="#">Infos pratiques</a>
+          </li>
+          <li class="header__nav-item nav-dot">
+            <a class="header__nav-link nav-dot" href="/collections.html">Collections</a>
+          </li>
+          <li class="header__nav-item nav-dot">
+            <a class="header__nav-link nav-dot" href="#">Évènements</a>
+          </li>
+          <li class="header__nav-item nav-dot">
+            <a class="header__nav-link nav-dot" href="#">Le musée</a>
+          </li>
+          <li class="header__nav-item nav-dot">
+            <a class="header__nav-link nav-dot" href="#">Contact</a>
+          </li>
+        </ul>
+  
+        <ul class="header__nav-list header__nav-list--secondary">
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#" aria-label="Connexion">
+              <img class="header__nav-icon" src="./asset/Img/svg/connexion.svg" alt="" />
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#" aria-label="Billetterie">
+              <img class="header__nav-icon" src="./asset/Img/svg/ticket.svg" alt="" />
+            </a>
+          </li>
+        
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#" aria-label="Recherche">
+              <img class="header__nav-icon" src="./asset/Img/svg/Search.svg" alt="" />
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">FR
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">EN
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  
+    <!-- Section hero avec effet parallax -->
+<div class="header__hero">
+  <div class="header__hero-parallax">
+    <div class="header__hero-background header__hero-background--layer1" data-speed-x="0.3" data-speed-y="0.2">
+      <img src="./asset/Img/tableaux/Signac_-_Venise,_la_voile_jaune,_1904,_Da.970.1.100.jpg" alt="La Grande Vague de Kanagawa">
+    </div>
+    <div class="header__hero-background header__hero-background--layer2" data-speed-x="-0.2" data-speed-y="0.4">
+      <img src="./asset/Img/tableaux/P_guenat_cuisto.jpg" alt="Femme nu sur rocher">
+    </div>
+    <div class="header__hero-background header__hero-background--layer3" data-speed-x="-0.4" data-speed-y="0.3">
+      <img src="./asset/Img/tableaux/Lhallali-du-cerf-episode-de-chasse-a-courre-sur-un-terrain-de-neige.jpg" alt="Œuvre classique">
+    </div>
+  </div>
+  
+  <div class="header__hero-content">
+    <h1 class="header__title">Musée 
+      <br>des beaux<br>arts</h1>
+    <h2 class="header__subtitle">et d'archéologie</h2>
+    <h2 class="header__subtitle">de besançon</h2>
+  </div>
+</div>
+  
+    <!-- Flèche de scroll -->
+    <div class="header__scroll">
+      <img class="header__scroll-icon" src="./asset/Img/svg/icon-arrow_bas.svg" alt="Défiler vers le bas" />
+    </div>
+  </header>
+
+
+
+
+
+  <main class="main">
+    <section class="main__programmation">
+      <section class="main__banner-prog">
+        <section class="main__banner--programmation">
+          <img class="main__banner-img-black" src="./asset/Img/svg/croix-black.svg" alt="Croix noire" />
+          <h2 class="main__banner-title-black">
+            Programmation<br />octobre > avril
+          </h2>
+        </section>
+      </section>
+    </section>
+    <section class="main__card">
+      <div class="main__card-agencement">
+      <img class="main__card-img" src="./asset/Img/groupe_visite.jpg" alt="Groupe en visite" />
+     </div>
+      <div class="main__card-container">
+      <h2 class="main__card-title">Expositions et accrochages</h2>
+      <h3 class="main__card-subtitle">
+        Ceija Stojka / "Garder les yeux ouverts"
+      </h3>
+      <h4 class="main__card-text">27.02 - 21.09.2026</h4>
+      <h4 class="main__card-text-subtitle">
+        Exposition déconseillée aux enfants de moins de 10 ans.
+      </h4>
+      <p class="main__card-description">
+        Née en Autriche, dans la communauté rom des Lovara, Ceija Stojka
+        (1933-2013) est une artiste autodidacte, à la fois autrice, peintre et
+        dessinatrice. Rescapée des camps de concentration d'Auschwitz,
+        Ravensbrück et Bergen-Belsen dans lesquels elle a vécu de 1943 à 1945,
+        âgée de 10 à 12 ans, elle fut la première à témoigner du génocide des
+        Tsiganes perpétré par les Nazis, plus de quarante ans après les
+        événements. Elle publie tout d'abord un livre, Nous vivons cachés.
+        Récits d'une Romni à travers le siècle, en 1988....
+      </p>
+    
+      <a class="main__button--savoir-white" href="#">En savoir +</a>
+    </div> 
+    </section>
+    <section class="main__visite">
+      <section class="main__banner">
+        <section class="main__banner--visite">
+          <img class="main__banner-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
+          <h2 class="main__banner-title">
+            Préparer<br />
+            votre visite
+          </h2>
+        </section>
+        <section class="main__banner-content">
+          <p class="main__banner-description">
+            Préparez votre découverte du musée en toute sérénité : horaires,
+            accès, services et conseils pour une visite agréable.
+          </p>
+        </section>
+      </section>
+      <section class="main__visite-cards">
+        <section class="main__visite-card">
+          <h3 class="main__visite-card-title">+ Horaires</h3>
+          <h4 class="main__visite-card-subtitle">
+            Saison basse (2 nov - 31 mars)
+          </h4>
+          <p class="main__visite-card-small-text">Hors vacances scolaires</p>
+          <div class="main__visite-card-row">
+            <img class="main__visite-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+            <p class="main__visite-card-text">
+              Lundi, mercredi, jeudi, vendredi : 14h-18h
+            </p>
+          </div>
+
+          <h4 class="main__visite-card-subtitle">
+            Saison haute (1er avril - 31 oct)
+          </h4>
+          <p class="main__visite-card-small-text">
+            Et pendant les vacances scolaires zone A
+          </p>
+          <div class="main__visite-card-row">
+            <img class="main__visite-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+            <p class="main__visite-card-text">
+              Lundi, mercredi, jeudi, vendredi : 10h-12h30 / 14h-18h
+            </p>
+          </div>
+
+          <h4 class="main__visite-card-subtitle">Toute l'année</h4>
+          <div class="main__visite-card-row">
+            <img class="main__visite-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+            <p class="main__visite-card-text">
+              Samedi, dimanche et jours fériés : 10h-18h sans interruption
+            </p>
+          </div>
+
+          <p class="main__visite-card-text-bold">Fermé le mardi</p>
+          <p class="main__visite-card-text-bold">
+            Fermetures annuelles : 1er janvier, 1er mai, 1er novembre, 25
+            décembre
+          </p>
+          <h4 class="main__visite-card-subtitle--orange">
+            Accueil des groupes à partir de 9h
+          </h4>
+          <div class="main__visite-button">
+            <a class="main__button--visite-black" href="#">En savoir +</a>
+          </div>
+        </section>
+
+        <section class="main__visite-card">
+          <h3 class="main__visite-card-title">+ Tarifs</h3>
+          <h4 class="main__visite-card-subtitle">
+            Billet couplé (MBAA + Musée du Temps + Maison Victor Hugo)
+          </h4>
+          <ul class="main__visite-card-column">
+            <li class="main__visite-card-row">
+              <img class="main__visite-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+              <span class="main__visite-card-text">Plein tarif:</span>
+              <span class="main__visite-card-text">9 €</span>
+            </li>
+            <li class="main__visite-card-row">
+              <img class="main__visite-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+              <span class="main__visite-card-text">Tarif réduit:</span>
+              <span class="main__visite-card-text">7 €</span>
+            </li>
+            <li class="main__visite-card-row">
+              <img class="main__visite-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+              <span class="main__visite-card-text">Jeune (18-25 ans):</span>
+              <span class="main__visite-card-text">4.5 €</span>
+            </li>
+          </ul>
+
+          <h4 class="main__visite-card-subtitle">Entrée gratuite</h4>
+          <section class="main__visite-card-column-entree">
+            <ul class="main__visite-card-column">
+              <li class="main__visite-card-row">
+                <img class="main__visite-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+                <p class="main__visite-card-text">
+                  -18 ans, étudiants, demandeurs d'emploi, bénéficiaires des
+                  minimas sociaux, personnes en situation de handicap et leur
+                  accompagnateur, enseignants (sur présentation d'un
+                  justificatif)
+                </p>
+              </li>
+              <li class="main__visite-card-row">
+                <img class="main__visite-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+                <p class="main__visite-card-text">
+                  Le premier dimanche du mois (hors expositions temporaires)
+                </p>
+              </li>
+              <li class="main__visite-card-row">
+                <img class="main__visite-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+                <p class="main__visite-card-text">
+                  Les membres de l'ICOM et de l'ICOMOS
+                </p>
+              </li>
+            </ul>
+          </section>
+          <div class="main__visite-button">
+            <a class="main__button--visite-black" href="#">En savoir +</a>
+          </div>
+        </section>
+      </section>
+    </section>
+
+    <section class="main__evenement">
+      <section class="main__banner">
+        <section class="main__banner--evenement">
+          <img class="main__banner-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
+          <h2 class="main__banner-title">
+            ÉVÈNEMENTS & ACTIVITÉS<br />
+            SEPT 2025 > JANV 2026
+          </h2>
+        </section>
+        <section class="main__banner-content">
+          <p class="main__banner-description">
+            Tout au long de la saison, le musée propose des ateliers, visites
+            guidées, conférences et rencontres pour tous les âges. Explorez
+            les collections autrement : participez à des ateliers créatifs en
+            famille, découvrez les coulisses du musée lors de visites
+            thématiques, ou échangez avec des artistes invités lors de nos
+            rendez-vous mensuels. Une programmation vivante et ouverte à tous,
+            pour apprendre, créer et partager autour de l'art.
+          </p>
+        </section>
+      </section>
+
+      <section class="carousel">
+        <section class="filtre">
+          <h3 class="filtre__title">Filtrer par public :</h3>
+
+          <ul class="filtre__list">
+            <li class="filtre__list-item filtre__list-item--active">Tous</li>
+            <li class="filtre__list-item">
+              <img class="filtre__list-img" src="./asset/Img/svg/icon-arrow-filtre.svg" alt />
+              Nouveauté
+            </li>
+            <li class="filtre__list-item">
+              <img class="filtre__list-img" src="./asset/Img/svg/icon-arrow-filtre.svg" alt />
+              Activités
+            </li>
+            <li class="filtre__list-item">
+              <img class="filtre__list-img" src="./asset/Img/svg/icon-arrow-filtre.svg" alt />
+              Âges
+            </li>
+            <li class="filtre__list-item">
+              <img class="filtre__list-img" src="./asset/Img/svg/icon-arrow-filtre.svg" alt />
+              Durée
+            </li>
+            <li class="filtre__list-icon">
+              <img class="filtre__list__drag-img" src="./asset/Img/svg/icon-arrow-gauche-hover.svg" alt="Précédent" />
+              <img class="filtre__list__drag-img" src="./asset/Img/svg/icon-arrow-droite.svg" alt="Suivant" />
+            </li>
+          </ul>
+        </section>
+
+        <div class="carousel__list">
+          <div class="carousel__item__container">
+            <div class="carousel__item" style="
+                  background-image: url(&quot;./asset/Img/atelier-jeune-peinture.jpg&quot;);
+                ">
+              <span class="carousel__item-badge carousel__item-badge--free">Gratuit</span>
+              <div>
+                <h3 class="carousel__item-title">Atelier peinture</h3>
+                <p class="carousel__item-text">
+                  Cet atelier de peinture, ouvert à tous et gratuit, vous
+                  propose d'explorer différentes techniques picturales à
+                  partir des œuvres exposées dans les galeries du musée.
+                </p>
+                <div class="carousel__item-meta">
+                  <span class="carousel__item-date">10.09.2025</span>
+                  <span class="carousel__item-time">14:30 - 15:30</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel__item__container">
+            <div class="carousel__item" style="
+                  background-image: url(&quot;./asset/Img/groupe_visite.jpg&quot;);
+                ">
+              <span class="carousel__item-badge carousel__item-badge--price">10
+                euros / personne</span>
+              <h3 class="carousel__item-title">Visite famille</h3>
+              <p class="carousel__item-text">
+                Chaque premier dimanche du mois, profitez de la gratuité du
+                musée pour découvrir ou redécouvrir ses collections
+                permanentes. Accompagnés par un médiateur ou une médiatrice,
+                laissez-vous guider à travers une visite unique...
+              </p>
+              <div class="carousel__item-meta">
+                <span class="carousel__item-date">15.10.2025</span>
+                <span class="carousel__item-time">11:00 - 12:00</span>
+              </div>
+            </div>
+          </div>
+          <div class="carousel__item__container">
+            <div class="carousel__item" style="
+                  background-image: url(&quot;./asset/Img/discussion-hommes.jpg&quot;);
+                ">
+              <span class="carousel__item-badge carousel__item-badge--free">Gratuit</span>
+              <h3 class="carousel__item-title">Visite Re(découvrir)</h3>
+              <p class="carousel__item-text">
+                Plongez au cœur des collections du musée lors de cette visite
+                thématique gratuite, qui vous invite à redécouvrir des œuvres
+                emblématiques sous un nouvel angle.
+              </p>
+              <div class="carousel__item-meta">
+                <span class="carousel__item-date">20.11.2025</span>
+                <span class="carousel__item-time">18:00 - 19:00</span>
+              </div>
+            </div>
+          </div>
+          <div class="carousel__item__container">
+            <div class="carousel__item" style="
+                  background-image: url(&quot;./asset/Img/atelier-poterie.png&quot;);
+                ">
+              <span class="carousel__item-badge carousel__item-badge--free">Gratuit</span>
+              <h3 class="carousel__item-title">Atelier poterie</h3>
+              <p class="carousel__item-text">
+                Initiez-vous à l'art de la sculpture lors de cet atelier
+                pratique, où vous pourrez créer votre propre œuvre en vous
+                inspirant des sculptures exposées dans le musée.
+              </p>
+              <div class="carousel__item-meta">
+                <span class="carousel__item-date">05.12.2025</span>
+                <span class="carousel__item-time">14:00 - 16:00</span>
+              </div>
+            </div>
+          </div>
+          <div class="carousel__item__container">
+            <div class="carousel__item" style="
+                  background-image: url(&quot;./asset/Img/atelier-vin.webp&quot;);
+                ">
+              <span class="carousel__item-badge carousel__item-badge--price">5
+                euros / personne</span>
+              <h3 class="carousel__item-title">Conférence art et société</h3>
+              <p class="carousel__item-text">
+                Rejoignez-nous pour une conférence captivante qui explore les
+                liens entre l'art et la société, animée par un expert renommé
+                dans le domaine.
+              </p>
+              <div class="carousel__item-meta">
+                <span class="carousel__item-date">15.01.2026</span>
+                <span class="carousel__item-time">18:30 - 20:00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="carousel__button">
+        <a class="main__button--evenement-black" href="#">En savoir +</a>
+      </div>
+    </section>
+
+    <section class="main__explore">
+      <section class="main__banner">
+        <section class="main__banner--explore">
+          <img class="main__banner-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
+          <h2 class="main__banner-title">
+            EXPLORER<br />
+            NOS COLLECTIONS
+          </h2>
+        </section>
+        <section class="main__banner-content">
+          <p class="main__banner-description">
+            Plongez au cœur des collections des Beaux-Arts : peintures,
+            sculptures, dessins et œuvres graphiques racontent plusieurs
+            siècles de création. Découvrez les accrochages permanents et les
+            trésors conservés dans les réserves, témoins du patrimoine
+            artistique du musée. Chaque œuvre révèle une histoire, une
+            émotion, un regard sur le monde, à explorer librement ou à travers
+            nos parcours thématiques.
+          </p>
+        </section>
+      </section>
+    </section>
+    <div class="main__explore-grid">
+      <div class="main__explore-card" style="
+      background-image: url(&quot;./asset/Img/tableaux/Lhallali-du-cerf-episode-de-chasse-a-courre-sur-un-terrain-de-neige.jpg&quot;);
+    " data-height="200" onclick="window.location.href='collections.html'">
+        <h3 class="main__explore-card-title">Beaux arts</h3>
+        <p class="main__explore-card-text">
+          Découvrez les chefs-d'œuvre qui traversent les époques et témoignent
+          du savoir-faire artistique européen.
+        </p>
+      </div>
+      <div class="main__explore-card-child" style="
+            background-image: url(&quot;./asset/Img/tableaux/P-guenat_vieux.jpg&quot;);
+          ">
+        <h3 class="main__explore-card-title">Portraits</h3>
+        <p class="main__explore-card-text">
+          Visages, regards, expressions… chaque œuvre révèle une histoire, un
+          caractère, une époque
+        </p>
+      </div>
+      <div class="main__explore-card-fat" style="
+            background-image: url(&quot;./asset/Img/tableaux/P_guenat_cuisto.jpg&quot;);
+          ">
+        <h3 class="main__explore-card-title">Tableaux</h3>
+        <p class="main__explore-card-text">
+          Plongez dans la richesse picturale des collections, entre scènes du
+          quotidien, portraits et paysages inspirés.
+        </p>
+      </div>
+      <div class="main__explore-card-wide" style="
+            background-image: url(&quot;./asset/Img/Musée_BeauxArts_Besançon_mosaic.jpg&quot;);
+          ">
+        <h3 class="main__explore-card-title">Archéologie</h3>
+        <p class="main__explore-card-text">
+          Remontez le temps à travers des vestiges uniques, témoins des
+          civilisations qui ont façonné notre histoire.
+        </p>
+      </div>
+      <div class="main__explore-card-tall" style="
+            background-image: url(&quot;./asset/Img/trois_statue.jpg&quot;);
+          ">
+        <h3 class="main__explore-card-title">Sculptures</h3>
+        <p class="main__explore-card-text">
+          Des formes, des matières et des émotions : explorez l'art du volume
+          à travers les siècles.
+        </p>
+      </div>
+    </div>
+    <div class="main__explore-button">
+      <a class="main__button--explore-black" href="#">En savoir +</a>
+    </div>
+
+    <section class="main__infos-utiles">
+
+      <section class="main__banner">
+        <section class="main__banner--infos">
+          <img class="main__banner-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
+          <h2 class="main__banner-title">
+            INFOS<br />
+            UTILES
+          </h2>
+        </section>
+        <section class="main__banner-content">
+          <p class="main__banner-description">
+            Retrouvez toutes les informations pratiques pour préparer votre
+            visite au musée : horaires, tarifs, accès, services et conseils
+            pour une expérience agréable et enrichissante.
+          </p>
+        </section>
+      </section>
+
+
+      <div class="main__infos-utiles-separator">
+      <section class="main__map-section">
+        <div class="main__map-header">
+          <img class="main__banner-img" src="./asset/Img/svg/musee_or_vector.svg" alt="Musee vectoriser" />
+        </div>
+        <div class="main__infos-utiles-card-header">
+          <h2 class="main__infos-utiles-card-title-or">
+            NOUS<br />
+            TROUVER
+          </h2>
+        </div>
+        
+        <div class="main__map-container">
+          <div id="map" class="main__map"></div>
+        </div>
+      </section>
+
+      <section class="main__infos-utiles-cards">
+        <section class="main__infos-utiles-card">
+          <h3 class="main__infos-utiles-card-title-or">+ Accès</h3>
+          <section class="main__infos-utiles-card-or">
+            <h4 class="main__infos-utiles-card-subtitle-white">Adresse</h4>
+            <p class="main__infos-utiles-card-text-white">
+              1 place de la Révolution, 25000 Besançon
+            </p>
+            <h4 class="main__infos-utiles-card-subtitle-white">Standard</h4>
+            <p class="main__infos-utiles-card-text-white">
+              +33 3 81 87 80 67
+            </p>
+            <h4 class="main__infos-utiles-card-subtitle-white">Email</h4>
+            <p class="main__infos-utiles-card-text-white">
+              musee-beaux-arts-archeologie@besancon.fr
+            </p>
+          </section>
+        </section>
+
+        <section class="main__infos-utiles-card">
+          <h4 class="main__infos-utiles-card-subtitle">
+            Transports en commun
+          </h4>
+          <ul class="main__infos-utiles-card-list">
+            <li class="main__infos-utiles-card-list-item">
+              <img class="main__infos-utiles-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+              <p class="main__infos-utiles-card-text">
+                Tram ligne T1 et T2 : arrêt "Révolution"
+              </p>
+            </li>
+            <li class="main__infos-utiles-card-list-item">
+              <img class="main__infos-utiles-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+              <p class="main__infos-utiles-card-text">
+                Bus lignes 3, 4, 5, 10, 11, 20, 21, 22, 26, 27 : arrêt
+                République
+              </p>
+            </li>
+            <li class="main__infos-utiles-card-list-item">
+              <img class="main__infos-utiles-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+              <p class="main__infos-utiles-card-text">
+                Bus 3, 4, 5, 10, 11, 20, 22 : arrêt Courbet
+              </p>
+            </li>
+          </ul>
+          <h4 class="main__infos-utiles-card-subtitle">Stationnement</h4>
+          <div class="main__infos-utiles-card-row">
+            <img class="main__infos-utiles-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+            <p class="main__infos-utiles-card-text">
+              Parking payant Marché-Beaux-Arts (souterrain et surface)
+            </p>
+          </div>
+          <a class="main__button--infos-or" href="#">En savoir +</a>
+        </section>
+      </section>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__contain-form">
+    <div class="footer__logo-container">
+      <a class="footer__logo-link" href="#">
+        <img class="footer__logo-img" src="./asset/Img/logo/logoMAT.png" alt="Logo MBAA" />
+        <h2 class="footer__title">Suivez-nous pour recevoir la newsletter</h2>
+      </a>
+    <form class="footer__form">
+      <input class="footer__input" type="email" placeholder="Entrez votre adresse e-mail" required />
+      <button class="footer__button" type="submit">S'abonner</button>
+    </form>
+    </div>
+
+    <section class="footer__nav">
+      <ul class="footer__nav-list">
+        <li class="footer__nav-item">
+          <h4 class="footer__nav-title">Le musée</h4>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Présentation & histoire</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">L'équipe & conservation</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Architecture & bâtiment</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Amis du musée / mécénat</a>
+        </li>
+      </ul>
+
+      <ul class="footer__nav-list">
+        <li class="footer__nav-item">
+          <h4 class="footer__nav-title">Expositions et activités</h4>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Expositions temporaires</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Collections permanentes</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Agenda complet</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Événements & conférences</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Ateliers & visites guidées</a>
+        </li>
+      </ul>
+
+      <ul class="footer__nav-list">
+        <li class="footer__nav-item">
+          <h4 class="footer__nav-title">Ressources</h4>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Recherche et documentation</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Publications</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Base de données des œuvres</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Espace presse</a>
+        </li>
+      </ul>
+
+      <ul class="footer__nav-list">
+        <li class="footer__nav-item">
+          <h4 class="footer__nav-title">Infos pratiques</h4>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Recrutement</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Partenariats</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Mentions légales</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Politique de
+            confidentialité</a>
+        </li>
+      </ul>
+
+      <ul class="footer__nav-list">
+        <li class="footer__nav-item">
+          <h4 class="footer__nav-title">Contact</h4>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Horaires et tarifs</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Accessibilité</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Accès et stationnement</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Groupes et écoles</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Nous contacter</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">FAQ</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="#">Plan du site</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="footer__social">
+      <h2>Nos réseaux sociaux</h2>
+      <section class="footer__social-media">
+        <a class="footer__social-link" href="#" aria-label="Facebook">
+          <img class="footer__social-icon" src="./asset/Img/svg/facebook.svg" alt="Facebook" />
+        </a>
+        <a class="footer__social-link" href="#" aria-label="Instagram">
+          <img class="footer__social-icon" src="./asset/Img/svg/insta.svg" alt="Instagram" />
+        </a>
+        <a class="footer__social-link" href="#" aria-label="Linkdin">
+          <img class="footer__social-icon" src="./asset/Img/svg/linkdin.svg" alt="Twitter" />
+        </a>
+        <a class="footer__social-link" href="#" aria-label="Tiktok">
+          <img class="footer__social-icon" src="./asset/Img/svg/tiktok.svg" alt="YouTube" />
+        </a>
+      </section>
+    </section>
+
+    <section class="footer__links">
+      <a class="footer__link" href="#">Mentions légales</a>
+      <a class="footer__link" href="#">Politique de confidentialité</a>
+      <a class="footer__link" href="#">Plan du site</a>
+    </section>
+  </footer>
+       <!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+crossorigin=""></script>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+    integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+
+
+  <script src="js/slick.min.js"></script>
+  <script src="js/scroll-hero.js"></script>
+  <script>
+    $(".carousel__list").slick({
+      slidesToShow: 4,
+      responsive: [{
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ],
+    });
+
+
+  </script>
+<script>
+  // Initialiser la carte sur l'élément avec l'id "map"
+  const map = L.map('map').setView([47.240335, 6.022807], 16);
+
+  // Ajouter la couche OpenStreetMap
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+    maxZoom: 19
+  }).addTo(map);
+
+  // DÉFINIR l'icône personnalisée AVANT de l'utiliser
+  const customIcon = L.icon({
+    iconUrl: './asset/Img/svg/musee_or_vector.svg',
+    iconSize: [100, 100],
+    iconAnchor: [20, 40],
+    popupAnchor: [0, -40]
+  });
+
+  // Ajouter un marqueur pour le musée (maintenant customIcon existe)
+  const marker = L.marker([47.240335, 6.022807], {icon: customIcon}).addTo(map);
+  
+  // Ajouter un popup au marqueur
+  marker.bindPopup('<b>Musée des Beaux-Arts</b><br>1 place de la Révolution<br>25000 Besançon').openPopup();
+</script>
+</body>
+
+</html>
