@@ -10,6 +10,12 @@ body.is-nav-open {
     color: $color-primary-white;
     position: relative;
     padding: 0;
+    // Étendre le fond sur toute la largeur de l'écran malgré le padding global du body
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
 
     &__container{
         display: flex;
@@ -22,7 +28,7 @@ body.is-nav-open {
         padding: 1.2rem 2rem;
         position: relative;
         
-        @media (min-width: 860px) {
+        @media (min-width: 1024px) {
             gap: 2rem;
         }
     }
@@ -35,11 +41,12 @@ body.is-nav-open {
     }
 
     &__logo-img {
-        height: 40px;
+        height: 50px;
         width: auto;
+        border-radius: 2px;
 
-        @media (min-width: 860px) {
-            height: 50px;
+        @media (min-width: 1024px) {
+            height: 70px;
         }
     }
 
@@ -57,52 +64,45 @@ body.is-nav-open {
         cursor: pointer;
         padding: 0;
 
-        @media (min-width: 860px) {
+        @media (min-width: 1024px) {
             display: none;
         }
     }
 
     &__menu-bar {
-        &,
-        &::before,
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 3px;
+        border-radius: 999px;
+        background-color: $color-primary-white;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+
         &::after {
             content: "";
-            background-color: $color-primary-white;
-            display: inline-block;
             position: absolute;
-            height: 5px;
-            left: 0;
-            width: 100%;
-            transition: all 0.4s ease;
-        }
-
-        &::before {
-            top: -10px;
-        }
-
-        &::after {
-            top: 10px;
+            inset: 0;
+            height: 3px;
+            border-radius: 999px;
+            background-color: $color-primary-white;
+            transform: translateY(10px);
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
     }
 
     &__menu-toggle[aria-expanded="true"] &__menu-bar {
-        &,
-        &::before,
-        &::after {
-            background-color: $color-primary-white;
-            transform: rotate(135deg);
-        }
+        transform: rotate(45deg);
+        background-color: $color-primary-white;
 
-        &::before,
         &::after {
-            top: 0;
-            transform: rotate(90deg);
+            transform: rotate(-90deg);
+            background-color: $color-primary-white;
         }
     }
 
     &__nav {
         visibility: hidden;
-        background-color: $color-text-secondary;
+        background-color: rgba(25, 25, 25, 0.95); // fond sombre cohérent mobile
         color: $color-primary-white;
         position: fixed;
         z-index: 1;
@@ -113,25 +113,39 @@ body.is-nav-open {
         padding: $spacing-3xl $spacing-xl $spacing-xl;
         transform: translateX(100vw);
         transition: all 0.3s ease;
-
+        gap: 1.2rem;
+        backdrop-filter: blur(10px);
         &[aria-hidden="false"] {
             visibility: visible;
             transform: translateX(0);
         }
+       
 
-        @media (min-width: 860px) {
+        @media (min-width: 1024px) {
             visibility: visible;
             position: static;
             left: auto;
             transform: none;
-            background-color: transparent;
+            background-color: rgba(255, 253, 243, 0.96);
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            padding: 0;
+            padding: 0.6rem 1rem;
             width: auto;
             max-width: 100%;
             flex-wrap: nowrap;
+            gap: 1.2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(25, 25, 25, 0.08);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(6px);
+        }
+        @media (min-width: 1354px) {
+            padding: 0.7rem 1.2rem;
+            gap: 1.4rem;
+        }
+        @media (min-width: 1454px) {
+            padding: 0.8rem 1.5rem;
             gap: 2rem;
         }
     }
@@ -140,46 +154,51 @@ body.is-nav-open {
         list-style: none;
         padding: 0;
         margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.1rem;
 
-        @media (min-width: 860px) {
+        @media (min-width: 1024px) {
             display: flex;
             align-items: center;
             flex-wrap: nowrap;
-            gap: 0;
+            gap: 0.8rem;
         }
 
         &--main {
-            @media (min-width: 860px) {
+            @media (min-width: 1024px) {
                 justify-content: center;
-                gap: 0.6rem;
-                background-color: rgba(255, 255, 255, 0.98);
-                padding: 0.8rem 1.5rem;
-                border-radius: 10px;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                gap: 1rem;
+                background-color: rgba(255, 255, 255, 0.92);
+                padding: 0.7rem 1.3rem;
+                border-radius: 14px;
+                box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+                border: 1px solid rgba(25, 25, 25, 0.06);
             }
         }
 
         &--secondary {
             margin-top: $spacing-xl;
 
-            @media (min-width: 860px) {
+            @media (min-width: 1024px) {
                 margin-top: 0;
-                gap: 0.6rem;
+                gap: 1rem;
                 flex-shrink: 0;
-                background-color: rgba(255, 255, 255, 0.98);
-                padding: 0.8rem 1.2rem;
-                border-radius: 10px;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                background-color: rgba(255, 255, 255, 0.92);
+                padding: 0.7rem 1.1rem;
+                border-radius: 14px;
+                box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+                border: 1px solid rgba(25, 25, 25, 0.06);
             }
         }
     }
 
     &__nav-item {
-        margin-bottom: $spacing-xl;
-        padding-bottom: $spacing-lg;
-        border-bottom: 1px solid $color-primary-white;
+        margin-bottom: $spacing-lg;
+        padding-bottom: $spacing-md;
+        border-bottom: 1px solid rgba(255, 253, 243, 0.25);
 
-        @media (min-width: 860px) {
+        @media (min-width: 1024px) {
             margin-bottom: 0;
             padding-bottom: 0;
             border-bottom: none;
@@ -189,7 +208,7 @@ body.is-nav-open {
         &--has-submenu {
             position: relative;
 
-            @media (min-width: 860px) {
+            @media (min-width: 1024px) {
                 &:hover .header__submenu {
                     opacity: 1;
                     visibility: visible;
@@ -200,7 +219,7 @@ body.is-nav-open {
     }
 
     &__nav-list--main &__nav-item {
-        @media (min-width: 860px) {
+        @media (min-width: 1024px) {
             padding: 0 1rem;
             
         }
@@ -213,7 +232,7 @@ body.is-nav-open {
     &__nav-list--secondary &__nav-item {
         border-bottom: none;
         
-        @media (min-width: 860px) {
+        @media (min-width: 1024px) {
             padding: 0 0.8rem;
             
         }
@@ -223,22 +242,27 @@ body.is-nav-open {
         color: $color-primary-white;
         text-decoration: none;
         display: block;
-        transition: all 0.3s ease;
+        transition: color 0.25s ease, transform 0.2s ease;
         white-space: nowrap;
+        font-size: 1.05rem;
+        font-weight: 600;
+        letter-spacing: 0.015em;
     
-        @media (min-width: 860px) {
+        @media (min-width: 1024px) {
             position: relative;
             color: $color-primary-dark;
-            font-size: 1rem;
-            font-weight: 400;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
     
             &:hover {
                 color: $bg-or;
+                transform: translateY(-1px);
             }
         }
 
         @media (min-width: 1200px) {
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
     }
 
@@ -248,22 +272,22 @@ body.is-nav-open {
         align-items: center;
         gap: 0.8rem;
 
-        @media (min-width: 860px) {
-            font-size: 1rem;
-            font-weight: 400;
+        @media (min-width: 1024px) {
+            font-size: 0.95rem;
+            font-weight: 500;
             color: $color-primary-dark;
         }
     }
 
     &__nav-icon {
-        width: 50px;
-        height: 50px;
+        width: 32px;
+        height: 32px;
         filter: brightness(0) saturate(100%) invert(100%) sepia(65%) saturate(348%) hue-rotate(342deg) brightness(106%) contrast(108%);
         
-        @media (min-width: 860px) {
+        @media (min-width: 1024px) {
             width: 24px;
             height: 24px;
-            filter: brightness(0) saturate(100%) invert(13%) sepia(8%) saturate(1247%) hue-rotate(169deg) brightness(95%) contrast(89%);
+            filter: brightness(0) saturate(100%) invert(18%) sepia(24%) saturate(600%) hue-rotate(20deg) brightness(94%) contrast(92%);
         }
     }
 
@@ -279,7 +303,7 @@ body.is-nav-open {
             color: $bg-or;
         }
 
-        @media (min-width: 860px) {
+        @media (min-width: 1024px) {
             font-size: 1rem;
             font-weight: 400;
             color: $color-primary-dark;
@@ -298,7 +322,7 @@ body.is-nav-open {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         margin-top: 1rem;
 
-        @media (min-width: 860px) {
+        @media (min-width: 1024px) {
             position: absolute;
             top: 100%;
             left: 0;
@@ -452,6 +476,14 @@ body.is-nav-open {
         font-weight: 700;
         text-transform: uppercase;
         margin-bottom: 1rem;
+        line-height: 8rem;
+
+        @media (max-width: 768px) {
+            font-size: 3rem;
+            line-height: 4rem;
+            
+        }
+    
     }
 
     &__subtitle {
@@ -484,5 +516,16 @@ body.is-nav-open {
         60% {
             transform: translateY(-5px);
         }
+    }
+}
+
+
+#sous-menu-header{
+    font-size: 5rem;
+    line-height: 8rem;
+    @media (max-width: 768px) {
+        font-size: 1rem;
+        line-height: 2rem;
+        
     }
 }

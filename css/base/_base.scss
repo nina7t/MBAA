@@ -20,6 +20,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden; // Évite les débordements horizontaux involontaires
+    padding-inline: clamp(1rem, 3vw, 2rem); // Marge latérale globale pour contenir les éléments
 }
 
 // Styles pour les titres
