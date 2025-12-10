@@ -19,6 +19,7 @@ body {
     color: $color-primary-dark;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; // Évite les débordements horizontaux involontaires
 }
 
 // Styles pour les titres

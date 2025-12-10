@@ -91,10 +91,11 @@ crossorigin=""/>
   </div>
   
   <div class="header__hero-content">
-    <h1 class="header__title">Musée 
-      <br>des beaux<br>arts</h1>
-    <h2 class="header__subtitle">et d'archéologie</h2>
-    <h2 class="header__subtitle">de besançon</h2>
+    <h1 class="header__title">
+      Musée<br>des<br>beaux<br>arts
+    <span>et d'archéologie<br>
+    de besançon</span>
+  </h1>
   </div>
 </div>
   
@@ -438,14 +439,15 @@ crossorigin=""/>
       </section>
     </section>
     <div class="main__explore-grid">
-      <div class="main__explore-card" style="
-      background-image: url(&quot;./asset/Img/tableaux/Lhallali-du-cerf-episode-de-chasse-a-courre-sur-un-terrain-de-neige.jpg&quot;);
-    " data-height="200" onclick="window.location.href='collections.html'">
-        <h3 class="main__explore-card-title">Beaux arts</h3>
-        <p class="main__explore-card-text">
-          Découvrez les chefs-d'œuvre qui traversent les époques et témoignent
-          du savoir-faire artistique européen.
-        </p>
+      <div class="main__explore-card">
+        <img class="main__explore-card-img" src="/MBAA/asset/Img/tableaux/Lhallali-du-cerf-episode-de-chasse-a-courre-sur-un-terrain-de-neige.jpg" alt="desc">
+        <div class="main__explore-card-wrappper">
+          <h3 class="main__explore-card-title">Beaux arts</h3>
+          <p class="main__explore-card-text">
+            Découvrez les chefs-d'œuvre qui traversent les époques et témoignent
+            du savoir-faire artistique européen.
+          </p>
+        </div>
       </div>
       <div class="main__explore-card-child" style="
             background-image: url(&quot;./asset/Img/tableaux/P-guenat_vieux.jpg&quot;);
@@ -772,6 +774,7 @@ crossorigin=""></script>
 
 
   </script>
+  <script src="./js/menu.js"></script>
 <script>
   // Initialiser la carte sur l'élément avec l'id "map"
   const map = L.map('map').setView([47.240335, 6.022807], 16);
@@ -794,7 +797,7 @@ crossorigin=""></script>
   const marker = L.marker([47.240335, 6.022807], {icon: customIcon}).addTo(map);
   
   // Ajouter un popup au marqueur
-  marker.bindPopup('<b>Musée des Beaux-Arts</b><br>1 place de la Révolution<br>25000 Besançon').openPopup();
+  marker.bindPopup('<strong>Musée des Beaux-Arts</strong><br>1 place de la Révolution<br>25000 Besançon').openPopup();
 </script>
 </body>
 

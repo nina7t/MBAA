@@ -1,57 +1,28 @@
-    @use "../utils/variables" as *;
-    .header {
-        width: 100%;
-        background-color: $color-primary-dark;
-        color: $color-primary-white;
-        position: relative;
-        padding: 2rem;
-    
-        &__container{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            // Retirez la ligne background-image fixe ici
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            align-items: center;
-            padding: 1rem;
-            gap: 2rem;
-            
-            @media (min-width: 860px) {
-                gap: 4rem;
-            }
-        }
-    
-        // Images de fond par page
-        &[data-bg="home"] .header__container {
-            background-image: url('/asset/Img/trois_statue.jpg');
-        }
-    
-        &[data-bg="collections"] .header__container {
-            background-image: url('/asset/Img/atelier-modelage2.png');
-        }
-    
-        &[data-bg="events"] .header__container {
-            background-image: url('/asset/Img/bg-events.jpg');
-        }
-    
-        &[data-bg="contact"] .header__container {
-            background-image: url('/asset/Img/bg-contact.jpg');
-        }
-        
-        // ... reste du code
-    }
+@use "../utils/variables" as *;
 
-    &__top {
+body.is-nav-open {
+    overflow: hidden;
+}
+
+.header {
+    width: 100%;
+    background-color: $color-primary-dark;
+    color: $color-primary-white;
+    position: relative;
+    padding: 0;
+
+    &__container{
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         align-items: center;
-        padding: $spacing-xl;
-
-        @media ((min-width: 860px) ) {
-            display: grid;
-            grid-template-columns: auto 1fr auto;
+        padding: 1.2rem 2rem;
+        position: relative;
+        
+        @media (min-width: 860px) {
             gap: 2rem;
         }
     }
@@ -67,8 +38,8 @@
         height: 40px;
         width: auto;
 
-        @media ((min-width: 860px) ) {
-            height: 100px;
+        @media (min-width: 860px) {
+            height: 50px;
         }
     }
 
@@ -86,7 +57,7 @@
         cursor: pointer;
         padding: 0;
 
-        @media ((min-width: 860px) ) {
+        @media (min-width: 860px) {
             display: none;
         }
     }
@@ -148,17 +119,20 @@
             transform: translateX(0);
         }
 
-        @media ((min-width: 860px) ) {
+        @media (min-width: 860px) {
             visibility: visible;
             position: static;
+            left: auto;
             transform: none;
             background-color: transparent;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: 0;
-            width: 100%;
-            flex: 1;
+            width: auto;
+            max-width: 100%;
+            flex-wrap: nowrap;
+            gap: 2rem;
         }
     }
 
@@ -167,27 +141,35 @@
         padding: 0;
         margin: 0;
 
-        @media ((min-width: 860px) ) {
+        @media (min-width: 860px) {
             display: flex;
-            gap: 2.5rem;
             align-items: center;
+            flex-wrap: nowrap;
+            gap: 0;
         }
 
         &--main {
-            @media ((min-width: 860px) ) {
-                flex: 1;
+            @media (min-width: 860px) {
                 justify-content: center;
-                gap: 3rem;
+                gap: 0.6rem;
+                background-color: rgba(255, 255, 255, 0.98);
+                padding: 0.8rem 1.5rem;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             }
         }
 
         &--secondary {
             margin-top: $spacing-xl;
 
-            @media ((min-width: 860px) ) {
+            @media (min-width: 860px) {
                 margin-top: 0;
-                gap: 1.5rem;
+                gap: 0.6rem;
                 flex-shrink: 0;
+                background-color: rgba(255, 255, 255, 0.98);
+                padding: 0.8rem 1.2rem;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             }
         }
     }
@@ -197,19 +179,17 @@
         padding-bottom: $spacing-lg;
         border-bottom: 1px solid $color-primary-white;
 
-        @media ((min-width: 860px) ) {
+        @media (min-width: 860px) {
             margin-bottom: 0;
             padding-bottom: 0;
             border-bottom: none;
             position: relative;
         }
 
-        // Gestion des items avec sous-menu
         &--has-submenu {
             position: relative;
 
-            // Au survol, afficher le sous-menu (desktop uniquement)
-            @media ((min-width: 860px) ) {
+            @media (min-width: 860px) {
                 &:hover .header__submenu {
                     opacity: 1;
                     visibility: visible;
@@ -220,8 +200,22 @@
     }
 
     &__nav-list--main &__nav-item {
-        @media ((min-width: 860px) ) {
-            padding-left: 1.2em;
+        @media (min-width: 860px) {
+            padding: 0 1rem;
+            
+        }
+
+        @media (min-width: 1200px) {
+            padding: 0 1.5rem;
+        }
+    }
+
+    &__nav-list--secondary &__nav-item {
+        border-bottom: none;
+        
+        @media (min-width: 860px) {
+            padding: 0 0.8rem;
+            
         }
     }
 
@@ -232,71 +226,63 @@
         transition: all 0.3s ease;
         white-space: nowrap;
     
-        @media ((min-width: 860px) ) {
+        @media (min-width: 860px) {
             position: relative;
+            color: $color-primary-dark;
+            font-size: 1rem;
+            font-weight: 400;
     
-            &::before {
-                content: "";
-                position: absolute;
-                width: 13px;
-                height: 13px;
-                border-radius: 50%;
-                background: $bg-or;
-                left: -20px;
-                top: 50%;
-                transform: translateY(-50%);
-                opacity: 0;
-                transition: opacity 0.3s ease-in-out;
-            }
-    
-            &:hover::before {
-                opacity: 1;
-            }
-
             &:hover {
                 color: $bg-or;
             }
         }
-    }
 
-    &__nav-list--secondary &__nav-item {
-        border-bottom: none;
+        @media (min-width: 1200px) {
+            font-size: 1.1rem;
+        }
     }
 
     &__nav-list--secondary &__nav-link {
         font-size: 1rem;
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.8rem;
 
-        @media ((min-width: 860px) ) {
-            font-weight: 800;
+        @media (min-width: 860px) {
+            font-size: 1rem;
+            font-weight: 400;
+            color: $color-primary-dark;
         }
     }
 
     &__nav-icon {
         width: 50px;
         height: 50px;
-        filter: brightness(0) saturate(100%) invert(100%) sepia(65%) saturate(348%) hue-rotate(342deg) brightness(106%)
-            contrast(108%);
+        filter: brightness(0) saturate(100%) invert(100%) sepia(65%) saturate(348%) hue-rotate(342deg) brightness(106%) contrast(108%);
+        
+        @media (min-width: 860px) {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) saturate(100%) invert(13%) sepia(8%) saturate(1247%) hue-rotate(169deg) brightness(95%) contrast(89%);
+        }
     }
 
-    .header__nav-link-fr{
+    &__nav-link-fr {
         font-size: 1rem;
         font-weight: 600;
+        color: $color-primary-white;
+        text-decoration: none;
+        display: block;
+        transition: all 0.3s ease;
 
         &:hover {
             color: $bg-or;
         }
 
-        @media ((min-width: 860px) ) {
-            font-size: 1.3rem;
-            
-        }
-
-        @media ((min-width: 1200px) ) {
-            font-size: 2rem;
-            
+        @media (min-width: 860px) {
+            font-size: 1rem;
+            font-weight: 400;
+            color: $color-primary-dark;
         }
     }
 
@@ -310,12 +296,9 @@
         border-radius: 10px;
         width: 20rem;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-
-        // Mobile : visible par défaut sous l'item parent
         margin-top: 1rem;
 
-        @media ((min-width: 860px) ) {
-            // Desktop : caché par défaut, positionné en absolu
+        @media (min-width: 860px) {
             position: absolute;
             top: 100%;
             left: 0;
