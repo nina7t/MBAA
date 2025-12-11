@@ -63,9 +63,20 @@ body.is-nav-open {
         border: none;
         cursor: pointer;
         padding: 0;
+        transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 
         @media (min-width: 1024px) {
             display: none;
+        }
+
+        &[aria-expanded="true"] {
+            position: fixed;
+            top: 1.2rem;
+            right: 1.2rem;
+            z-index: 1100;
+            background: rgba(25, 25, 25, 0.75);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 253, 243, 0.2);
         }
     }
 
@@ -73,30 +84,37 @@ body.is-nav-open {
         position: relative;
         display: block;
         width: 100%;
-        height: 3px;
-        border-radius: 999px;
+        height: 5px;
+        border-radius: 1px;
         background-color: $color-primary-white;
-        transition: transform 0.3s ease, background-color 0.3s ease;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.28);
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, opacity 0.28s ease 0.06s;
 
         &::after {
             content: "";
             position: absolute;
-            inset: 0;
-            height: 3px;
-            border-radius: 999px;
+            top: -0.6rem;
+            left: 50%;
+            width: 5px;
+            height: 1.6rem;
+            border-radius: 1px;
             background-color: $color-primary-white;
-            transform: translateY(10px);
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            transform: translate(-50%, 0) scaleY(1);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.28);
+            // Petit délai sur l'opacité pour qu'on voie clairement le "+"
+            transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, opacity 0.26s ease 0.12s;
         }
     }
 
     &__menu-toggle[aria-expanded="true"] &__menu-bar {
-        transform: rotate(45deg);
+        transform: none;
         background-color: $color-primary-white;
 
         &::after {
-            transform: rotate(-90deg);
+            opacity: 0; // cacher la barre verticale : on obtient un seul trait
+            transform: translate(-50%, 0) scaleY(0);
             background-color: $color-primary-white;
+            transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s ease, opacity 0.24s ease 0.05s;
         }
     }
 
@@ -105,28 +123,26 @@ body.is-nav-open {
         background-color: rgba(25, 25, 25, 0.95); // fond sombre cohérent mobile
         color: $color-primary-white;
         position: fixed;
-        z-index: 1;
+        z-index: 1000; // au-dessus du hero/H1 pour éviter le chevauchement
         inset: 0;
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        flex-direction: row;
         padding: $spacing-3xl $spacing-xl $spacing-xl;
         transform: translateX(100vw);
         transition: all 0.3s ease;
         gap: 1.2rem;
         backdrop-filter: blur(10px);
+        
         &[aria-hidden="false"] {
             visibility: visible;
             transform: translateX(0);
         }
-       
 
         @media (min-width: 1024px) {
             visibility: visible;
             position: static;
             left: auto;
             transform: none;
-            background-color: rgba(255, 253, 243, 0.96);
             flex-direction: row;
             justify-content: center;
             align-items: center;
@@ -140,10 +156,12 @@ body.is-nav-open {
             box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
             backdrop-filter: blur(6px);
         }
+        
         @media (min-width: 1354px) {
             padding: 0.7rem 1.2rem;
             gap: 1.4rem;
         }
+        
         @media (min-width: 1454px) {
             padding: 0.8rem 1.5rem;
             gap: 2rem;
@@ -167,18 +185,24 @@ body.is-nav-open {
 
         &--main {
             @media (min-width: 1024px) {
+                display: flex;
+                flex-direction: row;
                 justify-content: center;
                 gap: 1rem;
-                background-color: rgba(255, 255, 255, 0.92);
-                padding: 0.7rem 1.3rem;
+                background-color: hsla(0, 0%, 100%, .92);
+                padding: .7rem 1.3rem;
                 border-radius: 14px;
-                box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
-                border: 1px solid rgba(25, 25, 25, 0.06);
+                box-shadow: 0 8px 18px rgba(0, 0, 0, .06);
+                border: 1px solid rgba(25, 25, 25, .06);
             }
         }
 
         &--secondary {
-            margin-top: $spacing-xl;
+            margin-top: 0;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
 
             @media (min-width: 1024px) {
                 margin-top: 0;
@@ -220,8 +244,9 @@ body.is-nav-open {
 
     &__nav-list--main &__nav-item {
         @media (min-width: 1024px) {
+            display: flex;
+            flex-direction: row;
             padding: 0 1rem;
-            
         }
 
         @media (min-width: 1200px) {
@@ -231,11 +256,8 @@ body.is-nav-open {
 
     &__nav-list--secondary &__nav-item {
         border-bottom: none;
-        
-        @media (min-width: 1024px) {
-            padding: 0 0.8rem;
-            
-        }
+        padding-bottom: 0;
+        margin-bottom: 0;
     }
 
     &__nav-link {
@@ -270,7 +292,6 @@ body.is-nav-open {
         font-size: 1rem;
         display: flex;
         align-items: center;
-        gap: 0.8rem;
 
         @media (min-width: 1024px) {
             font-size: 0.95rem;
@@ -282,12 +303,26 @@ body.is-nav-open {
     &__nav-icon {
         width: 32px;
         height: 32px;
+        padding: 0.45rem;
+        border-radius: 12px;
+        background: rgba(255, 253, 243, 0.08);
+        border: 1px solid rgba(255, 253, 243, 0.12);
         filter: brightness(0) saturate(100%) invert(100%) sepia(65%) saturate(348%) hue-rotate(342deg) brightness(106%) contrast(108%);
+        transition: background 0.2s ease, border-color 0.2s ease, filter 0.2s ease, transform 0.2s ease;
         
         @media (min-width: 1024px) {
             width: 24px;
             height: 24px;
             filter: brightness(0) saturate(100%) invert(18%) sepia(24%) saturate(600%) hue-rotate(20deg) brightness(94%) contrast(92%);
+            background: rgba(25, 25, 25, 0.04);
+            border-color: rgba(25, 25, 25, 0.08);
+        }
+
+        &:hover {
+            background: rgba(149, 126, 24, 0.12);
+            border-color: rgba(149, 126, 24, 0.3);
+            filter: brightness(0) saturate(100%) invert(34%) sepia(39%) saturate(648%) hue-rotate(11deg) brightness(94%) contrast(92%);
+            transform: translateY(-1px);
         }
     }
 
@@ -373,7 +408,6 @@ body.is-nav-open {
         overflow: hidden;
     
         @media (min-width: 1024px) {
-            padding: 4rem;
             margin: 2rem 0;
             min-height: 800px;
         }
@@ -385,8 +419,6 @@ body.is-nav-open {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
-        padding: 1rem;
-        padding-top: 2rem;
     
         @media (max-width: 768px) {
             grid-template-columns: 1fr;
@@ -395,19 +427,16 @@ body.is-nav-open {
         }
         
         @media (min-width: 1024px) {
-            padding-top: 3rem;
         }
     }
     
     &__hero-content {
         position: relative;
         z-index: 1;
-        margin-top: 280px;
         padding: 2rem;
         border-radius: 12px;
     
         @media (min-width: 768px) {
-            margin-top: 350px;
             padding: 3rem;
         }
     }
@@ -475,15 +504,13 @@ body.is-nav-open {
     &__title {
         font-weight: 700;
         text-transform: uppercase;
-        margin-bottom: 1rem;
+        margin-top: 3rem;
         line-height: 8rem;
 
         @media (max-width: 768px) {
-            font-size: 3rem;
+            font-size: 5rem;
             line-height: 4rem;
-            
         }
-    
     }
 
     &__subtitle {
@@ -519,13 +546,12 @@ body.is-nav-open {
     }
 }
 
-
-#sous-menu-header{
+#sous-menu-header {
     font-size: 5rem;
     line-height: 8rem;
+    
     @media (max-width: 768px) {
         font-size: 1rem;
-        line-height: 2rem;
-        
+        line-height: 1px;
     }
 }
