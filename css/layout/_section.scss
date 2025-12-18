@@ -9,7 +9,6 @@
     background-color: #957e18;
     color: #fffdf3;
     padding: clamp(1.5rem, 4vw, 3rem);
-    margin: clamp(1.5rem, 5vw, 3rem) auto;
     max-width: 95%;
     box-sizing: border-box;
 
@@ -26,6 +25,7 @@
     }
 
     &-title-black { 
+        font-size: 0.8rem;
         color: $color-dark-svg;
     }
     &-content {
@@ -34,14 +34,14 @@
     }
 
     &-img {
-        max-width: 100px;
-        height: 100px;
-        border-radius: 10px;
+        max-width: 40px;
+        height: 40px;
+       
 
         &-black {
             background-color: $color-dark-svg;
-            width: 100px;
-            height: 100px;
+            width: 40px;
+            height: 40px;
         }
     }
 
@@ -109,7 +109,6 @@ align-items: center;
 // Section programmation
 .main__programmation {
     width: 100%;
-    padding: clamp(1rem, 3vw, 2rem);
     margin: 0;
     box-sizing: border-box;
 }
