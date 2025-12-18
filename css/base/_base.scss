@@ -1,7 +1,9 @@
 @use '../utils/variables' as *;
 
 // Reset et styles de base
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,6 +12,7 @@
 html {
     font-size: 16px;
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 body {
@@ -20,8 +23,10 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    padding-inline: clamp(1rem, 3vw, 2rem);
-    --body-padding: clamp(1rem, 3vw, 2rem);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 // Styles pour les titres

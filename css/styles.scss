@@ -13,6 +13,7 @@
 @use 'layout/footer';
 
 // @use des composants
+@use 'component/accordeon';
 @use 'component/button';
 @use 'component/card';
 @use 'component/article';
@@ -21,6 +22,7 @@
 @use 'component/filtre';
 @use 'component/grid';
 @use 'component/maps';
+@use 'component/galerie';
 
 
 @use 'vendors/slick/slick.css';

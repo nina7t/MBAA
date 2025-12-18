@@ -1,7 +1,10 @@
 // Layout - Main
 .main {
     width: 100%;
-    padding: clamp($spacing-md, 4vw, $spacing-xl) clamp($spacing-sm, 3vw, $spacing-md);
+    max-width: 100%;
+    margin: 0 auto;
+    padding: clamp(1rem, 4vw, 2rem) clamp(1rem, 3vw, 2rem);
+    box-sizing: border-box;
 
     &__programmation-banner {
         display: flex;

@@ -5,13 +5,13 @@ body.is-nav-open {
 }
 
 .header {
+    width: 100%;
     background-color: $color-primary-dark;
     color: $color-primary-white;
     position: relative;
     padding: 0;
-    margin-left: calc(-1 * var(--body-padding));
-    margin-right: calc(-1 * var(--body-padding));
-    width: calc(100% + 2 * var(--body-padding));
+    margin: 0;
+    box-sizing: border-box;
 
     &__container{
         display: flex;

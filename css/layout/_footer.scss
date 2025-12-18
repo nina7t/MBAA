@@ -2,14 +2,14 @@
 
 // === FOOTER PRINCIPAL ===
 footer {
+  width: 100%;
   background: $bg-or;
   color: $color-primary-white;
   padding: 0;
   position: relative;
   overflow: hidden;
-  margin-left: calc(-1 * var(--body-padding));
-  margin-right: calc(-1 * var(--body-padding));
-  width: calc(100% + 2 * var(--body-padding));
+  margin: 0;
+  box-sizing: border-box;
 
   // Ligne décorative supérieure
   &::before {

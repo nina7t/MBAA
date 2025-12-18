@@ -1,0 +1,61 @@
+@use "../utils/variables" as *;
+
+.fancy-details {
+    font-family: 'Clash Display', sans-serif;
+    color: $color-primary-dark;
+    font-weight: 600;
+    padding: 0.4rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-bottom: 3px solid #202020;
+  
+    // retire le marker par défaut
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      padding: 0.8rem 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      position: relative;
+  
+      // flèche animée
+
+      &::after {
+        content: "";
+        width: 0.6rem;
+        height: 0.6rem;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(-45deg);
+        transition: transform 0.25s ease;
+        margin-left: 1rem;
+      }
+    }
+  
+    .fancy-content {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, opacity 0.25s ease;
+      padding: 0 1rem;
+    }
+  
+    &[open] {
+      summary::after {
+        transform: rotate(45deg);
+      }
+  
+      .fancy-content {
+        max-height: 500px; // assez haut pour 95% des cas
+        opacity: 1;
+        padding-top: 0.5rem;
+        padding-bottom: 0.8rem;
+      }
+    }
+  }
