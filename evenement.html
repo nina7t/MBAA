@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="./asset/Img/logo/logoMAT.png" />
+  <link rel="stylesheet" href="./css/styles.css" />
+
+  <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+crossorigin=""/>
+
+  <title>MBAA - Musée des Beaux-Arts et d'Archéologie de Besançon</title>
+ 
+</head>
+<body>
+  <header class="header">
+    <div class="header__container">
+      <!-- Logo -->
+      <a class="header__logo-link" href="#">
+        <img class="header__logo-img" src="./asset/Img/logo/logoMAT.png" alt="Logo MBAA" />
+      </a>
+  
+      <!-- Bouton menu burger -->
+      <button class="header__menu-toggle" aria-label="menu" aria-expanded="false" aria-controls="headerNav">
+        <span class="header__menu-bar"></span>
+      </button>
+  
+      <!-- Navigation -->
+      <nav class="header__nav" id="headerNav" aria-hidden="true">
+        <ul class="header__nav-list header__nav-list--main">
+          <li class="header__nav-item nav-dot">
+            <a class="header__nav-link nav-dot" href="#">Infos pratiques</a>
+          </li>
+          <li class="header__nav-item nav-dot">
+            <a class="header__nav-link nav-dot" href="/collections.html">Collections</a>
+          </li>
+          <li class="header__nav-item nav-dot">
+            <a class="header__nav-link nav-dot" href="#">Évènements</a>
+          </li>
+          <li class="header__nav-item nav-dot">
+            <a class="header__nav-link nav-dot" href="#">Le musée</a>
+          </li>
+          <li class="header__nav-item nav-dot">
+            <a class="header__nav-link nav-dot" href="#">Contact</a>
+          </li>
+        </ul>
+  
+        <ul class="header__nav-list header__nav-list--secondary">
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#" aria-label="Connexion">
+              <img class="header__nav-icon" src="./asset/Img/svg/connexion.svg" alt="" />
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#" aria-label="Billetterie">
+              <img class="header__nav-icon" src="./asset/Img/svg/ticket.svg" alt="" />
+            </a>
+          </li>
+        
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#" aria-label="Recherche">
+              <img class="header__nav-icon" src="./asset/Img/svg/Search.svg" alt="" />
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">FR
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">EN
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  
+  <div class="header__hero-content">
+    <h1 class="header__title">ÉVÈNEMENTS<br>
+      <span id="sous-menu-header">Découvrez la vie du musée au rythme des expositions, ateliers, rencontres et temps forts qui animent chaque saison. Petits et grands sont invités à partager des moments de découverte et de création.</span>
+    </h1> 
+  </h1>
+  </div>
+</div>
+  
+    <!-- Flèche de scroll -->
+    <div class="header__scroll">
+      <img class="header__scroll-icon" src="./asset/Img/svg/icon-arrow_bas.svg" alt="Défiler vers le bas" />
+    </div>
+  </header>
+
+
+  <section class="main__explore">
+    <section class="main__explore">
+        <section class="main__banner">
+          <section class="main__banner--explore">
+            <img class="main__banner-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
+    
+            <h2 class="main__banner-title">
+              LES<br>
+              ÉVÈNEMENTS
+            </h2>
+          </section>
+          <section class="main__banner-content">
+            <p class="main__banner-description">
+                Plongez dans l'effervescence culturelle du Musée des Beaux-Arts et d'Archéologie de Besançon à travers une variété d'événements captivants. Que vous soyez amateur d'art, passionné d'histoire ou simplement curieux, notre calendrier d'événements est conçu pour offrir des expériences enrichissantes à tous les visiteurs.
+            </p>
+          </section>
+        </section>
+      </section>
+</section>
+
+
+<section class="Atelier">
+    <section class="Atelier__container">
+      <h2 class="Atelier__title">Ateliers</h2>
+      <p class="Atelier__description">
+        Participez à nos ateliers interactifs conçus pour tous les âges et niveaux d'expérience. Que vous soyez un artiste en herbe ou simplement curieux, nos ateliers offrent une opportunité unique d'explorer votre créativité tout en découvrant les techniques artistiques.
+      </p>
+      <a href="#" class="Atelier__link">Reserver un billet</a>
+    </section>
+</section>
+<section class="Conférences">
+    <section class="Conférences__container">
+      <h2 class="Conférences__title">Conférences</h2>
+      <p class="Conférences__description">
+        Rejoignez-nous pour des conférences captivantes animées par des experts renommés dans le domaine de l'art et de l'archéologie. Plongez dans des discussions enrichissantes sur des sujets variés, allant des mouvements artistiques aux découvertes archéologiques récentes.
+      </p>
+      <a href="#" class="Conférences__link">Reserver un billet</a>
+    </section>
+</section>
+
+<section class="Atelier porterie">
+    <section class="Atelier porterie__container">
+      <h2 class="Atelier porterie__title">Ateliers à la Porterie</h2>
+      <p class="Atelier porterie__description">
+        Découvrez nos ateliers spéciaux organisés à la Porterie, un espace dédié à la créativité et à l'apprentissage. Ces ateliers offrent une expérience immersive où les participants peuvent explorer diverses formes d'art tout en s'inspirant de l'histoire et de la culture locale.
+      </p>
+      <a href="#" class="Atelier porterie__link">Reserver un billet</a>
+    </section>
+</section>
+
+<section class="soiree jazz ">
+    <section class="soiree jazz__container">
+      <h2 class="soiree jazz__title">Soirées Jazz au Musée</h2>
+      <p class="soiree jazz__description">
+        Vivez des soirées inoubliables au rythme du jazz dans le cadre unique du Musée des Beaux-Arts et d'Archéologie de Besançon. Chaque mois, nous accueillons des musiciens de talent pour des performances live qui créent une ambiance chaleureuse et conviviale.
+      </p>
+      <a href="#" class="soiree jazz__link">Reserver un billet</a>
+    </section>
+</section>
+</section>
+
+
+<section class="main__explore">
+    <section class="main__explore">
+        <section class="main__banner">
+          <section class="main__banner--explore">
+            <img class="main__banner-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
+    
+            <h2 class="main__banner-title">
+              Bibliothèque<br>
+              ÉVÈNEMENTS
+            </h2>
+          </section>
+
+          <section class="main__banner-content">
+            <h3 class="main__banner-subtitle">Bibliothèque et ressources en images des collections des Beaux-Arts</h3>
+            <p class="main__banner-description">
+                Parcourez les collections des Beaux-Arts du musée : œuvres exposées, archives, peintures, sculptures et dessins conservés dans nos réserves. Cette bibliothèque d’images vous invite à découvrir, explorer et mieux comprendre la richesse du patrimoine artistique conservé au musée.            </p>
+          </section>
+        </section>
+      </section>
+</section>
+
+
+
+<!-- galerie image 2 AVEC Filtre et search bar -->
+<section class="gallery2">
+    <section class="">
+    <img class="searchbar img" src="loupe" alt="icon loupe" />
+    <input type="text" class="searchbar input" placeholder="Rechercher une œuvre, un artiste..." />
+    </section>
+
+    <section class="gallery2__filters">
+        <div class="gallery2__filter-icon">
+        <img src="/asset/Img/svg/croix-black.svg"><button class="gallery2__filter-button"> Tous</button>
+        </div>
+
+        <img src="/asset/Img/svg/croix-black.svg"> <button class="gallery2__filter-button">ateliers</button>
+
+        <img src="/asset/Img/svg/croix-black.svg"> <button class="gallery2__filter-button">evenements</button>
+
+        <img src="/asset/Img/svg/croix-black.svg"> <button class="gallery2__filter-button">performance</button>
+
+        <img src="/asset/Img/svg/croix-black.svg"><button class="gallery2__filter-button">soiree</button>
+
+        <img src="/asset/Img/svg/croix-black.svg"><button class="gallery2__filter-button">nuits des arts</button>
+    </section>
+
+
+    <!-- mettre un filtre de couleur  blanc et #957E18 sur chque section pour que mon utilisateur admin puisse changer dilage et que le filtre se mette automatiquement sur limage  -->
+<section class="galerie image en grid ">
+    <section class="galerie image__item">
+        <img src="/asset/Img/Evenement/Evenement1.jpg" alt="Evenement1">
+    </section>
+
+    <section class="galerie image__item">
+        <img src="/asset/Img/Evenement/Evenement2.jpg" alt="Evenement2">
+    </section>
+
+    <section class="galerie image__item">
+        <img src="/asset/Img/Evenement/Evenement3.jpg" alt="Evenement3">
+    </section>
+
+    <section class="galerie image__item">
+        <img src="/asset/Img/Evenement/Evenement4.jpg" alt="Evenement4">
+    </section>
+
+    <section class="galerie image__item">
+        <img src="/asset/Img/Evenement/Evenement5.jpg" alt="Evenement5">
+    </section>
+
+    <section class="galerie image__item">
+        <img src="/asset/Img/Evenement/Evenement6.jpg" alt="Evenement6">
+    </section>
+
+    <section class="galerie image__item">
+        <img src="/asset/Img/Evenement/Evenement7.jpg" alt="Evenement7">
+    </section>
+
+    <section class="galerie image__item">
+        <img src="/asset/Img/Evenement/Evenement8.jpg" alt="Evenement8">
+    </section>
+
+    <section class="galerie image__item">
+        <img src="/asset/Img/Evenement/Evenement9.jpg" alt="Evenement9">
+    </section>
+
+</section>
+</section>
+
+  </body>
+</html>

@@ -124,7 +124,7 @@ body.is-nav-open {
         display: flex;
         flex-direction: row;
         padding: $spacing-3xl $spacing-xl $spacing-xl;
-        transform: translateX(100vw);
+        transform: translateX(100%);
         transition: all 0.3s ease;
         gap: 1.2rem;
         backdrop-filter: blur(10px);
