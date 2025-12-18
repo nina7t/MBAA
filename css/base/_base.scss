@@ -19,8 +19,9 @@ body {
     color: $color-primary-dark;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden; // Évite les débordements horizontaux involontaires
-    padding-inline: clamp(1rem, 3vw, 2rem); // Marge latérale globale pour contenir les éléments
+    overflow-x: hidden;
+    padding-inline: clamp(1rem, 3vw, 2rem);
+    --body-padding: clamp(1rem, 3vw, 2rem);
 }
 
 // Styles pour les titres

@@ -7,9 +7,9 @@ footer {
   padding: 0;
   position: relative;
   overflow: hidden;
-  margin-left: calc(-1 * var(--body-padding, 2rem));
-  margin-right: calc(-1 * var(--body-padding, 2rem));
-  width: calc(100% + 2 * var(--body-padding, 2rem));
+  margin-left: calc(-1 * var(--body-padding));
+  margin-right: calc(-1 * var(--body-padding));
+  width: calc(100% + 2 * var(--body-padding));
 
   // Ligne décorative supérieure
   &::before {
