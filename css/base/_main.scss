@@ -1,3 +1,5 @@
+@use '../utils/variables' as *;
+
 // Layout - Main
 .main {
     width: 100%;
@@ -26,7 +28,7 @@
 
     &__card {
         padding: $spacing-lg;
-        border: 1px solid rgba($color-primary, 0.1);
+        border: none;
         border-radius: 8px;
         margin-bottom: $spacing-lg;
 
@@ -65,14 +67,14 @@
     &__card-text {
         font-size: 1rem;
         margin-bottom: $spacing-sm;
-        color: $color-text-light;
+        color: $color-text-secondary;
     }
 
     &__card-description {
         font-size: 1rem;
         line-height: 1.8;
         margin-bottom: $spacing-md;
-        color: $color-text;
+        color: $color-text-secondary;
     }
 
     &__banner-img{
