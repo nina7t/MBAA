@@ -1,32 +1,55 @@
 @use '../utils/variables' as *;
 
 .filtre{
-    margin: 2rem;
+    margin: clamp(1rem, 3vw, 2rem);
+    padding: 0 clamp(0.5rem, 2vw, 1rem);
+    display: flex;
+    justify-content: center;
 }
 
+.filtre__title {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+    
+    @media (min-width: 1024px) {
+        text-align: left;
+    }
+}
 
 .filtre__list{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-}
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(0.5rem, 2vw, 1.5rem);
+    align-items: center;
+    max-width: 100%;
 
+    @media (min-width: 1024px) {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+}
 
 .filtre__list-item{
     display: flex;
     flex-direction: row;
-    gap: 12px;
+    gap: clamp(0.5rem, 1vw, 12px);
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    white-space: nowrap;
 }
 
 .filtre__list-img{
     width: auto;
-    height: 30px;
-
+    height: clamp(20px, 4vw, 30px);
+    flex-shrink: 0;
 }
-
 
 .filtre__list__drag-img{
     width: auto;
-    height: 20px;
-    
+    height: clamp(15px, 3vw, 20px);
+    flex-shrink: 0;
 }
