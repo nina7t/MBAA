@@ -63,7 +63,7 @@ a {
 }
 
 p{
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 3vw, 1.3rem);
 }
 
 // Styles pour les images

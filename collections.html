@@ -1,194 +1,97 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="./asset/Img/logo/logoMAT.png" />
-  <link rel="stylesheet" href="./css/styles.css" />
-
-  <!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-crossorigin=""/>
-
-  <title>MBAA - Musée des Beaux-Arts et d'Archéologie de Besançon</title>
- 
-</head>
-<body>
-  <header class="header" data-bg="collections">
-    <div class="header__container">
-      <!-- Logo -->
-      <a class="header__logo-link" href="index.html">
-        <img class="header__logo-img" src="./asset/Img/logo/logoMAT.png" alt="Logo MBAA" />
-      </a>
+ <!doctype html>
+  <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./asset/Img/logo/logoMAT.png" />
+    <link rel="stylesheet" href="./css/styles.css" />
   
-      <!-- Bouton menu burger -->
-      <button class="header__menu-toggle" aria-label="menu" aria-expanded="false" aria-controls="headerNav">
-        <span class="header__menu-bar"></span>
-      </button>
+    <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
   
-      <!-- Navigation -->
-      <nav class="header__nav" id="headerNav" aria-hidden="true">
-        <ul class="header__nav-list header__nav-list--main">
-        
-          <li class="header__nav-item header__nav-item--has-submenu">
-            <a class="header__nav-link" href="/collections.html">
-              Infos pratiques
-            </a>
-            
-            <!-- Sous-menu -->
-            <ul class="header__submenu">
-              <li class="header__submenu-item">
-                <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="infos-pratiques.html">Tarifs & horaires</a>
-              </li>
-              
-              <li class="header__submenu-item">
-                <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#sculptures">Visites guidées</a>
-              </li>
-              <li class="header__submenu-item">
-                <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#archeologie">Groupes & scolaires</a>
-              </li>
-              <li class="header__submenu-item">
-                <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#arts-graphiques">Accessibilité</a>
-              </li>
-            </ul>
-          </li>
+    <title>MBAA - Musée des Beaux-Arts et d'Archéologie de Besançon</title>
+   
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <!-- Logo -->
+        <a class="header__logo-link" href="#">
+          <img class="header__logo-img" src="./asset/Img/logo/logoMAT.png" alt="Logo MBAA" />
+        </a>
+    
+        <!-- Bouton menu burger -->
+        <button class="header__menu-toggle" aria-label="menu" aria-expanded="false" aria-controls="headerNav">
+          <span class="header__menu-bar"></span>
+        </button>
+    
+        <!-- Navigation -->
+        <nav class="header__nav" id="headerNav" aria-hidden="true">
+          <ul class="header__nav-list header__nav-list--main">
+            <li class="header__nav-item nav-dot">
+              <a class="header__nav-link nav-dot" href="#">Infos pratiques</a>
+            </li>
+            <li class="header__nav-item nav-dot">
+              <a class="header__nav-link nav-dot" href="/collections.html">Collections</a>
+            </li>
+            <li class="header__nav-item nav-dot">
+              <a class="header__nav-link nav-dot" href="#">Évènements</a>
+            </li>
+            <li class="header__nav-item nav-dot">
+              <a class="header__nav-link nav-dot" href="#">Le musée</a>
+            </li>
+            <li class="header__nav-item nav-dot">
+              <a class="header__nav-link nav-dot" href="#">Contact</a>
+            </li>
+          </ul>
+    
+          <ul class="header__nav-list header__nav-list--secondary">
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#" aria-label="Connexion">
+                <img class="header__nav-icon" src="./asset/Img/svg/connexion.svg" alt="" />
+              </a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#" aria-label="Billetterie">
+                <img class="header__nav-icon" src="./asset/Img/svg/ticket.svg" alt="" />
+              </a>
+            </li>
           
-          <!-- Menu Collections -->
-
-          <li class="header__nav-item header__nav-item--has-submenu">
-            <a class="header__nav-link" href="/collections.html">
-              Collections
-      
-            </a>
-            
-            <!-- Sous-menu -->
-            <ul class="header__submenu">
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#peintures">Explorer en ligne</a>
-              </li>
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#sculptures">Arts graphiques</a>
-              </li>
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#archeologie">Arts en volume</a>
-              </li>
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#arts-graphiques">Archéologie</a>
-              </li>
-            </ul>
-          </li>
-        
-          <li class="header__nav-item header__nav-item--has-submenu">
-            <a class="header__nav-link" href="/collections.html">
-              Évènements             
-            </a>
-            
-            <!-- Sous-menu -->
-            <ul class="header__submenu">
-              <li class="header__submenu-item">
-                    <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#peintures">Explorer en ligne</a>
-              </li>
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#sculptures">Arts graphiques</a>
-              </li>
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#archeologie">Arts en volume</a>
-              </li>
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#arts-graphiques">Archéologie</a>
-              </li>
-            </ul>
-          </li>
-          
-
-        
-          <li class="header__nav-item header__nav-item--has-submenu">
-            <a class="header__nav-link" href="/collections.html">
-              Le musée      
-            </a>
-            
-            <!-- Sous-menu -->
-            <ul class="header__submenu">
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#peintures">Histoire</a>
-  
-              </li>
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#sculptures">L'équipe</a>
-              </li>
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#archeologie">Partenaires</a>
-              </li>
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#arts-graphiques">Archives</a>
-              </li>
-            </ul>
-          </li>
-          
-          <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="#">Contact</a>
-          </li>
-        </ul>
-
-        
-  
-        <ul class="header__nav-list header__nav-list--secondary">
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="#" aria-label="Connexion">
-              <img class="header__nav-icon" src="./asset/Img/svg/connexion.svg" alt="" />
-            </a>
-          </li>
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="#" aria-label="Billetterie">
-              <img class="header__nav-icon" src="./asset/Img/svg/ticket.svg" alt="" />
-            </a>
-          </li>
-        
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="#" aria-label="Recherche">
-              <img class="header__nav-icon" src="./asset/Img/svg/Search.svg" alt="" />
-            </a>
-          </li>
-          <li class="header__nav-item">
-            <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">FR
-            </a>
-          </li>
-          <li class="header__nav-item">
-            <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">EN
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <div class="header__hero">
-      <div class="header__hero-content">
-        <h1 class="header__title">Les<br>beaux<br>arts
-          <span>La bibliothèque</span>
-        </h1>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#" aria-label="Recherche">
+                <img class="header__nav-icon" src="./asset/Img/svg/Search.svg" alt="" />
+              </a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">FR
+              </a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">EN
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
+    
+    <div class="header__hero-content">
+      <h1 class="header__title">Les<br>beaux<br>arts<br>
+        <span id="sous-menu-header">La bibliothèque</span>
+      </h1> 
+    </h1>
     </div>
-    <!-- Flèche de scroll -->
-    <div class="header__scroll">
-      <img class="header__scroll-icon" src="./asset/Img/svg/icon-arrow_bas.svg" alt="Défiler vers le bas" />
-    </div>
-  </header>
+  </div>
+    
+      <!-- Flèche de scroll -->
+      <div class="header__scroll">
+        <img class="header__scroll-icon" src="./asset/Img/svg/icon-arrow_bas.svg" alt="Défiler vers le bas" />
+      </div>
+    </header>
+
+
+
 
 <main>
   <section class="main__explore">
@@ -212,9 +115,712 @@ crossorigin=""/>
     </section>
   </section>
 </main>
+<nav>
+  <div class="container">
+    <div class="grid">
+      <div class="column-xs-12 column-md-10">
+        <p id="highlight">Katherine Kato</p>
+      </div>
+      <div class="column-xs-12 column-md-2">
+        <ul>
+          <li><a href="#" class="active">Work</a></li>
+          <li><a href="#">About</a></li>
+           <li><a href="#">About</a></li> 
+          <li><a href="#">About</a></li> 
+          <li><a href="#">About</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">About</a></li>
+             <li><a href="#">About</a></li>
+          <li><a href="#">About</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<section class="gallery">
+  <div class="container">
+    <div class="grid">
+      <div class="column-xs-12 column-md-4">
+        <figure class="img-container">
+          <img src="https://assets.codepen.io/1159990/smart-watch.jpg" />
+          <figcaption class="img-content">
+            <h2 class="title">Smart Watch</h2>
+            <h3 class="category">Showcase</h3>
+          </figcaption>
+          <span class="img-content-hover">
+            <h2 class="title">Smart Watch</h2>
+            <h3 class="category">Showcase</h3>
+          </span>
+        </figure>
+      </div>
+      <div class="column-xs-12 column-md-4">
+        <figure class="img-container">
+          <img src="https://assets.codepen.io/1159990/camera-film.jpg" />
+          <figcaption class="img-content">
+            <h2 class="title">Camera Film</h2>
+            <h3 class="category">Showcase</h3>
+          </figcaption>
+          <span class="img-content-hover">
+            <h2 class="title">Camera Film</h2>
+            <h3 class="category">Showcase</h3>
+          </span>
+        </figure>
+      </div>
+      <div class="column-xs-12 column-md-4">
+        <figure class="img-container">
+          <img src="https://assets.codepen.io/1159990/coffee.jpg">
+          <figcaption class="img-content">
+            <h2 class="title">Coffee</h2>
+            <h3 class="category">Showcase</h3>
+          </figcaption>
+          <span class="img-content-hover">
+            <h2 class="title">Coffee</h2>
+            <h3 class="category">Showcase</h3>
+          </span>
+        </figure>
+      </div>
+      <div class="column-xs-12 column-md-6">
+        <figure class="img-container">
+          <img src="https://assets.codepen.io/1159990/phone.jpg" />
+          <figcaption class="img-content">
+            <h2 class="title">Phone</h2>
+            <h3 class="category">Showcase</h3>
+          </figcaption>
+          <span class="img-content-hover">
+            <h2 class="title">Phone</h2>
+            <h3 class="category">Showcase</h3>
+          </span>
+        </figure>
+      </div>
+      <div class="column-xs-12 column-md-6">
+        <figure class="img-container">
+          <img src="https://assets.codepen.io/1159990/keyboard.jpg" />
+          <figcaption class="img-content">
+            <h2 class="title">Keyboard</h2>
+            <h3 class="category">Showcase</h3>
+          </figcaption>
+          <span class="img-content-hover">
+            <h2 class="title">Keyboard</h2>
+            <h3 class="category">Showcase</h3>
+          </span>
+        </figure>
+      </div>
+      <div class="column-xs-12">
+        <figure class="img-container">
+          <img src="https://assets.codepen.io/1159990/wrist-watch.jpg" />
+          <figcaption class="img-content">
+            <h2 class="title">Wrist Watch</h2>
+            <h3 class="category">Showcase</h3>
+          </figcaption>
+          <span class="img-content-hover">
+            <h2 class="title">Wrist Watch</h2>
+            <h3 class="category">Showcase</h3>
+          </span>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="main__explore">
+  <section class="main__banner">
+    <section class="main__banner--explore">
+      <img class="main__banner-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
+
+      <h2 class="main__banner-title">
+         ESPACE<br>PÉDAGOGIQUE
+      </h2>
+    </section>
+    <section class="main__banner-content">
+      <h3 class="main__banner-subtitle">
+        Comprendre une œuvre d’art      </h3>
+      <p class="main__banner-description">
+        Comment regarder une œuvre d’art ?<br>Découvrir une œuvre, c’est apprendre à observer, ressentir et comprendre ce que l’artiste a voulu exprimer. </p>
+    </section>
+  </section>
+</section>
+
+<details class="fancy-details">
+  <summary>La couleur</summary>
+  <div class="fancy-content">
+    <p>
+      Voici la réponse détaillée.  
+      Tu peux mettre du texte, des images, des liens, tout ce que tu veux.
+    </p>
+  </div>
+</details>
+
+<details class="fancy-details">
+  <summary>La ligne</summary>
+  <div class="fancy-content">
+    <p>
+      Autre réponse ici.
+    </p>
+  </div>
+</details>
+
+<details class="fancy-details">
+  <summary>La forme</summary>
+  <div class="fancy-content">
+    <p>
+      Voici la réponse détaillée.  
+      Tu peux mettre du texte, des images, des liens, tout ce que tu veux.
+    </p>
+  </div>
+</details>
+
+<details class="fancy-details">
+  <summary>La l'espace</summary>
+  <div class="fancy-content">
+    <p>
+      Autre réponse ici.
+    </p>
+  </div>
+</details>
+
+<details class="fancy-details">
+  <summary>La texture</summary>
+  <div class="fancy-content">
+    <p>
+      Voici la réponse détaillée.  
+      Tu peux mettre du texte, des images, des liens, tout ce que tu veux.
+    </p>
+  </div>
+</details>
+
+
+<img src="/asset/Img/tableaux/P-guenat_vieux.jpg" class="" alt="">
 
 
 
+<section class="main__explore">
+  <section class="main__banner">
+    <section class="main__banner--explore">
+      <img class="main__banner-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
+
+      <h2 class="main__banner-title">
+         MOUVEMENTS<br>ARTISTIQUES
+      </h2>
+    </section>
+    <section class="main__banner-content">
+      <h3 class="main__banner-subtitle">
+        Un voyage à travers le temps et les styles</h3>
+      <p class="main__banner-description">
+        Histoire de l'art occidental du XVe au XXIe siècle</p>
+    </section>
+  </section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="main__explore">
+  <section class="main__banner">
+    <section class="main__banner--explore">
+      <img class="main__banner-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
+
+      <h2 class="main__banner-title">
+        SAVOIR<br>
+        DISTINGUER
+      </h2>
+    </section>
+    <section class="main__banner-content">
+      <h3 class="main__banner-subtitle">
+        Les différentes techniques artistiques</h3>
+      <p class="main__banner-description">
+        Un voyage à travers le temps et les styles</p>
+    </section>
+  </section>
+</section>
+
+<section>
+  <div class="card-grid-row">
+    <img src="/asset/Img/tableaux/P-guenat_vieux.jpg" class="card-grid-column_1" alt="">
+    <div class="card-grid-column_2">
+      <h3 class="card-grid-title">La peinture à l'huile</h3>
+      <p class="card-grid-description">
+        La peinture à l'huile est une technique artistique qui utilise des pigments mélangés à de l'huile, généralement de l'huile de lin, comme liant. Cette méthode permet une grande variété d'effets, allant des couches fines et transparentes aux applications épaisses et texturées. La peinture à l'huile est appréciée pour sa richesse de couleurs, sa durabilité et son temps de séchage relativement long, qui offre aux artistes la possibilité de travailler et de retravailler leurs œuvres.
+      </p>
+  </div>
+  </div>
+
+  <div class="card-grid-row">
+    <img src="/asset/Img/tableaux/P-guenat_vieux.jpg" class="card-grid-column_1" alt="">
+    <div class="card-grid-column_2">
+      <h3 class="card-grid-title">La peinture aquarelle</h3>
+      <p class="card-grid-description">
+        La peinture acrylique est une technique artistique qui utilise des pigments mélangés à une émulsion acrylique à base d'eau comme liant. Cette méthode est appréciée pour sa rapidité de séchage, sa polyvalence et sa facilité d'utilisation. La peinture acrylique peut être appliquée en couches fines ou épaisses, et elle offre une large gamme de textures et de finitions, allant du mat au brillant. De plus, elle est résistante à la lumière et à l'eau une fois sèche, ce qui en fait un choix populaire parmi les artistes contemporains.
+      </p>
+  </div>
+  </div>
+
+  <div class="card-grid-row">
+    <img src="/asset/Img/tableaux/P-guenat_vieux.jpg" class="card-grid-column_1" alt="">
+    <div class="card-grid-column_2">
+      <h3 class="card-grid-title">sculpture</h3>
+      <p class="card-grid-description">
+        Travail de la matière : pierre, bois, métal, plâtre ou argile. L’artiste modèle ou taille pour donner forme au volume.
+      </p>
+  </div>
+  </div>
+
+  <div class="card-grid-row">
+    <img src="/asset/Img/tableaux/P-guenat_vieux.jpg" class="card-grid-column_1" alt="">
+    <div class="card-grid-column_2">
+      <h3 class="card-grid-title">Dessin</h3>
+      <p class="card-grid-description">
+        Le dessin est une forme d'expression artistique qui consiste à créer des images en utilisant des lignes, des formes et des ombres sur une surface plane, généralement du papier. Les artistes utilisent divers outils pour dessiner, tels que des crayons, des stylos, des fusains, des pastels et des encres. Le dessin peut être utilisé pour capturer des idées, des concepts ou des observations, ainsi que pour créer des œuvres d'art complètes. Il peut varier en style, allant du réalisme détaillé à l'abstraction expressive.
+      </p>
+  </div>
+  </div>
+
+  <div class="card-grid-row">
+    <img src="/asset/Img/tableaux/P-guenat_vieux.jpg" class="card-grid-column_1" alt="">
+    <div class="card-grid-column_2">
+      <h3 class="card-grid-title">Gravure</h3>
+      <p class="card-grid-description">
+        La gravure est une technique artistique qui consiste à inciser ou graver une image sur une surface dure, telle que le métal, le bois ou la pierre, pour créer une matrice. Cette matrice est ensuite encrée et pressée sur du papier ou un autre support pour produire des impressions multiples de l'image gravée. La gravure permet aux artistes de créer des œuvres d'art détaillées et expressives, avec une variété de styles et de textures. Parmi les techniques de gravure les plus courantes figurent la gravure à l'eau-forte, la gravure sur bois et la lithographie.
+      </p>
+
+  </div>  
+  </div>
+
+
+  <div class="card-grid-row">
+    <img src="/asset/Img/tableaux/P-guenat_vieux.jpg" class="card-grid-column_1" alt="">
+    <div class="card-grid-column_2">
+      <h3 class="card-grid-title">Photographie</h3>
+      <p class="card-grid-description">
+        La photographie est une technique artistique et scientifique qui consiste à capturer des images en utilisant la lumière pour enregistrer des scènes, des objets ou des personnes sur un support sensible, tel que du film ou un capteur numérique. Les photographes utilisent des appareils photo pour contrôler divers aspects de l'image, tels que l'exposition, la composition et la mise au point. La photographie peut être utilisée à des fins artistiques, documentaires, commerciales ou personnelles, et elle offre une vaste gamme de styles et de genres, allant du portrait à la photographie de paysage en passant par la photographie de rue.
+      </p>
+  </div>
+  </div>
+
+  <div class="card-grid-row">
+    <img src="/asset/Img/tableaux/P-guenat_vieux.jpg" class="card-grid-column_1" alt="">
+    <div class="card-grid-column_2">
+      <h3 class="card-grid-title">craie grasse</h3>
+      <p class="card-grid-description">
+        La craie grasse, également connue sous le nom de pastel gras, est un médium artistique utilisé pour le dessin et la peinture. Elle se compose de pigments mélangés à une base grasse, ce qui lui confère une texture douce et crémeuse. La craie grasse permet aux artistes de créer des œuvres aux couleurs vives et intenses, avec la possibilité de mélanger et de superposer les couleurs facilement. Elle peut être appliquée sur divers supports, tels que le papier, le carton ou la toile, et est souvent utilisée pour créer des effets de texture et de profondeur dans les œuvres d'art.
+      </p>
+  </div>
+  </div>
+
+  <div class="card-grid-row">
+    <img src="/asset/Img/tableaux/P-guenat_vieux.jpg" class="card-grid-column_1" alt="">
+    <div class="card-grid-column_2">
+      <h3 class="card-grid-title">Fusain</h3>
+      <p class="card-grid-description">
+        Le fusain est un médium artistique utilisé principalement pour le dessin. Il est fabriqué à partir de branches de bois carbonisé, généralement de saule ou de vignes, qui sont brûlées jusqu'à obtenir une substance noire et friable. Le fusain permet aux artistes de créer des lignes riches et expressives, ainsi que des ombres douces et des dégradés. Il est apprécié pour sa capacité à produire des effets dramatiques et texturés, et il peut être facilement estompé ou effacé pour créer des variations tonales. Le fusain est souvent utilisé pour les croquis, les études et les œuvres d'art finies.        
+      
+      </p>
+  </div>
+  </div>
+
+  <div class="card-grid-row">
+    <img src="/asset/Img/tableaux/P-guenat_vieux.jpg" class="card-grid-column_1" alt="">
+    <div class="card-grid-column_2">
+      <h3 class="card-grid-title">Encre</h3>
+      <p class="card-grid-description">
+        L'encre est un médium artistique liquide utilisé pour le dessin, l'écriture et la peinture. Elle est composée de pigments ou de colorants dissous dans un liquide, généralement de l'eau ou de l'huile, ce qui lui permet d'être appliquée sur divers supports tels que le papier, le tissu ou le bois. L'encre peut être utilisée avec différents outils, tels que des pinceaux, des stylos, des plumes ou des marqueurs, offrant une grande variété de styles et de techniques. Les artistes utilisent l'encre pour créer des œuvres allant du dessin détaillé à la calligraphie expressive, en passant par les illustrations et les peintures à l'encre.
+      </p>
+      </div>
+  </div>
+
+  <div class="Bouton-voir-plus">
+    <a href="#" class="Bouton-voir-plus__link">Voir plus</a>
+  </div>
+
+
+</section>
+
+<details class="fancy-details">
+  <summary>Nature morte</summary>
+  <div class="fancy-content">
+    <p>
+      Voici la réponse détaillée.  
+      Tu peux mettre du texte, des images, des liens, tout ce que tu veux.
+    </p>
+  </div>
+</details>
+
+
+<details class="fancy-details">
+  <summary>Paysage</summary>
+  <div class="fancy-content">
+    <p>
+      Voici la réponse détaillée.  
+      Tu peux mettre du texte, des images, des liens, tout ce que tu veux.
+    </p>
+  </div>
+</details>
+
+<details class="fancy-details">
+  <summary>Palette</summary>
+  <div class="fancy-content">
+    <p>
+      Voici la réponse détaillée.  
+      Tu peux mettre du texte, des images, des liens, tout ce que tu veux.
+    </p>
+  </div>
+</details>
+
+
+<details class="fancy-details">
+  <summary>Scène de genre</summary>
+  <div class="fancy-content">
+    <p>
+      Voici la réponse détaillée.  
+      Tu peux mettre du texte, des images, des liens, tout ce que tu veux.
+    </p>
+  </div>
+</details>
+
+<details class="fancy-details">
+  <summary>Perspective</summary>
+  <div class="fancy-content">
+    <p>
+      Voici la réponse détaillée.  
+      Tu peux mettre du texte, des images, des liens, tout ce que tu veux.
+    </p>
+  </div>
+</details>
+
+<details class="fancy-details">
+  <summary>Clair-obscure</summary>
+  <div class="fancy-content">
+    <p>
+
+    </p>
+  </div>
+</details>
+
+
+
+
+
+
+<section class="">
+  <div class="imag">
+
+  </div>
+  <div class="">
+  <div class="card-grid-colo">
+    <h3>La composition et l’équilibre</h3>
+    <p>Chaque élément est placé avec soin pour attirer notre regard vers ce que l’artiste veut montrer. Certains équilibrent les formes, d’autres jouent sur le désordre pour créer une émotion.</p>
+</div>
+
+<div class="card-grid-colo">
+  <h3>L’intention de l’artiste</h3>
+  <p>Une œuvre peut raconter une histoire, dénoncer, célébrer ou simplement faire rêver. Observer, c’est aussi imaginer ce que l’artiste a voulu dire.</p>
+</div>
+
+<div class="card-grid-colo">
+  <h3>Le contexte historique et culturel</h3>
+  <p>L’époque et la société influencent l’artiste. Comprendre quand et pourquoi une œuvre a été créée aide à mieux la lire.
+  </p>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="fichier-pedago">
+<h1 class="fichier-pedago__titre">
+  Fichier PÉDAGOGIQUE
+</h1>
+<p class="fichier-pedago__para">
+  Télécharger le fichier pédagogique complet au format PDF pour une exploration approfondie des collections des Beaux-Arts du musée. Ce document offre des informations détaillées, des analyses d'œuvres, et des ressources éducatives pour enrichir votre compréhension de l'art et de son histoire.
+</p>
+<div class="fichier-pedago__button"
+>
+<a class="main__button--savoir-white-black" href="#">Télécharger le fichier PDF</a>
+</div>
+
+</section>
+
+
+<section class="main__programmation">
+  <section class="main__banner-prog">
+    <section class="main__banner--programmation">
+      <img class="main__banner-img-black" src="./asset/Img/svg/croix-black.svg" alt="Croix noire" />
+      <h2 class="main__banner-title-black">
+        Programmation<br>octobre > avril 2026
+      </h2>
+    </section>
+  </section>
+</section>
+
+
+<section class="main__card">
+  <div class="main__card-agencement">
+  <img class="main__card-img" src="./asset/Img/groupe_visite.jpg" alt="Groupe en visite" />
+ </div>
+  <div class="main__card-container">
+  <h2 class="main__card-title">Expositions et accrochages</h2>
+  <h3 class="main__card-subtitle">
+    Ceija Stojka / "Garder les yeux ouverts"
+  </h3>
+  <h4 class="main__card-text">27.02 - 21.09.2026</h4>
+  <h4 class="main__card-text-subtitle">
+    Exposition déconseillée aux enfants de moins de 10 ans.
+  </h4>
+  <p class="main__card-description">
+    Née en Autriche, dans la communauté rom des Lovara, Ceija Stojka
+    (1933-2013) est une artiste autodidacte, à la fois autrice, peintre et
+    dessinatrice. Rescapée des camps de concentration d'Auschwitz,
+    Ravensbrück et Bergen-Belsen dans lesquels elle a vécu de 1943 à 1945,
+    âgée de 10 à 12 ans, elle fut la première à témoigner du génocide des
+    Tsiganes perpétré par les Nazis, plus de quarante ans après les
+    événements. Elle publie tout d'abord un livre, Nous vivons cachés.
+    Récits d'une Romni à travers le siècle, en 1988....
+  </p>
+
+  <a class="main__button--savoir-white" href="#">En savoir +</a>
+</div> 
+</section>
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+  <div class="footer__contain-form">
+  <div class="footer__logo-container">
+    <a class="footer__logo-link" href="#">
+      <img class="footer__logo-img" src="./asset/Img/logo/logoMAT.png" alt="Logo MBAA" />
+      <h2 class="footer__title">Suivez-nous pour recevoir la newsletter</h2>
+    </a>
+  <form class="footer__form">
+    <input class="footer__input" type="email" placeholder="Entrez votre adresse e-mail" required />
+    <button class="footer__button" type="submit">S'abonner</button>
+  </form>
+  </div>
+
+  <section class="footer__nav">
+    <ul class="footer__nav-list">
+      <li class="footer__nav-item">
+        <h4 class="footer__nav-title">Le musée</h4>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Présentation & histoire</a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">L'équipe & conservation</a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Architecture & bâtiment</a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Amis du musée / mécénat</a>
+      </li>
+    </ul>
+
+    <ul class="footer__nav-list">
+      <li class="footer__nav-item">
+        <h4 class="footer__nav-title">Expositions et activités</h4>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Expositions temporaires</a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Collections permanentes</a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Agenda complet</a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Événements & conférences</a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Ateliers & visites guidées</a>
+      </li>
+    </ul>
+
+    <ul class="footer__nav-list">
+      <li class="footer__nav-item">
+        <h4 class="footer__nav-title">Ressources</h4>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Recherche et documentation</a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Publications</a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Base de données des œuvres</a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Espace presse</a>
+      </li>
+    </ul>
+
+    <ul class="footer__nav-list">
+      <li class="footer__nav-item">
+        <h4 class="footer__nav-title">Infos pratiques</h4>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Recrutement</a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Partenariats</a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Mentions légales</a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Politique de
+          confidentialité</a>
+      </li>
+    </ul>
+
+    <ul class="footer__nav-list">
+      <li class="footer__nav-item">
+        <h4 class="footer__nav-title">Contact</h4>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Horaires et tarifs</a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Accessibilité</a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Accès et stationnement</a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Groupes et écoles</a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Nous contacter</a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">FAQ</a>
+      </li>
+      <li class="footer__nav-item">
+        <a class="footer__nav-link" href="#">Plan du site</a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="footer__social">
+    <h2>Nos réseaux sociaux</h2>
+    <section class="footer__social-media">
+      <a class="footer__social-link" href="#" aria-label="Facebook">
+        <img class="footer__social-icon" src="/asset/Img/svg/facebook.svg" alt="Facebook" />
+      </a>
+      <a class="footer__social-link" href="#" aria-label="Instagram">
+        <img class="footer__social-icon" src="/asset/Img/svg/insta.svg" alt="Instagram" />
+      </a>
+      <a class="footer__social-link" href="#" aria-label="Linkdin">
+        <img class="footer__social-icon" src="/asset/Img/svg/facebook.svg" alt="Twitter" />
+      </a>
+      <a class="footer__social-link" href="#" aria-label="Tiktok"><section class="footer__social">
+<h2>Nos réseaux sociaux</h2>
+<section class="footer__social-media">
+  <a class="footer__social-link" href="#" aria-label="Facebook">
+    <img class="footer__social-icon" src="/asset/Img/svg/facebook.svg" alt="Facebook" />
+  </a>
+  <a class="footer__social-link" href="#" aria-label="Instagram">
+    <img class="footer__social-icon" src="/asset/Img/svg/insta.svg" alt="Instagram" />
+  </a>
+  <a class="footer__social-link" href="#" aria-label="LinkedIn">
+    <img class="footer__social-icon" src="/asset/Img/svg/linkedin.svg" alt="LinkedIn" />
+  </a>
+  <a class="footer__social-link" href="#" aria-label="Tiktok">
+    <img class="footer__social-icon" src="/asset/Img/svg/tiktok.svg" alt="Tiktok" />
+  </a>
+</section>
+</section><section class="footer__social">
+<h2>Nos réseaux sociaux</h2>
+<section class="footer__social-media">
+  <a class="footer__social-link" href="#" aria-label="Facebook">
+    <img class="footer__social-icon" src="/asset/Img/svg/facebook.svg" alt="Facebook" />
+  </a>
+  <a class="footer__social-link" href="#" aria-label="Instagram">
+    <img class="footer__social-icon" src="/asset/Img/svg/insta.svg" alt="Instagram" />
+  </a>
+  <a class="footer__social-link" href="#" aria-label="LinkedIn">
+    <img class="footer__social-icon" src="/asset/Img/svg/linkedin.svg" alt="LinkedIn" />
+  </a>
+  <a class="footer__social-link" href="#" aria-label="Tiktok">
+    <img class="footer__social-icon" src="/asset/Img/svg/tiktok.svg" alt="Tiktok" />
+  </a>
+</section>
+</section><section class="footer__social">
+<h2>Nos réseaux sociaux</h2>
+<section class="footer__social-media">
+  <a class="footer__social-link" href="#" aria-label="Facebook">
+    <img class="footer__social-icon" src="/asset/Img/svg/facebook.svg" alt="Facebook" />
+  </a>
+  <a class="footer__social-link" href="#" aria-label="Instagram">
+    <img class="footer__social-icon" src="/asset/Img/svg/insta.svg" alt="Instagram" />
+  </a>
+  <a class="footer__social-link" href="#" aria-label="LinkedIn">
+    <img class="footer__social-icon" src="/asset/Img/svg/linkedin.svg" alt="LinkedIn" />
+  </a>
+  <a class="footer__social-link" href="#" aria-label="Tiktok">
+    <img class="footer__social-icon" src="/asset/Img/svg/tiktok.svg" alt="Tiktok" />
+  </a>
+</section>
+</section>
+        <img class="footer__social-icon" src="/asset/Img/svg/tiktok.svg" alt="Tiktok" />
+      </a>
+    </section>
+  </section>
+
+  <section class="footer__links">
+    <a class="footer__link" href="#">Mentions légales</a>
+    <a class="footer__link" href="#">Politique de confidentialité</a>
+    <a class="footer__link" href="#">Plan du site</a>
+  </section>
+</footer>
+
+
+
+
+
+<script>
+  const imgContent = document.querySelectorAll('.img-content-hover');
+
+function showImgContent(e) {
+  for(var i = 0; i < imgContent.length; i++) {
+    x = e.pageX;
+    y = e.pageY;
+    imgContent[i].style.transform = `translate3d(${x}px, ${y}px, 0)`;
+  }
+};
+
+document.addEventListener('mousemove', showImgContent);
+</script>
 
 <script src="./js/menu.js"></script>
 </body>

@@ -10,12 +10,9 @@ body.is-nav-open {
     color: $color-primary-white;
     position: relative;
     padding: 0;
-    // Étendre le fond sur toute la largeur de l'écran malgré le padding global du body
-    width: 100vw;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    margin-left: calc(-1 * var(--body-padding, 2rem));
+    margin-right: calc(-1 * var(--body-padding, 2rem));
+    width: calc(100% + 2 * var(--body-padding, 2rem));
 
     &__container{
         display: flex;
@@ -408,6 +405,7 @@ body.is-nav-open {
         overflow: hidden;
     
         @media (min-width: 1024px) {
+            padding: 4rem;
             margin: 2rem 0;
             min-height: 800px;
         }
@@ -419,6 +417,8 @@ body.is-nav-open {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
+        padding: 1rem;
+        padding-top: 2rem;
     
         @media (max-width: 768px) {
             grid-template-columns: 1fr;
@@ -427,16 +427,19 @@ body.is-nav-open {
         }
         
         @media (min-width: 1024px) {
+            padding-top: 3rem;
         }
     }
     
     &__hero-content {
         position: relative;
         z-index: 1;
+        margin-top: 280px;
         padding: 2rem;
         border-radius: 12px;
     
         @media (min-width: 768px) {
+            margin-top: 350px;
             padding: 3rem;
         }
     }
@@ -504,11 +507,11 @@ body.is-nav-open {
     &__title {
         font-weight: 700;
         text-transform: uppercase;
-        margin-top: 3rem;
+        margin-bottom: 1rem;
         line-height: 8rem;
 
         @media (max-width: 768px) {
-            font-size: 5rem;
+            font-size: 3rem;
             line-height: 4rem;
         }
     }
@@ -552,6 +555,6 @@ body.is-nav-open {
     
     @media (max-width: 768px) {
         font-size: 1rem;
-        line-height: 1px;
+        line-height: 2rem;
     }
 }

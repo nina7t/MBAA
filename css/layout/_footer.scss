@@ -7,12 +7,9 @@ footer {
   padding: 0;
   position: relative;
   overflow: hidden;
-  // Fond pleine largeur malgré le padding global du body
-  width: 100vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  margin-left: calc(-1 * var(--body-padding, 2rem));
+  margin-right: calc(-1 * var(--body-padding, 2rem));
+  width: calc(100% + 2 * var(--body-padding, 2rem));
 
   // Ligne décorative supérieure
   &::before {

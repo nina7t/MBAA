@@ -8,12 +8,12 @@
     gap: 20px;
     background-color: #957e18;
     color: #fffdf3;
-    padding: 50px;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    padding: clamp(1.5rem, 5vw, 50px);
+    margin-top: clamp(1.5rem, 10vw, 100px);
+    margin-bottom: clamp(1.5rem, 10vw, 100px);
 
     &-title {
-        font-size: 2.5rem;
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
         margin-bottom: 20px;
         color: $color-primary-white;
     }
@@ -31,33 +31,31 @@
     }
 
     &-img {
-        max-width: 100%;
+        max-width: 100px;
+        height: 100px;
         border-radius: 10px;
 
         &-black {
             background-color: $color-dark-svg;
+            width: 100px;
+            height: 100px;
         }
     }
 
     @media (min-width: 704px) {
-        width: 30rem;
-        
+        width: clamp(90%, 100%, 30rem);
     }
 
-
     @media (min-width: 904px) {
-        width: 50rem;
-        
+        width: clamp(90%, 100%, 50rem);
     }
 
     @media (min-width: 1024px) {
-        width: 70rem;
-        
+        width: clamp(90%, 100%, 70rem);
     }
 
     @media (min-width: 1600px) {
-        width: 90rem;
-        
+        width: clamp(90%, 100%, 90rem);
     }
 }
 
@@ -105,6 +103,27 @@ align-items: center;
 
 // Section programmation
 .main__programmation {
-    margin: 100px 60px;
+    margin: clamp(1.5rem, 8vw, 100px) clamp(1rem, 5vw, 60px);
 }
 
+
+
+.fichier-pedago{
+    padding: 40px;
+    background-color: $color-tertiary-green;
+    color: $color-primary-white;
+    border-radius: 10px;
+}
+
+.fichier-pedago__titre{
+    padding-bottom: 10px;
+}
+
+.fichier-pedago__para{
+    padding-bottom: 20px;
+}
+
+
+.fichier-pedago__button{
+    margin-top: 20px;
+}
