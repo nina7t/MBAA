@@ -1,7 +1,7 @@
 @use '../utils/variables' as *;
 
-// Banner principal
-.main__banner {
+// Bannière principale
+.main__banniere {
     display: flex;
     flex-direction: column;
     border-radius: 10px;
@@ -12,7 +12,7 @@
     max-width: 95%;
     box-sizing: border-box;
 
-    &-title {
+    &-titre {
         font-size: clamp(1.25rem, 3.5vw, 2.5rem);
         margin-bottom: 20px;
         color: $color-primary-white;
@@ -20,15 +20,15 @@
         overflow-wrap: break-word;
     }
 
-    &-subtitle{
+    &-sous-titre{
         font-weight: 400;
     }
 
-    &-title-black { 
+    &-titre-fonce { 
         font-size: 1.5rem;
         color: $color-dark-svg;
     }
-    &-content {
+    &-contenu {
         display: flex;
         flex-direction: column;
     }
@@ -38,7 +38,7 @@
         height: 40px;
        
 
-        &-black {
+        &-fonce {
             background-color: $color-dark-svg;
             width: 40px;
             height: 40px;
@@ -61,19 +61,19 @@
 }
 
 // Variante pour la section programmation
-.main__banner-prog {
+.main__banniere-prog {
     background-color: transparent;
 }
 
-// Layouts spécifiques (les conteneurs directs dans les banners)
-.main__banner--visite {
+// Layouts spécifiques (les conteneurs directs dans les bannières)
+.main__banniere--visite {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 20px;
 }
 
-.main__banner--programmation {
+.main__banniere--programmation {
     display: flex;
     flex-direction: row;
     background-color: $color-dark-svg;
@@ -84,14 +84,14 @@
     max-width: 100%;
 }
 
-.main__banner--evenement {
+.main__banniere--evenement {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 20px;
 }
 
-.main__banner--infos {
+.main__banniere--infos {
     display: flex;
     flex-direction: row;
     justify-content: start;
@@ -99,7 +99,7 @@
     gap: 20px;
 }
 
-.main__banner--explore {
+.main__banniere--explorer {
     display: flex;
     flex-direction: row;
 align-items: center;

@@ -833,7 +833,7 @@ body.is-nav-open {
   font-weight: 700;
 }
 
-.main__banner {
+.main__banniere {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -841,67 +841,66 @@ body.is-nav-open {
   background-color: #957e18;
   color: #fffdf3;
   padding: clamp(1.5rem, 4vw, 3rem);
-  margin: clamp(1.5rem, 5vw, 3rem) auto;
   max-width: 95%;
   box-sizing: border-box;
 }
-.main__banner-title {
+.main__banniere-titre {
   font-size: clamp(1.25rem, 3.5vw, 2.5rem);
   margin-bottom: 20px;
   color: #FFFDF3;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
-.main__banner-subtitle {
+.main__banniere-sous-titre {
   font-weight: 400;
 }
-.main__banner-title-black {
+.main__banniere-titre-fonce {
+  font-size: 1.5rem;
   color: brightness(0) saturate(100%) invert(0%) sepia(17%) saturate(23%) hue-rotate(345deg) brightness(96%) contrast(80%);
 }
-.main__banner-content {
+.main__banniere-contenu {
   display: flex;
   flex-direction: column;
 }
-.main__banner-img {
-  max-width: 100px;
-  height: 100px;
-  border-radius: 10px;
+.main__banniere-img {
+  max-width: 40px;
+  height: 40px;
 }
-.main__banner-img-black {
+.main__banniere-img-fonce {
   background-color: brightness(0) saturate(100%) invert(0%) sepia(17%) saturate(23%) hue-rotate(345deg) brightness(96%) contrast(80%);
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
 }
 @media (min-width: 768px) {
-  .main__banner {
+  .main__banniere {
     max-width: 90%;
   }
 }
 @media (min-width: 1024px) {
-  .main__banner {
+  .main__banniere {
     max-width: 85%;
     padding: 3rem;
   }
 }
 @media (min-width: 1600px) {
-  .main__banner {
+  .main__banniere {
     max-width: 80%;
     padding: 3.5rem;
   }
 }
 
-.main__banner-prog {
+.main__banniere-prog {
   background-color: transparent;
 }
 
-.main__banner--visite {
+.main__banniere--visite {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 20px;
 }
 
-.main__banner--programmation {
+.main__banniere--programmation {
   display: flex;
   flex-direction: row;
   background-color: brightness(0) saturate(100%) invert(0%) sepia(17%) saturate(23%) hue-rotate(345deg) brightness(96%) contrast(80%);
@@ -912,14 +911,14 @@ body.is-nav-open {
   max-width: 100%;
 }
 
-.main__banner--evenement {
+.main__banniere--evenement {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 20px;
 }
 
-.main__banner--infos {
+.main__banniere--infos {
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -927,7 +926,7 @@ body.is-nav-open {
   gap: 20px;
 }
 
-.main__banner--explore {
+.main__banniere--explorer {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -936,7 +935,6 @@ body.is-nav-open {
 
 .main__programmation {
   width: 100%;
-  padding: clamp(1rem, 3vw, 2rem);
   margin: 0;
   box-sizing: border-box;
 }
