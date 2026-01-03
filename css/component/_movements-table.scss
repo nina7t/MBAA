@@ -1,0 +1,119 @@
+@use '../utils/variables' as *;
+
+.movements-table-section {
+  padding: 4rem 2rem;
+  background-color: #f9fafb;
+
+  @media (min-width: 1024px) {
+    padding: 5rem 3rem;
+  }
+}
+
+.movements-table-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.movements-table-title {
+  text-align: center;
+  font-size: 2rem;
+  color: $color-primary-dark;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  font-family: $font-primary;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.movements-table-wrapper {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  overflow-x: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.movements-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  min-width: 800px;
+
+  thead {
+    background-color: $bg-or;
+    color: #FFFFFF;
+  }
+
+  th {
+    padding: 1.2rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 3px solid darken($bg-or, 10%);
+    font-family: $font-secondary;
+
+    &.period-col {
+      width: 12%;
+      min-width: 110px;
+    }
+
+    &.movement-col {
+      width: 18%;
+      min-width: 140px;
+    }
+
+    &.characteristics-col {
+      width: 45%;
+      min-width: 300px;
+    }
+
+    &.artists-col {
+      width: 25%;
+      min-width: 200px;
+    }
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #e8e8e8;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: rgba($bg-or, 0.08);
+    }
+
+    &:nth-child(even) {
+      background-color: #fafafa;
+
+      &:hover {
+        background-color: rgba($bg-or, 0.12);
+      }
+    }
+  }
+
+  td {
+    padding: 1.2rem;
+    vertical-align: top;
+    font-family: $font-secondary;
+    line-height: 1.6;
+
+    strong {
+      color: $color-primary-dark;
+      font-weight: 700;
+      font-size: 1rem;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .movements-table {
+    font-size: 0.85rem;
+
+    th, td {
+      padding: 0.8rem;
+    }
+  }
+}
+

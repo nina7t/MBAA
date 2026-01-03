@@ -11,7 +11,7 @@
   }
 
 // Images de fond par page
-$bg-home: url('/asset/Img/trois_statue.jpg');
+$bg-home: url('/asset/Img/statues-groupe.jpg');
 $bg-collections: url('/asset/Img/bg-collections.jpg');
 $bg-events: url('/asset/Img/bg-events.jpg');
 $bg-contact: url('/asset/Img/bg-contact.jpg');
@@ -22,7 +22,7 @@ $bg-contact: url('/asset/Img/bg-contact.jpg');
     $font-fallback: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     
     /* Couleurs */    
-    $color-white:rgb(253, 253, 253)3;
+    $color-white: rgb(253, 253, 253);
     $color-primary-white: #FFFDF3;
     $color-primary-dark: #191919;
     $color-secondary-gold: #957E18;
@@ -38,23 +38,50 @@ $bg-contact: url('/asset/Img/bg-contact.jpg');
     $color-dark-svg: brightness(0) saturate(100%) invert(0%) sepia(17%) saturate(23%) hue-rotate(345deg) brightness(96%) contrast(80%);
 
 
-    /* Typographie - Tailles (Mobile First */    
-    $font-size-h1-mobile: 4rem;
-    $font-size-h1-desktop: 10rem;
-    $font-size-h2-mobile: 2rem;
-    $font-size-h2-desktop: 3.125rem;
-    $font-size-h3-large: 2.1875rem;
-    $font-size-h3-medium: 1.625rem;
-    $font-size-h3-small: 1.5625rem;
-    $font-size-h4: 1.25rem;
-    $font-size-body: 1rem;
-    $font-size-body-small: 0.875rem;
-    $font-size-body-large: 1.125rem;
+    /* Typographie - Hiérarchie claire et impactante (Mobile First) */    
+    // H1 - Monumental et impactant (pour hero et titres principaux)
+    $font-size-h1-mobile: 2rem;        // 32px - Mobile
+    $font-size-h1-tablet: 3rem;        // 48px - Tablette
+    $font-size-h1-desktop: 4.5rem;     // 72px - Desktop
     
-    /* Hauteurs de ligne */    
-    $line-height-tight: 1.2;
-    $line-height-normal: 1.5;
-    $line-height-relaxed: 1.75;
+    // H2 - Grand et visible (sections principales)
+    $font-size-h2-mobile: 1.75rem;     // 28px - Mobile
+    $font-size-h2-tablet: 2.25rem;     // 36px - Tablette
+    $font-size-h2-desktop: 3rem;       // 48px - Desktop
+    
+    // H3 - Moyen (sous-sections)
+    $font-size-h3-mobile: 1.25rem;     // 20px - Mobile
+    $font-size-h3-tablet: 1.5rem;      // 24px - Tablette
+    $font-size-h3-desktop: 2rem;       // 32px - Desktop
+    $font-size-h3-large: 2rem;         // 32px - Desktop (large)
+    $font-size-h3-medium: 1.5rem;      // 24px - Tablette (medium)
+    $font-size-h3-small: 1.25rem;      // 20px - Mobile (small)
+    
+    // H4 - Petit mais visible (sous-titres)
+    $font-size-h4-mobile: 1rem;        // 16px - Mobile
+    $font-size-h4-tablet: 1.125rem;   // 18px - Tablette
+    $font-size-h4-desktop: 1.5rem;     // 24px - Desktop
+    $font-size-h4: 1.125rem;           // 18px - Par défaut (tablette)
+    
+    // H5 - Très petit (légendes, métadonnées)
+    $font-size-h5-mobile: 0.875rem;   // 14px - Mobile
+    $font-size-h5-desktop: 1rem;       // 16px - Desktop
+    
+    // H6 - Minimal (notes, copyright)
+    $font-size-h6-mobile: 0.75rem;     // 12px - Mobile
+    $font-size-h6-desktop: 0.875rem;  // 14px - Desktop
+    
+    // Corps de texte
+    $font-size-body: 1rem;            // 16px
+    $font-size-body-small: 0.875rem;  // 14px
+    $font-size-body-large: 1.125rem;  // 18px
+    
+    /* Hauteurs de ligne - Optimisées pour la lisibilité */    
+    $line-height-tight: 1.1;          // Pour les très grands titres
+    $line-height-compact: 1.2;         // Pour les titres moyens
+    $line-height-normal: 1.4;          // Pour les sous-titres
+    $line-height-relaxed: 1.5;         // Pour le corps de texte
+    $line-height-loose: 1.75;          // Pour les longs paragraphes
     
     /* Poids de police */    
     $font-weight-light: 300;
@@ -63,20 +90,46 @@ $bg-contact: url('/asset/Img/bg-contact.jpg');
     $font-weight-semibold: 600;
     $font-weight-bold: 700;
     
-    /* Espacements */    
-    $spacing-xs: 0.5rem;
-    $spacing-sm: 1rem;
-    $spacing-md: 1.5rem;
-    $spacing-lg: 2rem;
-    $spacing-xl: 3rem;
-    $spacing-2xl: 4rem;
-    $spacing-3xl: 6rem;
+    /* Espacements - Renforcent la hiérarchie typographique */    
+    $spacing-xs: 0.5rem;      // 8px
+    $spacing-sm: 1rem;        // 16px
+    $spacing-md: 1.5rem;      // 24px
+    $spacing-lg: 2rem;        // 32px
+    $spacing-xl: 3rem;        // 48px
+    $spacing-2xl: 4rem;       // 64px
+    $spacing-3xl: 6rem;       // 96px
+    $spacing-4xl: 8rem;       // 128px
     
-    /* Breakpoints */    
-    $breakpoint-sm: 36rem;
-    $breakpoint-md: 48rem;
-    $breakpoint-lg: 62rem;
-    $breakpoint-xl: 75rem;
+    /* Espacements verticaux spécifiques pour la typographie */
+    $spacing-h1-top: 0;                // Pas de marge supérieure pour h1
+    $spacing-h1-bottom: 2rem;          // 32px - Mobile
+    $spacing-h1-bottom-desktop: 3rem;  // 48px - Desktop
+    
+    $spacing-h2-top: 2rem;              // 32px - Mobile
+    $spacing-h2-top-desktop: 3rem;      // 48px - Desktop
+    $spacing-h2-bottom: 1.5rem;        // 24px - Mobile
+    $spacing-h2-bottom-desktop: 2rem;  // 32px - Desktop
+    
+    $spacing-h3-top: 1.5rem;            // 24px - Mobile
+    $spacing-h3-top-desktop: 2rem;      // 32px - Desktop
+    $spacing-h3-bottom: 1rem;          // 16px - Mobile
+    $spacing-h3-bottom-desktop: 1.5rem;// 24px - Desktop
+    
+    $spacing-h4-top: 1rem;              // 16px - Mobile
+    $spacing-h4-top-desktop: 1.5rem;    // 24px - Desktop
+    $spacing-h4-bottom: 0.75rem;        // 12px - Mobile
+    $spacing-h4-bottom-desktop: 1rem;   // 16px - Desktop
+    
+    /* Breakpoints - Mobile First */    
+    $breakpoint-xs: 20rem;      // 320px - Très petits mobiles
+    $breakpoint-sm: 36rem;       // 576px - Petits mobiles
+    $breakpoint-md: 48rem;       // 768px - Tablettes
+    $breakpoint-lg: 62rem;       // 992px - Petits desktop
+    $breakpoint-xl: 75rem;       // 1200px - Desktop
+    $breakpoint-2xl: 90rem;      // 1440px - Grand desktop
+    
+    /* Touch targets - Minimum 44x44px pour l'accessibilité mobile */
+    $touch-target-min: 2.75rem;  // 44px
     
     /* Hauteurs viewport */      
     $viewport-full: 100vh;
@@ -95,16 +148,19 @@ p{
 }
 
 .header__title {
-    font-size: 2rem;        // ← Taille de base : mobile
-    font-weight: 900;       
-   
+    // Utilise la hiérarchie H1 monumentale pour le hero
+    font-size: clamp($font-size-h1-mobile, 5vw + 1rem, $font-size-h1-desktop);
+    font-weight: 700;
+    line-height: $line-height-tight;
+    letter-spacing: -0.03em;
     
     @media (min-width: 768px) {
-        font-size: 5rem;    // ← Tablette : 4rem 
+        font-size: clamp($font-size-h1-tablet, 6vw + 1rem, $font-size-h1-desktop);
+        letter-spacing: -0.04em;
     }
     
     @media (min-width: 1024px) {
-        font-size: 10rem;    // ← Desktop : 5rem 
+        letter-spacing: -0.05em;
     }
 }
 

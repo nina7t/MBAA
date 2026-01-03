@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="./asset/Img/logo/logoMAT.png" />
-  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="icon" type="image/png" href="./asset/Img/logo/logo-mat-small.png" />
+  <link rel="stylesheet" href="./style.css" />
+
+  <!-- Locomotive Scroll CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.css" />
 
   <!-- Leaflet CSS -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -14,12 +17,12 @@ crossorigin=""/>
   <title>MBAA - Musée des Beaux-Arts et d'Archéologie de Besançon</title>
  
 </head>
-<body>
-  <header class="header" data-bg="fiche-oeuvre">
+<body data-scroll-container>
+  <header class="header header--fiche-oeuvre">
     <div class="header__container">
       <!-- Logo -->
-      <a class="header__logo-link" href="index.html">
-        <img class="header__logo-img" src="./asset/Img/logo/logoMAT.png" alt="Logo MBAA" />
+      <a class="header__logo-link" href="./index.html">
+        <img class="header__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
       </a>
   
       <!-- Bouton menu burger -->
@@ -32,7 +35,7 @@ crossorigin=""/>
         <ul class="header__nav-list header__nav-list--main">
         
           <li class="header__nav-item header__nav-item--has-submenu">
-            <a class="header__nav-link" href="/collections.html">
+            <a class="header__nav-link" href="./index.html#infos-pratiques">
               Infos pratiques
             </a>
             
@@ -40,20 +43,20 @@ crossorigin=""/>
             <ul class="header__submenu">
               <li class="header__submenu-item">
                 <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="infos-pratiques.html">Tarifs & horaires</a>
+                <a class="header__submenu-link" href="#">Tarifs & horaires</a>
               </li>
               
               <li class="header__submenu-item">
                 <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#sculptures">Visites guidées</a>
+                <a class="header__submenu-link" href="#">Visites guidées</a>
               </li>
               <li class="header__submenu-item">
                 <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#archeologie">Groupes & scolaires</a>
+                <a class="header__submenu-link" href="#">Groupes & scolaires</a>
               </li>
               <li class="header__submenu-item">
                 <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#arts-graphiques">Accessibilité</a>
+                <a class="header__submenu-link" href="#">Accessibilité</a>
               </li>
             </ul>
           </li>
@@ -61,7 +64,7 @@ crossorigin=""/>
           <!-- Menu Collections -->
 
           <li class="header__nav-item header__nav-item--has-submenu">
-            <a class="header__nav-link" href="/collections.html">
+            <a class="header__nav-link" href="./collections.html">
               Collections
       
             </a>
@@ -70,25 +73,25 @@ crossorigin=""/>
             <ul class="header__submenu">
               <li class="header__submenu-item">
                   <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#peintures">Explorer en ligne</a>
+                <a class="header__submenu-link" href="./collections.html#peintures">Explorer en ligne</a>
               </li>
               <li class="header__submenu-item">
                   <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#sculptures">Arts graphiques</a>
+                <a class="header__submenu-link" href="./collections.html#sculptures">Arts graphiques</a>
               </li>
               <li class="header__submenu-item">
                   <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#archeologie">Arts en volume</a>
+                <a class="header__submenu-link" href="./collections.html#archeologie">Arts en volume</a>
               </li>
               <li class="header__submenu-item">
                   <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#arts-graphiques">Archéologie</a>
+                <a class="header__submenu-link" href="./collections.html#arts-graphiques">Archéologie</a>
               </li>
             </ul>
           </li>
         
           <li class="header__nav-item header__nav-item--has-submenu">
-            <a class="header__nav-link" href="/collections.html">
+            <a class="header__nav-link" href="./evenement.html">
               Évènements             
             </a>
             
@@ -96,19 +99,19 @@ crossorigin=""/>
             <ul class="header__submenu">
               <li class="header__submenu-item">
                     <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#peintures">Explorer en ligne</a>
+                <a class="header__submenu-link" href="./evenement.html#peintures">Explorer en ligne</a>
               </li>
               <li class="header__submenu-item">
                   <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#sculptures">Arts graphiques</a>
+                <a class="header__submenu-link" href="./evenement.html#sculptures">Arts graphiques</a>
               </li>
               <li class="header__submenu-item">
                   <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#archeologie">Arts en volume</a>
+                <a class="header__submenu-link" href="./evenement.html#archeologie">Arts en volume</a>
               </li>
               <li class="header__submenu-item">
                   <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#arts-graphiques">Archéologie</a>
+                <a class="header__submenu-link" href="./evenement.html#arts-graphiques">Archéologie</a>
               </li>
             </ul>
           </li>
@@ -116,7 +119,7 @@ crossorigin=""/>
 
         
           <li class="header__nav-item header__nav-item--has-submenu">
-            <a class="header__nav-link" href="/collections.html">
+            <a class="header__nav-link" href="./musee-histoire.html">
               Le musée      
             </a>
             
@@ -124,26 +127,26 @@ crossorigin=""/>
             <ul class="header__submenu">
               <li class="header__submenu-item">
                   <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#peintures">Histoire</a>
+                <a class="header__submenu-link" href="./musee-histoire.html#peintures">Histoire</a>
   
               </li>
               <li class="header__submenu-item">
                   <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#sculptures">L'équipe</a>
+                <a class="header__submenu-link" href="#">L'équipe</a>
               </li>
               <li class="header__submenu-item">
                   <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#archeologie">Partenaires</a>
+                <a class="header__submenu-link" href="#">Partenaires</a>
               </li>
               <li class="header__submenu-item">
                   <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="/collections.html#arts-graphiques">Archives</a>
+                <a class="header__submenu-link" href="#">Archives</a>
               </li>
             </ul>
           </li>
           
           <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="#">Contact</a>
+            <a class="header__nav-link nav-dot" href="./index.html#infos-pratiques">Contact</a>
           </li>
         </ul>
 
@@ -151,7 +154,7 @@ crossorigin=""/>
   
         <ul class="header__nav-list header__nav-list--secondary">
           <li class="header__nav-item">
-            <a class="header__nav-link" href="#" aria-label="Connexion">
+            <a class="header__nav-link" href="./connexion.html" aria-label="Connexion">
               <img class="header__nav-icon" src="./asset/Img/svg/connexion.svg" alt="" />
             </a>
           </li>
@@ -178,7 +181,7 @@ crossorigin=""/>
       </nav>
     </div>
     <div class="header__hero">
-      <div class="header__hero-content">
+      <div class="header__hero-content header__hero-content--reduced">
         <h1 class="header__title">PAUL<br>COLLOMB<br>
           <span>FICHE ARTISTE</span>
         </h1>
@@ -362,19 +365,19 @@ crossorigin=""/>
   <section class="">
     <div class="">
         <div class="">
-            <img class="" src="/asset/Img/tableaux/art-contemporain.png" alt="Œuvre d'un artiste en lien" />
+            <img class="" src="/asset/Img/tableaux/tableau-art-contemporain.png" alt="Œuvre d'un artiste en lien" />
             <h3 class="">Vincent
                 Barré</h3>
             <p class="">Sculpteur contemporain français, Vincent Barré travaille le plomb, le bois ou la cire, qu’il façonne dans un dialogue entre matière et espace. Son œuvre, à la fois architecturale et méditative, interroge le rapport du corps à la nature et à la mémoire des lieux. ..</p>
         </div>
         <div class="">
-            <img class="" src="/asset/Img/tableaux/nu_nature_morte.png" alt="Œuvre d'un artiste en lien" />
+            <img class="" src="/asset/Img/tableaux/tableau-nu-nature-morte.png" alt="Œuvre d'un artiste en lien" />
             <h3 class="">Henri
                 Matisse</h3>
             <p class="">Chef de file du fauvisme, Matisse révolutionne la peinture par sa recherche du bonheur à travers la couleur. Il peint avec des aplats puissants et des compositions équilibrées, célébrant la joie, la danse et la vie....</p>
         </div>
         <div class="">
-            <img class="" src="/asset/Img/tableaux/ocean-contemporain.png" alt="Œuvre d'un artiste en lien" />
+            <img class="" src="/asset/Img/tableaux/tableau-ocean-contemporain.png" alt="Œuvre d'un artiste en lien" />
             <h3 class="">Louis
                 Valtat</h3>
             <p class="">Précurseur du fauvisme, Louis Valtat mêle couleurs éclatantes et formes simplifiées. Ami de Matisse et de Bonnard, il explore la lumière du Sud avec audace, peignant paysages, portraits et scènes de bord de mer. ..</p>
@@ -383,19 +386,19 @@ crossorigin=""/>
 
     <div class="">
         <div class="">
-            <img class="" src="/asset/Img/tableaux/Signac_-_Venise,_la_voile_jaune,_1904,_Da.970.1.100.jpg" alt="Œuvre d'un artiste en lien" />
+            <img class="" src="/asset/Img/tableaux/tableau-signac-venise.jpg" alt="Œuvre d'un artiste en lien" />
             <h3 class="">Paul
                 Signac</h3>
             <p class="">Compagnon de Seurat, Paul Signac est un maître du pointillisme, technique où la couleur se décompose en petites touches juxtaposées. Passionné par la mer, il peint ports et voiliers avec une rigueur lumineuse et scientifique....</p>
         </div>
         <div class="">
-            <img class="" src="/asset/Img/tableaux/ceija-stojka_sans-titre_1993.jpg" alt="Œuvre d'un artiste en lien" />
+            <img class="" src="/asset/Img/tableaux/tableau-ceija-stojka-sans-titre.jpg" alt="Œuvre d'un artiste en lien" />
             <h3 class="">Ceija
                 Stojka</h3>
             <p class="">Artiste autrichienne d’origine rom, Ceija Stojka a survécu aux camps de concentration nazis. Elle commence à peindre à plus de 50 ans pour témoigner de la mémoire du génocide rom...</p>
         </div>
         <div class="">
-            <img class="" src="/asset/Img/tableaux/Femme_nu.png" alt="Œuvre d'un artiste en lien" />
+            <img class="" src="/asset/Img/tableaux/tableau-femme-nu.png" alt="Œuvre d'un artiste en lien" />
             <h3 class="">Pierre
                 Bonnard</h3>
             <p class="">Peintre français du groupe des Nabis, Pierre Bonnard est connu pour ses intérieurs lumineux, ses natures mortes et ses nus baignés de couleurs chaude...</p>
@@ -414,7 +417,7 @@ crossorigin=""/>
     <div class="footer__contain-form">
     <div class="footer__logo-container">
       <a class="footer__logo-link" href="#">
-        <img class="footer__logo-img" src="./asset/Img/logo/logoMAT.png" alt="Logo MBAA" />
+        <img class="footer__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
         <h2 class="footer__title">Suivez-nous pour recevoir la newsletter</h2>
       </a>
     <form class="footer__form">
@@ -553,6 +556,25 @@ crossorigin=""/>
     </section>
   </footer>
 
+<!-- Locomotive Scroll JS -->
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.umd.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+      smartphone: {
+        smooth: true
+      },
+      tablet: {
+        smooth: true
+      },
+      multiplier: 1,
+      getSpeed: true,
+      getDirection: true
+    });
+  });
+</script>
 
   </body>
   </html>

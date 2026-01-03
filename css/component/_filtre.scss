@@ -1,21 +1,35 @@
 @use '../utils/variables' as *;
 
 .filtre{
-    margin: clamp(1rem, 3vw, 2rem);
-    padding: 0 clamp(0.5rem, 2vw, 1rem);
+    margin: 1rem 0.5rem;
+    padding: 0 0.5rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+        margin: clamp(1rem, 3vw, 2rem);
+        padding: 0 clamp(0.5rem, 2vw, 1rem);
+        flex-direction: row;
+        gap: 0;
+    }
 }
 
 .filtre__title {
     font-size: clamp(0.875rem, 2vw, 1rem);
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     text-align: center;
     width: 100%;
     
+    @media (min-width: 768px) {
+        margin-bottom: 1rem;
+    }
+    
     @media (min-width: 1024px) {
         text-align: left;
+        margin-bottom: 1rem;
     }
 }
 
@@ -37,9 +51,34 @@
 .filtre__list-item{
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: clamp(0.5rem, 1vw, 12px);
     font-size: clamp(0.75rem, 2vw, 1rem);
     white-space: nowrap;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+    min-height: $touch-target-min;
+
+    &:active {
+        transform: scale(0.95);
+        background: rgba(149, 126, 24, 0.1);
+    }
+
+    &--active {
+        background: rgba(149, 126, 24, 0.2);
+        font-weight: 600;
+    }
+
+    @media (min-width: 1024px) {
+        padding: 0.5rem 1rem;
+        
+        &:hover {
+            background: rgba(149, 126, 24, 0.1);
+        }
+    }
 }
 
 .filtre__list-img{

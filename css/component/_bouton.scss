@@ -1,0 +1,160 @@
+@use '../utils/variables' as *;
+
+// Mixin pour les propriétés de base uniquement
+@mixin button-base {
+    min-height: $touch-target-min;
+    padding: clamp(0.875rem, 2.5vw, 15px) clamp(1.25rem, 4vw, 30px);
+    border-radius: 10px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    &:active {
+        transform: scale(0.97);
+    }
+}
+
+// Mixin pour le responsive (à appeler à la fin)
+@mixin button-responsive {
+    @media (min-width: 1024px) {
+        padding: 20px 50px;
+        font-size: 1.1rem;
+        max-width: 250px;
+    }
+}
+
+.main__button--savoir-white{
+    @include button-base;
+    color: $color-primary-white;
+    max-width: 100%;
+    width: 100%;
+    border: 3px solid $color-primary-white;
+    
+    @media (min-width: 768px) {
+        max-width: 200px;
+        width: auto;
+    }
+    
+    @media (min-width: 1024px) {
+        max-width: 250px;
+        
+        &:hover{
+            color: $color-primary-dark;
+            background-color: $color-primary-white;
+        }
+    }
+    
+    @include button-responsive;
+}
+
+.main__button--savoir-white-black{
+    @include button-base;
+    color: $color-primary-dark;
+    max-width: 150px;
+    background-color: $color-primary-white;
+    
+    @include button-responsive;
+}
+
+.main__button--infos-or{
+    @include button-base;
+    color: $bg-or;
+    max-width: 100%;
+    width: 100%;
+    border: 3px solid $bg-or;
+    
+    @media (min-width: 768px) {
+        max-width: 250px;
+        width: auto;
+    }
+    
+    @media (min-width: 1024px) {
+        max-width: 300px;
+        
+        &:hover{
+            color: $color-primary-white;
+            background-color: $color-primary-dark;
+            border-color: $color-primary-dark;
+        }
+    }
+    
+    @include button-responsive;
+}
+
+.main__button--visite-black{
+    @include button-base;
+    color: $color-primary-dark;
+    max-width: 100%;
+    width: 100%;
+    border: 3px solid $color-primary-dark;
+    
+    @media (min-width: 768px) {
+        max-width: 200px;
+        width: auto;
+    }
+    
+    @media (min-width: 1024px) {
+        max-width: 250px;
+        
+        &:hover{
+            color: $color-primary-white;
+            background-color: $color-primary-dark;
+        }
+    }
+    
+    @include button-responsive;
+}
+
+.main__button--explore-black{
+    @include button-base;
+    color: $color-primary-dark;
+    max-width: 100%;
+    width: 100%;
+    border: 3px solid $color-primary-dark;
+    
+    @media (min-width: 768px) {
+        max-width: 200px;
+        width: auto;
+    }
+    
+    @media (min-width: 1024px) {
+        max-width: 250px;
+        
+        &:hover{
+            color: $color-primary-white;
+            background-color: $color-primary-dark;
+        }
+    }
+    
+    @include button-responsive;
+}
+
+.main__button--evenement-black{
+    @include button-base;
+    color: $color-primary-dark;
+    max-width: 100%;
+    width: 100%;
+    border: 3px solid $color-primary-dark;
+    
+    @media (min-width: 768px) {
+        max-width: 200px;
+        width: auto;
+    }
+    
+    @media (min-width: 1024px) {
+        max-width: 250px;
+        
+        &:hover{
+            color: $color-primary-white;
+            background-color: $color-primary-dark;
+        }
+    }
+    
+    @include button-responsive;
+}

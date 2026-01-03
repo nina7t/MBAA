@@ -1,73 +1,108 @@
 <!doctype html>
+<!-- 
+    PAGE D'ACCUEIL - MBAA
+    Page principale du site du Musée des Beaux-Arts et d'Archéologie de Besançon
+    Contient :
+    - En-tête avec navigation et hero avec effet parallax
+    - Section programmation et expositions
+    - Section visite guidée
+    - Section collections
+    - Section événements
+    - Section contact avec carte
+    - Pied de page
+-->
 <html lang="fr">
 <head>
+  <!-- Encodage des caractères UTF-8 pour supporter les caractères français -->
   <meta charset="UTF-8" />
+  <!-- Configuration responsive pour s'adapter aux différentes tailles d'écran -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="./asset/Img/logo/logoMAT.png" />
-  <link rel="stylesheet" href="./css/styles.css" />
+  <!-- Icône du site affichée dans l'onglet du navigateur -->
+  <link rel="icon" type="image/png" href="./asset/Img/logo/logo-mat-small.png" />
+  <!-- Feuille de style principale du site -->
+  <link rel="stylesheet" href="./style.css" />
 
-  <!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-crossorigin=""/>
+  <!-- Bibliothèque Locomotive Scroll pour le défilement fluide et les effets parallax -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.css" />
 
+  <!-- Bibliothèque Leaflet CSS pour l'affichage de la carte interactive -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+
+  <!-- Titre de la page affiché dans l'onglet du navigateur -->
   <title>MBAA - Musée des Beaux-Arts et d'Archéologie de Besançon</title>
  
 </head>
-<body>
-  <header class="header">
+<!-- Attribut data-scroll-container requis par Locomotive Scroll pour le défilement fluide -->
+<body data-scroll-container>
+  <!-- En-tête principal du site avec navigation et hero -->
+  <header class="header header--index">
+    <!-- Conteneur de l'en-tête -->
     <div class="header__container">
-      <!-- Logo -->
-      <a class="header__logo-link" href="#">
-        <img class="header__logo-img" src="./asset/Img/logo/logoMAT.png" alt="Logo MBAA" />
+      <!-- Logo du musée (lien vers la page d'accueil) -->
+      <a class="header__logo-link" href="./index.html">
+        <img class="header__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
       </a>
   
-      <!-- Bouton menu burger -->
+      <!-- Bouton menu burger pour la navigation mobile -->
       <button class="header__menu-toggle" aria-label="menu" aria-expanded="false" aria-controls="headerNav">
         <span class="header__menu-bar"></span>
       </button>
   
-      <!-- Navigation -->
+      <!-- Navigation principale du site -->
       <nav class="header__nav" id="headerNav" aria-hidden="true">
+        <!-- Liste de navigation principale -->
         <ul class="header__nav-list header__nav-list--main">
+          <!-- Lien vers les informations pratiques -->
           <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="#">Infos pratiques</a>
+            <a class="header__nav-link nav-dot" href="#infos-pratiques">Infos pratiques</a>
           </li>
+          <!-- Lien vers la page des collections -->
           <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="/collections.html">Collections</a>
+            <a class="header__nav-link nav-dot" href="./collections.html">Collections</a>
           </li>
+          <!-- Lien vers la page des événements -->
           <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="#">Évènements</a>
+            <a class="header__nav-link nav-dot" href="./evenement.html">Évènements</a>
           </li>
+          <!-- Lien vers la page d'histoire du musée -->
           <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="#">Le musée</a>
+            <a class="header__nav-link nav-dot" href="./musee-histoire.html">Le musée</a>
           </li>
+          <!-- Lien vers la section contact -->
           <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="#">Contact</a>
+            <a class="header__nav-link nav-dot" href="#infos-pratiques">Contact</a>
           </li>
         </ul>
   
+        <!-- Liste de navigation secondaire (actions rapides) -->
         <ul class="header__nav-list header__nav-list--secondary">
+          <!-- Lien vers la page de connexion admin -->
           <li class="header__nav-item">
-            <a class="header__nav-link" href="#" aria-label="Connexion">
+            <a class="header__nav-link" href="./connexion.html" aria-label="Connexion">
               <img class="header__nav-icon" src="./asset/Img/svg/connexion.svg" alt="" />
             </a>
           </li>
+          <!-- Lien vers la billetterie -->
           <li class="header__nav-item">
             <a class="header__nav-link" href="#" aria-label="Billetterie">
               <img class="header__nav-icon" src="./asset/Img/svg/ticket.svg" alt="" />
             </a>
           </li>
         
+          <!-- Bouton de recherche -->
           <li class="header__nav-item">
-            <a class="header__nav-link" href="#" aria-label="Recherche">
+            <a class="header__nav-link" href="#" id="search-trigger" aria-label="Recherche">
               <img class="header__nav-icon" src="./asset/Img/svg/Search.svg" alt="" />
             </a>
           </li>
+          <!-- Sélecteur de langue : Français -->
           <li class="header__nav-item">
             <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">FR
             </a>
           </li>
+          <!-- Sélecteur de langue : Anglais -->
           <li class="header__nav-item">
             <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">EN
             </a>
@@ -76,73 +111,103 @@ crossorigin=""/>
       </nav>
     </div>
   
-    <!-- Section hero avec effet parallax -->
-<div class="header__hero">
-  <div class="header__hero-parallax">
-    <div class="header__hero-background header__hero-background--layer1" data-speed-x="0.3" data-speed-y="0.2">
-      <img src="./asset/Img/tableaux/Signac_-_Venise,_la_voile_jaune,_1904,_Da.970.1.100.jpg" alt="La Grande Vague de Kanagawa">
-    </div>
-    <div class="header__hero-background header__hero-background--layer2" data-speed-x="-0.2" data-speed-y="0.4">
-      <img src="./asset/Img/tableaux/P_guenat_cuisto.jpg" alt="Femme nu sur rocher">
-    </div>
-    <div class="header__hero-background header__hero-background--layer3" data-speed-x="-0.4" data-speed-y="0.3">
-      <img src="./asset/Img/tableaux/Lhallali-du-cerf-episode-de-chasse-a-courre-sur-un-terrain-de-neige.jpg" alt="Œuvre classique">
-    </div>
-  </div>
+    <!-- Section hero avec effet parallax (images en arrière-plan qui se déplacent à différentes vitesses) -->
+    <div class="header__hero">
+      <div class="header__hero-content">
+        <!-- Contenu textuel du hero (titre principal) -->
+        <div class="header__hero-text">
+          <h1 class="header__title">
+            MUSÉE<br>DES<br>BEAUX<br>ARTS
+          </h1>
+          <div class="header__hero-subtitle" id="sous-menu-header">
+            et d'archéologie<br>de Besançon
+          </div>
+        </div>
+
+        <!-- Conteneur pour les couches d'images avec effet parallax -->
+        <div class="header__hero-parallax">
+          <!-- Première couche d'image avec vitesse de déplacement personnalisée -->
+          <div class="header__hero-background header__hero-background--layer1" data-speed-x="0.3" data-speed-y="0.2">
+            <img src="./asset/Img/tableaux/tableau-guenat-cuisinier.jpg" alt="Scène de repas impressionniste">
+          </div>
+          <!-- Deuxième couche d'image avec vitesse de déplacement différente -->
+          <div class="header__hero-background header__hero-background--layer2" data-speed-x="-0.2" data-speed-y="0.4">
+            <img src="./asset/Img/tableaux/tableau-signac-venise.jpg" alt="Sculpture et tableau classique">
+          </div>
+          <!-- Troisième couche d'image avec vitesse de déplacement différente -->
+          <div class="header__hero-background header__hero-background--layer3" data-speed-x="-0.4" data-speed-y="0.3">
+            <img src="./asset/Img/tableaux/tableau-hallali-cerf-chasse.jpg" alt="Peinture classique">
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="header__hero-cta">
+        <div class="header__cta-text">
+          Plongez dans 5000 ans d'art
+        </div>
+        <a href="./reservation.html" class="header__cta-button">Réserver un billet</a>
+      </div>
   
-  <div class="header__hero-content">
-    <h1 class="header__title">
-      Musée<br>des<br>beaux<br>arts<br>
-    <span id="sous-menu-header">et d'archéologie<br>
-    de besançon</span>
-  </h1>
-  </div>
-</div>
-  
-    <!-- Flèche de scroll -->
-    <div class="header__scroll">
-      <img class="header__scroll-icon" src="./asset/Img/svg/icon-arrow_bas.svg" alt="Défiler vers le bas" />
+      <!-- Flèche de scroll indiquant qu'on peut faire défiler la page vers le bas -->
+      <div class="header__scroll">
+        <img class="header__scroll-icon" src="./asset/Img/svg/icon-arrow_bas.svg" alt="Défiler vers le bas" />
+      </div>
     </div>
   </header>
 
 
+  <!-- Contenu principal de la page -->
   <main class="main">
+    <!-- Section bannière de programmation -->
     <section class="main__programmation">
       <section class="main__banniere-prog">
         <section class="main__banniere--programmation">
+          <!-- Image décorative (croix noire) -->
           <img class="main__banniere-img-fonce" src="./asset/Img/svg/croix-black.svg" alt="Croix noire" />
+          <!-- Titre de la programmation avec période -->
           <h2 class="main__banniere-titre-fonce">
             Programmation<br />octobre > avril
           </h2>
         </section>
       </section>
     </section>
-    <section class="main__card">
-      <div class="main__card-agencement">
-      <img class="main__card-img" src="./asset/Img/groupe_visite.jpg" alt="Groupe en visite" />
-     </div>
-      <div class="main__card-container">
-      <h2 class="main__card-title">Expositions et accrochages</h2>
-      <h3 class="main__card-subtitle">
-        Ceija Stojka / "Garder les yeux ouverts"
-      </h3>
-      <h4 class="main__card-text">27.02 - 21.09.2026</h4>
-      <h4 class="main__card-text-subtitle">
-        Exposition déconseillée aux enfants de moins de 10 ans.
-      </h4>
-      <p class="main__card-description">
-        Née en Autriche, dans la communauté rom des Lovara, Ceija Stojka
-        (1933-2013) est une artiste autodidacte, à la fois autrice, peintre et
-        dessinatrice. Rescapée des camps de concentration d'Auschwitz,
-        Ravensbrück et Bergen-Belsen dans lesquels elle a vécu de 1943 à 1945,
-        âgée de 10 à 12 ans, elle fut la première à témoigner du génocide des
-        Tsiganes perpétré par les Nazis, plus de quarante ans après les
-        événements. Elle publie tout d'abord un livre, Nous vivons cachés.
-        Récits d'une Romni à travers le siècle, en 1988....
-      </p>
     
-      <a class="main__button--savoir-white" href="#">En savoir +</a>
-    </div> 
+    <!-- Section carte d'exposition mise en avant -->
+    <section class="main__card">
+      <!-- Conteneur pour l'image de l'exposition -->
+      <div class="main__card-agencement">
+        <img class="main__card-img" src="./asset/Img/visite-groupe.jpg" alt="Groupe en visite" />
+      </div>
+      <!-- Conteneur pour le contenu textuel de l'exposition -->
+      <div class="main__card-container">
+        <!-- Titre de la section -->
+        <h2 class="main__card-title">Expositions et accrochages</h2>
+        <!-- Titre de l'exposition mise en avant -->
+        <h3 class="main__card-subtitle">
+          Ceija Stojka / "Garder les yeux ouverts"
+        </h3>
+        <!-- Dates de l'exposition -->
+        <h4 class="main__card-text">27.02 - 21.09.2026</h4>
+        <!-- Avertissement concernant l'âge -->
+        <h4 class="main__card-text-subtitle">
+          Exposition déconseillée aux enfants de moins de 10 ans.
+        </h4>
+        <!-- Description de l'exposition -->
+        <p class="main__card-description">
+          Née en Autriche, dans la communauté rom des Lovara, Ceija Stojka
+          (1933-2013) est une artiste autodidacte, à la fois autrice, peintre et
+          dessinatrice. Rescapée des camps de concentration d'Auschwitz,
+          Ravensbrück et Bergen-Belsen dans lesquels elle a vécu de 1943 à 1945,
+          âgée de 10 à 12 ans, elle fut la première à témoigner du génocide des
+          Tsiganes perpétré par les Nazis, plus de quarante ans après les
+          événements. Elle publie tout d'abord un livre, Nous vivons cachés.
+          Récits d'une Romni à travers le siècle, en 1988....
+        </p>
+    
+        <!-- Bouton pour en savoir plus sur l'exposition -->
+        <a class="main__button--savoir-white" href="#">En savoir +</a>
+      </div> 
     </section>
     <section class="main__visite">
       <section class="main__banniere">
@@ -288,25 +353,25 @@ crossorigin=""/>
 
       <section class="carousel">
         <section class="filtre">
-          <h3 class="filtre__title">Filtrer par public :</h3>
+          <h3 class="filtre__title">Filtrer par type :</h3>
 
           <ul class="filtre__list">
-            <li class="filtre__list-item filtre__list-item--active">Tous</li>
-            <li class="filtre__list-item">
+            <li class="filtre__list-item filtre__list-item--active" data-filter="tous">Tous</li>
+            <li class="filtre__list-item" data-filter="ateliers">
               <img class="filtre__list-img" src="./asset/Img/svg/icon-arrow-filtre.svg" alt />
-              Nouveauté
+              Ateliers
             </li>
-            <li class="filtre__list-item">
+            <li class="filtre__list-item" data-filter="visites">
               <img class="filtre__list-img" src="./asset/Img/svg/icon-arrow-filtre.svg" alt />
-              Activités
+              Visites
             </li>
-            <li class="filtre__list-item">
+            <li class="filtre__list-item" data-filter="conferences">
               <img class="filtre__list-img" src="./asset/Img/svg/icon-arrow-filtre.svg" alt />
-              Âges
+              Conférences
             </li>
-            <li class="filtre__list-item">
+            <li class="filtre__list-item" data-filter="nouveaute">
               <img class="filtre__list-img" src="./asset/Img/svg/icon-arrow-filtre.svg" alt />
-              Durée
+              Nouveautés
             </li>
             <li class="filtre__list-icon">
               <img class="filtre__list__drag-img" src="./asset/Img/svg/icon-arrow-gauche-hover.svg" alt="Précédent" />
@@ -316,9 +381,9 @@ crossorigin=""/>
         </section>
 
         <div class="carousel__list">
-          <div class="carousel__item__container">
+          <div class="carousel__item__container" data-filter="tous ateliers">
             <div class="carousel__item" style="
-                  background-image: url(&quot;./asset/Img/atelier-jeune-peinture.jpg&quot;);
+                  background-image: url(&quot;./asset/Img/atelier-jeunes.jpg&quot;);
                 ">
               <span class="carousel__item-badge carousel__item-badge--free">Gratuit</span>
               <div>
@@ -335,9 +400,9 @@ crossorigin=""/>
               </div>
             </div>
           </div>
-          <div class="carousel__item__container">
+          <div class="carousel__item__container" data-filter="tous visites">
             <div class="carousel__item" style="
-                  background-image: url(&quot;./asset/Img/groupe_visite.jpg&quot;);
+                  background-image: url(&quot;./asset/Img/visite-groupe.jpg&quot;);
                 ">
               <span class="carousel__item-badge carousel__item-badge--price">10
                 euros / personne</span>
@@ -354,9 +419,9 @@ crossorigin=""/>
               </div>
             </div>
           </div>
-          <div class="carousel__item__container">
+          <div class="carousel__item__container" data-filter="tous visites nouveaute">
             <div class="carousel__item" style="
-                  background-image: url(&quot;./asset/Img/discussion-hommes.jpg&quot;);
+                  background-image: url(&quot;./asset/Img/misc-discussion.jpg&quot;);
                 ">
               <span class="carousel__item-badge carousel__item-badge--free">Gratuit</span>
               <h3 class="carousel__item-title">Visite Re(découvrir)</h3>
@@ -371,7 +436,7 @@ crossorigin=""/>
               </div>
             </div>
           </div>
-          <div class="carousel__item__container">
+          <div class="carousel__item__container" data-filter="tous ateliers">
             <div class="carousel__item" style="
                   background-image: url(&quot;./asset/Img/atelier-poterie.png&quot;);
                 ">
@@ -388,9 +453,9 @@ crossorigin=""/>
               </div>
             </div>
           </div>
-          <div class="carousel__item__container">
+          <div class="carousel__item__container" data-filter="tous conferences">
             <div class="carousel__item" style="
-                  background-image: url(&quot;./asset/Img/atelier-vin.webp&quot;);
+                  background-image: url(&quot;./asset/Img/atelier-degustation-vin.webp&quot;);
                 ">
               <span class="carousel__item-badge carousel__item-badge--price">5
                 euros / personne</span>
@@ -437,7 +502,7 @@ crossorigin=""/>
     </section>
     <div class="main__explore-grid">
       <div class="main__explore-card">
-        <img class="main__explore-card-img" src="/asset/Img/tableaux/Lhallali-du-cerf-episode-de-chasse-a-courre-sur-un-terrain-de-neige.jpg" alt="desc">
+        <img class="main__explore-card-img" src="/asset/Img/tableaux/tableau-hallali-cerf-chasse.jpg" alt="desc">
         <div class="main__explore-card-wrappper">
           <h3 class="main__explore-card-title">Beaux arts</h3>
           <p class="main__explore-card-text">
@@ -447,7 +512,7 @@ crossorigin=""/>
         </div>
       </div>
       <div class="main__explore-card-child">
-                  <img class="main__explore-card-img" src="/asset/Img/tableaux/P-guenat_vieux.jpg" alt="desc">
+                  <img class="main__explore-card-img" src="/asset/Img/tableaux/tableau-guenat-vieillard.jpg" alt="desc">
                   <div class="main__explore-card-wrappper">
         <h3 class="main__explore-card-title">Portraits</h3>
         <p class="main__explore-card-text">
@@ -457,7 +522,7 @@ crossorigin=""/>
       </div>
       </div>
       <div class="main__explore-card-fat" style="
-            background-image: url(&quot;./asset/Img/tableaux/P_guenat_cuisto.jpg&quot;);
+            background-image: url(&quot;./asset/Img/tableaux/tableau-guenat-cuisinier.jpg&quot;);
           ">
         <h3 class="main__explore-card-title">Tableaux</h3>
         <p class="main__explore-card-text">
@@ -475,7 +540,7 @@ crossorigin=""/>
         </p>
       </div>
       <div class="main__explore-card-tall" style="
-            background-image: url(&quot;./asset/Img/trois_statue.jpg&quot;);
+            background-image: url(&quot;./asset/Img/statues-groupe.jpg&quot;);
           ">
         <h3 class="main__explore-card-title">Sculptures</h3>
         <p class="main__explore-card-text">
@@ -488,7 +553,7 @@ crossorigin=""/>
       <a class="main__button--explore-black" href="#">En savoir +</a>
     </div>
 
-    <section class="main__infos-utiles">
+    <section class="main__infos-utiles" id="infos-pratiques">
 
       <section class="main__banniere">
         <section class="main__banniere--infos">
@@ -589,7 +654,7 @@ crossorigin=""/>
     <div class="footer__contain-form">
     <div class="footer__logo-container">
       <a class="footer__logo-link" href="#">
-        <img class="footer__logo-img" src="./asset/Img/logo/logoMAT.png" alt="Logo MBAA" />
+        <img class="footer__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
         <h2 class="footer__title">Suivez-nous pour recevoir la newsletter</h2>
       </a>
     <form class="footer__form">
@@ -604,74 +669,22 @@ crossorigin=""/>
           <h4 class="footer__nav-title">Le musée</h4>
         </li>
         <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Présentation & histoire</a>
+          <a class="footer__nav-link" href="./musee-histoire.html">Présentation & histoire</a>
         </li>
         <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">L'équipe & conservation</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Architecture & bâtiment</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Amis du musée / mécénat</a>
+          <a class="footer__nav-link" href="#">Collections</a>
         </li>
       </ul>
 
       <ul class="footer__nav-list">
         <li class="footer__nav-item">
-          <h4 class="footer__nav-title">Expositions et activités</h4>
+          <h4 class="footer__nav-title">Programmation</h4>
         </li>
         <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Expositions temporaires</a>
+          <a class="footer__nav-link" href="./evenement.html">Événements</a>
         </li>
         <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Collections permanentes</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Agenda complet</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Événements & conférences</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Ateliers & visites guidées</a>
-        </li>
-      </ul>
-
-      <ul class="footer__nav-list">
-        <li class="footer__nav-item">
-          <h4 class="footer__nav-title">Ressources</h4>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Recherche et documentation</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Publications</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Base de données des œuvres</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Espace presse</a>
-        </li>
-      </ul>
-
-      <ul class="footer__nav-list">
-        <li class="footer__nav-item">
-          <h4 class="footer__nav-title">Infos pratiques</h4>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Recrutement</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Partenariats</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Mentions légales</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Politique de
-            confidentialité</a>
+          <a class="footer__nav-link" href="./collections.html">Collections</a>
         </li>
       </ul>
 
@@ -683,22 +696,10 @@ crossorigin=""/>
           <a class="footer__nav-link" href="#">Horaires et tarifs</a>
         </li>
         <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Accessibilité</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Accès et stationnement</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Groupes et écoles</a>
-        </li>
-        <li class="footer__nav-item">
           <a class="footer__nav-link" href="#">Nous contacter</a>
         </li>
         <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">FAQ</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Plan du site</a>
+          <a class="footer__nav-link" href="#">Accessibilité</a>
         </li>
       </ul>
     </section>
@@ -724,7 +725,6 @@ crossorigin=""/>
     <section class="footer__links">
       <a class="footer__link" href="#">Mentions légales</a>
       <a class="footer__link" href="#">Politique de confidentialité</a>
-      <a class="footer__link" href="#">Plan du site</a>
     </section>
   </footer>
        <!-- Leaflet JS -->
@@ -738,40 +738,7 @@ crossorigin=""></script>
 
   <script src="js/slick.min.js"></script>
   <script src="js/scroll-hero.js"></script>
-  <script>
-    $(".carousel__list").slick({
-      slidesToShow: 4,
-      responsive: [{
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
-      ],
-    });
-
-
-  </script>
+  <script src="js/carousel-filter.js"></script>
   <script src="./js/menu.js"></script>
 <script>
   // Initialiser la carte sur l'élément avec l'id "map"
@@ -797,6 +764,77 @@ crossorigin=""></script>
   // Ajouter un popup au marqueur
   marker.bindPopup('<strong>Musée des Beaux-Arts</strong><br>1 place de la Révolution<br>25000 Besançon').openPopup();
 </script>
+
+  <!-- Locomotive Scroll JS -->
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.umd.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const scroll = new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]'),
+        smooth: true,
+        smartphone: {
+          smooth: true
+        },
+        tablet: {
+          smooth: true
+        },
+        multiplier: 1,
+        getSpeed: true,
+        getDirection: true
+      });
+    });
+  </script>
+  <!-- Search Overlay -->
+  <div id="search-overlay" class="search-overlay">
+    <div class="search-overlay__close" id="search-close">&times;</div>
+    <div class="search-overlay__content">
+      <form class="search-overlay__form">
+        <input type="text" class="search-overlay__input" placeholder="Rechercher sur le site..." autofocus>
+        <button type="submit" class="search-overlay__submit">
+          <img src="./asset/Img/svg/Search.svg" alt="Rechercher">
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Search Overlay JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchTrigger = document.getElementById('search-trigger');
+      const searchOverlay = document.getElementById('search-overlay');
+      const searchClose = document.getElementById('search-close');
+      const searchInput = searchOverlay.querySelector('.search-overlay__input');
+
+      if (searchTrigger && searchOverlay) {
+        searchTrigger.addEventListener('click', function(e) {
+          e.preventDefault();
+          searchOverlay.classList.add('is-active');
+          setTimeout(() => {
+            searchInput.focus();
+          }, 300);
+        });
+
+        searchClose.addEventListener('click', function() {
+          searchOverlay.classList.remove('is-active');
+        });
+
+        // Close on escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && searchOverlay.classList.contains('is-active')) {
+            searchOverlay.classList.remove('is-active');
+          }
+        });
+
+        // Close when clicking outside the form
+        searchOverlay.addEventListener('click', function(e) {
+          if (e.target === searchOverlay) {
+            searchOverlay.classList.remove('is-active');
+          }
+        });
+      }
+    });
+  </script>
+
 </body>
 
 </html>

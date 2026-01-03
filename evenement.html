@@ -3,23 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="./asset/Img/logo/logoMAT.png" />
-  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="icon" type="image/png" href="./asset/Img/logo/logo-mat-small.png" />
+  <link rel="stylesheet" href="./style.css" />
+
+  <!-- Locomotive Scroll CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.css" />
 
   <!-- Leaflet CSS -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
 integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
 crossorigin=""/>
 
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
   <title>MBAA - Musée des Beaux-Arts et d'Archéologie de Besançon</title>
  
 </head>
-<body>
-  <header class="header">
+<body data-scroll-container>
+  <header class="header header--evenement">
     <div class="header__container">
       <!-- Logo -->
-      <a class="header__logo-link" href="#">
-        <img class="header__logo-img" src="./asset/Img/logo/logoMAT.png" alt="Logo MBAA" />
+      <a class="header__logo-link" href="./index.html">
+        <img class="header__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
       </a>
   
       <!-- Bouton menu burger -->
@@ -31,25 +37,25 @@ crossorigin=""/>
       <nav class="header__nav" id="headerNav" aria-hidden="true">
         <ul class="header__nav-list header__nav-list--main">
           <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="#">Infos pratiques</a>
+            <a class="header__nav-link nav-dot" href="./index.html#infos-pratiques">Infos pratiques</a>
           </li>
           <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="/collections.html">Collections</a>
+            <a class="header__nav-link nav-dot" href="./collections.html">Collections</a>
           </li>
           <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="#">Évènements</a>
+            <a class="header__nav-link nav-dot" href="./evenement.html">Évènements</a>
           </li>
           <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="#">Le musée</a>
+            <a class="header__nav-link nav-dot" href="./musee-histoire.html">Le musée</a>
           </li>
           <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="#">Contact</a>
+            <a class="header__nav-link nav-dot" href="./index.html#infos-pratiques">Contact</a>
           </li>
         </ul>
   
         <ul class="header__nav-list header__nav-list--secondary">
           <li class="header__nav-item">
-            <a class="header__nav-link" href="#" aria-label="Connexion">
+            <a class="header__nav-link" href="./connexion.html" aria-label="Connexion">
               <img class="header__nav-icon" src="./asset/Img/svg/connexion.svg" alt="" />
             </a>
           </li>
@@ -76,11 +82,10 @@ crossorigin=""/>
       </nav>
     </div>
   
-  <div class="header__hero-content">
+  <div class="header__hero-content header__hero-content--reduced">
     <h1 class="header__title">ÉVÈNEMENTS<br>
       <span id="sous-menu-header">Découvrez la vie du musée au rythme des expositions, ateliers, rencontres et temps forts qui animent chaque saison. Petits et grands sont invités à partager des moments de découverte et de création.</span>
-    </h1> 
-  </h1>
+    </h1>
   </div>
 </div>
   
@@ -90,6 +95,67 @@ crossorigin=""/>
     </div>
   </header>
 
+<section class="event-calendar-section">
+  <div class="event-calendar-container">
+    <div class="event-calendar-grid">
+      <!-- Sidebar gauche -->
+      <aside class="calendar-sidebar">
+        <!-- Filtres -->
+        <div class="filter-group">
+          <div class="filter-header">
+            <i data-lucide="filter"></i>
+            <h2>Filtres</h2>
+          </div>
+          <div class="filter-options" id="filterOptions">
+            <!-- Les filtres seront générés par JS -->
+          </div>
+        </div>
+
+        <!-- Liste des événements -->
+        <div class="events-preview">
+          <h2 class="events-preview-title">Tous les événements</h2>
+          <div class="events-list-container" id="eventsList">
+            <!-- Les cartes d'événements seront générées par JS -->
+          </div>
+        </div>
+      </aside>
+
+      <!-- Calendrier -->
+      <main class="calendar-main-content">
+        <div class="calendar-card">
+          <!-- En-tête du calendrier -->
+          <div class="calendar-nav-header">
+            <button onclick="previousMonth()" class="nav-arrow-btn">
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <h1 class="calendar-current-title" id="calendarTitle">
+              <!-- Titre généré par JS -->
+            </h1>
+            <button onclick="nextMonth()" class="nav-arrow-btn">
+              <i data-lucide="chevron-right"></i>
+            </button>
+          </div>
+
+          <!-- Jours de la semaine -->
+          <div class="calendar-weekdays-grid">
+            <div>Dim</div>
+            <div>Lun</div>
+            <div>Mar</div>
+            <div>Mer</div>
+            <div>Jeu</div>
+            <div>Ven</div>
+            <div>Sam</div>
+          </div>
+
+          <!-- Grille du calendrier -->
+          <div class="calendar-days-grid" id="calendarGrid">
+            <!-- Grille générée par JS -->
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</section>
 
   <section class="main__explore">
     <section class="main__explore">
@@ -118,7 +184,7 @@ crossorigin=""/>
       <p class="Atelier__description">
         Participez à nos ateliers interactifs conçus pour tous les âges et niveaux d'expérience. Que vous soyez un artiste en herbe ou simplement curieux, nos ateliers offrent une opportunité unique d'explorer votre créativité tout en découvrant les techniques artistiques.
       </p>
-      <a href="#" class="Atelier__link">Reserver un billet</a>
+      <a href="./reservation.html?event=1" class="Atelier__link">Reserver un billet</a>
     </section>
 </section>
 <section class="Conférences">
@@ -127,119 +193,205 @@ crossorigin=""/>
       <p class="Conférences__description">
         Rejoignez-nous pour des conférences captivantes animées par des experts renommés dans le domaine de l'art et de l'archéologie. Plongez dans des discussions enrichissantes sur des sujets variés, allant des mouvements artistiques aux découvertes archéologiques récentes.
       </p>
-      <a href="#" class="Conférences__link">Reserver un billet</a>
+      <a href="./reservation.html?event=8" class="Conférences__link">Reserver un billet</a>
     </section>
 </section>
 
-<section class="Atelier porterie">
-    <section class="Atelier porterie__container">
-      <h2 class="Atelier porterie__title">Ateliers à la Porterie</h2>
-      <p class="Atelier porterie__description">
-        Découvrez nos ateliers spéciaux organisés à la Porterie, un espace dédié à la créativité et à l'apprentissage. Ces ateliers offrent une expérience immersive où les participants peuvent explorer diverses formes d'art tout en s'inspirant de l'histoire et de la culture locale.
-      </p>
-      <a href="#" class="Atelier porterie__link">Reserver un billet</a>
-    </section>
+<section class="Porterie">
+  <section class="Porterie__container">
+    <h2 class="Porterie__title">Atelier poterie</h2>
+    <p class="Porterie__description">
+      Découvrez nos ateliers spéciaux organisés à la Porterie, un espace dédié à la créativité et à l'apprentissage. Ces ateliers offrent une expérience immersive où les participants peuvent explorer diverses formes d'art tout en s'inspirant de l'histoire et de la culture locale.
+    </p>
+    <a href="./reservation.html?event=2" class="Porterie__link">Reserver un billet</a>
+  </section>
 </section>
 
-<section class="soiree jazz ">
-    <section class="soiree jazz__container">
-      <h2 class="soiree jazz__title">Soirées Jazz au Musée</h2>
-      <p class="soiree jazz__description">
-        Vivez des soirées inoubliables au rythme du jazz dans le cadre unique du Musée des Beaux-Arts et d'Archéologie de Besançon. Chaque mois, nous accueillons des musiciens de talent pour des performances live qui créent une ambiance chaleureuse et conviviale.
-      </p>
-      <a href="#" class="soiree jazz__link">Reserver un billet</a>
-    </section>
-</section>
+<section class="Jazz">
+  <section class="Jazz__container">
+    <h2 class="Jazz__title">Soirées Jazz au Musée</h2>
+    <p class="Jazz__description">
+      Vivez des soirées inoubliables au rythme du jazz dans le cadre unique du Musée des Beaux-Arts et d'Archéologie de Besançon. Chaque mois, nous accueillons des musiciens de talent pour des performances live qui créent une ambiance chaleureuse et conviviale.
+    </p>
+    <a href="./reservation.html?event=3" class="Jazz__link">Reserver un billet</a>
+  </section>
 </section>
 
 
-<section class="main__explore">
-    <section class="main__explore">
-        <section class="main__banniere">
-          <section class="main__banniere--explorer">
-            <img class="main__banniere-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
+<section class="bibliotheque">
+  <div class="bibliotheque__section">
     
-            <h2 class="main__banniere-titre">
-              Bibliothèque<br>
-              ÉVÈNEMENTS
-            </h2>
-          </section>
+    <!-- Bannière -->
+    <section class="bibliotheque__banner">
+      <div class="bibliotheque__banner-header">
+        <img class="bibliotheque__banner-icon" src="./asset/Img/svg/croix-blanche.svg" alt="Icône" />
+        <div class="bibliotheque__banner-content">
+          <h2 class="bibliotheque__banner-title">
+            Bibliothèque<br>
+            des souvenirs
+          </h2>
+          <p class="bibliotheque__banner-subtitle">
+            Bibliothèque et ressources en images des collections des Beaux-Arts
+          </p>
+        </div>
+      </div>
+      
+      <p class="bibliotheque__banner-description">
+        Parcourez les collections des Beaux-Arts du musée : œuvres exposées, archives, peintures, sculptures et dessins conservés dans nos réserves. Cette bibliothèque d'images vous invite à découvrir, explorer et mieux comprendre la richesse du patrimoine artistique conservé au musée.
+      </p>
 
-          <section class="main__banniere-contenu">
-            <h3 class="main__banniere-sous-titre">Bibliothèque et ressources en images des collections des Beaux-Arts</h3>
-            <p class="main__banniere-description">
-                Parcourez les collections des Beaux-Arts du musée : œuvres exposées, archives, peintures, sculptures et dessins conservés dans nos réserves. Cette bibliothèque d’images vous invite à découvrir, explorer et mieux comprendre la richesse du patrimoine artistique conservé au musée.            </p>
-          </section>
-        </section>
-      </section>
-</section>
-
-
-
-<!-- galerie image 2 AVEC Filtre et search bar -->
-<section class="gallery2">
-    <section class="">
-    <img class="searchbar img" src="loupe" alt="icon loupe" />
-    <input type="text" class="searchbar input" placeholder="Rechercher une œuvre, un artiste..." />
+      <div class="bibliotheque__search">
+        <svg class="bibliotheque__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+        <input class="bibliotheque__search-input" type="text" placeholder="Rechercher une œuvre - N° identifications" id="bibliothequeSearch">
+      </div>
     </section>
 
-    <section class="gallery2__filters">
-        <div class="gallery2__filter-icon">
-        <img src="/asset/Img/svg/croix-black.svg"><button class="gallery2__filter-button"> Tous</button>
+    <!-- Filtres -->
+    <div class="bibliotheque__filters">
+      <button class="bibliotheque__filter-btn active" data-filter="all">
+        <svg class="bibliotheque__filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+        </svg>
+        Tout voir
+      </button>
+      <button class="bibliotheque__filter-btn" data-filter="collections">
+        <svg class="bibliotheque__filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+        </svg>
+        Collections
+      </button>
+      <button class="bibliotheque__filter-btn" data-filter="ateliers">
+        <svg class="bibliotheque__filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M11.5 6a4.5 4.5 0 0 1 4.477 5.999M2 12.5v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6"></path>
+        </svg>
+        Ateliers
+      </button>
+      <button class="bibliotheque__filter-btn" data-filter="performance">
+        <svg class="bibliotheque__filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="23 7 16 12 23 17 23 7"></polygon>
+          <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+        </svg>
+        Performance
+      </button>
+      <button class="bibliotheque__filter-btn" data-filter="nuits">
+        <svg class="bibliotheque__filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        Nuits des arts
+      </button>
+    </div>
+
+    <!-- Grille d'images -->
+    <div class="bibliotheque__grid-container">
+      <div class="bibliotheque__grid" id="bibliothequeGrid">
+        
+        <div class="bibliotheque__grid-item" data-category="collections">
+          <img src="./asset/Img/tableaux/tableau-hokusai-vague.jpg" alt="La Grande Vague">
+          <div class="bibliotheque__grid-info">
+            <h3>La Grande Vague</h3>
+            <p>Collection peintures</p>
+          </div>
         </div>
 
-        <img src="/asset/Img/svg/croix-black.svg"> <button class="gallery2__filter-button">ateliers</button>
+        <div class="bibliotheque__grid-item" data-category="collections">
+          <img src="./asset/Img/tableaux/tableau-collomb-1.png" alt="Composition">
+          <div class="bibliotheque__grid-info">
+            <h3>Composition Abstraite</h3>
+            <p>Paul Collomb</p>
+          </div>
+        </div>
 
-        <img src="/asset/Img/svg/croix-black.svg"> <button class="gallery2__filter-button">evenements</button>
+        <div class="bibliotheque__grid-item" data-category="ateliers">
+          <img src="./asset/Img/visite-groupe.jpg" alt="Atelier">
+          <div class="bibliotheque__grid-info">
+            <h3>Atelier Peinture</h3>
+            <p>Activités</p>
+          </div>
+        </div>
 
-        <img src="/asset/Img/svg/croix-black.svg"> <button class="gallery2__filter-button">performance</button>
+        <div class="bibliotheque__grid-item" data-category="performance">
+          <img src="./asset/Img/tableaux/tableau-ceija-stojka-sans-titre.jpg" alt="Performance">
+          <div class="bibliotheque__grid-info">
+            <h3>Performance Live</h3>
+            <p>Événement</p>
+          </div>
+        </div>
 
-        <img src="/asset/Img/svg/croix-black.svg"><button class="gallery2__filter-button">soiree</button>
+        <div class="bibliotheque__grid-item" data-category="nuits">
+          <img src="./asset/Img/tableaux/tableau-boucher-chinoiserie.jpg" alt="Nuits des arts">
+          <div class="bibliotheque__grid-info">
+            <h3>Nuit des arts</h3>
+            <p>Événement spécial</p>
+          </div>
+        </div>
 
-        <img src="/asset/Img/svg/croix-black.svg"><button class="gallery2__filter-button">nuits des arts</button>
-    </section>
+        <div class="bibliotheque__grid-item" data-category="collections">
+          <img src="./asset/Img/tableaux/tableau-pointillisme.jpg" alt="Pointillisme">
+          <div class="bibliotheque__grid-info">
+            <h3>Composition Pointilliste</h3>
+            <p>Kandinsky</p>
+          </div>
+        </div>
 
+        <div class="bibliotheque__grid-item" data-category="ateliers">
+          <img src="./asset/Img/statue-1.png" alt="Sculpture">
+          <div class="bibliotheque__grid-info">
+            <h3>Atelier Sculpture</h3>
+            <p>Techniques anciennes</p>
+          </div>
+        </div>
 
-    <!-- mettre un filtre de couleur  blanc et #957E18 sur chque section pour que mon utilisateur admin puisse changer dilage et que le filtre se mette automatiquement sur limage  -->
-<section class="galerie image en grid ">
-    <section class="galerie image__item">
-        <img src="/asset/Img/Evenement/Evenement1.jpg" alt="Evenement1">
-    </section>
+        <div class="bibliotheque__grid-item" data-category="collections">
+          <img src="./asset/Img/tableaux/tableau-turner-ocean.jpg" alt="Océan">
+          <div class="bibliotheque__grid-info">
+            <h3>Turner - Océan</h3>
+            <p>Paysage</p>
+          </div>
+        </div>
 
-    <section class="galerie image__item">
-        <img src="/asset/Img/Evenement/Evenement2.jpg" alt="Evenement2">
-    </section>
+      </div>
+    </div>
 
-    <section class="galerie image__item">
-        <img src="/asset/Img/Evenement/Evenement3.jpg" alt="Evenement3">
-    </section>
-
-    <section class="galerie image__item">
-        <img src="/asset/Img/Evenement/Evenement4.jpg" alt="Evenement4">
-    </section>
-
-    <section class="galerie image__item">
-        <img src="/asset/Img/Evenement/Evenement5.jpg" alt="Evenement5">
-    </section>
-
-    <section class="galerie image__item">
-        <img src="/asset/Img/Evenement/Evenement6.jpg" alt="Evenement6">
-    </section>
-
-    <section class="galerie image__item">
-        <img src="/asset/Img/Evenement/Evenement7.jpg" alt="Evenement7">
-    </section>
-
-    <section class="galerie image__item">
-        <img src="/asset/Img/Evenement/Evenement8.jpg" alt="Evenement8">
-    </section>
-
-    <section class="galerie image__item">
-        <img src="/asset/Img/Evenement/Evenement9.jpg" alt="Evenement9">
-    </section>
-
+  </div>
 </section>
-</section>
+
+
+
+
+
+
+<script src="./js/bibliotheque-filter.js"></script>
+<script src="./js/event-calendar.js"></script>
+
+<!-- Locomotive Scroll JS -->
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.umd.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialiser les icônes Lucide
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+    
+    // Initialiser Locomotive Scroll
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+      smartphone: {
+        smooth: true
+      },
+      tablet: {
+        smooth: true
+      },
+      multiplier: 1,
+      getSpeed: true,
+      getDirection: true
+    });
+  });
+</script>
 
   </body>
 </html>

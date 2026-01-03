@@ -1,0 +1,323 @@
+@use '../utils/variables' as *;
+
+.Atelier,
+.Conférences {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  padding: clamp(2rem, 5vw, 4rem);
+  margin: 0;
+  width: 100%;
+  border-radius: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.Atelier__container,
+.Conférences__container {
+  position: relative;
+  z-index: 2;
+  max-width: 60%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.Atelier__title,
+.Conférences__title {
+  font-family: $font-primary;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: $font-weight-bold;
+  margin: 0;
+}
+
+.Atelier__description,
+.Conférences__description {
+  font-family: $font-secondary;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-weight: $font-weight-normal;
+  line-height: $line-height-relaxed;
+  margin: 0;
+}
+
+.Atelier__link,
+.Conférences__link {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border: 2px solid currentColor;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: $font-secondary;
+  font-size: 0.95rem;
+  font-weight: $font-weight-semibold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.Atelier {
+  background: $color-secondary-gold;
+  color: $color-primary-white;
+
+  &__link {
+    background-color: rgba($color-primary-white, 0.1);
+    color: $color-primary-white;
+
+    &:hover {
+      background-color: $color-primary-white;
+      color: $color-secondary-gold;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 200px;
+    height: 150px;
+    background-image: url('/asset/Img/atelier-jeunes.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    z-index: 1;
+    filter: grayscale(100%);
+    transition: filter 0.4s ease;
+    transform: translateY(-50%);
+  }
+
+  &:hover::before {
+    filter: grayscale(0%);
+  }
+}
+
+.Conférences {
+  background: $color-tertiary-green;
+  color: $color-primary-white;
+
+  &__link {
+    background-color: rgba($color-primary-white, 0.1);
+    color: $color-primary-white;
+
+    &:hover {
+      background-color: $color-primary-white;
+      color: $color-tertiary-green;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 200px;
+    height: 150px;
+    background-image: url('/asset/Img/misc-discussion.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    z-index: 1;
+    filter: grayscale(100%);
+    transition: filter 0.4s ease;
+    transform: translateY(-50%);
+  }
+
+  &:hover::before {
+    filter: grayscale(0%);
+  }
+}
+
+.Porterie {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: clamp(2rem, 5vw, 4rem);
+  margin: 0;
+  width: 100%;
+  border-radius: 0;
+  overflow: hidden;
+  background: #8B6F47;
+  color: $color-primary-white;
+  transition: all 0.3s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 200px;
+    height: 150px;
+    background-image: url('/asset/Img/atelier-poterie.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    z-index: 1;
+    filter: grayscale(100%);
+    transition: filter 0.4s ease;
+    transform: translateY(-50%);
+  }
+
+  &:hover::before {
+    filter: grayscale(0%);
+  }
+}
+
+.Porterie__container {
+  position: relative;
+  z-index: 2;
+  max-width: 60%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.Porterie__title {
+  font-family: $font-primary;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: $font-weight-bold;
+  margin: 0;
+}
+
+.Porterie__description {
+  font-family: $font-secondary;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-weight: $font-weight-normal;
+  line-height: $line-height-relaxed;
+  margin: 0;
+}
+
+.Porterie__link {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border: 2px solid currentColor;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: $font-secondary;
+  font-size: 0.95rem;
+  font-weight: $font-weight-semibold;
+  background-color: rgba($color-primary-white, 0.1);
+  color: $color-primary-white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background-color: $color-primary-white;
+    color: #8B6F47;
+  }
+}
+
+.Jazz {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: clamp(2rem, 5vw, 4rem);
+  margin: 0;
+  width: 100%;
+  border-radius: 0;
+  overflow: hidden;
+  background: $color-primary-dark;
+  color: $color-primary-white;
+  transition: all 0.3s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 200px;
+    height: 150px;
+    background-image: url('/asset/Img/activite-performance-break.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    z-index: 1;
+    filter: grayscale(100%);
+    transition: filter 0.4s ease;
+    transform: translateY(-50%);
+  }
+
+  &:hover::before {
+    filter: grayscale(0%);
+  }
+}
+
+.Jazz__container {
+  position: relative;
+  z-index: 2;
+  max-width: 60%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.Jazz__title {
+  font-family: $font-primary;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: $font-weight-bold;
+  margin: 0;
+}
+
+.Jazz__description {
+  font-family: $font-secondary;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-weight: $font-weight-normal;
+  line-height: $line-height-relaxed;
+  margin: 0;
+}
+
+.Jazz__link {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border: 2px solid currentColor;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: $font-secondary;
+  font-size: 0.95rem;
+  font-weight: $font-weight-semibold;
+  background-color: rgba($color-primary-white, 0.1);
+  color: $color-primary-white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background-color: $color-primary-white;
+    color: $color-primary-dark;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .Atelier,
+  .Conférences,
+  .Porterie,
+  .Jazz {
+    &::before {
+      width: 0 !important;
+    }
+  }
+
+  .Atelier__container,
+  .Conférences__container,
+  .Porterie__container,
+  .Jazz__container {
+    max-width: 90%;
+  }
+}

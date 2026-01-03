@@ -1,0 +1,152 @@
+@use "../utils/variables" as *;
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    margin: clamp(1rem, 3vw, 2rem) 0;
+    padding: 0;
+  }
+}
+
+.carousel__list {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  overflow-x: auto;
+  gap: 0.75rem;
+  padding: 0.5rem 0.5rem 1rem;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(149, 126, 24, 0.3);
+    border-radius: 3px;
+  }
+
+  @media (min-width: 768px) {
+    gap: clamp(0.5rem, 2vw, 1rem);
+    padding: 0 clamp(0.5rem, 2vw, 1rem);
+  }
+
+  @media (min-width: 1024px) {
+    justify-content: center;
+  }
+}
+
+.carousel__item__container {
+  // Slick gère la largeur des slides
+  outline: none;
+}
+
+.carousel__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  color: $color-primary-white;
+
+  // Overlay sombre par-dessus l'image
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #2b2b2b70; // Noir à 40% d'opacité
+    z-index: 0;
+    border-radius: 10px;
+  }
+
+  // Contenu au-dessus de l'overlay
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.carousel__item-title {
+  // Utilise la hiérarchie H3 pour les titres de carrousel
+  font-size: clamp($font-size-h3-mobile, 3vw + 0.25rem, $font-size-h3-desktop);
+  font-weight: 700;
+  line-height: $line-height-compact;
+  margin-top: 0;
+  margin-bottom: $spacing-h3-bottom;
+  word-break: break-word;
+  letter-spacing: -0.01em;
+  
+  @media (min-width: 768px) {
+    font-size: clamp($font-size-h3-tablet, 3.5vw + 0.25rem, $font-size-h3-desktop);
+    margin-bottom: $spacing-h3-bottom-desktop;
+  }
+}
+
+.carousel__item-text {
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.carousel__item-badge {
+  font-size: clamp(0.65rem, 1.5vw, 0.875rem);
+  padding: clamp(0.25rem, 1vw, 0.5rem) clamp(0.5rem, 2vw, 1rem);
+  border-radius: 4px;
+  align-self: flex-start;
+  
+  &--free {
+    background-color: rgba(71, 86, 79, 0.9);
+    color: white;
+  }
+
+  &--price {
+    background-color: rgba(149, 126, 24, 0.9);
+    color: white;
+  }
+}
+
+.carousel__item-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: clamp(0.7rem, 1.5vw, 0.875rem);
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+}
+
+.carousel__item-date,
+.carousel__item-time {
+  white-space: nowrap;
+}
+
+.carousel__button {
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+  margin: 1rem 0.5rem;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    margin: clamp(0.5rem, 2vw, 1rem);
+    width: auto;
+  }
+}
