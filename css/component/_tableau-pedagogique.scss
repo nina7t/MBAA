@@ -40,7 +40,7 @@
         padding: 1.2rem;
         text-align: left;
         font-weight: 600;
-        border-bottom: 3px solid darken($bg-or, 10%);
+        border-bottom: 3px solid $bg-or;
 
         &.period-col {
             width: 12%;
@@ -89,7 +89,7 @@
         &.period-cell {
             font-weight: 600;
             background-color: rgba($bg-or, 0.15);
-            color: darken($bg-or, 20%);
+            color: $bg-or;
             text-align: center;
             border-left: 4px solid $bg-or;
         }
@@ -115,7 +115,7 @@
 .artist {
     display: inline-block;
     background-color: rgba($bg-or, 0.1);
-    color: darken($bg-or, 15%);
+    color: $bg-or;
     padding: 0.4rem 0.9rem;
     border-radius: 6px;
     font-size: 0.88rem;

@@ -1,108 +1,87 @@
 <!doctype html>
-<!-- 
-    PAGE D'ACCUEIL - MBAA
-    Page principale du site du Musée des Beaux-Arts et d'Archéologie de Besançon
-    Contient :
-    - En-tête avec navigation et hero avec effet parallax
-    - Section programmation et expositions
-    - Section visite guidée
-    - Section collections
-    - Section événements
-    - Section contact avec carte
-    - Pied de page
--->
 <html lang="fr">
 <head>
-  <!-- Encodage des caractères UTF-8 pour supporter les caractères français -->
   <meta charset="UTF-8" />
-  <!-- Configuration responsive pour s'adapter aux différentes tailles d'écran -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Icône du site affichée dans l'onglet du navigateur -->
   <link rel="icon" type="image/png" href="./asset/Img/logo/logo-mat-small.png" />
-  <!-- Feuille de style principale du site -->
   <link rel="stylesheet" href="./style.css" />
-
-  <!-- Bibliothèque Locomotive Scroll pour le défilement fluide et les effets parallax -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.css" />
-
-  <!-- Bibliothèque Leaflet CSS pour l'affichage de la carte interactive -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
   crossorigin=""/>
-
-  <!-- Titre de la page affiché dans l'onglet du navigateur -->
   <title>MBAA - Musée des Beaux-Arts et d'Archéologie de Besançon</title>
- 
 </head>
-<!-- Attribut data-scroll-container requis par Locomotive Scroll pour le défilement fluide -->
-<body data-scroll-container>
-  <!-- En-tête principal du site avec navigation et hero -->
+<body>
   <header class="header header--index">
-    <!-- Conteneur de l'en-tête -->
     <div class="header__container">
-      <!-- Logo du musée (lien vers la page d'accueil) -->
+      <!-- Logo -->
       <a class="header__logo-link" href="./index.html">
         <img class="header__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
       </a>
   
-      <!-- Bouton menu burger pour la navigation mobile -->
+      <!-- Bouton menu burger -->
       <button class="header__menu-toggle" aria-label="menu" aria-expanded="false" aria-controls="headerNav">
         <span class="header__menu-bar"></span>
       </button>
   
-      <!-- Navigation principale du site -->
+      <!-- Navigation -->
       <nav class="header__nav" id="headerNav" aria-hidden="true">
-        <!-- Liste de navigation principale -->
         <ul class="header__nav-list header__nav-list--main">
-          <!-- Lien vers les informations pratiques -->
           <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="#infos-pratiques">Infos pratiques</a>
+            <a class="header__nav-link nav-dot" href="./infos.html">Infos pratiques</a>
           </li>
-          <!-- Lien vers la page des collections -->
           <li class="header__nav-item nav-dot">
             <a class="header__nav-link nav-dot" href="./collections.html">Collections</a>
           </li>
-          <!-- Lien vers la page des événements -->
           <li class="header__nav-item nav-dot">
             <a class="header__nav-link nav-dot" href="./evenement.html">Évènements</a>
           </li>
-          <!-- Lien vers la page d'histoire du musée -->
           <li class="header__nav-item nav-dot">
             <a class="header__nav-link nav-dot" href="./musee-histoire.html">Le musée</a>
           </li>
-          <!-- Lien vers la section contact -->
           <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="#infos-pratiques">Contact</a>
+            <a class="header__nav-link nav-dot" href="./infos.html">Contact</a>
           </li>
         </ul>
   
-        <!-- Liste de navigation secondaire (actions rapides) -->
         <ul class="header__nav-list header__nav-list--secondary">
-          <!-- Lien vers la page de connexion admin -->
+          <!-- Icône Contact (remplace connexion.svg) -->
           <li class="header__nav-item">
             <a class="header__nav-link" href="./connexion.html" aria-label="Connexion">
-              <img class="header__nav-icon" src="./asset/Img/svg/connexion.svg" alt="" />
+              <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+             </svg>
             </a>
           </li>
-          <!-- Lien vers la billetterie -->
+          
+          <!-- Icône Ticket (remplace ticket.svg) -->
           <li class="header__nav-item">
             <a class="header__nav-link" href="#" aria-label="Billetterie">
-              <img class="header__nav-icon" src="./asset/Img/svg/ticket.svg" alt="" />
+              <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" strokeLinecap="round" strokeLinejoin="round">
+               <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
+               <path d="M13 5v2"></path>
+               <path d="M13 17v2"></path>
+               <path d="M13 11v2"></path>
+              </svg>
+
+             </svg>
             </a>
           </li>
         
-          <!-- Bouton de recherche -->
+          <!-- Icône Loupe (remplace Search.svg) -->
           <li class="header__nav-item">
-            <a class="header__nav-link" href="#" id="search-trigger" aria-label="Recherche">
-              <img class="header__nav-icon" src="./asset/Img/svg/Search.svg" alt="" />
+            <a class="header__nav-link" href="#" aria-label="Recherche">
+              <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path></svg>
+              </svg>
             </a>
           </li>
-          <!-- Sélecteur de langue : Français -->
+          
           <li class="header__nav-item">
             <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">FR
             </a>
           </li>
-          <!-- Sélecteur de langue : Anglais -->
           <li class="header__nav-item">
             <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">EN
             </a>
@@ -110,52 +89,30 @@
         </ul>
       </nav>
     </div>
-  
-    <!-- Section hero avec effet parallax (images en arrière-plan qui se déplacent à différentes vitesses) -->
-    <div class="header__hero">
-      <div class="header__hero-content">
-        <!-- Contenu textuel du hero (titre principal) -->
-        <div class="header__hero-text">
-          <h1 class="header__title">
-            MUSÉE<br>DES<br>BEAUX<br>ARTS
-          </h1>
-          <div class="header__hero-subtitle" id="sous-menu-header">
-            et d'archéologie<br>de Besançon
-          </div>
-        </div>
 
-        <!-- Conteneur pour les couches d'images avec effet parallax -->
-        <div class="header__hero-parallax">
-          <!-- Première couche d'image avec vitesse de déplacement personnalisée -->
-          <div class="header__hero-background header__hero-background--layer1" data-speed-x="0.3" data-speed-y="0.2">
-            <img src="./asset/Img/tableaux/tableau-guenat-cuisinier.jpg" alt="Scène de repas impressionniste">
-          </div>
-          <!-- Deuxième couche d'image avec vitesse de déplacement différente -->
-          <div class="header__hero-background header__hero-background--layer2" data-speed-x="-0.2" data-speed-y="0.4">
-            <img src="./asset/Img/tableaux/tableau-signac-venise.jpg" alt="Sculpture et tableau classique">
-          </div>
-          <!-- Troisième couche d'image avec vitesse de déplacement différente -->
-          <div class="header__hero-background header__hero-background--layer3" data-speed-x="-0.4" data-speed-y="0.3">
-            <img src="./asset/Img/tableaux/tableau-hallali-cerf-chasse.jpg" alt="Peinture classique">
-          </div>
-        </div>
+  
+    <section class="hero">
+      <div class="hero-left">
+          <h1 class="hero-title">MUSÉE<br>DES<br>BEAUX<br>ARTS</h1>
+          <p class="hero-subtitle">ET D'ARCHÉOLOGIE<br>DE BESANÇON</p>
       </div>
 
-      <!-- CTA Section -->
-      <div class="header__hero-cta">
-        <div class="header__cta-text">
-          Plongez dans 5000 ans d'art
-        </div>
-        <a href="./reservation.html" class="header__cta-button">Réserver un billet</a>
+      <div class="hero-right">
+          <div class="art-image img1"></div>
+          <div class="art-image img2"></div>
+          <div class="art-image img3"></div>
+          
+          <div class="cta-section">
+              <a href="#" class="reserve-btn">Réserver un billet</a>
+              <p class="cta-text">Plongez dans 5000 ans d'art</p>
+          </div>
       </div>
-  
-      <!-- Flèche de scroll indiquant qu'on peut faire défiler la page vers le bas -->
-      <div class="header__scroll">
-        <img class="header__scroll-icon" src="./asset/Img/svg/icon-arrow_bas.svg" alt="Défiler vers le bas" />
-      </div>
-    </div>
+  </section>
+
+  <div class="scroll-indicator">
+      <div class="scroll-arrow">↓</div>
+  </div>
   </header>
-
 
   <!-- Contenu principal de la page -->
   <main class="main">
@@ -404,8 +361,8 @@
             <div class="carousel__item" style="
                   background-image: url(&quot;./asset/Img/visite-groupe.jpg&quot;);
                 ">
-              <span class="carousel__item-badge carousel__item-badge--price">10
-                euros / personne</span>
+              <span class="carousel__item-badge carousel__item-badge--price">10 € / personne</span>
+                <div>
               <h3 class="carousel__item-title">Visite famille</h3>
               <p class="carousel__item-text">
                 Chaque premier dimanche du mois, profitez de la gratuité du
@@ -419,11 +376,14 @@
               </div>
             </div>
           </div>
+          </div>
           <div class="carousel__item__container" data-filter="tous visites nouveaute">
             <div class="carousel__item" style="
                   background-image: url(&quot;./asset/Img/misc-discussion.jpg&quot;);
                 ">
               <span class="carousel__item-badge carousel__item-badge--free">Gratuit</span>
+            
+             <div>
               <h3 class="carousel__item-title">Visite Re(découvrir)</h3>
               <p class="carousel__item-text">
                 Plongez au cœur des collections du musée lors de cette visite
@@ -436,11 +396,13 @@
               </div>
             </div>
           </div>
+          </div>
           <div class="carousel__item__container" data-filter="tous ateliers">
             <div class="carousel__item" style="
                   background-image: url(&quot;./asset/Img/atelier-poterie.png&quot;);
                 ">
               <span class="carousel__item-badge carousel__item-badge--free">Gratuit</span>
+             <div>
               <h3 class="carousel__item-title">Atelier poterie</h3>
               <p class="carousel__item-text">
                 Initiez-vous à l'art de la sculpture lors de cet atelier
@@ -453,12 +415,14 @@
               </div>
             </div>
           </div>
+          </div>
           <div class="carousel__item__container" data-filter="tous conferences">
             <div class="carousel__item" style="
                   background-image: url(&quot;./asset/Img/atelier-degustation-vin.webp&quot;);
                 ">
               <span class="carousel__item-badge carousel__item-badge--price">5
                 euros / personne</span>
+              <div>
               <h3 class="carousel__item-title">Conférence art et société</h3>
               <p class="carousel__item-text">
                 Rejoignez-nous pour une conférence captivante qui explore les
@@ -472,9 +436,10 @@
             </div>
           </div>
         </div>
+        </div>
       </section>
       <div class="carousel__button">
-        <a class="main__button--evenement-black" href="#">En savoir +</a>
+        <a class="main__button--evenement-black" href="#">Voir tous les évènements</a>
       </div>
     </section>
 
@@ -501,8 +466,8 @@
       </section>
     </section>
     <div class="main__explore-grid">
-      <div class="main__explore-card">
-        <img class="main__explore-card-img" src="/asset/Img/tableaux/tableau-hallali-cerf-chasse.jpg" alt="desc">
+      <div class="main__explore-card main__explore-card--test">
+        <img class="main__explore-card-img" src="/asset/Img/tableaux/tableau-hallali-cerf-chasse.jpg">
         <div class="main__explore-card-wrappper">
           <h3 class="main__explore-card-title">Beaux arts</h3>
           <p class="main__explore-card-text">
@@ -511,8 +476,8 @@
           </p>
         </div>
       </div>
-      <div class="main__explore-card-child">
-                  <img class="main__explore-card-img" src="/asset/Img/tableaux/tableau-guenat-vieillard.jpg" alt="desc">
+      <div class="main__explore-card main__explore-card--child" style="grid-column: span 5;">
+                  <img class="main__explore-card-img" src="/asset/Img/tableaux/tableau-guenat-vieillard.jpg">
                   <div class="main__explore-card-wrappper">
         <h3 class="main__explore-card-title">Portraits</h3>
         <p class="main__explore-card-text">
@@ -521,27 +486,24 @@
         </p>
       </div>
       </div>
-      <div class="main__explore-card-fat" style="
-            background-image: url(&quot;./asset/Img/tableaux/tableau-guenat-cuisinier.jpg&quot;);
-          ">
+      <div class="main__explore-card main__explore-card--fat">
+        <img class="main__explore-card-img" src="/asset/Img/tableaux/tableau-guenat-cuisinier.jpg">
         <h3 class="main__explore-card-title">Tableaux</h3>
         <p class="main__explore-card-text">
           Plongez dans la richesse picturale des collections, entre scènes du
           quotidien, portraits et paysages inspirés.
         </p>
       </div>
-      <div class="main__explore-card-wide" style="
-            background-image: url(&quot;./asset/Img/Musée_BeauxArts_Besançon_mosaic.jpg&quot;);
-          ">
+      <div class="main__explore-card main__explore-card--wide">
+        <img class="main__explore-card-img" src="/asset/Img/musee-mosaique.jpg">
         <h3 class="main__explore-card-title">Archéologie</h3>
         <p class="main__explore-card-text">
           Remontez le temps à travers des vestiges uniques, témoins des
           civilisations qui ont façonné notre histoire.
         </p>
       </div>
-      <div class="main__explore-card-tall" style="
-            background-image: url(&quot;./asset/Img/statues-groupe.jpg&quot;);
-          ">
+      <div class="main__explore-card main__explore-card--tall">
+        <img class="main__explore-card-img" src="/asset/Img/statues-groupe.jpg">
         <h3 class="main__explore-card-title">Sculptures</h3>
         <p class="main__explore-card-text">
           Des formes, des matières et des émotions : explorez l'art du volume
@@ -557,11 +519,13 @@
 
       <section class="main__banniere">
         <section class="main__banniere--infos">
-          <img class="main__banniere-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
+
+     
           <h2 class="main__banniere-titre">
             INFOS<br />
             UTILES
           </h2>
+          <img class="main_map-img" src="./asset/Img/musee-vector.png" alt="Musee vectoriser" />
         </section>
         <section class="main__banniere-contenu">
           <p class="main__banniere-description">
@@ -575,9 +539,7 @@
 
       <div class="main__infos-utiles-separator">
       <section class="main__map-section">
-        <div class="main__map-header">
-          <img class="main__banniere-img" src="./asset/Img/svg/musee_or_vector.svg" alt="Musee vectoriser" />
-        </div>
+        
         <div class="main__infos-utiles-card-header">
           <h2 class="main__infos-utiles-card-title-or">
             NOUS<br />

@@ -17,12 +17,12 @@
     <title>MBAA - Musée des Beaux-Arts et d'Archéologie de Besançon</title>
    
   </head>
-  <body data-scroll-container>
-    <header class="header header--collections">
+  <body data-scroll-container="">
+    <header class="header header--collections header--scrolled">
       <div class="header__container">
         <!-- Logo -->
         <a class="header__logo-link" href="./index.html">
-          <img class="header__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
+          <img class="header__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA">
         </a>
     
         <!-- Bouton menu burger -->
@@ -31,10 +31,10 @@
         </button>
     
         <!-- Navigation -->
-        <nav class="header__nav" id="headerNav" aria-hidden="true">
+        <nav class="header__nav" id="headerNav" aria-hidden="false">
           <ul class="header__nav-list header__nav-list--main">
             <li class="header__nav-item nav-dot">
-              <a class="header__nav-link nav-dot" href="./index.html#infos-pratiques">Infos pratiques</a>
+              <a class="header__nav-link nav-dot" href="./infos.html">Infos pratiques</a>
             </li>
             <li class="header__nav-item nav-dot">
               <a class="header__nav-link nav-dot" href="./collections.html">Collections</a>
@@ -46,25 +46,25 @@
               <a class="header__nav-link nav-dot" href="./musee-histoire.html">Le musée</a>
             </li>
             <li class="header__nav-item nav-dot">
-              <a class="header__nav-link nav-dot" href="./index.html#infos-pratiques">Contact</a>
+              <a class="header__nav-link nav-dot" href="./infos.html">Contact</a>
             </li>
           </ul>
     
           <ul class="header__nav-list header__nav-list--secondary">
             <li class="header__nav-item">
               <a class="header__nav-link" href="./connexion.html" aria-label="Connexion">
-                <img class="header__nav-icon" src="./asset/Img/svg/connexion.svg" alt="" />
+                <img class="header__nav-icon" src="./asset/Img/svg/connexion.svg" alt="">
               </a>
             </li>
             <li class="header__nav-item">
               <a class="header__nav-link" href="#" aria-label="Billetterie">
-                <img class="header__nav-icon" src="./asset/Img/svg/ticket.svg" alt="" />
+                <img class="header__nav-icon" src="./asset/Img/svg/ticket.svg" alt="">
               </a>
             </li>
           
             <li class="header__nav-item">
               <a class="header__nav-link" href="#" id="search-trigger" aria-label="Recherche">
-                <img class="header__nav-icon" src="./asset/Img/svg/Search.svg" alt="" />
+                <img class="header__nav-icon" src="./asset/Img/svg/Search.svg" alt="">
               </a>
             </li>
             <li class="header__nav-item">
@@ -80,27 +80,26 @@
       </div>
     
     <div class="header__hero-content header__hero-content--reduced">
-      <h1 class="header__title">Les<br>beaux<br>arts<br>
-        <span id="sous-menu-header">La bibliothèque</span>
+      <h1 class="header__title">La<br>collection<br>
+        <span id="sous-menu-header">Des beaux arts</span>
       </h1> 
-    </h1>
     </div>
-  </div>
+  
     
       <!-- Flèche de scroll -->
       <div class="header__scroll">
-        <img class="header__scroll-icon" src="./asset/Img/svg/icon-arrow_bas.svg" alt="Défiler vers le bas" />
+        <img class="header__scroll-icon" src="./asset/Img/svg/icon-arrow_bas.svg" alt="Défiler vers le bas">
       </div>
     </header>
 
 
 
 
-<main>
+<main style="padding-top: 90px;">
   <section class="main__explore">
     <section class="main__banniere">
       <section class="main__banniere--explorer">
-        <img class="main__banniere-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
+        <img class="main__banniere-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche">
 
         <h2 class="main__banniere-titre">
           LA COLLECTIONS<br>
@@ -121,104 +120,97 @@
 <section class="art-gallery-section">
   <div class="art-gallery-container">
     <!-- Barre de recherche -->
-    <div class="art-gallery-search">
-      <div class="art-gallery-search-wrapper">
-        <img class="art-gallery-search-icon" src="./asset/Img/svg/Search.svg" alt="Rechercher" />
-        <input
-          type="text"
-          id="artGallerySearch"
-          placeholder="Rechercher une oeuvre - N°identifications"
-          class="art-gallery-search-input"
-        />
-      </div>
-    </div>
+    
 
     <!-- Menu de navigation -->
     <div class="art-gallery-nav">
       <button class="art-gallery-nav-btn" data-filter="toutVoir">
-        <img class="art-gallery-nav-arrow" src="./asset/Img/svg/icon-arrow-filtre.svg" alt="Flèche" />
+        <img class="art-gallery-nav-arrow" src="./asset/Img/svg/icon-arrow-filtre.svg" alt="Flèche">
         <span>Tout voir</span>
       </button>
-      <button class="art-gallery-nav-btn" data-filter="collections">
-        <img class="art-gallery-nav-arrow" src="./asset/Img/svg/icon-arrow-filtre.svg" alt="Flèche" />
+      <button class="art-gallery-nav-btn active" data-filter="collections">
+        <img class="art-gallery-nav-arrow" src="./asset/Img/svg/icon-arrow-filtre.svg" alt="Flèche">
         <span>Collections</span>
       </button>
       <button class="art-gallery-nav-btn" data-filter="epoque">
-        <img class="art-gallery-nav-arrow" src="./asset/Img/svg/icon-arrow-filtre.svg" alt="Flèche" />
+        <img class="art-gallery-nav-arrow" src="./asset/Img/svg/icon-arrow-filtre.svg" alt="Flèche">
         <span>Époque</span>
       </button>
       <button class="art-gallery-nav-btn" data-filter="artistes">
-        <img class="art-gallery-nav-arrow" src="./asset/Img/svg/icon-arrow-filtre.svg" alt="Flèche" />
+        <img class="art-gallery-nav-arrow" src="./asset/Img/svg/icon-arrow-filtre.svg" alt="Flèche">
         <span>Artistes</span>
       </button>
       <button class="art-gallery-nav-btn" data-filter="salle">
-        <img class="art-gallery-nav-arrow" src="./asset/Img/svg/icon-arrow-filtre.svg" alt="Flèche" />
+        <img class="art-gallery-nav-arrow" src="./asset/Img/svg/icon-arrow-filtre.svg" alt="Flèche">
         <span>Salle</span>
       </button>
       <button class="art-gallery-nav-btn" data-filter="medium">
-        <img class="art-gallery-nav-arrow" src="./asset/Img/svg/icon-arrow-filtre.svg" alt="Flèche" />
+        <img class="art-gallery-nav-arrow" src="./asset/Img/svg/icon-arrow-filtre.svg" alt="Flèche">
         <span>Medium</span>
       </button>
-    </div>
+    <div class="art-gallery-search-wrapper">
+        <img class="art-gallery-search-icon" src="./asset/Img/svg/Search.svg" alt="Rechercher">
+        <input type="text" id="artGallerySearch" placeholder="Rechercher une oeuvre - N°identifications" class="art-gallery-search-input">
+      </div></div><div class="art-gallery-subfilters" id="subfiltersMenu"><button class="art-gallery-subfilterbtn" data-subfilter="peinture" data-mainfilter="collections">Peinture</button><button class="art-gallery-subfilterbtn" data-subfilter="sculpture" data-mainfilter="collections">Sculpture</button><button class="art-gallery-subfilterbtn" data-subfilter="dessin" data-mainfilter="collections">Dessin</button><button class="art-gallery-subfilterbtn" data-subfilter="arts-decoratifs" data-mainfilter="collections">Arts décoratifs</button></div>
 
     <!-- Grille d'images Masonry -->
     <div class="art-gallery-grid" id="artGalleryGrid">
-      <div class="art-gallery-item" data-id="1">
-        <img src="./asset/Img/tableaux/tableau-hokusai-vague.jpg" alt="Scène orientale" />
+      <div class="art-gallery-item" data-id="1" style="display: block;">
+        <img src="./asset/Img/tableaux/tableau-hokusai-vague.jpg" alt="Scène orientale">
       </div>
-      <div class="art-gallery-item" data-id="2">
-        <img src="./asset/Img/tableaux/tableau-collomb-1.png" alt="Figure mythologique" />
+      <div class="art-gallery-item" data-id="2" style="display: block;">
+        <img src="./asset/Img/tableaux/tableau-collomb-1.png" alt="Figure mythologique">
       </div>
-      <div class="art-gallery-item" data-id="3">
-        <img src="./asset/Img/tableaux/tableau-ceija-stojka-sans-titre.jpg" alt="Paysage montagneux" />
+      <div class="art-gallery-item" data-id="3" style="display: block;">
+        <img src="./asset/Img/tableaux/tableau-ceija-stojka-sans-titre.jpg" alt="Paysage montagneux">
       </div>
-      <div class="art-gallery-item" data-id="4">
-        <img src="./asset/Img/tableaux/tableau-boucher-chinoiserie.jpg" alt="Port avec bateaux" />
+      <div class="art-gallery-item" data-id="4" style="display: block;">
+        <img src="./asset/Img/tableaux/tableau-boucher-chinoiserie.jpg" alt="Port avec bateaux">
       </div>
-      <div class="art-gallery-item" data-id="5">
-        <img src="./asset/Img/tableaux/tableau-pointillisme.jpg" alt="Paysage pastoral" />
+      <div class="art-gallery-item" data-id="5" style="display: block;">
+        <img src="./asset/Img/tableaux/tableau-pointillisme.jpg" alt="Paysage pastoral">
       </div>
-      <div class="art-gallery-item" data-id="6">
-        <img src="./asset/Img/tableaux/tableau-turner-ocean.jpg" alt="Nature morte aux fruits" />
+      <div class="art-gallery-item" data-id="6" style="display: block;">
+        <img src="./asset/Img/tableaux/tableau-turner-ocean.jpg" alt="Nature morte aux fruits">
       </div>
-      <div class="art-gallery-item" data-id="7">
-        <img src="./asset/Img/statue-1.png" alt="Figure héroïque" />
+      <div class="art-gallery-item" data-id="7" style="display: block;">
+        <img src="./asset/Img/statue-1.png" alt="Figure héroïque">
       </div>
-      <div class="art-gallery-item" data-id="8">
-        <img src="./asset/Img/tableaux/tableau-classicisme.jpg" alt="Scène nocturne" />
+      <div class="art-gallery-item" data-id="8" style="display: block;">
+        <img src="./asset/Img/tableaux/tableau-classicisme.jpg" alt="Scène nocturne">
       </div>
-      <div class="art-gallery-item" data-id="9">
-        <img src="./asset/Img/tableaux/tableau-art-contemporain.png" alt="Art Contemporain" />
+      <div class="art-gallery-item" data-id="9" style="display: block;">
+        <img src="./asset/Img/tableaux/tableau-art-contemporain.png" alt="Art Contemporain">
       </div>
-      <div class="art-gallery-item" data-id="10">
-        <img src="./asset/Img/tableaux/tableau-guenat-paysage.png" alt="Paysage" />
+      <div class="art-gallery-item" data-id="10" style="display: block;">
+        <img src="./asset/Img/tableaux/tableau-guenat-paysage.png" alt="Paysage">
       </div>
-      <div class="art-gallery-item" data-id="11">
-        <img src="./asset/Img/statue-2.png" alt="Statue" />
+      <div class="art-gallery-item" data-id="11" style="display: block;">
+        <img src="./asset/Img/statue-2.png" alt="Statue">
       </div>
-      <div class="art-gallery-item" data-id="12">
-        <img src="./asset/Img/tableaux/tableau-ocean-contemporain.png" alt="Océan Contemporain" />
+      <div class="art-gallery-item" data-id="12" style="display: block;">
+        <img src="./asset/Img/tableaux/tableau-ocean-contemporain.png" alt="Océan Contemporain">
       </div>
-      <div class="art-gallery-item" data-id="13">
-        <img src="./asset/Img/tableaux/tableau-turner.webp" alt="Turner Œuvre" />
+      <div class="art-gallery-item" data-id="13" style="display: block;">
+        <img src="./asset/Img/tableaux/tableau-turner.webp" alt="Turner Œuvre">
       </div>
-      <div class="art-gallery-item" data-id="14">
-        <img src="./asset/Img/tableaux/tableau-guenat-vieillard.jpg" alt="Portrait" />
+      <div class="art-gallery-item" data-id="14" style="display: block;">
+        <img src="./asset/Img/tableaux/tableau-guenat-vieillard.jpg" alt="Portrait">
       </div>
-      <div class="art-gallery-item" data-id="15">
-        <img src="./asset/Img/tableaux/tableau-ornans-ferme.webp" alt="Ferme d'Ornans" />
+      <div class="art-gallery-item" data-id="15" style="display: block;">
+        <img src="./asset/Img/tableaux/tableau-ornans-ferme.webp" alt="Ferme d'Ornans">
       </div>
-      <div class="art-gallery-item" data-id="16">
-        <img src="./asset/Img/tableaux/tableau-collomb-2.webp" alt="Composition" />
+      <div class="art-gallery-item" data-id="16" style="display: block;">
+        <img src="./asset/Img/tableaux/tableau-collomb-2.webp" alt="Composition">
       </div>
-      <div class="art-gallery-item" data-id="17">
-        <img src="./asset/Img/taureau-statue-1.png" alt="Taureau Statue" />
+      <div class="art-gallery-item" data-id="17" style="display: block;">
+        <img src="./asset/Img/taureau-statue-1.png" alt="Taureau Statue">
       </div>
-      <div class="art-gallery-item" data-id="18">
-        <img src="./asset/Img/tableaux/tableau-nu-nature-morte.png" alt="Nu Nature Morte" />
+      <div class="art-gallery-item" data-id="18" style="display: block;">
+        <img src="./asset/Img/tableaux/tableau-nu-nature-morte.png" alt="Nu Nature Morte">
       </div>
-      <div class="art-gallery-item" data-id="19">
-        <img src="./asset/Img/statues-groupe.jpg" alt="Trois Statues" />
+      <div class="art-gallery-item" data-id="19" style="display: block;">
+        <img src="./asset/Img/statues-groupe.jpg" alt="Trois Statues">
       </div>
     </div>
   </div>
@@ -227,7 +219,7 @@
 <section class="main__explore">
   <section class="main__banniere">
     <section class="main__banniere--explorer">
-      <img class="main__banniere-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
+      <img class="main__banniere-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche">
 
       <h2 class="main__banniere-titre">
          ESPACE<br>PÉDAGOGIQUE
@@ -378,8 +370,8 @@
           </div>
         </div>
       </li>
-    </ul>
-  </div>
+    
+  
 </section>
 
 <!-- Tableau récapitulatif des mouvements artistiques -->
@@ -516,7 +508,7 @@
       </button>
     </div>
     <div class="pedagogical-elements-right">
-      <img src="./asset/Img/tableaux/tableau-signac-venise.jpg" alt="Peinture pointilliste de Venise" class="pedagogical-painting" />
+      <img src="./asset/Img/tableaux/tableau-signac-venise.jpg" alt="Peinture pointilliste de Venise" class="pedagogical-painting">
     </div>
   </div>
 </section>
@@ -524,7 +516,7 @@
 <section class="art-appreciation-section">
   <div class="art-appreciation-container">
     <div class="art-appreciation-left">
-      <img src="./asset/Img/tableaux/tableau-mondrian.jpg" alt="Composition de Mondrian" class="art-appreciation-painting" />
+      <img src="./asset/Img/tableaux/tableau-mondrian.jpg" alt="Composition de Mondrian" class="art-appreciation-painting">
     </div>
     <div class="art-appreciation-right">
       <div class="art-appreciation-card">
@@ -548,7 +540,7 @@
 <section class="main__explore">
   <section class="main__banniere">
     <section class="main__banniere--explorer">
-      <img class="main__banniere-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
+      <img class="main__banniere-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche">
 
       <h2 class="main__banniere-titre">
          MOUVEMENTS<br>ARTISTIQUES
@@ -578,7 +570,7 @@
 <section class="main__explore">
   <section class="main__banniere">
     <section class="main__banniere--explorer">
-      <img class="main__banniere-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
+      <img class="main__banniere-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche">
 
       <h2 class="main__banniere-titre">
         SAVOIR<br>
@@ -600,7 +592,7 @@
       <!-- Peinture à l'huile -->
       <div class="technique-card">
         <div class="technique-card-image">
-          <img src="./asset/Img/tableaux/tableau-classicisme.jpg" alt="Peinture à l'huile" />
+          <img src="./asset/Img/tableaux/tableau-classicisme.jpg" alt="Peinture à l'huile">
           <div class="technique-card-overlay"></div>
         </div>
         <div class="technique-card-content">
@@ -612,7 +604,7 @@
       <!-- Aquarelle -->
       <div class="technique-card">
         <div class="technique-card-image">
-          <img src="./asset/Img/tableaux/tableau-turner-ocean.jpg" alt="Aquarelle" />
+          <img src="./asset/Img/tableaux/tableau-turner-ocean.jpg" alt="Aquarelle">
           <div class="technique-card-overlay"></div>
         </div>
         <div class="technique-card-content">
@@ -624,7 +616,7 @@
       <!-- Sculpture -->
       <div class="technique-card">
         <div class="technique-card-image">
-          <img src="./asset/Img/statues-groupe.jpg" alt="Sculpture" />
+          <img src="./asset/Img/statues-groupe.jpg" alt="Sculpture">
           <div class="technique-card-overlay"></div>
         </div>
         <div class="technique-card-content">
@@ -636,7 +628,7 @@
       <!-- Craie grasse -->
       <div class="technique-card">
         <div class="technique-card-image">
-          <img src="./asset/Img/tableaux/tableau-nu-nature-morte.png" alt="Craie grasse" />
+          <img src="./asset/Img/tableaux/tableau-nu-nature-morte.png" alt="Craie grasse">
           <div class="technique-card-overlay"></div>
         </div>
         <div class="technique-card-content">
@@ -647,7 +639,7 @@
       <!-- Fusain -->
       <div class="technique-card">
         <div class="technique-card-image">
-          <img src="./asset/Img/tableaux/tableau-guenat-vieillard.jpg" alt="Fusain" />
+          <img src="./asset/Img/tableaux/tableau-guenat-vieillard.jpg" alt="Fusain">
           <div class="technique-card-overlay"></div>
         </div>
         <div class="technique-card-content">
@@ -658,7 +650,7 @@
       <!-- Encre -->
       <div class="technique-card">
         <div class="technique-card-image">
-          <img src="./asset/Img/tableaux/tableau-hokusai-vague.jpg" alt="Encre" />
+          <img src="./asset/Img/tableaux/tableau-hokusai-vague.jpg" alt="Encre">
           <div class="technique-card-overlay"></div>
         </div>
         <div class="technique-card-content">
@@ -779,8 +771,7 @@
 <p class="fichier-pedago__para">
   Télécharger le fichier pédagogique complet au format PDF pour une exploration approfondie des collections des Beaux-Arts du musée. Ce document offre des informations détaillées, des analyses d'œuvres, et des ressources éducatives pour enrichir votre compréhension de l'art et de son histoire.
 </p>
-<div class="fichier-pedago__button"
->
+<div class="fichier-pedago__button">
 <a class="main__button--savoir-white-black" href="#">Télécharger le fichier PDF</a>
 </div>
 
@@ -790,9 +781,9 @@
 <section class="main__programmation">
   <section class="main__banniere-prog">
     <section class="main__banniere--programmation">
-      <img class="main__banniere-img-fonce" src="./asset/Img/svg/croix-black.svg" alt="Croix noire" />
+      <img class="main__banniere-img-fonce" src="./asset/Img/svg/croix-black.svg" alt="Croix noire">
       <h2 class="main__banniere-titre-fonce">
-        Programmation<br>octobre > avril 2026
+        Programmation<br>octobre &gt; avril 2026
       </h2>
     </section>
   </section>
@@ -801,7 +792,7 @@
 
 <section class="main__card">
   <div class="main__card-agencement">
-  <img class="main__card-img" src="./asset/Img/visite-groupe.jpg" alt="Groupe en visite" />
+  <img class="main__card-img" src="./asset/Img/visite-groupe.jpg" alt="Groupe en visite">
  </div>
   <div class="main__card-container">
   <h2 class="main__card-title">Expositions et accrochages</h2>
@@ -840,11 +831,11 @@
   <div class="footer__contain-form">
   <div class="footer__logo-container">
     <a class="footer__logo-link" href="#">
-      <img class="footer__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
+      <img class="footer__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA">
       <h2 class="footer__title">Suivez-nous pour recevoir la newsletter</h2>
     </a>
   <form class="footer__form">
-    <input class="footer__input" type="email" placeholder="Entrez votre adresse e-mail" required />
+    <input class="footer__input" type="email" placeholder="Entrez votre adresse e-mail" required="">
     <button class="footer__button" type="submit">S'abonner</button>
   </form>
   </div>
@@ -855,7 +846,7 @@
         <h4 class="footer__nav-title">Le musée</h4>
       </li>
       <li class="footer__nav-item">
-        <a class="footer__nav-link" href="./musee-histoire.html">Présentation & histoire</a>
+        <a class="footer__nav-link" href="./musee-histoire.html">Présentation &amp; histoire</a>
       </li>
       <li class="footer__nav-item">
         <a class="footer__nav-link" href="./collections.html">Collections</a>
@@ -894,16 +885,16 @@
     <h2>Nos réseaux sociaux</h2>
     <section class="footer__social-media">
       <a class="footer__social-link" href="#" aria-label="Facebook">
-        <img class="footer__social-icon" src="./asset/Img/svg/facebook.svg" alt="Facebook" />
+        <img class="footer__social-icon" src="./asset/Img/svg/facebook.svg" alt="Facebook">
       </a>
       <a class="footer__social-link" href="#" aria-label="Instagram">
-        <img class="footer__social-icon" src="./asset/Img/svg/insta.svg" alt="Instagram" />
+        <img class="footer__social-icon" src="./asset/Img/svg/insta.svg" alt="Instagram">
       </a>
       <a class="footer__social-link" href="#" aria-label="LinkedIn">
-        <img class="footer__social-icon" src="./asset/Img/svg/linkdin.svg" alt="LinkedIn" />
+        <img class="footer__social-icon" src="./asset/Img/svg/linkdin.svg" alt="LinkedIn">
       </a>
       <a class="footer__social-link" href="#" aria-label="Tiktok">
-        <img class="footer__social-icon" src="./asset/Img/svg/tiktok.svg" alt="Tiktok" />
+        <img class="footer__social-icon" src="./asset/Img/svg/tiktok.svg" alt="Tiktok">
       </a>
     </section>
   </section>
@@ -912,7 +903,7 @@
     <a class="footer__link" href="#">Mentions légales</a>
     <a class="footer__link" href="#">Politique de confidentialité</a>
   </section>
-</footer>
+</div></footer>
 
 
 
@@ -956,10 +947,10 @@ document.addEventListener('mousemove', showImgContent);
 </script>
   <!-- Search Overlay -->
   <div id="search-overlay" class="search-overlay">
-    <div class="search-overlay__close" id="search-close">&times;</div>
+    <div class="search-overlay__close" id="search-close">×</div>
     <div class="search-overlay__content">
       <form class="search-overlay__form">
-        <input type="text" class="search-overlay__input" placeholder="Rechercher sur le site..." autofocus>
+        <input type="text" class="search-overlay__input" placeholder="Rechercher sur le site..." autofocus="">
         <button type="submit" class="search-overlay__submit">
           <img src="./asset/Img/svg/Search.svg" alt="Rechercher">
         </button>
@@ -1040,6 +1031,44 @@ document.addEventListener('mousemove', showImgContent);
     });
   </script>
 
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 </html>
 

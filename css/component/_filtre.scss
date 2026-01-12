@@ -92,3 +92,28 @@
     height: clamp(15px, 3vw, 20px);
     flex-shrink: 0;
 }
+
+
+
+.art-gallery-subfilters{
+    border: 2px solid;
+  border-radius: 10px;
+  width: fit-content;
+  margin-bottom: 20px;
+
+}
+
+.art-gallery-subfilterbtn{
+    background-color: none;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  padding: 20px;
+}
+
+.art-gallery-subfilterbtn:hover {
+    background: aqua;
+    transition: all .5s ease-in-out;
+}

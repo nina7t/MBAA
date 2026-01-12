@@ -1,5 +1,9 @@
 @use "../utils/variables" as *;
 
+
+// ici cest pour la mansory grid de photos
+
+
 .art-gallery-section {
   min-height: 100vh;
   background-color: #f9fafb;
@@ -102,17 +106,17 @@
 // Grille d'images Masonry - Vraie masonry avec colonnes
 .art-gallery-grid {
   column-count: 1;
-  column-gap: 1.5rem;
+  column-gap: 1rem;
   width: 100%;
 
   @media (min-width: 640px) {
     column-count: 2;
-    column-gap: 1.5rem;
+    column-gap: 1rem;
   }
 
   @media (min-width: 1024px) {
     column-count: 4;
-    column-gap: 2rem;
+    column-gap: 1rem;
   }
 }
 
@@ -124,7 +128,7 @@
   page-break-inside: avoid;
   position: relative;
   overflow: hidden;
-  border-radius: 1rem;
+  border-radius: 5px;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   background: #fff;

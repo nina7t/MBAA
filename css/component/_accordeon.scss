@@ -1,5 +1,7 @@
 @use "../utils/variables" as *;
 
+// Accordeon avec une animation de la flèche et un effet hover sur les titres
+
 .fancy-details {
     font-family: 'Clash Display', sans-serif;
     color: $color-primary-dark;
@@ -13,6 +15,7 @@
     summary::-webkit-details-marker {
       display: none;
     }
+    
 
     summary {
       display: flex;
@@ -37,6 +40,8 @@
         margin-left: 1rem;
       }
     }
+
+    
   
     .fancy-content {
       max-height: 0;
@@ -51,6 +56,8 @@
         transform: rotate(45deg);
       }
   
+
+      
       .fancy-content {
         max-height: 500px; // assez haut pour 95% des cas
         opacity: 1;

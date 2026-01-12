@@ -1,0 +1,180 @@
+// Importer les variables
+@use '../utils/variables' as *;
+
+// Reset
+.container {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: $spacing-md;
+}
+
+// Section Services
+.services-section {
+    background: $color-secondary-gold;
+    padding: $spacing-xl;
+    border-radius: 8px;
+    margin-bottom: $spacing-md;
+    color: $color-white;
+
+    .section-title {
+        font-size: $font-size-h2-mobile;
+        font-weight: $font-weight-light;
+        letter-spacing: 2px;
+        margin-bottom: $spacing-xl;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        @media (min-width: $breakpoint-md) {
+            font-size: $font-size-h2-desktop;
+        }
+
+        .icon {
+            font-size: 32px;
+            font-weight: $font-weight-light;
+        }
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-xl $spacing-2xl;
+    }
+
+    .service-item {
+        .service-subtitle {
+            font-size: $font-size-body-large;
+            font-weight: $font-weight-normal;
+            margin-bottom: $spacing-sm;
+        }
+
+        .service-text {
+            font-size: $font-size-body-small;
+            font-weight: $font-weight-light;
+            line-height: $line-height-loose;
+        }
+    }
+}
+
+// Bottom sections container
+.bottom-sections {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-md;
+}
+
+// Section Réservations
+.reservation-section {
+    background-color: $color-white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    .section-title {
+        font-size: $font-size-h3-medium;
+        font-weight: $font-weight-light;
+        letter-spacing: 2px;
+        margin-bottom: $spacing-lg;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: $color-secondary-gold;
+
+        @media (min-width: $breakpoint-md) {
+            font-size: $font-size-h3-large;
+        }
+
+        .icon {
+            font-size: 28px;
+            font-weight: $font-weight-light;
+        }
+    }
+
+    .reservation-text {
+        font-size: $font-size-body-small;
+        color: $color-text-secondary;
+        margin-bottom: $spacing-sm;
+        line-height: $line-height-relaxed;
+    }
+
+    .reservation-link {
+        margin-bottom: $spacing-lg;
+
+        a {
+            color: $color-secondary-gold;
+            text-decoration: underline;
+            font-size: $font-size-body-small;
+
+            &:hover {
+                color: $color-secondary-gold;
+            }
+        }
+    }
+
+    .subsection-title {
+        font-size: $font-size-body;
+        font-weight: $font-weight-semibold;
+        color: $color-text-primary;
+        margin-bottom: $spacing-sm;
+        margin-top: $spacing-md;
+    }
+}
+
+// Section Bons Plans
+.deals-section {
+    background-color: $color-white;
+    padding: $spacing-xl;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    .section-title {
+        font-size: $font-size-h3-medium;
+        font-weight: $font-weight-light;
+        letter-spacing: 2px;
+        margin-bottom: $spacing-lg;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: $color-secondary-gold;
+
+        @media (min-width: $breakpoint-md) {
+            font-size: $font-size-h3-large;
+        }
+
+        .icon {
+            font-size: 28px;
+            font-weight: $font-weight-light;
+        }
+    }
+
+    .deal-title {
+        font-size: $font-size-body;
+        font-weight: $font-weight-semibold;
+        color: $color-text-primary;
+        margin-bottom: $spacing-xs;
+        margin-top: $spacing-md;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+
+    .deal-text {
+        font-size: $font-size-body-small;
+        color: $color-text-secondary;
+        line-height: $line-height-relaxed;
+        margin-bottom: $spacing-md;
+    }
+}
+
+// Responsive
+@media (max-width: $breakpoint-md) {
+    .services-section {
+        .services-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .bottom-sections {
+        grid-template-columns: 1fr;
+    }
+}

@@ -276,7 +276,7 @@
     font-family: $font-secondary;
     
     &:hover {
-        background: darken($bg-or, 8%);
+        background: $bg-or;
         transform: translateY(-2px);
     }
 }
@@ -546,7 +546,7 @@
     display: inline-block;
     
     &:hover {
-        background: darken($bg-or, 8%);
+        background: $bg-or;
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba($bg-or, 0.3);
     }
@@ -562,7 +562,7 @@
 
 .newsletter-benefits {
     padding: 2rem;
-    background: linear-gradient(135deg, $bg-or 0%, darken($bg-or, 10%) 100%);
+    background: linear-gradient(135deg, $bg-or 0%, $bg-or 100%);
     border-radius: 10px;
     color: white;
     

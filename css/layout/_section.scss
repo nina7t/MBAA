@@ -129,7 +129,9 @@
         gap: 20px;
     }
 }
-
+.main_evenement{
+    position: inherit;
+}
 .main__banniere--evenement {
     display: flex;
     flex-direction: row;
@@ -142,11 +144,10 @@
 }
 
 .main__banniere--infos {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    gap: 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: self-start;
 
     @media (min-width: 768px) {
         gap: 20px;

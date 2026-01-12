@@ -1,4 +1,5 @@
 // Utiliser Slick pour filtrer directement
+
 $(document).ready(function() {
     const $carousel = $(".carousel__list");
     
@@ -35,7 +36,7 @@ $(document).ready(function() {
         centerMode: false,
         focusOnSelect: true,
         responsive: [{
-            breakpoint: 1024,
+            breakpoint: 1440,
             settings: {
                 slidesToShow: 3,
                 slidesToScroll: 1,
@@ -44,7 +45,7 @@ $(document).ready(function() {
             },
         },
         {
-            breakpoint: 600,
+            breakpoint: 1200,
             settings: {
                 slidesToShow: 2,
                 slidesToScroll: 1,
@@ -72,6 +73,7 @@ $(document).ready(function() {
         $(this).addClass('filtre__list-item--active');
         
         // Filtrer avec Slick
+        
         if (filterValue === 'tous') {
             $carousel.slick('slickUnfilter');
         } else {

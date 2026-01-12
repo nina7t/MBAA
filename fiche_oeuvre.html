@@ -5,20 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="./asset/Img/logo/logo-mat-small.png" />
   <link rel="stylesheet" href="./style.css" />
+  <script src="/js/audio-fiche.js"></script>
 
   <!-- Locomotive Scroll CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.css" />
 
   <!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-crossorigin=""/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
   <title>MBAA - Musée des Beaux-Arts et d'Archéologie de Besançon</title>
- 
+
 </head>
 <body data-scroll-container>
-  <header class="header header--fiche-oeuvre">
+  <header class="header header--evenement">
     <div class="header__container">
       <!-- Logo -->
       <a class="header__logo-link" href="./index.html">
@@ -33,142 +37,56 @@ crossorigin=""/>
       <!-- Navigation -->
       <nav class="header__nav" id="headerNav" aria-hidden="true">
         <ul class="header__nav-list header__nav-list--main">
-        
-          <li class="header__nav-item header__nav-item--has-submenu">
-            <a class="header__nav-link" href="./index.html#infos-pratiques">
-              Infos pratiques
-            </a>
-            
-            <!-- Sous-menu -->
-            <ul class="header__submenu">
-              <li class="header__submenu-item">
-                <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="#">Tarifs & horaires</a>
-              </li>
-              
-              <li class="header__submenu-item">
-                <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="#">Visites guidées</a>
-              </li>
-              <li class="header__submenu-item">
-                <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="#">Groupes & scolaires</a>
-              </li>
-              <li class="header__submenu-item">
-                <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="#">Accessibilité</a>
-              </li>
-            </ul>
-          </li>
-          
-          <!-- Menu Collections -->
-
-          <li class="header__nav-item header__nav-item--has-submenu">
-            <a class="header__nav-link" href="./collections.html">
-              Collections
-      
-            </a>
-            
-            <!-- Sous-menu -->
-            <ul class="header__submenu">
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="./collections.html#peintures">Explorer en ligne</a>
-              </li>
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="./collections.html#sculptures">Arts graphiques</a>
-              </li>
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="./collections.html#archeologie">Arts en volume</a>
-              </li>
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="./collections.html#arts-graphiques">Archéologie</a>
-              </li>
-            </ul>
-          </li>
-        
-          <li class="header__nav-item header__nav-item--has-submenu">
-            <a class="header__nav-link" href="./evenement.html">
-              Évènements             
-            </a>
-            
-            <!-- Sous-menu -->
-            <ul class="header__submenu">
-              <li class="header__submenu-item">
-                    <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="./evenement.html#peintures">Explorer en ligne</a>
-              </li>
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="./evenement.html#sculptures">Arts graphiques</a>
-              </li>
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="./evenement.html#archeologie">Arts en volume</a>
-              </li>
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="./evenement.html#arts-graphiques">Archéologie</a>
-              </li>
-            </ul>
-          </li>
-          
-
-        
-          <li class="header__nav-item header__nav-item--has-submenu">
-            <a class="header__nav-link" href="./musee-histoire.html">
-              Le musée      
-            </a>
-            
-            <!-- Sous-menu -->
-            <ul class="header__submenu">
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="./musee-histoire.html#peintures">Histoire</a>
-  
-              </li>
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="#">L'équipe</a>
-              </li>
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="#">Partenaires</a>
-              </li>
-              <li class="header__submenu-item">
-                  <img src="./asset/Img/svg/icon-arrow-filtre.svg" alt="" />
-                <a class="header__submenu-link" href="#">Archives</a>
-              </li>
-            </ul>
-          </li>
-          
           <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./index.html#infos-pratiques">Contact</a>
+            <a class="header__nav-link nav-dot" href="./infos.html">Infos pratiques</a>
+          </li>
+          <li class="header__nav-item nav-dot">
+            <a class="header__nav-link nav-dot" href="./collections.html">Collections</a>
+          </li>
+          <li class="header__nav-item nav-dot">
+            <a class="header__nav-link nav-dot" href="./evenement.html">Évènements</a>
+          </li>
+          <li class="header__nav-item nav-dot">
+            <a class="header__nav-link nav-dot" href="./musee-histoire.html">Le musée</a>
+          </li>
+          <li class="header__nav-item nav-dot">
+            <a class="header__nav-link nav-dot" href="./infos.html">Contact</a>
           </li>
         </ul>
-
-        
   
         <ul class="header__nav-list header__nav-list--secondary">
+          <!-- Icône Contact (remplace connexion.svg) -->
           <li class="header__nav-item">
             <a class="header__nav-link" href="./connexion.html" aria-label="Connexion">
-              <img class="header__nav-icon" src="./asset/Img/svg/connexion.svg" alt="" />
+              <svg class="header__nav-icon" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
             </a>
           </li>
+          
+          <!-- Icône Ticket (remplace ticket.svg) -->
           <li class="header__nav-item">
             <a class="header__nav-link" href="#" aria-label="Billetterie">
-              <img class="header__nav-icon" src="./asset/Img/svg/ticket.svg" alt="" />
+              <svg class="header__nav-icon" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
+                <path d="M13 5v2"></path>
+                <path d="M13 17v2"></path>
+                <path d="M13 11v2"></path>
+              </svg>
             </a>
           </li>
         
+          <!-- Icône Loupe (remplace Search.svg) -->
           <li class="header__nav-item">
             <a class="header__nav-link" href="#" aria-label="Recherche">
-              <img class="header__nav-icon" src="./asset/Img/svg/Search.svg" alt="" />
+              <svg class="header__nav-icon" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
             </a>
           </li>
+          
           <li class="header__nav-item">
             <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">FR
             </a>
@@ -180,20 +98,23 @@ crossorigin=""/>
         </ul>
       </nav>
     </div>
+
     <div class="header__hero">
       <div class="header__hero-content header__hero-content--reduced">
         <h1 class="header__title">PAUL<br>COLLOMB<br>
-          <span>FICHE ARTISTE</span>
         </h1>
       </div>
+      
       <div class="header__subtitle">
+        <span id="sous-menu-header">FICHE ARTISTE</span>
         <p class="header__subtitle header__subtitle--fiche-oeuvre">
           Paul Collomb, né le 8 février 1921 à Lyon et mort le 5 février 2010 à Paris, est un peintre français.<br><br>
-          Paul Collomb débute le dessin très jeune avant d’intégrer l’École nationale supérieure des Beaux-Arts de Paris,<br> dans l’atelier du peintre Souverbie.
-        Après la Seconde Guerre mondiale, il installe son atelier à La Ruche, haut lieu d’artistes à Paris. Il remporte en 1950 le Deuxième Grand Prix de Rome, puis le Prix de la Casa de Velázquez en 1951. Pensionnaire à l’Institut Français d’Amsterdam en 1953-1954, il consacre ensuite toute sa vie à la peinture, exposant en France et à l’international.
+          Paul Collomb débute le dessin très jeune avant d'intégrer l'École nationale supérieure des Beaux-Arts de Paris,<br> dans l'atelier du peintre Souverbie.
+        Après la Seconde Guerre mondiale, il installe son atelier à La Ruche, haut lieu d'artistes à Paris. Il remporte en 1950 le Deuxième Grand Prix de Rome, puis le Prix de la Casa de Velázquez en 1951. Pensionnaire à l'Institut Français d'Amsterdam en 1953-1954, il consacre ensuite toute sa vie à la peinture, exposant en France et à l'international.
         </p>
       </div>
     </div>
+    
     <!-- Flèche de scroll -->
     <div class="header__scroll">
       <img class="header__scroll-icon" src="./asset/Img/svg/icon-arrow_bas.svg" alt="Défiler vers le bas" />
@@ -201,51 +122,85 @@ crossorigin=""/>
   </header>
 
 <main>
-    <section class="">
-        <div class="">
+  <section class="artist-works">
+    <div class="artist-works__header">
 
-        </div>
-        <div class="">
-            <h2 class="">ŒUVRES DE L'ARTISTE</h2>
-            <div class="">
-                <!-- Carte d'une œuvre -->
-                <article class="fiche-oeuvre__card">
-                    <img class="fiche-oeuvre__img" src="./asset/Img/collections/peintures/paul-collomb/paul-collomb-1.jpg" alt="Œuvre de Paul Collomb" />
-                    <div class="fiche-oeuvre__info">
-                        <h3 class="fiche-oeuvre__title">Le repas des amis</h3>
-                        <h3 class="fiche-oeuvre__nom">Paul collomb</h3>
-                        <h3 class="fiche-oeuvre__date">1958</h3>
-                        <h4 class="fiche-oeuvre__mouvement">Expressionnisme / peinture</h4>
-                        <p class="fiche-oeuvre__artist">Le Repas des amis » est une scène simple et universelle : un moment de partage entre proches, rendu avec tendresse par Paul Collomb. Peint en 1963, ce tableau réunit plusieurs de ses amis artistes et mécènes autour d’une table conviviale. Loin de la peinture abstraite alors à la mode, Collomb choisit la chaleur humaine, la lumière du quotidien, l’instant vrai. Ici, la table devient un espace de lien : chaque personnage est une présence calme, chaque couleur une émotion. La composition resserrée rapproche les figures, comme pour dire que l’art, lui aussi, est un repas partagé. Collomb ne peint pas un banquet historique mais une amitié en peinture. À travers les gestes, les regards et la lumière, il célèbre ce qui unit plutôt que ce qui sépare : la convivialité, la joie simple, la beauté du vivre ensemble.</p>
-                        <p class="fiche-oeuvre__details">
-                            Huile sur toile<br>
-                            81 x 100 cm<br>
-                            Don de Madame Collomb, 2015<br>
-                            Inv. 2015.0.1
-                        </p>
-                    </div>
+    </div>
+    <div class="artist-works__content">
+        <h2 class="artist-works__title">ŒUVRES DE L'ARTISTE</h2>
+        <div class="artist-works__grid">
+            <!-- Carte d'une œuvre -->
+            <article class="artwork-card">
+                <img class="artwork-card__image" src="./asset/Img/tableaux/tableau-collomb-1.png" alt="Œuvre de Paul Collomb" />
+                <div class="artwork-card__info">
+                    <h3 class="artwork-card__title">Le repas des amis</h3>
+                    <h3 class="artwork-card__artist-name">Paul collomb</h3>
+                    <h3 class="artwork-card__date">1958</h3>
+                    <h4 class="artwork-card__movement">Expressionnisme / peinture</h4>
+                    <p class="artwork-card__description">Le Repas des amis » est une scène simple et universelle : un moment de partage entre proches, rendu avec tendresse par Paul Collomb. Peint en 1963, ce tableau réunit plusieurs de ses amis artistes et mécènes autour d'une table conviviale. Loin de la peinture abstraite alors à la mode, Collomb choisit la chaleur humaine, la lumière du quotidien, l'instant vrai. Ici, la table devient un espace de lien : chaque personnage est une présence calme, chaque couleur une émotion. La composition resserrée rapproche les figures, comme pour dire que l'art, lui aussi, est un repas partagé. Collomb ne peint pas un banquet historique mais une amitié en peinture. À travers les gestes, les regards et la lumière, il célèbre ce qui unit plutôt que ce qui sépare : la convivialité, la joie simple, la beauté du vivre ensemble.</p>
+                    <p class="artwork-card__details">
+                        Huile sur toile<br>
+                        81 x 100 cm<br>
+                        Don de Madame Collomb, 2015<br>
+                        Inv. 2015.0.1
+                    </p>
+                </div>
 
-                    <div class="section-audioguide">
-                        <h3 class="section-audioguide__title">Écouterl'audioguide</h3>
-                        <img class="section-audioguide__icon" src="./asset/Img/svg/icon-audioguide.svg" alt="Icône audioguide" />
-                        <audio class="section-audioguide__audio" controls>
-                            <source src="./asset/Audio/paul-collomb-le-repas-des-amis.mp3" type="audio/mpeg">
-                            Votre navigateur ne supporte pas la lecture audio.</audio>
-                        <p class="section-audioguide__text">Lire la transcription audio</p>
-                    </div>
-                </article>
-                <!-- Répéter la carte pour chaque œuvre -->
-                 </div>
-    </section>
-
+                <div class="artwork-card__audioguide">
+                  <h3 class="artwork-card__audioguide-title">Écouter l'audioguide</h3>
+                  
+                  <!-- Audio natif caché -->
+                  <audio class="artwork-card__audioguide-player" id="audioPlayer">
+                      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                  </audio>
+    
+                  <!-- Contrôles personnalisés -->
+                  <div class="custom-audio-controls">
+                      <div class="audio-controls-top">
+                          <button class="play-pause-btn" id="playPauseBtn">Play</button>
+                          
+                          <div class="progress-container">
+                              <div class="progress-bar" id="progressBar">
+                                  <div class="progress-fill" id="progressFill"></div>
+                              </div>
+                              <div class="time-display">
+                                  <span id="currentTime">0:00</span>
+                                  <span id="duration">0:00</span>
+                              </div>
+                          </div>
+                      </div>
+    
+                      <div style="display: flex; justify-content: space-between; align-items: center;">
+                          <div class="volume-controls">
+                              <button class="volume-btn" id="volumeBtn">🔊</button>
+                              <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="100">
+                          </div>
+    
+                          <div class="speed-control">
+                              <button class="speed-btn" data-speed="0.5">0.5x</button>
+                              <button class="speed-btn active" data-speed="1">1x</button>
+                              <button class="speed-btn" data-speed="1.5">1.5x</button>
+                              <button class="speed-btn" data-speed="2">2x</button>
+                          </div>
+                      </div>
+                  </div>
+    
+                  <p class="artwork-card__audioguide-transcript">Lire la transcription audio</p>
+              </div>
+          </article>
+      </div>
+    
+    
+    </div>
+</section>
 
     <div class="redirection">
+      <h2 class="artist-works__title">Revenir sur l'appareil photo</h2>
         <a class="redirection__link" href="collections.html">
-            <img class="redirection__icon" src="./asset/Img/svg/icon-arrow-right.svg" alt="Icône flèche droite" />
+            <img class="redirection__icon" src="/asset/Img/svg/qr-code.svg" alt="Icône flèche droite" />
             Revenir sur l'appareil photo
         </a>
     </div>
-
 
 </main>
 
@@ -273,56 +228,40 @@ crossorigin=""/>
       </section>
 </section>
 
-      <section class="main__explore-accordion">
-        <div class="">
-      <details class="fancy-details">
-        <summary>La couleur</summary>
-        <div class="fancy-content">
-          <p>
-            Voici la réponse détaillée.  
-            Tu peux mettre du texte, des images, des liens, tout ce que tu veux.
-          </p>
-        </div>
-      </details>
-      <details class="fancy-details">
-        <summary>La ligne </summary>
-        <div class="fancy-content">
-          <p>
-            Voici la réponse détaillée.  
-            Tu peux mettre du texte, des images, des liens, tout ce que tu veux.
-          </p>
-        </div>
-      </details>
-      <details class="fancy-details">
-        <summary>La forme</summary>
-        <div class="fancy-content">
-          <p>
-            Voici la réponse détaillée.  
-            Tu peux mettre du texte, des images, des liens, tout ce que tu veux.
-          </p>
-        </div>
-      </details>
-      <details class="fancy-details">
-        <summary>L'espace</summary>
-        <div class="fancy-content">
-          <p>
-            Voici la réponse détaillée.  
-            Tu peux mettre du texte, des images, des liens, tout ce que tu veux.
-          </p>
-        </div>
-      </details>
-      <details class="fancy-details">
-        <summary>La texture</summary>
-        <div class="fancy-content">
-          <p>
-            Voici la réponse détaillée.  
-            Tu peux mettre du texte, des images, des liens, tout ce que tu veux.
-          </p>
-        </div>
-      </details>
+<section class="pedagogical-elements-section">
+  <div class="pedagogical-elements-container">
+    <div class="pedagogical-elements-left">
+      <button class="pedagogical-element-item" data-filter="couleur">
+        <span class="pedagogical-element-text">La couleur</span>
+        <span class="pedagogical-element-arrow">↗</span>
+      </button>
+      <div class="pedagogical-element-separator"></div>
+      <button class="pedagogical-element-item" data-filter="ligne">
+        <span class="pedagogical-element-text">La ligne</span>
+        <span class="pedagogical-element-arrow">↗</span>
+      </button>
+      <div class="pedagogical-element-separator"></div>
+      <button class="pedagogical-element-item" data-filter="forme">
+        <span class="pedagogical-element-text">La forme</span>
+        <span class="pedagogical-element-arrow">↗</span>
+      </button>
+      <div class="pedagogical-element-separator"></div>
+      <button class="pedagogical-element-item" data-filter="espace">
+        <span class="pedagogical-element-text">L'espace</span>
+        <span class="pedagogical-element-arrow">↗</span>
+      </button>
+      <div class="pedagogical-element-separator"></div>
+      <button class="pedagogical-element-item" data-filter="texture">
+        <span class="pedagogical-element-text">La texture</span>
+        <span class="pedagogical-element-arrow">↗</span>
+      </button>
     </div>
-<img class="main__explore-decor" src="./asset/Img/Musée_BeauxArts_Besançon_mosaic.jpg" alt="Décor artistique" />
+    <div class="pedagogical-elements-right">
+      <img src="./asset/Img/tableaux/tableau-signac-venise.jpg" alt="Peinture pointilliste de Venise" class="pedagogical-painting">
+    </div>
+  </div>
 </section>
+    
 
 
 <section class="main__programmation">
@@ -336,18 +275,12 @@ crossorigin=""/>
     </section>
   </section>
   
-  <div class="autre-oeuvre artiste">
-    <div class="">
-        <img class="" src="./asset/Img/collections/peintures/paul-collomb/paul-collomb-3.jpg" alt="Œuvre de Paul Collomb" />
-        <h3 class="">Titre de l'œuvre</h3>
-        <p class="">Paul Collomb</p>
+  <div class="artist-gallery">
+    <div class="artist-gallery__item">
+        <img class="artist-gallery__image" src="./asset/Img/tableaux/tableau-collomb-1.png" alt="Œuvre de Paul Collomb" />
+  <img class="artist-gallery__image" src="./asset/Img/tableaux/tableau-collomb-3.jpg" alt="Œuvre de Paul Collomb" />
     </div>
-    <div class="">
-        <img class="" src="./asset/Img/collections/peintures/paul-collomb/paul-collomb-2.jpg" alt="Œuvre de Paul Collomb" />
-        <h3 class="">Titre de l'œuvre</h3>
-        <p class="">Paul Collomb</p>
-    </div>
-  </div>
+</div>
 
 
   <section class="main__programmation">
@@ -362,56 +295,76 @@ crossorigin=""/>
   </section>
   
 
-  <section class="">
-    <div class="">
-        <div class="">
-            <img class="" src="/asset/Img/tableaux/tableau-art-contemporain.png" alt="Œuvre d'un artiste en lien" />
-            <h3 class="">Vincent
-                Barré</h3>
-            <p class="">Sculpteur contemporain français, Vincent Barré travaille le plomb, le bois ou la cire, qu’il façonne dans un dialogue entre matière et espace. Son œuvre, à la fois architecturale et méditative, interroge le rapport du corps à la nature et à la mémoire des lieux. ..</p>
-        </div>
-        <div class="">
-            <img class="" src="/asset/Img/tableaux/tableau-nu-nature-morte.png" alt="Œuvre d'un artiste en lien" />
-            <h3 class="">Henri
-                Matisse</h3>
-            <p class="">Chef de file du fauvisme, Matisse révolutionne la peinture par sa recherche du bonheur à travers la couleur. Il peint avec des aplats puissants et des compositions équilibrées, célébrant la joie, la danse et la vie....</p>
-        </div>
-        <div class="">
-            <img class="" src="/asset/Img/tableaux/tableau-ocean-contemporain.png" alt="Œuvre d'un artiste en lien" />
-            <h3 class="">Louis
-                Valtat</h3>
-            <p class="">Précurseur du fauvisme, Louis Valtat mêle couleurs éclatantes et formes simplifiées. Ami de Matisse et de Bonnard, il explore la lumière du Sud avec audace, peignant paysages, portraits et scènes de bord de mer. ..</p>
-        </div>
-    </div>
 
-    <div class="">
-        <div class="">
-            <img class="" src="/asset/Img/tableaux/tableau-signac-venise.jpg" alt="Œuvre d'un artiste en lien" />
-            <h3 class="">Paul
-                Signac</h3>
-            <p class="">Compagnon de Seurat, Paul Signac est un maître du pointillisme, technique où la couleur se décompose en petites touches juxtaposées. Passionné par la mer, il peint ports et voiliers avec une rigueur lumineuse et scientifique....</p>
+  <section class="techniques-grid-section">
+    <div class="techniques-grid-container">
+      <div class="techniques-grid">
+        <!-- Peinture à l'huile -->
+        <div class="technique-card">
+          <div class="technique-card-image">
+            <img src="./asset/Img/tableaux/tableau-classicisme.jpg" alt="Peinture à l'huile">
+            <div class="technique-card-overlay"></div>
+          </div>
+          <div class="technique-card-content">
+            <h3 class="technique-card-title">Vincent Barré</h3>
+            <p class="technique-card-description">Riche en couleurs et en relief, elle permet des effets de lumière subtils.</p>
+          </div>
         </div>
-        <div class="">
-            <img class="" src="/asset/Img/tableaux/tableau-ceija-stojka-sans-titre.jpg" alt="Œuvre d'un artiste en lien" />
-            <h3 class="">Ceija
-                Stojka</h3>
-            <p class="">Artiste autrichienne d’origine rom, Ceija Stojka a survécu aux camps de concentration nazis. Elle commence à peindre à plus de 50 ans pour témoigner de la mémoire du génocide rom...</p>
+        <!-- Aquarelle -->
+        <div class="technique-card">
+          <div class="technique-card-image">
+            <img src="./asset/Img/tableaux/tableau-turner-ocean.jpg" alt="Henri Matisse">
+            <div class="technique-card-overlay"></div>
+          </div>
+          <div class="technique-card-content">
+            <h3 class="technique-card-title">Henri Matisse</h3>
+            <p class="technique-card-description">Légère et transparente, elle joue avec l'eau et le papier.</p>
+          </div>
         </div>
-        <div class="">
-            <img class="" src="/asset/Img/tableaux/tableau-femme-nu.png" alt="Œuvre d'un artiste en lien" />
-            <h3 class="">Pierre
-                Bonnard</h3>
-            <p class="">Peintre français du groupe des Nabis, Pierre Bonnard est connu pour ses intérieurs lumineux, ses natures mortes et ses nus baignés de couleurs chaude...</p>
+        <!-- Sculpture -->
+        <div class="technique-card">
+          <div class="technique-card-image">
+            <img src="./asset/Img/statues-groupe.jpg" alt="Louis Valtat">
+            <div class="technique-card-overlay"></div>
+          </div>
+          <div class="technique-card-content">
+            <h3 class="technique-card-title">Louis Valtat</h3>
+            <p class="technique-card-description">Travail de la matière : pierre, bois, métal, plâtre ou argile. L'artiste modèle ou taille pour donner forme au volume.</p>
+          </div>
         </div>
-    </div>
-
-    <div class="main__explore-button">
-        <a class="main__button--explore-black" href="#">En savoir +</a>
+        <!-- Craie grasse -->
+        <div class="technique-card">
+          <div class="technique-card-image">
+            <img src="./asset/Img/tableaux/tableau-nu-nature-morte.png" alt="Paul Signac">
+            <div class="technique-card-overlay"></div>
+          </div>
+          <div class="technique-card-content">
+            <h3 class="technique-card-title">Paul Signac</h3>
+          </div>
+        </div>
+        <!-- Fusain -->
+        <div class="technique-card">
+          <div class="technique-card-image">
+            <img src="./asset/Img/tableaux/tableau-guenat-vieillard.jpg" alt="Ceija Stojka">
+            <div class="technique-card-overlay"></div>
+          </div>
+          <div class="technique-card-content">
+            <h3 class="technique-card-title">Ceija Stojka</h3>
+          </div>
+        </div>
+        <!-- Encre -->
+        <div class="technique-card">
+          <div class="technique-card-image">
+            <img src="./asset/Img/tableaux/tableau-hokusai-vague.jpg" alt="Pierre Bonnard">
+            <div class="technique-card-overlay"></div>
+          </div>
+          <div class="technique-card-content">
+            <h3 class="technique-card-title">Pierre Bonnard</h3>
+          </div>
+        </div>
       </div>
-
+    </div>
   </section>
-
-
 
   <footer class="footer">
     <div class="footer__contain-form">
@@ -574,8 +527,99 @@ crossorigin=""/>
       getDirection: true
     });
   });
-</script>
 
+
+
+// Éléments du DOM
+        const audio = document.getElementById('audioPlayer');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const progressBar = document.getElementById('progressBar');
+        const progressFill = document.getElementById('progressFill');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationEl = document.getElementById('duration');
+        const volumeBtn = document.getElementById('volumeBtn');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const speedBtns = document.querySelectorAll('.speed-btn');
+
+        // Fonction Play/Pause
+        playPauseBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                playPauseBtn.classList.remove('playing');
+            }
+        });
+
+        // Mise à jour du temps
+        audio.addEventListener('timeupdate', () => {
+            const progress = (audio.currentTime / audio.duration) * 100;
+            progressFill.style.width = progress + '%';
+            currentTimeEl.textContent = formatTime(audio.currentTime);
+        });
+
+        // Affichage de la durée totale
+        audio.addEventListener('loadedmetadata', () => {
+            durationEl.textContent = formatTime(audio.duration);
+        });
+
+        // Clic sur la barre de progression
+        progressBar.addEventListener('click', (e) => {
+            const rect = progressBar.getBoundingClientRect();
+            const percent = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = percent * audio.duration;
+        });
+
+        // Contrôle du volume
+        volumeSlider.addEventListener('input', (e) => {
+            audio.volume = e.target.value / 100;
+            updateVolumeIcon();
+        });
+
+        volumeBtn.addEventListener('click', () => {
+            if (audio.volume > 0) {
+                audio.volume = 0;
+                volumeSlider.value = 0;
+            } else {
+                audio.volume = 1;
+                volumeSlider.value = 100;
+            }
+            updateVolumeIcon();
+        });
+
+        function updateVolumeIcon() {
+            if (audio.volume === 0) {
+                volumeBtn.textContent = '🔇';
+            } else if (audio.volume < 0.5) {
+                volumeBtn.textContent = '🔉';
+            } else {
+                volumeBtn.textContent = '🔊';
+            }
+        }
+
+        // Vitesse de lecture
+        speedBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                speedBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                audio.playbackRate = parseFloat(btn.dataset.speed);
+            });
+        });
+
+        // Formater le temps (secondes -> mm:ss)
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return '0:00';
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // Reset du bouton play quand l'audio se termine
+        audio.addEventListener('ended', () => {
+            playPauseBtn.classList.remove('playing');
+        });
+</script>
   </body>
   </html>
   

@@ -2,6 +2,9 @@
 
 body.is-nav-open {
     overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
 }
 
 .header {
@@ -30,30 +33,24 @@ body.is-nav-open {
         z-index: 0;
     }
 
-    // Cacher le header quand le menu est ouvert en mobile
     &--menu-open {
         @media (max-width: 1023px) {
-            z-index: 999; // En dessous de la nav (1100)
-            pointer-events: none; // Empêcher le header de bloquer les clics sur la nav
+            z-index: 999;
+            pointer-events: none;
             
             &::before {
                 opacity: 0;
                 pointer-events: none;
             }
             
-            // Réactiver les pointer-events pour le bouton burger qui doit rester cliquable
             .header__menu-toggle {
                 pointer-events: auto;
             }
         }
     }
 
-    // En desktop, seul le container (logo + nav) est fixe, pas le hero
     @media (min-width: 1024px) {
-        // Le header garde sa position relative pour que le hero reste dans le flux
         position: relative;
-        
-        // Masquer le background-image et le ::before en desktop pour la navbar fixe
         background-image: none;
         
         &::before {
@@ -61,18 +58,57 @@ body.is-nav-open {
         }
     }
 
-    // Effet semi-opaque au scroll (appliqué au container)
+    // ==========================================
+    // SCROLLED STATE - Transition fluide
+    // ==========================================
     &--scrolled {
         @media (min-width: 1024px) {
             .header__container {
-                // Le background reste transparent car les nav-list ont déjà leur background
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
+                padding: 0.875rem 3.75rem;
+             
             }
+
+            .header__nav-list--main {
+                background-color: rgba(60, 60, 60, 0.44);
+                    backdrop-filter: blur(20px);
+                    transition: backdrop-filter 0.3s ease;
+                    padding: 0.875rem 2.5rem;
+                
+            }
+
+            .header__nav-list--secondary {
+                background-color: rgba(60, 60, 60, 0.44); // Fond 100% opaque
+                padding: 0.875rem 1.5rem;
+                backdrop-filter: blur(20px);
+                transition: backdrop-filter 0.3s ease;
+
+            }
+
+            .header__logo-link {
+                width: 150px;
+                height: 64px;
+                
+            }
+
+            .header__nav-link{
+                color: $color-white;
+            }
+
+            .header__nav-list--secondary{
+                color: $color-white;
+
+            }
+            .header__nav-icon{
+                stroke: #ffff;
+            }
+      
         }
     }
 
-    &__container{
+    // ==========================================
+    // CONTAINER
+    // ==========================================
+    &__container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -81,7 +117,7 @@ body.is-nav-open {
         position: relative;
         z-index: 1;
         gap: 1rem;
-        transition: all 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         
         @media (min-width: 768px) {
             padding: 1.2rem 1.5rem;
@@ -92,45 +128,38 @@ body.is-nav-open {
             top: 0;
             left: 0;
             width: 100%;
-            padding: 1.25rem 2.5rem;
-            gap: 3.75rem; // 60px équivalent
+            padding: 1.25rem 3.75rem;
+            gap: 2.5rem;
             z-index: 1000;
-            background-color: transparent;
             box-sizing: border-box;
         }
     }
 
-    // Cacher le container du header quand le menu est ouvert en mobile
     &--menu-open &__container {
         @media (max-width: 1023px) {
-            opacity: 0;
-            pointer-events: none !important; // Forcer pour éviter tout blocage
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-            z-index: -1; // Mettre en arrière-plan
+            // Ne pas cacher le container, juste réduire son opacity si besoin
+            // Le logo et le toggle doivent rester visibles
         }
     }
 
-    // Cacher spécifiquement le logo quand le menu est ouvert en mobile
     &--menu-open &__logo-link {
         @media (max-width: 1023px) {
-            opacity: 0;
-            pointer-events: none;
-            visibility: hidden;
+            // Garder le logo visible
         }
     }
 
+    // ==========================================
+    // LOGO
+    // ==========================================
     &__logo-link {
         display: flex;
         align-items: center;
         justify-content: center;
         z-index: 2;
         flex-shrink: 0;
-        width: 60px;
-        height: 60px;
-        background: white;
-        border-radius: 4px;
-        transition: transform 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        width: 100px;
+        height: 40px;
 
         @media (min-width: 768px) {
             width: 70px;
@@ -138,37 +167,31 @@ body.is-nav-open {
         }
 
         @media (min-width: 1024px) {
-            width: 80px;
+            width: 187px;
             height: 80px;
         }
         
         &:active {
             transform: scale(0.95);
         }
+
+        @media (min-width: 1024px) {
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
     }
 
     &__logo-img {
-        height: auto;
-        width: 100%;
-        max-width: 100%;
         padding: 0.5rem;
         border-radius: 2px;
         transition: transform 0.3s ease;
         object-fit: contain;
-
-        @media (min-width: 768px) {
-            padding: 0.6rem;
-        }
-
-        @media (min-width: 1024px) {
-            padding: 0.75rem;
-        }
-        
-        &:active {
-            transform: scale(0.95);
-        }
     }
 
+    // ==========================================
+    // MENU BURGER
+    // ==========================================
     &__menu-toggle {
         min-width: $touch-target-min;
         min-height: $touch-target-min;
@@ -232,7 +255,6 @@ body.is-nav-open {
             background-color: $color-primary-white;
             transform: translate(-50%, 0) scaleY(1);
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.28);
-            // Petit délai sur l'opacité pour qu'on voie clairement le "+"
             transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, opacity 0.26s ease 0.12s;
         }
     }
@@ -242,36 +264,39 @@ body.is-nav-open {
         background-color: $color-primary-white;
 
         &::after {
-            opacity: 0; // cacher la barre verticale : on obtient un seul trait
+            opacity: 0;
             transform: translate(-50%, 0) scaleY(0);
             background-color: $color-primary-white;
             transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s ease, opacity 0.24s ease 0.05s;
         }
     }
 
+    // ==========================================
+    // NAVIGATION
+    // ==========================================
     &__nav {
-        visibility: hidden;
-    
         color: $color-primary-white;
         position: fixed;
-        z-index: 1100; // Supérieur au header pour être au-dessus
-        inset: 0;
+        z-index: 1050;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         display: flex;
         flex-direction: column;
         padding: 5rem 1.5rem 2rem;
         transform: translateX(100%);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         gap: 2rem;
         backdrop-filter: blur(20px);
-        background: rgba(25, 25, 25, 0.98);
+        background: rgba(25, 25, 25, 1); // 100% opaque
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
-        pointer-events: none; // Désactiver les pointer-events quand fermé
+        visibility: visible;
+        opacity: 1;
         
         &[aria-hidden="false"] {
-            visibility: visible;
             transform: translateX(0);
-            pointer-events: auto; // Réactiver les pointer-events quand ouvert
         }
 
         @media (min-width: 768px) {
@@ -280,37 +305,30 @@ body.is-nav-open {
         }
 
         @media (min-width: 1024px) {
-            visibility: visible;
             position: relative;
             left: auto;
+            top: auto;
+            right: auto;
+            bottom: auto;
             transform: none;
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            padding: 0.6rem 1rem;
+            padding: 0;
             width: auto;
             max-width: 100%;
             flex-wrap: nowrap;
-            gap: 1.2rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+            gap: 1.875rem;
             backdrop-filter: none;
             background: transparent;
             overflow-y: visible;
             z-index: 10;
         }
-        
-        @media (min-width: 1354px) {
-            padding: 0.7rem 1.2rem;
-            gap: 1.4rem;
-        }
-        
-        @media (min-width: 1454px) {
-            padding: 0.8rem 1.5rem;
-            gap: 2rem;
-        }
     }
 
+    // ==========================================
+    // LISTES DE NAVIGATION
+    // ==========================================
     &__nav-list {
         list-style: none;
         padding: 0;
@@ -319,24 +337,20 @@ body.is-nav-open {
         flex-direction: column;
         gap: 1.1rem;
 
-        @media (min-width: 1024px) {
-            display: flex;
-            align-items: center;
-            flex-wrap: nowrap;
-            gap: 0.8rem;
-        }
-
         &--main {
             @media (min-width: 1024px) {
                 display: flex;
                 flex-direction: row;
-                justify-content: center;
-                gap: 2.5rem; // 40px équivalent
-                background-color: rgba(255, 255, 255, 0.95);
-                padding: 0.9375rem 3.125rem; // 15px 50px
-                border-radius: 50px;
-                box-shadow: 0 8px 18px rgba(0, 0, 0, .06);
-                border: none;
+                justify-content: space-between;
+                align-items: center;
+                gap: 2.5rem;
+                background-color: rgba(232, 232, 232, 0.95);
+                padding: 1.25rem 3.125rem;
+                border-radius: 15px;
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+                flex-grow: 1;
+                max-width: none;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             }
         }
 
@@ -349,17 +363,20 @@ body.is-nav-open {
 
             @media (min-width: 1024px) {
                 margin-top: 0;
-                gap: 1.5625rem; // 25px équivalent
+                gap: 1.25rem;
                 flex-shrink: 0;
-                background-color: rgba(255, 255, 255, 0.95);
-                padding: 0.9375rem 1.875rem; // 15px 30px
-                border-radius: 50px;
-                box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
-                border: none;
+                background-color: rgba(232, 232, 232, 0.95);
+                padding: 1.25rem 1.875rem;
+                border-radius: 15px;
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             }
         }
     }
 
+    // ==========================================
+    // ITEMS DE NAVIGATION
+    // ==========================================
     &__nav-item {
         margin-bottom: 0;
         padding: 0.75rem 0;
@@ -379,30 +396,6 @@ body.is-nav-open {
             position: relative;
             min-height: auto;
         }
-
-        &--has-submenu {
-            position: relative;
-
-            @media (min-width: 1024px) {
-                &:hover .header__submenu {
-                    opacity: 1;
-                    visibility: visible;
-                    transform: translateY(0);
-                }
-            }
-        }
-    }
-
-    &__nav-list--main &__nav-item {
-        @media (min-width: 1024px) {
-            display: flex;
-            flex-direction: row;
-            padding: 0 1rem;
-        }
-
-        @media (min-width: 1200px) {
-            padding: 0 1.5rem;
-        }
     }
 
     &__nav-list--secondary &__nav-item {
@@ -411,6 +404,9 @@ body.is-nav-open {
         margin-bottom: 0;
     }
 
+    // ==========================================
+    // LIENS DE NAVIGATION
+    // ==========================================
     &__nav-link {
         color: $color-primary-white;
         text-decoration: none;
@@ -423,7 +419,7 @@ body.is-nav-open {
         width: 100%;
         padding: 0.5rem 0;
         -webkit-tap-highlight-color: transparent;
-        pointer-events: auto; // S'assurer que les liens sont toujours cliquables
+        pointer-events: auto;
     
         &:active {
             opacity: 0.7;
@@ -437,8 +433,8 @@ body.is-nav-open {
 
         @media (min-width: 1024px) {
             position: relative;
-            color: $color-primary-dark;
-            font-size: 1rem;
+            color: #1a1a1a;
+            font-size: 1.125rem;
             font-weight: 500;
             letter-spacing: 0.01em;
             width: auto;
@@ -452,12 +448,8 @@ body.is-nav-open {
             
             &:active {
                 transform: none;
-                opacity: 1;
+                opacity: 0.5;
             }
-        }
-
-        @media (min-width: 1200px) {
-            font-size: 1rem;
         }
     }
 
@@ -469,7 +461,7 @@ body.is-nav-open {
         @media (min-width: 1024px) {
             font-size: 1rem;
             font-weight: 500;
-            color: $color-primary-dark;
+            color: #1a1a1a;
             transition: opacity 0.3s ease;
             
             &:hover {
@@ -478,18 +470,15 @@ body.is-nav-open {
         }
     }
 
+    // ==========================================
+    // ICÔNES DE NAVIGATION
+    // ==========================================
     &__nav-icon {
-        min-width: $touch-target-min;
-        min-height: $touch-target-min;
-        width: 2.75rem;
-        height: 2.75rem;
-        padding: 0.5rem;
-        border-radius: 12px;
-        background: rgba(255, 253, 243, 0.1);
-        border: 1px solid rgba(255, 253, 243, 0.15);
-        filter: brightness(0) saturate(100%) invert(100%) sepia(65%) saturate(348%) hue-rotate(342deg) brightness(106%) contrast(108%);
-        transition: background 0.2s ease, border-color 0.2s ease, filter 0.2s ease, transform 0.2s ease;
-        -webkit-tap-highlight-color: transparent;
+        width: 24px;
+        height: 24px;
+        fill: none;
+        stroke-width: 2;
+        
         
         &:active {
             transform: scale(0.95);
@@ -505,24 +494,25 @@ body.is-nav-open {
         @media (min-width: 1024px) {
             min-width: auto;
             min-height: auto;
-            width: 24px;
-            height: 24px;
-            padding: 0.45rem;
-            filter: brightness(0) saturate(100%) invert(18%) sepia(24%) saturate(600%) hue-rotate(20deg) brightness(94%) contrast(92%);
-            background: rgba(25, 25, 25, 0.04);
-            border-color: rgba(25, 25, 25, 0.08);
-        }
+            width: 30px;
+            height: 30px;
+            padding: 0;
+            border-radius: 0;
+            background: transparent;
+            border: none;
+            filter: brightness(0);
+            cursor: pointer;
+            transition: opacity 0.3s ease, transform 0.2s ease;
 
-        &:hover {
-            @media (min-width: 1024px) {
-                background: rgba(149, 126, 24, 0.12);
-                border-color: rgba(149, 126, 24, 0.3);
-                filter: brightness(0) saturate(100%) invert(34%) sepia(39%) saturate(648%) hue-rotate(11deg) brightness(94%) contrast(92%);
-                transform: translateY(-1px);
+            &:hover {
+                opacity: 0.7;
             }
         }
     }
 
+    // ==========================================
+    // SÉLECTEUR DE LANGUE
+    // ==========================================
     &__nav-link-fr {
         font-size: 1rem;
         font-weight: 600;
@@ -532,83 +522,29 @@ body.is-nav-open {
         transition: all 0.3s ease;
         cursor: pointer;
 
-        &:hover {
-            color: $bg-or;
-        }
-
         @media (min-width: 1024px) {
             font-size: 1rem;
-            font-weight: 400;
-            color: $color-primary-dark;
+            font-weight: 500;
+            color: #1a1a1a;
             transition: opacity 0.3s ease;
             
             &:hover {
                 opacity: 0.7;
-                color: $color-primary-dark;
             }
         }
     }
 
-    // SOUS-MENUS
-    &__submenu {
-        list-style: none;
-        padding: 1.5rem;
-        margin: 0;
-        background-color: $bg-white;
-        color: $color-primary-dark;
-        border-radius: 10px;
-        width: 20rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        margin-top: 1rem;
-
-        @media (min-width: 1024px) {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            margin-top: 1rem;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 100;
-        }
-    }
-
-    &__submenu-item {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        margin-bottom: 1rem;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-
-        img {
-            width: 16px;
-            height: 16px;
-            flex-shrink: 0;
-        }
-    }
-
-    &__submenu-link {
-        color: $color-primary-dark;
-        text-decoration: none;
-        font-size: 1.4rem;
-        transition: color 0.3s ease;
-
-        &:hover {
-            color: $bg-or;
-        }
-    }
-
+    // ==========================================
     // HERO SECTION
+    // ==========================================
     &__hero {
         position: relative;
         min-height: 100vh;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        padding: 7.5rem 1.5rem 3.75rem; // 120px 60px 60px
+        padding: 7.5rem 1.5rem 3.75rem;
         overflow: hidden;
         z-index: 1;
     
@@ -617,33 +553,15 @@ body.is-nav-open {
         }
     
         @media (min-width: 1024px) {
+            flex-direction: row;
             padding: 7.5rem 3.75rem 3.75rem;
         }
     }
-    
-    &__hero-parallax {
-        flex: 1;
-        position: relative;
-        z-index: 0;
-        height: 400px;
-        width: 100%;
-        max-width: 100%;
-    
-        @media (min-width: 768px) {
-            height: 500px;
-        }
-    
-        @media (min-width: 1024px) {
-            height: 600px;
-            max-width: 700px;
-        }
-    }
-    
+
     &__hero-content {
         width: 100%;
         display: flex;
-        flex-direction: column;
-        gap: 2.5rem; // 40px
+        gap: 2.5rem;
         position: relative;
         z-index: 1;
     
@@ -651,34 +569,80 @@ body.is-nav-open {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            gap: 3.75rem; // 60px
+            gap: 3.75rem;
+            padding: 5rem 3.75rem;
         }
 
         &--reduced {
             margin-top: 1rem;
-
-            @media (min-width: 768px) {
-                margin-top: 1.5rem;
-            }
         }
     }
     
     &__hero-text {
         flex: 1;
         max-width: 600px;
+        position: relative;
+        z-index: 20;
+
+        h1, .header__title {
+            color: $color-primary-white !important;
+        }
+        
+        #sous-menu-header, span {
+            color: $color-primary-white !important;
+        }
     }
-    
+
+    // ==========================================
+    // TITRE HERO
+    // ==========================================
+    &__title {
+        color: $color-primary-white !important;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 1.875rem;
+        font-size: clamp(3rem, 8vw, 7.5rem);
+        line-height: 1;
+        letter-spacing: -0.125rem;
+
+        @media (min-width: 768px) {
+            font-size: clamp(5rem, 10vw, 7.5rem);
+        }
+        
+        @media (min-width: 1024px) {
+            font-size: 7.5rem;
+        }
+    }
+
+    // ==========================================
+    // IMAGES SUPERPOSÉES
+    // ==========================================
+    &__hero-images {
+        position: relative;
+        flex: 1;
+        min-height: 400px;
+        
+        @media (max-width: 1023px) {
+            display: none;
+        }
+        
+        @media (min-width: 1024px) {
+            min-height: 500px;
+        }
+    }
+
     &__hero-background {
         position: absolute;
-        border: 8px solid white;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
         overflow: hidden;
         will-change: transform;
         transition: transform 0.3s ease;
 
         &:hover {
-            transform: scale(1.05) translateY(-10px);
-            z-index: 10;
+            transform: scale(1.05);
+            z-index: 10 !important;
         }
 
         img {
@@ -689,140 +653,104 @@ body.is-nav-open {
         }
 
         &--layer1 {
-            width: 262.5px; // 420px / 1.6
-            height: 200px; // 320px / 1.6
-            top: 31.25px; // 50px / 1.6
-            right: 62.5px; // 100px / 1.6
-            z-index: 3;
+            width: 280px;
+            height: 200px;
+            top: 0;
+            left: 50px;
+            z-index: 1;
 
-            @media (min-width: 768px) {
-                width: 350px;
-                height: 260px;
-                top: 50px;
-                right: 100px;
-            }
-
-            @media (min-width: 1024px) {
-                width: 420px;
-                height: 320px;
+            @media (min-width: 1200px) {
+                width: 280px;
+                height: 200px;
             }
         }
 
         &--layer2 {
-            width: 218.75px; // 350px / 1.6
-            height: 175px; // 280px / 1.6
-            top: 112.5px; // 180px / 1.6
+            width: 320px;
+            height: 240px;
+            top: 150px;
             left: 0;
             z-index: 2;
 
-            @media (min-width: 768px) {
-                width: 300px;
-                height: 230px;
-                top: 180px;
-            }
-
-            @media (min-width: 1024px) {
-                width: 350px;
-                height: 280px;
+            @media (min-width: 1200px) {
+                width: 320px;
+                height: 240px;
             }
         }
 
         &--layer3 {
-            width: 125px; // 200px / 1.6
-            height: 93.75px; // 150px / 1.6
-            top: 0;
-            left: 75px; // 120px / 1.6
-            z-index: 1;
+            width: 350px;
+            height: 280px;
+            top: 50px;
+            right: 0;
+            z-index: 3;
 
-            @media (min-width: 768px) {
-                width: 150px;
-                height: 110px;
-                left: 120px;
-            }
-
-            @media (min-width: 1024px) {
-                width: 200px;
-                height: 150px;
+            @media (min-width: 1200px) {
+                width: 350px;
+                height: 280px;
             }
         }
     }
 
-    &__title {
-        // Titre hero monumental
-        color: $color-primary-white;
-        font-weight: 900;
+    // ==========================================
+    // SOUS-TITRE
+    // ==========================================
+    #sous-menu-header {
+        font-size: clamp(1rem, 2vw, 1.75rem);
+        font-weight: 700;
+        letter-spacing: 0.125rem;
         text-transform: uppercase;
-        margin-top: 0;
-        margin-bottom: 0;
-        font-size: clamp(3rem, 8vw, 7.5rem); // 60px à 120px
-        line-height: 0.9;
-        letter-spacing: -3px;
-
-        @media (min-width: 768px) {
-            font-size: clamp(5rem, 10vw, 7.5rem); // 80px à 120px
-        }
+        display: block;
+        color: $color-primary-white !important;
+        line-height: 1.3;
         
         @media (min-width: 1024px) {
-            font-size: 7.5rem; // 120px
+            font-size: 1.75rem;
         }
     }
 
-    &__hero-subtitle {
-        font-size: clamp(1.25rem, 3vw, 2rem); // 20px à 32px
-        font-weight: 300;
-        text-transform: uppercase;
-        margin-top: 0.625rem; // 10px
-        line-height: 1.2;
-        letter-spacing: 1px;
-        color: $color-primary-white;
-
-        @media (min-width: 1024px) {
-            font-size: 2rem; // 32px
-        }
-    }
-
-    &__subtitle {
-        font-weight: 500;
-        text-transform: lowercase;
-        margin-bottom: 0.5rem;
-    }
-    
+    // ==========================================
+    // CTA
+    // ==========================================
     &__hero-cta {
         position: absolute;
-        bottom: 5rem; // 80px
-        right: 3.75rem; // 60px
+        border: 1px solid white;
+        border-radius: 10px;
+        bottom: 5rem;
+        right: 3.75rem;
         text-align: right;
-        z-index: 2;
+        z-index: 30;
 
         @media (max-width: 1023px) {
             position: static;
-            margin-top: 2.5rem; // 40px
+            margin-top: 2.5rem;
             text-align: center;
         }
     }
     
     &__cta-text {
-        font-size: clamp(1.5rem, 3vw, 2rem); // 24px à 32px
-        font-weight: 300;
-        margin-bottom: 1.25rem; // 20px
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 600;
+        margin-bottom: 1.25rem;
         line-height: 1.2;
         color: $color-primary-white;
 
         @media (min-width: 1024px) {
-            font-size: 2rem; // 32px
+            font-size: 2rem;
         }
     }
     
     &__cta-button {
         display: inline-block;
-        padding: 1.125rem 2.8125rem; // 18px 45px
+        padding: 1.125rem 2.5rem;
         border: 2px solid white;
-        border-radius: 50px;
+        border-radius: 10px;
         color: white;
         text-decoration: none;
-        font-size: 1.125rem; // 18px
-        font-weight: 500;
+        font-size: 1.125rem;
+        font-weight: 600;
         transition: all 0.3s ease;
+        margin-bottom: 1.25rem;
 
         &:hover {
             background: white;
@@ -830,97 +758,50 @@ body.is-nav-open {
         }
     }
 
-    &__scroll {
-        position: absolute;
-        bottom: 2.5rem; // 40px
-        left: 50%;
-        transform: translateX(-50%);
-        animation: bounce 2s infinite;
-        z-index: 2;
+    // ==========================================
+    // CLASSES DE PAGE SPÉCIFIQUES
+    // ==========================================
+    &--index {
+        background-color: $color-primary-dark;
+        background-image: none;
     }
 
-    &__scroll-icon {
-        width: 1.875rem; // 30px
-        height: 1.875rem; // 30px
-        cursor: pointer;
-        filter: brightness(0) saturate(100%) invert(100%);
-        transition: transform 0.3s ease;
-        -webkit-tap-highlight-color: transparent;
+    &--collections {
+        background-image: url('/asset/Img/backgrounds/bg-header-collections.png');
         
-        &:active {
-            transform: scale(0.9);
+        @media (prefers-reduced-motion: reduce) {
+            background-attachment: scroll;
         }
     }
 
-    @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% {
-            transform: translateY(0);
-        }
-        40% {
-            transform: translateY(-10px);
-        }
-        60% {
-            transform: translateY(-5px);
+    &--evenement {
+        background-image: url('/asset/Img/backgrounds/header-evenement.jpg');
+        
+        @media (prefers-reduced-motion: reduce) {
+            background-attachment: scroll;
         }
     }
-}
 
-#sous-menu-header {
-    font-size: clamp(0.875rem, 2vw, 1rem);
-    line-height: 1.3;
-    
-    @media (min-width: 768px) {
-        line-height: 1.4;
+    &--fiche-oeuvre {
+        background-image: url('/asset/Img/backgrounds/header-fiche-oeuvre.jpg');
+        
+        @media (prefers-reduced-motion: reduce) {
+            background-attachment: scroll;
+        }
     }
-    
-    @media (min-width: 1024px) {
-        font-size: 1rem;
-        line-height: 8rem;
-    }
-}
 
-.header--index {
-    background-color: $color-primary-dark;
-    background-image: none;
-}
-
-.header--collections {
-    background-image: url('/asset/Img/backgrounds/bg-header-collections.png');
-    
-    @media (prefers-reduced-motion: reduce) {
-        background-attachment: scroll;
+    &--musee {
+        background-image: url('/asset/Img/backgrounds/header-musee.jpg');
+        
+        @media (prefers-reduced-motion: reduce) {
+            background-attachment: scroll;
+        }
     }
 }
 
-.header--evenement {
-    background-image: url('/asset/Img/backgrounds/header-evenement.jpg');
-    
-    @media (prefers-reduced-motion: reduce) {
-        background-attachment: scroll;
-    }
-}
-
-.header--fiche-oeuvre {
-    background-image: url('/asset/Img/backgrounds/header-fiche-oeuvre.jpg');
-    
-    @media (prefers-reduced-motion: reduce) {
-        background-attachment: scroll;
-    }
-}
-
-.header--musee {
-    background-image: url('/asset/Img/backgrounds/header-musee.jpg');
-    
-    @media (prefers-reduced-motion: reduce) {
-        background-attachment: scroll;
-    }
-}
-
-.header[data-bg-image] {
-    background-image: var(--bg-image);
-}
-
+// ==========================================
 // OVERLAY DE RECHERCHE
+// ==========================================
 .search-overlay {
     position: fixed;
     top: 0;
@@ -937,7 +818,6 @@ body.is-nav-open {
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 
-    // Overlay visible quand la classe is-active est ajoutée
     &.is-active {
         opacity: 1;
         visibility: visible;
@@ -1047,12 +927,12 @@ body.is-nav-open {
 
         &:active {
             transform: scale(0.95);
-            background: darken($bg-or, 10%);
+            background: $bg-or;
         }
 
         @media (min-width: 1024px) {
             &:hover {
-                background: darken($bg-or, 8%);
+                background: $bg-or;
                 transform: scale(1.05);
             }
         }
@@ -1069,4 +949,191 @@ body.is-nav-open {
         }
     }
 }
+
+// ==========================================
+// HERO ALTERNATIF (à la fin du fichier)
+// ==========================================
+.hero {
+    padding: 10rem 3rem 3rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    text-align: left;
+
+    @media (max-width: 1023px) {
+        padding: 9rem 5rem 12rem 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+
+    @media (min-width: 768px) {
+        padding: 10rem 3rem 3rem 4rem;
+    }
+}
+
+.hero-left {
+    flex: 1;
+    position: relative;
+    z-index: 10;
+}
+
+.hero-title {
+    color: white;
+    font-size: 34px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    z-index: 10;
+
+    @media (min-width: 768px) {
+        font-size: 28px;
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 120px;
+    }
+}
+
+.hero-subtitle {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 10;
+
+    @media (min-width: 768px) {
+        font-size: 40px;
+        font-weight: 700;
+        position: relative;
+        z-index: 10;
+    }
+}
+
+.hero-right {
+    flex: 1;
+    position: relative;
+    height: 500px;
+}
+
+.art-image {
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    background-position: center;
+    background-size: cover;
+
+    &.img1 {
+        width: 150px;
+        height: 80px;
+        top: 0;
+        left: 50px;
+        z-index: 1;
+        background-image: url('/asset/Img/tableaux/tableau-signac-venise.jpg');
+
+        @media (min-width: 1200px) {
+            width: 424px;
+            height: 281px;
+            top: -197px;
+            left: 364px;
+        }
+    }
+
+    &.img2 {
+        width: 150px;
+        height: 80px;
+        top: 150px;
+        left: 0;
+        z-index: 2;
+        background-image: url('/asset/Img/tableaux/tableau-toffoli-vendeuse.jpg');
+
+        @media (min-width: 768px) {
+            width: 320px;
+            height: 270px;
+            top: -407px;
+            left: 77px;
+        }
+
+        @media (min-width: 1200px) {
+            width: 320px;
+            height: 270px;
+            top: -407px;
+            left: 77px;
+        }
+    }
+
+    &.img3 {
+        width: 150px;
+        height: 80px;
+        top: 50px;
+        right: 0;
+        z-index: 3;
+        background-image: url('/asset/Img/tableaux/tableau-ocean-contemporain.png');
+
+        @media (min-width: 768px) {
+            width: 350px;
+            height: 280px;
+            top: -197px;
+            right: 0;
+        }
+
+        @media (min-width: 1200px) {
+            width: 564px;
+            height: 331px;
+            top: -497px;
+            right: 224px;
+        }
+    }
+}
+
+.cta-section {
+    position: absolute;
+    bottom: -80px;
+    right: 60px;
+    text-align: right;
+}
+
+.reserve-btn {
+    display: inline-block;
+    padding: 18px 40px;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: white;
+        color: #1a1a1a;
+    }
+}
+
+.cta-text {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.scroll-indicator {
+    text-align: center;
+    margin-top: 100px;
+    padding: 40px 0;
+}
+
+.scroll-arrow {
+    font-size: 48px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
 }

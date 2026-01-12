@@ -234,7 +234,7 @@
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: darken($color-tertiary-green, 5%);
+    background-color: $color-tertiary-green;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   }
@@ -252,13 +252,12 @@
 .reservation-form-note {
   font-family: $font-secondary;
   font-size: 0.75rem;
-  color: #999;
+  color: $bg-white;
   margin-top: 1rem;
 }
 
 .reservation-confirmation {
   min-height: 60vh;
-  display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
@@ -267,15 +266,15 @@
 .confirmation-card {
   max-width: 500px;
   padding: 3rem 2rem;
-  background-color: #f9f9f9;
+  background-color: $color-text-primary;
+  color: $bg-white;
   border-radius: 8px;
   text-align: center;
-  border-left: 4px solid $color-tertiary-green;
 }
 
 .confirmation-icon {
   font-size: 3rem;
-  color: $color-tertiary-green;
+  color: $bg-white;
   margin-bottom: 1rem;
   animation: scaleIn 0.5s ease;
 }
@@ -296,13 +295,13 @@
     font-family: $font-primary;
     font-size: 1.5rem;
     font-weight: $font-weight-bold;
-    color: $color-primary-dark;
+    color: $bg-white;
     margin: 0 0 1rem 0;
   }
 
   > p {
     font-family: $font-secondary;
-    color: #555;
+    color: $bg-white;
     margin-bottom: 1.5rem;
   }
 }
@@ -317,7 +316,7 @@
   p {
     font-family: $font-secondary;
     font-size: 0.9rem;
-    color: #555;
+    color: $color-text-primary;
     margin: 0.5rem 0;
 
     strong {
@@ -339,7 +338,7 @@
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: darken($color-secondary-gold, 5%);
+    background-color: $color-secondary-gold;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   }

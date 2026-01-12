@@ -1,0 +1,372 @@
+<!doctype html>
+  <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./asset/Img/logo/logo-mat-small.png" />
+    <link rel="stylesheet" href="./style.css" />
+  
+    <!-- Locomotive Scroll CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.css" />
+
+    <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+  
+    <title>MBAA - Musée des Beaux-Arts et d'Archéologie de Besançon</title>
+   
+  </head>
+  <body data-scroll-container>
+    <header class="header header--collections">
+      <div class="header__container">
+        <!-- Logo -->
+        <a class="header__logo-link" href="./index.html">
+          <img class="header__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />        </a>
+    
+        <!-- Bouton menu burger -->
+        <button class="header__menu-toggle" aria-label="menu" aria-expanded="false" aria-controls="headerNav">
+          <span class="header__menu-bar"></span>
+        </button>
+    
+        <!-- Navigation -->
+        <nav class="header__nav" id="headerNav" aria-hidden="true">
+          <ul class="header__nav-list header__nav-list--main">
+            <li class="header__nav-item nav-dot">
+              <a class="header__nav-link nav-dot" href="./infos.html">Infos pratiques</a>
+            </li>
+            <li class="header__nav-item nav-dot">
+              <a class="header__nav-link nav-dot" href="./collections.html">Collections</a>
+            </li>
+            <li class="header__nav-item nav-dot">
+              <a class="header__nav-link nav-dot" href="./evenement.html">Évènements</a>
+            </li>
+            <li class="header__nav-item nav-dot">
+              <a class="header__nav-link nav-dot" href="./musee-histoire.html">Le musée</a>
+            </li>
+            <li class="header__nav-item nav-dot">
+              <a class="header__nav-link nav-dot" href="./infos.html">Contact</a>
+            </li>
+          </ul>
+    
+          <ul class="header__nav-list header__nav-list--secondary">
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="./connexion.html" aria-label="Connexion">
+                <img class="header__nav-icon" src="./asset/Img/svg/connexion.svg" alt="" />
+              </a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#" aria-label="Billetterie">
+                <img class="header__nav-icon" src="./asset/Img/svg/ticket.svg" alt="" />
+              </a>
+            </li>
+          
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#" id="search-trigger" aria-label="Recherche">
+                <img class="header__nav-icon" src="./asset/Img/svg/Search.svg" alt="" />
+              </a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">FR
+              </a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">EN
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    
+    <div class="header__hero-content header__hero-content--reduced">
+      <h1 class="header__title">Infos<br>Pratiques<br></h1>
+    </div>
+  </div>
+    
+      <!-- Flèche de scroll -->
+      <div class="header__scroll">
+        <img class="header__scroll-icon" src="./asset/Img/svg/icon-arrow_bas.svg" alt="Défiler vers le bas" />
+      </div>
+    </header>
+  <section class="main__visite">
+    <section class="main__banniere">
+      <section class="main__banniere--visite">
+        <img class="main__banniere-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
+        <h2 class="main__banniere-titre">
+          Préparer<br />
+          votre visite
+        </h2>
+      </section>
+      <section class="main__banniere-contenu">
+        <p class="main__banniere-description">
+          Préparez votre découverte du musée en toute sérénité : horaires,
+          accès, services et conseils pour une visite agréable.
+        </p>
+      </section>
+    </section>
+    <section class="main__visite-cards">
+      <section class="main__visite-card">
+        <h3 class="main__visite-card-title">+ Horaires</h3>
+        <h4 class="main__visite-card-subtitle">
+          Saison basse (2 nov - 31 mars)
+        </h4>
+        <p class="main__visite-card-small-text">Hors vacances scolaires</p>
+        <div class="main__visite-card-row">
+          <img class="main__visite-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+          <p class="main__visite-card-text">
+            Lundi, mercredi, jeudi, vendredi : 14h-18h
+          </p>
+        </div>
+
+        <h4 class="main__visite-card-subtitle">
+          Saison haute (1er avril - 31 oct)
+        </h4>
+        <p class="main__visite-card-small-text">
+          Et pendant les vacances scolaires zone A
+        </p>
+        <div class="main__visite-card-row">
+          <img class="main__visite-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+          <p class="main__visite-card-text">
+            Lundi, mercredi, jeudi, vendredi : 10h-12h30 / 14h-18h
+          </p>
+        </div>
+
+        <h4 class="main__visite-card-subtitle">Toute l'année</h4>
+        <div class="main__visite-card-row">
+          <img class="main__visite-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+          <p class="main__visite-card-text">
+            Samedi, dimanche et jours fériés : 10h-18h sans interruption
+          </p>
+        </div>
+
+        <p class="main__visite-card-text-bold">Fermé le mardi</p>
+        <p class="main__visite-card-text-bold">
+          Fermetures annuelles : 1er janvier, 1er mai, 1er novembre, 25
+          décembre
+        </p>
+        <h4 class="main__visite-card-subtitle--orange">
+          Accueil des groupes à partir de 9h
+        </h4>
+        <div class="main__visite-button">
+          <a class="main__button--visite-black" href="#">En savoir +</a>
+        </div>
+      </section>
+
+      <section class="main__visite-card">
+        <h3 class="main__visite-card-title">+ Tarifs</h3>
+        <h4 class="main__visite-card-subtitle">
+          Billet couplé (MBAA + Musée du Temps + Maison Victor Hugo)
+        </h4>
+        <ul class="main__visite-card-column">
+          <li class="main__visite-card-row">
+            <img class="main__visite-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+            <span class="main__visite-card-text">Plein tarif:</span>
+            <span class="main__visite-card-text">9 €</span>
+          </li>
+          <li class="main__visite-card-row">
+            <img class="main__visite-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+            <span class="main__visite-card-text">Tarif réduit:</span>
+            <span class="main__visite-card-text">7 €</span>
+          </li>
+          <li class="main__visite-card-row">
+            <img class="main__visite-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+            <span class="main__visite-card-text">Jeune (18-25 ans):</span>
+            <span class="main__visite-card-text">4.5 €</span>
+          </li>
+        </ul>
+
+        <h4 class="main__visite-card-subtitle">Entrée gratuite</h4>
+        <section class="main__visite-card-column-entree">
+          <ul class="main__visite-card-column">
+            <li class="main__visite-card-row">
+              <img class="main__visite-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+              <p class="main__visite-card-text">
+                -18 ans, étudiants, demandeurs d'emploi, bénéficiaires des
+                minimas sociaux, personnes en situation de handicap et leur
+                accompagnateur, enseignants (sur présentation d'un
+                justificatif)
+              </p>
+            </li>
+            <li class="main__visite-card-row">
+              <img class="main__visite-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+              <p class="main__visite-card-text">
+                Le premier dimanche du mois (hors expositions temporaires)
+              </p>
+            </li>
+            <li class="main__visite-card-row">
+              <img class="main__visite-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+              <p class="main__visite-card-text">
+                Les membres de l'ICOM et de l'ICOMOS
+              </p>
+            </li>
+          </ul>
+        </section>
+        <div class="main__visite-button">
+          <a class="main__button--visite-black" href="#">En savoir +</a>
+        </div>
+      </section>
+    </section>
+  </section>
+    <div class="container">
+        <!-- Section Services -->
+        <section class="services-section">
+            <h2 class="section-title">
+                <span class="icon">+</span> SERVICES
+            </h2>
+            
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3 class="service-subtitle">Accessibilité</h3>
+                    <p class="service-text">
+                        ✓ Accessible PMR & personnes en situation de handicap
+                    </p>
+                </div>
+
+                <div class="service-item">
+                    <h3 class="service-subtitle">Moyens de paiement</h3>
+                    <p class="service-text">
+                        Cartes bancaires (Visa, Mastercard)<br>
+                        Chèques (avec pièce d'identité)<br>
+                        Espèces
+                    </p>
+                </div>
+
+                <div class="service-item">
+                    <h3 class="service-subtitle">Audio guide</h3>
+                    <p class="service-text">
+                        Disponible sur smartphone/tablette ou en prêt à l'accueil (dépôt pièce<br>
+                        d'identité)
+                    </p>
+                </div>
+
+                <div class="service-item">
+                    <h3 class="service-subtitle">Qualité Tourisme</h3>
+                    <p class="service-text">
+                        Le musée a obtenu la marque Qualité Tourisme en 2024
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Réservations et Bons Plans -->
+        <div class="bottom-sections">
+            <section class="reservation-section">
+                <h2 class="section-title">
+                    <span class="icon">+</span> RÉSERVATIONS
+                </h2>
+                
+                <p class="reservation-text">
+                    Réservations jeune public, groupes et programmation culturelle :
+                </p>
+                
+                <p class="reservation-link">
+                    <a href="#">Plateforme de réservation en ligne</a>
+                </p>
+                
+                <h3 class="subsection-title">Privatisation</h3>
+                
+                <p class="reservation-text">
+                    Possibilité de privatiser les espaces du musée
+                </p>
+                
+                <p class="reservation-text">
+                    Renseignements : mbaa@besancon.fr
+                </p>
+            </section>
+
+            <section class="deals-section">
+                <h2 class="section-title">
+                    <span class="icon">+</span> BONS PLANS
+                </h2>
+                
+                <h3 class="deal-title">GINKO</h3>
+                <p class="deal-text">
+                    Tarif réduit pour les abonnés annuels sur présentation de la carte
+                </p>
+                
+                <h3 class="deal-title">SNCF TER Bourgogne-Franche-Comté</h3>
+                <p class="deal-text">
+                    Tarif réduit sur présentation de votre billet du jour ou abonnement TER
+                </p>
+            </section>
+        </div>
+    </div>
+    <footer class="footer">
+      <div class="footer__contain-form">
+      <div class="footer__logo-container">
+        <a class="footer__logo-link" href="#">
+          <img class="footer__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
+          <h2 class="footer__title">Suivez-nous pour recevoir la newsletter</h2>
+        </a>
+      <form class="footer__form">
+        <input class="footer__input" type="email" placeholder="Entrez votre adresse e-mail" required />
+        <button class="footer__button" type="submit">S'abonner</button>
+      </form>
+      </div>
+  
+      <section class="footer__nav">
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item">
+            <h4 class="footer__nav-title">Le musée</h4>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="./musee-histoire.html">Présentation & histoire</a>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="#">Collections</a>
+          </li>
+        </ul>
+  
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item">
+            <h4 class="footer__nav-title">Programmation</h4>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="./evenement.html">Événements</a>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="./collections.html">Collections</a>
+          </li>
+        </ul>
+  
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item">
+            <h4 class="footer__nav-title">Contact</h4>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="#">Horaires et tarifs</a>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="#">Nous contacter</a>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="#">Accessibilité</a>
+          </li>
+        </ul>
+      </section>
+  
+      <section class="footer__social">
+        <h2>Nos réseaux sociaux</h2>
+        <section class="footer__social-media">
+          <a class="footer__social-link" href="#" aria-label="Facebook">
+            <img class="footer__social-icon" src="./asset/Img/svg/facebook.svg" alt="Facebook" />
+          </a>
+          <a class="footer__social-link" href="#" aria-label="Instagram">
+            <img class="footer__social-icon" src="./asset/Img/svg/insta.svg" alt="Instagram" />
+          </a>
+          <a class="footer__social-link" href="#" aria-label="Linkdin">
+            <img class="footer__social-icon" src="./asset/Img/svg/linkdin.svg" alt="Twitter" />
+          </a>
+          <a class="footer__social-link" href="#" aria-label="Tiktok">
+            <img class="footer__social-icon" src="./asset/Img/svg/tiktok.svg" alt="YouTube" />
+          </a>
+        </section>
+      </section>
+  
+      <section class="footer__links">
+        <a class="footer__link" href="#">Mentions légales</a>
+        <a class="footer__link" href="#">Politique de confidentialité</a>
+      </section>
+    </footer>
+</body>
+</html>

@@ -25,24 +25,23 @@
     @media (min-width: 1024px) {
         padding: 20px 50px;
         font-size: 1.1rem;
-        max-width: 250px;
     }
 }
 
 .main__button--savoir-white{
     @include button-base;
     color: $color-primary-white;
-    max-width: 100%;
+   
     width: 100%;
     border: 3px solid $color-primary-white;
     
     @media (min-width: 768px) {
-        max-width: 200px;
+       
         width: auto;
     }
     
     @media (min-width: 1024px) {
-        max-width: 250px;
+       
         
         &:hover{
             color: $color-primary-dark;
@@ -56,7 +55,7 @@
 .main__button--savoir-white-black{
     @include button-base;
     color: $color-primary-dark;
-    max-width: 150px;
+
     background-color: $color-primary-white;
     
     @include button-responsive;
@@ -65,17 +64,17 @@
 .main__button--infos-or{
     @include button-base;
     color: $bg-or;
-    max-width: 100%;
+   
     width: 100%;
     border: 3px solid $bg-or;
     
     @media (min-width: 768px) {
-        max-width: 250px;
+     
         width: auto;
     }
     
     @media (min-width: 1024px) {
-        max-width: 300px;
+       
         
         &:hover{
             color: $color-primary-white;
@@ -90,17 +89,17 @@
 .main__button--visite-black{
     @include button-base;
     color: $color-primary-dark;
-    max-width: 100%;
+   
     width: 100%;
     border: 3px solid $color-primary-dark;
     
     @media (min-width: 768px) {
-        max-width: 200px;
+      
         width: auto;
     }
     
     @media (min-width: 1024px) {
-        max-width: 250px;
+       
         
         &:hover{
             color: $color-primary-white;
@@ -114,18 +113,17 @@
 .main__button--explore-black{
     @include button-base;
     color: $color-primary-dark;
-    max-width: 100%;
+   
     width: 100%;
     border: 3px solid $color-primary-dark;
     
     @media (min-width: 768px) {
-        max-width: 200px;
+     
         width: auto;
     }
     
     @media (min-width: 1024px) {
-        max-width: 250px;
-        
+     
         &:hover{
             color: $color-primary-white;
             background-color: $color-primary-dark;
@@ -136,19 +134,16 @@
 }
 
 .main__button--evenement-black{
+
     @include button-base;
     color: $color-primary-dark;
-    max-width: 100%;
     width: 100%;
     border: 3px solid $color-primary-dark;
-    
     @media (min-width: 768px) {
-        max-width: 200px;
         width: auto;
     }
     
     @media (min-width: 1024px) {
-        max-width: 250px;
         
         &:hover{
             color: $color-primary-white;

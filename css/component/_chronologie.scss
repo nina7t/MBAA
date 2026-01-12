@@ -99,12 +99,12 @@
     }
 
     &::-webkit-scrollbar-thumb {
-        background: linear-gradient(180deg, $bg-or, darken($bg-or, 10%));
+        background: linear-gradient(180deg, $bg-or, $bg-or);
         border-radius: 10px;
         transition: all 0.3s ease;
 
         &:hover {
-            background: linear-gradient(180deg, darken($bg-or, 5%), darken($bg-or, 15%));
+            background: linear-gradient(180deg, $bg-or, $bg-or);
             box-shadow: 0 0 8px rgba($bg-or, 0.3);
         }
     }
@@ -133,7 +133,7 @@
     position: absolute;
     width: 14px;
     height: 14px;
-    background: linear-gradient(135deg, $bg-or, darken($bg-or, 10%));
+    background: linear-gradient(135deg, $bg-or, $bg-or);
     border: 3px solid #FFFFFF;
     border-radius: 50%;
     top: 0;
@@ -195,7 +195,7 @@
             width: 20px;
             height: 20px;
             box-shadow: 0 6px 16px rgba($bg-or, 0.5), inset 0 0 0 4px $bg-or;
-            background: linear-gradient(135deg, darken($bg-or, 5%), darken($bg-or, 15%));
+            background: linear-gradient(135deg, $bg-or, $bg-or);
             left: 1.6rem;
 
             @media (min-width: 768px) {
@@ -211,7 +211,7 @@
 .timeline-period {
     display: inline-block;
     background: linear-gradient(135deg, rgba($bg-or, 0.12), rgba($bg-or, 0.05));
-    color: darken($bg-or, 20%);
+    color: $bg-or;
     padding: 0.5rem 1rem;
     border-radius: 6px;
     font-size: 0.8rem;
@@ -638,7 +638,7 @@
     &:hover {
         background-color: $bg-or;
         color: #FFFFFF;
-        border-color: darken($bg-or, 10%);
+        border-color: $bg-or;
         transform: scale(1.05);
     }
 }

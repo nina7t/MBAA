@@ -13,6 +13,7 @@
 @use 'layout/pied-de-page';
 
 // @use des composants
+@use 'component/infos';
 @use 'component/accordeon';
 @use 'component/bouton';
 @use 'component/carte';
@@ -37,6 +38,7 @@
 @use 'component/espaces-musee';
 @use 'component/liste-deroulante';
 @use 'component/atelier';
+@use 'component/fiche';
 
 // @use des styles spécifiques aux pages
 @use './admin';

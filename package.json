@@ -20,5 +20,14 @@
   "dependencies": {
     "jQuery": "^1.7.4",
     "locomotive-scroll": "^4.1.4"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nina7t/MBAA.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nina7t/MBAA/issues"
+  },
+  "homepage": "https://github.com/nina7t/MBAA#readme"
 }

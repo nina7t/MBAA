@@ -1,0 +1,273 @@
+@use "../utils/variables" as *;
+
+.artwork-card {
+    background: $bg-or;
+    border-radius: 8px;
+    padding: 10rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    display: grid;
+    grid-template-columns: 45% 1fr;
+    gap: 40px;
+    color: $color-primary-white;
+}
+
+
+
+.artwork-card__image {
+    height: -webkit-fit-content;;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.artwork-card__info h3{
+    color: $color-primary-white;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.artwork-card__info p {
+    color: $color-primary-white;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 20px;
+}
+
+/* LECTEUR AUDIO PERSONNALISÉ */
+.artwork-card__audioguide {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    border-radius: 6px;
+    grid-column: 2;
+}
+
+.artwork-card__audioguide-title {
+    color: $color-primary-white;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+/* Cacher le lecteur audio natif */
+.artwork-card__audioguide-player {
+    display: none;
+}
+
+/* Contrôles personnalisés */
+.custom-audio-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.audio-controls-top {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.play-pause-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    font-size: 0;
+}
+
+.play-pause-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.play-pause-btn:active {
+    transform: scale(0.95);
+}
+
+.play-pause-btn::before {
+    content: '▶';
+    font-size: 18px;
+    color: #333;
+    margin-left: 3px;
+}
+
+.play-pause-btn.playing::before {
+    content: '⏸';
+    margin-left: 0;
+}
+
+/* Barre de progression */
+.progress-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+}
+
+.progress-bar:hover {
+    height: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #fff;
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.time-display {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Contrôles de volume */
+.volume-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.volume-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.2s;
+}
+
+.volume-btn:hover {
+    transform: scale(1.1);
+}
+
+.volume-slider {
+    width: 80px;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+/* Vitesse de lecture */
+.speed-control {
+    display: flex;
+    gap: 5px;
+}
+
+.speed-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.speed-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.speed-btn.active {
+    background-color: #fff;
+    color: #333;
+}
+
+.artwork-card__audioguide-transcript {
+    font-size: 13px;
+    text-decoration: underline;
+    cursor: pointer;
+    opacity: 0.9;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.artwork-card__audioguide-transcript:hover {
+    opacity: 1;
+}
+
+@media (max-width: 968px) {
+    .artwork-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .artwork-card__audioguide {
+        grid-column: 1;
+    }
+}
+
+.redirection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.redirection__icon{
+    width: 100px;
+    height: 100px;
+
+}
+
+.redirection__link{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  gap: 2rem;
+}
+
+
+.artist-works__grid{
+    display: flex;
+    flex-direction: row;
+    width: 90rem;
+}

@@ -175,7 +175,7 @@
     margin-top: 0.5rem;
     
     &:hover {
-        background: darken($bg-or, 8%);
+        background: $bg-or;
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba($bg-or, 0.3);
     }
@@ -231,7 +231,7 @@
         transition: color 0.3s ease;
         
         &:hover {
-            color: darken($bg-or, 10%);
+            color: $bg-or;
         }
     }
 }
