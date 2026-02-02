@@ -29,32 +29,113 @@ body {
     box-sizing: border-box;
 }
 
-// Styles pour les titres
+// ============================================
+// HIÉRARCHIE TYPOGRAPHIQUE - SITE MUSÉE
+// ============================================
+// Hiérarchie claire et impactante pour un site artistique
+// Écarts significatifs entre chaque niveau pour une lisibilité optimale
+
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-primary;
-    font-weight: 600;
-    line-height: 1.2;
-    margin-bottom: $spacing-sm;
+    color: $color-primary-dark;
+    margin-top: 0;
+    letter-spacing: -0.02em; // Légère réduction pour les grandes tailles
 }
 
+// H1 - MONUMENTAL ET IMPACTANT
+// Pour les titres principaux de page (hero, landing)
 h1 {
-    font-size: 3rem;
-    text-transform: uppercase;
+    font-size: clamp($font-size-h1-mobile, 5vw + 1rem, $font-size-h1-desktop);
     font-weight: 700;
-}
-
-h2 {
-    font-size: 2.5rem;
+    line-height: $line-height-tight;
     text-transform: uppercase;
+    margin-bottom: $spacing-h1-bottom;
+    letter-spacing: -0.03em; // Plus serré pour les très grands titres
+    
+    @media (min-width: 768px) {
+        font-size: clamp($font-size-h1-tablet, 6vw + 1rem, $font-size-h1-desktop);
+        margin-bottom: $spacing-h1-bottom-desktop;
+    }
+    
+    @media (min-width: 1024px) {
+        letter-spacing: -0.04em;
+    }
 }
 
+// H2 - GRAND ET VISIBLE
+// Pour les sections principales
+h2 {
+    font-size: clamp($font-size-h2-mobile, 4vw + 0.5rem, $font-size-h2-desktop);
+    font-weight: 700;
+    line-height: $line-height-compact;
+    text-transform: uppercase;
+    margin-top: $spacing-h2-top;
+    margin-bottom: $spacing-h2-bottom;
+    letter-spacing: -0.015em;
+    
+    @media (min-width: 768px) {
+        font-size: clamp($font-size-h2-tablet, 4.5vw + 0.5rem, $font-size-h2-desktop);
+        margin-top: $spacing-h2-top-desktop;
+        margin-bottom: $spacing-h2-bottom-desktop;
+    }
+}
+
+// H3 - MOYEN
+// Pour les sous-sections
 h3 {
-    font-size: 2rem;
+    font-size: clamp($font-size-h3-mobile, 3vw + 0.25rem, $font-size-h3-desktop);
+    font-weight: 600;
+    line-height: $line-height-compact;
+    margin-top: $spacing-h3-top;
+    margin-bottom: $spacing-h3-bottom;
+    letter-spacing: -0.01em;
+    
+    @media (min-width: 768px) {
+        font-size: clamp($font-size-h3-tablet, 3.5vw + 0.25rem, $font-size-h3-desktop);
+        margin-top: $spacing-h3-top-desktop;
+        margin-bottom: $spacing-h3-bottom-desktop;
+    }
 }
 
+// H4 - PETIT MAIS VISIBLE
+// Pour les sous-titres et labels
 h4 {
-    font-size: 1.5rem;
-    font-weight: 200;
+    font-size: clamp($font-size-h4-mobile, 2vw + 0.125rem, $font-size-h4-desktop);
+    font-weight: 500;
+    line-height: $line-height-normal;
+    margin-top: $spacing-h4-top;
+    margin-bottom: $spacing-h4-bottom;
+    text-transform: none;
+    
+    @media (min-width: 768px) {
+        font-size: clamp($font-size-h4-tablet, 2.5vw + 0.125rem, $font-size-h4-desktop);
+        margin-top: $spacing-h4-top-desktop;
+        margin-bottom: $spacing-h4-bottom-desktop;
+    }
+}
+
+// H5 - TRÈS PETIT
+// Pour les légendes, métadonnées
+h5 {
+    font-size: clamp($font-size-h5-mobile, 1.5vw, $font-size-h5-desktop);
+    font-weight: 400;
+    line-height: $line-height-normal;
+    margin-top: $spacing-sm;
+    margin-bottom: $spacing-xs;
+    text-transform: none;
+    color: $color-text-secondary;
+}
+
+// H6 - MINIMAL
+// Pour les notes, copyright
+h6 {
+    font-size: clamp($font-size-h6-mobile, 1.25vw, $font-size-h6-desktop);
+    font-weight: 300;
+    line-height: $line-height-normal;
+    margin-top: $spacing-xs;
+    margin-bottom: $spacing-xs;
+    text-transform: none;
+    color: $color-text-secondary-gray;
 }
 
 // Styles pour les liens
@@ -68,8 +149,22 @@ a {
     }
 }
 
-p{
-    font-size: clamp(1rem, 3vw, 1.3rem);
+// Paragraphes - Corps de texte principal
+p {
+    font-size: clamp($font-size-body-small, 2.5vw, $font-size-body);
+    line-height: $line-height-relaxed;
+    margin-bottom: $spacing-md;
+    color: inherit; // Hérite de la couleur du parent pour s'adapter au contexte
+    
+    @media (min-width: 768px) {
+        font-size: clamp($font-size-body, 2.75vw, $font-size-body-large);
+        margin-bottom: $spacing-lg;
+    }
+    
+    // Paragraphes dans les sections importantes
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 // Styles pour les images

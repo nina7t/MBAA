@@ -1,0 +1,204 @@
+@use '../utils/variables' as *;
+
+.main__explore{
+    margin: 2rem;
+}
+
+.main__explore-grid {
+    display: grid;
+    margin: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1.25rem;
+
+    @media (min-width: 768px) {
+        margin: 1.5rem;
+        gap: 1.5rem;
+    }
+    
+    @media (min-width: 1024px) {
+        margin: 2rem;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+    grid-template-rows: 500px 500px 250px;
+  
+    }
+}
+
+
+.main__explore-card-img {
+    position: absolute !important;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .5s ease-in-out;
+    opacity: 0.7;
+}
+
+.main__explore-card {  
+    position: relative;
+    padding: 50px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    color: white;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background: black;
+    
+    // Flexbox pour centrer le contenu
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    // Overlay sombre de base
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(43, 43, 43, 0.44);
+        z-index: 0;
+        border-radius: 10px;
+        transition: background 0.3s ease;
+    }
+
+    @media (min-width: 768px) {
+        padding: 20px;
+
+        
+    }
+    // // Overlay sombre au hover
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     inset: 0;
+    //     background: rgba(0, 0, 0, 0.5);
+    //     z-index: 2;
+    //     border-radius: 10px;
+    //     transition: opacity 0.3s ease;
+    // }
+
+    // Contenu au-dessus de l'overlay
+    & > * {
+        position: relative;
+        z-index: 3;
+    }
+
+    // Effet hover
+    &:hover {
+        // transform: scale(1.02);
+
+        &::before {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .main__explore-card-img {
+            // font-size: 2rem;
+            transform: scale(1.1);
+            opacity: 0.3;
+        }
+    }
+}
+
+// Grande carte verticale à gauche (3 lignes)
+.main__explore-card--fat {
+    grid-column: span 6;
+    grid-row: span 2;
+}
+
+
+// Bandeau horizontal en haut à gauche 
+.main__explore-card--test {
+    grid-column: span 7;
+}
+
+// Carte en haut à droite 
+.main__explore-card--child {
+    grid-column: span 5;
+}
+
+// Grande carte centre-droit (2 lignes × 2 colonnes)
+.main__explore-card--wide {
+    grid-column: span 6;
+}
+
+// Bandeau horizontal en bas 
+.main__explore-card--tall {
+  grid-column: span 6;
+}
+
+// Styles des titres et textes
+.main__explore-card-title {
+    // Utilise la hiérarchie H3 pour les titres de cartes d'exploration
+    font-weight: 700;
+    color: $color-primary-white;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: $spacing-h3-bottom;
+    font-size: clamp($font-size-h3-mobile, 3vw + 0.25rem, $font-size-h3-desktop);
+    line-height: $line-height-compact;
+    transition: all 0.3s ease;
+    padding: 0 1rem;
+    width: 100%;
+    letter-spacing: -0.01em;
+
+    @media (min-width: 768px) {
+        font-size: clamp($font-size-h3-tablet, 3.5vw + 0.25rem, $font-size-h3-desktop);
+        margin-bottom: $spacing-h3-bottom-desktop;
+        padding: 0 1.5rem;
+    }
+    
+    @media (min-width: 1024px) {
+        padding: 0 2rem;
+    }
+}
+
+.main__explore-card-text {
+    text-align: center;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    line-height: 1.5;
+    transition: all 0.3s ease;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 600px; // Limite la largeur pour une meilleure lisibilité
+
+    @media (min-width: 768px) {
+        padding: 0 1.5rem;
+        font-size: 1rem;
+    }
+    
+    @media (min-width: 1024px) {
+        padding: 0 2rem;
+    }
+}
+
+.main__explore-button{
+    margin: 1.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    @media (min-width: 768px) {
+        margin: 2rem 1.5rem;
+    }
+    
+    @media (min-width: 1024px) {
+        margin: 2rem;
+    }
+}
+
+
+
+
+
+.artist-gallery {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 0px;
+    }

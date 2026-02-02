@@ -1,0 +1,10 @@
+header__container {
+  position: fixed;
+  top: 13px;
+  left: 0;
+  width: 100%;
+  padding: 1.25rem 3.75rem;
+  gap: 2.5rem;
+  z-index: 1000;
+  box-sizing: border-box;
+}

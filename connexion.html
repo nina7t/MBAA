@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Admin MBAA</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <h1>MBAA</h1>
+                <p>Musée des Beaux-Arts et d'Archéologie</p>
+            </div>
+
+            <div class="login-roles" id="roleSelection">
+                <button type="button" class="role-btn" id="visiteurBtn" data-role="visiteur">
+                    <span class="role-icon">👤</span>
+                    <span class="role-text">Visiteur</span>
+                </button>
+                <button type="button" class="role-btn" id="adminBtn" data-role="admin">
+                    <span class="role-icon">⚙️</span>
+                    <span class="role-text">Administrateur</span>
+                </button>
+            </div>
+
+            <form class="login-form" id="loginForm" style="display: none;">
+                <div class="form-group">
+                    <label for="email">Adresse email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="votre@email.com"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="••••••••"
+                        required
+                    >
+                </div>
+
+                <div class="form-remember">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Se souvenir de moi</label>
+                </div>
+
+                <button type="submit" class="login-button">Se connecter</button>
+
+                <button type="button" class="login-back" id="backBtn">← Retour</button>
+
+                <div class="login-error" id="loginError" style="display: none;"></div>
+            </form>
+
+            <div class="login-footer">
+                <p>Première visite ? <a href="#" class="login-link">Contacter le musée</a></p>
+            </div>
+        </div>
+
+        <div class="login-background"></div>
+    </div>
+
+    <script>
+        let selectedRole = null;
+
+        // Role selection
+        document.getElementById('visiteurBtn').addEventListener('click', function() {
+            selectedRole = 'visiteur';
+            showLoginForm();
+        });
+
+        document.getElementById('adminBtn').addEventListener('click', function() {
+            selectedRole = 'admin';
+            showLoginForm();
+        });
+
+        function showLoginForm() {
+            document.getElementById('roleSelection').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'flex';
+            document.getElementById('email').focus();
+            updateHeader();
+        }
+
+        function updateHeader() {
+            const header = document.querySelector('.login-header p');
+            header.textContent = selectedRole === 'admin' ? 
+                'Espace Administrateur' : 
+                'Espace Personnel Visiteur';
+        }
+
+        // Back button
+        document.getElementById('backBtn').addEventListener('click', function() {
+            selectedRole = null;
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('roleSelection').style.display = 'flex';
+            document.getElementById('loginForm').reset();
+        });
+
+        // Login form
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const remember = document.getElementById('remember').checked;
+            
+            // Stockage simple pour démo
+            if (email && password) {
+                const userData = {
+                    email: email,
+                    role: selectedRole,
+                    remember: remember,
+                    loginTime: new Date()
+                };
+
+                if (selectedRole === 'admin') {
+                    localStorage.setItem('adminUser', JSON.stringify(userData));
+                    window.location.href = './admin.html';
+                } else {
+                    localStorage.setItem('visiteurUser', JSON.stringify(userData));
+                    window.location.href = './visiteur.html';
+                }
+            }
+        });
+
+        // Check if already logged in
+        window.addEventListener('DOMContentLoaded', function() {
+            const adminUser = localStorage.getItem('adminUser');
+            const visiteurUser = localStorage.getItem('visiteurUser');
+            
+            if (adminUser) {
+                window.location.href = './admin.html';
+            } else if (visiteurUser) {
+                window.location.href = './visiteur.html';
+            }
+        });
+    </script>
+</body>
+</html>

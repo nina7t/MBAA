@@ -1,0 +1,179 @@
+<parameter name="content"><!-- GALERIE PHOTOS EVENEMENTS -->
+<section class="events-gallery" id="gallery">
+  <div class="events-gallery__container">
+    <div class="events-gallery__header">
+      <div>
+        <h2 class="events-gallery__title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          Nos evenements en images
+        </h2>
+        <p class="events-gallery__subtitle">Revivez les moments forts du musee</p>
+      </div>
+      
+      <div class="events-gallery__filters">
+        <button class="events-gallery__filter events-gallery__filter--active" data-filter="all">Tout</button>
+        <button class="events-gallery__filter" data-filter="atelier">Ateliers</button>
+        <button class="events-gallery__filter" data-filter="conference">Conferences</button>
+        <button class="events-gallery__filter" data-filter="exposition">Expositions</button>
+        <button class="events-gallery__filter" data-filter="visite">Visites</button>
+      </div>
+
+    <div class="events-gallery__grid">
+      <article class="photo-card photo-card--large" data-category="exposition">
+        <div class="photo-card__image-wrapper">
+          <img class="photo-card__image" src="./asset/Img/Evenement/evenement-beaux-arts.jpg" alt="Exposition Beaux-Arts" />
+        </div>
+        <span class="photo-card__category">Exposition</span>
+        <span class="photo-card__date">Oct 2025</span>
+        <div class="photo-card__overlay">
+          <h3 class="photo-card__title">Exposition d'automne</h3>
+          <div class="photo-card__meta">
+            <span class="photo-card__meta-item">234 vues</span>
+          </div>
+        <div class="photo-card__zoom">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+      </article>
+
+      <article class="photo-card" data-category="atelier">
+        <div class="photo-card__image-wrapper">
+          <img class="photo-card__image" src="./asset/Img/atelier-jeunes.jpg" alt="Atelier jeunes" />
+        </div>
+        <span class="photo-card__category">Atelier</span>
+        <span class="photo-card__date">Nov 2025</span>
+        <div class="photo-card__overlay">
+          <h3 class="photo-card__title">Atelier jeunes peintres</h3>
+          <div class="photo-card__meta">
+            <span class="photo-card__meta-item">156 vues</span>
+          </div>
+        <div class="photo-card__zoom">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+      </article>
+
+      <article class="photo-card photo-card--tall" data-category="conference">
+        <div class="photo-card__image-wrapper">
+          <img class="photo-card__image" src="./asset/Img/misc-discussion.jpg" alt="Conference" />
+        </div>
+        <span class="photo-card__category">Conference</span>
+        <span class="photo-card__date">Dec 2025</span>
+        <div class="photo-card__overlay">
+          <h3 class="photo-card__title">Conference sur l'art moderne</h3>
+          <div class="photo-card__meta">
+            <span class="photo-card__meta-item">89 vues</span>
+          </div>
+        <div class="photo-card__zoom">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+      </article>
+
+      <article class="photo-card" data-category="visite">
+        <div class="photo-card__image-wrapper">
+          <img class="photo-card__image" src="./asset/Img/visite-groupe.jpg" alt="Visite guidee" />
+        </div>
+        <span class="photo-card__category">Visite</span>
+        <span class="photo-card__date">Janv 2026</span>
+        <div class="photo-card__overlay">
+          <h3 class="photo-card__title">Visite groupe scolaire</h3>
+          <div class="photo-card__meta">
+            <span class="photo-card__meta-item">112 vues</span>
+          </div>
+        <div class="photo-card__zoom">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+      </article>
+
+      <article class="photo-card" data-category="exposition">
+        <div class="photo-card__image-wrapper">
+          <img class="photo-card__image" src="./asset/Img/Evenement/evenement-concert.jpg" alt="Concert au musee" />
+        </div>
+        <span class="photo-card__category">Exposition</span>
+        <span class="photo-card__date">Fev 2026</span>
+        <div class="photo-card__overlay">
+          <h3 class="photo-card__title">Soiree musicale</h3>
+          <div class="photo-card__meta">
+            <span class="photo-card__meta-item">198 vues</span>
+          </div>
+        <div class="photo-card__zoom">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+      </article>
+
+      <article class="photo-card photo-card--wide" data-category="atelier">
+        <div class="photo-card__image-wrapper">
+          <img class="photo-card__image" src="./asset/Img/atelier-poterie.png" alt="Atelier poterie" />
+        </div>
+        <span class="photo-card__category">Atelier</span>
+        <span class="photo-card__date">Mars 2026</span>
+        <div class="photo-card__overlay">
+          <h3 class="photo-card__title">Atelier de poterie</h3>
+          <div class="photo-card__meta">
+            <span class="photo-card__meta-item">145 vues</span>
+          </div>
+        <div class="photo-card__zoom">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+      </article>
+    </div>
+
+    <div class="gallery-load-more">
+      <button class="gallery-load-more__btn" type="button">
+        Charger plus de photos
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+    </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox__close" aria-label="Fermer">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
+  <button class="lightbox__nav lightbox__nav--prev" aria-label="Precedent">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
+  <button class="lightbox__nav lightbox__nav--next" aria-label="Suivant">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </button>
+  <div class="lightbox__content">
+    <img class="lightbox__image" src="" alt="" />
+    <div class="lightbox__info">
+      <h3 class="lightbox__title"></h3>
+      <p class="lightbox__meta"></p>
+    </div>
+    <div class="lightbox__counter">1 / 6</div>
+</div>
+
+<script src="./js/events-gallery.js"></script>
+</parameter>

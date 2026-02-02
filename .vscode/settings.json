@@ -1,3 +1,25 @@
 {
-    "liveServer.settings.port": 5502
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/",
+      "savePathSegmentKeys": null,
+      "savePathReplaceSegmentsWith": null
+    }
+  ],
+  "liveSassCompile.settings.generateMap": true,
+  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
+  "liveSassCompile.settings.excludeList": [
+    "**/node_modules/**",
+    "**/vendors/**",
+    "**/css/admin.scss",
+    "**/css/connexion.scss",
+    "**/css/visiteur.scss",
+    "**/css/*.scss"
+  ],
+  "liveSassCompile.settings.includeItems": ["css/styles.scss"],
+  "liveSassCompile.settings.showOutputWindow": true,
+  "liveServer.settings.port": 5504,
+  "compile-hero.disable-compile-files-on-did-save-code": false
 }

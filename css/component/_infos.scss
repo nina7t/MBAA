@@ -1,0 +1,211 @@
+@use "../utils/variables" as *;
+@use "sass:color";
+
+.container {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: $spacing-md;
+}
+
+// Section Services
+.services-section {
+    background-color: $color-white;
+    padding: $spacing-xl;
+    border-radius: 12px;
+    margin-bottom: $spacing-lg;
+    color: $color-text-primary;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba($color-secondary-gold, 0.1);
+
+    .section-title {
+        font-family: $font-primary;
+        font-size: $font-size-h3-medium;
+        font-weight: $font-weight-semibold;
+        letter-spacing: 1px;
+        margin-bottom: $spacing-lg;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: $color-secondary-gold;
+
+        @media (min-width: $breakpoint-md) {
+            font-size: $font-size-h3-large;
+        }
+
+        .icon {
+            font-size: 28px;
+            font-weight: $font-weight-light;
+        }
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem 4rem;
+    }
+
+    .service-item {
+        padding: $spacing-sm;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateX(5px);
+        }
+
+        .service-subtitle {
+            font-family: $font-primary;
+            font-size: $font-size-body-large;
+            font-weight: $font-weight-semibold;
+            margin-bottom: $spacing-xs;
+            color: $color-primary-dark;
+        }
+
+        .service-text {
+            font-family: $font-secondary;
+            font-size: $font-size-body;
+            font-weight: $font-weight-normal;
+            line-height: $line-height-relaxed;
+            color: $color-text-secondary;
+        }
+    }
+}
+
+// Bottom sections container
+.bottom-sections {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-lg;
+    margin-bottom: $spacing-xl;
+}
+
+// Section Réservations
+.reservation-section {
+    background-color: $color-white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: $spacing-xl; // Increased padding
+    border: 1px solid rgba($color-secondary-gold, 0.1);
+
+    .section-title {
+        font-family: $font-primary;
+        font-size: $font-size-h3-medium;
+        font-weight: $font-weight-semibold;
+        letter-spacing: 1px;
+        margin-bottom: $spacing-lg;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: $color-secondary-gold;
+
+        @media (min-width: $breakpoint-md) {
+            font-size: $font-size-h3-large;
+        }
+
+        .icon {
+            font-size: 28px;
+            font-weight: $font-weight-light;
+        }
+    }
+
+    .reservation-text {
+        font-family: $font-secondary;
+        font-size: $font-size-body;
+        color: $color-text-secondary;
+        margin-bottom: $spacing-md;
+        line-height: $line-height-relaxed;
+        font-weight: $font-weight-normal;
+    }
+
+    .reservation-link {
+        margin-bottom: $spacing-xl;
+
+        a {
+            color: $color-secondary-gold;
+            text-decoration: none;
+            font-size: $font-size-body;
+            font-weight: $font-weight-semibold;
+            border-bottom: 2px solid $color-secondary-gold;
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: rgba($color-secondary-gold, 0.1);
+                color: color.adjust($color-secondary-gold, $lightness: -10%);
+            }
+        }
+    }
+
+    .subsection-title {
+        font-family: $font-primary;
+        font-size: $font-size-body-large;
+        font-weight: $font-weight-semibold;
+        color: $color-primary-dark;
+        margin-bottom: $spacing-sm;
+        margin-top: $spacing-lg;
+    }
+}
+
+// Section Bons Plans
+.deals-section {
+    background-color: $color-white;
+    padding: $spacing-xl;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba($color-secondary-gold, 0.1);
+
+    .section-title {
+        font-family: $font-primary;
+        font-size: $font-size-h3-medium;
+        font-weight: $font-weight-semibold;
+        letter-spacing: 1px;
+        margin-bottom: $spacing-lg;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: $color-secondary-gold;
+
+        @media (min-width: $breakpoint-md) {
+            font-size: $font-size-h3-large;
+        }
+
+        .icon {
+            font-size: 28px;
+            font-weight: $font-weight-light;
+        }
+    }
+
+    .deal-title {
+        font-family: $font-primary;
+        font-size: $font-size-body-large;
+        font-weight: $font-weight-semibold;
+        color: $color-primary-dark;
+        margin-bottom: $spacing-xs;
+        margin-top: $spacing-lg;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+
+    .deal-text {
+        font-family: $font-secondary;
+        font-size: $font-size-body;
+        color: $color-text-secondary;
+        line-height: $line-height-relaxed;
+        margin-bottom: $spacing-md;
+        font-weight: $font-weight-normal;
+    }
+}
+
+// Responsive
+@media (max-width: $breakpoint-md) {
+    .services-section {
+        .services-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .bottom-sections {
+        grid-template-columns: 1fr;
+    }
+}

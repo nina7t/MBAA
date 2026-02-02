@@ -1,0 +1,2680 @@
+@use 'utils/variables' as *;
+
+// La page ADMIN
+
+.admin-body {
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+}
+
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+// SIDEBAR
+.admin-sidebar {
+    width: 250px;
+    background: #2a2a2a;
+    padding: 2rem 1.5rem;
+    overflow-y: auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    
+    @media (max-width: 768px) {
+        width: 200px;
+        padding: 1.5rem 1rem;
+    }
+}
+
+.sidebar-header {
+    margin-bottom: 2rem;
+}
+
+.sidebar-btn-add {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background: $bg-or;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: $font-secondary;
+    
+    &:hover {
+        background: $bg-or;
+        transform: translateY(-2px);
+    }
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.sidebar-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: $bg-or;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+.sidebar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar-link {
+    display: block;
+    padding: 0.8rem 1rem;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    font-family: $font-secondary;
+    
+    &:hover {
+        background: rgba($bg-or, 0.1);
+        color: #fff;
+    }
+    
+    &.active {
+        background: $bg-or;
+        color: white;
+    }
+}
+
+// MAIN CONTENT
+.admin-main {
+    margin-left: 250px;
+    flex: 1;
+    padding: 2rem;
+    
+    @media (max-width: 768px) {
+        margin-left: 200px;
+        padding: 1.5rem;
+    }
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    gap: 2rem;
+}
+
+.admin-tabs {
+    display: flex;
+    gap: 1rem;
+}
+
+.admin-tab {
+    padding: 0.7rem 1.2rem;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-family: $font-secondary;
+    
+    &:hover {
+        background: #f9f9f9;
+    }
+    
+    &.active {
+        background: $bg-or;
+        color: white;
+        border-color: $bg-or;
+    }
+}
+
+.admin-user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #2a2a2a;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+}
+
+.admin-username {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: $font-secondary;
+}
+
+.admin-search,
+.admin-profile {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 0.4rem;
+    transition: opacity 0.3s;
+    
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+// Taille des icons dans la partie admin user
+
+
+.admin-search .icon-admin-user {
+    width: 35px;
+    height: 40px;
+}
+
+.admin-profile .icon-admin-user {
+    width: 28px;
+    height: 35px;
+}
+
+// STATS CARDS
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.stat-card {
+    background: white;
+    padding: 1.8rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    
+    &:hover {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        transform: translateY(-4px);
+    }
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #888;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+    font-family: $font-secondary;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $color-primary-dark;
+    margin-bottom: 0.6rem;
+    font-family: $font-primary;
+}
+
+.stat-change {
+    font-size: 0.8rem;
+    color: #666;
+    font-family: $font-secondary;
+}
+
+// FILTERS
+.admin-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    
+    @media (min-width: 768px) {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.search-box {
+    flex: 1;
+    min-width: 300px;
+}
+
+.filter-input {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: $font-secondary;
+    transition: all 0.3s ease;
+    
+    &:focus {
+        outline: none;
+        border-color: $bg-or;
+        box-shadow: 0 0 0 3px rgba($bg-or, 0.1);
+    }
+    
+    &::placeholder {
+        color: #bbb;
+    }
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.7rem 1.2rem;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    font-family: $font-secondary;
+    white-space: nowrap;
+    
+    &:hover {
+        border-color: $bg-or;
+        color: $bg-or;
+    }
+}
+
+// ACTION BAR
+.admin-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid #eee;
+    gap: 2rem;
+    
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.action-count {
+    font-size: 0.9rem;
+    color: #666;
+    font-family: $font-secondary;
+    white-space: nowrap;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    padding: 0.7rem 1rem;
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    font-family: $font-secondary;
+    font-weight: 500;
+    
+    &:hover {
+        border-color: $bg-or;
+        color: $bg-or;
+    }
+}
+
+// TABLE
+.admin-table-wrapper {
+    background: white;
+    border-radius: 0 0 8px 8px;
+    overflow-x: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    thead {
+        background: $bg-or;
+        color: white;
+    }
+    
+    th {
+        padding: 1.2rem;
+        text-align: left;
+        font-weight: 600;
+        font-size: 0.9rem;
+        font-family: $font-secondary;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        
+        &:last-child {
+            border-right: none;
+        }
+    }
+    
+    td {
+        padding: 1.5rem 1.2rem;
+        border-bottom: 1px solid #eee;
+        font-size: 0.9rem;
+        font-family: $font-secondary;
+        
+        strong {
+            color: $color-primary-dark;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+    }
+    
+    tbody tr {
+        transition: background 0.2s ease;
+        
+        &:hover {
+            background: #fafafa;
+        }
+    }
+}
+
+.table-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: $bg-or;
+}
+
+.table-checkbox-all {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: white;
+}
+
+.table-image {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    
+    img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+    
+    .table-views {
+        font-size: 0.75rem;
+        color: #666;
+        background: #f0f0f0;
+        padding: 0.4rem 0.8rem;
+        border-radius: 4px;
+    }
+}
+
+.table-id {
+    font-size: 0.8rem;
+    color: #999;
+    margin: 0;
+    font-weight: 300;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    
+    &.online {
+        background: rgba($bg-or, 0.15);
+        color: $bg-or;
+    }
+    
+    &.brouillon {
+        background: #ffeaa7;
+        color: #d63031;
+    }
+}
+
+.progress-bar {
+    height: 6px;
+    background: #eee;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.4rem;
+    max-width: 100px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, $bg-or, $bg-or);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 0.75rem;
+    color: #666;
+}
+
+@media (max-width: 1024px) {
+    .admin-main {
+        margin-left: 200px;
+    }
+    
+    .admin-sidebar {
+        width: 200px;
+    }
+}
+
+.admin-section {
+    display: none;
+    
+    &[data-section="dashboard-table"] {
+        display: block;
+    }
+}
+
+.media-header {
+    margin-bottom: 2rem;
+}
+
+.media-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.media-stat {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.media-stat-label {
+    font-size: 0.8rem;
+    color: #888;
+    font-weight: 500;
+    font-family: $font-secondary;
+}
+
+.media-stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $color-primary-dark;
+    font-family: $font-primary;
+}
+
+.media-stat-change {
+    font-size: 0.75rem;
+    color: #666;
+    font-family: $font-secondary;
+}
+
+.media-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    
+    @media (min-width: 768px) {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.media-search-input {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: $font-secondary;
+    transition: all 0.3s ease;
+    
+    &:focus {
+        outline: none;
+        border-color: $bg-or;
+        box-shadow: 0 0 0 3px rgba($bg-or, 0.1);
+    }
+    
+    &::placeholder {
+        color: #bbb;
+    }
+}
+
+.media-action-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid #eee;
+    gap: 2rem;
+    margin-bottom: 0;
+    
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.media-selection-count {
+    font-size: 0.9rem;
+    color: #666;
+    font-family: $font-secondary;
+    white-space: nowrap;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+    
+    @media (max-width: 480px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.media-card {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    
+    &:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transform: translateY(-4px);
+        border-color: $bg-or;
+    }
+}
+
+.media-card-image {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    background: #f5f5f5;
+    
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    
+    &:hover img {
+        transform: scale(1.05);
+    }
+    
+    .media-checkbox {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        accent-color: $bg-or;
+        background: white;
+        border-radius: 4px;
+        padding: 2px;
+    }
+}
+
+.media-card-info {
+    padding: 1.2rem;
+    
+    h3 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: $color-primary-dark;
+        margin: 0 0 0.6rem 0;
+        font-family: $font-secondary;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    p {
+        font-size: 0.8rem;
+        color: #666;
+        margin: 0.4rem 0;
+        font-family: $font-secondary;
+    }
+}
+
+.media-size,
+.media-dimensions {
+    color: #888;
+    font-size: 0.75rem;
+}
+
+.media-date {
+    color: #999;
+    font-size: 0.75rem;
+    margin-top: 0.6rem;
+}
+
+// SECTION HEADER
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: $color-primary-dark;
+        margin: 0;
+        font-family: $font-primary;
+    }
+}
+
+// WORKS TABLE
+.works-table-wrapper,
+.users-table-wrapper,
+.qr-table-wrapper {
+    background: white;
+    border-radius: 8px;
+    overflow-x: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.works-table,
+.users-table,
+.qr-table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    thead {
+        background: $bg-or;
+        color: white;
+    }
+    
+    th {
+        padding: 1.2rem;
+        text-align: left;
+        font-weight: 600;
+        font-size: 0.9rem;
+        font-family: $font-secondary;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        
+        &:last-child {
+            border-right: none;
+        }
+    }
+    
+    td {
+        padding: 1.2rem;
+        border-bottom: 1px solid #eee;
+        font-size: 0.9rem;
+        font-family: $font-secondary;
+        
+        strong {
+            color: $color-primary-dark;
+        }
+    }
+    
+    tbody tr {
+        transition: background 0.2s ease;
+        
+        &:hover {
+            background: #fafafa;
+        }
+    }
+}
+
+.works-checkbox,
+.works-checkbox-all {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: $bg-or;
+}
+
+.completion-badge {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    
+    &.complete {
+        background: rgba($bg-or, 0.15);
+        color: $bg-or;
+    }
+    
+    &.incomplete {
+        background: #ffeaa7;
+        color: #d63031;
+    }
+}
+
+// COLLECTIONS GRID
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+.collection-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    
+    &:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transform: translateY(-4px);
+    }
+    
+    h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: $color-primary-dark;
+        margin: 0 0 0.5rem 0;
+        font-family: $font-primary;
+    }
+}
+
+.collection-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.collection-count {
+    font-size: 0.85rem;
+    color: $bg-or;
+    font-weight: 600;
+    font-family: $font-secondary;
+}
+
+.collection-desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.5rem 0 1rem 0;
+    font-family: $font-secondary;
+}
+
+.collection-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+// EXPOSITIONS
+.expositions-list {
+    display: grid;
+    gap: 2rem;
+}
+
+.exposition-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.exposition-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: #f5f5f5;
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.exposition-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    h3 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: $color-primary-dark;
+        margin: 0 0 0.5rem 0;
+        font-family: $font-primary;
+    }
+}
+
+.exposition-dates {
+    font-size: 0.9rem;
+    color: $bg-or;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    font-family: $font-secondary;
+}
+
+.exposition-desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.5rem 0 1rem 0;
+    font-family: $font-secondary;
+}
+
+.exposition-meta {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: #f0f0f0;
+    color: #666;
+    font-family: $font-secondary;
+    
+    &.active {
+        background: rgba($bg-or, 0.15);
+        color: $bg-or;
+    }
+    
+    &.archived {
+        background: #e0e0e0;
+        color: #999;
+    }
+}
+
+.exposition-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+// ANALYTICS - POPULAR WORKS
+.analytics-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.popular-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+.popular-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    
+    &:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transform: translateY(-4px);
+    }
+    
+    .rank {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: $bg-or;
+        color: white;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+    
+    img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: $color-primary-dark;
+        margin: 1rem;
+        font-family: $font-primary;
+    }
+    
+    .artist {
+        font-size: 0.9rem;
+        color: #666;
+        margin: 0 1rem;
+        font-family: $font-secondary;
+    }
+}
+
+.stats {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0 1rem 1rem 1rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    font-size: 0.8rem;
+    background: #f0f0f0;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    color: #666;
+    font-family: $font-secondary;
+}
+
+// QR STATS
+.qr-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.qr-stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    
+    .stat-label {
+        font-size: 0.85rem;
+        color: #888;
+        font-weight: 500;
+        margin-bottom: 0.8rem;
+        font-family: $font-secondary;
+    }
+    
+    .stat-big {
+        font-size: 2rem;
+        font-weight: 700;
+        color: $color-primary-dark;
+        margin-bottom: 0.5rem;
+        font-family: $font-primary;
+    }
+    
+    .stat-change {
+        font-size: 0.8rem;
+        color: #666;
+        font-family: $font-secondary;
+    }
+}
+
+.engagement {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    
+    &.high {
+        background: rgba($bg-or, 0.15);
+        color: $bg-or;
+    }
+    
+    &.medium {
+        background: #fff3cd;
+        color: #856404;
+    }
+    
+    &.low {
+        background: #f8d7da;
+        color: #721c24;
+    }
+}
+
+// SETTINGS NEW LAYOUT
+.settings-container {
+    display: flex;
+    gap: 2rem;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.settings-nav {
+    width: 220px;
+    background: #f5f5f5;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-height: 600px;
+}
+
+.settings-nav-btn {
+    padding: 0.8rem 1rem;
+    background: transparent;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #666;
+    transition: all 0.3s ease;
+    font-family: $font-secondary;
+    
+    &:hover {
+        background: #e8e8e8;
+        color: #333;
+    }
+    
+    &.active {
+        background: $bg-or;
+        color: white;
+    }
+}
+
+.settings-content {
+    flex: 1;
+    padding: 2rem;
+    max-width: 800px;
+    
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $color-primary-dark;
+        margin: 0 0 0.5rem 0;
+        font-family: $font-primary;
+    }
+    
+    h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: $color-primary-dark;
+        margin: 1.5rem 0 0.5rem 0;
+        font-family: $font-secondary;
+    }
+    
+    h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #333;
+        margin: 0;
+        font-family: $font-secondary;
+    }
+}
+
+.settings-tab {
+    display: none;
+    
+    &.active {
+        display: block;
+    }
+}
+
+.settings-description {
+    font-size: 0.85rem;
+    color: #999;
+    margin: 0 0 1.5rem 0;
+    font-family: $font-secondary;
+}
+
+.settings-form-group {
+    margin-bottom: 1.5rem;
+    
+    label {
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        color: #333;
+        font-family: $font-secondary;
+    }
+}
+
+.settings-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-family: $font-secondary;
+    transition: all 0.3s ease;
+    background: white;
+    
+    &:focus {
+        outline: none;
+        border-color: $bg-or;
+        box-shadow: 0 0 0 3px rgba($bg-or, 0.1);
+    }
+    
+    &::placeholder {
+        color: #bbb;
+    }
+}
+
+// TOGGLE SWITCH
+.settings-toggle-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.toggle-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.toggle-info {
+    flex: 1;
+    
+    h4 {
+        margin: 0 0 0.5rem 0;
+    }
+    
+    p {
+        font-size: 0.85rem;
+        color: #999;
+        margin: 0;
+        font-family: $font-secondary;
+    }
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+    margin-left: 1rem;
+    
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        
+        &:checked + .slider {
+            background: $bg-or;
+            
+            &:before {
+                transform: translateX(22px);
+            }
+        }
+    }
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.3s;
+    border-radius: 28px;
+    
+    &:before {
+        position: absolute;
+        content: "";
+        height: 22px;
+        width: 22px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: 0.3s;
+        border-radius: 50%;
+    }
+}
+
+// THEME SELECTOR
+.theme-selector {
+    display: flex;
+    gap: 2rem;
+}
+
+.theme-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    
+    input[type="radio"] {
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+        accent-color: $bg-or;
+    }
+    
+    label {
+        cursor: pointer;
+        font-family: $font-secondary;
+        color: #333;
+    }
+}
+
+// STORAGE
+.storage-info {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.storage-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: $font-secondary;
+    color: #333;
+}
+
+.storage-amount {
+    color: $bg-or;
+    font-weight: 700;
+}
+
+.storage-bar {
+    width: 100%;
+    height: 12px;
+    background: #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.storage-fill {
+    height: 100%;
+    background: linear-gradient(90deg, $bg-or, $bg-or);
+    transition: width 0.3s ease;
+}
+
+.storage-warning {
+    background: #fff9e6;
+    border-left: 4px solid $bg-or;
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #666;
+    font-family: $font-secondary;
+}
+
+// DANGER ZONE
+.danger-title {
+    color: #d63031 !important;
+}
+
+.danger-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.danger-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: #fdf0f0;
+    border-left: 4px solid #d63031;
+    border-radius: 4px;
+}
+
+.danger-info {
+    flex: 1;
+    
+    h4 {
+        color: #d63031;
+    }
+    
+    p {
+        font-size: 0.85rem;
+        color: #999;
+        margin: 0.5rem 0 0 0;
+        font-family: $font-secondary;
+    }
+}
+
+.btn-danger {
+    padding: 0.7rem 1.2rem;
+    background: #8b3a3a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: $font-secondary;
+    font-size: 0.85rem;
+    margin-left: 1rem;
+    
+    &:hover {
+        background: #a04040;
+    }
+}
+
+.btn-danger-secondary {
+    padding: 0.7rem 1.2rem;
+    background: white;
+    color: #d63031;
+    border: 1px solid #d63031;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: $font-secondary;
+    font-size: 0.85rem;
+    margin-left: 1rem;
+    
+    &:hover {
+        background: #fff0f0;
+    }
+}
+
+// SETTINGS ACTIONS
+.settings-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+    justify-content: flex-start;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #333;
+    font-family: $font-secondary;
+    cursor: pointer;
+    
+    input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+        accent-color: $bg-or;
+    }
+}
+
+.settings-desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 0 1rem 0;
+    font-family: $font-secondary;
+}
+
+// BUTTONS
+.btn-primary,
+.btn-secondary,
+.btn-export {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: $font-secondary;
+}
+
+.btn-primary {
+    background: $bg-or;
+    color: white;
+    
+    &:hover {
+        background: $bg-or;
+        transform: translateY(-2px);
+    }
+}
+
+.btn-secondary {
+    background: white;
+    color: #333;
+    border: 1px solid #ddd;
+    
+    &:hover {
+        border-color: $bg-or;
+        color: $bg-or;
+    }
+}
+
+.btn-export {
+    background: white;
+    border: 1px solid #ddd;
+    color: #333;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    
+    &:hover {
+        border-color: $bg-or;
+        color: $bg-or;
+        background: #fafafa;
+    }
+}
+
+// ACTION LINK
+.action-link {
+    background: none;
+    border: none;
+    color: $bg-or;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    transition: all 0.3s ease;
+    font-family: $font-secondary;
+    text-decoration: none;
+    
+    &:hover {
+        color: $bg-or;
+    }
+    
+    &.danger {
+        color: #e74c3c;
+        
+        &:hover {
+            color: #e74c3c;
+        }
+    }
+}
+
+// EXPORT/IMPORT
+.export-import-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+// SECTION EXPORTER
+.export-section-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.export-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-primary-dark;
+    margin: 0 0 0.5rem 0;
+    font-family: $font-primary;
+}
+
+.export-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 0 1.5rem 0;
+    font-family: $font-secondary;
+}
+
+.export-format-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.format-option {
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    .format-label {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+        font-family: $font-secondary;
+    }
+    
+    .format-desc {
+        font-size: 0.85rem;
+        font-family: $font-secondary;
+    }
+    
+    &:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+}
+
+// Format Excel : fond bleu foncé avec texte blanc
+.format-option-excel {
+    background: #1e3a8a; // Bleu foncé
+    border: none;
+    
+    .format-label,
+    .format-desc {
+        color: white;
+    }
+}
+
+// Format CSV : fond vert olive avec texte blanc
+.format-option-csv {
+    background: $color-tertiary-green; // Vert olive (#47564F)
+    border: none;
+    
+    .format-label,
+    .format-desc {
+        color: white;
+    }
+}
+
+// Format JSON : fond rose clair avec texte blanc
+.format-option-json {
+    background: #f9a8d4; // Rose clair
+    border: none;
+    
+    .format-label,
+    .format-desc {
+        color: white;
+    }
+}
+
+.export-checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.export-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+    color: #333;
+    font-family: $font-secondary;
+    cursor: pointer;
+    
+    input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        accent-color: $color-tertiary-green;
+    }
+}
+
+.export-download-btn {
+    padding: 1rem 2rem;
+    background: $color-tertiary-green; // Vert olive foncé
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: $font-secondary;
+    width: 100%;
+    
+    &:hover {
+        background: $color-tertiary-green;
+        transform: translateY(-2px);
+    }
+}
+
+// SECTION IMPORTER
+.import-section-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.import-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.import-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.import-icon-green {
+    background: $color-tertiary-green; // Vert olive foncé
+}
+
+.import-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-primary-dark;
+    margin: 0;
+    font-family: $font-primary;
+}
+
+.import-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+    font-family: $font-secondary;
+}
+
+.import-formats-banner {
+    background: $color-tertiary-green; // Vert olive foncé
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+    font-family: $font-secondary;
+    font-weight: 500;
+}
+
+.import-dropzone {
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    background: #f9f9f9;
+    
+    &:hover {
+        border-color: $color-tertiary-green;
+        background: rgba($color-tertiary-green, 0.05);
+    }
+    
+    .dropzone-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: $color-tertiary-green;
+    }
+    
+    .dropzone-text {
+        font-size: 0.95rem;
+        color: #333;
+        margin: 0.5rem 0;
+        font-family: $font-secondary;
+        font-weight: 500;
+    }
+    
+    .dropzone-hint {
+        font-size: 0.85rem;
+        color: #999;
+        margin: 0.5rem 0 0 0;
+        font-family: $font-secondary;
+    }
+}
+
+.import-file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.import-checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.import-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+    color: #333;
+    font-family: $font-secondary;
+    cursor: pointer;
+    
+    input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        accent-color: $color-tertiary-green;
+    }
+}
+
+.import-launch-btn {
+    padding: 1rem 2rem;
+    background: $color-tertiary-green; // Vert olive foncé
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: $font-secondary;
+    width: 100%;
+    
+    &:hover {
+        background: $color-tertiary-green;
+        transform: translateY(-2px);
+    }
+}
+
+// ROLE BADGES
+.role-badge {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    
+    &.admin {
+        background: rgba($bg-or, 0.15);
+        color: $bg-or;
+    }
+    
+    &.moderator {
+        background: #d4edda;
+        color: #155724;
+    }
+    
+    &.editor {
+        background: #d1ecf1;
+        color: #0c5460;
+    }
+}
+
+// =====================================
+// FICHES ŒUVRES - VUE LISTE
+// =====================================
+
+// Conteneur principal de la liste des fiches d'œuvres
+.fiche-list-view {
+    display: block;
+}
+
+// En-tête de la liste avec titre et bouton "Créer fiche"
+.fiche-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    
+    // Titre "Fiches Œuvres"
+    h1 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: $color-primary-dark;
+        margin: 0;
+        font-family: $font-primary;
+    }
+}
+
+// Conteneur de la barre de recherche
+.fiche-search-bar {
+    margin-bottom: 1.5rem;
+}
+
+// Champ de recherche pour filtrer les œuvres
+.fiche-search-input {
+    // Occupe toute la largeur disponible
+    width: 100%;
+    // Padding pour l'espace intérieur
+    padding: 0.8rem 1rem;
+    // Bordure grise légère
+    border: 1px solid #ddd;
+    // Coins arrondis
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-family: $font-secondary;
+    // Fond blanc
+    background: white;
+    // Animation lisse lors du focus
+    transition: all 0.3s ease;
+    
+    // Styles au focus (clic sur l'input)
+    &:focus {
+        outline: none;
+        // Bordure dorée quand on clique
+        border-color: $bg-or;
+        // Ombre dorée subtile
+        box-shadow: 0 0 0 3px rgba($bg-or, 0.1);
+    }
+    
+    // Couleur du texte placeholder (conseil affiché)
+    &::placeholder {
+        color: #bbb;
+    }
+}
+
+// Conteneur wrapper de la table avec ombre
+.fiche-list-table-wrapper {
+    background: white;
+    border-radius: 8px;
+    // Masque le contenu qui dépasse
+    overflow: hidden;
+    // Ombre subtile
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+// Tableau de la liste des fiches d'œuvres
+.fiche-list-table {
+    // Occupe toute la largeur
+    width: 100%;
+    // Fusion des bordures des cellules
+    border-collapse: collapse;
+    
+    // En-tête du tableau
+    thead {
+        background: #f9f9f9;
+        border-bottom: 2px solid #eee;
+        
+        // Cellules d'en-tête (Titre, Artiste, etc.)
+        th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #666;
+            // Texte en majuscules
+            text-transform: uppercase;
+            // Espacement entre les lettres
+            letter-spacing: 0.5px;
+            font-family: $font-secondary;
+        }
+    }
+    
+    // Corps du tableau avec les données
+    tbody {
+        // Chaque ligne du tableau
+        tr {
+            border-bottom: 1px solid #eee;
+            // Transition lisse pour l'effet hover
+            transition: all 0.3s ease;
+            
+            // Fond légèrement doré au survol
+            &:hover {
+                background: rgba($bg-or, 0.02);
+            }
+            
+            // Cellules du corps du tableau
+            td {
+                padding: 1rem;
+                font-size: 0.9rem;
+                color: #333;
+                font-family: $font-secondary;
+            }
+        }
+    }
+}
+
+// Ligne du tableau (ligne d'une œuvre)
+.fiche-row {
+    // Curseur pointer pour indiquer qu'on peut cliquer
+    cursor: pointer;
+    
+    // Fond doré plus prononcé au survol
+    &:hover {
+        background: rgba($bg-or, 0.05);
+    }
+}
+
+// Badge indiquant qu'une œuvre est en ligne
+.fiche-status-online {
+    // Affichage en ligne avec padding
+    display: inline-block;
+    // Fond vert clair
+    background: #d4edda;
+    // Texte vert foncé
+    color: #155724;
+    // Espacement intérieur
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: $font-secondary;
+}
+
+// Bouton "Éditer" dans chaque ligne du tableau
+.fiche-edit-btn {
+    padding: 0.5rem 1rem;
+    // Couleur de fond dorée
+    background: $bg-or;
+    // Texte blanc
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: $font-secondary;
+    // Transition lisse pour l'effet hover
+    transition: all 0.3s ease;
+    
+    // Styles au survol du bouton
+    &:hover {
+        // Fond plus foncé
+        background: $bg-or;
+        // Soulève légèrement le bouton
+        transform: translateY(-2px);
+    }
+}
+
+// =====================================
+// FICHES ŒUVRES - VUE DÉTAIL
+// =====================================
+
+// Conteneur de la vue détail (formulaire)
+.fiche-detail-view {
+    // Masqué par défaut
+    display: none;
+}
+
+// Affichage de la vue détail quand elle est active
+.fiche-detail-view.active {
+    // Visible
+    display: block;
+}
+
+// Masquage de la liste quand on affiche le détail
+.fiche-list-view.hidden {
+    display: none;
+}
+
+// En-tête de la vue détail avec onglets et bouton retour
+.fiche-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+    background: white;
+    border-radius: 8px;
+    // Ombre légère
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+// Conteneur des onglets (Tableau/Grille)
+.fiche-tabs {
+    display: flex;
+    gap: 1rem;
+}
+
+// Onglet individuel (Tableau ou Grille)
+.fiche-tab {
+    padding: 0.7rem 1.2rem;
+    // Fond transparent par défaut
+    background: transparent;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: $font-secondary;
+    font-size: 0.9rem;
+    // Transition lisse pour les changements de style
+    transition: all 0.3s ease;
+    
+    // Styles quand l'onglet est actif (sélectionné)
+    &.active {
+        background: $bg-or;
+        color: white;
+        border-color: $bg-or;
+    }
+    
+    // Styles au survol pour les onglets non actifs
+    &:hover:not(.active) {
+        border-color: $bg-or;
+        color: $bg-or;
+    }
+}
+
+// Bouton "Retour" pour revenir à la liste
+.fiche-back-btn {
+    padding: 0.7rem 1.2rem;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: $font-secondary;
+    font-size: 0.9rem;
+    // Transition lisse pour l'effet hover
+    transition: all 0.3s ease;
+    
+    // Styles au survol du bouton
+    &:hover {
+        border-color: $bg-or;
+        color: $bg-or;
+    }
+}
+
+// Carte principale de la fiche d'œuvre avec image et formulaire
+.fiche-artwork-card {
+    display: flex;
+    // Espacement entre l'image et le formulaire
+    gap: 3rem;
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    // Ombre subtile
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+// Partie gauche avec l'image de l'œuvre
+.fiche-artwork-left {
+    // Largeur fixe de 300px, ne rétrécit pas
+    flex: 0 0 300px;
+}
+
+// Image de l'œuvre d'art
+.fiche-artwork-image {
+    // Positionnement relatif pour placer le badge
+    position: relative;
+    // Occupe toute la largeur du conteneur
+    width: 100%;
+    // Ratio d'aspect carré (1:1)
+    aspect-ratio: 1;
+    border-radius: 8px;
+    // Masque l'image qui dépasse
+    overflow: hidden;
+    // Fond gris si l'image ne charge pas
+    background: #f5f5f5;
+    
+    // L'image elle-même
+    img {
+        width: 100%;
+        height: 100%;
+        // Couvre la zone sans distorsion
+        object-fit: cover;
+    }
+}
+
+// Badge "En ligne" sur l'image
+.fiche-status-badge {
+    // Positionnement absolu dans l'image
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    // Couleur dorée
+    background: $bg-or;
+    color: white;
+    padding: 0.5rem 1rem;
+    // Bordure très arrondie pour effet "pill"
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: $font-secondary;
+}
+
+// Partie droite avec le formulaire
+.fiche-artwork-right {
+    // Grandit pour remplir l'espace disponible
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    // Espacement entre les sections
+    gap: 2rem;
+}
+
+// En-tête de la partie droite (titre et boutons d'actions)
+.fiche-artwork-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+// Conteneur du titre de l'œuvre
+.fiche-artwork-title {
+    h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: $color-primary-dark;
+        margin: 0;
+        font-family: $font-primary;
+    }
+}
+
+// Conteneur des boutons d'actions (Copier, Télécharger, Supprimer, Fermer)
+.fiche-artwork-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+// Boutons d'actions individuels (icon buttons)
+.fiche-action-btn {
+    // Dimensions carrées
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    // Transition lisse pour l'effet hover
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    // Styles au survol du bouton
+    &:hover {
+        // Bordure dorée
+        border-color: $bg-or;
+        // Fond dorée très clair
+        background: rgba($bg-or, 0.05);
+    }
+}
+
+// Conteneur du contenu du formulaire avec scrollbar personnalisée
+.fiche-content {
+    display: flex;
+    flex-direction: column;
+    // Espacement entre les sections
+    gap: 2.5rem;
+    // Hauteur maximale pour permettre le scroll
+    max-height: 70vh;
+    // Actif le scroll vertical
+    overflow-y: auto;
+    // Espacement à droite pour la scrollbar
+    padding-right: 1rem;
+    
+    // Personnalisation de la scrollbar (Webkit - Chrome, Safari)
+    &::-webkit-scrollbar {
+        // Largeur de la scrollbar
+        width: 6px;
+    }
+    
+    // Fond de la scrollbar
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 3px;
+    }
+    
+    // Partie glissante de la scrollbar
+    &::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 3px;
+        
+        // Couleur plus foncée au survol de la scrollbar
+        &:hover {
+            background: #999;
+        }
+    }
+}
+
+// Grille à deux colonnes pour les champs de formulaire
+.fiche-two-columns {
+    display: grid;
+    // Deux colonnes égales
+    grid-template-columns: 1fr 1fr;
+    // Espacement entre les colonnes
+    gap: 3rem;
+}
+
+// Une colonne du formulaire (Informations principales ou Compléments)
+.fiche-column {
+    display: flex;
+    flex-direction: column;
+    // Espacement entre les champs
+    gap: 1.5rem;
+}
+
+// Titre d'une section du formulaire (ex: "Informations principales")
+.fiche-section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $color-primary-dark;
+    margin: 0;
+    font-family: $font-secondary;
+}
+
+// Sous-titre descriptif d'une section
+.fiche-section-subtitle {
+    font-size: 0.85rem;
+    color: #999;
+    margin: 0 0 1rem 0;
+    font-family: $font-secondary;
+}
+
+// Groupe de formulaire (label + input)
+.fiche-form-group {
+    display: flex;
+    flex-direction: column;
+    // Espacement entre le label et l'input
+    gap: 0.5rem;
+    
+    // Label du champ
+    label {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #333;
+        font-family: $font-secondary;
+    }
+}
+
+// Champ d'entrée de texte (input, select, etc.)
+.fiche-input {
+    padding: 0.8rem;
+    // Bordure grise légère
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-family: $font-secondary;
+    background: white;
+    // Animation lisse lors du focus
+    transition: all 0.3s ease;
+    
+    // Styles au clic sur l'input
+    &:focus {
+        outline: none;
+        // Bordure dorée
+        border-color: $bg-or;
+        // Ombre dorée subtile
+        box-shadow: 0 0 0 3px rgba($bg-or, 0.1);
+    }
+}
+
+// Texte d'aide/conseil sous un champ (ex: "Format: Hauteur x Largeur")
+.fiche-hint {
+    font-size: 0.75rem;
+    color: #999;
+    margin: 0;
+    font-family: $font-secondary;
+    // Texte en italique pour se distinguer
+    font-style: italic;
+}
+
+// Section générale du formulaire
+.fiche-section {
+    display: flex;
+    flex-direction: column;
+    // Espacement entre le titre et le contenu
+    gap: 1rem;
+}
+
+// Zone de texte pour les descriptions longues
+.fiche-textarea {
+    padding: 1rem;
+    // Bordure grise légère
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-family: $font-secondary;
+    // Hauteur minimale
+    min-height: 150px;
+    // Permet de redimensionner seulement verticalement
+    resize: vertical;
+    // Animation lisse lors du focus
+    transition: all 0.3s ease;
+    
+    // Styles au clic sur la textarea
+    &:focus {
+        outline: none;
+        // Bordure dorée
+        border-color: $bg-or;
+        // Ombre dorée subtile
+        box-shadow: 0 0 0 3px rgba($bg-or, 0.1);
+    }
+}
+
+// Grille pour les zones d'upload de médias (image et audio)
+.fiche-media-grid {
+    display: grid;
+    // Deux colonnes égales
+    grid-template-columns: 1fr 1fr;
+    // Espacement entre les colonnes
+    gap: 2rem;
+}
+
+// Zone d'upload de fichier (glisser-déposer)
+.fiche-upload-area {
+    // Bordure pointillée pour montrer que c'est une zone de drop
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    // Animation lisse
+    transition: all 0.3s ease;
+    background: #f9f9f9;
+    // Positionné relativement pour l'input invisible
+    position: relative;
+    
+    // Styles au survol de la zone d'upload
+    &:hover {
+        // Bordure dorée
+        border-color: $bg-or;
+        // Fond dorée très clair
+        background: rgba($bg-or, 0.02);
+    }
+    
+    // Titre de la zone d'upload
+    h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #333;
+        margin: 1rem 0 0.5rem 0;
+        font-family: $font-secondary;
+    }
+}
+
+// Icône emoji dans la zone d'upload
+.fiche-upload-icon {
+    font-size: 2.5rem;
+}
+
+// Texte d'aide dans la zone d'upload (ex: "MP3, WAV (max 50 MB)")
+.fiche-upload-hint {
+    font-size: 0.8rem;
+    color: #999;
+    margin: 0.5rem 0 0 0;
+    font-family: $font-secondary;
+}
+
+// Input de fichier invisible (caché derrière la zone)
+.fiche-file-input {
+    // Positionnement absolu pour couvrir la zone
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // Invisible mais cliquable
+    opacity: 0;
+    cursor: pointer;
+}
+
+// Groupe des boutons d'action (Enregistrer, Télécharger, Annuler)
+.fiche-actions {
+    display: flex;
+    gap: 1rem;
+    padding-top: 2rem;
+    // Ligne de séparation au-dessus
+    border-top: 1px solid #eee;
+}
+
+// Bouton principal "ENREGISTRER"
+.fiche-btn-primary {
+    padding: 0.9rem 2rem;
+    // Couleur de fond dorée
+    background: $bg-or;
+    // Texte blanc
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    font-family: $font-secondary;
+    font-size: 0.9rem;
+    // Animation lisse pour l'effet hover
+    transition: all 0.3s ease;
+    // Espacement entre les lettres
+    letter-spacing: 0.5px;
+    
+    // Styles au survol du bouton
+    &:hover {
+        // Fond plus foncé
+        background: $bg-or;
+        // Soulève le bouton
+        transform: translateY(-2px);
+    }
+}
+
+// Bouton secondaire "TÉLÉCHARGER"
+.fiche-btn-secondary {
+    padding: 0.9rem 2rem;
+    // Fond blanc
+    background: white;
+    color: $color-primary-dark;
+    // Bordure grise
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    font-family: $font-secondary;
+    font-size: 0.9rem;
+    // Animation lisse
+    transition: all 0.3s ease;
+    // Espacement entre les lettres
+    letter-spacing: 0.5px;
+    
+    // Styles au survol du bouton
+    &:hover {
+        // Bordure foncée
+        border-color: $color-primary-dark;
+        color: $color-primary-dark;
+    }
+}
+
+// Bouton d'annulation "ANNULER"
+.fiche-btn-cancel {
+    padding: 0.9rem 2rem;
+    // Fond transparent
+    background: transparent;
+    // Texte gris clair
+    color: #999;
+    // Bordure grise
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    font-family: $font-secondary;
+    font-size: 0.9rem;
+    // Animation lisse
+    transition: all 0.3s ease;
+    // Espacement entre les lettres
+    letter-spacing: 0.5px;
+    
+    // Styles au survol du bouton
+    &:hover {
+        // Bordure plus foncée
+        border-color: #999;
+        // Texte plus foncé
+        color: #666;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-container {
+        flex-direction: column;
+    }
+    
+    .admin-sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1.5rem;
+        display: none;
+    }
+    
+    .admin-main {
+        margin-left: 0;
+    }
+    
+    .admin-header {
+        flex-direction: column;
+    }
+    
+    .admin-tabs {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .exposition-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .export-import-container {
+        grid-template-columns: 1fr;
+    }
+    
+    // Adapte la carte d'œuvre en colonne unique pour mobile
+    .fiche-artwork-card {
+        // Empile l'image et le formulaire verticalement
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    // L'image prend toute la largeur disponible sur mobile
+    .fiche-artwork-left {
+        flex: 1;
+        max-width: 100%;
+    }
+    
+    // Les deux colonnes du formulaire deviennent une seule colonne
+    .fiche-two-columns {
+        // Une seule colonne au lieu de deux
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    // Les zones d'upload deviennent aussi une seule colonne
+    .fiche-media-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    // Permet au formulaire de scroller complètement sur mobile
+    .fiche-content {
+        max-height: 100%;
+    }
+    
+    // En-tête de la liste s'empile verticalement
+    .fiche-list-header {
+        flex-direction: column;
+        // Les éléments prennent toute la largeur
+        align-items: stretch;
+        gap: 1rem;
+        
+        h1 {
+            // Titre plus petit pour mobile
+            font-size: 1.3rem;
+        }
+    }
+    
+    // Tableau réduit pour mobile
+    .fiche-list-table {
+        // Texte plus petit
+        font-size: 0.8rem;
+        
+        // Padding réduit des cellules
+        th, td {
+            padding: 0.7rem;
+        }
+    }
+    
+    // Bouton "Éditer" plus compact sur mobile
+    .fiche-edit-btn {
+        padding: 0.4rem 0.8rem;
+        // Texte plus petit
+        font-size: 0.75rem;
+    }
+}
