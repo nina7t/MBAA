@@ -1,4 +1,4 @@
-@use '../utils/variables' as *;
+@use "../utils/variables" as *;
 
 // Bannière principale
 .main__banniere {
@@ -10,7 +10,7 @@
     color: #fffdf3;
     padding: clamp(1.25rem, 3vw, 3rem);
     max-width: 100%;
-    margin: 0 auto;
+    margin: 1rem;
     box-sizing: border-box;
 
     &-titre {
@@ -31,7 +31,7 @@
         }
     }
 
-    &-sous-titre{
+    &-sous-titre {
         // Utilise la hiérarchie H4 pour les sous-titres
         font-size: clamp($font-size-h4-mobile, 2vw + 0.125rem, $font-size-h4-desktop);
         font-weight: 500;
@@ -41,7 +41,7 @@
         margin-bottom: 0;
     }
 
-    &-titre-fonce { 
+    &-titre-fonce {
         // Utilise la hiérarchie H3 pour les titres foncés
         font-size: clamp($font-size-h3-mobile, 3vw + 0.25rem, $font-size-h3-desktop);
         font-weight: 600;
@@ -49,7 +49,7 @@
         line-height: $line-height-compact;
         margin-top: 0;
         margin-bottom: $spacing-h3-bottom;
-        
+
         @media (min-width: 768px) {
             margin-bottom: $spacing-h3-bottom-desktop;
         }
@@ -78,12 +78,18 @@
                 width: 40px;
                 height: 40px;
             }
+
+            @media (min-width: 1024px) {
+                width: 70px;
+                height: 70px;
+            }
         }
     }
 
     @media (min-width: 768px) {
         max-width: 95%;
         gap: 1.5rem;
+        margin: 1rem;
     }
 
     @media (min-width: 1024px) {
@@ -92,8 +98,9 @@
     }
 
     @media (min-width: 1600px) {
-        max-width: 85%;
+        max-width: 70%;
         padding: 3.5rem;
+        margin: 2rem;
     }
 }
 
@@ -117,6 +124,7 @@
 .main__banniere--programmation {
     display: flex;
     flex-direction: row;
+    align-items: center;
     background-color: $color-dark-svg;
     gap: 12px;
     padding: clamp(1rem, 3vw, 2rem);
@@ -129,7 +137,7 @@
         gap: 20px;
     }
 }
-.main_evenement{
+.main_evenement {
     position: inherit;
 }
 .main__banniere--evenement {
@@ -144,10 +152,10 @@
 }
 
 .main__banniere--infos {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: self-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 
     @media (min-width: 768px) {
         gap: 20px;
@@ -172,24 +180,21 @@
     box-sizing: border-box;
 }
 
-
-
-.fichier-pedago{
+.fichier-pedago {
     padding: 40px;
     background-color: $color-tertiary-green;
     color: $color-primary-white;
     border-radius: 10px;
 }
 
-.fichier-pedago__titre{
+.fichier-pedago__titre {
     padding-bottom: 10px;
 }
 
-.fichier-pedago__para{
+.fichier-pedago__para {
     padding-bottom: 20px;
 }
 
-
-.fichier-pedago__button{
+.fichier-pedago__button {
     margin-top: 20px;
 }

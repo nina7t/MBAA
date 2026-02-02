@@ -1,8 +1,8 @@
-@use '../utils/variables' as *;
+@use "../utils/variables" as *;
 
 .header--reservations {
   background: linear-gradient(135deg, $color-primary-dark 0%, #1a2d3a 100%);
-  
+
   .header__hero-content--reduced {
     h1 {
       color: $color-primary-white;
@@ -15,7 +15,6 @@
 }
 
 .reservation-section {
-  padding: clamp(2rem, 5vw, 4rem) 0;
   background-color: $color-primary-white;
 }
 

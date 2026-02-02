@@ -15,51 +15,77 @@
   }
 }
 
+// Flickity carousel container
 .carousel__list {
   width: 100%;
   max-width: 100%;
-  display: flex;
-  overflow-x: auto;
-  gap: 0.75rem;
-  padding: 0.5rem 0.5rem 1rem;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
+  display: block;
 
-  &::-webkit-scrollbar {
-    height: 6px;
+  // Enable Flickity
+  &.js-flickity {
+    display: block;
   }
 
-  &::-webkit-scrollbar-thumb {
-    background: rgba(149, 126, 24, 0.3);
-    border-radius: 3px;
-  }
-
-  @media (min-width: 768px) {
-    gap: clamp(0.5rem, 2vw, 1rem);
-    padding: 0 clamp(0.5rem, 2vw, 1rem);
-  }
-
-  @media (min-width: 1024px) {
-    justify-content: center;
+  // Flickity slider container
+  .flickity-slider {
+    display: flex;
+    will-change: transform;
   }
 }
 
+// Carousel item containers (slides)
 .carousel__item__container {
-  // Slick gère la largeur des slides
-  outline: none;
+  width: 33.333%;
+  padding: 0 10px;
+  box-sizing: border-box;
+  transform: scale(0.95);
+  opacity: 0.5;
+  filter: blur(2px);
+  transition:
+    opacity 0.3s ease,
+    filter 0.3s ease,
+    transform 0.3s ease;
+
+  // Selected slide
+  &.is-selected {
+    opacity: 1;
+    filter: none;
+    transform: scale(1);
+    z-index: 10;
+  }
+
+  // Adjacent slides
+  &.is-selected + &,
+  &:has(+ .is-selected) {
+    opacity: 0.8;
+    filter: blur(1px);
+    transform: scale(0.97);
+  }
+
+  @media (max-width: 1023px) {
+    width: 50%;
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 }
 
+// Individual carousel item
 .carousel__item {
   position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
+  min-height: clamp(500px, 55vh, 650px);
+  height: auto;
   justify-content: space-between;
   background-size: cover;
   background-position: center;
   border-radius: 10px;
   color: $color-primary-white;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  box-sizing: border-box;
 
   // Overlay sombre par-dessus l'image
   &::after {
@@ -69,7 +95,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #2b2b2b70; // Noir à 40% d'opacité
+    background: rgba(43, 43, 43, 0.4);
     z-index: 0;
     border-radius: 10px;
   }
@@ -82,17 +108,17 @@
 }
 
 .carousel__item-title {
-  // Utilise la hiérarchie H3 pour les titres de carrousel
   font-size: clamp($font-size-h3-mobile, 3vw + 0.25rem, $font-size-h3-desktop);
   font-weight: 700;
   line-height: $line-height-compact;
   margin-top: 0;
   margin-bottom: $spacing-h3-bottom;
+  color: $color-primary-white;
   word-break: break-word;
   letter-spacing: -0.01em;
-  
+
   @media (min-width: 768px) {
-    font-size: clamp($font-size-h3-tablet, 3.5vw + 0.25rem, $font-size-h3-desktop);
+    font-size: clamp(1.75rem, 2.5vw, 2.5rem);
     margin-bottom: $spacing-h3-bottom-desktop;
   }
 }
@@ -101,6 +127,7 @@
   font-size: clamp(0.75rem, 2vw, 1rem);
   line-height: 1.4;
   margin-bottom: 0.5rem;
+  color: $color-primary-white;
 }
 
 .carousel__item-badge {
@@ -108,7 +135,7 @@
   padding: clamp(0.25rem, 1vw, 0.5rem) clamp(0.5rem, 2vw, 1rem);
   border-radius: 4px;
   align-self: flex-start;
-  
+
   &--free {
     background-color: rgba(71, 86, 79, 0.9);
     color: white;
@@ -125,6 +152,7 @@
   flex-direction: column;
   gap: 0.5rem;
   font-size: clamp(0.7rem, 1.5vw, 0.875rem);
+  color: $color-primary-white;
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -148,5 +176,40 @@
   @media (min-width: 768px) {
     margin: clamp(0.5rem, 2vw, 1rem);
     width: auto;
+  }
+}
+
+// Navigation arrows
+.carousel__controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.carousel__arrow {
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 }

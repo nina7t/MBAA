@@ -1,626 +1,236 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="./asset/Img/logo/logo-mat-small.png" />
-  <link rel="stylesheet" href="./style.css" />
-  <script src="/js/audio-fiche.js"></script>
-
-  <!-- Locomotive Scroll CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.css" />
-
-  <!-- Leaflet CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Repas des Amis - Paul Collomb | MBAA</title>
+  <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
-
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <title>MBAA - Musée des Beaux-Arts et d'Archéologie de Besançon</title>
-
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 </head>
-<body data-scroll-container>
-  <header class="header header--evenement">
+<body class="apple-design">
+  <header class="apple-header">
     <div class="header__container">
-      <!-- Logo -->
       <a class="header__logo-link" href="./index.html">
         <img class="header__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
       </a>
-  
-      <!-- Bouton menu burger -->
-      <button class="header__menu-toggle" aria-label="menu" aria-expanded="false" aria-controls="headerNav">
-        <span class="header__menu-bar"></span>
-      </button>
-  
-      <!-- Navigation -->
-      <nav class="header__nav" id="headerNav" aria-hidden="true">
-        <ul class="header__nav-list header__nav-list--main">
-          <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./infos.html">Infos pratiques</a>
-          </li>
-          <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./collections.html">Collections</a>
-          </li>
-          <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./evenement.html">Évènements</a>
-          </li>
-          <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./musee-histoire.html">Le musée</a>
-          </li>
-          <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./infos.html">Contact</a>
-          </li>
-        </ul>
-  
-        <ul class="header__nav-list header__nav-list--secondary">
-          <!-- Icône Contact (remplace connexion.svg) -->
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="./connexion.html" aria-label="Connexion">
-              <svg class="header__nav-icon" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-            </a>
-          </li>
-          
-          <!-- Icône Ticket (remplace ticket.svg) -->
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="#" aria-label="Billetterie">
-              <svg class="header__nav-icon" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
-                <path d="M13 5v2"></path>
-                <path d="M13 17v2"></path>
-                <path d="M13 11v2"></path>
-              </svg>
-            </a>
-          </li>
-        
-          <!-- Icône Loupe (remplace Search.svg) -->
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="#" aria-label="Recherche">
-              <svg class="header__nav-icon" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.35-4.35"></path>
-              </svg>
-            </a>
-          </li>
-          
-          <li class="header__nav-item">
-            <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">FR
-            </a>
-          </li>
-          <li class="header__nav-item">
-            <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">EN
-            </a>
-          </li>
-        </ul>
+      <nav class="apple-nav-main">
+        <a href="./infos.html">Infos pratiques</a>
+        <a href="./collections.html" class="active">Collections</a>
+        <a href="./evenement.html">Évènement</a>
+        <a href="./infos.html">Contact</a>
       </nav>
-    </div>
-
-    <div class="header__hero">
-      <div class="header__hero-content header__hero-content--reduced">
-        <h1 class="header__title">PAUL<br>COLLOMB<br>
-        </h1>
+      <div class="apple-nav-actions">
+        <a href="./connexion.html" aria-label="Connexion">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+        <a href="#" aria-label="Billetterie" class="apple-reserve-btn">Je réserve</a>
       </div>
-      
-      <div class="header__subtitle">
-        <span id="sous-menu-header">FICHE ARTISTE</span>
-        <p class="header__subtitle header__subtitle--fiche-oeuvre">
-          Paul Collomb, né le 8 février 1921 à Lyon et mort le 5 février 2010 à Paris, est un peintre français.<br><br>
-          Paul Collomb débute le dessin très jeune avant d'intégrer l'École nationale supérieure des Beaux-Arts de Paris,<br> dans l'atelier du peintre Souverbie.
-        Après la Seconde Guerre mondiale, il installe son atelier à La Ruche, haut lieu d'artistes à Paris. Il remporte en 1950 le Deuxième Grand Prix de Rome, puis le Prix de la Casa de Velázquez en 1951. Pensionnaire à l'Institut Français d'Amsterdam en 1953-1954, il consacre ensuite toute sa vie à la peinture, exposant en France et à l'international.
-        </p>
-      </div>
-    </div>
-    
-    <!-- Flèche de scroll -->
-    <div class="header__scroll">
-      <img class="header__scroll-icon" src="./asset/Img/svg/icon-arrow_bas.svg" alt="Défiler vers le bas" />
-    </div>
   </header>
 
-<main>
-  <section class="artist-works">
-    <div class="artist-works__header">
-
+  <main class="apple-main">
+    <div class="header-hero">
+      <div class="header-hero-icon">+</div>
+      <h1>CETTE OEUVRE<br>PARLE</h1>
+      <h2>Du goût et de la modération</h2>
+      <p class="header-hero-subtitle">Comment regarder une œuvre d'art ?</p>
+      <p class="header-hero-description">Le Repas des Amis invite à la réflexion sur les valeurs de partage et de mesure
+        qui caractérisent l'art de vivre français.</p>
     </div>
-    <div class="artist-works__content">
-        <h2 class="artist-works__title">ŒUVRES DE L'ARTISTE</h2>
-        <div class="artist-works__grid">
-            <!-- Carte d'une œuvre -->
-            <article class="artwork-card">
-                <img class="artwork-card__image" src="./asset/Img/tableaux/tableau-collomb-1.png" alt="Œuvre de Paul Collomb" />
-                <div class="artwork-card__info">
-                    <h3 class="artwork-card__title">Le repas des amis</h3>
-                    <h3 class="artwork-card__artist-name">Paul collomb</h3>
-                    <h3 class="artwork-card__date">1958</h3>
-                    <h4 class="artwork-card__movement">Expressionnisme / peinture</h4>
-                    <p class="artwork-card__description">Le Repas des amis » est une scène simple et universelle : un moment de partage entre proches, rendu avec tendresse par Paul Collomb. Peint en 1963, ce tableau réunit plusieurs de ses amis artistes et mécènes autour d'une table conviviale. Loin de la peinture abstraite alors à la mode, Collomb choisit la chaleur humaine, la lumière du quotidien, l'instant vrai. Ici, la table devient un espace de lien : chaque personnage est une présence calme, chaque couleur une émotion. La composition resserrée rapproche les figures, comme pour dire que l'art, lui aussi, est un repas partagé. Collomb ne peint pas un banquet historique mais une amitié en peinture. À travers les gestes, les regards et la lumière, il célèbre ce qui unit plutôt que ce qui sépare : la convivialité, la joie simple, la beauté du vivre ensemble.</p>
-                    <p class="artwork-card__details">
-                        Huile sur toile<br>
-                        81 x 100 cm<br>
-                        Don de Madame Collomb, 2015<br>
-                        Inv. 2015.0.1
-                    </p>
-                </div>
 
-                <div class="artwork-card__audioguide">
-                  <h3 class="artwork-card__audioguide-title">Écouter l'audioguide</h3>
-                  
-                  <!-- Audio natif caché -->
-                  <audio class="artwork-card__audioguide-player" id="audioPlayer">
-                      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-                  </audio>
-    
-                  <!-- Contrôles personnalisés -->
-                  <div class="custom-audio-controls">
-                      <div class="audio-controls-top">
-                          <button class="play-pause-btn" id="playPauseBtn">Play</button>
-                          
-                          <div class="progress-container">
-                              <div class="progress-bar" id="progressBar">
-                                  <div class="progress-fill" id="progressFill"></div>
-                              </div>
-                              <div class="time-display">
-                                  <span id="currentTime">0:00</span>
-                                  <span id="duration">0:00</span>
-                              </div>
-                          </div>
-                      </div>
-    
-                      <div style="display: flex; justify-content: space-between; align-items: center;">
-                          <div class="volume-controls">
-                              <button class="volume-btn" id="volumeBtn">🔊</button>
-                              <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="100">
-                          </div>
-    
-                          <div class="speed-control">
-                              <button class="speed-btn" data-speed="0.5">0.5x</button>
-                              <button class="speed-btn active" data-speed="1">1x</button>
-                              <button class="speed-btn" data-speed="1.5">1.5x</button>
-                              <button class="speed-btn" data-speed="2">2x</button>
-                          </div>
-                      </div>
-                  </div>
-    
-                  <p class="artwork-card__audioguide-transcript">Lire la transcription audio</p>
+    <article class="apple-content">
+      <header class="apple-artwork-header">
+        <h1 class="apple-artwork-title">Le Repas des Amis</h1>
+        <h2 class="apple-artwork-artist">Paul Collomb</h2>
+        <p class="apple-artwork-year">1963</p>
+      </header>
+
+      <section class="apple-description">
+        <p>Le Repas des amis est une scène de partage entre proches, rendue avec tendresse par Paul Collomb en 1963.</p>
+      </section>
+
+      <section class="apple-audio-section">
+        <div class="apple-audio-card">
+          <div class="apple-audio-header">
+            <div class="apple-audio-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18V5l12-2v13"></path>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="16" r="3"></circle>
+              </svg>
+            </div>
+            <div class="apple-audio-info">
+              <span class="apple-audio-label">Audioguide</span>
+              <h3 class="apple-audio-title">Le Repas des Amis - Analyse de l'œuvre</h3>
+            </div>
+          </div>
+
+          <div class="apple-audio-player">
+            <button class="apple-play-button" id="playPauseBtn">
+              <svg id="playIcon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M5 3l14 9-14 9V3z"></path>
+              </svg>
+              <svg id="pauseIcon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                <path d="M6 4h4v16H6zm8 0h4v16h-4z"></path>
+              </svg>
+            </button>
+            <div class="apple-progress-container">
+              <span class="apple-current-time" id="currentTime">0:00</span>
+              <div class="apple-progress-bar" id="progressBar">
+                <div class="apple-progress-fill" id="progressFill"></div>
               </div>
-          </article>
+              <span class="apple-total-time" id="duration">0:00</span>
+            </div>
+          </div>
+
+          <div class="apple-audio-volume">
+            <button class="apple-volume-button" id="muteBtn">
+              <svg id="volumeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              </svg>
+            </button>
+            <input type="range" class="apple-volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+          </div>
+          
+          <audio id="artworkAudio" src="./asset/audio/analyse-collomb.mp3"></audio>
+        </div>
+      </section>
+
+      <section class="apple-details-section">
+        <h3 class="apple-section-title">Détails de l'œuvre</h3>
+        <div class="apple-details-grid">
+          <div class="apple-detail-card">
+            <span class="apple-detail-label">Technique</span>
+            <span class="apple-detail-value">Huiles sur toile</span>
+          </div>
+          <div class="apple-detail-card">
+            <span class="apple-detail-label">Dimensions</span>
+            <span class="apple-detail-value">81 × 100 cm</span>
+          </div>
+          <div class="apple-detail-card">
+            <span class="apple-detail-label">Genre</span>
+            <span class="apple-detail-value">Scène de genre</span>
+          </div>
+          <div class="apple-detail-card">
+            <span class="apple-detail-label">N° inventaire</span>
+            <span class="apple-detail-value">2015.0.1</span>
+          </div>
+      </section>
+
+      <nav class="apple-bottom-nav">
+        <a href="collections.html" class="apple-back-link">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M10.5 13.5L6 9L10.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          Retour aux collections
+        </a>
+      </nav>
+    </article>
+
+    <section class="apple-artist-works-section">
+      <div class="apple-section-header">
+        <h2 class="apple-section-title">Autres œuvres de Paul Collomb</h2>
       </div>
-    
-    
-    </div>
-</section>
-
-    <div class="redirection">
-      <h2 class="artist-works__title">Revenir sur l'appareil photo</h2>
-        <a class="redirection__link" href="collections.html">
-            <img class="redirection__icon" src="/asset/Img/svg/qr-code.svg" alt="Icône flèche droite" />
-            Revenir sur l'appareil photo
+      <div class="apple-artist-works-row">
+        <a href="fiche_oeuvre.html" class="apple-work-hover-card">
+          <div class="apple-work-hover-image">
+            <img src="./asset/Img/tableaux/tableau-collomb-2.webp" alt="Composition - Paul Collomb">
+          </div>
+          <div class="apple-work-hover-overlay">
+            <h3 class="apple-work-hover-title">Composition</h3>
+            <p class="apple-work-hover-year">1965</p>
+            <p class="apple-work-hover-description">Une composition équilibrée où Collomb explore les relations entre
+              formes et couleurs.</p>
+          </div>
         </a>
-    </div>
-
-</main>
-
-<section class="main__explore">
-    <section class="main__explore">
-        <section class="main__banniere">
-          <section class="main__banniere--explorer">
-            <img class="main__banniere-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
-    
-            <h2 class="main__banniere-titre">
-              CETTE OEUVRE<br>
-              PARLE
-            </h2>
-          </section>
-          <section class="main__banniere-contenu">
-            <h3 class="main__banniere-sous-titre">
-                Comprendre une œuvre d’art
-            </h3>
-            <h4>Comment regarder une œuvre d’art ?</h4>
-            <p class="main__banniere-description">
-                Découvrir une œuvre, c’est apprendre à observer, ressentir et comprendre ce que l’artiste a voulu exprimer.
-            </p>
-          </section>
-        </section>
-      </section>
-</section>
-
-<section class="pedagogical-elements-section">
-  <div class="pedagogical-elements-container">
-    <div class="pedagogical-elements-left">
-      <button class="pedagogical-element-item" data-filter="couleur">
-        <span class="pedagogical-element-text">La couleur</span>
-        <span class="pedagogical-element-arrow">↗</span>
-      </button>
-      <div class="pedagogical-element-separator"></div>
-      <button class="pedagogical-element-item" data-filter="ligne">
-        <span class="pedagogical-element-text">La ligne</span>
-        <span class="pedagogical-element-arrow">↗</span>
-      </button>
-      <div class="pedagogical-element-separator"></div>
-      <button class="pedagogical-element-item" data-filter="forme">
-        <span class="pedagogical-element-text">La forme</span>
-        <span class="pedagogical-element-arrow">↗</span>
-      </button>
-      <div class="pedagogical-element-separator"></div>
-      <button class="pedagogical-element-item" data-filter="espace">
-        <span class="pedagogical-element-text">L'espace</span>
-        <span class="pedagogical-element-arrow">↗</span>
-      </button>
-      <div class="pedagogical-element-separator"></div>
-      <button class="pedagogical-element-item" data-filter="texture">
-        <span class="pedagogical-element-text">La texture</span>
-        <span class="pedagogical-element-arrow">↗</span>
-      </button>
-    </div>
-    <div class="pedagogical-elements-right">
-      <img src="./asset/Img/tableaux/tableau-signac-venise.jpg" alt="Peinture pointilliste de Venise" class="pedagogical-painting">
-    </div>
-  </div>
-</section>
-    
-
-
-<section class="main__programmation">
-    <section class="main__banniere-prog">
-      <section class="main__banniere--programmation">
-        <img class="main__banniere-img-fonce" src="./asset/Img/svg/croix-black.svg" alt="Croix noire" />
-        <h2 class="main__banniere-titre-fonce">
-          Ses autres<br />oeuvres
-        </h2>
-      </section>
-    </section>
-  </section>
-  
-  <div class="artist-gallery">
-    <div class="artist-gallery__item">
-        <img class="artist-gallery__image" src="./asset/Img/tableaux/tableau-collomb-1.png" alt="Œuvre de Paul Collomb" />
-  <img class="artist-gallery__image" src="./asset/Img/tableaux/tableau-collomb-3.jpg" alt="Œuvre de Paul Collomb" />
-    </div>
-</div>
-
-
-  <section class="main__programmation">
-    <section class="main__banniere-prog">
-      <section class="main__banniere--programmation">
-        <img class="main__banniere-img-fonce" src="./asset/Img/svg/croix-black.svg" alt="Croix noire" />
-        <h2 class="main__banniere-titre-fonce">
-          Artistes<br>En lien
-        </h2>
-      </section>
-    </section>
-  </section>
-  
-
-
-  <section class="techniques-grid-section">
-    <div class="techniques-grid-container">
-      <div class="techniques-grid">
-        <!-- Peinture à l'huile -->
-        <div class="technique-card">
-          <div class="technique-card-image">
-            <img src="./asset/Img/tableaux/tableau-classicisme.jpg" alt="Peinture à l'huile">
-            <div class="technique-card-overlay"></div>
+        <a href="fiche_oeuvre.html" class="apple-work-hover-card">
+          <div class="apple-work-hover-image">
+            <img src="./asset/Img/tableaux/tableau-collomb-3.jpg" alt="Paysage de Provence - Paul Collomb">
           </div>
-          <div class="technique-card-content">
-            <h3 class="technique-card-title">Vincent Barré</h3>
-            <p class="technique-card-description">Riche en couleurs et en relief, elle permet des effets de lumière subtils.</p>
+          <div class="apple-work-hover-overlay">
+            <h3 class="apple-work-hover-title">Paysage de Provence</h3>
+            <p class="apple-work-hover-year">1972</p>
+            <p class="apple-work-hover-description">Un paysage lumineux capturant l'essence de la Provence.</p>
           </div>
-        </div>
-        <!-- Aquarelle -->
-        <div class="technique-card">
-          <div class="technique-card-image">
-            <img src="./asset/Img/tableaux/tableau-turner-ocean.jpg" alt="Henri Matisse">
-            <div class="technique-card-overlay"></div>
-          </div>
-          <div class="technique-card-content">
-            <h3 class="technique-card-title">Henri Matisse</h3>
-            <p class="technique-card-description">Légère et transparente, elle joue avec l'eau et le papier.</p>
-          </div>
-        </div>
-        <!-- Sculpture -->
-        <div class="technique-card">
-          <div class="technique-card-image">
-            <img src="./asset/Img/statues-groupe.jpg" alt="Louis Valtat">
-            <div class="technique-card-overlay"></div>
-          </div>
-          <div class="technique-card-content">
-            <h3 class="technique-card-title">Louis Valtat</h3>
-            <p class="technique-card-description">Travail de la matière : pierre, bois, métal, plâtre ou argile. L'artiste modèle ou taille pour donner forme au volume.</p>
-          </div>
-        </div>
-        <!-- Craie grasse -->
-        <div class="technique-card">
-          <div class="technique-card-image">
-            <img src="./asset/Img/tableaux/tableau-nu-nature-morte.png" alt="Paul Signac">
-            <div class="technique-card-overlay"></div>
-          </div>
-          <div class="technique-card-content">
-            <h3 class="technique-card-title">Paul Signac</h3>
-          </div>
-        </div>
-        <!-- Fusain -->
-        <div class="technique-card">
-          <div class="technique-card-image">
-            <img src="./asset/Img/tableaux/tableau-guenat-vieillard.jpg" alt="Ceija Stojka">
-            <div class="technique-card-overlay"></div>
-          </div>
-          <div class="technique-card-content">
-            <h3 class="technique-card-title">Ceija Stojka</h3>
-          </div>
-        </div>
-        <!-- Encre -->
-        <div class="technique-card">
-          <div class="technique-card-image">
-            <img src="./asset/Img/tableaux/tableau-hokusai-vague.jpg" alt="Pierre Bonnard">
-            <div class="technique-card-overlay"></div>
-          </div>
-          <div class="technique-card-content">
-            <h3 class="technique-card-title">Pierre Bonnard</h3>
-          </div>
-        </div>
+        </a>
       </div>
+    </section>
+
+    <section class="apple-artists-linked-section">
+      <div class="apple-section-header">
+        <h2 class="apple-section-title">Artistes En lien</h2>
+      </div>
+      <div class="apple-artists-grid-linked">
+        <a href="#" class="apple-artist-card-linked card-barré" onclick="showArtistDetail('barré'); return false;">
+          <div class="apple-artist-card-overlay-linked">
+            <div class="apple-artist-name-linked">Vincent<br>Barré</div>
+            <p class="apple-artist-description-linked">Sculpteur contemporain français</p>
+          </div>
+        </a>
+        <a href="#" class="apple-artist-card-linked card-matisse" onclick="showArtistDetail('matisse'); return false;">
+          <div class="apple-artist-card-overlay-linked">
+            <div class="apple-artist-name-linked">Henri<br>Matisse</div>
+            <p class="apple-artist-description-linked">Chef de file du fauvisme</p>
+          </div>
+        </a>
+        <a href="#" class="apple-artist-card-linked card-valtat" onclick="showArtistDetail('valtat'); return false;">
+          <div class="apple-artist-card-overlay-linked">
+            <div class="apple-artist-name-linked">Louis<br>Valtat</div>
+            <p class="apple-artist-description-linked">Précurseur du fauvisme</p>
+          </div>
+        </a>
+        <a href="#" class="apple-artist-card-linked card-signac" onclick="showArtistDetail('signac'); return false;">
+          <div class="apple-artist-card-overlay-linked">
+            <div class="apple-artist-name-linked">Paul<br>Signac</div>
+            <p class="apple-artist-description-linked">Maître du pointillisme</p>
+          </div>
+        </a>
+        <a href="#" class="apple-artist-card-linked card-stojka" onclick="showArtistDetail('stojka'); return false;">
+          <div class="apple-artist-card-overlay-linked">
+            <div class="apple-artist-name-linked">Ceija<br>Stojka</div>
+            <p class="apple-artist-description-linked">Artiste rom, survivante des camps</p>
+          </div>
+        </a>
+        <a href="#" class="apple-artist-card-linked card-bonnard" onclick="showArtistDetail('bonnard'); return false;">
+          <div class="apple-artist-card-overlay-linked">
+            <div class="apple-artist-name-linked">Pierre<br>Bonnard</div>
+            <p class="apple-artist-description-linked">Peintre du groupe des Nabis</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="apple-location-section">
+      <div class="apple-section-header">
+        <h2 class="apple-section-title">Où voir cette œuvre</h2>
+      </div>
+      <div id="apple-map" class="apple-map"></div>
+    </section>
+  </main>
+
+  <footer class="apple-footer">
+    <div class="apple-footer-content">
+      <p>© 2025 MBAA - Musée des Beaux-Arts et d'Archéologie de Besançon</p>
     </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer__contain-form">
-    <div class="footer__logo-container">
-      <a class="footer__logo-link" href="#">
-        <img class="footer__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
-        <h2 class="footer__title">Suivez-nous pour recevoir la newsletter</h2>
-      </a>
-    <form class="footer__form">
-      <input class="footer__input" type="email" placeholder="Entrez votre adresse e-mail" required />
-      <button class="footer__button" type="submit">S'abonner</button>
-    </form>
-    </div>
-
-    <section class="footer__nav">
-      <ul class="footer__nav-list">
-        <li class="footer__nav-item">
-          <h4 class="footer__nav-title">Le musée</h4>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Présentation & histoire</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">L'équipe & conservation</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Architecture & bâtiment</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Amis du musée / mécénat</a>
-        </li>
-      </ul>
-
-      <ul class="footer__nav-list">
-        <li class="footer__nav-item">
-          <h4 class="footer__nav-title">Expositions et activités</h4>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Expositions temporaires</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Collections permanentes</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Agenda complet</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Événements & conférences</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Ateliers & visites guidées</a>
-        </li>
-      </ul>
-
-      <ul class="footer__nav-list">
-        <li class="footer__nav-item">
-          <h4 class="footer__nav-title">Ressources</h4>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Recherche et documentation</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Publications</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Base de données des œuvres</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Espace presse</a>
-        </li>
-      </ul>
-
-      <ul class="footer__nav-list">
-        <li class="footer__nav-item">
-          <h4 class="footer__nav-title">Infos pratiques</h4>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Recrutement</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Partenariats</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Mentions légales</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Politique de
-            confidentialité</a>
-        </li>
-      </ul>
-
-      <ul class="footer__nav-list">
-        <li class="footer__nav-item">
-          <h4 class="footer__nav-title">Contact</h4>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Horaires et tarifs</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Accessibilité</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Accès et stationnement</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Groupes et écoles</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Nous contacter</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">FAQ</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Plan du site</a>
-        </li>
-      </ul>
-    </section>
-
-    <section class="footer__social">
-      <h2>Nos réseaux sociaux</h2>
-      <section class="footer__social-media">
-        <a class="footer__social-link" href="#" aria-label="Facebook">
-          <img class="footer__social-icon" src="./asset/Img/svg/facebook.svg" alt="Facebook" />
-        </a>
-        <a class="footer__social-link" href="#" aria-label="Instagram">
-          <img class="footer__social-icon" src="./asset/Img/svg/insta.svg" alt="Instagram" />
-        </a>
-        <a class="footer__social-link" href="#" aria-label="Linkdin">
-          <img class="footer__social-icon" src="./asset/Img/svg/linkdin.svg" alt="Twitter" />
-        </a>
-        <a class="footer__social-link" href="#" aria-label="Tiktok">
-          <img class="footer__social-icon" src="./asset/Img/svg/tiktok.svg" alt="YouTube" />
-        </a>
-      </section>
-    </section>
-
-    <section class="footer__links">
-      <a class="footer__link" href="#">Mentions légales</a>
-      <a class="footer__link" href="#">Politique de confidentialité</a>
-      <a class="footer__link" href="#">Plan du site</a>
-    </section>
   </footer>
 
-<!-- Locomotive Scroll JS -->
-<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.umd.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const scroll = new LocomotiveScroll({
-      el: document.querySelector('[data-scroll-container]'),
-      smooth: true,
-      smartphone: {
-        smooth: true
-      },
-      tablet: {
-        smooth: true
-      },
-      multiplier: 1,
-      getSpeed: true,
-      getDirection: true
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    function showArtistDetail(artist) {
+      alert('Ouverture de la fiche de l\'artiste : ' + artist);
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      var map = L.map('apple-map').setView([47.2378, 6.0241], 15);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+      L.marker([47.2378, 6.0241]).addTo(map).bindPopup('<b>MBAA</b><br>Besançon').openPopup();
     });
-  });
-
-
-
-// Éléments du DOM
-        const audio = document.getElementById('audioPlayer');
-        const playPauseBtn = document.getElementById('playPauseBtn');
-        const progressBar = document.getElementById('progressBar');
-        const progressFill = document.getElementById('progressFill');
-        const currentTimeEl = document.getElementById('currentTime');
-        const durationEl = document.getElementById('duration');
-        const volumeBtn = document.getElementById('volumeBtn');
-        const volumeSlider = document.getElementById('volumeSlider');
-        const speedBtns = document.querySelectorAll('.speed-btn');
-
-        // Fonction Play/Pause
-        playPauseBtn.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
-                playPauseBtn.classList.add('playing');
-            } else {
-                audio.pause();
-                playPauseBtn.classList.remove('playing');
-            }
-        });
-
-        // Mise à jour du temps
-        audio.addEventListener('timeupdate', () => {
-            const progress = (audio.currentTime / audio.duration) * 100;
-            progressFill.style.width = progress + '%';
-            currentTimeEl.textContent = formatTime(audio.currentTime);
-        });
-
-        // Affichage de la durée totale
-        audio.addEventListener('loadedmetadata', () => {
-            durationEl.textContent = formatTime(audio.duration);
-        });
-
-        // Clic sur la barre de progression
-        progressBar.addEventListener('click', (e) => {
-            const rect = progressBar.getBoundingClientRect();
-            const percent = (e.clientX - rect.left) / rect.width;
-            audio.currentTime = percent * audio.duration;
-        });
-
-        // Contrôle du volume
-        volumeSlider.addEventListener('input', (e) => {
-            audio.volume = e.target.value / 100;
-            updateVolumeIcon();
-        });
-
-        volumeBtn.addEventListener('click', () => {
-            if (audio.volume > 0) {
-                audio.volume = 0;
-                volumeSlider.value = 0;
-            } else {
-                audio.volume = 1;
-                volumeSlider.value = 100;
-            }
-            updateVolumeIcon();
-        });
-
-        function updateVolumeIcon() {
-            if (audio.volume === 0) {
-                volumeBtn.textContent = '🔇';
-            } else if (audio.volume < 0.5) {
-                volumeBtn.textContent = '🔉';
-            } else {
-                volumeBtn.textContent = '🔊';
-            }
-        }
-
-        // Vitesse de lecture
-        speedBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                speedBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                audio.playbackRate = parseFloat(btn.dataset.speed);
-            });
-        });
-
-        // Formater le temps (secondes -> mm:ss)
-        function formatTime(seconds) {
-            if (isNaN(seconds)) return '0:00';
-            const mins = Math.floor(seconds / 60);
-            const secs = Math.floor(seconds % 60);
-            return `${mins}:${secs.toString().padStart(2, '0')}`;
-        }
-
-        // Reset du bouton play quand l'audio se termine
-        audio.addEventListener('ended', () => {
-            playPauseBtn.classList.remove('playing');
-        });
-</script>
-  </body>
-  </html>
-  
-
+  </script>
+</body>
+</html>

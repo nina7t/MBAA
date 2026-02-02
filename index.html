@@ -6,8 +6,10 @@
   <link rel="icon" type="image/png" href="./asset/Img/logo/logo-mat-small.png" />
   <link rel="stylesheet" href="./style.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-  crossorigin=""/>
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <!-- Slick CSS -->
+  <link rel="stylesheet" href="css/vendors/slick/slick.css" />
+  <link rel="stylesheet" href="css/vendors/slick/slick-theme.css" />
   <title>MBAA - Musée des Beaux-Arts et d'Archéologie de Besançon</title>
 </head>
 <body>
@@ -17,101 +19,107 @@
       <a class="header__logo-link" href="./index.html">
         <img class="header__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
       </a>
-  
+
       <!-- Bouton menu burger -->
       <button class="header__menu-toggle" aria-label="menu" aria-expanded="false" aria-controls="headerNav">
         <span class="header__menu-bar"></span>
       </button>
-  
+
       <!-- Navigation -->
       <nav class="header__nav" id="headerNav" aria-hidden="true">
         <ul class="header__nav-list header__nav-list--main">
           <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./infos.html">Infos pratiques</a>
+            <a class="header__nav-link nav-dot" href="/page-infos.php">Infos pratiques</a>
           </li>
           <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./collections.html">Collections</a>
+            <a class="header__nav-link nav-dot" href="/page-collections.php">Collections</a>
           </li>
           <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./evenement.html">Évènements</a>
+            <a class="header__nav-link nav-dot" href="/page-evenement.php">Évènements</a>
           </li>
           <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./musee-histoire.html">Le musée</a>
+            <a class="header__nav-link nav-dot" href="">Le musée</a>
           </li>
           <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./infos.html">Contact</a>
+            <a class="header__nav-link nav-dot" href="/page-connexion.php">Contact</a>
           </li>
         </ul>
-  
+
         <ul class="header__nav-list header__nav-list--secondary">
           <!-- Icône Contact (remplace connexion.svg) -->
           <li class="header__nav-item">
-            <a class="header__nav-link" href="./connexion.html" aria-label="Connexion">
-              <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" strokeLinecap="round" strokeLinejoin="round">
+            <a class="header__nav-link nav-dot" href="page-connexion.php" aria-label="Connexion">
+              <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                strokeLinecap="round" strokeLinejoin="round">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                 <circle cx="12" cy="7" r="4"></circle>
-             </svg>
+              </svg>
             </a>
           </li>
-          
+
           <!-- Icône Ticket (remplace ticket.svg) -->
           <li class="header__nav-item">
-            <a class="header__nav-link" href="#" aria-label="Billetterie">
-              <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" strokeLinecap="round" strokeLinejoin="round">
-               <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
-               <path d="M13 5v2"></path>
-               <path d="M13 17v2"></path>
-               <path d="M13 11v2"></path>
+            <a class="header__nav-link nav-dot" href="#" aria-label="Billetterie">
+              <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                strokeLinecap="round" strokeLinejoin="round">
+                <path
+                  d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z">
+                </path>
+                <path d="M13 5v2"></path>
+                <path d="M13 17v2"></path>
+                <path d="M13 11v2"></path>
               </svg>
 
-             </svg>
-            </a>
-          </li>
-        
-          <!-- Icône Loupe (remplace Search.svg) -->
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="#" aria-label="Recherche">
-              <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.35-4.35"></path></svg>
               </svg>
             </a>
           </li>
-          
+
+          <!-- Icône Loupe (remplace Search.svg) -->
           <li class="header__nav-item">
-            <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">FR
+            <a class="header__nav-link nav-dot" href="#" aria-label="Recherche">
+              <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+              </svg>
+            </a>
+          </li>
+
+          <li class="header__nav-item">
+            <a class="header__nav-link-fr nav-dot" href="#" aria-label="Changer de langue">FR
             </a>
           </li>
           <li class="header__nav-item">
-            <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">EN
+            <a class="header__nav-link-fr nav-dot" href="#" aria-label="Changer de langue">EN
             </a>
           </li>
         </ul>
       </nav>
     </div>
 
-  
+
     <section class="hero">
       <div class="hero-left">
-          <h1 class="hero-title">MUSÉE<br>DES<br>BEAUX<br>ARTS</h1>
-          <p class="hero-subtitle">ET D'ARCHÉOLOGIE<br>DE BESANÇON</p>
+        <h1 class="hero-title">MUSÉE<br>DES<br>BEAUX<br>ARTS</h1>
+        <h2 class="hero-subtitle">ET D'ARCHÉOLOGIE<br>DE BESANÇON</h2>
       </div>
 
       <div class="hero-right">
-          <div class="art-image img1"></div>
-          <div class="art-image img2"></div>
-          <div class="art-image img3"></div>
-          
-          <div class="cta-section">
-              <a href="#" class="reserve-btn">Réserver un billet</a>
-              <p class="cta-text">Plongez dans 5000 ans d'art</p>
-          </div>
-      </div>
-  </section>
+        <div class="art-image img1"></div>
+        <div class="art-image img2"></div>
+        <div class="art-image img3"></div>
 
-  <div class="scroll-indicator">
+        <div class="cta-section">
+          <a href="#" class="reserve-btn">Réserver un billet</a>
+          <p class="cta-text">Plongez dans 5000 ans d'art</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="scroll-indicator">
       <div class="scroll-arrow">↓</div>
-  </div>
+    </div>
   </header>
 
   <!-- Contenu principal de la page -->
@@ -129,7 +137,7 @@
         </section>
       </section>
     </section>
-    
+
     <!-- Section carte d'exposition mise en avant -->
     <section class="main__card">
       <!-- Conteneur pour l'image de l'exposition -->
@@ -161,10 +169,10 @@
           événements. Elle publie tout d'abord un livre, Nous vivons cachés.
           Récits d'une Romni à travers le siècle, en 1988....
         </p>
-    
+
         <!-- Bouton pour en savoir plus sur l'exposition -->
         <a class="main__button--savoir-white" href="#">En savoir +</a>
-      </div> 
+      </div>
     </section>
     <section class="main__visite">
       <section class="main__banniere">
@@ -330,18 +338,29 @@
               <img class="filtre__list-img" src="./asset/Img/svg/icon-arrow-filtre.svg" alt />
               Nouveautés
             </li>
-            <li class="filtre__list-icon">
-              <img class="filtre__list__drag-img" src="./asset/Img/svg/icon-arrow-gauche-hover.svg" alt="Précédent" />
-              <img class="filtre__list__drag-img" src="./asset/Img/svg/icon-arrow-droite.svg" alt="Suivant" />
-            </li>
+
+            <!-- CONTROLES DU CAROUSEL -->
+            <div class="carousel__controls">
+              <button class="carousel__arrow carousel__arrow--prev" aria-label="Précédent">
+                <img src="./asset/Img/svg/icon-arrow-gauche-hover.svg" alt="Précédent">
+              </button>
+
+              <button class="carousel__arrow carousel__arrow--next" aria-label="Suivant">
+                <img src="./asset/Img/svg/icon-arrow-droite.svg" alt="Suivant">
+              </button>
+            </div>
           </ul>
+
+
         </section>
+
+
 
         <div class="carousel__list">
           <div class="carousel__item__container" data-filter="tous ateliers">
             <div class="carousel__item" style="
-                  background-image: url(&quot;./asset/Img/atelier-jeunes.jpg&quot;);
-                ">
+                      background-image: url(&quot;./asset/Img/atelier-jeunes.jpg&quot;);
+                    ">
               <span class="carousel__item-badge carousel__item-badge--free">Gratuit</span>
               <div>
                 <h3 class="carousel__item-title">Atelier peinture</h3>
@@ -359,97 +378,101 @@
           </div>
           <div class="carousel__item__container" data-filter="tous visites">
             <div class="carousel__item" style="
-                  background-image: url(&quot;./asset/Img/visite-groupe.jpg&quot;);
-                ">
+                      background-image: url(&quot;./asset/Img/visite-groupe.jpg&quot;);
+                    ">
               <span class="carousel__item-badge carousel__item-badge--price">10 € / personne</span>
-                <div>
-              <h3 class="carousel__item-title">Visite famille</h3>
-              <p class="carousel__item-text">
-                Chaque premier dimanche du mois, profitez de la gratuité du
-                musée pour découvrir ou redécouvrir ses collections
-                permanentes. Accompagnés par un médiateur ou une médiatrice,
-                laissez-vous guider à travers une visite unique...
-              </p>
-              <div class="carousel__item-meta">
-                <span class="carousel__item-date">15.10.2025</span>
-                <span class="carousel__item-time">11:00 - 12:00</span>
+              <div>
+                <h3 class="carousel__item-title">Visite famille</h3>
+                <p class="carousel__item-text">
+                  Chaque premier dimanche du mois, profitez de la gratuité du
+                  musée pour découvrir ou redécouvrir ses collections
+                  permanentes. Accompagnés par un médiateur ou une médiatrice,
+                  laissez-vous guider à travers une visite unique...
+                </p>
+                <div class="carousel__item-meta">
+                  <span class="carousel__item-date">15.10.2025</span>
+                  <span class="carousel__item-time">11:00 - 12:00</span>
+                </div>
               </div>
             </div>
-          </div>
           </div>
           <div class="carousel__item__container" data-filter="tous visites nouveaute">
             <div class="carousel__item" style="
-                  background-image: url(&quot;./asset/Img/misc-discussion.jpg&quot;);
-                ">
+                      background-image: url(&quot;./asset/Img/misc-discussion.jpg&quot;);
+                    ">
               <span class="carousel__item-badge carousel__item-badge--free">Gratuit</span>
-            
-             <div>
-              <h3 class="carousel__item-title">Visite Re(découvrir)</h3>
-              <p class="carousel__item-text">
-                Plongez au cœur des collections du musée lors de cette visite
-                thématique gratuite, qui vous invite à redécouvrir des œuvres
-                emblématiques sous un nouvel angle.
-              </p>
-              <div class="carousel__item-meta">
-                <span class="carousel__item-date">20.11.2025</span>
-                <span class="carousel__item-time">18:00 - 19:00</span>
+
+              <div>
+                <h3 class="carousel__item-title">Visite Re(découvrir)</h3>
+                <p class="carousel__item-text">
+                  Plongez au cœur des collections du musée lors de cette visite
+                  thématique gratuite, qui vous invite à redécouvrir des œuvres
+                  emblématiques sous un nouvel angle.
+                </p>
+                <div class="carousel__item-meta">
+                  <span class="carousel__item-date">20.11.2025</span>
+                  <span class="carousel__item-time">18:00 - 19:00</span>
+                </div>
               </div>
             </div>
-          </div>
           </div>
           <div class="carousel__item__container" data-filter="tous ateliers">
             <div class="carousel__item" style="
-                  background-image: url(&quot;./asset/Img/atelier-poterie.png&quot;);
-                ">
+                      background-image: url(&quot;./asset/Img/atelier-poterie.png&quot;);
+                    ">
               <span class="carousel__item-badge carousel__item-badge--free">Gratuit</span>
-             <div>
-              <h3 class="carousel__item-title">Atelier poterie</h3>
-              <p class="carousel__item-text">
-                Initiez-vous à l'art de la sculpture lors de cet atelier
-                pratique, où vous pourrez créer votre propre œuvre en vous
-                inspirant des sculptures exposées dans le musée.
-              </p>
-              <div class="carousel__item-meta">
-                <span class="carousel__item-date">05.12.2025</span>
-                <span class="carousel__item-time">14:00 - 16:00</span>
+              <div>
+                <h3 class="carousel__item-title">Atelier poterie</h3>
+                <p class="carousel__item-text">
+                  Initiez-vous à l'art de la sculpture lors de cet atelier
+                  pratique, où vous pourrez créer votre propre œuvre en vous
+                  inspirant des sculptures exposées dans le musée.
+                </p>
+                <div class="carousel__item-meta">
+                  <span class="carousel__item-date">05.12.2025</span>
+                  <span class="carousel__item-time">14:00 - 16:00</span>
+                </div>
               </div>
             </div>
-          </div>
           </div>
           <div class="carousel__item__container" data-filter="tous conferences">
             <div class="carousel__item" style="
-                  background-image: url(&quot;./asset/Img/atelier-degustation-vin.webp&quot;);
-                ">
+                      background-image: url(&quot;./asset/Img/atelier-degustation-vin.webp&quot;);
+                    ">
               <span class="carousel__item-badge carousel__item-badge--price">5
                 euros / personne</span>
               <div>
-              <h3 class="carousel__item-title">Conférence art et société</h3>
-              <p class="carousel__item-text">
-                Rejoignez-nous pour une conférence captivante qui explore les
-                liens entre l'art et la société, animée par un expert renommé
-                dans le domaine.
-              </p>
-              <div class="carousel__item-meta">
-                <span class="carousel__item-date">15.01.2026</span>
-                <span class="carousel__item-time">18:30 - 20:00</span>
+                <h3 class="carousel__item-title">Conférence art et société</h3>
+                <p class="carousel__item-text">
+                  Rejoignez-nous pour une conférence captivante qui explore les
+                  liens entre l'art et la société, animée par un expert renommé
+                  dans le domaine.
+                </p>
+                <div class="carousel__item-meta">
+                  <span class="carousel__item-date">15.01.2026</span>
+                  <span class="carousel__item-time">18:30 - 20:00</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
         </div>
       </section>
       <div class="carousel__button">
         <a class="main__button--evenement-black" href="#">Voir tous les évènements</a>
       </div>
     </section>
+    </section>
+
+
 
     <section class="main__explore">
       <section class="main__banniere">
-        <section class="main__banniere--explorer">
+        <section class="main__banniere--evenement">
           <img class="main__banniere-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
           <h2 class="main__banniere-titre">
             EXPLORER<br />
-            NOS COLLECTIONS
+            NOS
+            <br> COLLECTIONS
           </h2>
         </section>
         <section class="main__banniere-contenu">
@@ -477,14 +500,14 @@
         </div>
       </div>
       <div class="main__explore-card main__explore-card--child" style="grid-column: span 5;">
-                  <img class="main__explore-card-img" src="/asset/Img/tableaux/tableau-guenat-vieillard.jpg">
-                  <div class="main__explore-card-wrappper">
-        <h3 class="main__explore-card-title">Portraits</h3>
-        <p class="main__explore-card-text">
-          Visages, regards, expressions… chaque œuvre révèle une histoire, un
-          caractère, une époque
-        </p>
-      </div>
+        <img class="main__explore-card-img" src="/asset/Img/tableaux/tableau-guenat-vieillard.jpg">
+        <div class="main__explore-card-wrappper">
+          <h3 class="main__explore-card-title">Portraits</h3>
+          <p class="main__explore-card-text">
+            Visages, regards, expressions… chaque œuvre révèle une histoire, un
+            caractère, une époque
+          </p>
+        </div>
       </div>
       <div class="main__explore-card main__explore-card--fat">
         <img class="main__explore-card-img" src="/asset/Img/tableaux/tableau-guenat-cuisinier.jpg">
@@ -520,12 +543,12 @@
       <section class="main__banniere">
         <section class="main__banniere--infos">
 
-     
+          <img class="main_map-img" src="./asset/Img/svg/croix-blanche.svg" alt="Musee vectoriser" />
           <h2 class="main__banniere-titre">
             INFOS<br />
             UTILES
           </h2>
-          <img class="main_map-img" src="./asset/Img/musee-vector.png" alt="Musee vectoriser" />
+
         </section>
         <section class="main__banniere-contenu">
           <p class="main__banniere-description">
@@ -538,74 +561,74 @@
 
 
       <div class="main__infos-utiles-separator">
-      <section class="main__map-section">
-        
-        <div class="main__infos-utiles-card-header">
-          <h2 class="main__infos-utiles-card-title-or">
-            NOUS<br />
-            TROUVER
-          </h2>
-        </div>
-        
-        <div class="main__map-container">
-          <div id="map" class="main__map"></div>
-        </div>
-      </section>
+        <section class="main__map-section">
 
-      <section class="main__infos-utiles-cards">
-        <section class="main__infos-utiles-card">
-          <h3 class="main__infos-utiles-card-title-or">+ Accès</h3>
-          <section class="main__infos-utiles-card-or">
-            <h4 class="main__infos-utiles-card-subtitle-white">Adresse</h4>
-            <p class="main__infos-utiles-card-text-white">
-              1 place de la Révolution, 25000 Besançon
-            </p>
-            <h4 class="main__infos-utiles-card-subtitle-white">Standard</h4>
-            <p class="main__infos-utiles-card-text-white">
-              +33 3 81 87 80 67
-            </p>
-            <h4 class="main__infos-utiles-card-subtitle-white">Email</h4>
-            <p class="main__infos-utiles-card-text-white">
-              musee-beaux-arts-archeologie@besancon.fr
-            </p>
+          <div class="main__infos-utiles-card-header">
+            <h2 class="main__infos-utiles-card-title-or">
+              NOUS<br />
+              TROUVER
+            </h2>
+          </div>
+
+          <div class="main__map-container">
+            <div id="map" class="main__map"></div>
+          </div>
+        </section>
+
+        <section class="main__infos-utiles-cards">
+          <section class="main__infos-utiles-card">
+            <h3 class="main__infos-utiles-card-title-or">+ Accès</h3>
+            <section class="main__infos-utiles-card-or">
+              <h4 class="main__infos-utiles-card-subtitle-white">Adresse</h4>
+              <p class="main__infos-utiles-card-text-white">
+                1 place de la Révolution, 25000 Besançon
+              </p>
+              <h4 class="main__infos-utiles-card-subtitle-white">Standard</h4>
+              <p class="main__infos-utiles-card-text-white">
+                +33 3 81 87 80 67
+              </p>
+              <h4 class="main__infos-utiles-card-subtitle-white">Email</h4>
+              <p class="main__infos-utiles-card-text-white">
+                musee-beaux-arts-archeologie@besancon.fr
+              </p>
+            </section>
+          </section>
+
+          <section class="main__infos-utiles-card">
+            <h4 class="main__infos-utiles-card-subtitle">
+              Transports en commun
+            </h4>
+            <ul class="main__infos-utiles-card-list">
+              <li class="main__infos-utiles-card-list-item">
+                <img class="main__infos-utiles-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+                <p class="main__infos-utiles-card-text">
+                  Tram ligne T1 et T2 : arrêt "Révolution"
+                </p>
+              </li>
+              <li class="main__infos-utiles-card-list-item">
+                <img class="main__infos-utiles-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+                <p class="main__infos-utiles-card-text">
+                  Bus lignes 3, 4, 5, 10, 11, 20, 21, 22, 26, 27 : arrêt
+                  République
+                </p>
+              </li>
+              <li class="main__infos-utiles-card-list-item">
+                <img class="main__infos-utiles-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+                <p class="main__infos-utiles-card-text">
+                  Bus 3, 4, 5, 10, 11, 20, 22 : arrêt Courbet
+                </p>
+              </li>
+            </ul>
+            <h4 class="main__infos-utiles-card-subtitle">Stationnement</h4>
+            <div class="main__infos-utiles-card-row">
+              <img class="main__infos-utiles-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
+              <p class="main__infos-utiles-card-text">
+                Parking payant Marché-Beaux-Arts (souterrain et surface)
+              </p>
+            </div>
+            <a class="main__button--infos-or" href="#">En savoir +</a>
           </section>
         </section>
-
-        <section class="main__infos-utiles-card">
-          <h4 class="main__infos-utiles-card-subtitle">
-            Transports en commun
-          </h4>
-          <ul class="main__infos-utiles-card-list">
-            <li class="main__infos-utiles-card-list-item">
-              <img class="main__infos-utiles-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
-              <p class="main__infos-utiles-card-text">
-                Tram ligne T1 et T2 : arrêt "Révolution"
-              </p>
-            </li>
-            <li class="main__infos-utiles-card-list-item">
-              <img class="main__infos-utiles-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
-              <p class="main__infos-utiles-card-text">
-                Bus lignes 3, 4, 5, 10, 11, 20, 21, 22, 26, 27 : arrêt
-                République
-              </p>
-            </li>
-            <li class="main__infos-utiles-card-list-item">
-              <img class="main__infos-utiles-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
-              <p class="main__infos-utiles-card-text">
-                Bus 3, 4, 5, 10, 11, 20, 22 : arrêt Courbet
-              </p>
-            </li>
-          </ul>
-          <h4 class="main__infos-utiles-card-subtitle">Stationnement</h4>
-          <div class="main__infos-utiles-card-row">
-            <img class="main__infos-utiles-card-arrow" src="./asset/Img/svg/icon-arrow-droite.svg" alt />
-            <p class="main__infos-utiles-card-text">
-              Parking payant Marché-Beaux-Arts (souterrain et surface)
-            </p>
-          </div>
-          <a class="main__button--infos-or" href="#">En savoir +</a>
-        </section>
-      </section>
       </div>
     </section>
 
@@ -614,123 +637,123 @@
 
   <footer class="footer">
     <div class="footer__contain-form">
-    <div class="footer__logo-container">
-      <a class="footer__logo-link" href="#">
-        <img class="footer__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
-        <h2 class="footer__title">Suivez-nous pour recevoir la newsletter</h2>
-      </a>
-    <form class="footer__form">
-      <input class="footer__input" type="email" placeholder="Entrez votre adresse e-mail" required />
-      <button class="footer__button" type="submit">S'abonner</button>
-    </form>
-    </div>
-
-    <section class="footer__nav">
-      <ul class="footer__nav-list">
-        <li class="footer__nav-item">
-          <h4 class="footer__nav-title">Le musée</h4>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="./musee-histoire.html">Présentation & histoire</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Collections</a>
-        </li>
-      </ul>
-
-      <ul class="footer__nav-list">
-        <li class="footer__nav-item">
-          <h4 class="footer__nav-title">Programmation</h4>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="./evenement.html">Événements</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="./collections.html">Collections</a>
-        </li>
-      </ul>
-
-      <ul class="footer__nav-list">
-        <li class="footer__nav-item">
-          <h4 class="footer__nav-title">Contact</h4>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Horaires et tarifs</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Nous contacter</a>
-        </li>
-        <li class="footer__nav-item">
-          <a class="footer__nav-link" href="#">Accessibilité</a>
-        </li>
-      </ul>
-    </section>
-
-    <section class="footer__social">
-      <h2>Nos réseaux sociaux</h2>
-      <section class="footer__social-media">
-        <a class="footer__social-link" href="#" aria-label="Facebook">
-          <img class="footer__social-icon" src="./asset/Img/svg/facebook.svg" alt="Facebook" />
+      <div class="footer__logo-container">
+        <a class="footer__logo-link" href="#">
+          <img class="footer__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
+          <h2 class="footer__title">Suivez-nous pour recevoir la newsletter</h2>
         </a>
-        <a class="footer__social-link" href="#" aria-label="Instagram">
-          <img class="footer__social-icon" src="./asset/Img/svg/insta.svg" alt="Instagram" />
-        </a>
-        <a class="footer__social-link" href="#" aria-label="Linkdin">
-          <img class="footer__social-icon" src="./asset/Img/svg/linkdin.svg" alt="Twitter" />
-        </a>
-        <a class="footer__social-link" href="#" aria-label="Tiktok">
-          <img class="footer__social-icon" src="./asset/Img/svg/tiktok.svg" alt="YouTube" />
-        </a>
+        <form class="footer__form">
+          <input class="footer__input" type="email" placeholder="Entrez votre adresse e-mail" required />
+          <button class="footer__button" type="submit">S'abonner</button>
+        </form>
+      </div>
+
+      <section class="footer__nav">
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item">
+            <h4 class="footer__nav-title">Le musée</h4>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="./musee-histoire.html">Présentation & histoire</a>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="#">Collections</a>
+          </li>
+        </ul>
+
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item">
+            <h4 class="footer__nav-title">Programmation</h4>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="./evenement.html">Événements</a>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="./collections.html">Collections</a>
+          </li>
+        </ul>
+
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item">
+            <h4 class="footer__nav-title">Contact</h4>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="#">Horaires et tarifs</a>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="#">Nous contacter</a>
+          </li>
+          <li class="footer__nav-item">
+            <a class="footer__nav-link" href="#">Accessibilité</a>
+          </li>
+        </ul>
       </section>
-    </section>
 
-    <section class="footer__links">
-      <a class="footer__link" href="#">Mentions légales</a>
-      <a class="footer__link" href="#">Politique de confidentialité</a>
-    </section>
+      <section class="footer__social">
+        <h2>Nos réseaux sociaux</h2>
+        <section class="footer__social-media">
+          <a class="footer__social-link" href="#" aria-label="Facebook">
+            <img class="footer__social-icon" src="./asset/Img/svg/facebook.svg" alt="Facebook" />
+          </a>
+          <a class="footer__social-link" href="#" aria-label="Instagram">
+            <img class="footer__social-icon" src="./asset/Img/svg/insta.svg" alt="Instagram" />
+          </a>
+          <a class="footer__social-link" href="#" aria-label="Linkdin">
+            <img class="footer__social-icon" src="./asset/Img/svg/linkdin.svg" alt="Twitter" />
+          </a>
+          <a class="footer__social-link" href="#" aria-label="Tiktok">
+            <img class="footer__social-icon" src="./asset/Img/svg/tiktok.svg" alt="YouTube" />
+          </a>
+        </section>
+      </section>
+
+      <section class="footer__links">
+        <a class="footer__link" href="#">Mentions légales</a>
+        <a class="footer__link" href="#">Politique de confidentialité</a>
+      </section>
   </footer>
-       <!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-crossorigin=""></script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
     integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
 
-
+  <!-- Slick JS -->
   <script src="js/slick.min.js"></script>
+
   <script src="js/scroll-hero.js"></script>
   <script src="js/carousel-filter.js"></script>
   <script src="./js/menu.js"></script>
-<script>
-  // Initialiser la carte sur l'élément avec l'id "map"
-  const map = L.map('map').setView([47.240335, 6.022807], 16);
+  <script>
+    // Initialiser la carte sur l'élément avec l'id "map"
+    const map = L.map('map').setView([47.240335, 6.022807], 16);
 
-  // Ajouter la couche OpenStreetMap
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-    maxZoom: 19
-  }).addTo(map);
+    // Ajouter la couche OpenStreetMap
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+      maxZoom: 19
+    }).addTo(map);
 
-  // DÉFINIR l'icône personnalisée AVANT de l'utiliser
-  const customIcon = L.icon({
-    iconUrl: './asset/Img/svg/musee_or_vector.svg',
-    iconSize: [100, 100],
-    iconAnchor: [20, 40],
-    popupAnchor: [0, -40]
-  });
+    // DÉFINIR l'ricône personnalisée AVANT de l'utiliser
+    const customIcon = L.icon({
+      iconUrl: './asset/Img/svg/musee_or_vector.svg',
+      iconSize: [200, 100],
+      iconAnchor: [20, 40],
+      popupAnchor: [0, -40]
+    });
 
-  // Ajouter un marqueur pour le musée (maintenant customIcon existe)
-  const marker = L.marker([47.240335, 6.022807], {icon: customIcon}).addTo(map);
-  
-  // Ajouter un popup au marqueur
-  marker.bindPopup('<strong>Musée des Beaux-Arts</strong><br>1 place de la Révolution<br>25000 Besançon').openPopup();
-</script>
+    // Ajouter un marqueur pour le musée (maintenant customIcon existe)
+    const marker = L.marker([47.240335, 6.022807], { icon: customIcon }).addTo(map);
+
+    // Ajouter un popup au marqueur
+    marker.bindPopup('<strong>Musée des Beaux-Arts</strong><br>1 place de la Révolution<br>25000 Besançon').openPopup();
+  </script>
 
   <!-- Locomotive Scroll JS -->
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.umd.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const scroll = new LocomotiveScroll({
         el: document.querySelector('[data-scroll-container]'),
         smooth: true,
@@ -761,14 +784,14 @@ crossorigin=""></script>
 
   <!-- Search Overlay JS -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const searchTrigger = document.getElementById('search-trigger');
       const searchOverlay = document.getElementById('search-overlay');
       const searchClose = document.getElementById('search-close');
       const searchInput = searchOverlay.querySelector('.search-overlay__input');
 
       if (searchTrigger && searchOverlay) {
-        searchTrigger.addEventListener('click', function(e) {
+        searchTrigger.addEventListener('click', function (e) {
           e.preventDefault();
           searchOverlay.classList.add('is-active');
           setTimeout(() => {
@@ -776,19 +799,19 @@ crossorigin=""></script>
           }, 300);
         });
 
-        searchClose.addEventListener('click', function() {
+        searchClose.addEventListener('click', function () {
           searchOverlay.classList.remove('is-active');
         });
 
         // Close on escape key
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
           if (e.key === 'Escape' && searchOverlay.classList.contains('is-active')) {
             searchOverlay.classList.remove('is-active');
           }
         });
 
         // Close when clicking outside the form
-        searchOverlay.addEventListener('click', function(e) {
+        searchOverlay.addEventListener('click', function (e) {
           if (e.target === searchOverlay) {
             searchOverlay.classList.remove('is-active');
           }

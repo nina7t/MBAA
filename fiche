@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Repas des Amis - Paul Collomb | MBAA</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCF9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+<body>
+  <header class="header header--collections header--scrolled">
+    <div class="header__container">
+      <a class="header__logo-link" href="./index.html">
+        <img class="header__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
+      </a>
+      <button class="header__menu-toggle" aria-label="menu" aria-expanded="false" aria-controls="headerNav">
+        <span class="header__menu-bar"></span>
+      </button>
+      <nav class="header__nav" id="headerNav" aria-hidden="true">
+        <ul class="header__nav-list header__nav-list--main">
+          <li class="header__nav-item nav-dot">
+            <a class="header__nav-link nav-dot" href="./infos.html">Infos pratiques</a>
+          </li>
+          <li class="header__nav-item nav-dot">
+            <a class="header__nav-link nav-dot" href="./collections.html">Collections</a>
+          </li>
+          <li class="header__nav-item nav-dot">
+            <a class="header__nav-link nav-dot" href="./evenement.html">Évènement</a>
+          </li>
+          <li class="header__nav-item nav-dot">
+            <a class="header__nav-link nav-dot" href="./musee-histoire.html">Le musée</a>
+          </li>
+          <li class="header__nav-item nav-dot">
+            <a class="header__nav-link nav-dot" href="./infos.html">Contact</a>
+          </li>
+        </ul>
+        <ul class="header__nav-list header__nav-list--secondary">
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="./connexion.html" aria-label="Connexion">
+              <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#" aria-label="Billetterie">
+              <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
+                <path d="M13 5v2"></path>
+                <path d="M13 17v2"></path>
+                <path d="M13 11v2"></path>
+              </svg>
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="#" aria-label="Recherche">
+              <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">FR</a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">EN</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header__hero-content header__hero-content--reduced">
+      <h1 class="header__title">La<br>collection<br>
+        <span id="sous-menu-header">Des beaux arts</span>
+        <img class="header__cross" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche">
+      </h1>
+      <a href="#" class="header__reserve-btn">Je réserve ma place</a>
+    </div>
+    <div class="header__scroll">
+      <img class="header__scroll-icon" src="./asset/Img/svg/icon-arrow_bas.svg" alt="Défiler vers le bas">
+    </div>
+  </header>
+
+  <main>
+    <div class="header-hero">
+      <div class="header-hero-icon">+</div>
+      <h1>CETTE OEUVRE<br>PARLE</h1>
+      <h2>Du goût et de la modération</h2>
+      <p class="header-hero-subtitle">Comment regarder une œuvre d'art ?</p>
+      <p class="header-hero-description">Le Repas des Amis invite à la réflexion sur les valeurs de partage et de mesure qui caractérisent l'art de vivre français.</p>
+    </div>
+
+    <article class="apple-content">
+      <header class="apple-artwork-header">
+        <h1 class="apple-artwork-title">Le Repas des Amis</h1>
+        <h2 class="apple-artwork-artist">Paul Collomb</h2>
+        <p class="apple-artwork-year">1963</p>
+      </header>
+
+      <section class="apple-description">
+        <p>Le Repas des amis est une scène de partage entre proches, rendue avec tendresse par Paul Collomb en 1963.</p>
+      </section>
+
+      <section class="apple-details-section">
+        <h3 class="apple-section-title">Détails de l'œuvre</h3>
+        <div class="apple-details-grid">
+          <div class="apple-detail-card"><span class="apple-detail-label">Technique</span><span class="apple-detail-value">Huiles sur toile</span></div>
+          <div class="apple-detail-card"><span class="apple-detail-label">Dimensions</span><span class="apple-detail-value">81 × 100 cm</span></div>
+          <div class="apple-detail-card"><span class="apple-detail-label">Genre</span><span class="apple-detail-value">Scène de genre</span></div>
+          <div class="apple-detail-card"><span class="apple-detail-label">N° inventaire</span><span class="apple-detail-value">2015.0.1</span></div>
+      </section>
+
+      <nav class="apple-bottom-nav">
+        <a href="collections.html" class="apple-back-link"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10.5 13.5L6 9L10.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg> Retour aux collections</a>
+      </nav>
+    </article>
+
+    <section class="apple-artist-works-section">
+      <div class="apple-section-header"><h2 class="apple-section-title">Autres œuvres de Paul Collomb</h2></div>
+      <div class="apple-artist-works-row">
+        <a href="fiche_oeuvre.html" class="apple-work-hover-card">
+          <div class="apple-work-hover-image"><img src="./asset/Img/tableaux/tableau-collomb-2.webp" alt="Composition - Paul Collomb"></div>
+          <div class="apple-work-hover-overlay">
+            <h3 class="apple-work-hover-title">Composition</h3>
+            <p class="apple-work-hover-year">1965</p>
+            <p class="apple-work-hover-description">Une composition équilibrée où Collomb explore les relations entre formes et couleurs.</p>
+          </div>
+        </a>
+        <a href="fiche_oeuvre.html" class="apple-work-hover-card">
+          <div class="apple-work-hover-image"><img src="./asset/Img/tableaux/tableau-collomb-3.jpg" alt="Paysage de Provence - Paul Collomb"></div>
+          <div class="apple-work-hover-overlay">
+            <h3 class="apple-work-hover-title">Paysage de Provence</h3>
+            <p class="apple-work-hover-year">1972</p>
+            <p class="apple-work-hover-description">Un paysage lumineux capturant l'essence de la Provence.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="apple-artists-linked-section">
+      <div class="apple-section-header"><h2 class="apple-section-title">Artistes En lien</h2></div>
+      <div class="apple-artists-grid-linked">
+        <a href="#" class="apple-artist-card-linked card-barré" onclick="showArtistDetail('barré'); return false;"><div class="apple-artist-card-overlay-linked"><div class="apple-artist-name-linked">Vincent<br>Barré</div><p class="apple-artist-description-linked">Sculpteur contemporain français</p></div></a>
+        <a href="#" class="apple-artist-card-linked card-matisse" onclick="showArtistDetail('matisse'); return false;"><div class="apple-artist-card-overlay-linked"><div class="apple-artist-name-linked">Henri<br>Matisse</div><p class="apple-artist-description-linked">Chef de file du fauvisme</p></div></a>
+        <a href="#" class="apple-artist-card-linked card-valtat" onclick="showArtistDetail('valtat'); return false;"><div class="apple-artist-card-overlay-linked"><div class="apple-artist-name-linked">Louis<br>Valtat</div><p class="apple-artist-description-linked">Précurseur du fauvisme</p></div></a>
+        <a href="#" class="apple-artist-card-linked card-signac" onclick="showArtistDetail('signac'); return false;"><div class="apple-artist-card-overlay-linked"><div class="apple-artist-name-linked">Paul<br>Signac</div><p class="apple-artist-description-linked">Maître du pointillisme</p></div></a>
+        <a href="#" class="apple-artist-card-linked card-stojka" onclick="showArtistDetail('stojka'); return false;"><div class="apple-artist-card-overlay-linked"><div class="apple-artist-name-linked">Ceija<br>Stojka</div><p class="apple-artist-description-linked">Artiste rom, survivante des camps</p></div></a>
+        <a href="#" class="apple-artist-card-linked card-bonnard" onclick="showArtistDetail('bonnard'); return false;"><div class="apple-artist-card-overlay-linked"><div class="apple-artist-name-linked">Pierre<br>Bonnard</div><p class="apple-artist-description-linked">Peintre du groupe des Nabis</p></div></a>
+      </div>
+    </section>
+
+    <section class="apple-location-section">
+      <div class="apple-section-header"><h2 class="apple-section-title">Où voir cette œuvre</h2></div>
+      <div id="apple-map" class="apple-map"></div>
+    </section>
+  </main>
+
+  <footer class="apple-footer"><div class="apple-footer-content"><p>© 2025 MBAA - Musée des Beaux-Arts et d'Archéologie de Besançon</p></div></footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    function showArtistDetail(artist) { alert('Ouverture de la fiche de l\'artiste : ' + artist); }
+    document.addEventListener('DOMContentLoaded', function () {
+      var map = L.map('apple-map').setView([47.2378, 6.0241], 15);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(map);
+      L.marker([47.2378, 6.0241]).addTo(map).bindPopup('<b>MBAA</b><br>Besançon').openPopup();
+    });
+  </script>
+</body>
+</html>

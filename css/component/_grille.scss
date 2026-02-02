@@ -38,7 +38,7 @@
 
 .main__explore-card {  
     position: relative;
-    padding: 20px;
+    padding: 50px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -66,6 +66,11 @@
         transition: background 0.3s ease;
     }
 
+    @media (min-width: 768px) {
+        padding: 20px;
+
+        
+    }
     // // Overlay sombre au hover
     // &::before {
     //     content: '';

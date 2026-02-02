@@ -1,4 +1,5 @@
 @use "../utils/variables" as *;
+@use "sass:color";
 
 body.is-nav-open {
     overflow: hidden;
@@ -20,9 +21,9 @@ body.is-nav-open {
     background-repeat: no-repeat;
     background-attachment: fixed;
     transition: all 0.3s ease;
-    
+
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -37,12 +38,12 @@ body.is-nav-open {
         @media (max-width: 1023px) {
             z-index: 999;
             pointer-events: none;
-            
+
             &::before {
                 opacity: 0;
                 pointer-events: none;
             }
-            
+
             .header__menu-toggle {
                 pointer-events: auto;
             }
@@ -52,7 +53,7 @@ body.is-nav-open {
     @media (min-width: 1024px) {
         position: relative;
         background-image: none;
-        
+
         &::before {
             display: none;
         }
@@ -63,17 +64,11 @@ body.is-nav-open {
     // ==========================================
     &--scrolled {
         @media (min-width: 1024px) {
-            .header__container {
-                padding: 0.875rem 3.75rem;
-             
-            }
-
             .header__nav-list--main {
                 background-color: rgba(60, 60, 60, 0.44);
-                    backdrop-filter: blur(20px);
-                    transition: backdrop-filter 0.3s ease;
-                    padding: 0.875rem 2.5rem;
-                
+                backdrop-filter: blur(20px);
+                transition: backdrop-filter 0.3s ease;
+                padding: 0.875rem 2.5rem;
             }
 
             .header__nav-list--secondary {
@@ -81,27 +76,29 @@ body.is-nav-open {
                 padding: 0.875rem 1.5rem;
                 backdrop-filter: blur(20px);
                 transition: backdrop-filter 0.3s ease;
-
             }
 
             .header__logo-link {
                 width: 150px;
                 height: 64px;
-                
             }
 
-            .header__nav-link{
+            .header__nav-link {
                 color: $color-white;
             }
 
-            .header__nav-list--secondary{
+            .header__nav-list--secondary {
                 color: $color-white;
+            }
+            .header__nav-icon {
+                stroke: #ffffff;
+                stroke-width: 2;
+                filter: none; // ← Enlever le filtre brightness(0) au scroll
+            }
 
+            .header__nav-link-fr {
+                color: white;
             }
-            .header__nav-icon{
-                stroke: #ffff;
-            }
-      
         }
     }
 
@@ -113,19 +110,19 @@ body.is-nav-open {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 1rem 1rem;
+        padding: 2rem 2rem;
         position: relative;
         z-index: 1;
         gap: 1rem;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        
+
         @media (min-width: 768px) {
             padding: 1.2rem 1.5rem;
         }
-        
+
         @media (min-width: 1024px) {
             position: fixed;
-            top: 0;
+            top: 13px;
             left: 0;
             width: 100%;
             padding: 1.25rem 3.75rem;
@@ -170,7 +167,12 @@ body.is-nav-open {
             width: 187px;
             height: 80px;
         }
-        
+
+        @media (min-width: 1400px) {
+            width: 220px;
+            height: 80px;
+        }
+
         &:active {
             transform: scale(0.95);
         }
@@ -207,7 +209,10 @@ body.is-nav-open {
         border: none;
         cursor: pointer;
         padding: 0.5rem;
-        transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+        transition:
+            background 0.2s ease,
+            box-shadow 0.2s ease,
+            transform 0.2s ease;
         -webkit-tap-highlight-color: transparent;
 
         @media (min-width: 1024px) {
@@ -226,7 +231,7 @@ body.is-nav-open {
             background: rgba(25, 25, 25, 0.85);
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 253, 243, 0.2);
-            
+
             @media (min-width: 768px) {
                 top: 1.2rem;
                 right: 1.2rem;
@@ -242,7 +247,10 @@ body.is-nav-open {
         border-radius: 1px;
         background-color: $color-primary-white;
         box-shadow: 0 3px 12px rgba(0, 0, 0, 0.28);
-        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, opacity 0.28s ease 0.06s;
+        transition:
+            transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            background-color 0.3s ease,
+            opacity 0.28s ease 0.06s;
 
         &::after {
             content: "";
@@ -255,7 +263,10 @@ body.is-nav-open {
             background-color: $color-primary-white;
             transform: translate(-50%, 0) scaleY(1);
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.28);
-            transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, opacity 0.26s ease 0.12s;
+            transition:
+                transform 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 0.3s ease,
+                opacity 0.26s ease 0.12s;
         }
     }
 
@@ -267,7 +278,10 @@ body.is-nav-open {
             opacity: 0;
             transform: translate(-50%, 0) scaleY(0);
             background-color: $color-primary-white;
-            transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s ease, opacity 0.24s ease 0.05s;
+            transition:
+                transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 0.25s ease,
+                opacity 0.24s ease 0.05s;
         }
     }
 
@@ -278,7 +292,7 @@ body.is-nav-open {
         color: $color-primary-white;
         position: fixed;
         z-index: 1050;
-        top: 0;
+        top: 20px;
         left: 0;
         right: 0;
         bottom: 0;
@@ -294,7 +308,7 @@ body.is-nav-open {
         -webkit-overflow-scrolling: touch;
         visibility: visible;
         opacity: 1;
-        
+
         &[aria-hidden="false"] {
             transform: translateX(0);
         }
@@ -302,6 +316,23 @@ body.is-nav-open {
         @media (min-width: 768px) {
             padding: 6rem 2rem 2rem;
             gap: 2.5rem;
+            position: relative;
+            left: auto;
+            top: auto;
+            right: auto;
+            bottom: auto;
+            transform: none;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            width: auto;
+            max-width: 100%;
+            flex-wrap: nowrap;
+            backdrop-filter: none;
+            background: transparent;
+            overflow-y: visible;
+            z-index: 10;
         }
 
         @media (min-width: 1024px) {
@@ -318,7 +349,28 @@ body.is-nav-open {
             width: auto;
             max-width: 100%;
             flex-wrap: nowrap;
-            gap: 1.875rem;
+            gap: 2rem;
+            backdrop-filter: none;
+            background: transparent;
+            overflow-y: visible;
+            z-index: 10;
+        }
+
+        @media (min-width: 1604px) {
+            position: relative;
+            left: auto;
+            top: auto;
+            right: auto;
+            bottom: auto;
+            transform: none;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            width: auto;
+            max-width: 100%;
+            flex-wrap: nowrap;
+            gap: 25rem;
             backdrop-filter: none;
             background: transparent;
             overflow-y: visible;
@@ -411,7 +463,10 @@ body.is-nav-open {
         color: $color-primary-white;
         text-decoration: none;
         display: block;
-        transition: color 0.25s ease, transform 0.2s ease, opacity 0.2s ease;
+        transition:
+            color 0.25s ease,
+            transform 0.2s ease,
+            opacity 0.2s ease;
         white-space: nowrap;
         font-size: 1.125rem;
         font-weight: 600;
@@ -420,12 +475,12 @@ body.is-nav-open {
         padding: 0.5rem 0;
         -webkit-tap-highlight-color: transparent;
         pointer-events: auto;
-    
+
         &:active {
             opacity: 0.7;
             transform: scale(0.98);
         }
-    
+
         @media (min-width: 768px) {
             font-size: 1.2rem;
             padding: 0.75rem 0;
@@ -440,15 +495,44 @@ body.is-nav-open {
             width: auto;
             padding: 0;
             transition: opacity 0.3s ease;
-    
+
             &:hover {
                 opacity: 0.7;
                 transform: none;
             }
-            
+
             &:active {
                 transform: none;
                 opacity: 0.5;
+            }
+        }
+    }
+
+    // ==========================================
+    // NAV DOT (colored dot on hover/click)
+    // ==========================================
+    &__nav-link.nav-dot {
+        @media (min-width: 1024px) {
+            position: relative;
+            padding-left: 1.5rem;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 8px;
+                height: 8px;
+                background-color: $bg-or;
+                border-radius: 50%;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            &:hover::before,
+            &:active::before {
+                opacity: 1;
             }
         }
     }
@@ -463,7 +547,7 @@ body.is-nav-open {
             font-weight: 500;
             color: #1a1a1a;
             transition: opacity 0.3s ease;
-            
+
             &:hover {
                 opacity: 0.7;
             }
@@ -478,19 +562,19 @@ body.is-nav-open {
         height: 24px;
         fill: none;
         stroke-width: 2;
-        
-        
+        stroke: black; // ou la couleur que vous voulez par défaut
+
         &:active {
             transform: scale(0.95);
             background: rgba(255, 253, 243, 0.2);
         }
-        
+
         @media (min-width: 768px) {
             width: 3rem;
             height: 3rem;
             padding: 0.6rem;
         }
-        
+
         @media (min-width: 1024px) {
             min-width: auto;
             min-height: auto;
@@ -500,12 +584,21 @@ body.is-nav-open {
             border-radius: 0;
             background: transparent;
             border: none;
-            filter: brightness(0);
+            filter: none;
             cursor: pointer;
-            transition: opacity 0.3s ease, transform 0.2s ease;
+            transition: none;
+
+            svg {
+                stroke: #1a1a1a;
+                transition: stroke 0.3s ease;
+            }
 
             &:hover {
-                opacity: 0.7;
+                transform: none;
+            }
+
+            &:hover svg {
+                stroke: $bg-or;
             }
         }
     }
@@ -527,7 +620,7 @@ body.is-nav-open {
             font-weight: 500;
             color: #1a1a1a;
             transition: opacity 0.3s ease;
-            
+
             &:hover {
                 opacity: 0.7;
             }
@@ -544,51 +637,52 @@ body.is-nav-open {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 7.5rem 1.5rem 3.75rem;
+        padding: 8rem 3rem;
         overflow: hidden;
         z-index: 1;
-    
+
         @media (min-width: 768px) {
             padding: 7.5rem 2rem 3.75rem;
         }
-    
+
         @media (min-width: 1024px) {
             flex-direction: row;
-            padding: 7.5rem 3.75rem 3.75rem;
         }
     }
 
     &__hero-content {
         width: 100%;
         display: flex;
+        flex-direction: column;
         gap: 2.5rem;
         position: relative;
         z-index: 1;
-    
+
         @media (min-width: 1024px) {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            gap: 3.75rem;
-            padding: 5rem 3.75rem;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 3rem;
+            padding: 10rem 3.75rem;
         }
 
         &--reduced {
             margin-top: 1rem;
         }
     }
-    
+
     &__hero-text {
         flex: 1;
         max-width: 600px;
         position: relative;
         z-index: 20;
 
-        h1, .header__title {
+        h1,
+        .header__title {
             color: $color-primary-white !important;
         }
-        
-        #sous-menu-header, span {
+
+        #sous-menu-header,
+        span {
             color: $color-primary-white !important;
         }
     }
@@ -609,9 +703,9 @@ body.is-nav-open {
         @media (min-width: 768px) {
             font-size: clamp(5rem, 10vw, 7.5rem);
         }
-        
+
         @media (min-width: 1024px) {
-            font-size: 7.5rem;
+            font-size: 9rem;
         }
     }
 
@@ -622,11 +716,11 @@ body.is-nav-open {
         position: relative;
         flex: 1;
         min-height: 400px;
-        
+
         @media (max-width: 1023px) {
             display: none;
         }
-        
+
         @media (min-width: 1024px) {
             min-height: 500px;
         }
@@ -703,7 +797,7 @@ body.is-nav-open {
         display: block;
         color: $color-primary-white !important;
         line-height: 1.3;
-        
+
         @media (min-width: 1024px) {
             font-size: 1.75rem;
         }
@@ -727,7 +821,7 @@ body.is-nav-open {
             text-align: center;
         }
     }
-    
+
     &__cta-text {
         font-size: clamp(1.5rem, 3vw, 2rem);
         font-weight: 600;
@@ -739,7 +833,7 @@ body.is-nav-open {
             font-size: 2rem;
         }
     }
-    
+
     &__cta-button {
         display: inline-block;
         padding: 1.125rem 2.5rem;
@@ -767,32 +861,32 @@ body.is-nav-open {
     }
 
     &--collections {
-        background-image: url('/asset/Img/backgrounds/bg-header-collections.png');
-        
+        background-image: url("/asset/Img/backgrounds/bg-header-collections.png");
+
         @media (prefers-reduced-motion: reduce) {
             background-attachment: scroll;
         }
     }
 
     &--evenement {
-        background-image: url('/asset/Img/backgrounds/header-evenement.jpg');
-        
+        background-image: url("/asset/Img/backgrounds/header-evenement.jpg");
+
         @media (prefers-reduced-motion: reduce) {
             background-attachment: scroll;
         }
     }
 
     &--fiche-oeuvre {
-        background-image: url('/asset/Img/backgrounds/header-fiche-oeuvre.jpg');
-        
+        background-image: url("/asset/Img/backgrounds/header-fiche-oeuvre.jpg");
+
         @media (prefers-reduced-motion: reduce) {
             background-attachment: scroll;
         }
     }
 
     &--musee {
-        background-image: url('/asset/Img/backgrounds/header-musee.jpg');
-        
+        background-image: url("/asset/Img/backgrounds/header-musee.jpg");
+
         @media (prefers-reduced-motion: reduce) {
             background-attachment: scroll;
         }
@@ -816,7 +910,9 @@ body.is-nav-open {
     justify-content: center;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
 
     &.is-active {
         opacity: 1;
@@ -840,7 +936,10 @@ body.is-nav-open {
         justify-content: center;
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.1);
-        transition: transform 0.3s ease, color 0.3s ease, background 0.3s ease;
+        transition:
+            transform 0.3s ease,
+            color 0.3s ease,
+            background 0.3s ease;
         z-index: 10000;
         -webkit-tap-highlight-color: transparent;
 
@@ -915,7 +1014,9 @@ body.is-nav-open {
         padding: 0.75rem;
         border-radius: 8px;
         cursor: pointer;
-        transition: background 0.3s ease, transform 0.3s ease;
+        transition:
+            background 0.3s ease,
+            transform 0.3s ease;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -954,21 +1055,22 @@ body.is-nav-open {
 // HERO ALTERNATIF (à la fin du fichier)
 // ==========================================
 .hero {
-    padding: 10rem 3rem 3rem 4rem;
+    padding: 2rem 2rem 0rem 20px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     position: relative;
     text-align: left;
 
+    @media (min-width: 768px) {
+        padding: 10rem 3rem 3rem 4rem;
+    }
+
     @media (max-width: 1023px) {
-        padding: 9rem 5rem 12rem 0;
+        padding: 2rem 2rem 0;
         flex-direction: column;
         align-items: center;
         text-align: left;
-    }
-
-    @media (min-width: 768px) {
-        padding: 10rem 3rem 3rem 4rem;
     }
 }
 
@@ -976,6 +1078,13 @@ body.is-nav-open {
     flex: 1;
     position: relative;
     z-index: 10;
+    padding: 2rem;
+
+    @media (min-width: 768px) {
+        flex: 1;
+        position: relative;
+        z-index: 10;
+    }
 }
 
 .hero-title {
@@ -992,6 +1101,10 @@ body.is-nav-open {
     @media (min-width: 1024px) {
         font-size: 120px;
     }
+
+    @media (min-width: 1400px) {
+        font-size: 11rem;
+    }
 }
 
 .hero-subtitle {
@@ -1000,6 +1113,7 @@ body.is-nav-open {
     letter-spacing: 2px;
     position: relative;
     z-index: 10;
+    color: $color-primary-white;
 
     @media (min-width: 768px) {
         font-size: 40px;
@@ -1012,23 +1126,61 @@ body.is-nav-open {
 .hero-right {
     flex: 1;
     position: relative;
-    height: 500px;
+
+    // Mobile: affichage structuré en colonne
+    @media (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        position: static;
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    // Tablet
+    @media (min-width: 768px) and (max-width: 1023px) {
+        height: 400px;
+    }
+
+    // Desktop: affichage destructuré avec position absolute
+    @media (min-width: 1024px) {
+        height: 500px;
+    }
 }
 
 .art-image {
-    position: absolute;
     border-radius: 10px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     background-position: center;
     background-size: cover;
 
-    &.img1 {
-        width: 150px;
-        height: 80px;
-        top: 0;
-        left: 50px;
+    // Mobile: affichage structuré en colonne (une sopra l'altra)
+    @media (max-width: 767px) {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        margin-bottom: 1rem;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
         z-index: 1;
-        background-image: url('/asset/Img/tableaux/tableau-signac-venise.jpg');
+    }
+
+    // Tablet et Desktop: affichage destructuré avec position absolute
+    @media (min-width: 768px) {
+        position: absolute;
+    }
+
+    &.img1 {
+        background-image: url("/asset/Img/tableaux/tableau-signac-venise.jpg");
+
+        @media (min-width: 768px) {
+            width: 150px;
+            height: 80px;
+            top: 0;
+            left: 50px;
+            z-index: 1;
+        }
 
         @media (min-width: 1200px) {
             width: 424px;
@@ -1036,17 +1188,27 @@ body.is-nav-open {
             top: -197px;
             left: 364px;
         }
+
+        @media (min-width: 1600px) {
+            width: 468px;
+            height: 320px;
+            top: -300px;
+            left: 556px;
+        }
     }
 
     &.img2 {
-        width: 150px;
-        height: 80px;
-        top: 150px;
-        left: 0;
-        z-index: 2;
-        background-image: url('/asset/Img/tableaux/tableau-toffoli-vendeuse.jpg');
+        background-image: url("/asset/Img/tableaux/tableau-toffoli-vendeuse.jpg");
 
         @media (min-width: 768px) {
+            width: 150px;
+            height: 80px;
+            top: 150px;
+            left: 0;
+            z-index: 2;
+        }
+
+        @media (min-width: 768px) and (max-width: 1199px) {
             width: 320px;
             height: 270px;
             top: -407px;
@@ -1059,17 +1221,27 @@ body.is-nav-open {
             top: -407px;
             left: 77px;
         }
+
+        @media (min-width: 1600px) {
+            width: 320px;
+            height: 399px;
+            top: -536px;
+            left: 77px;
+        }
     }
 
     &.img3 {
-        width: 150px;
-        height: 80px;
-        top: 50px;
-        right: 0;
-        z-index: 3;
-        background-image: url('/asset/Img/tableaux/tableau-ocean-contemporain.png');
+        background-image: url("/asset/Img/tableaux/tableau-ocean-contemporain.png");
 
         @media (min-width: 768px) {
+            width: 150px;
+            height: 80px;
+            top: 50px;
+            right: 0;
+            z-index: 3;
+        }
+
+        @media (min-width: 768px) and (max-width: 1199px) {
             width: 350px;
             height: 280px;
             top: -197px;
@@ -1082,14 +1254,25 @@ body.is-nav-open {
             top: -497px;
             right: 224px;
         }
+
+        @media (min-width: 1600px) {
+            width: 566px;
+            height: 446px;
+            top: -621px;
+            right: 244px;
+        }
     }
 }
 
 .cta-section {
-    position: absolute;
-    bottom: -80px;
-    right: 60px;
     text-align: right;
+
+    @media (min-width: 768px) {
+        position: absolute;
+        bottom: -80px;
+        right: 60px;
+        text-align: right;
+    }
 }
 
 .reserve-btn {
@@ -1117,17 +1300,39 @@ body.is-nav-open {
 
 .scroll-indicator {
     text-align: center;
-    margin-top: 100px;
-    padding: 40px 0;
+    margin-top: 40px;
+    padding: 20px 0;
 }
 
-.scroll-arrow {
-    font-size: 48px;
+.scroll-arrow,
+.header__scroll-icon {
+    width: 40px;
+    height: 40px;
     animation: bounce 2s infinite;
+    display: inline-block;
+}
+
+// Styles pour la flèche de scroll dans les headers des autres pages
+.header__scroll {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+}
+
+.header__scroll-icon {
+    width: 40px;
+    height: 40px;
+    animation: bounce 2s infinite;
+    display: inline-block;
+    cursor: pointer;
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: translateY(0);
     }
     40% {
@@ -1135,5 +1340,158 @@ body.is-nav-open {
     }
     60% {
         transform: translateY(-5px);
+    }
+}
+
+// ==========================================
+// STYLES MOBILE POUR LES AUTRES PAGES
+// (sauf index.html)
+// ==========================================
+
+// Padding mobile pour les titres des autres pages
+@media (max-width: 767px) {
+    .header__hero-content:not(.hero-content--index) {
+        padding: 0 1.5rem;
+    }
+
+    .header__title:not(.hero-title) {
+        padding-right: 1rem;
+    }
+
+    #sous-menu-header {
+        padding-right: 1rem;
+    }
+}
+
+// ==========================================
+// CROIX BLANCHE ALIGNÉE EN BAS À GAUCHE DU TITRE
+// ==========================================
+.main__banniere--explorer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+    position: relative;
+
+    @media (max-width: 767px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    @media (min-width: 768px) {
+        gap: 20px;
+    }
+}
+
+.main__banniere--explorer .main__banniere-img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: 32px;
+    height: 32px;
+
+    @media (max-width: 767px) {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        margin-bottom: -5px;
+    }
+
+    @media (min-width: 768px) {
+        max-width: 40px;
+        height: 40px;
+    }
+}
+
+.main__banniere--explorer .main__banniere-titre {
+    padding-left: 45px;
+
+    @media (max-width: 767px) {
+        padding-left: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    @media (min-width: 768px) {
+        padding-left: 50px;
+    }
+}
+
+// ==========================================
+// BOUTON "JE RÉSERVE MA PLACE"
+// ==========================================
+.header__reserve-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: $bg-or;
+    color: white;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    // Pas de margin-top - le bouton est directement sous le titre dans le flux
+    margin: 1rem 0rem;
+    width: fit-content;
+    height: fit-content;
+
+    @media (min-width: 768px) {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+        margin: 2rem 0rem;
+    }
+
+    &:hover {
+        background-color: color.adjust($bg-or, $lightness: -10%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+// ==========================================
+// CROIX BLANCHE À L'INTÉRIEUR DU TITRE H1
+// ==========================================
+.header__title {
+    position: relative;
+    display: inline-block;
+
+    .header__cross {
+        position: absolute;
+        bottom: 0rem;
+        left: calc(100% + 0.5rem);
+        z-index: 10;
+        transform: translateY(10%);
+        width: 20px;
+        height: 20px;
+
+        @media (min-width: 768px) {
+            width: 32px;
+            height: 32px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}
+
+// ==========================================
+// SCROLL INDICATOR (flèche vers le bas - CENTRÉE EN BAS DU HEADER)
+// ==========================================
+.header__scroll {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    @media (max-width: 767px) {
+        bottom: 15px;
     }
 }

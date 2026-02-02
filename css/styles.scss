@@ -1,49 +1,51 @@
 // Fichier principal Sass
 // @use des variables
-@use 'utils/variables';
+@use "utils/variables";
 
 // @use des styles de base
-@use 'base/base';
-@use 'base/principal';
+@use "base/base";
+@use "base/principal";
 
 // @use des layouts
-@use 'layout/entete';
-@use 'layout/corps';
-@use 'layout/section';
-@use 'layout/pied-de-page';
+@use "layout/entete";
+@use "layout/corps";
+@use "layout/section";
+@use "layout/pied-de-page";
 
 // @use des composants
-@use 'component/infos';
-@use 'component/accordeon';
-@use 'component/bouton';
-@use 'component/carte';
-@use 'component/article';
-@use 'component/liste';
-@use 'component/carrousel';
-@use 'component/filtre';
-@use 'component/grille';
-@use 'component/cartes';
-@use 'component/galerie';
-@use 'component/art-gallery';
-@use 'component/movements-table';
-@use 'component/techniques-grid';
-@use 'component/pedagogical-elements';
-@use 'component/art-appreciation';
-@use 'component/bibliotheque';
-@use 'component/tableau-pedagogique';
-@use 'component/chronologie';
-@use 'component/calendrier-evenements';
-@use 'component/sections-evenements';
-@use 'component/reservation';
-@use 'component/espaces-musee';
-@use 'component/liste-deroulante';
-@use 'component/atelier';
-@use 'component/fiche';
+@use "component/infos";
+@use "component/accordeon";
+@use "component/bouton";
+@use "component/carte";
+@use "component/article";
+@use "component/liste";
+@use "component/carrousel";
+@use "component/filtre";
+@use "component/grille";
+@use "component/cartes";
+@use "component/galerie";
+@use "component/art-gallery";
+@use "component/movements-table";
+@use "component/techniques-grid";
+@use "component/pedagogical-elements";
+@use "component/art-appreciation";
+@use "component/bibliotheque";
+@use "component/tableau-pedagogique";
+@use "component/chronologie";
+@use "component/calendrier-evenements";
+@use "component/sections-evenements";
+@use "component/reservation";
+@use "component/espaces-musee";
+@use "component/liste-deroulante";
+@use "component/atelier";
+@use "component/fiche";
+@use "component/ux-improvements";
+@use "component/events-page";
 
 // @use des styles spécifiques aux pages
-@use './admin';
-@use './connexion';
-@use './visiteur';
+@use "./admin";
+@use "./connexion";
+@use "./visiteur";
 
-@use 'vendors/slick/slick.css';
-@use 'vendors/slick/slick-theme.css';
+@use "vendors/slick/slick.css";
+@use "vendors/slick/slick-theme.css";
