@@ -188,37 +188,31 @@ class HeaderAdaptive {
   setLightColors() {
     // Logo blanc
     if (this.logo) {
-      this.logo.style.filter = 'brightness(0) invert(1)';
-      this.logo.style.transition = 'filter 0.3s ease';
+      this.logo.classList.remove('adaptive-light');
+      this.logo.classList.add('adaptive-dark');
     }
     
     // Menu burger blanc
     const menuBars = document.querySelectorAll('.header__menu-bar');
     menuBars.forEach(bar => {
-      bar.style.backgroundColor = '#FFFDF3';
-      bar.style.transition = 'background-color 0.3s ease';
+      bar.classList.remove('adaptive-light');
+      bar.classList.add('adaptive-dark');
     });
-    
-    // Pseudo-élément ::after (géré via CSS custom property)
-    document.documentElement.style.setProperty('--menu-bar-color', '#FFFDF3');
   }
   
   setDarkColors() {
     // Logo noir
     if (this.logo) {
-      this.logo.style.filter = 'brightness(0) invert(0)';
-      this.logo.style.transition = 'filter 0.3s ease';
+      this.logo.classList.remove('adaptive-dark');
+      this.logo.classList.add('adaptive-light');
     }
     
     // Menu burger noir
     const menuBars = document.querySelectorAll('.header__menu-bar');
     menuBars.forEach(bar => {
-      bar.style.backgroundColor = '#1a1a1a';
-      bar.style.transition = 'background-color 0.3s ease';
+      bar.classList.remove('adaptive-dark');
+      bar.classList.add('adaptive-light');
     });
-    
-    // Pseudo-élément ::after
-    document.documentElement.style.setProperty('--menu-bar-color', '#1a1a1a');
   }
   
   destroy() {
