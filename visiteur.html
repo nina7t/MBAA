@@ -5,8 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Espace - MBAA</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/png" href="./asset/Img/logo/logo-mat-small.png" />
 </head>
 <body class="visiteur-body">
+    <!-- Header MBAA avec menu burger -->
+    <header class="header">
+        <div class="header__container">
+            <a class="header__logo-link" href="./index.html">
+                <img class="header__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
+            </a>
+            <button class="header__menu-toggle" aria-label="menu" aria-expanded="false" aria-controls="headerNav">
+                <span class="header__menu-bar"></span>
+            </button>
+            <nav class="header__nav" id="headerNav" aria-hidden="true">
+                <ul class="header__nav-list header__nav-list--main">
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./infos.html">Infos pratiques</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./collections.html">Collections</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./evenement.html">Évènement</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./musee-histoire.html">Le musée</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./infos.html">Contact</a>
+                    </li>
+                </ul>
+                <ul class="header__nav-list header__nav-list--secondary">
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./connexion.html" aria-label="Connexion">
+                            <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="#" aria-label="Billetterie">
+                            <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
+                                <path d="M13 5v2"></path>
+                                <path d="M13 17v2"></path>
+                                <path d="M13 11v2"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="#" aria-label="Recherche">
+                            <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">FR</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">EN</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <div class="visiteur-container">
         <!-- Sidebar -->
         <aside class="visiteur-sidebar">
@@ -320,5 +386,8 @@
             });
         });
     </script>
+
+    <!-- Script du menu MBAA -->
+    <script src="./js/menu.js"></script>
 </body>
 </html>

@@ -73,18 +73,27 @@ $audioguide-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 
 .block-description{
     display: flex;
-    flex-direction: column;
+    flex-direction: column !important;
     justify-content: center;
 
 
     @media (max-width: 767px) {
         display: flex;
-        flex-direction: row;
+        flex-direction: row !important;
         justify-content: center;
         align-content: center;
         gap: 2rem;
         
         
+    }
+
+    @media (max-width: 1607px) {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center;
+        align-content: center;
+        gap: 2rem;
+    
     }
 
 }
@@ -897,10 +906,11 @@ audio {
 // ============================================
 .other-works {
     max-width: 1400px;
-    margin: 0 auto;
+    margin: 2rem;
 
     @media (min-width: 1024px) {
         padding: 4rem 2rem 5rem;
+        margin: 0 auto;
     }
 
     // ELEMENT: Header

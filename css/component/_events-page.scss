@@ -755,3 +755,258 @@
         }
     }
 }
+
+.view-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: #f3f4f6;
+  border-radius: 10px;
+  padding: 0.25rem;
+  margin-bottom: 1rem;
+  font-family: $font-secondary;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+
+  .toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 0.875rem;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: #6b7280;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: $font-secondary;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    &.active {
+      background: #ffffff;
+      color: #111827;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+// ── Masquer le calendrier en vue liste (mobile) ───────────────
+.calendar-card.hidden-mobile {
+  @media (max-width: 1023px) {
+    display: none;
+  }
+}
+
+// ── Vue liste mobile ──────────────────────────────────────────
+.mobile-events-list {
+  display: none;
+
+  @media (max-width: 1023px) {
+    display: block;
+
+    &.hidden {
+      display: none;
+    }
+  }
+}
+
+.mobile-month-group {
+  margin-bottom: 2rem;
+}
+
+.mobile-month-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  font-family: $font-secondary;
+  margin-bottom: 0.75rem;
+  padding-left: 0.25rem;
+}
+
+.mobile-event-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #f3f4f6;
+  transition: all 0.2s;
+  cursor: pointer;
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  .mec-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 3rem;
+    padding-right: 1rem;
+    border-right: 2px solid #f3f4f6;
+
+    .mec-day {
+      font-size: 1.75rem;
+      font-weight: 800;
+      line-height: 1;
+      color: #111827;
+    }
+
+    .mec-weekday {
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #9ca3af;
+      font-family: $font-secondary;
+      margin-top: 0.125rem;
+    }
+  }
+
+  .mec-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.375rem;
+    min-width: 0;
+
+    .mec-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #111827;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .mec-tag {
+      display: inline-flex;
+      align-items: center;
+      font-family: $font-secondary;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      color: #ffffff;
+      width: fit-content;
+    }
+  }
+
+  .mec-arrow {
+    display: flex;
+    align-items: center;
+    color: #d1d5db;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+// ── Filtres scrollables horizontalement sur mobile ────────────
+.filter-options {
+  @media (max-width: 1023px) {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-pill {
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+  }
+}
+
+// ── Masquer la liste sidebar sur mobile (redondant avec liste mobile) ──
+.calendar-sidebar .events-preview {
+  @media (max-width: 1023px) {
+    display: none;
+  }
+}
+
+// ── Bouton "voir les événements passés" ───────────────────────
+.mobile-show-all-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.875rem;
+  background: #f9fafb;
+  border: 1px dashed #d1d5db;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b7280;
+  font-family: $font-secondary;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: all 0.2s;
+
+  &:hover,
+  &:active {
+    background: #f3f4f6;
+    color: #374151;
+  }
+}
+
+// ── Calendrier compact < 480px ────────────────────────────────
+@media (max-width: 480px) {
+  .calendar-weekdays-grid div {
+    font-size: 0.65rem;
+  }
+
+  .calendar-day-cell {
+    height: 2.5rem;
+    min-height: 2.5rem;
+    border-radius: 6px;
+    padding: 0.2rem;
+
+    .day-number {
+      font-size: 0.75rem;
+    }
+
+    .event-indicator {
+      width: 0.35rem;
+      height: 0.35rem;
+      bottom: 0.25rem;
+    }
+  }
+
+  .calendar-day-empty {
+    height: 2.5rem;
+    min-height: 2.5rem;
+  }
+
+  .calendar-nav-header .calendar-current-title {
+    font-size: 1.1rem;
+  }
+
+  .calendar-card {
+    padding: 1rem;
+  }
+}

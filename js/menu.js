@@ -9,6 +9,62 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================
   // GESTION DU MENU BURGER (MOBILE) - CORRIGÉ
   // ==========================================
+  if (toggle && nav) {
+    // Gestion du clic sur le bouton burger
+    toggle.addEventListener('click', () => {
+      const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+      
+      // Inverser l'état
+      toggle.setAttribute('aria-expanded', !isExpanded);
+      nav.setAttribute('aria-hidden', isExpanded);
+      
+      // Ajouter/retirer la classe pour le body
+      if (!isExpanded) {
+        header.classList.add('header--menu-open');
+        document.body.style.overflow = 'hidden';
+      } else {
+        header.classList.remove('header--menu-open');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Fermer le menu avec Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        toggle.click();
+      }
+    });
+
+    // Fermer le menu au clic sur un lien (mobile)
+    const links = document.querySelectorAll('.header__nav-link');
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        if (window.innerWidth < 1024) {
+          // Fermer le menu après un délai pour voir l'animation
+          setTimeout(() => {
+            if (toggle.getAttribute('aria-expanded') === 'true') {
+              toggle.click();
+            }
+          }, 300);
+        }
+      });
+    });
+
+    // Adapter le menu au redimensionnement
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (window.innerWidth >= 1024) {
+          // Desktop : fermer le menu et réinitialiser
+          toggle.setAttribute('aria-expanded', 'false');
+          nav.setAttribute('aria-hidden', 'true');
+          header.classList.remove('header--menu-open');
+          document.body.style.overflow = '';
+        }
+      }, 150);
+    });
+  }
  
   // ==========================================
   // GESTION DU SCROLL (DESKTOP UNIQUEMENT)

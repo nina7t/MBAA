@@ -4,14 +4,23 @@
 .main__banniere {
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
+    border-radius: 0px 10px 10px 0px;
     gap: 1rem;
     background-color: #957e18;
     color: #fffdf3;
     padding: clamp(1.25rem, 3vw, 3rem);
     max-width: 100%;
     box-sizing: border-box;
-    margin: 5rem 0rem;
+    margin: 5rem 4rem 4rem 0rem;
+    
+
+    @media (max-width:767px) {
+        margin: 5rem 4rem 4rem 0rem !important;
+    }
+
+    @media (max-width: 1067px) {
+        margin: 5rem 0rem 0rem 0rem;
+    }
 
     
     &-titre {
