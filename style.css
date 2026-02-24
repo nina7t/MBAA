@@ -1344,6 +1344,7 @@ body.is-nav-open {
   letter-spacing: 2px;
   position: relative;
   z-index: 10;
+  margin: 2rem;
   color: #FFFDF3;
 }
 @media (min-width: 768px) {
@@ -2055,7 +2056,7 @@ body.is-nav-open {
 }
 @media (max-width: 767px) {
   .main__banniere {
-    margin: 5rem 4rem 4rem 0rem !important;
+    margin: 5rem 4rem 4rem -1rem !important;
   }
 }
 @media (max-width: 1067px) {
