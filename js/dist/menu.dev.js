@@ -54,12 +54,27 @@ document.addEventListener("DOMContentLoaded", function () {
     toggle.addEventListener("click", function (e) {
       e.preventDefault();
       e.stopPropagation();
+      e.stopImmediatePropagation();
 
       if (isMenuOpen) {
         closeMenu();
       } else {
         openMenu();
       }
+    }); // Fallback: ensure toggle is always clickable on mobile
+    // This fixes issues where the menu can't be closed
+
+    toggle.addEventListener("touchend", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (isMenuOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    }, {
+      passive: false
     }); // Fermer le menu au clic sur un lien (mobile uniquement)
 
     links.forEach(function (link) {

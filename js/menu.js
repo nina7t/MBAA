@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const nav = document.querySelector(".header__nav");
   const header = document.querySelector(".header");
   const headerContainer = document.querySelector(".header__container");
-  
+
   if (!header || !headerContainer) return;
 
   // ==========================================
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nav.setAttribute("aria-hidden", "false");
       document.body.classList.add("is-nav-open");
       header.classList.add("header--menu-open");
-      
+
       // Empêcher le scroll du body
       document.body.style.overflow = "hidden";
     };
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nav.setAttribute("aria-hidden", "true");
       document.body.classList.remove("is-nav-open");
       header.classList.remove("header--menu-open");
-      
+
       // Réactiver le scroll du body
       document.body.style.overflow = "";
     };
@@ -57,13 +57,31 @@ document.addEventListener("DOMContentLoaded", () => {
     toggle.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
-      
+      e.stopImmediatePropagation();
+
       if (isMenuOpen) {
         closeMenu();
       } else {
         openMenu();
       }
     });
+
+    // Fallback: ensure toggle is always clickable on mobile
+    // This fixes issues where the menu can't be closed
+    toggle.addEventListener(
+      "touchend",
+      (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (isMenuOpen) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      },
+      { passive: false },
+    );
 
     // Fermer le menu au clic sur un lien (mobile uniquement)
     links.forEach((link) => {
@@ -109,14 +127,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================
   let ticking = false;
   let lastScrollY = 0;
-  
+
   const handleScroll = () => {
     const scrollY = window.scrollY || window.pageYOffset;
-    
+
     // Éviter les calculs inutiles si le scroll n'a pas changé
     if (scrollY === lastScrollY) return;
     lastScrollY = scrollY;
-    
+
     if (!ticking) {
       window.requestAnimationFrame(() => {
         if (window.innerWidth >= 1024) {
@@ -129,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         ticking = false;
       });
-      
+
       ticking = true;
     }
   };
@@ -140,19 +158,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const updateContentPadding = () => {
     if (window.innerWidth >= 1024) {
       const containerHeight = headerContainer.offsetHeight;
-      
+
       // Trouver l'élément à qui appliquer le padding
       const hero = header.querySelector(".header__hero");
       const main = document.querySelector("main");
       const firstContentAfterHeader = header.nextElementSibling;
-      
+
       // Priorité : hero > main > premier élément après header
       const targetElement = hero || main || firstContentAfterHeader;
-      
+
       if (targetElement) {
         // Appliquer le padding seulement si ce n'est pas déjà fait
-        const currentPadding = parseInt(window.getComputedStyle(targetElement).paddingTop);
-        if (Math.abs(currentPadding - containerHeight) > 5) { // Tolérance de 5px
+        const currentPadding = parseInt(
+          window.getComputedStyle(targetElement).paddingTop,
+        );
+        if (Math.abs(currentPadding - containerHeight) > 5) {
+          // Tolérance de 5px
           targetElement.style.paddingTop = `${containerHeight}px`;
         }
       }
@@ -161,8 +182,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const hero = header.querySelector(".header__hero");
       const main = document.querySelector("main");
       const firstContentAfterHeader = header.nextElementSibling;
-      
-      [hero, main, firstContentAfterHeader].forEach(el => {
+
+      [hero, main, firstContentAfterHeader].forEach((el) => {
         if (el && el.style.paddingTop) {
           el.style.paddingTop = "";
         }
@@ -176,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const initialize = () => {
     // Nettoyer l'ancien listener si on réinitialise
     window.removeEventListener("scroll", handleScroll);
-    
+
     if (window.innerWidth >= 1024) {
       // Desktop : activer le scroll listener
       window.addEventListener("scroll", handleScroll, { passive: true });
@@ -202,9 +223,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
-  
+
   resizeObserver.observe(headerContainer);
-  
+
   // ==========================================
   // ÉCOUTER LE REDIMENSIONNEMENT
   // ==========================================
@@ -224,7 +245,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================
   // GESTION DE L'OVERLAY DE RECHERCHE (OPTIONNEL)
   // ==========================================
-  const searchIcon = document.querySelector(".header__nav-icon[alt='Rechercher']");
+  const searchIcon = document.querySelector(
+    ".header__nav-icon[alt='Rechercher']",
+  );
   const searchOverlay = document.querySelector(".search-overlay");
   const searchClose = document.querySelector(".search-overlay__close");
   const searchInput = document.querySelector(".search-overlay__input");
@@ -270,5 +293,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
-
