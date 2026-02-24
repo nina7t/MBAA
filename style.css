@@ -528,6 +528,27 @@ body.is-nav-open {
     color: #FFFDF3;
   }
 }
+.header--light .header__logo-img {
+  filter: brightness(0);
+}
+@media (min-width: 1024px) {
+  .header--light .header__nav-link,
+  .header--light .header__nav-link-fr {
+    color: #191919;
+  }
+}
+@media (min-width: 1024px) {
+  .header--light .header__nav-icon {
+    stroke: #191919;
+    filter: brightness(0);
+  }
+}
+.header--light .header__menu-bar {
+  background-color: #191919;
+}
+.header--light .header__menu-bar::after {
+  background-color: #191919;
+}
 .header__container {
   display: flex;
   flex-direction: row;

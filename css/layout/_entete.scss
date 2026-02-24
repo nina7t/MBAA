@@ -151,6 +151,34 @@ body.is-nav-open {
     }
   }
 
+  // État pour surface claire
+  &--light {
+    .header__logo-img {
+      filter: brightness(0);
+    }
+
+    .header__nav-link,
+    .header__nav-link-fr {
+      @media (min-width: 1024px) {
+        color: $color-primary-dark;
+      }
+    }
+
+    .header__nav-icon {
+      @media (min-width: 1024px) {
+        stroke: $color-primary-dark;
+        filter: brightness(0);
+      }
+    }
+
+    .header__menu-bar {
+      background-color: $color-primary-dark;
+      &::after {
+        background-color: $color-primary-dark;
+      }
+    }
+  }
+
   // ==========================================
 
   // CONTAINER
