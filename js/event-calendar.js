@@ -7,15 +7,62 @@
 // ========================================
 
 const events = [
-  { id: 1,  date: 3,  month: 11, year: 2025, title: 'Ateliers Peinture',       type: 'Ateliers Adultes', color: 'bg-yellow-700', colorHex: '#a16207' },
-  { id: 2,  date: 8,  month: 11, year: 2025, title: 'Ateliers Poterie',         type: 'Ateliers Enfants', color: 'bg-gray-600',   colorHex: '#4b5563' },
-  { id: 3,  date: 9,  month: 11, year: 2025, title: 'Soirée Jazz au musée',     type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
-  { id: 4,  date: 11, month: 11, year: 2025, title: 'Concert de Noël',          type: 'Tout public',      color: 'bg-gray-800',   colorHex: '#1f2937' },
-  { id: 5,  date: 14, month: 11, year: 2025, title: 'Atelier Sculpture',        type: 'Ateliers Adultes', color: 'bg-gray-700',   colorHex: '#374151' },
-  { id: 6,  date: 15, month: 11, year: 2025, title: 'Visite Guidée',            type: 'Tout public',      color: 'bg-gray-700',   colorHex: '#374151' },
-  { id: 7,  date: 10, month: 0,  year: 2026, title: 'Atelier gravure adultes',  type: 'Ateliers Adultes', color: 'bg-yellow-700', colorHex: '#a16207' },
-  { id: 8,  date: 18, month: 0,  year: 2026, title: 'Conférence art moderne',   type: 'Tout public',      color: 'bg-gray-800',   colorHex: '#1f2937' },
-  { id: 9,  date: 25, month: 0,  year: 2026, title: 'Soirée Jazz - Quartet',    type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  // Décembre 2025
+  { id: 1,  date: 3,  month: 11, year: 2025, title: 'Ateliers Peinture',           type: 'Ateliers Adultes', color: 'bg-yellow-700', colorHex: '#a16207' },
+  { id: 2,  date: 8,  month: 11, year: 2025, title: 'Ateliers Poterie',           type: 'Ateliers Enfants', color: 'bg-gray-600',   colorHex: '#4b5563' },
+  { id: 3,  date: 9,  month: 11, year: 2025, title: 'Soirée Jazz au musée',       type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  { id: 4,  date: 11, month: 11, year: 2025, title: 'Concert de Noël',            type: 'Tout public',      color: 'bg-gray-800',   colorHex: '#1f2937' },
+  { id: 5,  date: 14, month: 11, year: 2025, title: 'Atelier Sculpture',         type: 'Ateliers Adultes', color: 'bg-gray-700',   colorHex: '#374151' },
+  { id: 6,  date: 15, month: 11, year: 2025, title: 'Visite Guidée',             type: 'Tout public',      color: 'bg-gray-700',   colorHex: '#374151' },
+  { id: 7,  date: 20, month: 11, year: 2025, title: 'Atelier Dessin',             type: 'Ateliers Adultes', color: 'bg-yellow-700', colorHex: '#a16207' },
+  { id: 8,  date: 22, month: 11, year: 2025, title: 'Conte pour enfants',         type: 'Ateliers Enfants', color: 'bg-gray-600',   colorHex: '#4b5563' },
+  { id: 9,  date: 28, month: 11, year: 2025, title: 'Soirée de Gala',             type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  { id: 10, date: 31, month: 11, year: 2025, title: 'Réveillon au musée',        type: 'Tout public',      color: 'bg-gray-800',   colorHex: '#1f2937' },
+  
+  // Janvier 2026
+  { id: 11, date: 5,  month: 0,  year: 2026, title: 'Atelier gravure adultes',   type: 'Ateliers Adultes', color: 'bg-yellow-700', colorHex: '#a16207' },
+  { id: 12, date: 10, month: 0,  year: 2026, title: 'Atelier Modelage Enfants',  type: 'Ateliers Enfants', color: 'bg-gray-600',   colorHex: '#4b5563' },
+  { id: 13, date: 15, month: 0,  year: 2026, title: 'Concert Classique',         type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  { id: 14, date: 18, month: 0,  year: 2026, title: 'Conférence art moderne',    type: 'Tout public',      color: 'bg-gray-800',   colorHex: '#1f2937' },
+  { id: 15, date: 22, month: 0,  year: 2026, title: 'Atelier Aquarelle',         type: 'Ateliers Adultes', color: 'bg-gray-700',   colorHex: '#374151' },
+  { id: 16, date: 25, month: 0,  year: 2026, title: 'Soirée Jazz - Quartet',    type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  { id: 17, date: 28, month: 0,  year: 2026, title: 'Visite Nocturne',          type: 'Tout public',      color: 'bg-gray-800',   colorHex: '#1f2937' },
+  
+  // Février 2026
+  { id: 18, date: 2,  month: 1,  year: 2026, title: 'Atelier Photographie',      type: 'Ateliers Adultes', color: 'bg-yellow-700', colorHex: '#a16207' },
+  { id: 19, date: 7,  month: 1,  year: 2026, title: 'Atelier Carnaval',          type: 'Ateliers Enfants', color: 'bg-gray-600',   colorHex: '#4b5563' },
+  { id: 20, date: 14, month: 1,  year: 2026, title: 'Soirée Romantique',         type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  { id: 21, date: 18, month: 1,  year: 2026, title: 'Conférence Histoire Art',  type: 'Tout public',      color: 'bg-gray-800',   colorHex: '#1f2937' },
+  { id: 22, date: 22, month: 1,  year: 2026, title: 'Atelier Céramique',         type: 'Ateliers Adultes', color: 'bg-gray-700',   colorHex: '#374151' },
+  { id: 23, date: 28, month: 1,  year: 2026, title: 'Concert de Chambre',        type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  
+  // Mars 2026
+  { id: 24, date: 5,  month: 2,  year: 2026, title: 'Atelier Printemps',          type: 'Ateliers Adultes', color: 'bg-yellow-700', colorHex: '#a16207' },
+  { id: 25, date: 8,  month: 2,  year: 2026, title: 'Atelier Pâques',            type: 'Ateliers Enfants', color: 'bg-gray-600',   colorHex: '#4b5563' },
+  { id: 26, date: 15, month: 2,  year: 2026, title: 'Festival de Musique',       type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  { id: 27, date: 20, month: 2,  year: 2026, title: 'Exposition Temporaire',     type: 'Tout public',      color: 'bg-gray-800',   colorHex: '#1f2937' },
+  { id: 28, date: 25, month: 2,  year: 2026, title: 'Atelier Land Art',          type: 'Ateliers Adultes', color: 'bg-gray-700',   colorHex: '#374151' },
+  { id: 29, date: 30, month: 2,  year: 2026, title: 'Soirée Electro',             type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  
+  // Avril 2026
+  { id: 30, date: 3,  month: 3,  year: 2026, title: 'Atelier Pâques Géant',       type: 'Ateliers Enfants', color: 'bg-gray-600',   colorHex: '#4b5563' },
+  { id: 31, date: 10, month: 3,  year: 2026, title: 'Journée Portes Ouvertes',  type: 'Tout public',      color: 'bg-gray-800',   colorHex: '#1f2937' },
+  { id: 32, date: 15, month: 3,  year: 2026, title: 'Atelier Calligraphie',      type: 'Ateliers Adultes', color: 'bg-yellow-700', colorHex: '#a16207' },
+  { id: 33, date: 20, month: 3,  year: 2026, title: 'Soirée Poésie',            type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  { id: 34, date: 25, month: 3,  year: 2026, title: 'Visite Thématique',        type: 'Tout public',      color: 'bg-gray-800',   colorHex: '#1f2937' },
+  
+  // Mai 2026
+  { id: 35, date: 1,  month: 4,  year: 2026, title: 'Atelier Fleurs',            type: 'Ateliers Adultes', color: 'bg-yellow-700', colorHex: '#a16207' },
+  { id: 36, date: 8,  month: 4,  year: 2026, title: 'Fête des Mères',            type: 'Ateliers Enfants', color: 'bg-gray-600',   colorHex: '#4b5563' },
+  { id: 37, date: 15, month: 4,  year: 2026, title: 'Nuit Européenne des Musées', type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  { id: 38, date: 20, month: 4,  year: 2026, title: 'Atelier Plein Air',         type: 'Ateliers Adultes', color: 'bg-gray-700',   colorHex: '#374151' },
+  { id: 39, date: 25, month: 4,  year: 2026, title: 'Concert de Printemps',      type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  
+  // Juin 2026
+  { id: 40, date: 5,  month: 5,  year: 2026, title: 'Atelier Été',              type: 'Ateliers Adultes', color: 'bg-yellow-700', colorHex: '#a16207' },
+  { id: 41, date: 12, month: 5,  year: 2026, title: 'Atelier Marin',             type: 'Ateliers Enfants', color: 'bg-gray-600',   colorHex: '#4b5563' },
+  { id: 42, date: 20, month: 5,  year: 2026, title: 'Fête de la Musique',         type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  { id: 43, date: 25, month: 5,  year: 2026, title: 'Exposition Été',           type: 'Tout public',      color: 'bg-gray-800',   colorHex: '#1f2937' }
 ];
 
 const filters = [
