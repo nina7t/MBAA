@@ -1,4 +1,4 @@
-@use '../utils/variables' as *;
+@use "../utils/variables" as *;
 
 .horizontal-timeline-section {
     padding: 4rem 1.5rem;
@@ -15,7 +15,7 @@
     }
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -31,7 +31,7 @@
         color: $color-primary-dark;
         margin-bottom: 1rem;
         font-weight: 700;
-        
+
         @media (min-width: 768px) {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
@@ -43,7 +43,7 @@
         color: #888;
         margin-bottom: 3rem;
         font-size: 0.95rem;
-        
+
         @media (min-width: 768px) {
             margin-bottom: 4rem;
         }
@@ -53,9 +53,9 @@
 .horizontal-timeline-wrapper {
     max-width: 100%;
     position: relative;
-    
+
     &::before {
-        content: '← Swipe →';
+        content: "← Swipe →";
         position: absolute;
         bottom: -2.5rem;
         left: 50%;
@@ -66,7 +66,7 @@
         opacity: 0.6;
         white-space: nowrap;
         letter-spacing: 1px;
-        
+
         @media (min-width: 768px) {
             display: none;
         }
@@ -115,11 +115,11 @@
     flex: 0 0 calc(100vw - 3rem);
     scroll-snap-align: start;
     scroll-snap-stop: auto;
-    
+
     @media (min-width: 640px) {
         flex: 0 0 320px;
     }
-    
+
     @media (min-width: 768px) {
         flex: 0 0 360px;
     }
@@ -134,12 +134,14 @@
     width: 14px;
     height: 14px;
     background: linear-gradient(135deg, $bg-or, $bg-or);
-    border: 3px solid #FFFFFF;
+    border: 3px solid #ffffff;
     border-radius: 50%;
     top: 0;
     left: 1.75rem;
     z-index: 2;
-    box-shadow: 0 2px 8px rgba($bg-or, 0.3), inset 0 0 0 3px $bg-or;
+    box-shadow:
+        0 2px 8px rgba($bg-or, 0.3),
+        inset 0 0 0 3px $bg-or;
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     @media (min-width: 768px) {
@@ -147,7 +149,9 @@
         height: 18px;
         border-width: 4px;
         left: 1.9rem;
-        box-shadow: 0 4px 12px rgba($bg-or, 0.4), inset 0 0 0 4px $bg-or;
+        box-shadow:
+            0 4px 12px rgba($bg-or, 0.4),
+            inset 0 0 0 4px $bg-or;
     }
 }
 
@@ -176,7 +180,7 @@
     }
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         right: 0;
@@ -187,14 +191,18 @@
     }
 
     &:hover {
-        box-shadow: 0 12px 32px rgba($bg-or, 0.2), 0 0 24px rgba($bg-or, 0.1);
+        box-shadow:
+            0 12px 32px rgba($bg-or, 0.2),
+            0 0 24px rgba($bg-or, 0.1);
         transform: translateY(-8px);
         border-top-color: rgba($bg-or, 0.4);
 
         .timeline-dot {
             width: 20px;
             height: 20px;
-            box-shadow: 0 6px 16px rgba($bg-or, 0.5), inset 0 0 0 4px $bg-or;
+            box-shadow:
+                0 6px 16px rgba($bg-or, 0.5),
+                inset 0 0 0 4px $bg-or;
             background: linear-gradient(135deg, $bg-or, $bg-or);
             left: 1.6rem;
 
@@ -202,7 +210,9 @@
                 width: 24px;
                 height: 24px;
                 left: 1.7rem;
-                box-shadow: 0 8px 20px rgba($bg-or, 0.5), inset 0 0 0 5px $bg-or;
+                box-shadow:
+                    0 8px 20px rgba($bg-or, 0.5),
+                    inset 0 0 0 5px $bg-or;
             }
         }
     }
@@ -286,7 +296,8 @@
 }
 
 @keyframes float {
-    0%, 100% {
+    0%,
+    100% {
         transform: translateY(0px);
     }
     50% {
@@ -329,7 +340,7 @@
         margin-bottom: 1rem;
         font-weight: 400;
         letter-spacing: -0.8px;
-        
+
         @media (min-width: 768px) {
             font-size: 2.8rem;
             font-weight: 400;
@@ -346,7 +357,7 @@
         max-width: 600px;
         margin-left: auto;
         margin-right: auto;
-        
+
         @media (min-width: 768px) {
             margin-bottom: 6rem;
             font-size: 1rem;
@@ -392,7 +403,7 @@
 
     @media (min-width: 1024px) {
         margin-bottom: 7rem;
-        
+
         &:nth-child(odd) {
             flex-direction: row;
             text-align: right;
@@ -405,7 +416,7 @@
 
         &:nth-child(even) {
             flex-direction: row-reverse;
-            
+
             .timeline-content {
                 margin-left: 5rem;
                 margin-right: 0;
@@ -414,7 +425,7 @@
     }
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         width: 12px;
         height: 12px;
@@ -437,7 +448,7 @@
     }
 
     &::after {
-        content: '';
+        content: "";
         position: absolute;
         width: 100%;
         height: 4rem;
@@ -475,12 +486,16 @@
         width: 18px;
         height: 18px;
         background: $bg-or;
-        box-shadow: 0 0 0 4px #ffffff, 0 0 0 5px #e5e5e5;
+        box-shadow:
+            0 0 0 4px #ffffff,
+            0 0 0 5px #e5e5e5;
 
         @media (min-width: 1024px) {
             width: 20px;
             height: 20px;
-            box-shadow: 0 0 0 5px #ffffff, 0 0 0 6px #e5e5e5;
+            box-shadow:
+                0 0 0 5px #ffffff,
+                0 0 0 6px #e5e5e5;
         }
     }
 
@@ -506,7 +521,7 @@
 .timeline-content {
     background: #ffffff;
     padding: 2rem;
-    border-radius: 0;
+    border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     flex: 1;
@@ -518,7 +533,7 @@
     @media (min-width: 1024px) {
         flex: 0 1 45%;
         padding: 3rem;
-        border-radius: 0;
+        border-radius: 5px;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
         margin-left: 3rem;
     }
@@ -534,7 +549,7 @@
     background: transparent;
     color: #999999;
     padding: 0;
-    border-radius: 0;
+    border-radius: 5px;
     font-size: 0.75rem;
     font-weight: 400;
     margin-bottom: 1.2rem;
@@ -598,7 +613,7 @@
 
 .timeline-artists {
     margin-top: 1.2rem;
-    
+
     .artist-label {
         display: block;
         font-size: 0.85rem;
@@ -637,7 +652,7 @@
 
     &:hover {
         background-color: $bg-or;
-        color: #FFFFFF;
+        color: #ffffff;
         border-color: $bg-or;
         transform: scale(1.05);
     }

@@ -1,4 +1,4 @@
-@use 'utils/variables' as *;
+@use "utils/variables" as *;
 
 .visiteur-body {
     margin: 0;
@@ -24,7 +24,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    
+
     @media (max-width: 768px) {
         width: 220px;
         padding: 1.5rem 1rem;
@@ -96,15 +96,15 @@
     color: #ccc;
     text-decoration: none;
     font-size: 0.95rem;
-    border-radius: 8px;
+    border-radius: 10px;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     font-family: $font-secondary;
-    
+
     &:hover {
         background: rgba($bg-or, 0.1);
         color: #fff;
     }
-    
+
     &.active {
         background: $bg-or;
         color: white;
@@ -116,13 +116,13 @@
     background: transparent;
     border: 1px solid $bg-or;
     color: $bg-or;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 0.9rem;
     font-weight: 600;
     transition: all 0.3s ease;
     font-family: $font-secondary;
-    
+
     &:hover {
         background: rgba($bg-or, 0.1);
     }
@@ -133,7 +133,7 @@
     margin-left: 280px;
     flex: 1;
     padding: 3rem 2rem;
-    
+
     @media (max-width: 768px) {
         margin-left: 220px;
         padding: 2rem 1.5rem;
@@ -142,7 +142,7 @@
 
 .visiteur-header {
     margin-bottom: 3rem;
-    
+
     h1 {
         font-size: 2.5rem;
         color: $color-primary-dark;
@@ -150,7 +150,7 @@
         font-weight: 700;
         font-family: $font-primary;
     }
-    
+
     .welcome-text {
         color: #666;
         font-size: 1rem;
@@ -183,7 +183,7 @@
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
     border-bottom: 2px solid #eee;
-    
+
     h2 {
         color: $color-primary-dark;
         font-size: 1.8rem;
@@ -207,7 +207,7 @@
     padding: 1.5rem;
     background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
     transition: all 0.3s ease;
-    
+
     &:hover {
         border-color: $bg-or;
         box-shadow: 0 4px 16px rgba($bg-or, 0.1);
@@ -236,12 +236,12 @@
     border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 600;
-    
+
     &.valid {
         background: rgba(76, 175, 80, 0.15);
-        color: #4CAF50;
+        color: #4caf50;
     }
-    
+
     &.expired {
         background: rgba(200, 200, 200, 0.15);
         color: #999;
@@ -250,13 +250,13 @@
 
 .ticket-details {
     margin-bottom: 1.5rem;
-    
+
     p {
         margin: 0.6rem 0;
         font-size: 0.9rem;
         color: #666;
         font-family: $font-secondary;
-        
+
         strong {
             color: $color-primary-dark;
         }
@@ -274,7 +274,7 @@
     font-weight: 600;
     transition: all 0.3s ease;
     font-family: $font-secondary;
-    
+
     &:hover {
         background: $bg-or;
         transform: translateY(-2px);
@@ -296,12 +296,12 @@
     border: 1px solid #eee;
     border-radius: 10px;
     transition: all 0.3s ease;
-    
+
     &:hover {
         border-color: $bg-or;
         background: #fafafa;
     }
-    
+
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
     }
@@ -310,8 +310,8 @@
 .event-image {
     width: 100%;
     overflow: hidden;
-    border-radius: 8px;
-    
+    border-radius: 10px;
+
     img {
         width: 100%;
         height: 200px;
@@ -323,7 +323,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
     h3 {
         color: $color-primary-dark;
         font-size: 1.3rem;
@@ -331,13 +331,13 @@
         font-weight: 600;
         font-family: $font-secondary;
     }
-    
+
     .event-date {
         color: #666;
         font-size: 0.95rem;
         margin: 0 0 0.8rem 0;
     }
-    
+
     .event-desc {
         color: #666;
         font-size: 0.95rem;
@@ -364,11 +364,11 @@
     color: #ddd;
     cursor: pointer;
     transition: all 0.2s ease;
-    
+
     &.filled {
         color: $bg-or;
     }
-    
+
     &:hover {
         transform: scale(1.2);
     }
@@ -386,7 +386,7 @@
     border: 1px solid #eee;
     border-radius: 10px;
     background: #fafafa;
-    
+
     h3 {
         color: $color-primary-dark;
         font-size: 1.1rem;
@@ -394,19 +394,19 @@
         font-weight: 600;
         font-family: $font-secondary;
     }
-    
+
     ul {
         list-style: none;
         margin: 0;
         padding: 0;
-        
+
         li {
             padding: 0.5rem 0;
             color: #666;
             font-size: 0.9rem;
             font-family: $font-secondary;
             line-height: 1.6;
-            
+
             span {
                 font-weight: 600;
                 color: $color-primary-dark;
@@ -420,7 +420,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    
+
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
     }
@@ -458,14 +458,14 @@
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
-    
+
     label {
         font-weight: 600;
         color: $color-primary-dark;
         font-size: 0.9rem;
         font-family: $font-secondary;
     }
-    
+
     input {
         padding: 0.9rem 1rem;
         border: 1px solid #ddd;
@@ -473,7 +473,7 @@
         font-size: 0.95rem;
         font-family: $font-secondary;
         transition: all 0.3s ease;
-        
+
         &:focus {
             outline: none;
             border-color: $bg-or;
@@ -499,7 +499,7 @@
     font-size: 0.9rem;
     color: #666;
     font-family: $font-secondary;
-    
+
     input[type="checkbox"] {
         width: 18px;
         height: 18px;
@@ -512,7 +512,7 @@
     display: flex;
     align-items: flex-start;
     gap: 0.8rem;
-    
+
     input[type="checkbox"] {
         width: 18px;
         height: 18px;
@@ -520,7 +520,7 @@
         accent-color: $bg-or;
         margin-top: 2px;
     }
-    
+
     label {
         font-size: 0.85rem;
         color: #666;
@@ -544,7 +544,7 @@
     text-decoration: none;
     text-align: center;
     display: inline-block;
-    
+
     &:hover {
         background: $bg-or;
         transform: translateY(-2px);
@@ -565,19 +565,19 @@
     background: linear-gradient(135deg, $bg-or 0%, $bg-or 100%);
     border-radius: 10px;
     color: white;
-    
+
     h3 {
         color: white;
         font-size: 1.3rem;
         margin: 0 0 1.5rem 0;
         font-weight: 600;
     }
-    
+
     ul {
         list-style: none;
         margin: 0;
         padding: 0;
-        
+
         li {
             padding: 0.8rem 0;
             font-size: 0.95rem;
@@ -596,7 +596,7 @@
     .visiteur-sidebar {
         width: 220px;
     }
-    
+
     .visiteur-main {
         margin-left: 220px;
     }

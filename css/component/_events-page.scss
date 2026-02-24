@@ -38,7 +38,7 @@
         background-color: $bg-or;
         color: $color-primary-white;
         border: none;
-        border-radius: 8px;
+        border-radius: 10px;
         font-family: $font-secondary;
         font-size: clamp(1rem, 2vw, 1.125rem);
         font-weight: 600;
@@ -102,7 +102,7 @@
         padding: 1rem 1rem 1rem 3rem;
         background-color: rgba($color-primary-white, 0.1);
         border: 2px solid rgba($color-primary-white, 0.2);
-        border-radius: 8px;
+        border-radius: 10px;
         color: $color-primary-white;
         font-family: $font-secondary;
         font-size: 1rem;
@@ -125,7 +125,7 @@
         background-color: $bg-or;
         color: $color-primary-white;
         border: none;
-        border-radius: 8px;
+        border-radius: 10px;
         font-family: $font-secondary;
         font-size: 1rem;
         font-weight: 600;
@@ -174,7 +174,7 @@
         padding: 0.625rem 1rem;
         background-color: rgba($color-primary-white, 0.08);
         border: 2px solid rgba($color-primary-white, 0.2);
-        border-radius: 8px;
+        border-radius: 10px;
         color: $color-primary-white;
         font-family: $font-secondary;
         font-size: 0.875rem;
@@ -615,7 +615,7 @@
         flex: 1;
         padding: 0.75rem 1rem;
         border: 2px solid rgba($color-primary-white, 0.2);
-        border-radius: 8px;
+        border-radius: 10px;
         background-color: rgba($color-primary-white, 0.1);
         color: $color-primary-white;
         font-family: $font-secondary;
@@ -636,7 +636,7 @@
         background-color: $bg-or;
         color: $color-primary-white;
         border: none;
-        border-radius: 8px;
+        border-radius: 10px;
         font-family: $font-secondary;
         font-size: 0.9375rem;
         font-weight: 600;
@@ -722,7 +722,7 @@
         background-color: transparent;
         color: $bg-or;
         border: 2px solid $bg-or;
-        border-radius: 8px;
+        border-radius: 10px;
         font-family: $font-secondary;
         font-size: 1rem;
         font-weight: 600;

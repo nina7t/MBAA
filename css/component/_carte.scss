@@ -68,7 +68,7 @@
         @media (min-width: 1024px) {
             width: 55%;
             flex: 1;
-            gap: 15px;
+    
         }
     }
 
@@ -79,28 +79,26 @@
         font-weight: 700;
         line-height: $line-height-compact;
         margin-top: 0;
-        margin-bottom: $spacing-h2-bottom;
         letter-spacing: -0.015em;
         
         @media (min-width: 768px) {
             font-size: clamp($font-size-h2-tablet, 4.5vw + 0.5rem, $font-size-h2-desktop);
-            margin-bottom: $spacing-h2-bottom-desktop;
+    
         }
     }
 
     &-subtitle{
         // Utilise la hiérarchie H3 pour les sous-titres de cartes
         color: $color-primary-white;
-        font-size: clamp($font-size-h3-mobile, 3vw + 0.25rem, $font-size-h3-desktop);
+        font-size: clamp(1.5rem, 3vw, 2rem);
         font-weight: 600;
         line-height: $line-height-compact;
         margin-top: 0;
-        margin-bottom: $spacing-h3-bottom;
         letter-spacing: -0.01em;
         
         @media (min-width: 768px) {
-            font-size: clamp($font-size-h3-tablet, 3.5vw + 0.25rem, $font-size-h3-desktop);
-            margin-bottom: $spacing-h3-bottom-desktop;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+    
         }
     }
 

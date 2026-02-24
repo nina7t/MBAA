@@ -1,4 +1,4 @@
-@use '../utils/variables' as *;
+@use "../utils/variables" as *;
 
 .movements-table-section {
   padding: 4rem 2rem;
@@ -29,8 +29,8 @@
 }
 
 .movements-table-wrapper {
-  background-color: #FFFFFF;
-  border-radius: 8px;
+  background-color: #ffffff;
+  border-radius: 10px;
   overflow-x: auto;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -43,7 +43,7 @@
 
   thead {
     background-color: $bg-or;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   th {
@@ -111,9 +111,9 @@
   .movements-table {
     font-size: 0.85rem;
 
-    th, td {
+    th,
+    td {
       padding: 0.8rem;
     }
   }
 }
-

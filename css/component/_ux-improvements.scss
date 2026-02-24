@@ -257,7 +257,7 @@
         flex: 1;
         padding: 0.875rem 1.25rem;
         border: 2px solid rgba($color-primary-white, 0.2);
-        border-radius: 8px;
+        border-radius: 10px;
         background-color: rgba($color-primary-white, 0.1);
         color: $color-primary-white;
         font-family: $font-secondary;
@@ -281,7 +281,7 @@
         background-color: $bg-or;
         color: $color-primary-white;
         border: none;
-        border-radius: 8px;
+        border-radius: 10px;
         font-family: $font-secondary;
         font-size: 1rem;
         font-weight: 600;
@@ -310,7 +310,7 @@
     padding: clamp(1rem, 3vw, 1.5rem);
     margin-bottom: clamp(1.5rem, 4vw, 2rem);
     background-color: rgba($color-primary-white, 0.05);
-    border-radius: 8px;
+    border-radius: 10px;
     font-family: $font-secondary;
     font-size: clamp(0.75rem, 1.5vw, 0.875rem);
 
@@ -406,7 +406,7 @@
         max-width: 200px;
         padding: 0.625rem 1rem;
         border: 2px solid rgba($color-primary-white, 0.2);
-        border-radius: 8px;
+        border-radius: 10px;
         background-color: transparent;
         color: $color-primary-white;
         font-family: $font-secondary;

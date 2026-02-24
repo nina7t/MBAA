@@ -10,6 +10,82 @@
          font-style: normal;
   }
 
+@font-face {
+  font-family: 'Synonym-Extralight';
+  src: url('../fonts/Synonym-Extralight.woff2') format('woff2'),
+       url('../fonts/Synonym-Extralight.woff') format('woff'),
+       url('../fonts/Synonym-Extralight.ttf') format('truetype');
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Synonym-Light';
+  src: url('../fonts/Synonym-Light.woff2') format('woff2'),
+       url('../fonts/Synonym-Light.woff') format('woff'),
+       url('../fonts/Synonym-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Synonym-Regular';
+  src: url('../fonts/Synonym-Regular.woff2') format('woff2'),
+       url('../fonts/Synonym-Regular.woff') format('woff'),
+       url('../fonts/Synonym-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Synonym-Medium';
+  src: url('../fonts/Synonym-Medium.woff2') format('woff2'),
+       url('../fonts/Synonym-Medium.woff') format('woff'),
+       url('../fonts/Synonym-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Synonym-Semibold';
+  src: url('../fonts/Synonym-Semibold.woff2') format('woff2'),
+       url('../fonts/Synonym-Semibold.woff') format('woff'),
+       url('../fonts/Synonym-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Synonym-Bold';
+  src: url('../fonts/Synonym-Bold.woff2') format('woff2'),
+       url('../fonts/Synonym-Bold.woff') format('woff'),
+       url('../fonts/Synonym-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 700.0;
+*
+* available axes:
+'wght' (range from 200.0 to 700.0
+*/
+@font-face {
+  font-family: 'Synonym-Variable';
+  src: url('../fonts/Synonym-Variable.woff2') format('woff2'),
+       url('../fonts/Synonym-Variable.woff') format('woff'),
+       url('../fonts/Synonym-Variable.ttf') format('truetype');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+
+@import url(https://db.onlinewebfonts.com/c/5d86f2e8ccc2811b9392aa03b7ce4a63?family=Styrene+B+Regular+Regular); 
+
 // Images de fond par page
 $bg-home: url('/asset/Img/statues-groupe.jpg');
 $bg-collections: url('/asset/Img/bg-collections.jpg');
@@ -18,7 +94,7 @@ $bg-contact: url('/asset/Img/bg-contact.jpg');
 
     /* Polices */    
     $font-primary: 'ClashDisplay-Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    $font-secondary: 'Futura PT', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    $font-secondary: 'Styrene B Regular Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     $font-fallback: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     
     /* Couleurs */    
@@ -141,7 +217,7 @@ $bg-contact: url('/asset/Img/bg-contact.jpg');
 /* Block: heading */    
 
 p{
-    font-family: 'Futura Prt', sans-serif;
+    font-family: $font-secondary;
 }
 .heading {
     font-family: $font-primary;

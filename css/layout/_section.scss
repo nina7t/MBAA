@@ -11,7 +11,9 @@
     padding: clamp(1.25rem, 3vw, 3rem);
     max-width: 100%;
     box-sizing: border-box;
+    margin: 5rem 0rem;
 
+    
     &-titre {
         // Utilise la hiérarchie H2 pour les bannières
         font-size: clamp($font-size-h2-mobile, 4vw + 0.5rem, $font-size-h2-desktop);
@@ -86,21 +88,10 @@
     }
 
     @media (min-width: 768px) {
-        max-width: 95%;
-        gap: 1.5rem;
-        margin: 1rem;
+        max-width: 65%;
+        margin: 5rem 0rem 5rem;
     }
 
-    @media (min-width: 1024px) {
-        max-width: 90%;
-        padding: 2.5rem;
-    }
-
-    @media (min-width: 1600px) {
-        max-width: 70%;
-        padding: 3.5rem;
-        margin: 2rem;
-    }
 }
 
 // Variante pour la section programmation
@@ -174,7 +165,7 @@
 
 // Section programmation
 .main__programmation {
-    width: 100%;
+    max-width: 65%;
     margin: 0;
     box-sizing: border-box;
 }

@@ -17,12 +17,11 @@
     }
     
     @media (min-width: 1024px) {
-        margin: 2rem;
+        margin: 10rem;
     grid-template-columns: repeat(12, 1fr);
     gap: 1rem;
     grid-template-rows: 500px 500px 250px;
-  
-    }
+  }
 }
 
 

@@ -5,56 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="./asset/Img/logo/logo-mat-small.png" />
   <link rel="stylesheet" href="./style.css" />
-
-  <!-- Locomotive Scroll CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.css" />
-
-  <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
+    <script src="./js/menu.js"></script>
   <title>MBAA - Musée des Beaux-Arts et d'Archéologie de Besançon</title>
-
 </head>
-<body data-scroll-container>
-  <header class="header header--evenement">
+<body data-scroll-container="">
+  <header class="header">
+    <!-- ====== NAVBAR (preserved) ====== -->
     <div class="header__container">
-      <!-- Logo -->
       <a class="header__logo-link" href="./index.html">
         <img class="header__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
       </a>
-
-      <!-- Bouton menu burger -->
       <button class="header__menu-toggle" aria-label="menu" aria-expanded="false" aria-controls="headerNav">
         <span class="header__menu-bar"></span>
       </button>
-
-      <!-- Navigation -->
       <nav class="header__nav" id="headerNav" aria-hidden="true">
         <ul class="header__nav-list header__nav-list--main">
-          <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./infos.html">Infos pratiques</a>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="./infos.html">Infos pratiques</a>
           </li>
-          <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./collections.html">Collections</a>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="./collections.html">Collections</a>
           </li>
-          <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./evenement.html">Évènements</a>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="./evenement.html">Évènement</a>
           </li>
-          <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./musee-histoire.html">Le musée</a>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="./musee-histoire.html">Le musée</a>
           </li>
-          <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./infos.html">Contact</a>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="./infos.html">Contact</a>
           </li>
         </ul>
-
         <ul class="header__nav-list header__nav-list--secondary">
-          <!-- Icône Contact (remplace connexion.svg) -->
-          <!-- Icône Contact (remplace connexion.svg) -->
           <li class="header__nav-item">
             <a class="header__nav-link" href="./connexion.html" aria-label="Connexion">
               <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none">
@@ -63,12 +48,10 @@
               </svg>
             </a>
           </li>
-
-          <!-- Icône Ticket (remplace ticket.svg) -->
           <li class="header__nav-item">
             <a class="header__nav-link" href="#" aria-label="Billetterie">
               <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                strokeLinecap="round" strokeLinejoin="round">
+                stroke-linecap="round" stroke-linejoin="round">
                 <path
                   d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z">
                 </path>
@@ -76,49 +59,81 @@
                 <path d="M13 17v2"></path>
                 <path d="M13 11v2"></path>
               </svg>
-
-              </svg>
             </a>
           </li>
-
-          <!-- Icône Loupe (remplace Search.svg) -->
           <li class="header__nav-item">
             <a class="header__nav-link" href="#" aria-label="Recherche">
               <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                strokeLinecap="round" strokeLinejoin="round">
+                stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8"></circle>
                 <path d="m21 21-4.35-4.35"></path>
-              </svg>
-              </svg>
-            </a>
-          </li>
-
-          <li class="header__nav-item">
-            <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">FR
+            </svg>
             </a>
           </li>
           <li class="header__nav-item">
-            <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">EN
-            </a>
+            <a class="header__nav-link-fr" href="#">FR</a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link-fr" href="#">EN</a>
           </li>
         </ul>
       </nav>
     </div>
 
-    <div class="header__hero-content header__hero-content--reduced">
-      <h1 class="header__title">ÉVÈNEMENTS
-        <img class="header__cross" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche">
-      </h1>
-      <span id="sous-menu-header">Découvrez la vie du musée au rythme des expositions, ateliers, rencontres et temps
-        forts qui animent chaque saison. Petits et grands sont invités à partager des moments de découverte et de
-        création.</span>
-      <!-- Bouton Je réservés ma place sous le titre -->
-      <a href="#" class="header__reserve-btn">Je réserve ma place</a>
-    </div>
+    <!-- ====== HERO — NEW LAYOUT ====== -->
+    <div class="header__hero">
 
-    <!-- Flèche de scroll centrée en bas -->
-    <div class="header__scroll">
-      <img class="header__scroll-icon" src="./asset/Img/svg/icon-arrow_bas.svg" alt="Défiler vers le bas" />
+      <!-- Left: title block -->
+      <div class="hero__left">
+        <p class="hero__eyebrow">Les ÉVÈNEMENTS — Musée des Beaux-Arts</p>
+        <h1 class="hero__title">
+          Les<br>
+          ÉVÈNEMENTS<br>
+          <em>au Musée</em>
+        </h1>
+      </div>
+
+      <!-- Right: description + CTA -->
+      <div class="hero__right">
+        <p class="hero__description">
+          Peinture, sculpture, dessin — explorez cinq siècles de création artistique conservés dans nos collections
+          permanentes.
+        </p>
+        <a href="#" class="hero__cta">
+          Réserver ma place
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Bottom strip: stats + scroll -->
+      <div class="hero__strip">
+        <div class="hero__stat">
+          <span class="hero__stat-number">5 600</span>
+          <span class="hero__stat-label">Œuvres exposées</span>
+        </div>
+        <div class="hero__strip-divider"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-number">XVI<sup style="font-size:0.55em">e</sup></span>
+          <span class="hero__stat-label">Période la plus ancienne</span>
+        </div>
+        <div class="hero__strip-divider"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-number">Gratuit</span>
+          <span class="hero__stat-label">Moins de 26 ans</span>
+        </div>
+        <div class="hero__scroll">
+          <div class="hero__scroll-arrow">
+            <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 5v14M5 12l7 7 7-7" />
+            </svg>
+          </div>
+          Défiler
+        </div>
+      </div>
+
     </div>
   </header>
 
@@ -184,25 +199,21 @@
     </div>
   </section>
 
-  <section class="main__explore">
-    <section class="main__explore">
-      <section class="main__banniere">
-        <section class="main__banniere--explorer">
-          <img class="main__banniere-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
+    <section class="main__banniere">
+      <section class="main__banniere--explorer">
+        <img class="main__banniere-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
 
-          <h2 class="main__banniere-titre">
-            LES<br>
-            ÉVÈNEMENTS
-          </h2>
-        </section>
-        <section class="main__banniere-contenu">
-          <p class="main__banniere-description">
-            Plongez dans l'effervescence culturelle du Musée des Beaux-Arts et d'Archéologie de Besançon à travers une
-            variété d'événements captivants. Que vous soyez amateur d'art, passionné d'histoire ou simplement curieux,
-            notre calendrier d'événements est conçu pour offrir des expériences enrichissantes à tous les visiteurs.
-          </p>
-        </section>
+        <h2 class="main__banniere-titre">
+          LES<br>
+          ÉVÈNEMENTS
+        </h2>
       </section>
+      <section class="main__banniere-contenu">
+        <p class="main__banniere-description">
+          Plongez dans l'effervescence culturelle du Musée des Beaux-Arts et d'Archéologie de Besançon à travers une
+          variété d'événements captivants. Que vous soyez amateur d'art, passionné d'histoire ou simplement curieux,
+          notre calendrier d'événements est conçu pour offrir des expériences enrichissantes à tous les visiteurs.
+        </p>
     </section>
   </section>
 
@@ -279,10 +290,20 @@
           comprendre la richesse du patrimoine artistique conservé au musée.
         </p>
 
-       
+
       </section>
 
-      <!-- Filtres -->
+
+
+
+
+
+
+
+
+
+
+      <!-- Filtres
       <div class="bibliotheque__filters">
         <div class="bibliotheque__search">
           <svg class="bibliotheque__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -325,7 +346,7 @@
         </button>
       </div>
 
-      <!-- Grille d'images -->
+      Grille d'images 
       <div class="bibliotheque__grid-container">
         <div class="bibliotheque__grid" id="bibliothequeGrid">
 
@@ -398,115 +419,114 @@
 
     </div>
   </section>
+  -->
+      <footer class="footer">
+        <div class="footer__contain-form">
+          <div class="footer__logo-container">
+            <a class="footer__logo-link" href="#">
+              <img class="footer__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
+              <h2 class="footer__title">Suivez-nous pour recevoir la newsletter</h2>
+            </a>
+            <form class="footer__form">
+              <input class="footer__input" type="email" placeholder="Entrez votre adresse e-mail" required />
+              <button class="footer__button" type="submit">S'abonner</button>
+            </form>
+          </div>
 
-  <footer class="footer">
-    <div class="footer__contain-form">
-      <div class="footer__logo-container">
-        <a class="footer__logo-link" href="#">
-          <img class="footer__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
-          <h2 class="footer__title">Suivez-nous pour recevoir la newsletter</h2>
-        </a>
-        <form class="footer__form">
-          <input class="footer__input" type="email" placeholder="Entrez votre adresse e-mail" required />
-          <button class="footer__button" type="submit">S'abonner</button>
-        </form>
-      </div>
+          <section class="footer__nav">
+            <ul class="footer__nav-list">
+              <li class="footer__nav-item">
+                <h4 class="footer__nav-title">Le musée</h4>
+              </li>
+              <li class="footer__nav-item">
+                <a class="footer__nav-link" href="./musee-histoire.html">Présentation & histoire</a>
+              </li>
+              <li class="footer__nav-item">
+                <a class="footer__nav-link" href="#">Collections</a>
+              </li>
+            </ul>
 
-      <section class="footer__nav">
-        <ul class="footer__nav-list">
-          <li class="footer__nav-item">
-            <h4 class="footer__nav-title">Le musée</h4>
-          </li>
-          <li class="footer__nav-item">
-            <a class="footer__nav-link" href="./musee-histoire.html">Présentation & histoire</a>
-          </li>
-          <li class="footer__nav-item">
-            <a class="footer__nav-link" href="#">Collections</a>
-          </li>
-        </ul>
+            <ul class="footer__nav-list">
+              <li class="footer__nav-item">
+                <h4 class="footer__nav-title">Programmation</h4>
+              </li>
+              <li class="footer__nav-item">
+                <a class="footer__nav-link" href="./evenement.html">Événements</a>
+              </li>
+              <li class="footer__nav-item">
+                <a class="footer__nav-link" href="./collections.html">Collections</a>
+              </li>
+            </ul>
 
-        <ul class="footer__nav-list">
-          <li class="footer__nav-item">
-            <h4 class="footer__nav-title">Programmation</h4>
-          </li>
-          <li class="footer__nav-item">
-            <a class="footer__nav-link" href="./evenement.html">Événements</a>
-          </li>
-          <li class="footer__nav-item">
-            <a class="footer__nav-link" href="./collections.html">Collections</a>
-          </li>
-        </ul>
+            <ul class="footer__nav-list">
+              <li class="footer__nav-item">
+                <h4 class="footer__nav-title">Contact</h4>
+              </li>
+              <li class="footer__nav-item">
+                <a class="footer__nav-link" href="#">Horaires et tarifs</a>
+              </li>
+              <li class="footer__nav-item">
+                <a class="footer__nav-link" href="#">Nous contacter</a>
+              </li>
+              <li class="footer__nav-item">
+                <a class="footer__nav-link" href="#">Accessibilité</a>
+              </li>
+            </ul>
+          </section>
 
-        <ul class="footer__nav-list">
-          <li class="footer__nav-item">
-            <h4 class="footer__nav-title">Contact</h4>
-          </li>
-          <li class="footer__nav-item">
-            <a class="footer__nav-link" href="#">Horaires et tarifs</a>
-          </li>
-          <li class="footer__nav-item">
-            <a class="footer__nav-link" href="#">Nous contacter</a>
-          </li>
-          <li class="footer__nav-item">
-            <a class="footer__nav-link" href="#">Accessibilité</a>
-          </li>
-        </ul>
-      </section>
+          <section class="footer__social">
+            <h2>Nos réseaux sociaux</h2>
+            <section class="footer__social-media">
+              <a class="footer__social-link" href="#" aria-label="Facebook">
+                <img class="footer__social-icon" src="./asset/Img/svg/facebook.svg" alt="Facebook" />
+              </a>
+              <a class="footer__social-link" href="#" aria-label="Instagram">
+                <img class="footer__social-icon" src="./asset/Img/svg/insta.svg" alt="Instagram" />
+              </a>
+              <a class="footer__social-link" href="#" aria-label="Linkdin">
+                <img class="footer__social-icon" src="./asset/Img/svg/linkdin.svg" alt="Twitter" />
+              </a>
+              <a class="footer__social-link" href="#" aria-label="Tiktok">
+                <img class="footer__social-icon" src="./asset/Img/svg/tiktok.svg" alt="YouTube" />
+              </a>
+            </section>
+          </section>
 
-      <section class="footer__social">
-        <h2>Nos réseaux sociaux</h2>
-        <section class="footer__social-media">
-          <a class="footer__social-link" href="#" aria-label="Facebook">
-            <img class="footer__social-icon" src="./asset/Img/svg/facebook.svg" alt="Facebook" />
-          </a>
-          <a class="footer__social-link" href="#" aria-label="Instagram">
-            <img class="footer__social-icon" src="./asset/Img/svg/insta.svg" alt="Instagram" />
-          </a>
-          <a class="footer__social-link" href="#" aria-label="Linkdin">
-            <img class="footer__social-icon" src="./asset/Img/svg/linkdin.svg" alt="Twitter" />
-          </a>
-          <a class="footer__social-link" href="#" aria-label="Tiktok">
-            <img class="footer__social-icon" src="./asset/Img/svg/tiktok.svg" alt="YouTube" />
-          </a>
-        </section>
-      </section>
+          <section class="footer__links">
+            <a class="footer__link" href="#">Mentions légales</a>
+            <a class="footer__link" href="#">Politique de confidentialité</a>
+          </section>
+      </footer>
+      <script src="./js/bibliotheque-filter.js"></script>
+      <script src="./js/event-calendar.js"></script>
 
-      <section class="footer__links">
-        <a class="footer__link" href="#">Mentions légales</a>
-        <a class="footer__link" href="#">Politique de confidentialité</a>
-      </section>
-  </footer>
-  <script src="./js/bibliotheque-filter.js"></script>
-  <script src="./js/event-calendar.js"></script>
 
-  <!-- Locomotive Scroll JS -->
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.umd.js"></script>
+      Locomotive Scroll JS
+      <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.umd.js"></script>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Initialiser les icônes Lucide
-      if (window.lucide) {
-        window.lucide.createIcons();
-      }
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          // Initialiser les icônes Lucide
+          if (window.lucide) {
+            window.lucide.createIcons();
+          }
 
-      // Initialiser Locomotive Scroll
-      const scroll = new LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]'),
-        smooth: true,
-        smartphone: {
-          smooth: true
-        },
-        tablet: {
-          smooth: true
-        },
-        multiplier: 1,
-        getSpeed: true,
-        getDirection: true
-      });
-    });
-  </script>
+          // Initialiser Locomotive Scroll
+          const scroll = new LocomotiveScroll({
+            el: document.querySelector('[data-scroll-container]'),
+            smooth: true,
+            smartphone: {
+              smooth: true
+            },
+            tablet: {
+              smooth: true
+            },
+            multiplier: 1,
+            getSpeed: true,
+            getDirection: true
+          });
+        });
+      </script>
 
 </body>
-  <!-- Menu JS (gere le scroll et leffet sur la navbar) -->
-  <script src="./js/menu.js"></script>
 </html>

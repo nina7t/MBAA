@@ -1,0 +1,57 @@
+<style>
+  /* On cache le scanner sur ordinateur */
+  #scanner-container {
+    display: none;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+  }
+
+  /* Affichage uniquement sur mobile/tablette */
+  @media (max-width: 768px) {
+    #scanner-container {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  video {
+    width: 100%;
+    border-radius: 15px;
+    border: 3px solid #007bff;
+  }
+
+  .btn-scan {
+    padding: 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+</style>
+
+<div id="scanner-container">
+  <video id="preview" autoplay playsinline></video>
+  <button class="btn-scan" onclick="startScanner()">Scanner à nouveau</button>
+</div>
+
+<script>
+  async function startScanner() {
+    try {
+      // On demande l'accès à la caméra arrière (environment)
+      const stream = await navigator.mediaDevices.getUserMedia({ 
+        video: { facingMode: "environment" } 
+      });
+      const video = document.getElementById('preview');
+      video.srcObject = stream;
+    } catch (err) {
+      alert("Erreur d'accès à la caméra : " + err);
+    }
+  }
+
+  // Lancer automatiquement au chargement si mobile
+  if (window.innerWidth <= 768) {
+    startScanner();
+  }
+</script>

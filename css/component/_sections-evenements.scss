@@ -1,4 +1,4 @@
-@use '../utils/variables' as *;
+@use "../utils/variables" as *;
 
 .Atelier,
 .Conférences {
@@ -9,7 +9,7 @@
   padding: clamp(2rem, 5vw, 4rem);
   margin: 0;
   width: 100%;
-  border-radius: 0;
+  border-radius: 5px;
   overflow: hidden;
   transition: all 0.3s ease;
 }
@@ -78,13 +78,13 @@
   }
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     right: 30px;
     width: 200px;
     height: 150px;
-    background-image: url('/asset/Img/atelier-jeunes.jpg');
+    background-image: url("/asset/Img/atelier-jeunes.jpg");
     background-size: cover;
     background-position: center;
     opacity: 0.8;
@@ -114,13 +114,13 @@
   }
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     right: 30px;
     width: 200px;
     height: 150px;
-    background-image: url('/asset/Img/misc-discussion.jpg');
+    background-image: url("/asset/Img/misc-discussion.jpg");
     background-size: cover;
     background-position: center;
     opacity: 0.8;
@@ -144,20 +144,20 @@
   padding: clamp(2rem, 5vw, 4rem);
   margin: 0;
   width: 100%;
-  border-radius: 0;
+  border-radius: 5px;
   overflow: hidden;
-  background: #8B6F47;
+  background: #8b6f47;
   color: $color-primary-white;
   transition: all 0.3s ease;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     right: 30px;
     width: 200px;
     height: 150px;
-    background-image: url('/asset/Img/atelier-poterie.png');
+    background-image: url("/asset/Img/atelier-poterie.png");
     background-size: cover;
     background-position: center;
     opacity: 0.8;
@@ -217,7 +217,7 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     background-color: $color-primary-white;
-    color: #8B6F47;
+    color: #8b6f47;
   }
 }
 
@@ -230,20 +230,20 @@
   padding: clamp(2rem, 5vw, 4rem);
   margin: 0;
   width: 100%;
-  border-radius: 0;
+  border-radius: 5px;
   overflow: hidden;
   background: $color-primary-dark;
   color: $color-primary-white;
   transition: all 0.3s ease;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     right: 30px;
     width: 200px;
     height: 150px;
-    background-image: url('/asset/Img/activite-performance-break.jpg');
+    background-image: url("/asset/Img/activite-performance-break.jpg");
     background-size: cover;
     background-position: center;
     opacity: 0.8;
@@ -275,7 +275,6 @@
   font-weight: $font-weight-bold;
   color: $color-primary-white;
   margin: 0;
-
 }
 
 .Jazz__description {

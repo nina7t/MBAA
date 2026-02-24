@@ -1,9 +1,67 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Barlow:400,500,700");
 /* POLICES */
+@import url(https://db.onlinewebfonts.com/c/5d86f2e8ccc2811b9392aa03b7ce4a63?family=Styrene+B+Regular+Regular);
+@import url("https://fonts.googleapis.com/css?family=Barlow:400,500,700");
 @font-face {
   font-family: "ClashDisplay-Variable";
   src: url("/asset/fonts/ClashDisplay-Variable.woff2") format("woff2"), url("/asset/fonts/ClashDisplay-Variable.woff") format("woff"), url("/asset/fonts/ClashDisplay-Variable.ttf") format("truetype");
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Synonym-Extralight";
+  src: url("../fonts/Synonym-Extralight.woff2") format("woff2"), url("../fonts/Synonym-Extralight.woff") format("woff"), url("../fonts/Synonym-Extralight.ttf") format("truetype");
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Synonym-Light";
+  src: url("../fonts/Synonym-Light.woff2") format("woff2"), url("../fonts/Synonym-Light.woff") format("woff"), url("../fonts/Synonym-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Synonym-Regular";
+  src: url("../fonts/Synonym-Regular.woff2") format("woff2"), url("../fonts/Synonym-Regular.woff") format("woff"), url("../fonts/Synonym-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Synonym-Medium";
+  src: url("../fonts/Synonym-Medium.woff2") format("woff2"), url("../fonts/Synonym-Medium.woff") format("woff"), url("../fonts/Synonym-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Synonym-Semibold";
+  src: url("../fonts/Synonym-Semibold.woff2") format("woff2"), url("../fonts/Synonym-Semibold.woff") format("woff"), url("../fonts/Synonym-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Synonym-Bold";
+  src: url("../fonts/Synonym-Bold.woff2") format("woff2"), url("../fonts/Synonym-Bold.woff") format("woff"), url("../fonts/Synonym-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 700.0;
+*
+* available axes:
+'wght' (range from 200.0 to 700.0
+*/
+@font-face {
+  font-family: "Synonym-Variable";
+  src: url("../fonts/Synonym-Variable.woff2") format("woff2"), url("../fonts/Synonym-Variable.woff") format("woff"), url("../fonts/Synonym-Variable.ttf") format("truetype");
   font-weight: 200 700;
   font-display: swap;
   font-style: normal;
@@ -21,7 +79,7 @@
 /* TYPOGRAPHIE */
 /* Block: heading */
 p {
-  font-family: "Futura Prt", sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .heading {
@@ -110,7 +168,7 @@ p {
 
 /* Element: text__highlight (texte Futura PT */
 .text__highlight {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1.125rem;
   font-weight: 700;
 }
@@ -221,7 +279,6 @@ h4 {
   font-size: clamp(1rem, 2vw + 0.125rem, 1.5rem);
   font-weight: 500;
   line-height: 1.4;
-  margin-top: 1rem;
   margin-bottom: 0.75rem;
   text-transform: none;
 }
@@ -297,7 +354,7 @@ ul, ol {
 }
 @media (min-width: 768px) {
   .main {
-    padding: clamp(1rem, 4vw, 2rem) clamp(1rem, 3vw, 2rem);
+    padding: clamp(0rem, 1vw, 0rem) clamp(0rem, 0vw, 2rem);
   }
 }
 .main__programmation-banner {
@@ -319,7 +376,7 @@ ul, ol {
 .main__card {
   padding: 2rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-bottom: 2rem;
 }
 .main__card-agencement {
@@ -341,14 +398,12 @@ ul, ol {
 .main__card-title {
   font-size: clamp(1.125rem, 3vw, 1.5rem);
   font-weight: 700;
-  margin-bottom: 1.5rem;
   text-transform: uppercase;
   line-height: 1.2;
 }
 .main__card-subtitle {
-  font-size: clamp(0.9375rem, 2vw, 1.125rem);
+  font-size: clamp(1.5rem, 1.5vw, 2rem);
   font-weight: 600;
-  margin-bottom: 1rem;
   line-height: 1.3;
 }
 .main__card-text {
@@ -360,7 +415,6 @@ ul, ol {
 .main__card-description {
   font-size: 0.9375rem;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
   color: #666666;
 }
 .main__banner-img {
@@ -368,6 +422,1607 @@ ul, ol {
   height: 100px;
 }
 
+:root {
+  --gold: #c9a84c;
+  --muted: rgba(245, 242, 236, 0.55);
+  --nav-bg-light: rgba(232, 232, 232, 0.95);
+}
+
+body.is-nav-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+#headerCanvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh; /* Fallback */
+  min-height: 100dvh; /* S'adapte dynamiquement si la barre d'adresse mobile réduit */
+  background-color: #191919;
+  color: #FFFDF3;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transition: all 0.3s ease;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(25, 25, 25, 0.4);
+  pointer-events: none;
+  z-index: 0;
+}
+@media (max-width: 1023px) {
+  .header--menu-open {
+    z-index: 999;
+    pointer-events: none;
+  }
+  .header--menu-open::before {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .header--menu-open .header__menu-toggle {
+    pointer-events: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .header {
+    position: relative;
+    background-image: none;
+  }
+  .header::before {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  .header--scrolled .header__nav-list--main {
+    background-color: rgba(60, 60, 60, 0.44);
+    backdrop-filter: blur(20px);
+    transition: backdrop-filter 0.3s ease;
+    padding: 0.875rem 2.5rem;
+  }
+  .header--scrolled .header__nav-list--secondary {
+    background-color: rgba(60, 60, 60, 0.44);
+    padding: 0.875rem 1.5rem;
+    backdrop-filter: blur(20px);
+    transition: backdrop-filter 0.3s ease;
+  }
+  .header--scrolled .header__logo-link {
+    width: 150px;
+    height: 64px;
+  }
+  .header--scrolled .header__nav-link {
+    color: rgb(253, 253, 253);
+  }
+  .header--scrolled .header__nav-list--secondary {
+    color: rgb(253, 253, 253);
+  }
+  .header--scrolled .header__nav-icon {
+    stroke: #FFFDF3;
+    stroke-width: 2;
+    filter: none;
+  }
+  .header--scrolled .header__nav-link-fr {
+    color: #FFFDF3;
+  }
+}
+.header__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  position: relative;
+  z-index: 1;
+  gap: 1rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (min-width: 768px) {
+  .header__container {
+    padding: 1.2rem 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .header__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.25rem 3.75rem;
+    gap: 2.5rem;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+}
+.header__logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  flex-shrink: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100px;
+  height: 40px;
+}
+@media (min-width: 768px) {
+  .header__logo-link {
+    width: 70px;
+    height: 70px;
+  }
+}
+@media (min-width: 1024px) {
+  .header__logo-link {
+    width: 187px;
+    height: 80px;
+  }
+}
+.header__logo-link:active {
+  transform: scale(0.95);
+}
+@media (min-width: 1024px) {
+  .header__logo-link:hover {
+    transform: scale(1.05);
+  }
+}
+.header__logo-img {
+  padding: 0.5rem;
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+  object-fit: contain;
+}
+.header__menu-toggle {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  background: none;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (min-width: 1024px) {
+  .header__menu-toggle {
+    display: none;
+  }
+}
+.header__menu-toggle:active {
+  transform: scale(0.95);
+}
+.header__menu-toggle[aria-expanded=true] {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1100;
+  background: rgba(25, 25, 25, 0.85);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 253, 243, 0.2);
+}
+@media (min-width: 768px) {
+  .header__menu-toggle[aria-expanded=true] {
+    top: 1.2rem;
+    right: 1.2rem;
+  }
+}
+.header__menu-bar {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 5px;
+  border-radius: 1px;
+  background-color: #FFFDF3;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.28);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, opacity 0.28s ease 0.06s;
+}
+.header__menu-bar::after {
+  content: "";
+  position: absolute;
+  top: -0.6rem;
+  left: 50%;
+  width: 5px;
+  height: 1.6rem;
+  border-radius: 1px;
+  background-color: #FFFDF3;
+  transform: translate(-50%, 0) scaleY(1);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.28);
+  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, opacity 0.26s ease 0.12s;
+}
+.header__menu-toggle[aria-expanded=true] .header__menu-bar {
+  transform: none;
+  background-color: #FFFDF3;
+}
+.header__menu-toggle[aria-expanded=true] .header__menu-bar::after {
+  opacity: 0;
+  transform: translate(-50%, 0) scaleY(0);
+  background-color: #FFFDF3;
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s ease, opacity 0.24s ease 0.05s;
+}
+.header__nav {
+  color: #FFFDF3;
+  position: fixed;
+  z-index: 1050;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 1.5rem 2rem;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 2rem;
+  backdrop-filter: blur(20px);
+  background: rgb(25, 25, 25);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  visibility: visible;
+  opacity: 1;
+}
+.header__nav[aria-hidden=false] {
+  transform: translateX(0);
+}
+@media (min-width: 768px) {
+  .header__nav {
+    padding: 6rem 2rem 2rem;
+    gap: 2.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .header__nav {
+    position: relative;
+    left: auto;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: auto;
+    max-width: 100%;
+    flex-wrap: nowrap;
+    gap: 1.875rem;
+    backdrop-filter: none;
+    background: transparent;
+    overflow-y: visible;
+    z-index: 10;
+  }
+}
+.header__nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+@media (min-width: 1024px) {
+  .header__nav-list--main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.5rem;
+    background-color: rgba(232, 232, 232, 0.95);
+    padding: 1.25rem 3.125rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    flex-grow: 1;
+    max-width: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+.header__nav-list--secondary {
+  margin-top: 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+@media (min-width: 1024px) {
+  .header__nav-list--secondary {
+    margin-top: 0;
+    gap: 1.25rem;
+    flex-shrink: 0;
+    background-color: rgba(232, 232, 232, 0.95);
+    padding: 1.25rem 1.875rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+.header__nav-item {
+  margin-bottom: 0;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 253, 243, 0.15);
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .header__nav-item {
+    padding: 1rem 0;
+  }
+}
+@media (min-width: 1024px) {
+  .header__nav-item {
+    margin-bottom: 0;
+    padding: 0;
+    border-bottom: none;
+    position: relative;
+    min-height: auto;
+  }
+}
+.header__nav-list--secondary .header__nav-item {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.header__nav-link {
+  color: #FFFDF3;
+  text-decoration: none;
+  display: block;
+  transition: color 0.25s ease, transform 0.2s ease, opacity 0.2s ease;
+  white-space: nowrap;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  width: 100%;
+  padding: 0.5rem 0;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: auto;
+}
+.header__nav-link:active {
+  opacity: 0.7;
+  transform: scale(0.98);
+}
+@media (min-width: 768px) {
+  .header__nav-link {
+    font-size: 1.2rem;
+    padding: 0.75rem 0;
+  }
+}
+@media (min-width: 1024px) {
+  .header__nav-link {
+    position: relative;
+    color: #1a1a1a;
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    width: auto;
+    padding: 0;
+    transition: opacity 0.3s ease;
+  }
+  .header__nav-link:hover {
+    opacity: 0.7;
+    transform: none;
+  }
+  .header__nav-link:active {
+    transform: none;
+    opacity: 0.5;
+  }
+}
+.header__nav-list--secondary .header__nav-link {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .header__nav-list--secondary .header__nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    transition: opacity 0.3s ease;
+  }
+  .header__nav-list--secondary .header__nav-link:hover {
+    opacity: 0.7;
+  }
+}
+.header__nav-icon {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke-width: 2;
+  stroke: black;
+}
+.header__nav-icon:active {
+  transform: scale(0.95);
+  background: rgba(255, 253, 243, 0.2);
+}
+@media (min-width: 768px) {
+  .header__nav-icon {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.6rem;
+  }
+}
+@media (min-width: 1024px) {
+  .header__nav-icon {
+    min-width: auto;
+    min-height: auto;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border-radius: 5px;
+    background: transparent;
+    border: none;
+    filter: brightness(0);
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+  }
+  .header__nav-icon:hover {
+    opacity: 0.7;
+    color: #FFFDF3;
+  }
+}
+.header__nav-link-fr {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFFDF3;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+@media (min-width: 1024px) {
+  .header__nav-link-fr {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    transition: opacity 0.3s ease;
+  }
+  .header__nav-link-fr:hover {
+    opacity: 0.7;
+  }
+}
+.header__hero {
+  flex: 1; /* Force le hero à prendre tout l'espace restant sous le nav */
+  display: flex;
+  align-items: center; /* Centre verticalement le contenu */
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+  padding: 7.5rem 1.5rem 3.75rem;
+  overflow: hidden;
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  .header__hero {
+    padding: 7.5rem 2rem 3.75rem;
+  }
+}
+@media (min-width: 1024px) {
+  .header__hero {
+    flex-direction: row;
+    padding: 7.5rem 3.75rem 3.75rem;
+    width: auto;
+  }
+}
+.header__hero-content {
+  width: 100%;
+  display: flex;
+  gap: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 1024px) {
+  .header__hero-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3.75rem;
+    padding: 5rem 3.75rem;
+  }
+}
+.header__hero-content--reduced {
+  margin-top: 1rem;
+}
+.header__hero-text {
+  flex: 1;
+  max-width: 600px;
+  position: relative;
+  z-index: 20;
+}
+.header__hero-text h1,
+.header__hero-text .header__title {
+  color: #FFFDF3 !important;
+}
+.header__hero-text #sous-menu-header,
+.header__hero-text span {
+  color: #FFFDF3 !important;
+}
+.header__title {
+  color: #FFFDF3 !important;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 1.875rem;
+  font-size: clamp(3rem, 8vw, 7.5rem);
+  line-height: 1;
+  letter-spacing: -0.125rem;
+}
+@media (min-width: 768px) {
+  .header__title {
+    font-size: clamp(5rem, 10vw, 7.5rem);
+  }
+}
+@media (min-width: 1024px) {
+  .header__title {
+    font-size: 7.5rem;
+  }
+}
+.header__hero-images {
+  position: relative;
+  flex: 1;
+  min-height: 400px;
+}
+@media (max-width: 1023px) {
+  .header__hero-images {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  .header__hero-images {
+    min-height: 500px;
+  }
+}
+.header__hero-background {
+  position: absolute;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  will-change: transform;
+  transition: transform 0.3s ease;
+}
+.header__hero-background:hover {
+  transform: scale(1.05);
+  z-index: 10 !important;
+}
+.header__hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.header__hero-background--layer1 {
+  width: 280px;
+  height: 200px;
+  top: 0;
+  left: 50px;
+  z-index: 1;
+}
+@media (min-width: 1200px) {
+  .header__hero-background--layer1 {
+    width: 280px;
+    height: 200px;
+  }
+}
+.header__hero-background--layer2 {
+  width: 320px;
+  height: 240px;
+  top: 150px;
+  left: 0;
+  z-index: 2;
+}
+@media (min-width: 1200px) {
+  .header__hero-background--layer2 {
+    width: 320px;
+    height: 240px;
+  }
+}
+.header__hero-background--layer3 {
+  width: 350px;
+  height: 280px;
+  top: 50px;
+  right: 0;
+  z-index: 3;
+}
+@media (min-width: 1200px) {
+  .header__hero-background--layer3 {
+    width: 350px;
+    height: 280px;
+  }
+}
+.header #sous-menu-header {
+  font-size: clamp(1rem, 2vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  display: block;
+  color: #FFFDF3 !important;
+  line-height: 1.3;
+}
+@media (min-width: 1024px) {
+  .header #sous-menu-header {
+    font-size: 1.75rem;
+  }
+}
+.header__hero-cta {
+  position: absolute;
+  border: 1px solid white;
+  border-radius: 10px;
+  bottom: 5rem;
+  right: 3.75rem;
+  text-align: right;
+  z-index: 30;
+}
+@media (max-width: 1023px) {
+  .header__hero-cta {
+    position: static;
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+}
+.header__cta-text {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+  color: #FFFDF3;
+}
+@media (min-width: 1024px) {
+  .header__cta-text {
+    font-size: 2rem;
+  }
+}
+.header__cta-button {
+  display: inline-block;
+  padding: 1.125rem 2.5rem;
+  border: 2px solid white;
+  border-radius: 10px;
+  color: #FFFDF3;
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-bottom: 1.25rem;
+}
+.header__cta-button:hover {
+  background: white;
+  color: #191919;
+}
+.header--index {
+  background-color: #191919;
+  background-image: none !important;
+}
+.header--collections {
+  background-image: url("/asset/Img/backgrounds/bg-header-collections.png");
+}
+@media (prefers-reduced-motion: reduce) {
+  .header--collections {
+    background-attachment: scroll;
+  }
+}
+.header--evenement {
+  background-image: url("/asset/Img/backgrounds/header-evenement.jpg");
+}
+@media (prefers-reduced-motion: reduce) {
+  .header--evenement {
+    background-attachment: scroll;
+  }
+}
+.header--fiche-oeuvre {
+  background-image: url("/asset/Img/backgrounds/header-fiche-oeuvre.jpg");
+}
+@media (prefers-reduced-motion: reduce) {
+  .header--fiche-oeuvre {
+    background-attachment: scroll;
+  }
+}
+.header--musee {
+  background-image: url("/asset/Img/backgrounds/header-musee.jpg");
+}
+@media (prefers-reduced-motion: reduce) {
+  .header--musee {
+    background-attachment: scroll;
+  }
+}
+
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #191919;
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.search-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.search-overlay__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+  color: #FFFDF3;
+  cursor: pointer;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, color 0.3s ease, background 0.3s ease;
+  z-index: 10000;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (min-width: 768px) {
+  .search-overlay__close {
+    top: 2rem;
+    right: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 2.5rem;
+  }
+}
+.search-overlay__close:active {
+  transform: scale(0.9);
+  background: rgba(255, 255, 255, 0.2);
+}
+@media (min-width: 1024px) {
+  .search-overlay__close:hover {
+    transform: rotate(90deg);
+    color: #957E18;
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+.search-overlay__content {
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  z-index: 10000;
+}
+.search-overlay__form {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: white;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+@media (min-width: 768px) {
+  .search-overlay__form {
+    padding: 1.5rem 2rem;
+    gap: 1rem;
+  }
+}
+.search-overlay__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #191919;
+  background: transparent;
+  padding: 0.5rem 0;
+}
+@media (min-width: 768px) {
+  .search-overlay__input {
+    font-size: 1.2rem;
+  }
+}
+.search-overlay__input::placeholder {
+  color: #999;
+}
+.search-overlay__submit {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  background: #957E18;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (min-width: 768px) {
+  .search-overlay__submit {
+    padding: 0.8rem;
+  }
+}
+.search-overlay__submit:active {
+  transform: scale(0.95);
+  background: #957E18;
+}
+@media (min-width: 1024px) {
+  .search-overlay__submit:hover {
+    background: #957E18;
+    transform: scale(1.05);
+  }
+}
+.search-overlay__submit img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+@media (min-width: 768px) {
+  .search-overlay__submit img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.hero {
+  padding: 10rem 3rem 3rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  text-align: left;
+}
+@media (max-width: 1023px) {
+  .hero {
+    padding: 9rem 5rem 12rem 0;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+}
+@media (min-width: 768px) {
+  .hero {
+    padding: 10rem 3rem 3rem 4rem;
+  }
+}
+
+.hero-left {
+  flex: 1;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-title {
+  color: #FFFDF3;
+  font-size: 34px;
+  font-weight: 900;
+  margin-bottom: 30px;
+  z-index: 10;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.4s forwards;
+}
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 28px;
+  }
+}
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 120px;
+  }
+}
+
+.hero-subtitle {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 10;
+  color: #FFFDF3;
+}
+@media (min-width: 768px) {
+  .hero-subtitle {
+    font-size: 40px;
+    font-weight: 700;
+    position: relative;
+    z-index: 10;
+  }
+}
+
+.hero-right {
+  flex: 1;
+  position: relative;
+  height: 500px;
+}
+
+.art-image {
+  position: absolute;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  background-position: center;
+  background-size: cover;
+}
+.art-image.img1 {
+  width: 150px;
+  height: 80px;
+  top: 0;
+  left: 50px;
+  z-index: 1;
+  background-image: url("/asset/Img/tableaux/tableau-signac-venise.jpg");
+}
+@media (min-width: 1200px) {
+  .art-image.img1 {
+    width: 424px;
+    height: 281px;
+    top: -197px;
+    left: 364px;
+  }
+}
+.art-image.img2 {
+  width: 150px;
+  height: 80px;
+  top: 150px;
+  left: 0;
+  z-index: 2;
+  background-image: url("/asset/Img/tableaux/tableau-toffoli-vendeuse.jpg");
+}
+@media (min-width: 768px) {
+  .art-image.img2 {
+    width: 320px;
+    height: 270px;
+    top: -407px;
+    left: 77px;
+  }
+}
+@media (min-width: 1200px) {
+  .art-image.img2 {
+    width: 320px;
+    height: 270px;
+    top: -407px;
+    left: 77px;
+  }
+}
+.art-image.img3 {
+  width: 150px;
+  height: 80px;
+  top: 50px;
+  right: 0;
+  z-index: 3;
+  background-image: url("/asset/Img/tableaux/tableau-ocean-contemporain.png");
+}
+@media (min-width: 768px) {
+  .art-image.img3 {
+    width: 350px;
+    height: 280px;
+    top: -197px;
+    right: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .art-image.img3 {
+    width: 564px;
+    height: 331px;
+    top: -497px;
+    right: 224px;
+  }
+}
+
+.cta-section {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 20;
+}
+@media (max-width: 1023px) {
+  .cta-section {
+    position: static;
+    margin-top: 5rem;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.reserve-btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: #957E18;
+  color: #FFFDF3;
+  border: none;
+  border-radius: 10px;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 16px rgba(149, 126, 24, 0.4);
+}
+.reserve-btn:hover {
+  background-color: #7a6510;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(149, 126, 24, 0.5);
+}
+.reserve-btn:active {
+  transform: translateY(-1px);
+}
+
+.cta-text {
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #FFFDF3;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-arrow {
+  color: #FFFDF3;
+  font-size: 2.5rem;
+  animation: bounce 2s infinite;
+  font-weight: 300;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+/* =========================================
+         HEADER WRAPPER
+      ========================================= */
+.header {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  background-color: #191919;
+  background-image: url("./asset/Img/backgrounds/bg-header-collections.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Dark overlay */
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(17, 17, 16, 0.85) 0%, rgba(17, 17, 16, 0.5) 50%, rgba(17, 17, 16, 0.75) 100%);
+  z-index: 0;
+}
+
+/* Grain texture */
+.header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.3;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* =========================================
+         NAVBAR — PRESERVED, minor visual touch
+      ========================================= */
+.header__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 3.75rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  gap: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header__logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  flex-shrink: 0;
+  width: 187px;
+  height: 80px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header__logo-link:hover {
+  transform: scale(1.05);
+}
+
+.header__logo-img {
+  padding: 0.5rem;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  filter: brightness(0) invert(1);
+}
+
+.header__menu-toggle {
+  display: none;
+  min-width: 44px;
+  min-height: 44px;
+  width: 2.75rem;
+  height: 2.75rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  background: none;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.header__menu-bar {
+  display: block;
+  width: 100%;
+  height: 5px;
+  border-radius: 1px;
+  background-color: #FFFDF3;
+  position: relative;
+}
+
+.header__menu-bar::after {
+  content: "";
+  position: absolute;
+  top: -0.6rem;
+  left: 50%;
+  width: 5px;
+  height: 1.6rem;
+  border-radius: 1px;
+  background-color: #FFFDF3;
+  transform: translate(-50%, 0) scaleY(1);
+}
+
+@media (max-width: 1023px) {
+  .header__menu-toggle {
+    display: flex;
+  }
+  .header__container {
+    padding: 1rem;
+  }
+  .header__logo-link {
+    width: 100px;
+    height: 40px;
+  }
+}
+.header__nav {
+  color: #FFFDF3;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: auto;
+  max-width: 100%;
+  gap: 1.875rem;
+}
+
+@media (max-width: 1023px) {
+  .header__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    padding: 5rem 1.5rem 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 2rem;
+    backdrop-filter: blur(20px);
+    background: rgb(25, 25, 25);
+    overflow-y: auto;
+    z-index: 1050;
+  }
+  .header__nav[aria-hidden=false] {
+    transform: translateX(0);
+  }
+}
+.header__nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header__nav-list--main {
+  gap: 2.5rem;
+  background-color: --nav-bg-light;
+  padding: 1.25rem 3.125rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  flex-grow: 1;
+}
+
+.header__nav-list--secondary {
+  gap: 1.25rem;
+  flex-shrink: 0;
+  background-color: --nav-bg-light;
+  padding: 1.25rem 1.875rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 1023px) {
+  .header__nav-list--main,
+  .header__nav-list--secondary {
+    flex-direction: column;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    gap: 1.1rem;
+    width: 100%;
+  }
+}
+.header__nav-item {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-family: "ClashDisplay-Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@media (max-width: 1023px) {
+  .header__nav-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 253, 243, 0.15);
+    min-height: 44px;
+    width: 100%;
+  }
+}
+.header__nav-icon {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: black;
+  stroke-width: 2;
+  filter: brightness(0);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.header__nav-icon:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 1023px) {
+  .header__nav-icon {
+    stroke: white;
+    filter: none;
+    width: 24px;
+    height: 24px;
+  }
+}
+.header__nav-link-fr {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #191919;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.header__nav-link-fr:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 1023px) {
+  .header__nav-link-fr {
+    color: #FFFDF3;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+/* =========================================
+         HERO — NEW CONTEMPORARY LAYOUT
+      ========================================= */
+.header__hero {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  padding: 120px 3.75rem 3.75rem;
+  gap: 0;
+  min-height: 100dvh;
+}
+
+@media (max-width: 1023px) {
+  .header__hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 100px 1.5rem 3rem;
+    gap: 2rem;
+  }
+}
+/* — LEFT: Eyebrow + Title — */
+.hero__left {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 3rem;
+  padding-right: 2rem;
+}
+
+.hero__eyebrow {
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: --gold;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.2s forwards;
+}
+
+.hero__eyebrow::before {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 1px;
+  background: --gold;
+}
+
+.hero__title {
+  font-weight: 700;
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: #FFFDF3;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.4s forwards;
+}
+
+.hero__title em {
+  font-style: italic;
+  color: #FFFDF3;
+  font-weight: 300;
+}
+
+/* — RIGHT: Meta info stacked — */
+.hero__right {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: 3rem;
+  gap: 2rem;
+}
+
+@media (max-width: 1023px) {
+  .hero__left {
+    grid-column: 1;
+    grid-row: 1;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+  .hero__right {
+    grid-column: 1;
+    grid-row: 2;
+    align-items: flex-start;
+  }
+}
+.hero__description {
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: --muted;
+  max-width: 280px;
+  text-align: right;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.6s forwards;
+}
+
+@media (max-width: 1023px) {
+  .hero__description {
+    text-align: left;
+    max-width: 100%;
+  }
+}
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.75rem;
+  border: 2px solid rgba(245, 242, 236, 0.3);
+  border-radius: 10px;
+  color: #FFFDF3;
+  text-decoration: none;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.8s forwards;
+}
+
+.hero__cta:hover {
+  background: --gold;
+  border-color: --gold;
+  color: #191919;
+}
+
+.hero__cta svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.hero__cta:hover svg {
+  transform: translateX(4px);
+}
+
+/* — BOTTOM: Horizontal metadata strip — */
+.hero__strip {
+  grid-column: 1/-1;
+  grid-row: 2;
+  border-top: 1px solid rgba(245, 242, 236, 0.12);
+  padding-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 1s forwards;
+}
+
+@media (max-width: 1023px) {
+  .hero__strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.hero__stat-number {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #FFFDF3;
+  line-height: 1;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.hero__stat-label {
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: --muted;
+}
+
+.hero__strip-divider {
+  width: 1px;
+  height: 2.5rem;
+  background: rgba(245, 242, 236, 0.15);
+}
+
+.hero__scroll {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: --muted;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.hero__scroll-arrow {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(245, 242, 236, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounce 2.5s ease infinite;
+}
+
+.hero__scroll-arrow svg {
+  width: 14px;
+  height: 14px;
+  stroke: #FFFDF3;
+  fill: none;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
 .text {
   font-family: "Clash Display Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
@@ -385,7 +2040,7 @@ ul, ol {
 }
 
 .text__highlight {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Satochi", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1.125rem;
   font-weight: 700;
 }
@@ -400,6 +2055,7 @@ ul, ol {
   padding: clamp(1.25rem, 3vw, 3rem);
   max-width: 100%;
   box-sizing: border-box;
+  margin: 5rem 0rem;
 }
 .main__banniere-titre {
   font-size: clamp(1.75rem, 4vw + 0.5rem, 3rem);
@@ -473,22 +2129,8 @@ ul, ol {
 }
 @media (min-width: 768px) {
   .main__banniere {
-    max-width: 95%;
-    gap: 1.5rem;
-    margin: 1rem;
-  }
-}
-@media (min-width: 1024px) {
-  .main__banniere {
-    max-width: 90%;
-    padding: 2.5rem;
-  }
-}
-@media (min-width: 1600px) {
-  .main__banniere {
-    max-width: 70%;
-    padding: 3.5rem;
-    margin: 2rem;
+    max-width: 65%;
+    margin: 5rem 0rem 5rem;
   }
 }
 
@@ -567,7 +2209,7 @@ ul, ol {
 }
 
 .main__programmation {
-  width: 100%;
+  max-width: 65%;
   margin: 0;
   box-sizing: border-box;
 }
@@ -712,7 +2354,7 @@ footer::before {
   background-color: transparent;
   border: none;
   border-bottom: 1.5px solid rgba(255, 255, 255, 0.4);
-  border-radius: 0;
+  border-radius: 5px;
   transition: all 0.3s ease;
   min-height: 2.75rem;
 }
@@ -999,7 +2641,7 @@ footer::before {
   color: #191919;
 }
 .services-section .service-item .service-text {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -1014,7 +2656,6 @@ footer::before {
 }
 
 .reservation-section {
-  background-color: rgb(253, 253, 253);
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   padding: 3rem;
@@ -1041,7 +2682,7 @@ footer::before {
   font-weight: 300;
 }
 .reservation-section .reservation-text {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1rem;
   color: #666666;
   margin-bottom: 1.5rem;
@@ -1112,7 +2753,7 @@ footer::before {
   margin-top: 0;
 }
 .deals-section .deal-text {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1rem;
   color: #666666;
   line-height: 1.5;
@@ -1196,15 +2837,12 @@ footer::before {
 }
 .main__button--savoir-white {
   color: #FFFDF3;
-  width: 100%;
   border: 3px solid #FFFDF3;
 }
-@media (min-width: 768px) {
-  .main__button--savoir-white {
-    width: auto;
-  }
-}
 @media (min-width: 1024px) {
+  .main__button--savoir-white {
+    width: inherit;
+  }
   .main__button--savoir-white:hover {
     color: #191919;
     background-color: #FFFDF3;
@@ -1217,7 +2855,7 @@ footer::before {
   }
 }
 
-.main__button--savoir-white-black {
+.main__button-black {
   min-height: 2.75rem;
   padding: clamp(0.875rem, 2.5vw, 15px) clamp(1.25rem, 4vw, 30px);
   border-radius: 10px;
@@ -1231,15 +2869,15 @@ footer::before {
   align-items: center;
   justify-content: center;
 }
-.main__button--savoir-white-black:active {
+.main__button-black:active {
   transform: scale(0.97);
 }
-.main__button--savoir-white-black {
+.main__button-black {
   color: #191919;
   background-color: #FFFDF3;
 }
 @media (min-width: 1024px) {
-  .main__button--savoir-white-black {
+  .main__button-black {
     padding: 20px 50px;
     font-size: 1.1rem;
   }
@@ -1480,7 +3118,6 @@ footer::before {
   .main__card-container {
     width: 55%;
     flex: 1;
-    gap: 15px;
   }
 }
 .main__card-title {
@@ -1489,28 +3126,24 @@ footer::before {
   font-weight: 700;
   line-height: 1.2;
   margin-top: 0;
-  margin-bottom: 1.5rem;
   letter-spacing: -0.015em;
 }
 @media (min-width: 768px) {
   .main__card-title {
     font-size: clamp(2.25rem, 4.5vw + 0.5rem, 3rem);
-    margin-bottom: 2rem;
   }
 }
 .main__card-subtitle {
   color: #FFFDF3;
-  font-size: clamp(1.25rem, 3vw + 0.25rem, 4rem);
+  font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 600;
   line-height: 1.2;
   margin-top: 0;
-  margin-bottom: 1rem;
   letter-spacing: -0.01em;
 }
 @media (min-width: 768px) {
   .main__card-subtitle {
-    font-size: clamp(1.5rem, 3.5vw + 0.25rem, 4rem);
-    margin-bottom: 1.5rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
   }
 }
 .main__card-text {
@@ -2075,7 +3708,7 @@ footer::before {
   font-size: clamp(0.75rem, 2vw, 1rem);
   white-space: nowrap;
   padding: 0.5rem 0.75rem;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background 0.2s ease;
   -webkit-tap-highlight-color: transparent;
@@ -2155,7 +3788,7 @@ footer::before {
 }
 @media (min-width: 1024px) {
   .main__explore-grid {
-    margin: 2rem;
+    margin: 10rem;
     grid-template-columns: repeat(12, 1fr);
     gap: 1rem;
     grid-template-rows: 500px 500px 250px;
@@ -2461,170 +4094,353 @@ img:hover {
     padding: 1rem 0;
   }
 }
-.art-gallery-section {
-  min-height: 100vh;
-  background-color: #f9fafb;
-  padding: 2rem;
-}
-
-.art-gallery-container {
-  max-width: 1280px;
+/* ── SECTION WRAPPER ── */
+.gallery-section {
+  padding: 0 2rem 5rem;
+  max-width: 1360px;
   margin: 0 auto;
 }
 
-.art-gallery-search {
+/* ── TOP BAR: LABEL + TOTAL ── */
+.gallery-topbar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 2.5rem 0 1.5rem;
   margin-bottom: 2rem;
 }
 
-.art-gallery-search-wrapper {
-  position: relative;
+.gallery-topbar__label {
+  font-family: "Styrene B Web";
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #666666;
 }
 
-.art-gallery-search-icon {
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1.5rem;
-  height: 1.5rem;
-  color: #9ca3af;
-  pointer-events: none;
+.gallery-topbar__count {
+  font-family: "Styrene B Web";
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: #666666;
 }
 
-.art-gallery-search-input {
-  width: 100%;
-  padding-left: 3.5rem;
-  padding-right: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  font-size: 1.125rem;
-  border: 2px solid #d1d5db;
-  border-radius: 0.75rem;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-.art-gallery-search-input:focus {
-  border-color: #9ca3af;
-}
-.art-gallery-search-input::placeholder {
-  color: #9ca3af;
+.gallery-topbar__count span {
+  color: #191919;
+  font-weight: 500;
 }
 
-.art-gallery-nav {
+/* ── CONTROLS ROW ── */
+.gallery-controls {
   display: flex;
-  gap: 2rem;
-  margin-bottom: 3rem;
-  font-size: 1.125rem;
-  font-weight: normal;
+  align-items: stretch;
+  gap: 0;
+  margin-bottom: 0;
+  overflow: visible;
   flex-wrap: wrap;
 }
-@media (max-width: 768px) {
-  .art-gallery-nav {
-    gap: 1rem;
-    font-size: 1rem;
-  }
+
+/* ── FILTER PILLS ── */
+.gallery-filters {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.art-gallery-nav-btn {
+.filter-btn {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
+  padding: 0.9rem 1.3rem;
   background: none;
   border: none;
+  border-right: 4px solid var(--rule);
   cursor: pointer;
-  padding: 0;
-  font-size: inherit;
-  font-weight: inherit;
-  color: inherit;
-  transition: opacity 0.3s ease;
-}
-.art-gallery-nav-btn:hover {
-  opacity: 0.7;
-}
-.art-gallery-nav-btn.active .art-gallery-nav-arrow {
-  transform: rotate(90deg);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #191919;
+  letter-spacing: 0.02em;
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
 }
 
-.art-gallery-nav-arrow {
-  width: 1.5rem;
-  height: 1.5rem;
-  transition: transform 0.3s ease;
-  display: inline-block;
+.filter-btn:hover {
+  color: #191919;
+  background: var(--cream);
+}
+
+.filter-btn.active {
+  color: #191919;
+  font-weight: 500;
+  background: rgb(253, 253, 253);
+}
+
+.filter-btn.active .filter-arrow {
+  transform: rotate(40deg);
+}
+
+/* SVG arrow — same as yours, just sized */
+.filter-arrow {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #666666;
+}
+
+/* ── SEARCH ── */
+.gallery-search {
+  display: flex;
+  justify-content: flex-start !important;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0 10rem;
+  border: 1px solid #b3b3b3;
+  border-radius: 10px;
+  min-width: 220px;
+  background: rgb(253, 253, 253);
+}
+
+.gallery-search svg {
+  width: 1rem;
+  height: 1rem;
+  color: #666666;
   flex-shrink: 0;
 }
 
-.art-gallery-grid {
-  column-count: 1;
-  column-gap: 1rem;
+.gallery-search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: "Styrene B Web", sans-serif;
+  font-size: 0.82rem;
+  color: #191919;
   width: 100%;
 }
-@media (min-width: 640px) {
-  .art-gallery-grid {
-    column-count: 2;
-    column-gap: 1rem;
-  }
-}
-@media (min-width: 1024px) {
-  .art-gallery-grid {
-    column-count: 4;
-    column-gap: 1rem;
-  }
+
+.gallery-search input::placeholder {
+  color: #666666;
 }
 
-.art-gallery-item {
+/* ── SUBFILTERS DRAWER ── */
+.subfilters-drawer {
+  display: none;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  background: var(--ink);
+  border-top: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subfilters-drawer.open {
+  display: flex;
+  max-height: 60px;
+}
+
+.subfilter-pill {
+  padding: 0.65rem 1.3rem;
+  font-family: "Styrene B Web";
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  background: none;
+  border: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+
+.subfilter-pill:hover,
+.subfilter-pill.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.subfilter-pill.active {
+  color: #fff;
+}
+
+.subfilters-label {
+  padding: 0.65rem 1.2rem;
+  font-family: "Styrene B Web";
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+}
+
+/* ── MASONRY GRID ── */
+.gallery-grid {
+  column-count: 1;
+  column-gap: 1.5rem;
+  margin-top: 0;
+}
+
+@media (min-width: 560px) {
+  .gallery-grid {
+    column-count: 2;
+  }
+}
+@media (min-width: 900px) {
+  .gallery-grid {
+    column-count: 3;
+  }
+}
+@media (min-width: 1200px) {
+  .gallery-grid {
+    column-count: 4;
+  }
+}
+.gallery-item {
+  break-inside: avoid;
+  page-break-inside: avoid;
   display: inline-block;
   width: 100%;
   margin-bottom: 1.5rem;
-  break-inside: avoid;
-  page-break-inside: avoid;
   position: relative;
   overflow: hidden;
-  border-radius: 5px;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
-  will-change: transform;
+  background: rgb(253, 253, 253);
+  border-radius: 10px;
 }
-@media (min-width: 1024px) {
-  .art-gallery-item {
-    margin-bottom: 2rem;
-  }
-}
-.art-gallery-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 1;
-  pointer-events: none;
-}
-.art-gallery-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-}
-.art-gallery-item:hover::before {
-  opacity: 1;
-}
-.art-gallery-item:hover img {
-  transform: scale(1.05);
-}
-.art-gallery-item img {
+
+/* ─ image ─ */
+.gallery-item img {
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.art-gallery-item[style*="display: none"] {
-  display: none !important;
+  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ─ overlay ─ */
+.gallery-item__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 14, 12, 0.82) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.1rem;
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-item__overlay {
+  opacity: 1;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-item__title {
+  font-family: "Playfair Display", serif;
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 0.2rem;
+}
+
+.gallery-item__meta {
+  font-family: "Styrene B Web";
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
+/* ─ index badge ─ */
+.gallery-item__index {
+  position: absolute;
+  top: 0.7rem;
+  left: 0.7rem;
+  font-family: "Styrene B Web";
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.6);
+  background: rgba(15, 14, 12, 0.45);
+  padding: 0.15rem 0.4rem;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.gallery-item:hover .gallery-item__index {
+  opacity: 1;
+}
+
+/* ─ hidden state ─ */
+.gallery-item.hidden {
+  display: none;
+}
+
+/* ─ intro line above grid ─ */
+.gallery-grid-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 0 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.gallery-grid-header__rule {
+  flex: 1;
+  height: 1px;
+  background: #b3b3b3;
+}
+
+.gallery-grid-header__tag {
+  font-family: "Styrene B Web", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #666666;
+}
+
+/* ── NO RESULT ── */
+.gallery-empty {
+  display: none;
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.gallery-empty.visible {
+  display: block;
+}
+
+.gallery-empty p {
+  font-family: "Styrene B Web", serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #191919;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .gallery-section {
+    padding: 0 1rem 3rem;
+  }
+  .gallery-search {
+    min-width: 140px;
+  }
+  .filter-btn {
+    padding: 0.8rem 0.9rem;
+    font-size: 0.78rem;
+  }
+}
 .movements-table-section {
   padding: 4rem 2rem;
   background-color: #f9fafb;
@@ -2656,8 +4472,8 @@ img:hover {
 }
 
 .movements-table-wrapper {
-  background-color: #FFFFFF;
-  border-radius: 8px;
+  background-color: #ffffff;
+  border-radius: 10px;
   overflow-x: auto;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -2670,14 +4486,14 @@ img:hover {
 }
 .movements-table thead {
   background-color: #957E18;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .movements-table th {
   padding: 1.2rem;
   text-align: left;
   font-weight: 600;
   border-bottom: 3px solid #957E18;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .movements-table th.period-col {
   width: 12%;
@@ -2711,7 +4527,7 @@ img:hover {
 .movements-table td {
   padding: 1.2rem;
   vertical-align: top;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
 }
 .movements-table td strong {
@@ -2726,7 +4542,8 @@ img:hover {
   .movements-table {
     font-size: 0.85rem;
   }
-  .movements-table th, .movements-table td {
+  .movements-table th,
+  .movements-table td {
     padding: 0.8rem;
   }
 }
@@ -2749,6 +4566,7 @@ img:hover {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 2rem;
+  margin-top: 2rem;
 }
 @media (min-width: 768px) {
   .techniques-grid {
@@ -2765,7 +4583,7 @@ img:hover {
 
 .technique-card {
   position: relative;
-  border-radius: 1rem;
+  border-radius: 10px;
   overflow: hidden;
   aspect-ratio: 4/4;
   cursor: pointer;
@@ -2841,7 +4659,7 @@ img:hover {
   color: #ffffff;
   margin: 0;
   line-height: 1.6;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   opacity: 0.95;
 }
@@ -3106,7 +4924,7 @@ img:hover {
   font-size: 1rem;
   font-weight: 400;
   color: #191919;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   margin: 0;
   line-height: 1.6;
 }
@@ -3120,21 +4938,6 @@ img:hover {
   width: 100%;
 }
 
-.bibliotheque__section {
-  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
-  color: #FFFDF3;
-}
-@media (min-width: 768px) {
-  .bibliotheque__section {
-    padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 4vw, 3rem);
-  }
-}
-@media (min-width: 1024px) {
-  .bibliotheque__section {
-    padding: clamp(3rem, 7vw, 5rem) clamp(2rem, 5vw, 4rem);
-  }
-}
-
 .bibliotheque__banner {
   display: flex;
   flex-direction: column;
@@ -3145,7 +4948,7 @@ img:hover {
   padding: clamp(1.5rem, 4vw, 3rem);
   max-width: 100%;
   box-sizing: border-box;
-  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+  margin: 5rem 0rem 5rem 0rem;
 }
 @media (min-width: 768px) {
   .bibliotheque__banner {
@@ -3213,7 +5016,7 @@ img:hover {
 }
 
 .bibliotheque__banner-subtitle {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   font-weight: 500;
   line-height: 1.4;
@@ -3223,7 +5026,7 @@ img:hover {
 }
 
 .bibliotheque__banner-description {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(0.875rem, 2vw, 1rem);
   line-height: 1.5;
   color: #FFFDF3;
@@ -3240,7 +5043,7 @@ img:hover {
   background-color: rgba(255, 253, 243, 0.15);
   color: #957E18;
   border: 2px solid #957E18;
-  border-radius: 8px;
+  border-radius: 10px;
   width: 100%;
   transition: all 0.3s ease;
 }
@@ -3270,7 +5073,7 @@ img:hover {
   outline: none;
   background: none;
   font-size: 1rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: #957E18;
 }
 .bibliotheque__search-input::placeholder {
@@ -3302,7 +5105,7 @@ img:hover {
   border: 2px solid rgba(25, 25, 25, 0.6);
   border-radius: 6px;
   color: #191919;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(0.8125rem, 1.5vw, 0.95rem);
   font-weight: 500;
   cursor: pointer;
@@ -3439,7 +5242,7 @@ img:hover {
 }
 .bibliotheque__grid-info p {
   margin: 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(0.75rem, 1.5vw, 0.875rem);
   color: rgba(255, 253, 243, 0.9);
   line-height: 1.4;
@@ -3450,7 +5253,7 @@ img:hover {
   text-align: center;
   padding: clamp(2rem, 5vw, 4rem);
   color: rgba(255, 253, 243, 0.7);
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(1rem, 2vw, 1.25rem);
 }
 .bibliotheque__no-results p {
@@ -3524,8 +5327,8 @@ img:hover {
 .pedagogical-table-container {
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #FFFFFF;
-  border-radius: 8px;
+  background-color: #ffffff;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -3537,7 +5340,7 @@ img:hover {
 }
 .pedagogical-table thead {
   background-color: #957E18;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .pedagogical-table th {
   padding: 1.2rem;
@@ -3623,7 +5426,8 @@ img:hover {
   .pedagogical-table {
     font-size: 0.85rem;
   }
-  .pedagogical-table th, .pedagogical-table td {
+  .pedagogical-table th,
+  .pedagogical-table td {
     padding: 0.9rem;
   }
   .pedagogical-table th.characteristics-col {
@@ -3644,7 +5448,8 @@ img:hover {
   .pedagogical-table {
     font-size: 0.75rem;
   }
-  .pedagogical-table th, .pedagogical-table td {
+  .pedagogical-table th,
+  .pedagogical-table td {
     padding: 0.7rem;
   }
   .pedagogical-table th.artists-col {
@@ -3793,7 +5598,7 @@ img:hover {
   width: 14px;
   height: 14px;
   background: linear-gradient(135deg, #957E18, #957E18);
-  border: 3px solid #FFFFFF;
+  border: 3px solid #ffffff;
   border-radius: 50%;
   top: 0;
   left: 1.75rem;
@@ -4196,7 +6001,7 @@ img:hover {
 .timeline-content {
   background: #ffffff;
   padding: 2rem;
-  border-radius: 0;
+  border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   flex: 1;
@@ -4209,7 +6014,7 @@ img:hover {
   .timeline-content {
     flex: 0 1 45%;
     padding: 3rem;
-    border-radius: 0;
+    border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     margin-left: 3rem;
   }
@@ -4224,7 +6029,7 @@ img:hover {
   background: transparent;
   color: #999999;
   padding: 0;
-  border-radius: 0;
+  border-radius: 5px;
   font-size: 0.75rem;
   font-weight: 400;
   margin-bottom: 1.2rem;
@@ -4328,7 +6133,7 @@ img:hover {
 }
 .artist:hover {
   background-color: #957E18;
-  color: #FFFFFF;
+  color: #ffffff;
   border-color: #957E18;
   transform: scale(1.05);
 }
@@ -4446,6 +6251,7 @@ img:hover {
 }
 
 .filter-group {
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   margin-bottom: 1.5rem;
 }
 
@@ -4469,11 +6275,13 @@ img:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .filter-pill {
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   padding: 0.5rem 1rem;
-  border-radius: 9999px;
+  border-radius: 10px;
   font-size: 0.875rem;
   background-color: #ffffff;
   color: #4b5563;
@@ -4541,10 +6349,11 @@ img:hover {
   color: #FFFDF3;
 }
 .event-preview-card .event-details .event-type-tag {
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.2);
   padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
+  border-radius: 10px;
   font-size: 0.875rem;
 }
 
@@ -4591,7 +6400,7 @@ img:hover {
 }
 .calendar-nav-header .nav-arrow-btn {
   padding: 0.5rem;
-  border-radius: 9999px;
+  border-radius: 10px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -4626,6 +6435,7 @@ img:hover {
 
 .calendar-weekdays-grid {
   display: grid;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   grid-template-columns: repeat(7, 1fr);
   gap: 0.5rem;
   margin-bottom: 1rem;
@@ -4680,6 +6490,7 @@ img:hover {
   height: 4rem;
   min-height: 4rem;
   border: 1px solid #e5e7eb;
+  border-radius: 10px;
   padding: 0.375rem;
   background-color: #ffffff;
   display: flex;
@@ -4732,7 +6543,7 @@ img:hover {
   width: 0.5rem;
   height: 0.5rem;
   background-color: #eab308;
-  border-radius: 9999px;
+  border-radius: 10px;
 }
 
 /* Event specific colors */
@@ -4765,7 +6576,7 @@ img:hover {
   padding: clamp(2rem, 5vw, 4rem);
   margin: 0;
   width: 100%;
-  border-radius: 0;
+  border-radius: 5px;
   overflow: hidden;
   transition: all 0.3s ease;
 }
@@ -4793,7 +6604,7 @@ img:hover {
 
 .Atelier__description,
 .Conférences__description {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(0.95rem, 2vw, 1.1rem);
   font-weight: 400;
   line-height: 1.5;
@@ -4807,7 +6618,7 @@ img:hover {
   border: 2px solid currentColor;
   border-radius: 5px;
   text-decoration: none;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -4892,9 +6703,9 @@ img:hover {
   padding: clamp(2rem, 5vw, 4rem);
   margin: 0;
   width: 100%;
-  border-radius: 0;
+  border-radius: 5px;
   overflow: hidden;
-  background: #8B6F47;
+  background: #8b6f47;
   color: #FFFDF3;
   transition: all 0.3s ease;
 }
@@ -4938,7 +6749,7 @@ img:hover {
 }
 
 .Porterie__description {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(0.95rem, 2vw, 1.1rem);
   font-weight: 400;
   line-height: 1.5;
@@ -4951,7 +6762,7 @@ img:hover {
   border: 2px solid currentColor;
   border-radius: 5px;
   text-decoration: none;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   background-color: rgba(255, 253, 243, 0.1);
@@ -4963,7 +6774,7 @@ img:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   background-color: #FFFDF3;
-  color: #8B6F47;
+  color: #8b6f47;
 }
 
 .Jazz {
@@ -4975,7 +6786,7 @@ img:hover {
   padding: clamp(2rem, 5vw, 4rem);
   margin: 0;
   width: 100%;
-  border-radius: 0;
+  border-radius: 5px;
   overflow: hidden;
   background: #191919;
   color: #FFFDF3;
@@ -5021,7 +6832,7 @@ img:hover {
 }
 
 .Jazz__description {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(0.95rem, 2vw, 1.1rem);
   font-weight: 400;
   line-height: 1.5;
@@ -5034,7 +6845,7 @@ img:hover {
   border: 2px solid currentColor;
   border-radius: 5px;
   text-decoration: none;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   background-color: rgba(255, 253, 243, 0.1);
@@ -5093,7 +6904,7 @@ img:hover {
   padding: 0.5rem 1rem;
   color: #47564F;
   text-decoration: none;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
   border-bottom: 1px solid #47564F;
@@ -5114,7 +6925,7 @@ img:hover {
 .reservation-event-details {
   padding: 2rem;
   background-color: #f9f9f9;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .reservation-event-title {
@@ -5133,7 +6944,7 @@ img:hover {
   display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 4px;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
 }
@@ -5166,7 +6977,7 @@ img:hover {
 }
 
 .reservation-info-label {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -5193,7 +7004,7 @@ img:hover {
   margin: 0 0 0.75rem 0;
 }
 .reservation-description p {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.9rem;
   line-height: 1.5;
   color: #555;
@@ -5203,7 +7014,7 @@ img:hover {
 .reservation-form-section {
   padding: 2rem;
   background-color: #f9f9f9;
-  border-radius: 8px;
+  border-radius: 10px;
   height: fit-content;
   position: sticky;
   top: 2rem;
@@ -5230,7 +7041,7 @@ img:hover {
 }
 
 .form-label {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
   color: #191919;
@@ -5240,7 +7051,7 @@ img:hover {
   padding: 0.75rem;
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.9rem;
   background-color: #FFFDF3;
   transition: border-color 0.3s ease;
@@ -5259,7 +7070,7 @@ img:hover {
   align-items: flex-start;
   gap: 0.75rem;
   cursor: pointer;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.85rem;
 }
 .form-checkbox input[type=checkbox] {
@@ -5277,7 +7088,7 @@ img:hover {
   color: #FFFDF3;
   border: none;
   border-radius: 4px;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -5299,7 +7110,7 @@ img:hover {
 }
 
 .reservation-form-note {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.75rem;
   color: #e6e6e6;
   margin-top: 1rem;
@@ -5317,7 +7128,7 @@ img:hover {
   padding: 3rem 2rem;
   background-color: #333333;
   color: #e6e6e6;
-  border-radius: 8px;
+  border-radius: 10px;
   text-align: center;
 }
 
@@ -5346,7 +7157,7 @@ img:hover {
   margin: 0 0 1rem 0;
 }
 .confirmation-card > p {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: #e6e6e6;
   margin-bottom: 1.5rem;
 }
@@ -5359,7 +7170,7 @@ img:hover {
   text-align: left;
 }
 .confirmation-details p {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.9rem;
   color: #333333;
   margin: 0.5rem 0;
@@ -5375,7 +7186,7 @@ img:hover {
   color: #FFFDF3;
   text-decoration: none;
   border-radius: 4px;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -5494,7 +7305,7 @@ img:hover {
 }
 @media (min-width: 768px) {
   .space-card {
-    border-radius: 0;
+    border-radius: 5px;
   }
 }
 .space-card:hover {
@@ -5648,7 +7459,7 @@ img:hover {
   border: none;
   cursor: pointer;
   text-align: left;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1.5rem;
   font-weight: 400;
   color: #000;
@@ -5701,7 +7512,7 @@ img:hover {
   font-size: 0.95rem;
   font-weight: 300;
   line-height: 1.8;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 @media (min-width: 768px) {
   .dropdown-text {
@@ -5786,7 +7597,7 @@ img:hover {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.7;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 @media (min-width: 768px) {
   .missions-content {
@@ -5863,7 +7674,7 @@ img:hover {
   font-size: 0.95rem;
   font-weight: 400;
   line-height: 1.8;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   margin: 0;
 }
 @media (min-width: 768px) {
@@ -5897,7 +7708,7 @@ img:hover {
   font-size: 0.95rem;
   font-weight: 400;
   line-height: 1.8;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   margin: 0;
 }
 @media (min-width: 768px) {
@@ -5905,896 +7716,6 @@ img:hover {
     font-size: 1rem;
     line-height: 1.9;
   }
-}
-
-.apple-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.apple-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 1.5rem;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.apple-nav-link {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #0071e3;
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: opacity 0.3s ease;
-}
-.apple-nav-link:hover {
-  opacity: 0.7;
-}
-
-.apple-logo {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #1d1d1f;
-  letter-spacing: -0.02em;
-}
-
-.apple-main {
-  padding-top: 80px;
-  min-height: 100vh;
-  background: #ffffff;
-}
-
-.apple-hero {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
-}
-@media (min-width: 1024px) {
-  .apple-hero {
-    padding: 3rem 2rem;
-  }
-}
-
-.apple-hero-image-wrapper {
-  width: 100%;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-  transition: box-shadow all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-.apple-hero-image-wrapper:hover {
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-}
-
-.apple-hero-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  aspect-ratio: 4/3;
-}
-@media (min-width: 768px) {
-  .apple-hero-image {
-    aspect-ratio: 16/9;
-  }
-}
-
-.apple-content {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem 4rem;
-}
-@media (min-width: 1024px) {
-  .apple-content {
-    display: grid;
-    grid-template-columns: 1fr 400px;
-    gap: 4rem;
-    padding: 3rem 2rem 5rem;
-  }
-}
-
-.apple-artwork-header {
-  margin-bottom: 2rem;
-}
-@media (min-width: 1024px) {
-  .apple-artwork-header {
-    margin-bottom: 3rem;
-  }
-}
-
-.apple-artwork-title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 700;
-  line-height: 1.1;
-  color: #1d1d1f;
-  letter-spacing: -0.03em;
-  margin-bottom: 0.5rem;
-}
-
-.apple-artwork-artist {
-  font-size: clamp(1.25rem, 3vw, 1.75rem);
-  font-weight: 500;
-  color: #86868b;
-  margin-bottom: 0.25rem;
-}
-
-.apple-artwork-year {
-  font-size: 1.125rem;
-  color: #86868b;
-  font-weight: 400;
-}
-
-.apple-description {
-  margin-bottom: 3rem;
-}
-.apple-description p {
-  font-size: 1.125rem;
-  line-height: 1.75;
-  color: #1d1d1f;
-  max-width: 65ch;
-}
-
-.apple-details-section {
-  margin-bottom: 3rem;
-}
-
-.apple-section-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #1d1d1f;
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.01em;
-}
-
-.apple-details-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-@media (min-width: 768px) {
-  .apple-details-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media (min-width: 1024px) {
-  .apple-details-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.apple-detail-card {
-  background: #f5f5f7;
-  border-radius: 12px;
-  padding: 1.25rem;
-  transition: transform all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-.apple-detail-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-}
-
-.apple-detail-label {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #86868b;
-  margin-bottom: 0.5rem;
-}
-
-.apple-detail-value {
-  display: block;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #1d1d1f;
-  line-height: 1.4;
-}
-
-@media (min-width: 1024px) {
-  .apple-audio-section {
-    grid-column: 1/-1;
-    margin-top: 2rem;
-  }
-}
-
-.apple-audio-card {
-  background: linear-gradient(135deg, #1d1d1f 0%, #2c2c2e 100%);
-  border-radius: 18px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-}
-@media (min-width: 768px) {
-  .apple-audio-card {
-    padding: 2rem;
-  }
-}
-
-.apple-audio-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.apple-audio-icon {
-  width: 48px;
-  height: 48px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-}
-
-.apple-audio-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.apple-audio-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.apple-audio-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #fff;
-}
-
-.apple-audio-player {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.apple-play-button {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: #fff;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #1d1d1f;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  flex-shrink: 0;
-}
-.apple-play-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
-}
-.apple-play-button:active {
-  transform: scale(0.95);
-}
-
-.apple-progress-container {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  min-width: 0;
-}
-
-.apple-current-time,
-.apple-total-time {
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.6);
-  font-variant-numeric: tabular-nums;
-  min-width: 35px;
-}
-
-.apple-current-time {
-  text-align: right;
-}
-
-.apple-progress-bar {
-  flex: 1;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 2px;
-  overflow: hidden;
-  cursor: pointer;
-  position: relative;
-}
-.apple-progress-bar:hover {
-  height: 6px;
-}
-
-.apple-progress-fill {
-  height: 100%;
-  background: #fff;
-  border-radius: 2px;
-  width: 0%;
-  transition: width 0.1s linear;
-  position: relative;
-}
-.apple-progress-fill::after {
-  content: "";
-  position: absolute;
-  right: -6px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
-  background: #fff;
-  border-radius: 50%;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.apple-progress-bar:hover .apple-progress-fill::after {
-  opacity: 1;
-}
-
-.apple-audio-volume {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.apple-volume-button {
-  background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.8);
-  cursor: pointer;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-.apple-volume-button:hover {
-  color: #fff;
-  transform: scale(1.1);
-}
-
-.apple-volume-slider {
-  width: 100px;
-  height: 4px;
-  -webkit-appearance: none;
-  appearance: none;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 2px;
-  cursor: pointer;
-}
-@media (min-width: 768px) {
-  .apple-volume-slider {
-    width: 120px;
-  }
-}
-.apple-volume-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 12px;
-  height: 12px;
-  background: #fff;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-.apple-volume-slider::-webkit-slider-thumb:hover {
-  transform: scale(1.2);
-}
-.apple-volume-slider::-moz-range-thumb {
-  width: 12px;
-  height: 12px;
-  background: #fff;
-  border-radius: 50%;
-  cursor: pointer;
-  border: none;
-}
-
-.apple-volume-value {
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.6);
-  min-width: 40px;
-  text-align: right;
-}
-
-.apple-bottom-nav {
-  padding-top: 2rem;
-  margin-top: 2rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.apple-back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #0071e3;
-  font-size: 1rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: opacity 0.3s ease;
-}
-.apple-back-link:hover {
-  opacity: 0.7;
-}
-
-.apple-footer {
-  background: #f5f5f7;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-}
-.apple-footer p {
-  font-size: 0.875rem;
-  color: #86868b;
-  margin: 0;
-}
-
-@media (max-width: 767px) {
-  .apple-nav {
-    padding: 0.75rem 1rem;
-  }
-  .apple-content {
-    padding: 1.5rem 1rem 3rem;
-  }
-  .apple-details-grid {
-    grid-template-columns: 1fr;
-  }
-  .apple-audio-player {
-    flex-wrap: wrap;
-  }
-  .apple-progress-container {
-    order: 1;
-    width: 100%;
-    margin-top: 0.75rem;
-  }
-  .apple-play-button {
-    width: 44px;
-    height: 44px;
-  }
-}
-audio {
-  display: none;
-}
-
-.apple-explore-section {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem;
-}
-@media (min-width: 1024px) {
-  .apple-explore-section {
-    padding: 4rem 2rem;
-  }
-}
-
-.apple-explore-card {
-  background: linear-gradient(135deg, #9d8b3d 0%, #c4a747 100%);
-  border-radius: 18px;
-  padding: 3rem 2rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  color: white;
-}
-@media (max-width: 767px) {
-  .apple-explore-card {
-    flex-direction: column;
-    padding: 2rem 1.5rem;
-  }
-}
-
-.apple-explore-icon {
-  flex-shrink: 0;
-  width: 64px;
-  height: 64px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-@media (max-width: 767px) {
-  .apple-explore-icon {
-    width: 48px;
-    height: 48px;
-  }
-}
-.apple-explore-icon svg {
-  width: 32px;
-  height: 32px;
-}
-@media (max-width: 767px) {
-  .apple-explore-icon svg {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-.apple-explore-content {
-  flex: 1;
-}
-
-.apple-explore-title {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.02em;
-}
-
-.apple-explore-subtitle {
-  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-  font-weight: 300;
-  margin-bottom: 1rem;
-  opacity: 0.9;
-}
-
-.apple-explore-description {
-  font-size: clamp(0.875rem, 2vw, 1rem);
-  line-height: 1.6;
-  opacity: 0.95;
-  max-width: 800px;
-}
-
-.apple-artists-linked-section {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem 4rem;
-}
-@media (min-width: 1024px) {
-  .apple-artists-linked-section {
-    padding: 4rem 2rem 5rem;
-  }
-}
-
-.apple-artists-grid-linked {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-@media (min-width: 768px) {
-  .apple-artists-grid-linked {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-}
-
-.apple-artist-card-linked {
-  position: relative;
-  height: 350px;
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-  text-decoration: none;
-}
-.apple-artist-card-linked:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-}
-
-.apple-artist-card-overlay-linked {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  color: white;
-}
-
-.apple-artist-name-linked {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 1rem;
-}
-
-.apple-artist-description-linked {
-  font-size: 0.875rem;
-  line-height: 1.5;
-  font-weight: 300;
-  opacity: 0.9;
-}
-
-.card-barré {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%23556b2f" width="400" height="400"/><circle cx="200" cy="100" r="80" fill="%234a5d2a"/></svg>') center/cover;
-}
-
-.card-matisse {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%23556b5f" width="400" height="400"/><ellipse cx="250" cy="150" rx="100" ry="80" fill="%23c4985f" transform="rotate(-20 250 150)"/></svg>') center/cover;
-}
-
-.card-valtat {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%234682b4" width="400" height="400"/><rect x="50" y="250" width="300" height="100" fill="%2366a3d9"/></svg>') center/cover;
-}
-
-.card-signac {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%236b8e9c" width="400" height="400"/><path d="M 50 350 Q 200 250 350 350" stroke="%238baab8" fill="none" stroke-width="30"/></svg>') center/cover;
-}
-
-.card-stojka {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%23698b69" width="400" height="400"/><rect x="100" y="100" width="200" height="200" fill="%2385a085"/></svg>') center/cover;
-}
-
-.card-bonnard {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%23728c6a" width="400" height="400"/><ellipse cx="200" cy="150" rx="120" ry="90" fill="%23c49b6a"/></svg>') center/cover;
-}
-
-.apple-works-section {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem 4rem;
-}
-@media (min-width: 1024px) {
-  .apple-works-section {
-    padding: 4rem 2rem 5rem;
-  }
-}
-
-.apple-works-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-@media (min-width: 768px) {
-  .apple-works-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-}
-
-.apple-work-card-linked {
-  position: relative;
-  height: 350px;
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-  text-decoration: none;
-}
-.apple-work-card-linked:hover {
-  transform: scale(1.02);
-}
-
-.apple-work-card-overlay-linked {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: white;
-}
-
-.apple-work-title-linked {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.apple-work-description-linked {
-  font-size: 0.875rem;
-  line-height: 1.5;
-  font-weight: 300;
-}
-
-.card-famille {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"><rect fill="%236b8ea3" width="600" height="400"/><rect x="50" y="300" width="100" height="100" fill="%23c4a862"/><rect x="200" y="250" width="100" height="150" fill="%234a6d8a"/><rect x="350" y="280" width="100" height="120" fill="%23d4b872"/></svg>') center/cover;
-}
-
-.card-portraits {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"><rect fill="%23556b4a" width="600" height="400"/><ellipse cx="300" cy="180" rx="100" ry="120" fill="%23c4985f"/><rect x="250" y="280" width="100" height="80" fill="%23d9a872"/></svg>') center/cover;
-}
-
-.apple-btn-more {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 1rem 2.5rem;
-  border: 2px solid #1d1d1f;
-  background: transparent;
-  color: #1d1d1f;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 12px;
-}
-.apple-btn-more:hover {
-  background: #1d1d1f;
-  color: white;
-}
-
-.apple-section-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-@media (max-width: 767px) {
-  .apple-section-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-.apple-section-title {
-  font-size: clamp(1.25rem, 3vw, 1.75rem);
-  font-weight: 600;
-  color: #1d1d1f;
-  letter-spacing: -0.01em;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.apple-section-title::before {
-  content: "+";
-  font-size: clamp(1.5rem, 3.5vw, 2rem);
-  font-weight: 700;
-  color: #0071e3;
-}
-
-.apple-section-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #0071e3;
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: opacity 0.3s ease;
-}
-.apple-section-link:hover {
-  opacity: 0.7;
-}
-
-@media (max-width: 767px) {
-  .apple-artists-grid-linked {
-    grid-template-columns: 1fr;
-  }
-  .apple-works-grid {
-    grid-template-columns: 1fr;
-  }
-  .apple-artist-card-linked,
-  .apple-work-card-linked {
-    height: 300px;
-  }
-}
-.apple-artist-works-section {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem 4rem;
-}
-@media (min-width: 1024px) {
-  .apple-artist-works-section {
-    padding: 4rem 2rem 5rem;
-  }
-}
-
-.apple-artist-works-row {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-@media (max-width: 767px) {
-  .apple-artist-works-row {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-}
-
-.apple-work-hover-card {
-  position: relative;
-  height: 400px;
-  border-radius: 18px;
-  overflow: hidden;
-  cursor: pointer;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-  text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.apple-work-hover-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-}
-.apple-work-hover-card:hover .apple-work-hover-overlay {
-  opacity: 1;
-  transform: translateY(0);
-}
-.apple-work-hover-card:hover .apple-work-hover-image img {
-  transform: scale(1.1);
-}
-@media (max-width: 767px) {
-  .apple-work-hover-card {
-    height: 300px;
-  }
-  .apple-work-hover-card .apple-work-hover-overlay {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.apple-work-hover-image {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-.apple-work-hover-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.apple-work-hover-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 2rem;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
-  color: white;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-@media (max-width: 767px) {
-  .apple-work-hover-overlay {
-    opacity: 1;
-    transform: translateY(0);
-    padding: 1.5rem;
-  }
-}
-
-.apple-work-hover-title {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.02em;
-}
-
-.apple-work-hover-year {
-  font-size: 1rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 1rem;
-}
-
-.apple-work-hover-description {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  font-weight: 300;
-  opacity: 0.9;
 }
 
 .breadcrumb {
@@ -6818,7 +7739,7 @@ audio {
   gap: 0.5rem;
   max-width: 1400px;
   margin: 0 auto;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(0.75rem, 1.5vw, 0.875rem);
 }
 .breadcrumb__link {
@@ -6906,7 +7827,7 @@ audio {
   left: 0.75rem;
   padding: 0.375rem 0.75rem;
   border-radius: 4px;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(0.6875rem, 1.2vw, 0.75rem);
   font-weight: 600;
   text-transform: uppercase;
@@ -7004,7 +7925,7 @@ audio {
   margin: 0 0 0.75rem 0;
 }
 .notification-banner__text {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(0.875rem, 2vw, 1rem);
   color: rgba(255, 253, 243, 0.8);
   margin: 0 0 1.5rem 0;
@@ -7026,10 +7947,10 @@ audio {
   flex: 1;
   padding: 0.875rem 1.25rem;
   border: 2px solid rgba(255, 253, 243, 0.2);
-  border-radius: 8px;
+  border-radius: 10px;
   background-color: rgba(255, 253, 243, 0.1);
   color: #FFFDF3;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1rem;
   transition: all 0.3s ease;
 }
@@ -7046,8 +7967,8 @@ audio {
   background-color: #957E18;
   color: #FFFDF3;
   border: none;
-  border-radius: 8px;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border-radius: 10px;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -7069,8 +7990,8 @@ audio {
   padding: clamp(1rem, 3vw, 1.5rem);
   margin-bottom: clamp(1.5rem, 4vw, 2rem);
   background-color: rgba(255, 253, 243, 0.05);
-  border-radius: 8px;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border-radius: 10px;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(0.75rem, 1.5vw, 0.875rem);
 }
 .event-legend__item {
@@ -7118,7 +8039,7 @@ audio {
   background-color: rgba(149, 126, 24, 0.2);
   border: 1px solid rgba(149, 126, 24, 0.4);
   border-radius: 20px;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(0.8125rem, 1.5vw, 0.9375rem);
   font-weight: 500;
   color: #957E18;
@@ -7134,7 +8055,7 @@ audio {
   gap: 1rem;
   padding: 0.75rem 0;
   margin-bottom: 1.5rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(0.8125rem, 1.5vw, 0.875rem);
 }
 .event-sort__label {
@@ -7146,10 +8067,10 @@ audio {
   max-width: 200px;
   padding: 0.625rem 1rem;
   border: 2px solid rgba(255, 253, 243, 0.2);
-  border-radius: 8px;
+  border-radius: 10px;
   background-color: transparent;
   color: #FFFDF3;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -7210,8 +8131,8 @@ audio {
   background-color: #957E18;
   color: #FFFDF3;
   border: none;
-  border-radius: 8px;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border-radius: 10px;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(1rem, 2vw, 1.125rem);
   font-weight: 600;
   text-decoration: none;
@@ -7265,9 +8186,9 @@ audio {
   padding: 1rem 1rem 1rem 3rem;
   background-color: rgba(255, 253, 243, 0.1);
   border: 2px solid rgba(255, 253, 243, 0.2);
-  border-radius: 8px;
+  border-radius: 10px;
   color: #FFFDF3;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1rem;
   transition: all 0.3s ease;
 }
@@ -7284,8 +8205,8 @@ audio {
   background-color: #957E18;
   color: #FFFDF3;
   border: none;
-  border-radius: 8px;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border-radius: 10px;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -7315,7 +8236,7 @@ audio {
   margin-bottom: 1rem;
 }
 .events-filters__label {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(0.8125rem, 1.5vw, 0.875rem);
   color: rgba(255, 253, 243, 0.7);
   font-weight: 500;
@@ -7324,9 +8245,9 @@ audio {
   padding: 0.625rem 1rem;
   background-color: rgba(255, 253, 243, 0.08);
   border: 2px solid rgba(255, 253, 243, 0.2);
-  border-radius: 8px;
+  border-radius: 10px;
   color: #FFFDF3;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -7350,7 +8271,7 @@ audio {
   border: 2px solid rgba(255, 253, 243, 0.3);
   border-radius: 20px;
   color: rgba(255, 253, 243, 0.8);
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.8125rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -7365,7 +8286,7 @@ audio {
   background: none;
   border: none;
   color: rgba(255, 253, 243, 0.5);
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.8125rem;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -7399,7 +8320,7 @@ audio {
   margin: 0;
 }
 .events-grid__count {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.9375rem;
   color: rgba(255, 253, 243, 0.6);
 }
@@ -7476,7 +8397,7 @@ audio {
 .event-card__badge {
   padding: 0.375rem 0.75rem;
   border-radius: 4px;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.6875rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -7538,7 +8459,7 @@ audio {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.8125rem;
   color: #957E18;
   margin-bottom: 0.5rem;
@@ -7556,7 +8477,7 @@ audio {
   line-height: 1.3;
 }
 .event-card__excerpt {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.875rem;
   color: rgba(255, 253, 243, 0.7);
   line-height: 1.5;
@@ -7568,7 +8489,7 @@ audio {
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 1rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.8125rem;
   color: rgba(255, 253, 243, 0.6);
 }
@@ -7590,7 +8511,7 @@ audio {
   border-top: 1px solid rgba(255, 253, 243, 0.1);
 }
 .event-card__price {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1.125rem;
   font-weight: 600;
   color: #957E18;
@@ -7604,7 +8525,7 @@ audio {
   color: #FFFDF3;
   border: none;
   border-radius: 6px;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
@@ -7634,7 +8555,7 @@ audio {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.8125rem;
   color: rgba(255, 253, 243, 0.9);
 }
@@ -7680,7 +8601,7 @@ audio {
   margin: 0 0 0.5rem 0;
 }
 .notification-card__text {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(0.875rem, 2vw, 1rem);
   color: rgba(255, 253, 243, 0.8);
   margin: 0 0 1.5rem 0;
@@ -7701,10 +8622,10 @@ audio {
   flex: 1;
   padding: 0.75rem 1rem;
   border: 2px solid rgba(255, 253, 243, 0.2);
-  border-radius: 8px;
+  border-radius: 10px;
   background-color: rgba(255, 253, 243, 0.1);
   color: #FFFDF3;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.9375rem;
 }
 .notification-card__input::placeholder {
@@ -7719,8 +8640,8 @@ audio {
   background-color: #957E18;
   color: #FFFDF3;
   border: none;
-  border-radius: 8px;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border-radius: 10px;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.9375rem;
   font-weight: 600;
   cursor: pointer;
@@ -7780,7 +8701,7 @@ audio {
   margin: 0 0 0.75rem 0;
 }
 .events-empty__text {
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(0.9375rem, 2vw, 1.125rem);
   color: rgba(255, 253, 243, 0.6);
   margin: 0 0 2rem 0;
@@ -7790,8 +8711,8 @@ audio {
   background-color: transparent;
   color: #957E18;
   border: 2px solid #957E18;
-  border-radius: 8px;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border-radius: 10px;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -7814,6 +8735,832 @@ audio {
     gap: 0.5rem;
   }
 }
+.fiche {
+  padding-top: 80px;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.fiche__content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+@media (min-width: 1024px) {
+  .fiche__content-wrapper {
+    padding: 3rem 0rem 0rem;
+  }
+}
+@media (max-width: 767px) {
+  .fiche__content-wrapper {
+    padding: 1.5rem 1rem 3rem;
+  }
+}
+
+.artwork__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #1d1d1f;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+}
+.artwork__artist {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 500;
+  color: #86868b;
+  margin-bottom: 0.25rem;
+}
+.artwork__year {
+  font-size: 1.125rem;
+  color: #86868b;
+  font-weight: 400;
+}
+
+.block-description {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 90rem;
+  align-content: center;
+  gap: 2rem;
+}
+
+.description__img {
+  width: auto;
+  height: -webkit-fill-available;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+@media (max-width: 767px) {
+  .description__img {
+    width: 100%;
+  }
+}
+.description__texte {
+  display: flex;
+  flex-direction: column;
+}
+.description__texte p {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #1d1d1f;
+  max-width: 65ch;
+}
+@media (max-width: 767px) {
+  .description {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.details {
+  margin-bottom: 3rem;
+}
+.details__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .details__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .details__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .details__grid {
+    grid-template-columns: 1fr;
+  }
+}
+.details__card {
+  background: #f5f5f7;
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: transform all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.details__card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+.details__label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #86868b;
+  margin-bottom: 0.5rem;
+}
+.details__value {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1d1d1f;
+  line-height: 1.4;
+}
+
+.section__title {
+  font-size: clamp(1.75rem, 3vw, 3.5rem);
+  font-weight: 600;
+  color: #1d1d1f;
+  letter-spacing: -0.01em;
+  margin: none;
+}
+.section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+@media (max-width: 767px) {
+  .section__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.section__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #0071e3;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+.section__link:hover {
+  opacity: 0.7;
+}
+
+@media (min-width: 1024px) {
+  .audio-player {
+    grid-column: 1/-1;
+    margin-top: 2rem;
+  }
+}
+.audio-player__card {
+  background: #957e18;
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+@media (min-width: 768px) {
+  .audio-player__card {
+    padding: 2rem;
+  }
+}
+.audio-player__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.audio-player__icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.audio-player__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.audio-player__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.6);
+}
+.audio-player__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin: none;
+}
+.audio-player__controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 767px) {
+  .audio-player__controls {
+    flex-wrap: wrap;
+  }
+}
+.audio-player__play-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1d1d1f;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
+}
+.audio-player__play-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
+}
+.audio-player__play-button:active {
+  transform: scale(0.95);
+}
+@media (max-width: 767px) {
+  .audio-player__play-button {
+    width: 44px;
+    height: 44px;
+  }
+}
+.audio-player__progress-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+@media (max-width: 767px) {
+  .audio-player__progress-container {
+    order: 1;
+    width: 100%;
+    margin-top: 0.75rem;
+  }
+}
+.audio-player__time {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-variant-numeric: tabular-nums;
+  min-width: 35px;
+}
+.audio-player__time--current {
+  text-align: right;
+}
+.audio-player__progress-bar {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+.audio-player__progress-bar:hover {
+  height: 6px;
+}
+.audio-player__progress-bar:hover .audio-player__progress-fill::after {
+  opacity: 1;
+}
+.audio-player__progress-fill {
+  height: 100%;
+  background: #fff;
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.1s linear;
+  position: relative;
+}
+.audio-player__progress-fill::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.audio-player__volume {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.audio-player__volume-button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.audio-player__volume-button:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+.audio-player__volume-slider {
+  width: 100px;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .audio-player__volume-slider {
+    width: 120px;
+  }
+}
+.audio-player__volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.audio-player__volume-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+.audio-player__volume-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+.audio-player__volume-value {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  min-width: 40px;
+  text-align: right;
+}
+
+.artists-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+@media (min-width: 1024px) {
+  .artists-grid {
+    padding: 4rem 2rem 5rem;
+  }
+}
+.artists-grid__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .artists-grid__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+@media (max-width: 767px) {
+  .artists-grid__grid {
+    grid-template-columns: 1fr;
+  }
+}
+.artists-grid__card {
+  position: relative;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+}
+.artists-grid__card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+@media (max-width: 767px) {
+  .artists-grid__card {
+    height: 300px;
+  }
+}
+.artists-grid__card--barre {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%23556b2f" width="400" height="400"/><circle cx="200" cy="100" r="80" fill="%234a5d2a"/></svg>') center/cover;
+}
+.artists-grid__card--matisse {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%23556b5f" width="400" height="400"/><ellipse cx="250" cy="150" rx="100" ry="80" fill="%23c4985f" transform="rotate(-20 250 150)"/></svg>') center/cover;
+}
+.artists-grid__card--valtat {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%234682b4" width="400" height="400"/><rect x="50" y="250" width="300" height="100" fill="%2366a3d9"/></svg>') center/cover;
+}
+.artists-grid__card--signac {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%236b8e9c" width="400" height="400"/><path d="M 50 350 Q 200 250 350 350" stroke="%238baab8" fill="none" stroke-width="30"/></svg>') center/cover;
+}
+.artists-grid__card--stojka {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%23698b69" width="400" height="400"/><rect x="100" y="100" width="200" height="200" fill="%2385a085"/></svg>') center/cover;
+}
+.artists-grid__card--bonnard {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect fill="%23728c6a" width="400" height="400"/><ellipse cx="200" cy="150" rx="120" ry="90" fill="%23c49b6a"/></svg>') center/cover;
+}
+.artists-grid__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: white;
+}
+.artists-grid__name {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+.artists-grid__description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.works-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+@media (min-width: 1024px) {
+  .works-grid {
+    padding: 4rem 2rem 5rem;
+  }
+}
+.works-grid__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .works-grid__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+@media (max-width: 767px) {
+  .works-grid__grid {
+    grid-template-columns: 1fr;
+  }
+}
+.works-grid__card {
+  position: relative;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+}
+.works-grid__card:hover {
+  transform: scale(1.02);
+}
+@media (max-width: 767px) {
+  .works-grid__card {
+    height: 300px;
+  }
+}
+.works-grid__card--famille {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"><rect fill="%236b8ea3" width="600" height="400"/><rect x="50" y="300" width="100" height="100" fill="%23c4a862"/><rect x="200" y="250" width="100" height="150" fill="%234a6d8a"/><rect x="350" y="280" width="100" height="120" fill="%23d4b872"/></svg>') center/cover;
+}
+.works-grid__card--portraits {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"><rect fill="%23556b4a" width="600" height="400"/><ellipse cx="300" cy="180" rx="100" ry="120" fill="%23c4985f"/><rect x="250" y="280" width="100" height="80" fill="%23d9a872"/></svg>') center/cover;
+}
+.works-grid__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+.works-grid__title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.works-grid__description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.work-hover {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+@media (min-width: 1024px) {
+  .work-hover {
+    padding: 4rem 2rem 5rem;
+  }
+}
+.work-hover__row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 767px) {
+  .work-hover__row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+.work-hover__card {
+  position: relative;
+  height: 400px;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.work-hover__card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+.work-hover__card:hover .work-hover__overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+.work-hover__card:hover .work-hover__image img {
+  transform: scale(1.1);
+}
+@media (max-width: 767px) {
+  .work-hover__card {
+    height: 300px;
+  }
+  .work-hover__card .work-hover__overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.work-hover__image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.work-hover__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.work-hover__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+@media (max-width: 767px) {
+  .work-hover__overlay {
+    opacity: 1;
+    transform: translateY(0);
+    padding: 1.5rem;
+  }
+}
+.work-hover__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+.work-hover__year {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+}
+.work-hover__description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.btn--more {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  border: 2px solid #1d1d1f;
+  background: transparent;
+  color: #1d1d1f;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+.btn--more:hover {
+  background: #1d1d1f;
+  color: white;
+}
+
+.location-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+@media (min-width: 1024px) {
+  .location-section {
+    padding: 4rem 2rem 5rem;
+  }
+}
+.location-section__map {
+  width: 100%;
+  height: 400px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+@media (min-width: 768px) {
+  .location-section__map {
+    height: 500px;
+  }
+}
+
+audio {
+  display: none;
+}
+
+.other-works {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+@media (min-width: 1024px) {
+  .other-works {
+    padding: 4rem 2rem 5rem;
+  }
+}
+.other-works__header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem;
+}
+.other-works__header img {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.panels {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  height: 500px;
+  gap: 12px;
+}
+
+.panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  cursor: pointer;
+  flex: 1;
+  transition: flex 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.panels:hover .panel {
+  flex: 0.6;
+}
+
+.panels:hover .panel:hover {
+  flex: 1.6;
+}
+
+.panel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+  filter: brightness(0.75);
+}
+
+.panel:hover img {
+  transform: scale(1.04);
+  filter: brightness(0.6);
+}
+
+.panel-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.1) 50%, transparent 100%);
+}
+
+.panel-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px 30px;
+  color: #fff;
+}
+
+.panel-content h3 {
+  color: rgb(253, 253, 253);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  transform: translateY(8px);
+  transition: transform 0.4s ease;
+}
+
+.panel-content p {
+  font-size: 0.82rem;
+  font-weight: 300;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+  max-width: 340px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.panel:hover .panel-content h3 {
+  transform: translateY(0);
+}
+
+.panel:hover .panel-content p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Arrow indicator */
+.panel-arrow {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  color: white;
+}
+
+.panel:hover .panel-arrow {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.panel-arrow svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: white;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .admin-body {
   margin: 0;
   padding: 0;
@@ -7852,12 +9599,12 @@ audio {
   background: #957E18;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .sidebar-btn-add:hover {
   background: #957E18;
@@ -7903,7 +9650,7 @@ audio {
   font-size: 0.9rem;
   border-radius: 6px;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .sidebar-link:hover {
   background: rgba(149, 126, 24, 0.1);
@@ -7943,12 +9690,12 @@ audio {
   padding: 0.7rem 1.2rem;
   background: white;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 500;
   transition: all 0.3s ease;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .admin-tab:hover {
   background: #f9f9f9;
@@ -7965,14 +9712,14 @@ audio {
   gap: 1rem;
   background: #2a2a2a;
   padding: 0.8rem 1.2rem;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .admin-username {
   color: white;
   font-size: 0.9rem;
   font-weight: 500;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .admin-search,
@@ -8020,7 +9767,7 @@ audio {
 .stat-card {
   background: white;
   padding: 1.8rem;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
@@ -8034,7 +9781,7 @@ audio {
   color: #888;
   font-weight: 500;
   margin-bottom: 0.8rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .stat-number {
@@ -8048,7 +9795,7 @@ audio {
 .stat-change {
   font-size: 0.8rem;
   color: #666;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .admin-filters {
@@ -8073,9 +9820,9 @@ audio {
   width: 100%;
   padding: 0.9rem 1.2rem;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 0.9rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   transition: all 0.3s ease;
 }
 .filter-input:focus {
@@ -8097,11 +9844,11 @@ audio {
   padding: 0.7rem 1.2rem;
   background: white;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 0.85rem;
   transition: all 0.3s ease;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   white-space: nowrap;
 }
 .filter-btn:hover {
@@ -8129,7 +9876,7 @@ audio {
 .action-count {
   font-size: 0.9rem;
   color: #666;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   white-space: nowrap;
 }
 
@@ -8147,7 +9894,7 @@ audio {
   cursor: pointer;
   font-size: 0.85rem;
   transition: all 0.3s ease;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-weight: 500;
 }
 .action-btn:hover {
@@ -8175,7 +9922,7 @@ audio {
   text-align: left;
   font-weight: 600;
   font-size: 0.9rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 .admin-table th:last-child {
@@ -8185,7 +9932,7 @@ audio {
   padding: 1.5rem 1.2rem;
   border-bottom: 1px solid #eee;
   font-size: 0.9rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .admin-table td strong {
   color: #191919;
@@ -8314,7 +10061,7 @@ audio {
 .media-stat {
   background: white;
   padding: 1.5rem;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
@@ -8325,7 +10072,7 @@ audio {
   font-size: 0.8rem;
   color: #888;
   font-weight: 500;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .media-stat-value {
@@ -8338,7 +10085,7 @@ audio {
 .media-stat-change {
   font-size: 0.75rem;
   color: #666;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .media-controls {
@@ -8358,9 +10105,9 @@ audio {
   width: 100%;
   padding: 0.9rem 1.2rem;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 0.9rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   transition: all 0.3s ease;
 }
 .media-search-input:focus {
@@ -8393,7 +10140,7 @@ audio {
 .media-selection-count {
   font-size: 0.9rem;
   color: #666;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   white-space: nowrap;
 }
 
@@ -8420,7 +10167,7 @@ audio {
 .media-card {
   background: white;
   border: 1px solid #eee;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -8471,7 +10218,7 @@ audio {
   font-weight: 600;
   color: #191919;
   margin: 0 0 0.6rem 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -8480,7 +10227,7 @@ audio {
   font-size: 0.8rem;
   color: #666;
   margin: 0.4rem 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .media-size,
@@ -8513,7 +10260,7 @@ audio {
 .users-table-wrapper,
 .qr-table-wrapper {
   background: white;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow-x: auto;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
@@ -8537,7 +10284,7 @@ audio {
   text-align: left;
   font-weight: 600;
   font-size: 0.9rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 .works-table th:last-child,
@@ -8551,7 +10298,7 @@ audio {
   padding: 1.2rem;
   border-bottom: 1px solid #eee;
   font-size: 0.9rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .works-table td strong,
 .users-table td strong,
@@ -8607,7 +10354,7 @@ audio {
 .collection-card {
   background: white;
   padding: 1.5rem;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #eee;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
@@ -8635,14 +10382,14 @@ audio {
   font-size: 0.85rem;
   color: #957E18;
   font-weight: 600;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .collection-desc {
   font-size: 0.9rem;
   color: #666;
   margin: 0.5rem 0 1rem 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .collection-actions {
@@ -8657,7 +10404,7 @@ audio {
 
 .exposition-card {
   background: white;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   display: grid;
@@ -8704,14 +10451,14 @@ audio {
   color: #957E18;
   font-weight: 600;
   margin: 0 0 0.5rem 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .exposition-desc {
   font-size: 0.9rem;
   color: #666;
   margin: 0.5rem 0 1rem 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .exposition-meta {
@@ -8728,7 +10475,7 @@ audio {
   font-weight: 600;
   background: #f0f0f0;
   color: #666;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .badge.active {
   background: rgba(149, 126, 24, 0.15);
@@ -8764,7 +10511,7 @@ audio {
 
 .popular-card {
   background: white;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
@@ -8804,7 +10551,7 @@ audio {
   font-size: 0.9rem;
   color: #666;
   margin: 0 1rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .stats {
@@ -8820,7 +10567,7 @@ audio {
   padding: 0.3rem 0.6rem;
   border-radius: 4px;
   color: #666;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .qr-stats {
@@ -8833,7 +10580,7 @@ audio {
 .qr-stat-card {
   background: white;
   padding: 1.5rem;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   text-align: center;
 }
@@ -8842,7 +10589,7 @@ audio {
   color: #888;
   font-weight: 500;
   margin-bottom: 0.8rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .qr-stat-card .stat-big {
   font-size: 2rem;
@@ -8854,7 +10601,7 @@ audio {
 .qr-stat-card .stat-change {
   font-size: 0.8rem;
   color: #666;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .engagement {
@@ -8881,7 +10628,7 @@ audio {
   display: flex;
   gap: 2rem;
   background: white;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
@@ -8907,7 +10654,7 @@ audio {
   font-weight: 500;
   color: #666;
   transition: all 0.3s ease;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .settings-nav-btn:hover {
   background: #e8e8e8;
@@ -8935,14 +10682,14 @@ audio {
   font-weight: 700;
   color: #191919;
   margin: 1.5rem 0 0.5rem 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .settings-content h4 {
   font-size: 0.95rem;
   font-weight: 600;
   color: #333;
   margin: 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .settings-tab {
@@ -8956,7 +10703,7 @@ audio {
   font-size: 0.85rem;
   color: #999;
   margin: 0 0 1.5rem 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .settings-form-group {
@@ -8968,7 +10715,7 @@ audio {
   font-weight: 500;
   margin-bottom: 0.5rem;
   color: #333;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .settings-input {
@@ -8977,7 +10724,7 @@ audio {
   border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 0.9rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   transition: all 0.3s ease;
   background: white;
 }
@@ -9016,7 +10763,7 @@ audio {
   font-size: 0.85rem;
   color: #999;
   margin: 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .toggle-switch {
@@ -9079,7 +10826,7 @@ audio {
 }
 .theme-option label {
   cursor: pointer;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: #333;
 }
 
@@ -9096,7 +10843,7 @@ audio {
   margin-bottom: 1rem;
   font-size: 0.9rem;
   font-weight: 500;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: #333;
 }
 
@@ -9127,7 +10874,7 @@ audio {
   border-radius: 4px;
   font-size: 0.85rem;
   color: #666;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .danger-title {
@@ -9160,7 +10907,7 @@ audio {
   font-size: 0.85rem;
   color: #999;
   margin: 0.5rem 0 0 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .btn-danger {
@@ -9172,7 +10919,7 @@ audio {
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.85rem;
   margin-left: 1rem;
 }
@@ -9189,7 +10936,7 @@ audio {
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.85rem;
   margin-left: 1rem;
 }
@@ -9212,7 +10959,7 @@ audio {
   gap: 0.5rem;
   font-size: 0.9rem;
   color: #333;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   cursor: pointer;
 }
 .checkbox-label input[type=checkbox] {
@@ -9226,7 +10973,7 @@ audio {
   font-size: 0.9rem;
   color: #666;
   margin: 0 0 1rem 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .btn-primary,
@@ -9239,7 +10986,7 @@ audio {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .btn-primary {
@@ -9285,7 +11032,7 @@ audio {
   font-weight: 600;
   padding: 0.4rem 0.8rem;
   transition: all 0.3s ease;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   text-decoration: none;
 }
 .action-link:hover {
@@ -9312,7 +11059,7 @@ audio {
 .export-section-card {
   background: white;
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
@@ -9331,7 +11078,7 @@ audio {
   font-size: 0.9rem;
   color: #666;
   margin: 0 0 1.5rem 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .export-format-options {
@@ -9343,7 +11090,7 @@ audio {
 
 .format-option {
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -9351,11 +11098,11 @@ audio {
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.3rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .format-option .format-desc {
   font-size: 0.85rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .format-option:hover {
   opacity: 0.9;
@@ -9401,7 +11148,7 @@ audio {
   gap: 0.8rem;
   font-size: 0.9rem;
   color: #333;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   cursor: pointer;
 }
 .export-checkbox-label input[type=checkbox] {
@@ -9416,12 +11163,12 @@ audio {
   background: #47564F;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   width: 100%;
 }
 .export-download-btn:hover {
@@ -9432,7 +11179,7 @@ audio {
 .import-section-card {
   background: white;
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
@@ -9448,7 +11195,7 @@ audio {
 .import-icon-box {
   width: 48px;
   height: 48px;
-  border-radius: 8px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9475,23 +11222,23 @@ audio {
   font-size: 0.9rem;
   color: #666;
   margin: 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .import-formats-banner {
   background: #47564F;
   color: white;
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 0.9rem;
   text-align: center;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-weight: 500;
 }
 
 .import-dropzone {
   border: 2px dashed #ddd;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 3rem 2rem;
   text-align: center;
   cursor: pointer;
@@ -9512,14 +11259,14 @@ audio {
   font-size: 0.95rem;
   color: #333;
   margin: 0.5rem 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-weight: 500;
 }
 .import-dropzone .dropzone-hint {
   font-size: 0.85rem;
   color: #999;
   margin: 0.5rem 0 0 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .import-file-input {
@@ -9544,7 +11291,7 @@ audio {
   gap: 0.8rem;
   font-size: 0.9rem;
   color: #333;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   cursor: pointer;
 }
 .import-checkbox-label input[type=checkbox] {
@@ -9559,12 +11306,12 @@ audio {
   background: #47564F;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   width: 100%;
 }
 .import-launch-btn:hover {
@@ -9620,7 +11367,7 @@ audio {
   border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 0.9rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: white;
   transition: all 0.3s ease;
 }
@@ -9635,7 +11382,7 @@ audio {
 
 .fiche-list-table-wrapper {
   background: white;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
@@ -9656,7 +11403,7 @@ audio {
   color: #666;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .fiche-list-table tbody tr {
   border-bottom: 1px solid #eee;
@@ -9669,7 +11416,7 @@ audio {
   padding: 1rem;
   font-size: 0.9rem;
   color: #333;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .fiche-row {
@@ -9687,7 +11434,7 @@ audio {
   border-radius: 4px;
   font-size: 0.8rem;
   font-weight: 500;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .fiche-edit-btn {
@@ -9699,7 +11446,7 @@ audio {
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 600;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   transition: all 0.3s ease;
 }
 .fiche-edit-btn:hover {
@@ -9726,7 +11473,7 @@ audio {
   margin-bottom: 2rem;
   padding: 1rem 2rem;
   background: white;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
@@ -9742,7 +11489,7 @@ audio {
   border-radius: 6px;
   cursor: pointer;
   font-weight: 500;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.9rem;
   transition: all 0.3s ease;
 }
@@ -9763,7 +11510,7 @@ audio {
   border-radius: 6px;
   cursor: pointer;
   font-weight: 500;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.9rem;
   transition: all 0.3s ease;
 }
@@ -9776,7 +11523,7 @@ audio {
   display: flex;
   gap: 3rem;
   background: white;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 2rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
@@ -9789,7 +11536,7 @@ audio {
   position: relative;
   width: 100%;
   aspect-ratio: 1;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
   background: #f5f5f5;
 }
@@ -9809,7 +11556,7 @@ audio {
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 600;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .fiche-artwork-right {
@@ -9897,14 +11644,14 @@ audio {
   font-weight: 700;
   color: #191919;
   margin: 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .fiche-section-subtitle {
   font-size: 0.85rem;
   color: #999;
   margin: 0 0 1rem 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .fiche-form-group {
@@ -9916,7 +11663,7 @@ audio {
   font-size: 0.9rem;
   font-weight: 500;
   color: #333;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .fiche-input {
@@ -9924,7 +11671,7 @@ audio {
   border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 0.9rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: white;
   transition: all 0.3s ease;
 }
@@ -9938,7 +11685,7 @@ audio {
   font-size: 0.75rem;
   color: #999;
   margin: 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-style: italic;
 }
 
@@ -9953,7 +11700,7 @@ audio {
   border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 0.9rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   min-height: 150px;
   resize: vertical;
   transition: all 0.3s ease;
@@ -9972,7 +11719,7 @@ audio {
 
 .fiche-upload-area {
   border: 2px dashed #ddd;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 2rem;
   text-align: center;
   cursor: pointer;
@@ -9989,7 +11736,7 @@ audio {
   font-weight: 600;
   color: #333;
   margin: 1rem 0 0.5rem 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .fiche-upload-icon {
@@ -10000,7 +11747,7 @@ audio {
   font-size: 0.8rem;
   color: #999;
   margin: 0.5rem 0 0 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .fiche-file-input {
@@ -10028,7 +11775,7 @@ audio {
   border-radius: 6px;
   cursor: pointer;
   font-weight: 700;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.9rem;
   transition: all 0.3s ease;
   letter-spacing: 0.5px;
@@ -10046,7 +11793,7 @@ audio {
   border-radius: 6px;
   cursor: pointer;
   font-weight: 700;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.9rem;
   transition: all 0.3s ease;
   letter-spacing: 0.5px;
@@ -10064,7 +11811,7 @@ audio {
   border-radius: 6px;
   cursor: pointer;
   font-weight: 700;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.9rem;
   transition: all 0.3s ease;
   letter-spacing: 0.5px;
@@ -10135,7 +11882,8 @@ audio {
   .fiche-list-table {
     font-size: 0.8rem;
   }
-  .fiche-list-table th, .fiche-list-table td {
+  .fiche-list-table th,
+  .fiche-list-table td {
     padding: 0.7rem;
   }
   .fiche-edit-btn {
@@ -10223,7 +11971,7 @@ audio {
   flex-direction: column;
   align-items: center;
   gap: 0.8rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .role-btn:hover {
   border-color: #957E18;
@@ -10262,7 +12010,7 @@ audio {
   border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 0.95rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   background: #fafafa;
 }
@@ -10304,7 +12052,7 @@ audio {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   margin-top: 0.5rem;
 }
 .login-button:hover {
@@ -10326,7 +12074,7 @@ audio {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .login-back:hover {
   background: rgba(149, 126, 24, 0.1);
@@ -10365,7 +12113,7 @@ audio {
 
 @media (max-width: 480px) {
   .login-box {
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 2rem 1.5rem;
   }
   .login-header h1 {
@@ -10433,7 +12181,7 @@ audio {
   font-weight: 600;
   margin: 0 0 0.3rem 0;
   font-size: 0.95rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -10443,7 +12191,7 @@ audio {
   color: #aaa;
   font-size: 0.75rem;
   margin: 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -10468,9 +12216,9 @@ audio {
   color: #ccc;
   text-decoration: none;
   font-size: 0.95rem;
-  border-radius: 8px;
+  border-radius: 10px;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .sidebar-link:hover {
   background: rgba(149, 126, 24, 0.1);
@@ -10486,12 +12234,12 @@ audio {
   background: transparent;
   border: 1px solid #957E18;
   color: #957E18;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 600;
   transition: all 0.3s ease;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .sidebar-logout:hover {
   background: rgba(149, 126, 24, 0.1);
@@ -10523,7 +12271,7 @@ audio {
   color: #666;
   font-size: 1rem;
   margin: 0;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .content-section {
@@ -10555,7 +12303,7 @@ audio {
   font-size: 1.8rem;
   margin: 0;
   font-weight: 600;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .tickets-grid {
@@ -10590,7 +12338,7 @@ audio {
   font-weight: 700;
   color: #191919;
   font-size: 1.1rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .ticket-status {
@@ -10602,7 +12350,7 @@ audio {
 }
 .ticket-status.valid {
   background: rgba(76, 175, 80, 0.15);
-  color: #4CAF50;
+  color: #4caf50;
 }
 .ticket-status.expired {
   background: rgba(200, 200, 200, 0.15);
@@ -10616,7 +12364,7 @@ audio {
   margin: 0.6rem 0;
   font-size: 0.9rem;
   color: #666;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .ticket-details p strong {
   color: #191919;
@@ -10632,7 +12380,7 @@ audio {
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .ticket-btn:hover {
   background: #957E18;
@@ -10667,7 +12415,7 @@ audio {
 .event-image {
   width: 100%;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 .event-image img {
   width: 100%;
@@ -10685,7 +12433,7 @@ audio {
   font-size: 1.3rem;
   margin: 0 0 0.8rem 0;
   font-weight: 600;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .event-info .event-date {
   color: #666;
@@ -10742,7 +12490,7 @@ audio {
   font-size: 1.1rem;
   margin: 0 0 1rem 0;
   font-weight: 600;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .info-card ul {
   list-style: none;
@@ -10753,7 +12501,7 @@ audio {
   padding: 0.5rem 0;
   color: #666;
   font-size: 0.9rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
 }
 .info-card ul li span {
@@ -10784,7 +12532,7 @@ audio {
   font-size: 1.3rem;
   margin: 0 0 0.8rem 0;
   font-weight: 600;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .newsletter-card p {
@@ -10809,14 +12557,14 @@ audio {
   font-weight: 600;
   color: #191919;
   font-size: 0.9rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .form-group input {
   padding: 0.9rem 1rem;
   border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 0.95rem;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   transition: all 0.3s ease;
 }
 .form-group input:focus {
@@ -10841,7 +12589,7 @@ audio {
   cursor: pointer;
   font-size: 0.9rem;
   color: #666;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .checkbox-label input[type=checkbox] {
   width: 18px;
@@ -10866,7 +12614,7 @@ audio {
   font-size: 0.85rem;
   color: #666;
   cursor: pointer;
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-weight: 400;
 }
 
@@ -10880,7 +12628,7 @@ audio {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  font-family: "Futura PT", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Styrene B Regular Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   text-decoration: none;
   text-align: center;
   display: inline-block;

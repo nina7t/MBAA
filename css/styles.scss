@@ -3,6 +3,7 @@
 @use "utils/variables";
 
 // @use des styles de base
+
 @use "base/base";
 @use "base/principal";
 
@@ -38,11 +39,12 @@
 @use "component/espaces-musee";
 @use "component/liste-deroulante";
 @use "component/atelier";
-@use "component/fiche";
 @use "component/ux-improvements";
 @use "component/events-page";
+@use "component/fiche";
 
 // @use des styles spécifiques aux pages
+
 @use "./admin";
 @use "./connexion";
 @use "./visiteur";

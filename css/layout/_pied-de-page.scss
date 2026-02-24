@@ -1,4 +1,4 @@
-@use '../utils/variables' as *;
+@use "../utils/variables" as *;
 
 // === FOOTER PRINCIPAL ===
 footer {
@@ -13,18 +13,13 @@ footer {
 
   // Ligne décorative supérieure
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.3) 50%,
-      transparent 100%
-    );
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
   }
 }
 
@@ -125,7 +120,7 @@ footer {
   background-color: transparent;
   border: none;
   border-bottom: 1.5px solid rgba(255, 255, 255, 0.4);
-  border-radius: 0;
+  border-radius: 5px;
   transition: all 0.3s ease;
   min-height: $touch-target-min;
 
@@ -249,7 +244,7 @@ footer {
     padding: 0;
     min-height: auto;
     display: inline-block;
-    
+
     &:hover {
       color: $color-primary-white;
       transform: translateX(4px);
@@ -352,7 +347,7 @@ footer {
   }
 
   &:not(:last-child)::after {
-    content: '•';
+    content: "•";
     position: absolute;
     right: -1.25rem;
     color: rgba(255, 255, 255, 0.4);

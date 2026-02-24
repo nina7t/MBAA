@@ -1,0 +1,97 @@
+@use "../utils/variables" as *;
+
+// Corrections pour les icônes du header et taille du titre
+.header {
+    // ==========================================
+    // CORRECTION TITRE HERO - PLUS PETIT
+    // ==========================================
+    &__title {
+        color: $color-primary-white !important;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 1.875rem;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        line-height: 1;
+        letter-spacing: -0.125rem;
+
+        @media (min-width: 768px) {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+        }
+
+        @media (min-width: 1024px) {
+            font-size: clamp(3rem, 7vw, 5rem);
+        }
+    }
+
+    // ==========================================
+    // CORRECTION CROIX ICÔNE
+    // ==========================================
+    &__cross {
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 0.5rem;
+
+        @media (min-width: 768px) {
+            width: 32px;
+            height: 32px;
+        }
+
+        @media (min-width: 1024px) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    // ==========================================
+    // CORRECTION SCROLL ICÔNE
+    // ==========================================
+    &__scroll {
+        display: flex;
+  justify-content: center;
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+
+        @media (min-width: 1024px) {
+            bottom: 3rem;
+        }
+    }
+
+    &__scroll-icon {
+        width: 32px;
+        height: 32px;
+        display: block;
+        animation: bounce-scroll 2s infinite;
+
+        @media (min-width: 768px) {
+            width: 40px;
+            height: 40px;
+        }
+
+        @media (min-width: 1024px) {
+            width: 48px;
+            height: 48px;
+        }
+    }
+
+    @keyframes bounce-scroll {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-10px);
+        }
+        60% {
+            transform: translateY(-5px);
+        }
+    }
+}

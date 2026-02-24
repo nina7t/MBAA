@@ -4,19 +4,6 @@
     width: 100%;
 }
 
-.bibliotheque__section {
-    padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
-    color: $color-primary-white;
-
-    @media (min-width: 768px) {
-        padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 4vw, 3rem);
-    }
-
-    @media (min-width: 1024px) {
-        padding: clamp(3rem, 7vw, 5rem) clamp(2rem, 5vw, 4rem);
-    }
-}
-
 .bibliotheque__banner {
     display: flex;
     flex-direction: column;
@@ -27,7 +14,7 @@
     padding: clamp(1.5rem, 4vw, 3rem);
     max-width: 100%;
     box-sizing: border-box;
-    margin-bottom: clamp(2rem, 4vw, 3.5rem);
+    margin: 5rem 0rem 5rem 0rem;
 
     @media (min-width: 768px) {
         max-width: 95%;
@@ -116,7 +103,7 @@
     background-color: rgba($color-primary-white, 0.15);
     color: $bg-or;
     border: 2px solid $bg-or;
-    border-radius: 8px;
+    border-radius: 10px;
     width: 100%;
     transition: all 0.3s ease;
 
@@ -276,7 +263,9 @@
         height: 100%;
         object-fit: cover;
         display: block;
-        transition: transform 0.4s ease, filter 0.4s ease;
+        transition:
+            transform 0.4s ease,
+            filter 0.4s ease;
         filter: grayscale(30%);
     }
 
