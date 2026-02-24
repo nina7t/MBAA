@@ -18,14 +18,6 @@ $audioguide-radius: 18px;
 $audioguide-radius-sm: 12px;
 $audioguide-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 
-// ============================================
-// BLOCK: fiche (Main)
-// ============================================
-.fiche {
-    padding-top: 80px;
-    min-height: 100vh;
-    background: $audioguide-bg;
-}
 
 // ============================================
 // BLOCK: fiche__content-wrapper
@@ -81,13 +73,21 @@ $audioguide-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 
 .block-description{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    width: 90rem;
-    align-content: center;
-    gap: 2rem;
-}
 
+
+    @media (max-width: 767px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        gap: 2rem;
+        
+        
+    }
+
+}
 .description {
     // ELEMENT: Image
     &__img {
@@ -106,7 +106,7 @@ $audioguide-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 
     &__texte {
         display: flex;
-        flex-direction: column;
+        flex-direction: column !important;
 
 
         p {
@@ -1036,3 +1036,6 @@ audio {
     stroke-linecap: round;
     stroke-linejoin: round;
   }
+
+
+  
