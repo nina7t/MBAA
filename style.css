@@ -484,7 +484,8 @@ body.is-nav-open {
     pointer-events: none;
   }
   .header--menu-open .header__menu-toggle {
-    pointer-events: auto;
+    pointer-events: auto !important;
+    z-index: 9999 !important;
   }
 }
 @media (min-width: 1024px) {
