@@ -1933,17 +1933,12 @@ body.is-nav-open {
   border-top: 1px solid rgba(245, 242, 236, 0.12);
   padding-top: 1.5rem;
   display: flex;
-  align-items: center;
-  gap: 3rem;
-  opacity: 0;
-  animation: fadeUp 0.9s ease 1s forwards;
+  display: none !important;
 }
 
 @media (max-width: 1023px) {
   .hero__strip {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
+    display: none !important;
   }
 }
 .hero__stat {
@@ -6579,6 +6574,151 @@ img:hover {
   background-color: #374151;
 }
 
+.event-calendar-section {
+  padding: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+}
+
+.event-calendar-container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.event-calendar-grid {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.calendar-main-content {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.calendar-card {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0.75rem;
+}
+@media (min-width: 480px) {
+  .calendar-card {
+    padding: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .calendar-card {
+    padding: 1.5rem;
+  }
+}
+
+.calendar-days-grid,
+.calendar-weekdays-grid {
+  width: 100%;
+  box-sizing: border-box;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.25rem;
+}
+@media (min-width: 480px) {
+  .calendar-days-grid,
+  .calendar-weekdays-grid {
+    gap: 0.375rem;
+  }
+}
+@media (min-width: 768px) {
+  .calendar-days-grid,
+  .calendar-weekdays-grid {
+    gap: 0.75rem;
+  }
+}
+
+.calendar-day-cell,
+.calendar-day-empty {
+  aspect-ratio: unset;
+  height: auto;
+  min-height: unset;
+  padding-top: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+.calendar-day-cell .day-number,
+.calendar-day-cell span,
+.calendar-day-empty .day-number,
+.calendar-day-empty span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(0.6rem, 2.5vw, 1rem);
+  line-height: 1;
+}
+.calendar-day-cell .event-indicator,
+.calendar-day-empty .event-indicator {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(0.25rem, 1vw, 0.5rem);
+  height: clamp(0.25rem, 1vw, 0.5rem);
+}
+
+.calendar-day-empty {
+  padding-top: 100%;
+  height: auto;
+  min-height: unset;
+  background: transparent;
+  border: none;
+}
+
+.calendar-weekdays-grid div {
+  font-size: clamp(0.55rem, 2vw, 0.875rem);
+  padding: 0.25rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.calendar-nav-header {
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  margin-bottom: 0.75rem;
+}
+.calendar-nav-header .calendar-current-title {
+  font-size: clamp(1rem, 4vw, 2.25rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  flex: 1;
+}
+.calendar-nav-header .nav-arrow-btn {
+  flex-shrink: 0;
+  padding: 0.375rem;
+}
+.calendar-nav-header .nav-arrow-btn i, .calendar-nav-header .nav-arrow-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.calendar-sidebar {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.view-toggle {
+  width: 100%;
+  box-sizing: border-box;
+}
+.view-toggle .toggle-btn {
+  flex: 1;
+  justify-content: center;
+}
+
 .Atelier,
 .Conférences {
   position: relative;
@@ -8974,6 +9114,151 @@ img:hover {
     padding: 1rem;
   }
 }
+.event-calendar-section {
+  padding: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+}
+
+.event-calendar-container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.event-calendar-grid {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.calendar-main-content {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.calendar-card {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0.75rem;
+}
+@media (min-width: 480px) {
+  .calendar-card {
+    padding: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .calendar-card {
+    padding: 1.5rem;
+  }
+}
+
+.calendar-days-grid,
+.calendar-weekdays-grid {
+  width: 100%;
+  box-sizing: border-box;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.25rem;
+}
+@media (min-width: 480px) {
+  .calendar-days-grid,
+  .calendar-weekdays-grid {
+    gap: 0.375rem;
+  }
+}
+@media (min-width: 768px) {
+  .calendar-days-grid,
+  .calendar-weekdays-grid {
+    gap: 0.75rem;
+  }
+}
+
+.calendar-day-cell,
+.calendar-day-empty {
+  aspect-ratio: unset;
+  height: auto;
+  min-height: unset;
+  padding-top: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+.calendar-day-cell .day-number,
+.calendar-day-cell span,
+.calendar-day-empty .day-number,
+.calendar-day-empty span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(0.6rem, 2.5vw, 1rem);
+  line-height: 1;
+}
+.calendar-day-cell .event-indicator,
+.calendar-day-empty .event-indicator {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(0.25rem, 1vw, 0.5rem);
+  height: clamp(0.25rem, 1vw, 0.5rem);
+}
+
+.calendar-day-empty {
+  padding-top: 100%;
+  height: auto;
+  min-height: unset;
+  background: transparent;
+  border: none;
+}
+
+.calendar-weekdays-grid div {
+  font-size: clamp(0.55rem, 2vw, 0.875rem);
+  padding: 0.25rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.calendar-nav-header {
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  margin-bottom: 0.75rem;
+}
+.calendar-nav-header .calendar-current-title {
+  font-size: clamp(1rem, 4vw, 2.25rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  flex: 1;
+}
+.calendar-nav-header .nav-arrow-btn {
+  flex-shrink: 0;
+  padding: 0.375rem;
+}
+.calendar-nav-header .nav-arrow-btn i, .calendar-nav-header .nav-arrow-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.calendar-sidebar {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.view-toggle {
+  width: 100%;
+  box-sizing: border-box;
+}
+.view-toggle .toggle-btn {
+  flex: 1;
+  justify-content: center;
+}
+
 .fiche__content-wrapper {
   max-width: 1400px;
   margin: 0 auto;

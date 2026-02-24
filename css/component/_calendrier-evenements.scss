@@ -371,3 +371,162 @@
 .bg-gray-700 {
   background-color: #374151;
 }
+
+
+
+// ── Section calendrier ────────────────────────────────────────
+.event-calendar-section {
+  padding: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden; // bloque tout débordement enfant
+}
+
+.event-calendar-container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.event-calendar-grid {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+// ── Main content (zone calendrier) ───────────────────────────
+.calendar-main-content {
+  width: 100%;
+  min-width: 0;    // CRITIQUE : permet au flex/grid enfant de rétrécir
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+// ── La card blanche du calendrier ────────────────────────────
+.calendar-card {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden; // plus de overflow-x: auto qui cause le scroll
+  padding: 0.75rem;
+
+  @media (min-width: 480px) {
+    padding: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    padding: 1.5rem;
+  }
+}
+
+// ── Grille des jours ─────────────────────────────────────────
+.calendar-days-grid,
+.calendar-weekdays-grid {
+  width: 100%;
+  box-sizing: border-box;
+  // Forcer les colonnes à rester dans le conteneur
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.25rem;
+
+  @media (min-width: 480px) {
+    gap: 0.375rem;
+  }
+
+  @media (min-width: 768px) {
+    gap: 0.75rem;
+  }
+}
+
+// ── Cellules du calendrier ────────────────────────────────────
+.calendar-day-cell,
+.calendar-day-empty {
+  // Supprime aspect-ratio et hauteurs fixes qui causent le débordement
+  aspect-ratio: unset;
+  height: auto;
+  min-height: unset;
+
+  // Hauteur basée sur la largeur réelle de la cellule
+  padding-top: 100%; // Astuce : padding-top % = % de la LARGEUR → carré parfait
+  position: relative;
+  box-sizing: border-box;
+
+  // Les enfants se positionnent par rapport à la cellule
+  .day-number,
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(0.6rem, 2.5vw, 1rem);
+    line-height: 1;
+  }
+
+  .event-indicator {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(0.25rem, 1vw, 0.5rem);
+    height: clamp(0.25rem, 1vw, 0.5rem);
+  }
+}
+
+.calendar-day-empty {
+  // Cellule vide = même taille mais sans contenu
+  padding-top: 100%;
+  height: auto;
+  min-height: unset;
+  background: transparent;
+  border: none;
+}
+
+// ── Jours de la semaine ───────────────────────────────────────
+.calendar-weekdays-grid div {
+  font-size: clamp(0.55rem, 2vw, 0.875rem);
+  padding: 0.25rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// ── Header nav du calendrier ──────────────────────────────────
+.calendar-nav-header {
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  margin-bottom: 0.75rem;
+
+  .calendar-current-title {
+    font-size: clamp(1rem, 4vw, 2.25rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    flex: 1;
+  }
+
+  .nav-arrow-btn {
+    flex-shrink: 0;
+    padding: 0.375rem;
+
+    i, svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+// ── Sidebar ───────────────────────────────────────────────────
+.calendar-sidebar {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+// ── Toggle vue mobile (à bien contenir) ──────────────────────
+.view-toggle {
+  width: 100%;
+  box-sizing: border-box;
+
+  .toggle-btn {
+    flex: 1;
+    justify-content: center;
+  }
+}

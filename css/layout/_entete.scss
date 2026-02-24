@@ -2108,17 +2108,12 @@ body.is-nav-open {
   border-top: 1px solid rgba(245, 242, 236, 0.12);
   padding-top: 1.5rem;
   display: flex;
-  align-items: center;
-  gap: 3rem;
-  opacity: 0;
-  animation: fadeUp 0.9s ease 1s forwards;
+  display: none !important;
 }
 
 @media (max-width: 1023px) {
   .hero__strip {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
+    display: none !important;
   }
 }
 
