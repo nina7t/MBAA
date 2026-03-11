@@ -1,0 +1,667 @@
+/**
+ * MBAA Plugin - Styles Uppy pour Musée
+ * Personnalisation de l'interface Uppy pour un musée d'art
+ */
+
+/* ========================================
+   CONTENEUR UPPY PERSONNALISÉ
+   ======================================== */
+
+.mbaa-uppy-container {
+  margin: 16px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
+
+/* ========================================
+   DASHBOARD UPPY - THEME MUSÉE
+   ======================================== */
+
+/* Personnalisation du Dashboard */
+.uppy-Dashboard {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif !important;
+  border: 2px dashed #d1d5db !important;
+  border-radius: 12px !important;
+  background: #fafafa !important;
+}
+
+.uppy-Dashboard--modal {
+  z-index: 100000 !important;
+}
+
+/* Zone de drop */
+.uppy-Dashboard-AddFiles {
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%) !important;
+  border: none !important;
+  border-radius: 12px !important;
+}
+
+.uppy-Dashboard-AddFiles-title {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+  margin-bottom: 12px !important;
+}
+
+.uppy-Dashboard-note {
+  font-size: 13px !important;
+  color: #6b7280 !important;
+  max-width: 500px !important;
+  margin: 12px auto 0 !important;
+  line-height: 1.6 !important;
+}
+
+/* Icône de drop */
+.uppy-Dashboard-AddFiles-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.uppy-DashboardTab-btn {
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  padding: 10px 16px !important;
+  margin: 4px !important;
+  transition: all 0.2s ease !important;
+  color: #374151 !important;
+  font-weight: 500 !important;
+}
+
+.uppy-DashboardTab-btn:hover {
+  background: #f9fafb !important;
+  border-color: #3b82f6 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+}
+
+.uppy-DashboardTab-btn:focus {
+  outline: none !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+/* Bouton "Browse" */
+.uppy-Dashboard-browse {
+  color: #3b82f6 !important;
+  font-weight: 600 !important;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.uppy-Dashboard-browse:hover {
+  color: #2563eb !important;
+}
+
+/* ========================================
+   LISTE DES FICHIERS
+   ======================================== */
+
+.uppy-Dashboard-files {
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 16px !important;
+  margin-top: 16px !important;
+}
+
+.uppy-Dashboard-Item {
+  background: #f9fafb !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  padding: 12px !important;
+  margin-bottom: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.uppy-Dashboard-Item:hover {
+  background: #ffffff !important;
+  border-color: #d1d5db !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.uppy-Dashboard-Item-preview {
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  background: #ffffff !important;
+}
+
+.uppy-Dashboard-Item-previewImg {
+  border-radius: 6px !important;
+  object-fit: cover !important;
+}
+
+.uppy-Dashboard-Item-name {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #1f2937 !important;
+}
+
+.uppy-Dashboard-Item-status {
+  font-size: 12px !important;
+  color: #6b7280 !important;
+}
+
+/* ========================================
+   BARRE DE PROGRESSION
+   ======================================== */
+
+.uppy-StatusBar {
+  background: #ffffff !important;
+  border-top: 1px solid #e5e7eb !important;
+  border-radius: 0 0 12px 12px !important;
+  padding: 16px 20px !important;
+}
+
+.uppy-StatusBar-progress {
+  background: #e5e7eb !important;
+  border-radius: 999px !important;
+  height: 8px !important;
+  overflow: hidden;
+}
+
+.uppy-StatusBar-progressInner {
+  background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%) !important;
+  border-radius: 999px !important;
+  transition: width 0.3s ease !important;
+  height: 100% !important;
+}
+
+/* Animation de la barre de progression */
+@keyframes progress-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 0;
+  }
+}
+
+.uppy-StatusBar.is-uploading .uppy-StatusBar-progressInner {
+  background: linear-gradient(
+    90deg,
+    #3b82f6 0%,
+    #2563eb 50%,
+    #3b82f6 100%
+  ) !important;
+  background-size: 40px 8px;
+  animation: progress-animation 1s linear infinite;
+}
+
+.uppy-StatusBar-content {
+  font-size: 13px !important;
+  color: #374151 !important;
+  font-weight: 500 !important;
+}
+
+.uppy-StatusBar-statusPrimary {
+  color: #1f2937 !important;
+  font-weight: 600 !important;
+}
+
+.uppy-StatusBar-statusSecondary {
+  color: #6b7280 !important;
+  font-size: 12px !important;
+}
+
+/* ========================================
+   BOUTONS D'ACTION
+   ======================================== */
+
+.uppy-StatusBar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.uppy-StatusBar-actionBtn {
+  background: #3b82f6 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 10px 20px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.uppy-StatusBar-actionBtn:hover {
+  background: #2563eb !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+.uppy-StatusBar-actionBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(59, 130, 246, 0.2);
+}
+
+.uppy-StatusBar-actionBtn--retry {
+  background: #f59e0b !important;
+}
+
+.uppy-StatusBar-actionBtn--retry:hover {
+  background: #d97706 !important;
+}
+
+.uppy-StatusBar-actionBtn--cancel,
+.uppy-StatusBar-actionBtn--done {
+  background: transparent !important;
+  color: #6b7280 !important;
+  box-shadow: none !important;
+}
+
+.uppy-StatusBar-actionBtn--cancel:hover,
+.uppy-StatusBar-actionBtn--done:hover {
+  background: #f3f4f6 !important;
+  color: #374151 !important;
+}
+
+/* ========================================
+   ÉTAT DE SUCCÈS / ERREUR
+   ======================================== */
+
+.uppy-StatusBar.is-complete {
+  background: #ecfdf5 !important;
+  border-top-color: #10b981 !important;
+}
+
+.uppy-StatusBar.is-complete .uppy-StatusBar-content {
+  color: #047857 !important;
+}
+
+.uppy-StatusBar.is-error {
+  background: #fef2f2 !important;
+  border-top-color: #ef4444 !important;
+}
+
+.uppy-StatusBar.is-error .uppy-StatusBar-content {
+  color: #dc2626 !important;
+}
+
+.uppy-Dashboard-Item.is-complete {
+  background: #ecfdf5 !important;
+  border-color: #10b981 !important;
+}
+
+.uppy-Dashboard-Item.is-error {
+  background: #fef2f2 !important;
+  border-color: #ef4444 !important;
+}
+
+/* ========================================
+   INFORMATIONS / NOTIFICATIONS
+   ======================================== */
+
+.uppy-Informer {
+  background: #1f2937 !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+  font-size: 13px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: slideInUp 0.3s ease;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.uppy-Informer[aria-label*="error"],
+.uppy-Informer--error {
+  background: #dc2626 !important;
+}
+
+.uppy-Informer[aria-label*="success"],
+.uppy-Informer--success {
+  background: #10b981 !important;
+}
+
+.uppy-Informer[aria-label*="warning"],
+.uppy-Informer--warning {
+  background: #f59e0b !important;
+}
+
+/* ========================================
+   IMAGE EDITOR
+   ======================================== */
+
+.uppy-ImageEditor-container {
+  background: #1f2937 !important;
+}
+
+.uppy-ImageEditor-controls {
+  background: #374151 !important;
+  border-top: 1px solid #4b5563 !important;
+  padding: 16px !important;
+}
+
+.uppy-ImageEditor-controls button {
+  background: #4b5563 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 8px 16px !important;
+  margin: 0 4px !important;
+  transition: all 0.2s ease !important;
+}
+
+.uppy-ImageEditor-controls button:hover {
+  background: #6b7280 !important;
+  transform: translateY(-1px);
+}
+
+.uppy-ImageEditor-controls button.uppy-ImageEditor-button--apply {
+  background: #3b82f6 !important;
+}
+
+.uppy-ImageEditor-controls button.uppy-ImageEditor-button--apply:hover {
+  background: #2563eb !important;
+}
+
+/* ========================================
+   WEBCAM
+   ======================================== */
+
+.uppy-Webcam-videoContainer {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  background: #000000 !important;
+}
+
+.uppy-Webcam-button {
+  background: #ef4444 !important;
+  border-radius: 50% !important;
+  width: 60px !important;
+  height: 60px !important;
+  border: 4px solid #ffffff !important;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+  transition: all 0.2s ease !important;
+}
+
+.uppy-Webcam-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.5);
+}
+
+/* ========================================
+   PREVIEW APRÈS UPLOAD
+   ======================================== */
+
+.mbaa-image-preview {
+  margin-top: 16px;
+  padding: 16px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.mbaa-image-preview img {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.mbaa-image-preview img:hover {
+  transform: scale(1.02);
+}
+
+.mbaa-image-preview .button,
+.mbaa-audio-player .button {
+  margin-top: 12px;
+  background: #ef4444;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mbaa-image-preview .button:hover,
+.mbaa-audio-player .button:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+/* ========================================
+   AUDIO PLAYER
+   ======================================== */
+
+.mbaa-audio-player {
+  margin-top: 16px;
+  padding: 16px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.mbaa-audio-player audio {
+  width: 100%;
+  border-radius: 8px;
+  outline: none;
+}
+
+.mbaa-audio-player audio::-webkit-media-controls-panel {
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+/* ========================================
+   DRAG & DROP ÉTAT ACTIF
+   ======================================== */
+
+.uppy-Dashboard.uppy-Dashboard--isDraggingOver {
+  background: #eff6ff !important;
+  border-color: #3b82f6 !important;
+  border-width: 3px !important;
+}
+
+.uppy-Dashboard.uppy-Dashboard--isDraggingOver .uppy-Dashboard-AddFiles {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%) !important;
+  transform: scale(1.02);
+}
+
+.uppy-Dashboard.uppy-Dashboard--isDraggingOver .uppy-Dashboard-AddFiles-title {
+  color: #1e40af !important;
+  font-size: 20px !important;
+}
+
+/* ========================================
+   ICÔNES & ANIMATIONS
+   ======================================== */
+
+.uppy-Dashboard-Item-action {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 6px !important;
+  transition: all 0.2s ease !important;
+}
+
+.uppy-Dashboard-Item-action:hover {
+  background: #f3f4f6 !important;
+  transform: scale(1.1);
+}
+
+.uppy-Dashboard-Item-action--remove:hover {
+  background: #fef2f2 !important;
+}
+
+.uppy-Dashboard-Item-action--remove svg {
+  fill: #ef4444 !important;
+}
+
+/* Animation de chargement */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.mbaa-loading::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #3b82f6;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .uppy-Dashboard {
+    height: auto !important;
+  }
+
+  .uppy-Dashboard-AddFiles-title {
+    font-size: 16px !important;
+  }
+
+  .uppy-Dashboard-note {
+    font-size: 12px !important;
+  }
+
+  .uppy-StatusBar-actionBtn {
+    padding: 8px 12px !important;
+    font-size: 13px !important;
+  }
+
+  .mbaa-image-preview img {
+    max-height: 250px;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITÉ
+   ======================================== */
+
+.uppy-Dashboard:focus-within {
+  outline: 3px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.uppy-Dashboard-Item:focus-within {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Mode sombre (si nécessaire) */
+@media (prefers-color-scheme: dark) {
+  .mbaa-uppy-container {
+    background: #1f2937;
+  }
+
+  .uppy-Dashboard {
+    background: #111827 !important;
+    border-color: #374151 !important;
+  }
+
+  .uppy-Dashboard-AddFiles {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%) !important;
+  }
+
+  .uppy-Dashboard-AddFiles-title {
+    color: #f9fafb !important;
+  }
+
+  .uppy-Dashboard-note {
+    color: #9ca3af !important;
+  }
+
+  .mbaa-image-preview,
+  .mbaa-audio-player {
+    background: #1f2937;
+    border-color: #374151;
+  }
+}
+
+/* ========================================
+   THÈME MUSÉE PERSONNALISÉ
+   ======================================== */
+
+/* Palette de couleurs élégante pour musée */
+.mbaa-uppy-container.museum-theme .uppy-Dashboard {
+  border-color: #d4af37 !important; /* Or musée */
+}
+
+.mbaa-uppy-container.museum-theme .uppy-StatusBar-actionBtn {
+  background: #8b7355 !important; /* Bronze musée */
+}
+
+.mbaa-uppy-container.museum-theme .uppy-StatusBar-actionBtn:hover {
+  background: #6b5744 !important;
+}
+
+.mbaa-uppy-container.museum-theme .uppy-StatusBar-progressInner {
+  background: linear-gradient(90deg, #d4af37 0%, #b8941f 100%) !important;
+}
+
+/* ========================================
+   TOAST NOTIFICATIONS
+   ======================================== */
+
+.mbaa-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 16px 24px;
+  background: #1f2937;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 100000;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  max-width: 400px;
+}
+
+.mbaa-toast-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mbaa-toast-success {
+  background: #10b981;
+}
+
+.mbaa-toast-error {
+  background: #ef4444;
+}
+
+.mbaa-toast-warning {
+  background: #f59e0b;
+}
+
+.mbaa-toast-info {
+  background: #3b82f6;
+}

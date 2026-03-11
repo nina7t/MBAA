@@ -1,0 +1,551 @@
+// ============================================================
+// event-calendar.js — Version unifiée (desktop + mobile)
+// ============================================================
+
+// ========================================
+// VARIABLES GLOBALES
+// ========================================
+
+let sidebarShowAll = false;
+const SIDEBAR_LIMIT = 5;
+
+// ========================================
+// FONCTIONS SEO - SCHEMA.ORG
+// ========================================
+
+function injectSchemaOrg() {
+  const schemas = events.map(ev => ({
+    "@type": "Event",
+    "name": ev.title,
+    "startDate": `${ev.year}-${String(ev.month + 1).padStart(2, '0')}-${String(ev.date).padStart(2, '0')}`,
+    "location": {
+      "@type": "Place",
+      "name": "Musée des Beaux-Arts et d'Archéologie de Besançon",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1 Place de la Révolution",
+        "addressLocality": "Besançon",
+        "postalCode": "25000",
+        "addressCountry": "FR"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Musée MAT Besançon",
+      "url": "https://www.mbaa.besancon.fr"
+    },
+    "eventCategory": ev.type,
+    "url": `./reservation.html?event=${ev.id}` 
+  }));
+
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": schemas
+  });
+  document.head.appendChild(script);
+}
+
+// ========================================
+// DONNÉES
+// ========================================
+
+const events = [
+  // Décembre 2025
+  { id: 1,  date: 3,  month: 11, year: 2025, title: 'Ateliers Peinture',           type: 'Ateliers Adultes', color: 'bg-yellow-700', colorHex: '#a16207' },
+  { id: 2,  date: 8,  month: 11, year: 2025, title: 'Ateliers Poterie',           type: 'Ateliers Enfants', color: 'bg-gray-600',   colorHex: '#4b5563' },
+  { id: 3,  date: 9,  month: 11, year: 2025, title: 'Soirée Jazz au musée',       type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  { id: 4,  date: 11, month: 11, year: 2025, title: 'Concert de Noël',            type: 'Tout public',      color: 'bg-gray-800',   colorHex: '#1f2937' },
+  { id: 5,  date: 14, month: 11, year: 2025, title: 'Atelier Sculpture',         type: 'Ateliers Adultes', color: 'bg-gray-700',   colorHex: '#374151' },
+  { id: 6,  date: 15, month: 11, year: 2025, title: 'Visite Guidée',             type: 'Tout public',      color: 'bg-gray-700',   colorHex: '#374151' },
+  { id: 7,  date: 20, month: 11, year: 2025, title: 'Atelier Dessin',             type: 'Ateliers Adultes', color: 'bg-yellow-700', colorHex: '#a16207' },
+  { id: 8,  date: 22, month: 11, year: 2025, title: 'Conte pour enfants',         type: 'Ateliers Enfants', color: 'bg-gray-600',   colorHex: '#4b5563' },
+  { id: 9,  date: 28, month: 11, year: 2025, title: 'Soirée de Gala',             type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  { id: 10, date: 31, month: 11, year: 2025, title: 'Réveillon au musée',        type: 'Tout public',      color: 'bg-gray-800',   colorHex: '#1f2937' },
+  
+  // Janvier 2026
+  { id: 11, date: 5,  month: 0,  year: 2026, title: 'Atelier gravure adultes',   type: 'Ateliers Adultes', color: 'bg-yellow-700', colorHex: '#a16207' },
+  { id: 12, date: 10, month: 0,  year: 2026, title: 'Atelier Modelage Enfants',  type: 'Ateliers Enfants', color: 'bg-gray-600',   colorHex: '#4b5563' },
+  { id: 13, date: 15, month: 0,  year: 2026, title: 'Concert Classique',         type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  { id: 14, date: 18, month: 0,  year: 2026, title: 'Conférence art moderne',    type: 'Tout public',      color: 'bg-gray-800',   colorHex: '#1f2937' },
+  { id: 15, date: 22, month: 0,  year: 2026, title: 'Atelier Aquarelle',         type: 'Ateliers Adultes', color: 'bg-gray-700',   colorHex: '#374151' },
+  { id: 16, date: 25, month: 0,  year: 2026, title: 'Soirée Jazz - Quartet',    type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  { id: 17, date: 28, month: 0,  year: 2026, title: 'Visite Nocturne',          type: 'Tout public',      color: 'bg-gray-800',   colorHex: '#1f2937' },
+  
+  // Février 2026
+  { id: 18, date: 2,  month: 1,  year: 2026, title: 'Atelier Photographie',      type: 'Ateliers Adultes', color: 'bg-yellow-700', colorHex: '#a16207' },
+  { id: 19, date: 7,  month: 1,  year: 2026, title: 'Atelier Carnaval',          type: 'Ateliers Enfants', color: 'bg-gray-600',   colorHex: '#4b5563' },
+  { id: 20, date: 14, month: 1,  year: 2026, title: 'Soirée Romantique',         type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  { id: 21, date: 18, month: 1,  year: 2026, title: 'Conférence Histoire Art',  type: 'Tout public',      color: 'bg-gray-800',   colorHex: '#1f2937' },
+  { id: 22, date: 22, month: 1,  year: 2026, title: 'Atelier Céramique',         type: 'Ateliers Adultes', color: 'bg-gray-700',   colorHex: '#374151' },
+  { id: 23, date: 28, month: 1,  year: 2026, title: 'Concert de Chambre',        type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  
+  // Mars 2026
+  { id: 24, date: 5,  month: 2,  year: 2026, title: 'Atelier Printemps',          type: 'Ateliers Adultes', color: 'bg-yellow-700', colorHex: '#a16207' },
+  { id: 25, date: 8,  month: 2,  year: 2026, title: 'Atelier Pâques',            type: 'Ateliers Enfants', color: 'bg-gray-600',   colorHex: '#4b5563' },
+  { id: 26, date: 15, month: 2,  year: 2026, title: 'Festival de Musique',       type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  { id: 27, date: 20, month: 2,  year: 2026, title: 'Exposition Temporaire',     type: 'Tout public',      color: 'bg-gray-800',   colorHex: '#1f2937' },
+  { id: 28, date: 25, month: 2,  year: 2026, title: 'Atelier Land Art',          type: 'Ateliers Adultes', color: 'bg-gray-700',   colorHex: '#374151' },
+  { id: 29, date: 30, month: 2,  year: 2026, title: 'Soirée Electro',             type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  
+  // Avril 2026
+  { id: 30, date: 3,  month: 3,  year: 2026, title: 'Atelier Pâques Géant',       type: 'Ateliers Enfants', color: 'bg-gray-600',   colorHex: '#4b5563' },
+  { id: 31, date: 10, month: 3,  year: 2026, title: 'Journée Portes Ouvertes',  type: 'Tout public',      color: 'bg-gray-800',   colorHex: '#1f2937' },
+  { id: 32, date: 15, month: 3,  year: 2026, title: 'Atelier Calligraphie',      type: 'Ateliers Adultes', color: 'bg-yellow-700', colorHex: '#a16207' },
+  { id: 33, date: 20, month: 3,  year: 2026, title: 'Soirée Poésie',            type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  { id: 34, date: 25, month: 3,  year: 2026, title: 'Visite Thématique',        type: 'Tout public',      color: 'bg-gray-800',   colorHex: '#1f2937' },
+  
+  // Mai 2026
+  { id: 35, date: 1,  month: 4,  year: 2026, title: 'Atelier Fleurs',            type: 'Ateliers Adultes', color: 'bg-yellow-700', colorHex: '#a16207' },
+  { id: 36, date: 8,  month: 4,  year: 2026, title: 'Fête des Mères',            type: 'Ateliers Enfants', color: 'bg-gray-600',   colorHex: '#4b5563' },
+  { id: 37, date: 15, month: 4,  year: 2026, title: 'Nuit Européenne des Musées', type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  { id: 38, date: 20, month: 4,  year: 2026, title: 'Atelier Plein Air',         type: 'Ateliers Adultes', color: 'bg-gray-700',   colorHex: '#374151' },
+  { id: 39, date: 25, month: 4,  year: 2026, title: 'Concert de Printemps',      type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  
+  // Juin 2026
+  { id: 40, date: 5,  month: 5,  year: 2026, title: 'Atelier Été',              type: 'Ateliers Adultes', color: 'bg-yellow-700', colorHex: '#a16207' },
+  { id: 41, date: 12, month: 5,  year: 2026, title: 'Atelier Marin',             type: 'Ateliers Enfants', color: 'bg-gray-600',   colorHex: '#4b5563' },
+  { id: 42, date: 20, month: 5,  year: 2026, title: 'Fête de la Musique',         type: 'Soirées Musées',   color: 'bg-indigo-950', colorHex: '#1e1b4b' },
+  { id: 43, date: 25, month: 5,  year: 2026, title: 'Exposition Été',           type: 'Tout public',      color: 'bg-gray-800',   colorHex: '#1f2937' }
+];
+
+const filters = [
+  'Tous les événements',
+  'Ateliers Adultes',
+  'Ateliers Enfants',
+  'Soirées Musées',
+  'Tout public'
+];
+
+const monthNames = [
+  'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',
+  'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'
+];
+
+const DAYS_SHORT = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
+
+// ========================================
+// ÉTAT GLOBAL
+// ========================================
+
+let currentMonth  = new Date().getMonth();
+let currentYear   = new Date().getFullYear();
+let activeFilter  = 'Tous les événements';
+let selectedEvent = null;
+let currentView   = 'list';
+let showAllEvents = false;
+
+// ========================================
+// UTILITAIRES
+// ========================================
+
+function isMobile() {
+  return window.innerWidth < 1024;
+}
+
+function getFilteredEvents() {
+  return activeFilter === 'Tous les événements'
+    ? events
+    : events.filter(e => e.type === activeFilter);
+}
+
+function getDaysInMonth(month, year) {
+  return new Date(year, month + 1, 0).getDate();
+}
+
+function getFirstDayOfMonth(month, year) {
+  return new Date(year, month, 1).getDay();
+}
+
+function eventToDate(ev) {
+  return new Date(ev.year, ev.month, ev.date);
+}
+
+// ========================================
+// FILTRES
+// ========================================
+
+function renderFilters() {
+  const container = document.getElementById('filterOptions');
+  if (!container) return;
+
+  container.innerHTML = filters.map(f => `
+    <button class="filter-pill ${activeFilter === f ? 'active' : ''}"
+            onclick="setActiveFilter('${f}')">${f}</button>
+  `).join('');
+}
+
+function setActiveFilter(filter) {
+  activeFilter  = filter;
+  selectedEvent = null;
+  showAllEvents = false;
+  sidebarShowAll = false; // ← ajouter cette ligne
+  renderFilters();
+  renderCalendar();
+  renderSidebarList();
+  renderMobileList();
+
+  // Nouveau : scroller vers le calendrier
+  const calSection = document.getElementById('event-calendar');
+  if (calSection) {
+    calSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+// ========================================
+// CALENDRIER
+// ========================================
+
+function renderCalendar() {
+  const titleEl = document.getElementById('calendarTitle');
+  const gridEl  = document.getElementById('calendarGrid');
+  if (!titleEl || !gridEl) return;
+
+  titleEl.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+
+  const daysInMonth = getDaysInMonth(currentMonth, currentYear);
+  const firstDay    = getFirstDayOfMonth(currentMonth, currentYear);
+
+  const filtered = getFilteredEvents().filter(
+    e => e.month === currentMonth && e.year === currentYear
+  );
+
+  const byDay = {};
+  filtered.forEach(ev => { byDay[ev.date] = ev; });
+
+  let html = '';
+
+  for (let i = 0; i < firstDay; i++) {
+    html += '<div class="calendar-day-empty"></div>';
+  }
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    const ev         = byDay[day];
+    const hasEvent   = !!ev;
+    const isSelected = selectedEvent && ev && selectedEvent.id === ev.id;
+
+    if (hasEvent) {
+      html += `
+        <div class="calendar-day-cell has-event ${ev.color} ${isSelected ? 'selected' : ''}"
+             style="background-color:${ev.colorHex}; cursor:pointer;"
+             onclick="selectEventById(${ev.id})"
+             title="${ev.title}">
+          <span class="day-number">${day}</span>
+        </div>`;
+    } else {
+      html += `
+        <div class="calendar-day-cell">
+          <span class="day-number">${day}</span>
+        </div>`;
+    }
+  }
+
+  gridEl.innerHTML = html;
+}
+
+function previousMonth() {
+  if (currentMonth === 0) { currentMonth = 11; currentYear--; }
+  else { currentMonth--; }
+  renderCalendar();
+}
+
+function nextMonth() {
+  if (currentMonth === 11) { currentMonth = 0; currentYear++; }
+  else { currentMonth++; }
+  renderCalendar();
+}
+
+// ========================================
+// SÉLECTION D'UN ÉVÉNEMENT
+// ========================================
+
+function selectEventById(id) {
+  const ev = events.find(e => e.id === id);
+  if (!ev) return;
+
+  if (selectedEvent && selectedEvent.id === id) {
+    selectedEvent = null;
+  } else {
+    selectedEvent = ev;
+    currentMonth  = ev.month;
+    currentYear   = ev.year;
+  }
+
+  renderCalendar();
+  renderSidebarList();
+}
+
+// ========================================
+// SIDEBAR (desktop)
+// ========================================
+
+function renderSidebarList() {
+  const container    = document.getElementById('eventsList');
+  const previewTitle = document.querySelector('.events-preview-title');
+  if (!container) return;
+
+  // Mode détail d'un événement sélectionné — inchangé
+  if (selectedEvent) {
+    if (previewTitle) previewTitle.textContent = "Détails de l'événement";
+    const ev = selectedEvent;
+    container.innerHTML = `
+      <div class="event-preview-card" style="background-color:${ev.colorHex}">
+        <div class="event-date-box">
+          <span class="event-month-abbr">${monthNames[ev.month].substring(0, 3)}</span>
+          <span class="event-day-number">${ev.date}</span>
+        </div>
+        <div class="event-details">
+          <h3 class="event-title">${ev.title}</h3>
+          <span class="event-type-tag">${ev.type}</span>
+          <div style="margin-top:1rem;">
+            <a href="./reservation.html?event=${ev.id}"
+               class="filter-pill"
+               style="background:white;text-decoration:none;color:${ev.colorHex};font-weight:bold;">
+              Réserver
+            </a>
+          </div>
+        </div>
+      </div>
+      <button onclick="selectedEvent=null; sidebarShowAll=false; renderCalendar(); renderSidebarList();"
+              class="filter-pill"
+              style="margin-top:1rem;width:100%;">
+        ← Voir tous les événements
+      </button>`;
+    return;
+  }
+
+  // Mode liste
+  if (previewTitle) {
+    previewTitle.textContent = activeFilter === 'Tous les événements'
+      ? 'Tous les événements' : activeFilter;
+  }
+
+  // Trier par date et filtrer les événements à venir en priorité
+  const today = new Date();
+  const filtered = getFilteredEvents().sort((a, b) => eventToDate(a) - eventToDate(b));
+  
+  // Mettre les événements à venir en premier, puis les passés
+  const upcoming = filtered.filter(e => eventToDate(e) >= today);
+  const past     = filtered.filter(e => eventToDate(e) < today);
+  const sorted   = [...upcoming, ...past];
+
+  // Limiter à 5 ou tout afficher
+  const toShow  = sidebarShowAll ? sorted : sorted.slice(0, SIDEBAR_LIMIT);
+  const hasMore = sorted.length > SIDEBAR_LIMIT;
+
+  container.innerHTML = toShow.map(ev => `
+    <div class="event-preview-card ${eventToDate(ev) < today ? 'event-preview-card--past' : ''}"
+         style="background-color:${ev.colorHex}; cursor:pointer;"
+         onclick="selectEventById(${ev.id})">
+      <div class="event-date-box">
+        <span class="event-month-abbr">${monthNames[ev.month].substring(0, 3)}</span>
+        <span class="event-day-number">${ev.date}</span>
+      </div>
+      <div class="event-details">
+        <h3 class="event-title">${ev.title}</h3>
+        <span class="event-type-tag">${ev.type}</span>
+      </div>
+    </div>
+  `).join('');
+
+  // Bouton "Voir plus" / "Voir moins"
+  if (hasMore) {
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'sidebar-toggle-btn';
+    toggleBtn.textContent = sidebarShowAll 
+      ? '↑ Voir moins' 
+      : `↓ Voir les ${sorted.length - SIDEBAR_LIMIT} autres événements`;
+    toggleBtn.onclick = () => {
+      sidebarShowAll = !sidebarShowAll;
+      renderSidebarList();
+    };
+    container.appendChild(toggleBtn);
+  }
+}
+
+// ========================================
+// TOGGLE VUE MOBILE
+// ========================================
+
+function renderViewToggle() {
+  const mainContent = document.querySelector('.calendar-main-content');
+  if (!mainContent) return;
+
+  let toggle = document.getElementById('viewToggle');
+  if (!toggle) {
+    toggle = document.createElement('div');
+    toggle.id = 'viewToggle';
+    toggle.className = 'view-toggle';
+    mainContent.insertBefore(toggle, mainContent.firstChild);
+  }
+
+  toggle.innerHTML = `
+    <button class="toggle-btn ${currentView === 'list' ? 'active' : ''}" onclick="switchView('list')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
+        <line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/>
+        <line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+      </svg>
+      Liste
+    </button>
+    <button class="toggle-btn ${currentView === 'calendar' ? 'active' : ''}" onclick="switchView('calendar')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      Calendrier
+    </button>
+  `;
+}
+
+function switchView(view) {
+  currentView = view;
+  renderViewToggle();
+  updateViewVisibility();
+}
+
+function updateViewVisibility() {
+  const calCard    = document.querySelector('.calendar-card');
+  const mobileList = document.getElementById('mobileEventsList');
+  if (!calCard || !mobileList) return;
+
+  if (isMobile()) {
+    if (currentView === 'list') {
+      calCard.classList.add('hidden-mobile');
+      mobileList.classList.remove('hidden');
+    } else {
+      calCard.classList.remove('hidden-mobile');
+      mobileList.classList.add('hidden');
+    }
+  } else {
+    calCard.classList.remove('hidden-mobile');
+    mobileList.classList.add('hidden');
+  }
+}
+
+// ========================================
+// VUE LISTE MOBILE
+// ========================================
+
+function renderMobileList() {
+  const mainContent = document.querySelector('.calendar-main-content');
+  if (!mainContent) return;
+
+  let listEl = document.getElementById('mobileEventsList');
+  if (!listEl) {
+    listEl = document.createElement('div');
+    listEl.id = 'mobileEventsList';
+    listEl.className = 'mobile-events-list hidden';
+    mainContent.appendChild(listEl);
+  }
+
+  const now      = new Date();
+  const today    = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const filtered = getFilteredEvents();
+
+  const upcoming = filtered
+    .filter(e => eventToDate(e) >= today)
+    .sort((a, b) => eventToDate(a) - eventToDate(b));
+
+  const past = filtered
+    .filter(e => eventToDate(e) < today)
+    .sort((a, b) => eventToDate(b) - eventToDate(a));
+
+  const displayList = showAllEvents ? [...upcoming, ...past] : upcoming;
+
+  const groups = {};
+  displayList.forEach(ev => {
+    const key = `${ev.year}-${ev.month}`;
+    if (!groups[key]) {
+      groups[key] = { label: `${monthNames[ev.month]} ${ev.year}`, items: [] };
+    }
+    groups[key].items.push(ev);
+  });
+
+  let html = '';
+
+  if (displayList.length === 0) {
+    html = `<p style="text-align:center;color:#9ca3af;padding:2rem 0;font-size:0.9rem;">Aucun événement à venir</p>`;
+  } else {
+    Object.values(groups).forEach(group => {
+      html += `<div class="mobile-month-group"><p class="mobile-month-label">${group.label}</p>`;
+      group.items.forEach(ev => {
+        const weekday = DAYS_SHORT[new Date(ev.year, ev.month, ev.date).getDay()];
+        html += `
+          <a class="mobile-event-card" href="./reservation.html?event=${ev.id}">
+            <div class="mec-date">
+              <span class="mec-day">${ev.date}</span>
+              <span class="mec-weekday">${weekday}</span>
+            </div>
+            <div class="mec-body">
+              <span class="mec-title">${ev.title}</span>
+              <span class="mec-tag" style="background:${ev.colorHex}">${ev.type}</span>
+            </div>
+            <div class="mec-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </div>
+          </a>`;
+      });
+      html += `</div>`;
+    });
+  }
+
+  if (!showAllEvents && past.length > 0) {
+    html += `
+      <button class="mobile-show-all-btn" onclick="showAllEventsToggle()">
+        Voir aussi les ${past.length} événement${past.length > 1 ? 's' : ''} passé${past.length > 1 ? 's' : ''}
+      </button>`;
+  }
+
+  listEl.innerHTML = html;
+  updateViewVisibility();
+}
+
+function showAllEventsToggle() {
+  showAllEvents = true;
+  renderMobileList();
+}
+
+// ========================================
+// INITIALISATION
+// ========================================
+
+function initCalendar() {
+  // Inject Schema.org pour SEO
+  injectSchemaOrg();
+  
+  // Mettre à jour le compteur d'événements à venir dans le hero
+  const today = new Date();
+  const upcomingCount = events.filter(e => new Date(e.year, e.month, e.date) >= today).length;
+  const heroCount = document.getElementById('heroUpcomingCount');
+  if (heroCount) heroCount.textContent = upcomingCount;
+  
+  renderFilters();
+  renderCalendar();
+  renderSidebarList();
+  renderViewToggle();
+  renderMobileList();
+
+  if (isMobile()) {
+    currentView = 'list';
+    renderViewToggle();
+  }
+  updateViewVisibility();
+
+  if (window.lucide) window.lucide.createIcons();
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      renderViewToggle();
+      updateViewVisibility();
+    }, 150);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initCalendar);

@@ -1,0 +1,471 @@
+<?php
+/**
+ * Template Name: Infos Pratiques
+ * Template pour la page d'informations pratiques du MBAA
+ * Remplace infos.html
+ *
+ * @package Mbaa_theme
+ */
+
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+global $wpdb;
+$assets = get_template_directory_uri() . '/asset';
+
+get_header();
+?>
+
+<?php wp_body_open(); ?>
+
+<header class="header header--infos">
+  <!-- ====== NAVBAR (preserved) ====== -->
+  <div class="header__container">
+    <a class="header__logo-link" href="<?php echo esc_url( home_url('/') ); ?>">
+      <img class="header__logo-img" src="<?php echo esc_url( $assets . '/Img/logo/logo-mat-small.png' ); ?>" alt="Logo MBAA" />
+    </a>
+    <button class="header__menu-toggle" aria-label="menu" aria-expanded="false" aria-controls="headerNav">
+      <span class="header__menu-bar"></span>
+    </button>
+    <nav class="header__nav" id="headerNav" aria-hidden="true">
+      <ul class="header__nav-list header__nav-list--main">
+        <li class="header__nav-item">
+          <a class="header__nav-link" href="<?php echo esc_url( home_url('/infos-pratiques/') ); ?>">Infos pratiques</a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-link" href="<?php echo esc_url( home_url('/collections/') ); ?>">Collections</a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-link" href="<?php echo esc_url( home_url('/evenements/') ); ?>">Évènement</a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-link" href="<?php echo esc_url( home_url('/le-musee/') ); ?>">Le musée</a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-link" href="<?php echo esc_url( home_url('/infos-pratiques/') ); ?>">Contact</a>
+        </li>
+      </ul>
+      <ul class="header__nav-list header__nav-list--secondary">
+        <li class="header__nav-item">
+          <a class="header__nav-link" href="<?php echo esc_url( wp_login_url() ); ?>" aria-label="Connexion">
+            <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-link" href="<?php echo esc_url( home_url('/reservation/') ); ?>" aria-label="Billetterie">
+            <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
+              <path d="M13 5v2"></path><path d="M13 17v2"></path><path d="M13 11v2"></path>
+            </svg>
+          </a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-link" href="#" id="search-trigger" aria-label="Recherche">
+            <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+          </a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-link-fr" href="#">FR</a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-link-fr" href="#">EN</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- ====== HERO — NEW LAYOUT ====== -->
+  <div class="header__hero">
+
+    <!-- Left: title block -->
+    <div class="hero__left">
+      <p class="hero__eyebrow">La collection — Beaux-Arts</p>
+      <h1 class="hero__title">
+        Infos<br>
+        Pratique<br>
+      </h1>
+    </div>
+
+    <!-- Right: description + CTA -->
+    <div class="hero__right">
+      <p class="hero__description">
+        Peinture, sculpture, dessin — explorez cinq siècles de création artistique conservés dans nos collections
+        permanentes.
+      </p>
+         <a href="<?php echo esc_url( home_url('/reservation/') ); ?>?event=1" class="hero__cta">
+        Réserver ma place
+        <img class="hero__cta-icon" src="<?php echo esc_url( $assets . '/Img/svg/icon-arrow-droite.svg' ); ?>" alt="Flèche vers la droite">
+      </a>
+    </div>
+
+    <!-- Bottom strip: stats + scroll -->
+    <div class="hero__strip">
+      <div class="hero__stat">
+        <span class="hero__stat-number">5 600</span>
+        <span class="hero__stat-label">Œuvres exposées</span>
+      </div>
+      <div class="hero__strip-divider"></div>
+      <div class="hero__stat">
+        <span class="hero__stat-number">XVI<sup style="font-size:0.55em">e</sup></span>
+        <span class="hero__stat-label">Période la plus ancienne</span>
+      </div>
+      <div class="hero__strip-divider"></div>
+      <div class="hero__stat">
+        <span class="hero__stat-number">Gratuit</span>
+        <span class="hero__stat-label">Moins de 26 ans</span>
+      </div>
+      <div class="hero__scroll">
+        <div class="hero__scroll-arrow">
+          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+        </div>
+        Défiler
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<section class="main__visite">
+  <section class="main__banniere">
+    <section class="main__banniere--visite">
+      <img class="main__banniere-img" src="<?php echo esc_url( $assets . '/Img/svg/croix-blanche.svg' ); ?>" alt="Croix blanche" />
+      <h2 class="main__banniere-titre">
+        Préparer<br />
+        votre visite
+      </h2>
+    </section>
+    <section class="main__banniere-contenu">
+      <p class="main__banniere-description">
+        Préparez votre découverte du musée en toute sérénité : horaires,
+        accès, services et conseils pour une visite agréable.
+      </p>
+    </section>
+  </section>
+  <section class="main__visite-cards">
+    <section class="main__visite-card">
+      <h3 class="main__visite-card-title">+ Horaires</h3>
+      <h4 class="main__visite-card-subtitle">
+        Saison basse (2 nov - 31 mars)
+      </h4>
+      <p class="main__visite-card-small-text">Hors vacances scolaires</p>
+      <div class="main__visite-card-row">
+        <img class="main__visite-card-arrow" src="<?php echo esc_url( $assets . '/Img/svg/icon-arrow-droite.svg' ); ?>" alt />
+        <p class="main__visite-card-text">
+          Lundi, mercredi, jeudi, vendredi : 14h-18h
+        </p>
+      </div>
+
+      <h4 class="main__visite-card-subtitle">
+        Saison haute (1er avril - 31 oct)
+      </h4>
+      <p class="main__visite-card-small-text">
+        Et pendant les vacances scolaires zone A
+      </p>
+      <div class="main__visite-card-row">
+        <img class="main__visite-card-arrow" src="<?php echo esc_url( $assets . '/Img/svg/icon-arrow-droite.svg' ); ?>" alt />
+        <p class="main__visite-card-text">
+          Lundi, mercredi, jeudi, vendredi : 10h-12h30 / 14h-18h
+        </p>
+      </div>
+
+      <h4 class="main__visite-card-subtitle">Toute l'année</h4>
+      <div class="main__visite-card-row">
+        <img class="main__visite-card-arrow" src="<?php echo esc_url( $assets . '/Img/svg/icon-arrow-droite.svg' ); ?>" alt />
+        <p class="main__visite-card-text">
+          Samedi, dimanche et jours fériés : 10h-18h sans interruption
+        </p>
+      </div>
+
+      <p class="main__visite-card-text-bold">Fermé le mardi</p>
+      <p class="main__visite-card-text-bold">
+        Fermetures annuelles : 1er janvier, 1er mai, 1er novembre, 25
+        décembre
+      </p>
+      <h4 class="main__visite-card-subtitle--orange">
+        Accueil des groupes à partir de 9h
+      </h4>
+      <div class="main__visite-button">
+        <a class="main__button--visite-black" href="#">En savoir +</a>
+      </div>
+    </section>
+
+    <section class="main__visite-card">
+      <h3 class="main__visite-card-title">+ Tarifs</h3>
+      <h4 class="main__visite-card-subtitle">
+        Billet couplé (MBAA + Musée du Temps + Maison Victor Hugo)
+      </h4>
+      <ul class="main__visite-card-column">
+        <li class="main__visite-card-row">
+          <img class="main__visite-card-arrow" src="<?php echo esc_url( $assets . '/Img/svg/icon-arrow-droite.svg' ); ?>" alt />
+          <span class="main__visite-card-text">Plein tarif:</span>
+          <span class="main__visite-card-text">9 €</span>
+        </li>
+        <li class="main__visite-card-row">
+          <img class="main__visite-card-arrow" src="<?php echo esc_url( $assets . '/Img/svg/icon-arrow-droite.svg' ); ?>" alt />
+          <span class="main__visite-card-text">Tarif réduit:</span>
+          <span class="main__visite-card-text">7 €</span>
+        </li>
+        <li class="main__visite-card-row">
+          <img class="main__visite-card-arrow" src="<?php echo esc_url( $assets . '/Img/svg/icon-arrow-droite.svg' ); ?>" alt />
+          <span class="main__visite-card-text">Jeune (18-25 ans):</span>
+          <span class="main__visite-card-text">4.5 €</span>
+        </li>
+      </ul>
+
+      <h4 class="main__visite-card-subtitle">Entrée gratuite</h4>
+      <section class="main__visite-card-column-entree">
+        <ul class="main__visite-card-column">
+          <li class="main__visite-card-row">
+            <img class="main__visite-card-arrow" src="<?php echo esc_url( $assets . '/Img/svg/icon-arrow-droite.svg' ); ?>" alt />
+            <p class="main__visite-card-text">
+              -18 ans, étudiants, demandeurs d'emploi, bénéficiaires des
+              minimas sociaux, personnes en situation de handicap et leur
+              accompagnateur, enseignants (sur présentation d'un
+              justificatif)
+            </p>
+          </li>
+          <li class="main__visite-card-row">
+            <img class="main__visite-card-arrow" src="<?php echo esc_url( $assets . '/Img/svg/icon-arrow-droite.svg' ); ?>" alt />
+            <p class="main__visite-card-text">
+              Le premier dimanche du mois (hors expositions temporaires)
+            </p>
+          </li>
+          <li class="main__visite-card-row">
+            <img class="main__visite-card-arrow" src="<?php echo esc_url( $assets . '/Img/svg/icon-arrow-droite.svg' ); ?>" alt />
+            <p class="main__visite-card-text">
+              Les membres de l'ICOM et de l'ICOMOS
+            </p>
+          </li>
+        </ul>
+      </section>
+      <div class="main__visite-button">
+        <a class="main__button--visite-black" href="#">En savoir +</a>
+      </div>
+    </section>
+  </section>
+</section>
+<div class="container">
+  <!-- Section Services -->
+  <section class="services-section">
+    <h2 class="section-title">
+      <span class="icon">+</span> SERVICES
+    </h2>
+
+    <div class="services-grid">
+      <div class="service-item">
+        <h3 class="service-subtitle">Accessibilité</h3>
+        <p class="service-text">
+          ✓ Accessible PMR & personnes en situation de handicap
+        </p>
+      </div>
+
+      <div class="service-item">
+        <h3 class="service-subtitle">Moyens de paiement</h3>
+        <p class="service-text">
+          Cartes bancaires (Visa, Mastercard)<br>
+          Chèques (avec pièce d'identité)<br>
+          Espèces
+        </p>
+      </div>
+
+      <div class="service-item">
+        <h3 class="service-subtitle">Audio guide</h3>
+        <p class="service-text">
+          Disponible sur smartphone/tablette ou en prêt à l'accueil (dépôt pièce<br>
+          d'identité)
+        </p>
+      </div>
+
+      <div class="service-item">
+        <h3 class="service-subtitle">Qualité Tourisme</h3>
+        <p class="service-text">
+          Le musée a obtenu la marque Qualité Tourisme en 2024
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Réservations et Bons Plans -->
+  <div class="bottom-sections">
+    <section class="reservation-section">
+      <h2 class="section-title">
+        <span class="icon">+</span> RÉSERVATIONS
+      </h2>
+
+      <p class="reservation-text">
+        Réservations jeune public, groupes et programmation culturelle :
+      </p>
+
+      <p class="reservation-link">
+        <a href="#">Plateforme de réservation en ligne</a>
+      </p>
+
+      <h3 class="subsection-title">Privatisation</h3>
+
+      <p class="reservation-text">
+        Possibilité de privatiser les espaces du musée
+      </p>
+
+      <p class="reservation-text">
+        Renseignements : mbaa@besancon.fr
+      </p>
+    </section>
+
+    <section class="deals-section">
+      <h2 class="section-title">
+        <span class="icon">+</span> BONS PLANS
+      </h2>
+
+      <h3 class="deal-title">GINKO</h3>
+      <p class="deal-text">
+        Tarif réduit pour les abonnés annuels sur présentation de la carte
+      </p>
+
+      <h3 class="deal-title">SNCF TER Bourgogne-Franche-Comté</h3>
+      <p class="deal-text">
+        Tarif réduit sur présentation de votre billet du jour ou abonnement TER
+      </p>
+    </section>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer__contain-form">
+    <div class="footer__logo-container">
+      <a class="footer__logo-link" href="<?php echo esc_url( home_url('/') ); ?>">
+        <img class="footer__logo-img" src="<?php echo esc_url( $assets . '/Img/logo/logo-mat-small.png' ); ?>" alt="Logo MBAA" />
+        <h2 class="footer__title">Suivez-nous pour recevoir la newsletter</h2>
+      </a>
+      <?php
+      // Formulaire newsletter — utilise wp_nonce pour la sécurité
+      $newsletter_action = esc_url( admin_url('admin-post.php') );
+      ?>
+      <form class="footer__form" method="post" action="<?php echo $newsletter_action; ?>">
+        <?php wp_nonce_field( 'mbaa_newsletter', 'mbaa_newsletter_nonce' ); ?>
+        <input type="hidden" name="action" value="mbaa_newsletter_subscribe" />
+        <input class="footer__input" type="email" name="email" placeholder="Entrez votre adresse e-mail" required />
+        <button class="footer__button" type="submit">S'abonner</button>
+      </form>
+    </div>
+
+    <section class="footer__nav">
+      <ul class="footer__nav-list">
+        <li class="footer__nav-item">
+          <h4 class="footer__nav-title">Le musée</h4>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="<?php echo esc_url( home_url('/le-musee/') ); ?>">Présentation & histoire</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="<?php echo esc_url( home_url('/collections/') ); ?>">Collections</a>
+        </li>
+      </ul>
+
+      <ul class="footer__nav-list">
+        <li class="footer__nav-item">
+          <h4 class="footer__nav-title">Programmation</h4>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="<?php echo esc_url( home_url('/evenements/') ); ?>">Événements</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="<?php echo esc_url( home_url('/collections/') ); ?>">Collections</a>
+        </li>
+      </ul>
+
+      <ul class="footer__nav-list">
+        <li class="footer__nav-item">
+          <h4 class="footer__nav-title">Contact</h4>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="<?php echo esc_url( home_url('/infos-pratiques/') ); ?>">Horaires et tarifs</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="<?php echo esc_url( home_url('/infos-pratiques/') ); ?>">Nous contacter</a>
+        </li>
+        <li class="footer__nav-item">
+          <a class="footer__nav-link" href="<?php echo esc_url( home_url('/infos-pratiques/') ); ?>">Accessibilité</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="footer__social">
+      <h2>Nos réseaux sociaux</h2>
+      <section class="footer__social-media">
+        <a class="footer__social-link" href="#" aria-label="Facebook">
+          <img class="footer__social-icon" src="<?php echo esc_url( $assets . '/Img/svg/facebook.svg' ); ?>" alt="Facebook" />
+        </a>
+        <a class="footer__social-link" href="#" aria-label="Instagram">
+          <img class="footer__social-icon" src="<?php echo esc_url( $assets . '/Img/svg/insta.svg' ); ?>" alt="Instagram" />
+        </a>
+        <a class="footer__social-link" href="#" aria-label="LinkedIn">
+          <img class="footer__social-icon" src="<?php echo esc_url( $assets . '/Img/svg/linkdin.svg' ); ?>" alt="Twitter" />
+        </a>
+        <a class="footer__social-link" href="#" aria-label="Tiktok">
+          <img class="footer__social-icon" src="<?php echo esc_url( $assets . '/Img/svg/tiktok.svg' ); ?>" alt="YouTube" />
+        </a>
+      </section>
+    </section>
+
+    <section class="footer__links">
+      <a class="footer__link" href="#">Mentions légales</a>
+      <a class="footer__link" href="#">Politique de confidentialité</a>
+    </section>
+  </div>
+</footer>
+
+<!-- Menu JS (gère le scroll et l'effet sur la navbar) -->
+<script src="<?php echo esc_url( get_template_directory_uri() . '/dist/js/menu.js' ); ?>"></script>
+
+<!-- Search Overlay -->
+<div id="search-overlay" class="search-overlay">
+  <div class="search-overlay__close" id="search-close">&times;</div>
+  <div class="search-overlay__content">
+    <form class="search-overlay__form" role="search" method="get"
+          action="<?php echo esc_url( home_url('/') ); ?>">
+      <input type="text"
+             name="s"
+             class="search-overlay__input"
+             placeholder="Rechercher sur le site…"
+             autofocus>
+      <button type="submit" class="search-overlay__submit">
+        <img src="<?php echo esc_url( $assets . '/Img/svg/Search.svg' ); ?>" alt="Rechercher">
+      </button>
+    </form>
+  </div>
+</div>
+
+<?php wp_footer(); ?>
+
+<!-- Search overlay -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const searchTrigger = document.getElementById('search-trigger');
+    const searchOverlay = document.getElementById('search-overlay');
+    const searchClose   = document.getElementById('search-close');
+
+    if (searchTrigger && searchOverlay) {
+      searchTrigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        searchOverlay.classList.add('is-active');
+        setTimeout(() => searchOverlay.querySelector('input').focus(), 300);
+      });
+      searchClose.addEventListener('click', () => searchOverlay.classList.remove('is-active'));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') searchOverlay.classList.remove('is-active');
+      });
+      searchOverlay.addEventListener('click', (e) => {
+        if (e.target === searchOverlay) searchOverlay.classList.remove('is-active');
+      });
+    }
+  });
+</script>
+
+<?php get_footer(); ?>

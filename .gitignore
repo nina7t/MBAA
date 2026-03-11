@@ -1,0 +1,36 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers de configuration IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Fichiers temporaires
+.tmp/
+temp/
+
+# WordPress - fichiers à ne pas versionner
+wp-config.php
+wp-content/upgrade/
+wp-content/backups/
+wp-content/cache/
+wp-content/plugins/*/logs/
+wp-content/themes/*/logs/
+
+# MAMP spécifique
+/MAMP/logs/
+/MAMP/conf/
+
+# Dossiers de cache
+.cache/
+node_modules/
+
+# Fichiers de test temporaires
+test_*.php
+check_*.php
