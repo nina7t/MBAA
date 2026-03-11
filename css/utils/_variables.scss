@@ -1,0 +1,326 @@
+/* POLICES */    
+
+@font-face {
+    font-family: 'ClashDisplay-Variable';
+    src: url('/asset/fonts/ClashDisplay-Variable.woff2') format('woff2'),
+         url('/asset/fonts/ClashDisplay-Variable.woff') format('woff'),
+         url('/asset/fonts/ClashDisplay-Variable.ttf') format('truetype');
+         font-weight: 200 700;
+         font-display: swap;
+         font-style: normal;
+  }
+
+@font-face {
+  font-family: 'Synonym-Extralight';
+  src: url('../fonts/Synonym-Extralight.woff2') format('woff2'),
+       url('../fonts/Synonym-Extralight.woff') format('woff'),
+       url('../fonts/Synonym-Extralight.ttf') format('truetype');
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Synonym-Light';
+  src: url('../fonts/Synonym-Light.woff2') format('woff2'),
+       url('../fonts/Synonym-Light.woff') format('woff'),
+       url('../fonts/Synonym-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Synonym-Regular';
+  src: url('../fonts/Synonym-Regular.woff2') format('woff2'),
+       url('../fonts/Synonym-Regular.woff') format('woff'),
+       url('../fonts/Synonym-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Synonym-Medium';
+  src: url('../fonts/Synonym-Medium.woff2') format('woff2'),
+       url('../fonts/Synonym-Medium.woff') format('woff'),
+       url('../fonts/Synonym-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Synonym-Semibold';
+  src: url('../fonts/Synonym-Semibold.woff2') format('woff2'),
+       url('../fonts/Synonym-Semibold.woff') format('woff'),
+       url('../fonts/Synonym-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Synonym-Bold';
+  src: url('../fonts/Synonym-Bold.woff2') format('woff2'),
+       url('../fonts/Synonym-Bold.woff') format('woff'),
+       url('../fonts/Synonym-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 700.0;
+*
+* available axes:
+'wght' (range from 200.0 to 700.0
+*/
+@font-face {
+  font-family: 'Synonym-Variable';
+  src: url('../fonts/Synonym-Variable.woff2') format('woff2'),
+       url('../fonts/Synonym-Variable.woff') format('woff'),
+       url('../fonts/Synonym-Variable.ttf') format('truetype');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+
+@import url(https://db.onlinewebfonts.com/c/5d86f2e8ccc2811b9392aa03b7ce4a63?family=Styrene+B+Regular+Regular); 
+
+// Images de fond par page
+$bg-home: url('/asset/Img/statues-groupe.jpg');
+$bg-collections: url('/asset/Img/bg-collections.jpg');
+$bg-events: url('/asset/Img/bg-events.jpg');
+$bg-contact: url('/asset/Img/bg-contact.jpg');
+
+    /* Polices */    
+    $font-primary: 'ClashDisplay-Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    $font-secondary: 'Styrene B Regular Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    $font-fallback: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
+    /* Couleurs */    
+    $color-white: rgb(253, 253, 253);
+    $color-primary-white: #FFFDF3;
+    $color-primary-dark: #191919;
+    $color-secondary-gold: #957E18;
+    $color-tertiary-green: #47564F;
+    $color-text-primary: #333333;
+    $color-text-secondary: #666666;
+    $color-text-secondary-gray: #b3b3b3;
+    $bg-white: #e6e6e6;
+    $bg-or: #957E18;
+
+
+    $color-white-svg: brightness(0) saturate(100%) invert(100%) sepia(65%) saturate(348%) hue-rotate(342deg) brightness(106%) contrast(108%);
+    $color-dark-svg: brightness(0) saturate(100%) invert(0%) sepia(17%) saturate(23%) hue-rotate(345deg) brightness(96%) contrast(80%);
+
+
+    /* Typographie - Hiérarchie claire et impactante (Mobile First) */    
+    // H1 - Monumental et impactant (pour hero et titres principaux)
+    $font-size-h1-mobile: 2rem;        // 32px - Mobile
+    $font-size-h1-tablet: 3rem;        // 48px - Tablette
+    $font-size-h1-desktop: 4.5rem;     // 72px - Desktop
+    
+    // H2 - Grand et visible (sections principales)
+    $font-size-h2-mobile: 1.75rem;     // 28px - Mobile
+    $font-size-h2-tablet: 2.25rem;     // 36px - Tablette
+    $font-size-h2-desktop: 3rem;       // 48px - Desktop
+    
+    // H3 - Moyen (sous-sections)
+    $font-size-h3-mobile: 1.25rem;     // 20px - Mobile
+    $font-size-h3-tablet: 1.5rem;      // 24px - Tablette
+    $font-size-h3-desktop: 4rem;       // 32px - Desktop
+    $font-size-h3-large: 2rem;         // 32px - Desktop (large)
+    $font-size-h3-medium: 1.5rem;      // 24px - Tablette (medium)
+    $font-size-h3-small: 1.25rem;      // 20px - Mobile (small)
+    
+    // H4 - Petit mais visible (sous-titres)
+    $font-size-h4-mobile: 1rem;        // 16px - Mobile
+    $font-size-h4-tablet: 1.125rem;   // 18px - Tablette
+    $font-size-h4-desktop: 1.5rem;     // 24px - Desktop
+    $font-size-h4: 1.125rem;           // 18px - Par défaut (tablette)
+    
+    // H5 - Très petit (légendes, métadonnées)
+    $font-size-h5-mobile: 0.875rem;   // 14px - Mobile
+    $font-size-h5-desktop: 1rem;       // 16px - Desktop
+    
+    // H6 - Minimal (notes, copyright)
+    $font-size-h6-mobile: 0.75rem;     // 12px - Mobile
+    $font-size-h6-desktop: 0.875rem;  // 14px - Desktop
+    
+    // Corps de texte
+    $font-size-body: 1rem;            // 16px
+    $font-size-body-small: 0.875rem;  // 14px
+    $font-size-body-large: 1.125rem;  // 18px
+    
+    /* Hauteurs de ligne - Optimisées pour la lisibilité */    
+    $line-height-tight: 1.1;          // Pour les très grands titres
+    $line-height-compact: 1.2;         // Pour les titres moyens
+    $line-height-normal: 1.4;          // Pour les sous-titres
+    $line-height-relaxed: 1.5;         // Pour le corps de texte
+    $line-height-loose: 1.75;          // Pour les longs paragraphes
+    
+    /* Poids de police */    
+    $font-weight-light: 300;
+    $font-weight-normal: 400;
+    $font-weight-medium: 500;
+    $font-weight-semibold: 600;
+    $font-weight-bold: 700;
+    
+    /* Espacements - Renforcent la hiérarchie typographique */    
+    $spacing-xs: 0.5rem;      // 8px
+    $spacing-sm: 1rem;        // 16px
+    $spacing-md: 1.5rem;      // 24px
+    $spacing-lg: 2rem;        // 32px
+    $spacing-xl: 3rem;        // 48px
+    $spacing-2xl: 4rem;       // 64px
+    $spacing-3xl: 6rem;       // 96px
+    $spacing-4xl: 8rem;       // 128px
+    
+    /* Espacements verticaux spécifiques pour la typographie */
+    $spacing-h1-top: 0;                // Pas de marge supérieure pour h1
+    $spacing-h1-bottom: 2rem;          // 32px - Mobile
+    $spacing-h1-bottom-desktop: 3rem;  // 48px - Desktop
+    
+    $spacing-h2-top: 2rem;              // 32px - Mobile
+    $spacing-h2-top-desktop: 3rem;      // 48px - Desktop
+    $spacing-h2-bottom: 1.5rem;        // 24px - Mobile
+    $spacing-h2-bottom-desktop: 2rem;  // 32px - Desktop
+    
+    $spacing-h3-top: 1.5rem;            // 24px - Mobile
+    $spacing-h3-top-desktop: 2rem;      // 32px - Desktop
+    $spacing-h3-bottom: 1rem;          // 16px - Mobile
+    $spacing-h3-bottom-desktop: 1.5rem;// 24px - Desktop
+    
+    $spacing-h4-top: 1rem;              // 16px - Mobile
+    $spacing-h4-top-desktop: 1.5rem;    // 24px - Desktop
+    $spacing-h4-bottom: 0.75rem;        // 12px - Mobile
+    $spacing-h4-bottom-desktop: 1rem;   // 16px - Desktop
+    
+    /* Breakpoints - Mobile First */    
+    $breakpoint-xs: 20rem;      // 320px - Très petits mobiles
+    $breakpoint-sm: 36rem;       // 576px - Petits mobiles
+    $breakpoint-md: 48rem;       // 768px - Tablettes
+    $breakpoint-lg: 62rem;       // 992px - Petits desktop
+    $breakpoint-xl: 75rem;       // 1200px - Desktop
+    $breakpoint-2xl: 90rem;      // 1440px - Grand desktop
+    
+    /* Touch targets - Minimum 44x44px pour l'accessibilité mobile */
+    $touch-target-min: 2.75rem;  // 44px
+    
+    /* Hauteurs viewport */      
+    $viewport-full: 100vh;
+    $viewport-hero: 90vh;
+    $viewport-half: 50vh;
+
+/* TYPOGRAPHIE */    
+
+/* Block: heading */    
+
+p{
+    font-family: $font-secondary;
+}
+.heading {
+    font-family: $font-primary;
+}
+
+.header__title {
+    // Utilise la hiérarchie H1 monumentale pour le hero
+    font-size: clamp($font-size-h1-mobile, 5vw + 1rem, $font-size-h1-desktop);
+    font-weight: 700;
+    line-height: $line-height-tight;
+    letter-spacing: -0.03em;
+    
+    @media (min-width: 768px) {
+        font-size: clamp($font-size-h1-tablet, 6vw + 1rem, $font-size-h1-desktop);
+        letter-spacing: -0.04em;
+    }
+    
+    @media (min-width: 1024px) {
+        letter-spacing: -0.05em;
+    }
+}
+
+/* Element: heading__subtitle (h2 */    
+.heading__subtitle {
+    font-size: $font-size-h2-mobile;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-normal;
+}
+
+@media (min-width: 48rem) {
+    .heading__subtitle {
+        font-size: $font-size-h2-desktop;
+    }
+}
+
+/* Element: heading__section (h3 */    
+.heading__section {
+    font-family: $font-primary;
+    line-height: $line-height-normal;
+}
+
+/* Modifier: heading__section$large */    
+.heading__section--large {
+    font-size: $font-size-h3-large;
+    font-weight: $font-weight-medium;
+}
+
+/* Modifier: heading__section$medium */    
+.heading__section--medium {
+    font-size: $font-size-h3-medium;
+    font-weight: $font-weight-medium;
+}
+
+/* Modifier: heading__section$small */    
+.heading__section--small {
+    font-size: $font-size-h3-small;
+    font-weight: $font-weight-light;
+}
+
+/* Element: heading__subsection (h4 */    
+.heading__subsection {
+    font-size: $font-size-h4;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-normal;
+}
+
+/* Block: text */    
+.text {
+    font-family: $font-primary;
+}
+
+/* Element: text__body (paragraphe par défaut */    
+.text__body {
+    font-size: $font-size-body;
+    font-weight: $font-weight-light;
+    line-height: $line-height-relaxed;
+}
+
+/* Modifier: text__body$small */    
+.text__body--small {
+    font-size: $font-size-body-small;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-relaxed;
+}
+
+/* Element: text__highlight (texte Futura PT */    
+.text__highlight {
+    font-family: $font-secondary;
+    font-size: $font-size-body-large;
+    font-weight: $font-weight-bold;
+}
+
+/* COMPOSANTS */    
+
+.hero {
+    min-height: $viewport-hero;
+    display: flex;
+    flex-direction: column;
+    padding: $spacing-lg;
+    background-color: $color-primary-dark;
+}
+
+.hero__content {
+    max-width: 75rem;
+    width: 100%;
+}

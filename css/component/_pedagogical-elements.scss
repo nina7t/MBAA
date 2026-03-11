@@ -1,0 +1,161 @@
+@use '../utils/variables' as *;
+
+.pedagogical-elements-section {
+  padding: 2rem 1rem;
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    padding: 3rem 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 4rem 2rem;
+  }
+}
+
+.pedagogical-elements-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+
+.pedagogical-elements-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    flex: 1;
+  }
+}
+
+.pedagogical-element-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  width: 100%;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+  min-height: $touch-target-min;
+  font-family: inherit;
+
+  @media (min-width: 768px) {
+    padding: 2rem 0;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 1.5rem 0;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  &.active {
+    .pedagogical-element-arrow {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.pedagogical-element-text {
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
+  font-weight: 300;
+  color: #191919;
+  font-family: $font-primary;
+  letter-spacing: -0.01em;
+  transition: all 0.3s ease;
+
+  @media (min-width: 768px) {
+    font-size: clamp(1.5rem, 4.5vw, 2rem);
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 2rem;
+  }
+}
+
+.pedagogical-element-arrow {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 700;
+  color: #191919;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+  line-height: 1;
+  transform-origin: center;
+
+  @media (min-width: 768px) {
+    font-size: clamp(2rem, 5.5vw, 2.5rem);
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 3rem;
+  }
+}
+
+.pedagogical-element-separator {
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+  margin: 0;
+  flex-shrink: 0;
+
+  @media (min-width: 768px) {
+    height: 1px;
+  }
+}
+
+.pedagogical-elements-right {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+
+  @media (min-width: 1024px) {
+    flex: 1;
+    margin-top: 0;
+  }
+}
+
+.pedagogical-painting {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+
+  @media (min-width: 768px) {
+    border-radius: 0.75rem;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 100%;
+    border-radius: 0.5rem;
+  }
+}
+

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Espace - MBAA</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/png" href="./asset/Img/logo/logo-mat-small.png" />
+</head>
+<body class="visiteur-body">
+    <!-- Header MBAA avec menu burger -->
+    <header class="header">
+        <div class="header__container">
+            <a class="header__logo-link" href="./index.html">
+                <img class="header__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
+            </a>
+            <button class="header__menu-toggle" aria-label="menu" aria-expanded="false" aria-controls="headerNav">
+                <span class="header__menu-bar"></span>
+            </button>
+            <nav class="header__nav" id="headerNav" aria-hidden="true">
+                <ul class="header__nav-list header__nav-list--main">
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./infos.html">Infos pratiques</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./collections.html">Collections</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./evenement.html">Évènement</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./musee-histoire.html">Le musée</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./infos.html">Contact</a>
+                    </li>
+                </ul>
+                <ul class="header__nav-list header__nav-list--secondary">
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./connexion.html" aria-label="Connexion">
+                            <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="#" aria-label="Billetterie">
+                            <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
+                                <path d="M13 5v2"></path>
+                                <path d="M13 17v2"></path>
+                                <path d="M13 11v2"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="#" aria-label="Recherche">
+                            <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">FR</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">EN</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="visiteur-container">
+        <!-- Sidebar -->
+        <aside class="visiteur-sidebar">
+            <div class="sidebar-user">
+                <div class="user-avatar">👤</div>
+                <div class="user-info">
+                    <p class="user-name" id="userName">Jean Dupont</p>
+                    <p class="user-email" id="userEmail">jean@example.com</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="sidebar-link active" data-section="tickets">🎟️ Mes tickets</a></li>
+                    <li><a href="#" class="sidebar-link" data-section="events">📅 Événements visités</a></li>
+                    <li><a href="#" class="sidebar-link" data-section="horaires">⏰ Horaires & Infos</a></li>
+                    <li><a href="#" class="sidebar-link" data-section="newsletter">📧 Newsletter</a></li>
+                </ul>
+            </nav>
+
+            <button class="sidebar-logout" id="logoutBtn">Déconnexion</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="visiteur-main">
+            <!-- Header -->
+            <header class="visiteur-header">
+                <h1>Mon Espace Personnel</h1>
+                <p class="welcome-text">Bienvenue au Musée des Beaux-Arts et d'Archéologie</p>
+            </header>
+
+            <!-- Tickets Section -->
+            <section class="content-section" id="tickets-section">
+                <div class="section-header">
+                    <h2>🎟️ Mes Tickets</h2>
+                </div>
+                
+                <div class="tickets-grid">
+                    <div class="ticket-card">
+                        <div class="ticket-header">
+                            <span class="ticket-type">Entrée Générale</span>
+                            <span class="ticket-status valid">Valide</span>
+                        </div>
+                        <div class="ticket-details">
+                            <p><strong>Date :</strong> 24 décembre 2025</p>
+                            <p><strong>Heure :</strong> 14:00</p>
+                            <p><strong>Tarif :</strong> 12€</p>
+                            <p><strong>N° Ticket :</strong> #MBAA-2024-001</p>
+                        </div>
+                        <button class="ticket-btn">Télécharger PDF</button>
+                    </div>
+
+                    <div class="ticket-card">
+                        <div class="ticket-header">
+                            <span class="ticket-type">Visite Guidée</span>
+                            <span class="ticket-status expired">Utilisé</span>
+                        </div>
+                        <div class="ticket-details">
+                            <p><strong>Date :</strong> 10 décembre 2025</p>
+                            <p><strong>Heure :</strong> 15:30</p>
+                            <p><strong>Guide :</strong> Marie Leclerc</p>
+                            <p><strong>N° Ticket :</strong> #MBAA-2024-002</p>
+                        </div>
+                        <button class="ticket-btn">Revoir le reçu</button>
+                    </div>
+                </div>
+
+                <div class="section-actions">
+                    <a href="./reservation.html" class="btn-primary">Réserver un nouveau ticket</a>
+                </div>
+            </section>
+
+            <!-- Events Section -->
+            <section class="content-section" id="events-section" style="display: none;">
+                <div class="section-header">
+                    <h2>📅 Événements Visités</h2>
+                </div>
+
+                <div class="events-list">
+                    <div class="event-item">
+                        <div class="event-image">
+                            <img src="./asset/Img/visite-groupe.jpg" alt="Exposition : Les Impressionnistes">
+                        </div>
+                        <div class="event-info">
+                            <h3>Exposition : Les Impressionnistes</h3>
+                            <p class="event-date">📅 15 novembre 2025</p>
+                            <p class="event-desc">Découvrez les chefs-d'œuvre de Monet, Renoir et Sisley à travers une sélection exceptionnelle de nos collections.</p>
+                            <div class="event-rating">
+                                <span>Votre avis : </span>
+                                <div class="stars">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="event-item">
+                        <div class="event-image">
+                            <img src="./asset/Img/visite-groupe.jpg" alt="Visite guidée : Trésors de l'Égypte Antique">
+                        </div>
+                        <div class="event-info">
+                            <h3>Visite guidée : Trésors de l'Égypte Antique</h3>
+                            <p class="event-date">📅 8 novembre 2025</p>
+                            <p class="event-desc">Explorez les mystères de la civilisation égyptienne avec notre expert égyptologue.</p>
+                            <div class="event-rating">
+                                <span>Votre avis : </span>
+                                <div class="stars">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hours Section -->
+            <section class="content-section" id="horaires-section" style="display: none;">
+                <div class="section-header">
+                    <h2>⏰ Horaires & Informations</h2>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>Horaires d'ouverture</h3>
+                        <ul class="hours-list">
+                            <li><span>Lundi :</span> Fermé</li>
+                            <li><span>Mardi - Dimanche :</span> 10:00 - 18:00</li>
+                            <li><span>Jeudi :</span> 10:00 - 21:00 (nocturne)</li>
+                            <li><span>Jours fériés :</span> 14:00 - 18:00</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Tarifs</h3>
+                        <ul class="prices-list">
+                            <li><span>Entrée générale :</span> 12€</li>
+                            <li><span>Tarif réduit :</span> 7€</li>
+                            <li><span>Gratuit :</span> Moins de 18 ans</li>
+                            <li><span>Visite guidée :</span> +5€</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Contact</h3>
+                        <ul class="contact-list">
+                            <li><strong>Adresse :</strong> 1 rue de la République, 25000 Besançon</li>
+                            <li><strong>Téléphone :</strong> 03 81 87 80 49</li>
+                            <li><strong>Email :</strong> contact@mbaa-besancon.fr</li>
+                            <li><strong>Site :</strong> www.mbaa-besancon.fr</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Services</h3>
+                        <ul class="services-list">
+                            <li>✓ Boutique du musée</li>
+                            <li>✓ Cafétéria</li>
+                            <li>✓ Accessibilité PMR</li>
+                            <li>✓ Parking à proximité</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Newsletter Section -->
+            <section class="content-section" id="newsletter-section" style="display: none;">
+                <div class="section-header">
+                    <h2>📧 Newsletter</h2>
+                </div>
+
+                <div class="newsletter-container">
+                    <div class="newsletter-card">
+                        <h3>Restez informé</h3>
+                        <p>Recevez nos dernières actualités, expositions et événements directement dans votre boîte mail.</p>
+
+                        <form class="newsletter-form" id="newsletterForm">
+                            <div class="form-group">
+                                <label for="newsletter-email">Adresse email</label>
+                                <input 
+                                    type="email" 
+                                    id="newsletter-email" 
+                                    name="email"
+                                    placeholder="votre@email.com"
+                                    required
+                                >
+                            </div>
+
+                            <div class="newsletter-options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="category-expos" checked>
+                                    <span>Expositions et événements</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="category-news" checked>
+                                    <span>Actualités du musée</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="category-promos">
+                                    <span>Offres spéciales et promotions</span>
+                                </label>
+                            </div>
+
+                            <div class="form-agree">
+                                <input type="checkbox" id="agree" name="agree" required>
+                                <label for="agree">J'accepte de recevoir des communications du musée</label>
+                            </div>
+
+                            <button type="submit" class="btn-primary">S'inscrire à la newsletter</button>
+                            <div class="newsletter-message" id="newsletterMessage"></div>
+                        </form>
+                    </div>
+
+                    <div class="newsletter-benefits">
+                        <h3>Avantages de l'inscription</h3>
+                        <ul>
+                            <li>🎟️ Offres exclusives sur les tickets</li>
+                            <li>📢 Avant-première des expositions</li>
+                            <li>🎁 Réductions partenaires</li>
+                            <li>📚 Actualités et coulisses du musée</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Check if user is logged in
+        window.addEventListener('DOMContentLoaded', function() {
+            const user = localStorage.getItem('visiteurUser');
+            if (!user) {
+                window.location.href = './connexion.html';
+                return;
+            }
+
+            const userData = JSON.parse(user);
+            document.getElementById('userName').textContent = userData.email.split('@')[0];
+            document.getElementById('userEmail').textContent = userData.email;
+        });
+
+        // Navigation between sections
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const section = this.getAttribute('data-section');
+                
+                // Hide all sections
+                document.querySelectorAll('.content-section').forEach(s => {
+                    s.style.display = 'none';
+                });
+                
+                // Show selected section
+                document.getElementById(section + '-section').style.display = 'block';
+                
+                // Update active link
+                document.querySelectorAll('.sidebar-link').forEach(l => {
+                    l.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Logout
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            localStorage.removeItem('visiteurUser');
+            window.location.href = './connexion.html';
+        });
+
+        // Newsletter form
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('newsletter-email').value;
+            const message = document.getElementById('newsletterMessage');
+            
+            if (email) {
+                // Simulate API call
+                message.textContent = '✓ Inscription réussie! Vérifiez votre email.';
+                message.style.color = '#4CAF50';
+                
+                setTimeout(() => {
+                    this.reset();
+                    message.textContent = '';
+                }, 3000);
+            }
+        });
+
+        // Star rating interaction
+        document.querySelectorAll('.stars').forEach(starsContainer => {
+            const stars = starsContainer.querySelectorAll('.star');
+            
+            stars.forEach((star, index) => {
+                star.addEventListener('click', function() {
+                    stars.forEach((s, i) => {
+                        if (i <= index) {
+                            s.classList.add('filled');
+                        } else {
+                            s.classList.remove('filled');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <!-- Script du menu MBAA -->
+    <script src="./js/menu.js"></script>
+    
+    <!-- Script header adaptatif -->
+    <script src="./js/header-adaptive.js"></script>
+</body>
+</html>

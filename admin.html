@@ -1,0 +1,1873 @@
+<!DOCTYPE html>
+<!-- 
+    PAGE ADMINISTRATION - MBAA
+    Cette page permet aux administrateurs de gérer le contenu du musée :
+    - Tableau de bord avec statistiques
+    - Gestion des fiches d'œuvres
+    - Bibliothèque médias
+    - Collections et expositions
+    - Analytics et scans QR
+    - Paramètres système
+    - Export/Import de données
+-->
+<html lang="fr">
+<head>
+    <!-- Encodage des caractères UTF-8 pour supporter les caractères français -->
+    <meta charset="UTF-8">
+    <!-- Configuration responsive pour s'adapter aux différentes tailles d'écran -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titre de la page affiché dans l'onglet du navigateur -->
+    <title>Admin - MBAA</title>
+    <!-- Feuille de style principale du site -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/png" href="./asset/Img/logo/logo-mat-small.png" />
+</head>
+<body class="admin-body">
+    <!-- Header MBAA avec menu burger -->
+    <header class="header">
+        <div class="header__container">
+            <a class="header__logo-link" href="./index.html">
+                <img class="header__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
+            </a>
+            <button class="header__menu-toggle" aria-label="menu" aria-expanded="false" aria-controls="headerNav">
+                <span class="header__menu-bar"></span>
+            </button>
+            <nav class="header__nav" id="headerNav" aria-hidden="true">
+                <ul class="header__nav-list header__nav-list--main">
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./infos.html">Infos pratiques</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./collections.html">Collections</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./evenement.html">Évènement</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./musee-histoire.html">Le musée</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./infos.html">Contact</a>
+                    </li>
+                </ul>
+                <ul class="header__nav-list header__nav-list--secondary">
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./connexion.html" aria-label="Connexion">
+                            <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="#" aria-label="Billetterie">
+                            <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
+                                <path d="M13 5v2"></path>
+                                <path d="M13 17v2"></path>
+                                <path d="M13 11v2"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="#" aria-label="Recherche">
+                            <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">FR</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">EN</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteneur principal de la page d'administration -->
+    <div class="admin-container">
+        <!-- Barre latérale de navigation (sidebar) -->
+        <aside class="admin-sidebar">
+            <!-- En-tête de la sidebar avec bouton d'action rapide -->
+            <div class="sidebar-header">
+                <!-- Bouton pour créer rapidement une nouvelle œuvre -->
+                <button class="sidebar-btn-add">+ Ajouter une œuvre</button>
+            </div>
+
+            <!-- Navigation principale de la sidebar -->
+            <nav class="sidebar-nav">
+                <!-- Section de navigation principale -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">NAVIGATION</h3>
+                    <ul class="sidebar-menu">
+                        <!-- Lien vers le tableau de bord (actif par défaut) -->
+                        <li><a href="#" class="sidebar-link active">Tableau de bord</a></li>
+                        <!-- Lien vers la gestion des fiches d'œuvres -->
+                        <li><a href="#" class="sidebar-link">Fiches œuvres</a></li>
+                        <!-- Lien vers la bibliothèque de médias (images, vidéos, etc.) -->
+                        <li><a href="#" class="sidebar-link">Bibliothèque médias</a></li>
+                        <!-- Lien vers la gestion des collections -->
+                        <li><a href="#" class="sidebar-link">Collections</a></li>
+                        <!-- Lien vers la gestion des expositions -->
+                        <li><a href="#" class="sidebar-link">Expositions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Section Analytics pour les statistiques et analyses -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">ANALYTICS</h3>
+                    <ul class="sidebar-menu">
+                        <!-- Lien vers les statistiques des œuvres les plus consultées -->
+                        <li><a href="#" class="sidebar-link">Œuvres populaires</a></li>
+                        <!-- Lien vers les statistiques des scans de codes QR -->
+                        <li><a href="#" class="sidebar-link">Scans QR</a></li>
+                    </ul>
+                </div>
+
+                <!-- Section Système pour les paramètres et configuration -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">SYSTÈME</h3>
+                    <ul class="sidebar-menu">
+                        <!-- Lien vers les paramètres généraux du système -->
+                        <li><a href="#" class="sidebar-link">Paramètres</a></li>
+                        <!-- Lien vers la gestion des utilisateurs -->
+                        <li><a href="#" class="sidebar-link">Utilisateurs</a></li>
+                        <!-- Lien vers la page d'export/import de données -->
+                        <li><a href="#" class="sidebar-link">Export/Import</a></li>
+                        <!-- Bouton pour se déconnecter de la session admin -->
+                        <li><a href="#" class="sidebar-link" id="logoutBtn">Quitter la session</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Contenu principal de la page d'administration -->
+        <main class="admin-main">
+            <!-- En-tête avec onglets de vue et informations utilisateur -->
+            <header class="admin-header">
+                <!-- Onglets pour basculer entre vue Tableau et vue Grille -->
+                <div class="admin-tabs">
+                    <!-- Onglet Vue Tableau (actif par défaut) -->
+                    <button class="admin-tab active" data-tab="tableau">
+                        📊 Tableau
+                    </button>
+                    <!-- Onglet Vue Grille -->
+                    <button class="admin-tab" data-tab="grille">
+                        ⊞ Grille
+                    </button>
+                </div>
+
+                <!-- Zone d'informations utilisateur et actions -->
+                <div class="admin-user">
+                    <!-- Nom de l'utilisateur connecté -->
+                    <span class="admin-username">Natalie</span>
+                    <!-- Bouton de recherche globale -->
+                    <button class="admin-search"><img  class="icon-admin-user" src="./asset/Img/svg/Search.svg" alt="Search Icon"></button>
+                    <!-- Bouton d'accès au profil utilisateur -->
+                    <button class="admin-profile"><img class="icon-admin-user"  src="./asset/Img//svg/connexion.svg" alt="User Icon"></button>
+                </div>
+            </header>
+
+            <!-- Section Tableau de bord (Dashboard) -->
+            <div class="admin-section" data-section="dashboard">
+                <!-- Cartes de statistiques affichant les métriques principales -->
+                <div class="admin-stats">
+                    <!-- Carte statistique : Nombre de tableaux dans la collection -->
+                    <div class="stat-card">
+                        <div class="stat-label">Tableaux</div>
+                        <div class="stat-number">200</div>
+                        <div class="stat-change">+12 ce mois</div>
+                    </div>
+                    <!-- Carte statistique : Nombre d'objets dans la collection -->
+                    <div class="stat-card">
+                        <div class="stat-label">Objets</div>
+                        <div class="stat-number">100</div>
+                        <div class="stat-change">+5 ce mois</div>
+                    </div>
+                    <!-- Carte statistique : Nombre de sculptures dans la collection -->
+                    <div class="stat-card">
+                        <div class="stat-label">Sculptures</div>
+                        <div class="stat-number">45</div>
+                        <div class="stat-change">— Stable</div>
+                    </div>
+                    <!-- Carte statistique : Total de toutes les œuvres -->
+                    <div class="stat-card">
+                        <div class="stat-label">TOTAL</div>
+                        <div class="stat-number">345</div>
+                        <div class="stat-change">+17 ce mois</div>
+                    </div>
+                    <!-- Carte statistique : Nombre d'œuvres publiées en ligne -->
+                    <div class="stat-card">
+                        <div class="stat-label">En ligne</div>
+                        <div class="stat-number">312</div>
+                        <div class="stat-change">90% du total</div>
+                    </div>
+                    <!-- Carte statistique : Nombre total de scans de codes QR -->
+                    <div class="stat-card">
+                        <div class="stat-label">Scans QR</div>
+                        <div class="stat-number">1,247</div>
+                        <div class="stat-change">+23% cette semaine</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Barre de filtres et de recherche pour filtrer les œuvres -->
+            <div class="admin-filters">
+                <!-- Zone de recherche textuelle -->
+                <div class="search-box">
+                    <!-- Champ de recherche pour filtrer par titre, artiste ou numéro d'identification -->
+                    <input 
+                        type="text" 
+                        placeholder="Rechercher par titre, artiste, N° identification..."
+                        class="filter-input"
+                    >
+                </div>
+                <!-- Boutons de filtres rapides -->
+                <div class="filter-buttons">
+                    <!-- Bouton pour filtrer par collection -->
+                    <button class="filter-btn">Toutes collections</button>
+                    <!-- Bouton pour filtrer par événement -->
+                    <button class="filter-btn">Tout événements</button>
+                    <!-- Bouton pour filtrer par époque -->
+                    <button class="filter-btn">Toutes époques</button>
+                </div>
+            </div>
+
+            <!-- Dashboard Table Section -->
+            <div class="admin-section" data-section="dashboard-table">
+                <!-- Action Bar -->
+                <div class="admin-actions">
+                    <span class="action-count">0 œuvre(s) sélectionnée(s)</span>
+                    <div class="action-buttons">
+                        <button class="action-btn">Activer</button>
+                        <button class="action-btn">✕ Désactiver</button>
+                        <button class="action-btn">⚡ Générer QR</button>
+                        <button class="action-btn">⬇ Exporter</button>
+                        <button class="action-btn">Supprimer</button>
+                    </div>
+                </div>
+
+                <!-- Data Table -->
+                <div class="admin-table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" class="table-checkbox-all"></th>
+                                <th>Image ▼</th>
+                                <th>Titre ▼</th>
+                                <th>Artiste ▼</th>
+                                <th>Collection ▼</th>
+                                <th>Statut ▼</th>
+                                <th>Création</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" class="table-checkbox"></td>
+                                <td>
+                                    <div class="table-image">
+                                        <img src="./asset/Img/visite-groupe.jpg" alt="Voyage à Milan">
+                                        <span class="table-views">328 vues</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <strong>Voyage à Milan</strong>
+                                    <p class="table-id">π = N° 2024-001</p>
+                                </td>
+                                <td>Paul Signac</td>
+                                <td>Permanente</td>
+                                <td><span class="status-badge online">En ligne</span></td>
+                                <td>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 100%"></div>
+                                    </div>
+                                    <span class="progress-text">100% complet</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="table-checkbox"></td>
+                                <td>
+                                    <div class="table-image">
+                                        <img src="./asset/Img/visite-groupe.jpg" alt="Paysage d'été">
+                                        <span class="table-views">156 vues</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <strong>Paysage d'été</strong>
+                                    <p class="table-id">π = N° 2024-002</p>
+                                </td>
+                                <td>Marie Leblanc</td>
+                                <td>Réserve</td>
+                                <td><span class="status-badge online">En ligne</span></td>
+                                <td>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 100%"></div>
+                                    </div>
+                                    <span class="progress-text">100% complet</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="table-checkbox"></td>
+                                <td>
+                                    <div class="table-image">
+                                        <img src="./asset/Img/visite-groupe.jpg" alt="Marine bretonne">
+                                        <span class="table-views">0 vues</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <strong>Marine bretonne</strong>
+                                    <p class="table-id">π = N° 2024-003</p>
+                                </td>
+                                <td>Paul Gauguin</td>
+                                <td>Permanente</td>
+                                <td><span class="status-badge brouillon">Brouillon</span></td>
+                                <td>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 67%"></div>
+                                    </div>
+                                    <span class="progress-text">67% complet</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Media Library Section -->
+            <div class="admin-section" data-section="media-library">
+                <div class="media-header">
+                    <div class="media-stats">
+                        <div class="media-stat">
+                            <span class="media-stat-label">Total fichiers</span>
+                            <span class="media-stat-value">230</span>
+                            <span class="media-stat-change">+12 ce mois</span>
+                        </div>
+                        <div class="media-stat">
+                            <span class="media-stat-label">Images</span>
+                            <span class="media-stat-value">400</span>
+                            <span class="media-stat-change">+5 ce mois</span>
+                        </div>
+                        <div class="media-stat">
+                            <span class="media-stat-label">Documents</span>
+                            <span class="media-stat-value">45</span>
+                            <span class="media-stat-change">— Stable</span>
+                        </div>
+                        <div class="media-stat">
+                            <span class="media-stat-label">Stockage utilisé</span>
+                            <span class="media-stat-value">2.3GB</span>
+                            <span class="media-stat-change">Espace suffisant</span>
+                        </div>
+                        <div class="media-stat">
+                            <span class="media-stat-label">En ligne</span>
+                            <span class="media-stat-value">312</span>
+                            <span class="media-stat-change">90% du total</span>
+                        </div>
+                        <div class="media-stat">
+                            <span class="media-stat-label">Scans QR</span>
+                            <span class="media-stat-value">1,247</span>
+                            <span class="media-stat-change">+23% cette semaine</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-controls">
+                    <div class="search-box">
+                        <input 
+                            type="text" 
+                            placeholder="Rechercher par titre, artiste, N° identification..."
+                            class="media-search-input"
+                        >
+                    </div>
+                    <div class="filter-buttons">
+                        <button class="filter-btn">Toutes collections</button>
+                        <button class="filter-btn">Tout événements</button>
+                        <button class="filter-btn">Toutes époques</button>
+                    </div>
+                </div>
+
+                <div class="media-action-bar">
+                    <span class="media-selection-count">0 média(s) sélectionné(s)</span>
+                    <div class="action-buttons">
+                        <button class="action-btn">Activer</button>
+                        <button class="action-btn">✕ Désactiver</button>
+                        <button class="action-btn">⚡ Générer QR</button>
+                        <button class="action-btn">⬇ Exporter</button>
+                        <button class="action-btn">Supprimer</button>
+                    </div>
+                </div>
+
+                <div class="media-grid">
+                    <div class="media-card">
+                        <div class="media-card-image">
+                            <img src="./asset/Img/visite-groupe.jpg" alt="Le petit cuisinier">
+                            <input type="checkbox" class="media-checkbox">
+                        </div>
+                        <div class="media-card-info">
+                            <h3>Le petit cuisinier</h3>
+                            <p class="media-size">2.4 MB</p>
+                            <p class="media-dimensions">1920x1080</p>
+                            <p class="media-date">15/10/2024</p>
+                        </div>
+                    </div>
+
+                    <div class="media-card">
+                        <div class="media-card-image">
+                            <img src="./asset/Img/visite-groupe.jpg" alt="Fête au village">
+                            <input type="checkbox" class="media-checkbox">
+                        </div>
+                        <div class="media-card-info">
+                            <h3>Fête au village</h3>
+                            <p class="media-size">3.1 MB</p>
+                            <p class="media-dimensions">2400x1600</p>
+                            <p class="media-date">12/10/2024</p>
+                        </div>
+                    </div>
+
+                    <div class="media-card">
+                        <div class="media-card-image">
+                            <img src="./asset/Img/visite-groupe.jpg" alt="Marine bretonne">
+                            <input type="checkbox" class="media-checkbox">
+                        </div>
+                        <div class="media-card-info">
+                            <h3>Marine bretonne</h3>
+                            <p class="media-size">2.8 MB</p>
+                            <p class="media-dimensions">1800x1200</p>
+                            <p class="media-date">08/10/2024</p>
+                        </div>
+                    </div>
+
+                    <div class="media-card">
+                        <div class="media-card-image">
+                            <img src="./asset/Img/visite-groupe.jpg" alt="Toilette au réveil">
+                            <input type="checkbox" class="media-checkbox">
+                        </div>
+                        <div class="media-card-info">
+                            <h3>Toilette au réveil</h3>
+                            <p class="media-size">1.9 MB</p>
+                            <p class="media-dimensions">1600x1200</p>
+                            <p class="media-date">02/10/2024</p>
+                        </div>
+                    </div>
+
+                    <div class="media-card">
+                        <div class="media-card-image">
+                            <img src="./asset/Img/visite-groupe.jpg" alt="Taureau avrigney">
+                            <input type="checkbox" class="media-checkbox">
+                        </div>
+                        <div class="media-card-info">
+                            <h3>Taureau avrigney</h3>
+                            <p class="media-size">2.1 MB</p>
+                            <p class="media-dimensions">1920x1280</p>
+                            <p class="media-date">28/09/2023</p>
+                        </div>
+                    </div>
+
+                    <div class="media-card">
+                        <div class="media-card-image">
+                            <img src="./asset/Img/visite-groupe.jpg" alt="Paul Signac">
+                            <input type="checkbox" class="media-checkbox">
+                        </div>
+                        <div class="media-card-info">
+                            <h3>Paul Signac</h3>
+                            <p class="media-size">3.5 MB</p>
+                            <p class="media-dimensions">2560x1920</p>
+                            <p class="media-date">25/09/2025</p>
+                        </div>
+                    </div>
+
+                    <div class="media-card">
+                        <div class="media-card-image">
+                            <img src="./asset/Img/visite-groupe.jpg" alt="Exposition 2024">
+                            <input type="checkbox" class="media-checkbox">
+                        </div>
+                        <div class="media-card-info">
+                            <h3>Exposition 2024</h3>
+                            <p class="media-size">2.7 MB</p>
+                            <p class="media-dimensions">1920x1080</p>
+                            <p class="media-date">20/09/2024</p>
+                        </div>
+                    </div>
+
+                    <div class="media-card">
+                        <div class="media-card-image">
+                            <img src="./asset/Img/visite-groupe.jpg" alt="Retour à la ferme">
+                            <input type="checkbox" class="media-checkbox">
+                        </div>
+                        <div class="media-card-info">
+                            <h3>Retour à la ferme</h3>
+                            <p class="media-size">2.2 MB</p>
+                            <p class="media-dimensions">2048x1536</p>
+                            <p class="media-date">15/09/2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section des Fiches Œuvres -->
+            <div class="admin-section" data-section="fiches-oeuvres">
+                <!-- Vue LISTE des fiches d'œuvres -->
+                <div class="fiche-list-view" id="ficheListView">
+                    <!-- En-tête avec titre et bouton de création -->
+                    <div class="fiche-list-header">
+                        <!-- Titre principal de la page -->
+                        <h1>Fiches Œuvres</h1>
+                        <!-- Bouton pour créer une nouvelle fiche d'œuvre -->
+                        <button class="btn-primary" id="createFicheBtn">+ Créer fiche</button>
+                    </div>
+
+                    <!-- Barre de recherche pour filtrer les œuvres -->
+                    <div class="fiche-search-bar">
+                        <!-- Champ de texte pour rechercher une œuvre -->
+                        <input type="text" placeholder="Rechercher une œuvre..." class="fiche-search-input">
+                    </div>
+
+                    <!-- Conteneur du tableau des fiches -->
+                    <div class="fiche-list-table-wrapper">
+                        <!-- Tableau listant toutes les œuvres -->
+                        <table class="fiche-list-table">
+                            <!-- En-tête du tableau avec les colonnes -->
+                            <thead>
+                                <tr>
+                                    <!-- Colonne: Titre de l'œuvre -->
+                                    <th>Titre</th>
+                                    <!-- Colonne: Nom de l'artiste -->
+                                    <th>Artiste</th>
+                                    <!-- Colonne: Collection (ex: Permanente) -->
+                                    <th>Collection</th>
+                                    <!-- Colonne: Année de création -->
+                                    <th>Année</th>
+                                    <!-- Colonne: Statut en ligne/hors ligne -->
+                                    <th>Statut</th>
+                                    <!-- Colonne: Actions (Éditer) -->
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <!-- Corps du tableau avec les données des œuvres -->
+                            <tbody id="ficheTableBody">
+                                <!-- Première œuvre: Nocturne à Ornans -->
+                                <tr class="fiche-row" data-fiche-id="1">
+                                    <!-- Titre en gras -->
+                                    <td><strong>Nocturne à Ornans</strong></td>
+                                    <!-- Artiste -->
+                                    <td>Gustave Courbet</td>
+                                    <!-- Collection -->
+                                    <td>Impressionnisme</td>
+                                    <!-- Année de création -->
+                                    <td>1889</td>
+                                    <!-- Statut (badge vert) -->
+                                    <td><span class="fiche-status-online">En ligne</span></td>
+                                    <!-- Bouton d'édition -->
+                                    <td><button class="fiche-edit-btn">Éditer</button></td>
+                                </tr>
+                                <!-- Deuxième œuvre: Voyage à Milan -->
+                                <tr class="fiche-row" data-fiche-id="2">
+                                    <td><strong>Voyage à Milan</strong></td>
+                                    <td>Paul Signac</td>
+                                    <td>Permanente</td>
+                                    <td>1890</td>
+                                    <td><span class="fiche-status-online">En ligne</span></td>
+                                    <td><button class="fiche-edit-btn">Éditer</button></td>
+                                </tr>
+                                <!-- Troisième œuvre: Marine bretonne -->
+                                <tr class="fiche-row" data-fiche-id="3">
+                                    <td><strong>Marine bretonne</strong></td>
+                                    <td>Paul Gauguin</td>
+                                    <td>Permanente</td>
+                                    <td>1891</td>
+                                    <td><span class="fiche-status-online">En ligne</span></td>
+                                    <td><button class="fiche-edit-btn">Éditer</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Vue DÉTAIL d'une fiche d'œuvre (formulaire de création/édition) -->
+                <div class="fiche-detail-view" id="ficheDetailView" style="display: none;">
+                    <!-- En-tête avec onglets et bouton retour -->
+                    <div class="fiche-header">
+                        <!-- Onglets pour basculer entre vue Tableau et Grille -->
+                        <div class="fiche-tabs">
+                            <!-- Onglet Tableau (actif par défaut) -->
+                            <button class="fiche-tab active">📊 Tableau</button>
+                            <!-- Onglet Grille -->
+                            <button class="fiche-tab">⊞ Grille</button>
+                        </div>
+                        <!-- Bouton pour revenir à la liste des fiches -->
+                        <button class="fiche-back-btn" id="backToListBtn">Retour</button>
+                    </div>
+
+                <!-- Carte principale contenant l'image et le formulaire -->
+                <div class="fiche-artwork-card">
+                    <!-- Partie gauche: Image de l'œuvre -->
+                    <div class="fiche-artwork-left">
+                        <!-- Conteneur de l'image avec badge de statut -->
+                        <div class="fiche-artwork-image">
+                            <!-- Image de l'œuvre d'art -->
+                            <img src="./asset/Img/visite-groupe.jpg" alt="Nocturne à Ornans">
+                            <!-- Badge indiquant que l'œuvre est en ligne -->
+                            <span class="fiche-status-badge">En ligne</span>
+                        </div>
+                    </div>
+
+                    <!-- Partie droite: Formulaire de création/édition -->
+                    <div class="fiche-artwork-right">
+                        <!-- En-tête avec titre et boutons d'actions -->
+                        <div class="fiche-artwork-header">
+                            <!-- Titre de l'œuvre -->
+                            <div class="fiche-artwork-title">
+                                <h2>Nocturne à Ornans</h2>
+                            </div>
+                            <!-- Boutons d'actions (Copier, Télécharger, Supprimer, Fermer) -->
+                            <div class="fiche-artwork-actions">
+                                <!-- Bouton Copier la fiche -->
+                                <button class="fiche-action-btn" title="Copier">📋</button>
+                                <!-- Bouton Télécharger la fiche -->
+                                <button class="fiche-action-btn" title="Télécharger">⬇</button>
+                                <!-- Bouton Supprimer la fiche -->
+                                <button class="fiche-action-btn" title="Supprimer">🗑</button>
+                                <!-- Bouton Fermer le formulaire -->
+                                <button class="fiche-action-btn" title="Fermer">✕</button>
+                            </div>
+                        </div>
+
+                        <!-- Contenu principal du formulaire (défilant) -->
+                        <div class="fiche-content">
+                            <!-- Grille à deux colonnes pour les champs de formulaire -->
+                            <div class="fiche-two-columns">
+                                <!-- COLONNE 1: Informations principales -->
+                                <div class="fiche-column">
+                                    <!-- Titre de la section 1 -->
+                                    <h3 class="fiche-section-title">Informations principales</h3>
+                                    
+                                    <!-- Champ: Titre de l'œuvre (obligatoire) -->
+                                    <div class="fiche-form-group">
+                                        <label>Titre *</label>
+                                        <input type="text" value="Nocturne à Ornans" class="fiche-input">
+                                    </div>
+
+                                    <!-- Champ: Nom de l'artiste (obligatoire) -->
+                                    <div class="fiche-form-group">
+                                        <label>Artiste *</label>
+                                        <input type="text" value="Gustave Courbet" class="fiche-input">
+                                    </div>
+
+                                    <!-- Champ: Date de création (optionnel) -->
+                                    <div class="fiche-form-group">
+                                        <label>Date de création</label>
+                                        <input type="text" value="1889" class="fiche-input">
+                                        <!-- Texte d'aide pour le format attendu -->
+                                        <p class="fiche-hint">Exemple : 1889 ou 5ᵉ siècle</p>
+                                    </div>
+
+                                    <!-- Champ: Technique artistique (obligatoire) -->
+                                    <div class="fiche-form-group">
+                                        <label>Technique *</label>
+                                        <input type="text" value="Huile sur toile" class="fiche-input">
+                                    </div>
+
+                                    <!-- Champ: Dimensions de l'œuvre (obligatoire) -->
+                                    <div class="fiche-form-group">
+                                        <label>Dimensions *</label>
+                                        <input type="text" value="73 × 92 cm" class="fiche-input">
+                                        <!-- Texte d'aide pour le format -->
+                                        <p class="fiche-hint">Format : Hauteur x Largeur (en cm)</p>
+                                    </div>
+
+                                    <!-- Champ: Collection d'appartenance (obligatoire) -->
+                                    <div class="fiche-form-group">
+                                        <label>Collection *</label>
+                                        <input type="text" value="Impressionnisme" class="fiche-input">
+                                    </div>
+                                </div>
+
+                                <!-- COLONNE 2: Compléments d'information -->
+                                <div class="fiche-column">
+                                    <!-- Titre de la section 2 -->
+                                    <h3 class="fiche-section-title">Compléments d'information</h3>
+                                    
+                                    <!-- Champ: Statut de l'œuvre (obligatoire) -->
+                                    <div class="fiche-form-group">
+                                        <label>Statut *</label>
+                                        <input type="text" value="Actif" class="fiche-input">
+                                    </div>
+
+                                    <!-- Champ: Exposition actuelle (obligatoire) -->
+                                    <div class="fiche-form-group">
+                                        <label>Exposition actuelle *</label>
+                                        <input type="text" value="Rétrospective Courbet 2025" class="fiche-input">
+                                    </div>
+
+                                    <!-- Champ: Numéro d'identification unique de l'œuvre (optionnel) -->
+                                    <div class="fiche-form-group">
+                                        <label>Numéro d'identification</label>
+                                        <input type="text" value="N° 2024-001" class="fiche-input">
+                                    </div>
+
+                                    <!-- Champ: Provenance/Historique de l'œuvre (optionnel) -->
+                                    <div class="fiche-form-group">
+                                        <label>Provenance</label>
+                                        <input type="text" value="Collection permanente" class="fiche-input">
+                                    </div>
+
+                                    <!-- Champ: Localisation physique dans le musée (optionnel) -->
+                                    <div class="fiche-form-group">
+                                        <label>Salle d'exposition</label>
+                                        <input type="text" value="Salle 8" class="fiche-input">
+                                    </div>
+
+                                    <!-- Champ: État général de l'œuvre (optionnel) -->
+                                    <div class="fiche-form-group">
+                                        <label>État de conservation</label>
+                                        <input type="text" value="Excellent" class="fiche-input">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SECTION: Description détaillée de l'œuvre -->
+                            <div class="fiche-section">
+                                <!-- Titre de la section Description -->
+                                <h3 class="fiche-section-title">Description</h3>
+                                <!-- Sous-titre informatif -->
+                                <p class="fiche-section-subtitle">Description détaillée de l'œuvre et de son histoire</p>
+                                <!-- Zone de texte pour la description longue -->
+                                <textarea class="fiche-textarea">Cette œuvre nocturne de Gustave Courbet capture l'atmosphère mystérieuse d'une nuit à Ornans. Le peintre utilise ses tons sombres et profonds pour créer une ambiance contemplative. Cette toile fait partie de la période réaliste du peintre, où il privilégie les scènes de la vie quotidienne et de la nature française-Comté natale.</textarea>
+                            </div>
+
+                            <!-- SECTION: Upload de médias (image et audio) -->
+                            <div class="fiche-section">
+                                <!-- Titre de la section Médias -->
+                                <h3 class="fiche-section-title">Médias</h3>
+                                <!-- Grille à deux colonnes pour les zones d'upload -->
+                                <div class="fiche-media-grid">
+                                    <!-- Zone d'upload pour l'image principale de l'œuvre -->
+                                    <div class="fiche-upload-area">
+                                        <!-- Icône emoji pour l'upload d'image -->
+                                        <div class="fiche-upload-icon">📁</div>
+                                        <!-- Titre du champ d'upload d'image -->
+                                        <h4>Importer image *</h4>
+                                        <!-- Formats acceptés et taille maximale -->
+                                        <p class="fiche-upload-hint">JPG, PNG, WebP (max 10 MB)</p>
+                                        <!-- Input de fichier invisible -->
+                                        <input type="file" class="fiche-file-input" accept="image/*">
+                                    </div>
+                                    <!-- Zone d'upload pour le fichier audio (guide audio pour visiteurs) -->
+                                    <div class="fiche-upload-area">
+                                        <!-- Icône emoji pour l'upload d'audio -->
+                                        <div class="fiche-upload-icon">🎧</div>
+                                        <!-- Titre du champ d'upload audio -->
+                                        <h4>Fichier audio (guide) *</h4>
+                                        <!-- Formats acceptés et taille maximale -->
+                                        <p class="fiche-upload-hint">MP3, WAV (max 50 MB)</p>
+                                        <!-- Input de fichier invisible -->
+                                        <input type="file" class="fiche-file-input" accept="audio/*">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Groupe des boutons d'action en bas du formulaire -->
+                            <div class="fiche-actions">
+                                <!-- Bouton principal pour enregistrer/sauvegarder la fiche -->
+                                <button class="fiche-btn-primary">ENREGISTRER</button>
+                                <!-- Bouton secondaire pour télécharger/exporter la fiche -->
+                                <button class="fiche-btn-secondary">TÉLÉCHARGER</button>
+                                <!-- Bouton d'annulation pour revenir sans enregistrer -->
+                                <button class="fiche-btn-cancel">ANNULER</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- Collections Section -->
+            <div class="admin-section" data-section="collections">
+                <div class="section-header">
+                    <h1>Collections</h1>
+                    <button class="btn-primary">+ Ajouter collection</button>
+                </div>
+                <div class="collections-grid">
+                    <div class="collection-card">
+                        <div class="collection-header">
+                            <h3>Permanente</h3>
+                            <span class="collection-count">156 œuvres</span>
+                        </div>
+                        <p class="collection-desc">Collection principale du musée</p>
+                        <div class="collection-actions">
+                            <button class="action-link">Gérer</button>
+                            <button class="action-link danger">Supprimer</button>
+                        </div>
+                    </div>
+                    <div class="collection-card">
+                        <div class="collection-header">
+                            <h3>Réserve</h3>
+                            <span class="collection-count">89 œuvres</span>
+                        </div>
+                        <p class="collection-desc">Œuvres en réserve</p>
+                        <div class="collection-actions">
+                            <button class="action-link">Gérer</button>
+                            <button class="action-link danger">Supprimer</button>
+                        </div>
+                    </div>
+                    <div class="collection-card">
+                        <div class="collection-header">
+                            <h3>Expositions temporaires</h3>
+                            <span class="collection-count">45 œuvres</span>
+                        </div>
+                        <p class="collection-desc">Œuvres en exposition</p>
+                        <div class="collection-actions">
+                            <button class="action-link">Gérer</button>
+                            <button class="action-link danger">Supprimer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expositions Section -->
+            <div class="admin-section" data-section="expositions">
+                <div class="section-header">
+                    <h1>Expositions</h1>
+                    <button class="btn-primary">+ Créer exposition</button>
+                </div>
+                <div class="expositions-list">
+                    <div class="exposition-card">
+                        <div class="exposition-image">
+                            <img src="./asset/Img/visite-groupe.jpg" alt="Exposition 2024">
+                        </div>
+                        <div class="exposition-info">
+                            <h3>Exposition 2024</h3>
+                            <p class="exposition-dates">15 janvier - 30 mars 2024</p>
+                            <p class="exposition-desc">Une exploration des maîtres de l'impressionnisme</p>
+                            <div class="exposition-meta">
+                                <span class="badge">12 œuvres</span>
+                                <span class="badge active">En cours</span>
+                            </div>
+                            <div class="exposition-actions">
+                                <button class="action-link">Éditer</button>
+                                <button class="action-link">Aperçu</button>
+                                <button class="action-link danger">Archiver</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exposition-card">
+                        <div class="exposition-image">
+                            <img src="./asset/Img/visite-groupe.jpg" alt="Retro 2023">
+                        </div>
+                        <div class="exposition-info">
+                            <h3>Retro 2023</h3>
+                            <p class="exposition-dates">1 décembre 2023 - 28 février 2024</p>
+                            <p class="exposition-desc">Rétrospective des acquisitions de l'année</p>
+                            <div class="exposition-meta">
+                                <span class="badge">8 œuvres</span>
+                                <span class="badge archived">Terminée</span>
+                            </div>
+                            <div class="exposition-actions">
+                                <button class="action-link">Voir</button>
+                                <button class="action-link">Dupliquer</button>
+                                <button class="action-link danger">Supprimer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Œuvres Populaires Section -->
+            <div class="admin-section" data-section="oeuvres-populaires">
+                <div class="section-header">
+                    <h1>Œuvres populaires</h1>
+                </div>
+                <div class="analytics-filters">
+                    <button class="filter-btn active">Cette semaine</button>
+                    <button class="filter-btn">Ce mois</button>
+                    <button class="filter-btn">Cette année</button>
+                    <button class="filter-btn">Tous les temps</button>
+                </div>
+                <div class="popular-grid">
+                    <div class="popular-card">
+                        <div class="rank">1</div>
+                        <img src="./asset/Img/visite-groupe.jpg" alt="Voyage à Milan">
+                        <h3>Voyage à Milan</h3>
+                        <p class="artist">Paul Signac</p>
+                        <div class="stats">
+                            <span class="stat-item">328 vues</span>
+                            <span class="stat-item">45 partages</span>
+                        </div>
+                    </div>
+                    <div class="popular-card">
+                        <div class="rank">2</div>
+                        <img src="./asset/Img/visite-groupe.jpg" alt="Marine bretonne">
+                        <h3>Marine bretonne</h3>
+                        <p class="artist">Paul Gauguin</p>
+                        <div class="stats">
+                            <span class="stat-item">256 vues</span>
+                            <span class="stat-item">38 partages</span>
+                        </div>
+                    </div>
+                    <div class="popular-card">
+                        <div class="rank">3</div>
+                        <img src="./asset/Img/visite-groupe.jpg" alt="Paysage d'été">
+                        <h3>Paysage d'été</h3>
+                        <p class="artist">Marie Leblanc</p>
+                        <div class="stats">
+                            <span class="stat-item">195 vues</span>
+                            <span class="stat-item">28 partages</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scans QR Section -->
+            <div class="admin-section" data-section="scans-qr">
+                <div class="section-header">
+                    <h1>Scans QR</h1>
+                </div>
+                <div class="qr-stats">
+                    <div class="qr-stat-card">
+                        <div class="stat-label">Scans total</div>
+                        <div class="stat-big">1,247</div>
+                        <div class="stat-change">+23% cette semaine</div>
+                    </div>
+                    <div class="qr-stat-card">
+                        <div class="stat-label">Scans aujourd'hui</div>
+                        <div class="stat-big">142</div>
+                        <div class="stat-change">vs 95 hier</div>
+                    </div>
+                    <div class="qr-stat-card">
+                        <div class="stat-label">QR codes actifs</div>
+                        <div class="stat-big">312</div>
+                        <div class="stat-change">100% en ligne</div>
+                    </div>
+                </div>
+                <div class="qr-table-wrapper">
+                    <table class="qr-table">
+                        <thead>
+                            <tr>
+                                <th>Œuvre</th>
+                                <th>Scans</th>
+                                <th>Dernière visite</th>
+                                <th>Taux engagement</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Voyage à Milan</strong></td>
+                                <td>328</td>
+                                <td>Il y a 2h</td>
+                                <td><span class="engagement high">87%</span></td>
+                                <td><button class="action-link">Détails</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Marine bretonne</strong></td>
+                                <td>256</td>
+                                <td>Il y a 4h</td>
+                                <td><span class="engagement medium">65%</span></td>
+                                <td><button class="action-link">Détails</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Paramètres Section -->
+            <div class="admin-section" data-section="parametres">
+                <div class="settings-container">
+                    <!-- Settings Navigation -->
+                    <div class="settings-nav">
+                        <button class="settings-nav-btn active" data-tab="general">⚙️ Général</button>
+                        <button class="settings-nav-btn" data-tab="appearance">🎨 Apparence</button>
+                        <button class="settings-nav-btn" data-tab="notifications">🔔 Notifications</button>
+                        <button class="settings-nav-btn" data-tab="security">🔒 Sécurité</button>
+                        <button class="settings-nav-btn" data-tab="backup">💾 Sauvegarde</button>
+                        <button class="settings-nav-btn" data-tab="integrations">🔗 Intégrations</button>
+                    </div>
+
+                    <!-- Settings Content -->
+                    <div class="settings-content">
+                        <!-- General Settings -->
+                        <div class="settings-tab active" data-tab="general">
+                            <h2>Informations générales</h2>
+                            <p class="settings-description">Paramètres de base du musée</p>
+                            
+                            <div class="settings-form-group">
+                                <label>Nom du musée</label>
+                                <input type="text" value="Musée d'Art Moderne" class="settings-input">
+                            </div>
+                            
+                            <div class="settings-form-group">
+                                <label>Adresse email</label>
+                                <input type="email" value="contact@musee.fr" class="settings-input">
+                            </div>
+                            
+                            <div class="settings-form-group">
+                                <label>Téléphone</label>
+                                <input type="tel" value="+33 1 23 45 67 89" class="settings-input">
+                            </div>
+                            
+                            <div class="settings-form-group">
+                                <label>Adresse</label>
+                                <input type="text" value="12 Rue des Arts, 75001 Paris" class="settings-input">
+                            </div>
+
+                            <h3 style="margin-top: 2rem;">Affichage</h3>
+                            <p class="settings-description">Personnalisez l'interface</p>
+                            
+                            <div class="settings-form-group">
+                                <label>Langue</label>
+                                <select class="settings-input">
+                                    <option>Français</option>
+                                    <option>English</option>
+                                    <option>Español</option>
+                                </select>
+                            </div>
+                            
+                            <div class="settings-form-group">
+                                <label>Fuseau horaire</label>
+                                <input type="text" value="Europe/Paris (GMT+1)" class="settings-input">
+                            </div>
+                            
+                            <div class="settings-form-group">
+                                <label>Format de date</label>
+                                <input type="text" value="JJ/MM/AAAA" class="settings-input">
+                            </div>
+                        </div>
+
+                        <!-- Appearance Settings -->
+                        <div class="settings-tab" data-tab="appearance">
+                            <h2>Apparence</h2>
+                            <p class="settings-description">Personnalisez le thème et l'affichage</p>
+                            
+                            <div class="theme-selector">
+                                <div class="theme-option">
+                                    <input type="radio" name="theme" id="theme-light" checked>
+                                    <label for="theme-light">Clair</label>
+                                </div>
+                                <div class="theme-option">
+                                    <input type="radio" name="theme" id="theme-dark">
+                                    <label for="theme-dark">Sombre</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Notifications Settings -->
+                        <div class="settings-tab" data-tab="notifications">
+                            <h2>Notifications</h2>
+                            <p class="settings-description">Gérez vos notifications</p>
+                            
+                            <div class="settings-toggle-group">
+                                <div class="toggle-item">
+                                    <div class="toggle-info">
+                                        <h4>Notifications par email</h4>
+                                        <p>Recevoir des notifications par email</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Security Settings -->
+                        <div class="settings-tab" data-tab="security">
+                            <h2>Sécurité</h2>
+                            <p class="settings-description">Paramètres de sécurité</p>
+                        </div>
+
+                        <!-- Backup Settings -->
+                        <div class="settings-tab" data-tab="backup">
+                            <h2>Sauvegarde</h2>
+                            <p class="settings-description">Gérez les sauvegardes</p>
+                        </div>
+
+                        <!-- Integrations -->
+                        <div class="settings-tab" data-tab="integrations">
+                            <h2>Intégrations</h2>
+                            <p class="settings-description">Connectez des services externes</p>
+                        </div>
+
+                        <!-- Functionalities Section -->
+                        <div style="margin-top: 3rem;">
+                            <h2>Fonctionnalités</h2>
+                            <p class="settings-description">Activez ou désactivez les fonctionnalités</p>
+                            
+                            <div class="settings-toggle-group">
+                                <div class="toggle-item">
+                                    <div class="toggle-info">
+                                        <h4>Codes QR automatiques</h4>
+                                        <p>Générer automatiquement les codes QR pour les nouvelles œuvres</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="toggle-item">
+                                    <div class="toggle-info">
+                                        <h4>Statistiques avancées</h4>
+                                        <p>Afficher le suivi détaillé des consultations</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="toggle-item">
+                                    <div class="toggle-info">
+                                        <h4>Mode public</h4>
+                                        <p>Permettre l'accès public aux fiches d'œuvres</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="toggle-item">
+                                    <div class="toggle-info">
+                                        <h4>Notifications email</h4>
+                                        <p>Recevoir les notifications par email</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Storage Section -->
+                        <div style="margin-top: 3rem;">
+                            <h2>Stockage</h2>
+                            <p class="settings-description">Gérez votre espace de stockage</p>
+                            
+                            <div class="storage-info">
+                                <div class="storage-label">
+                                    <span>Utilisé</span>
+                                    <span class="storage-amount">3.3 GB / 10 GB</span>
+                                </div>
+                                <div class="storage-bar">
+                                    <div class="storage-fill" style="width: 33%"></div>
+                                </div>
+                                <div class="storage-warning">
+                                    Vous utilisez 33% de votre espace de stockage. Pensez à archiver les anciennes images pour libérer l'espace.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Danger Zone -->
+                        <div style="margin-top: 3rem;">
+                            <h2 class="danger-title">Zone dangereuse</h2>
+                            <p class="settings-description">Actions irréversibles</p>
+                            
+                            <div class="danger-actions">
+                                <div class="danger-action">
+                                    <div class="danger-info">
+                                        <h4>Exporter toutes les données</h4>
+                                        <p>Télécharger une copie complète de vos données</p>
+                                    </div>
+                                    <button class="btn-danger-secondary">Exporter</button>
+                                </div>
+                                
+                                <div class="danger-action">
+                                    <div class="danger-info">
+                                        <h4>Supprimer toutes les données</h4>
+                                        <p>Cette action est définitive et irréversible</p>
+                                    </div>
+                                    <button class="btn-danger">Supprimer</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="settings-actions">
+                            <button class="btn-primary">Enregistrer les modifications</button>
+                            <button class="btn-secondary">Annuler</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Utilisateurs Section -->
+            <div class="admin-section" data-section="utilisateurs">
+                <div class="section-header">
+                    <h1>Utilisateurs</h1>
+                    <button class="btn-primary">+ Ajouter utilisateur</button>
+                </div>
+                <div class="users-table-wrapper">
+                    <table class="users-table">
+                        <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Email</th>
+                                <th>Rôle</th>
+                                <th>Dernier accès</th>
+                                <th>Statut</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Natalie</strong></td>
+                                <td>natalie@mbaa.fr</td>
+                                <td><span class="role-badge admin">Admin</span></td>
+                                <td>24 décembre 2025</td>
+                                <td><span class="status-badge online">Actif</span></td>
+                                <td><button class="action-link">Éditer</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Marie</strong></td>
+                                <td>marie@mbaa.fr</td>
+                                <td><span class="role-badge moderator">Modérateur</span></td>
+                                <td>23 décembre 2025</td>
+                                <td><span class="status-badge online">Actif</span></td>
+                                <td><button class="action-link">Éditer</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pierre</strong></td>
+                                <td>pierre@mbaa.fr</td>
+                                <td><span class="role-badge editor">Éditeur</span></td>
+                                <td>20 décembre 2025</td>
+                                <td><span class="status-badge">Inactif</span></td>
+                                <td><button class="action-link">Éditer</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Export/Import Section -->
+            <div class="admin-section" data-section="export-import">
+                <div class="export-import-container">
+                    <!-- Section Exporter -->
+                    <div class="export-section-card">
+                        <!-- Titre avec flèche vers le haut intégrée -->
+                        <h2 class="export-title">↑ Exporter</h2>
+                        <p class="export-subtitle">Téléchargez vos données dans différents formats</p>
+                        
+                        <!-- Options de format d'export (toutes sélectionnables simultanément) -->
+                        <div class="export-format-options">
+                            <!-- Option Excel avec fond bleu foncé -->
+                            <div class="format-option format-option-excel" data-format="xlsx">
+                                <div class="format-label">Excel (.xlsx)</div>
+                                <div class="format-desc">Format compatible avec Excel et LibreOffice</div>
+                            </div>
+                            <!-- Option CSV avec fond vert olive -->
+                            <div class="format-option format-option-csv" data-format="csv">
+                                <div class="format-label">CSV (.csv)</div>
+                                <div class="format-desc">Format universel pour tableaux</div>
+                            </div>
+                            <!-- Option JSON avec fond rose clair -->
+                            <div class="format-option format-option-json" data-format="json">
+                                <div class="format-label">JSON (.json)</div>
+                                <div class="format-desc">Format structuré pour développeurs</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Cases à cocher pour sélectionner les types de données à exporter -->
+                        <div class="export-checkboxes">
+                            <label class="export-checkbox-label">
+                                <input type="checkbox" checked>
+                                <span>Œuvres et métadonnées</span>
+                            </label>
+                            <label class="export-checkbox-label">
+                                <input type="checkbox" checked>
+                                <span>Collections</span>
+                            </label>
+                            <label class="export-checkbox-label">
+                                <input type="checkbox" checked>
+                                <span>Images et fichiers médias</span>
+                            </label>
+                            <label class="export-checkbox-label">
+                                <input type="checkbox" checked>
+                                <span>Statistiques</span>
+                            </label>
+                        </div>
+                        
+                        <!-- Bouton de téléchargement de l'export -->
+                        <button class="export-download-btn">Télécharger l'export</button>
+                    </div>
+                    
+                    <!-- Section Importer -->
+                    <div class="import-section-card">
+                        <div class="import-header">
+                            <div class="import-icon-box import-icon-green">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h2 class="import-title">Importer</h2>
+                        </div>
+                        <p class="import-subtitle">Importez vos données depuis un fichier</p>
+                        
+                        <div class="import-formats-banner">
+                            Formats acceptés : Excel (.xlsx), CSV (.csv), JSON (.json)
+                        </div>
+                        
+                        <div class="import-dropzone" id="importDropzone">
+                            <div class="dropzone-icon">📁</div>
+                            <p class="dropzone-text">Cliquez pour parcourir ou glissez-déposez</p>
+                            <p class="dropzone-hint">Taille maximale : 50 MB</p>
+                            <input type="file" class="import-file-input" accept=".xlsx,.csv,.json" id="importFileInput">
+                        </div>
+                        
+                        <div class="import-checkboxes">
+                            <label class="import-checkbox-label">
+                                <input type="checkbox" checked>
+                                <span>Créer les collections manquantes</span>
+                            </label>
+                            <label class="import-checkbox-label">
+                                <input type="checkbox" checked>
+                                <span>Mettre à jour les doublons</span>
+                            </label>
+                            <label class="import-checkbox-label">
+                                <input type="checkbox" checked>
+                                <span>Supprimer les données existantes</span>
+                            </label>
+                        </div>
+                        
+                        <button class="import-launch-btn">Lancer l'import</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Script JavaScript pour gérer les interactions de la page d'administration -->
+    <script>
+        // Variable globale pour stocker la section actuellement affichée
+        let currentSection = 'dashboard';
+
+        // Initialisation au chargement de la page
+        window.addEventListener('DOMContentLoaded', function() {
+            // Vérification de l'authentification : récupère l'utilisateur depuis le localStorage
+            const user = localStorage.getItem('adminUser');
+            // Si aucun utilisateur n'est connecté, redirige vers la page de connexion
+            if (!user) {
+                window.location.href = './connexion.html';
+            }
+            
+            // Initialisation de toutes les fonctionnalités de la page
+            initSectionNavigation();      // Navigation entre les sections
+            initMediaCheckboxes();        // Gestion des cases à cocher des médias
+            initTableCheckboxes();        // Gestion des cases à cocher du tableau
+            initFicheOeuvres();          // Gestion des fiches d'œuvres
+            // Affiche la section tableau de bord par défaut
+            showSection('dashboard');
+        });
+
+        /**
+         * Initialise la navigation entre les différentes sections de la sidebar
+         * Gère le clic sur les liens de navigation et affiche la section correspondante
+         */
+        function initSectionNavigation() {
+            // Sélectionne tous les liens de navigation dans la sidebar
+            document.querySelectorAll('.sidebar-link').forEach(link => {
+                // Ajoute un écouteur d'événement sur chaque lien
+                link.addEventListener('click', function(e) {
+                    // Empêche le comportement par défaut du lien (navigation)
+                    e.preventDefault();
+                    
+                    // Retire la classe 'active' de tous les liens
+                    document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+                    // Ajoute la classe 'active' au lien cliqué pour le mettre en surbrillance
+                    this.classList.add('active');
+                    
+                    // Récupère le texte du lien cliqué
+                    const linkText = this.textContent.trim();
+                    // Mapping entre le texte du lien et l'identifiant de la section
+                    const sectionMap = {
+                        'Tableau de bord': 'dashboard',
+                        'Fiches œuvres': 'fiches-oeuvres',
+                        'Bibliothèque médias': 'media-library',
+                        'Collections': 'collections',
+                        'Expositions': 'expositions',
+                        'Œuvres populaires': 'oeuvres-populaires',
+                        'Scans QR': 'scans-qr',
+                        'Paramètres': 'parametres',
+                        'Utilisateurs': 'utilisateurs',
+                        'Export/Import': 'export-import'
+                    };
+                    
+                    // Récupère l'identifiant de la section correspondante
+                    const section = sectionMap[linkText];
+                    // Si une section correspond, l'affiche
+                    if (section) {
+                        showSection(section);
+                    }
+                });
+            });
+        }
+
+        /**
+         * Affiche la section demandée et masque toutes les autres
+         * @param {string} section - L'identifiant de la section à afficher
+         */
+        function showSection(section) {
+            // Masque toutes les sections en les rendant invisibles
+            document.querySelectorAll('.admin-section').forEach(s => {
+                s.style.display = 'none';
+            });
+            
+            // Récupère les éléments de filtres et d'en-tête
+            const filters = document.querySelector('.admin-filters');
+            const header = document.querySelector('.admin-header');
+            
+            // Liste des sections qui nécessitent l'affichage des filtres et de l'en-tête
+            const showFiltersAndHeader = ['dashboard', 'fiches-oeuvres'];
+            
+            // Affiche ou masque les filtres et l'en-tête selon la section
+            if (showFiltersAndHeader.includes(section)) {
+                filters.style.display = 'flex';
+                header.style.display = 'flex';
+            } else {
+                filters.style.display = 'none';
+                header.style.display = 'none';
+            }
+            
+            // Affiche la section correspondante et initialise ses fonctionnalités
+            switch(section) {
+                case 'dashboard':
+                    // Affiche le tableau de bord et le tableau des œuvres
+                    document.querySelector('[data-section="dashboard"]').style.display = 'block';
+                    document.querySelector('[data-section="dashboard-table"]').style.display = 'block';
+                    break;
+                case 'fiches-oeuvres':
+                    // Affiche la section des fiches d'œuvres et initialise ses fonctionnalités
+                    document.querySelector('[data-section="fiches-oeuvres"]').style.display = 'block';
+                    initFicheOeuvres();
+                    break;
+                case 'media-library':
+                    // Affiche la bibliothèque médias et initialise les cases à cocher
+                    document.querySelector('[data-section="media-library"]').style.display = 'block';
+                    initMediaCheckboxes();
+                    break;
+                case 'collections':
+                    // Affiche la section des collections
+                    document.querySelector('[data-section="collections"]').style.display = 'block';
+                    break;
+                case 'expositions':
+                    // Affiche la section des expositions
+                    document.querySelector('[data-section="expositions"]').style.display = 'block';
+                    break;
+                case 'oeuvres-populaires':
+                    // Affiche la section des œuvres populaires
+                    document.querySelector('[data-section="oeuvres-populaires"]').style.display = 'block';
+                    break;
+                case 'scans-qr':
+                    // Affiche la section des scans QR
+                    document.querySelector('[data-section="scans-qr"]').style.display = 'block';
+                    break;
+                case 'parametres':
+                    // Affiche la section des paramètres et initialise les onglets
+                    document.querySelector('[data-section="parametres"]').style.display = 'block';
+                    initSettingsTabs();
+                    break;
+                case 'utilisateurs':
+                    // Affiche la section de gestion des utilisateurs
+                    document.querySelector('[data-section="utilisateurs"]').style.display = 'block';
+                    break;
+                case 'export-import':
+                    // Affiche la section d'export/import et initialise ses fonctionnalités
+                    document.querySelector('[data-section="export-import"]').style.display = 'block';
+                    initExportImport();
+                    break;
+            }
+            
+            // Met à jour la variable globale avec la section actuelle
+            currentSection = section;
+        }
+        
+        function initWorksCheckboxes() {
+            const allCheckbox = document.querySelector('.works-checkbox-all');
+            if (allCheckbox) {
+                allCheckbox.removeEventListener('change', null);
+                allCheckbox.addEventListener('change', function() {
+                    const checkboxes = document.querySelectorAll('.works-checkbox');
+                    checkboxes.forEach(cb => cb.checked = this.checked);
+                });
+            }
+        }
+        
+        /**
+         * Initialise toutes les fonctionnalités de la section Export/Import
+         * Gère la sélection des formats, le drag & drop et les boutons d'action
+         */
+        function initExportImport() {
+            // Les formats d'export sont tous affichés avec leurs couleurs respectives
+            // Ils peuvent être sélectionnés simultanément (pas de gestion de sélection unique)
+            // Les formats gardent leur style par défaut (Excel bleu, CSV vert olive, JSON rose)
+            
+            // Gestion du drag & drop pour l'import de fichiers
+            const dropzone = document.getElementById('importDropzone');
+            const fileInput = document.getElementById('importFileInput');
+            
+            if (dropzone && fileInput) {
+                // Clic sur la zone de drop : ouvre le sélecteur de fichiers
+                dropzone.addEventListener('click', () => fileInput.click());
+                
+                // Événement déclenché quand un fichier est survolé (drag over)
+                dropzone.addEventListener('dragover', (e) => {
+                    e.preventDefault(); // Empêche le comportement par défaut
+                    // Change l'apparence de la zone pour indiquer qu'on peut déposer
+                    dropzone.style.borderColor = '#47564F';
+                    dropzone.style.background = 'rgba(71, 86, 79, 0.1)';
+                });
+                
+                // Événement déclenché quand le fichier quitte la zone (drag leave)
+                dropzone.addEventListener('dragleave', () => {
+                    // Restaure l'apparence normale de la zone
+                    dropzone.style.borderColor = '#ddd';
+                    dropzone.style.background = '#f9f9f9';
+                });
+                
+                // Événement déclenché quand un fichier est déposé (drop)
+                dropzone.addEventListener('drop', (e) => {
+                    e.preventDefault(); // Empêche l'ouverture du fichier dans le navigateur
+                    // Restaure l'apparence normale de la zone
+                    dropzone.style.borderColor = '#ddd';
+                    dropzone.style.background = '#f9f9f9';
+                    
+                    // Récupère les fichiers déposés
+                    const files = e.dataTransfer.files;
+                    if (files.length > 0) {
+                        // Assigne les fichiers à l'input
+                        fileInput.files = files;
+                        // Affiche le nom du fichier sélectionné dans la zone
+                        const fileName = files[0].name;
+                        const dropzoneText = dropzone.querySelector('.dropzone-text');
+                        if (dropzoneText) {
+                            dropzoneText.textContent = `Fichier sélectionné : ${fileName}`;
+                        }
+                    }
+                });
+                
+                // Événement déclenché quand un fichier est sélectionné via le sélecteur
+                fileInput.addEventListener('change', (e) => {
+                    if (e.target.files.length > 0) {
+                        // Affiche le nom du fichier sélectionné
+                        const fileName = e.target.files[0].name;
+                        const dropzoneText = dropzone.querySelector('.dropzone-text');
+                        if (dropzoneText) {
+                            dropzoneText.textContent = `Fichier sélectionné : ${fileName}`;
+                        }
+                    }
+                });
+            }
+            
+            // Gestion du bouton de téléchargement de l'export
+            const exportBtn = document.querySelector('.export-download-btn');
+            if (exportBtn) {
+                exportBtn.addEventListener('click', function() {
+                    // Récupère tous les formats disponibles (tous sont visibles avec leurs couleurs)
+                    const formatOptions = document.querySelectorAll('.format-option');
+                    const selectedFormats = [];
+                    
+                    // Récupère les formats et les types de données sélectionnés
+                    formatOptions.forEach(option => {
+                        const format = option.getAttribute('data-format');
+                        selectedFormats.push(format);
+                    });
+                    
+                    // Récupère les types de données sélectionnés via les checkboxes
+                    const dataTypes = [];
+                    const checkboxes = document.querySelectorAll('.export-checkbox-label input[type="checkbox"]:checked');
+                    checkboxes.forEach(cb => {
+                        dataTypes.push(cb.parentElement.querySelector('span').textContent);
+                    });
+                    
+                    // TODO : Ici vous pouvez ajouter la logique d'export réelle
+                    console.log('Formats sélectionnés:', selectedFormats);
+                    console.log('Types de données:', dataTypes);
+                    alert(`Export en cours pour les formats : ${selectedFormats.join(', ').toUpperCase()}`);
+                });
+            }
+            
+            // Gestion du bouton de lancement de l'import
+            const importBtn = document.querySelector('.import-launch-btn');
+            if (importBtn) {
+                importBtn.addEventListener('click', function() {
+                    // Vérifie qu'un fichier a été sélectionné
+                    const file = fileInput.files[0];
+                    if (!file) {
+                        alert('Veuillez sélectionner un fichier à importer');
+                        return;
+                    }
+                    // TODO : Ici vous pouvez ajouter la logique d'import réelle
+                    console.log('Import du fichier:', file.name);
+                    alert(`Import en cours pour le fichier ${file.name}`);
+                });
+            }
+        }
+        
+        /**
+         * Initialise les onglets de la section Paramètres
+         * Permet de basculer entre les différents onglets (Général, Apparence, etc.)
+         */
+        function initSettingsTabs() {
+            const navButtons = document.querySelectorAll('.settings-nav-btn');
+            const tabs = document.querySelectorAll('.settings-tab');
+            
+            navButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Récupère le nom de l'onglet à afficher
+                    const tabName = this.getAttribute('data-tab');
+                    
+                    // Retire la classe 'active' de tous les boutons de navigation
+                    navButtons.forEach(btn => btn.classList.remove('active'));
+                    // Ajoute la classe 'active' au bouton cliqué
+                    this.classList.add('active');
+                    
+                    // Masque tous les onglets de contenu
+                    tabs.forEach(tab => tab.classList.remove('active'));
+                    // Affiche l'onglet correspondant au bouton cliqué
+                    document.querySelector(`[data-tab="${tabName}"].settings-tab`).classList.add('active');
+                });
+            });
+        }
+
+        /**
+         * Initialise les cases à cocher de la bibliothèque médias
+         * Ajoute les écouteurs d'événements pour mettre à jour le compteur de sélection
+         */
+        function initMediaCheckboxes() {
+            const mediaCheckboxes = document.querySelectorAll('.media-checkbox');
+            mediaCheckboxes.forEach(cb => {
+                // Ajoute un écouteur sur chaque case à cocher
+                cb.addEventListener('change', updateMediaSelectionCount);
+            });
+        }
+
+        /**
+         * Met à jour le compteur de médias sélectionnés
+         * Affiche le nombre de médias cochés dans la barre d'actions
+         */
+        function updateMediaSelectionCount() {
+            // Compte le nombre de cases à cocher sélectionnées
+            const checked = document.querySelectorAll('.media-checkbox:checked').length;
+            // Met à jour le texte du compteur
+            document.querySelector('.media-selection-count').textContent = 
+                checked + ' média(s) sélectionné(s)';
+        }
+
+        /**
+         * Initialise les cases à cocher du tableau des œuvres
+         * Gère la case "Tout sélectionner" et les cases individuelles
+         */
+        function initTableCheckboxes() {
+            // Récupère la case à cocher "Tout sélectionner"
+            const allCheckbox = document.querySelector('.table-checkbox-all');
+            if (allCheckbox) {
+                // Ajoute un écouteur pour sélectionner/désélectionner toutes les œuvres
+                allCheckbox.addEventListener('change', function() {
+                    const checkboxes = document.querySelectorAll('.table-checkbox');
+                    // Coche ou décoche toutes les cases selon l'état de "Tout sélectionner"
+                    checkboxes.forEach(cb => cb.checked = this.checked);
+                    // Met à jour le compteur
+                    updateTableSelectionCount();
+                });
+            }
+
+            // Ajoute un écouteur sur chaque case à cocher individuelle
+            document.querySelectorAll('.table-checkbox').forEach(cb => {
+                cb.addEventListener('change', updateTableSelectionCount);
+            });
+        }
+
+        /**
+         * Met à jour le compteur d'œuvres sélectionnées dans le tableau
+         * Affiche le nombre d'œuvres cochées dans la barre d'actions
+         */
+        function updateTableSelectionCount() {
+            // Compte le nombre de cases à cocher sélectionnées
+            const checked = document.querySelectorAll('.table-checkbox:checked').length;
+            // Récupère l'élément affichant le compteur
+            const actionCount = document.querySelector('.action-count');
+            if (actionCount) {
+                // Met à jour le texte du compteur
+                actionCount.textContent = checked + ' œuvre(s) sélectionnée(s)';
+            }
+        }
+
+        // Gestion du bouton de déconnexion
+        document.getElementById('logoutBtn').addEventListener('click', function(e) {
+            e.preventDefault(); // Empêche le comportement par défaut du lien
+            // Supprime les données de l'utilisateur du localStorage
+            localStorage.removeItem('adminUser');
+            // Redirige vers la page de connexion
+            window.location.href = './connexion.html';
+        });
+
+        // Gestion des onglets Tableau/Grille dans l'en-tête
+        document.querySelectorAll('.admin-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Retire la classe 'active' de tous les onglets
+                document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+                // Ajoute la classe 'active' à l'onglet cliqué
+                this.classList.add('active');
+            });
+        });
+
+        // Gestion du bouton "Ajouter une œuvre" dans la sidebar
+        document.querySelector('.sidebar-btn-add').addEventListener('click', function() {
+            // Affiche la section des fiches d'œuvres
+            document.querySelector('[data-section="fiches-oeuvres"]').style.display = 'block';
+            // Affiche le formulaire de création d'une nouvelle fiche (null = nouvelle fiche)
+            showFicheDetail(null);
+        });
+
+        // Fonction d'initialisation pour gérer les fiches d'œuvres
+        // Données des fiches d'œuvres
+        const fiches = {
+            1: {
+                id: 1,
+                titre: 'Nocturne à Ornans',
+                artiste: 'Gustave Courbet',
+                collection: 'Impressionnisme',
+                annee: '1889',
+                statut: 'Actif',
+                exposition: 'Rétrospective Courbet 2025',
+                numero: 'N° 2024-001',
+                provenance: 'Collection permanente',
+                salle: 'Salle 8',
+                conservation: 'Excellent',
+                technique: 'Huile sur toile',
+                dimensions: '73 × 92 cm',
+                description: 'Cette œuvre nocturne de Gustave Courbet capture l\'atmosphère mystérieuse d\'une nuit à Ornans. Le peintre utilise ses tons sombres et profonds pour créer une ambiance contemplative. Cette toile fait partie de la période réaliste du peintre, où il privilégie les scènes de la vie quotidienne et de la nature française-Comté natale.',
+                image: './asset/Img/visite-groupe.jpg'
+            },
+            2: {
+                id: 2,
+                titre: 'Voyage à Milan',
+                artiste: 'Paul Signac',
+                collection: 'Permanente',
+                annee: '1890',
+                statut: 'Actif',
+                exposition: 'Exposition Impressionnistes',
+                numero: 'N° 2024-002',
+                provenance: 'Achat privé 1950',
+                salle: 'Salle 5',
+                conservation: 'Bon état',
+                technique: 'Aquarelle',
+                dimensions: '50 × 65 cm',
+                description: 'Une série de voyages à Milan inspirée par les techniques divisionnistes de Paul Signac. Cette peinture exprime le mouvement et la dynamique urbaine.',
+                image: './asset/Img/visite-groupe.jpg'
+            },
+            3: {
+                id: 3,
+                titre: 'Marine bretonne',
+                artiste: 'Paul Gauguin',
+                collection: 'Permanente',
+                annee: '1891',
+                statut: 'Actif',
+                exposition: 'Exposition Bretagne',
+                numero: 'N° 2024-003',
+                provenance: 'Donation 1995',
+                salle: 'Salle 12',
+                conservation: 'Restaurée',
+                technique: 'Huile sur toile',
+                dimensions: '60 × 90 cm',
+                description: 'Une marine bretonne capturant les teintes vibrantes du littoral français. Gauguin utilise sa palette unique pour peindre la mer et le ciel.',
+                image: './asset/Img/visite-groupe.jpg'
+            }
+        };
+
+        function initFicheOeuvres() {
+            // Récupère le bouton "Créer fiche" pour ajouter une nouvelle œuvre
+            const createFicheBtn = document.getElementById('createFicheBtn');
+            // Récupère le bouton "Retour" pour revenir à la liste
+            const backToListBtn = document.getElementById('backToListBtn');
+            // Récupère tous les boutons "Éditer" pour modifier une œuvre existante
+            const ficheEditBtns = document.querySelectorAll('.fiche-edit-btn');
+
+            // Vérifie si le bouton "Créer fiche" existe, puis ajoute un écouteur de clic
+            if (createFicheBtn) {
+                createFicheBtn.addEventListener('click', () => showFicheDetail(null));
+            }
+
+            // Vérifie si le bouton "Retour" existe, puis ajoute un écouteur de clic
+            if (backToListBtn) {
+                backToListBtn.addEventListener('click', showFicheList);
+            }
+
+            // Boucle sur chaque bouton "Éditer" pour ajouter un écouteur de clic
+            ficheEditBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    // Empêche le comportement par défaut du bouton
+                    e.preventDefault();
+                    // Récupère la ligne contenant le bouton
+                    const row = this.closest('tr');
+                    // Récupère l'ID de la fiche depuis l'attribut data
+                    const ficheId = row.getAttribute('data-fiche-id');
+                    // Affiche la vue de détail avec les données de la fiche
+                    showFicheDetail(ficheId);
+                });
+            });
+        }
+
+        // Fonction pour afficher la liste des fiches d'œuvres
+        function showFicheList() {
+            // Retire la classe "hidden" de la liste pour la rendre visible
+            document.getElementById('ficheListView').classList.remove('hidden');
+            // Retire la classe "active" du détail pour le masquer
+            document.getElementById('ficheDetailView').classList.remove('active');
+        }
+
+        // Fonction pour afficher le formulaire de détail d'une fiche d'œuvre
+        function showFicheDetail(ficheId) {
+            // Ajoute la classe "hidden" à la liste pour la masquer
+            document.getElementById('ficheListView').classList.add('hidden');
+            // Ajoute la classe "active" au détail pour l'afficher
+            document.getElementById('ficheDetailView').classList.add('active');
+            
+            // Si une fiche est fournie, remplir le formulaire avec ses données
+            if (ficheId) {
+                const fiche = fiches[ficheId];
+                if (fiche) {
+                    // Met à jour l'image et le titre
+                    document.querySelector('.fiche-artwork-image img').src = fiche.image;
+                    document.querySelector('.fiche-artwork-title h2').textContent = fiche.titre;
+                    
+                    // Remplir les champs du formulaire "Informations principales"
+                    const inputs = document.querySelectorAll('.fiche-input');
+                    inputs[0].value = fiche.titre;           // Titre
+                    inputs[1].value = fiche.artiste;         // Artiste
+                    inputs[2].value = fiche.annee;           // Date de création
+                    inputs[3].value = fiche.technique;       // Technique
+                    inputs[4].value = fiche.dimensions;      // Dimensions
+                    inputs[5].value = fiche.collection;      // Collection
+                    
+                    // Remplir les champs du formulaire "Compléments d'information"
+                    inputs[6].value = fiche.statut;          // Statut
+                    inputs[7].value = fiche.exposition;      // Exposition actuelle
+                    inputs[8].value = fiche.numero;          // Numéro d'identification
+                    inputs[9].value = fiche.provenance;      // Provenance
+                    inputs[10].value = fiche.salle;          // Salle d'exposition
+                    inputs[11].value = fiche.conservation;   // État de conservation
+                    
+                    // Remplir la textarea de description
+                    document.querySelector('.fiche-textarea').value = fiche.description;
+                }
+            } else {
+                // Pour une nouvelle fiche, vider tous les champs
+                document.querySelector('.fiche-artwork-image img').src = './asset/Img/visite-groupe.jpg';
+                document.querySelector('.fiche-artwork-title h2').textContent = 'Nouvelle fiche';
+                
+                const inputs = document.querySelectorAll('.fiche-input');
+                inputs.forEach(input => input.value = '');
+                
+                document.querySelector('.fiche-textarea').value = '';
+            }
+        }
+    </script>
+
+    <!-- Script du menu MBAA -->
+    <script src="./js/menu.js"></script>
+</body>
+</html>

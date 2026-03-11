@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Admin MBAA</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/png" href="./asset/Img/logo/logo-mat-small.png" />
+</head>
+<body>
+    <!-- Header MBAA avec menu burger -->
+    <header class="header">
+        <div class="header__container">
+            <a class="header__logo-link" href="./index.html">
+                <img class="header__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
+            </a>
+            <button class="header__menu-toggle" aria-label="menu" aria-expanded="false" aria-controls="headerNav">
+                <span class="header__menu-bar"></span>
+            </button>
+            <nav class="header__nav" id="headerNav" aria-hidden="true">
+                <ul class="header__nav-list header__nav-list--main">
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./infos.html">Infos pratiques</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./collections.html">Collections</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./evenement.html">Évènement</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./musee-histoire.html">Le musée</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./infos.html">Contact</a>
+                    </li>
+                </ul>
+                <ul class="header__nav-list header__nav-list--secondary">
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="./connexion.html" aria-label="Connexion">
+                            <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="#" aria-label="Billetterie">
+                            <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
+                                <path d="M13 5v2"></path>
+                                <path d="M13 17v2"></path>
+                                <path d="M13 11v2"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="#" aria-label="Recherche">
+                            <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">FR</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">EN</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <h1>MBAA</h1>
+                <p>Musée des Beaux-Arts et d'Archéologie</p>
+            </div>
+
+            <div class="login-roles" id="roleSelection">
+                <button type="button" class="role-btn" id="visiteurBtn" data-role="visiteur">
+                    <span class="role-icon">👤</span>
+                    <span class="role-text">Visiteur</span>
+                </button>
+                <button type="button" class="role-btn" id="adminBtn" data-role="admin">
+                    <span class="role-icon">⚙️</span>
+                    <span class="role-text">Administrateur</span>
+                </button>
+            </div>
+
+            <form class="login-form" id="loginForm" style="display: none;">
+                <div class="form-group">
+                    <label for="email">Adresse email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="votre@email.com"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="••••••••"
+                        required
+                    >
+                </div>
+
+                <div class="form-remember">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Se souvenir de moi</label>
+                </div>
+
+                <button type="submit" class="login-button">Se connecter</button>
+
+                <button type="button" class="login-back" id="backBtn">← Retour</button>
+
+                <div class="login-error" id="loginError" style="display: none;"></div>
+            </form>
+
+            <div class="login-footer">
+                <p>Première visite ? <a href="#" class="login-link">Contacter le musée</a></p>
+            </div>
+        </div>
+
+        <div class="login-background"></div>
+    </div>
+
+    <script>
+        let selectedRole = null;
+
+        // Role selection
+        document.getElementById('visiteurBtn').addEventListener('click', function() {
+            selectedRole = 'visiteur';
+            showLoginForm();
+        });
+
+        document.getElementById('adminBtn').addEventListener('click', function() {
+            selectedRole = 'admin';
+            showLoginForm();
+        });
+
+        function showLoginForm() {
+            document.getElementById('roleSelection').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'flex';
+            document.getElementById('email').focus();
+            updateHeader();
+        }
+
+        function updateHeader() {
+            const header = document.querySelector('.login-header p');
+            header.textContent = selectedRole === 'admin' ? 
+                'Espace Administrateur' : 
+                'Espace Personnel Visiteur';
+        }
+
+        // Back button
+        document.getElementById('backBtn').addEventListener('click', function() {
+            selectedRole = null;
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('roleSelection').style.display = 'flex';
+            document.getElementById('loginForm').reset();
+        });
+
+        // Login form
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const remember = document.getElementById('remember').checked;
+            
+            // Stockage simple pour démo
+            if (email && password) {
+                const userData = {
+                    email: email,
+                    role: selectedRole,
+                    remember: remember,
+                    loginTime: new Date()
+                };
+
+                if (selectedRole === 'admin') {
+                    localStorage.setItem('adminUser', JSON.stringify(userData));
+                    window.location.href = './admin.html';
+                } else {
+                    localStorage.setItem('visiteurUser', JSON.stringify(userData));
+                    window.location.href = './visiteur.html';
+                }
+            }
+        });
+
+        // Check if already logged in
+        window.addEventListener('DOMContentLoaded', function() {
+            const adminUser = localStorage.getItem('adminUser');
+            const visiteurUser = localStorage.getItem('visiteurUser');
+            
+            if (adminUser) {
+                window.location.href = './admin.html';
+            } else if (visiteurUser) {
+                window.location.href = './visiteur.html';
+            }
+        });
+    </script>
+
+    <!-- Script du menu MBAA -->
+    <script src="./js/menu.js"></script>
+</body>
+</html>
