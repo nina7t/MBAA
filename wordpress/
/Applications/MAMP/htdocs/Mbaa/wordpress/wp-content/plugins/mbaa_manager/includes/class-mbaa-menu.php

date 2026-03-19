@@ -1,0 +1,274 @@
+
+<?php
+
+ // Classe de gestion du menu admin
+ // NOTE: Gère uniquement l'inscription des menus et leur organisation
+ // Les méthodes de rendu sont dans class-mbaa-admin.php
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+class MBAA_Menu {
+    
+    private static $instance = null;
+    
+    public static function get_instance() {
+        if (null === self::$instance) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+    
+    private function __construct() {
+        // Réorganiser les menus - priorité précoce
+        add_action('admin_menu', array($this, 'register_menus'), 5);
+        
+        // Masquer les menus WordPress par défaut - priorité très haute
+        add_action('admin_menu', array($this, 'hide_default_menus'), 1);
+        
+        // Rediriger le tableau de bord WP pour non-Super-Admins
+        add_action('load-index.php', array($this, 'redirect_dashboard'));
+        
+        // Masquer le menu WP Dashboard pour non-Super-Admins
+        add_action('admin_menu', array($this, 'hide_wp_dashboard'), 999);
+    }
+    
+    
+     // Masquer les menus WordPress par défaut
+  
+    public function hide_default_menus() {
+        remove_menu_page('edit.php');
+        remove_menu_page('edit-comments.php');
+        remove_menu_page('upload.php');
+        remove_menu_page('edit.php?post_type=page');
+    }
+    
+    
+     // Vérifier si l'utilisateur est Super Admin
+  
+    private function is_super_admin() {
+        return current_user_can('administrator') && current_user_can('mbaa_super_admin');
+    }
+    
+    
+     // Vérifier si l'utilisateur peut accéder au plugin
+  
+    private function can_access_mbaa() {
+        return current_user_can('mbaa_can_access_dashboard');
+    }
+    
+    
+     // Rediriger le tableau de bord WP vers MBAA pour non-Super-Admins
+  
+    public function redirect_dashboard() {
+        if ($this->is_super_admin()) {
+            return;
+        }
+        
+        if (isset($_GET['page']) && strpos($_GET['page'], 'mbaa-') === 0) {
+            return;
+        }
+        
+        if (wp_doing_ajax() || defined('IFRAME_REQUEST')) {
+            return;
+        }
+        
+        $current_page = isset($_GET['page']) ? $_GET['page'] : '';
+        
+        if (empty($current_page) || $current_page === 'index') {
+            wp_redirect(admin_url('admin.php?page=mbaa-dashboard'));
+            exit;
+        }
+    }
+    
+    
+     // Masquer le tableau de bord WP pour non-Super-Admins
+  
+    public function hide_wp_dashboard() {
+        if (!$this->is_super_admin()) {
+            remove_menu_page('index.php');
+        }
+    }
+    
+    
+     // Enregistrer tous les menus admin - Tous comme menus principaux
+  
+    public function register_menus() {
+        // Supprimer d'abord tous les menus MBAA potentiels
+        remove_menu_page('mbaa-dashboard');
+        remove_menu_page('mbaa-artistes');
+        remove_menu_page('mbaa-oeuvres');
+        remove_menu_page('mbaa-evenements');
+        remove_menu_page('mbaa-collections');
+        remove_menu_page('mbaa-expositions');
+        remove_menu_page('mbaa-statistiques');
+        remove_menu_page('mbaa-parametres');
+        remove_menu_page('mbaa-populaires');
+        remove_menu_page('mbaa-qrcodes');
+        remove_menu_page('mbaa-notifications');
+        remove_menu_page('mbaa-utilisateurs');
+        remove_menu_page('mbaa-historique');
+        
+        // Vérifier si l'utilisateur peut accéder au plugin
+        if (!$this->can_access_mbaa()) {
+            return;
+        }
+        
+        // Menu 1: Tableau de bord (Gestion Musée)
+        add_menu_page(
+            'Gestion Musée',
+            'Gestion Musée',
+            'mbaa_can_access_dashboard',
+            'mbaa-dashboard',
+            array('MBAA_Admin', 'render_dashboard'),
+            'dashicons-bank',
+            2
+        );
+        
+        // Menu 2: Artistes
+        add_menu_page(
+            'Artistes',
+            'Artistes',
+            'mbaa_can_access_artistes',
+            'mbaa-artistes',
+            array('MBAA_Admin', 'render_artistes_page'),
+            'dashicons-admin-users',
+            3
+        );
+        
+        // Menu 3: Œuvres
+        add_menu_page(
+            'Œuvres',
+            'Œuvres',
+            'mbaa_can_access_oeuvres',
+            'mbaa-oeuvres',
+            array('MBAA_Admin', 'render_oeuvres_page'),
+            'dashicons-format-image',
+            4
+        );
+        
+        // Menu 4: Collections
+        add_menu_page(
+            'Collections',
+            'Collections',
+            'mbaa_can_access_collections',
+            'mbaa-collections',
+            array('MBAA_Admin', 'render_collections_page'),
+            'dashicons-filter',
+            5
+        );
+        
+        // Menu 5: Événements
+        add_menu_page(
+            'Événements',
+            'Événements',
+            'mbaa_can_access_evenements',
+            'mbaa-evenements',
+            array('MBAA_Admin', 'render_evenements_page'),
+            'dashicons-calendar-alt',
+            6
+        );
+        
+        // Menu 6: Direction Artistique
+        add_menu_page(
+            'Direction Artistique',
+            'Direction Artistique',
+            'mbaa_can_access_audioguides',
+            'mbaa-audioguides',
+            array('MBAA_Admin', 'render_audioguides_page'),
+            'dashicons-headphones',
+            7
+        );
+        
+        // Menu 7: Expositions
+        add_menu_page(
+            'Expositions',
+            'Expositions',
+            'mbaa_can_access_expositions',
+            'mbaa-expositions',
+            array('MBAA_Admin', 'render_expositions_page'),
+            'dashicons-images-alt2',
+            8
+        );
+        
+        // Menu 8: Statistiques
+        add_menu_page(
+            'Statistiques',
+            'Statistiques',
+            'mbaa_can_access_statistiques',
+            'mbaa-statistiques',
+            array('MBAA_Admin', 'render_statistiques_page'),
+            'dashicons-chart-bar',
+            9
+        );
+        
+        // Menu 9: Œuvres Populaires
+        add_menu_page(
+            'Œuvres Populaires',
+            'Œuvres Populaires',
+            'mbaa_can_access_statistiques',
+            'mbaa-populaires',
+            array('MBAA_Admin', 'render_populaires_page'),
+            'dashicons-star-filled',
+            10
+        );
+        
+        // Menu 10: QR Codes
+        add_menu_page(
+            'QR Codes',
+            'QR Codes',
+            'mbaa_can_access_statistiques',
+            'mbaa-qrcodes',
+            array('MBAA_Admin', 'render_qrcodes_page'),
+            'dashicons-qrcode',
+            11
+        );
+        
+        // Menu 11: Notifications
+        add_menu_page(
+            'Notifications',
+            'Notifications',
+            'mbaa_can_access_dashboard',
+            'mbaa-notifications',
+            array('MBAA_Admin', 'render_notifications_page'),
+            'dashicons-bell',
+            12
+        );
+        
+        // Menu 12: Paramètres (Super Admin uniquement)
+        add_menu_page(
+            'Paramètres',
+            'Paramètres',
+            'mbaa_super_admin',
+            'mbaa-parametres',
+            array('MBAA_Admin', 'render_parametres_page'),
+            'dashicons-admin-settings',
+            98
+        );
+        
+        // Menu 13: Utilisateurs (Super Admin uniquement)
+        add_menu_page(
+            'Utilisateurs',
+            'Utilisateurs',
+            'mbaa_super_admin',
+            'mbaa-utilisateurs',
+            array('MBAA_Admin', 'render_utilisateurs_page'),
+            'dashicons-groups',
+            99
+        );
+        
+        // Menu 14: Historique (Super Admin uniquement)
+        add_menu_page(
+            'Historique',
+            'Historique',
+            'mbaa_super_admin',
+            'mbaa-historique',
+            array('MBAA_Admin', 'render_historique_page'),
+            'dashicons-backup',
+            100
+        );
+    }
+}
+
+?>

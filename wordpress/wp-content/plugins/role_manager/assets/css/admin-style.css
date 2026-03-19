@@ -1,0 +1,317 @@
+/* Role Manager Plugin - Admin Styles */
+
+/* Variables */
+:root {
+  --mbaa-primary: #c9a227;
+  --mbaa-primary-dark: #a0811e;
+  --mbaa-primary-light: #dbb82e;
+  --mbaa-black: #1a1a1a;
+  --mbaa-fond: #191919;
+  --mbaa-white: #ffffff;
+  --mbaa-gray-100: #fafafa;
+  --mbaa-gray-200: #f5f5f5;
+  --mbaa-gray-300: #e5e5e5;
+  --mbaa-gray-400: #d4d4d4;
+  --mbaa-gray-500: #737373;
+  --mbaa-gray-600: #666666;
+  --mbaa-red: #7a0303;
+  --mbaa-green: #065f46;
+  --mbaa-font: "Futura", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+}
+
+/* Reset & Base */
+.role-wrap * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.role-wrap {
+  font-family: var(--mbaa-font);
+  background: var(--mbaa-gray-100);
+  color: var(--mbaa-black);
+  line-height: 1.6;
+}
+
+.role-wrap .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   HEADER MODERNE
+   ========================================================================== */
+
+.role-header {
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.role-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.role-logo {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.role-logo-text {
+  font-size: 16px;
+  color: var(--mbaa-gray-600);
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   MAIN CONTENT
+   ========================================================================== */
+
+.role-main-content {
+  padding: 40px 0;
+}
+
+/* Artwork Header */
+.role-page-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.role-page-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--mbaa-primary);
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.role-page-icon svg {
+  width: 40px;
+  height: 40px;
+  color: var(--mbaa-white);
+}
+
+.role-page-title-section {
+  flex: 1;
+}
+
+.role-page-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  font-family: "Clash Display variable", var(--mbaa-font);
+}
+
+.role-subtitle {
+  font-size: 14px;
+  color: var(--mbaa-gray-500);
+}
+
+/* ==========================================================================
+   CARDS & SECTIONS
+   ========================================================================== */
+
+.role-card {
+  background: var(--mbaa-white);
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid var(--mbaa-gray-300);
+  margin-bottom: 24px;
+}
+
+.role-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--mbaa-black);
+  font-family: "Clash Display variable", var(--mbaa-font);
+}
+
+.role-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--mbaa-black);
+  font-family: var(--mbaa-font);
+}
+
+/* ==========================================================================
+   LISTS
+   ========================================================================== */
+
+.role-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.role-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--mbaa-gray-200);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.role-list li:last-child {
+  border-bottom: none;
+}
+
+.role-list strong {
+  color: var(--mbaa-black);
+  font-weight: 600;
+}
+
+.role-list ul {
+  margin-left: 24px;
+  margin-top: 8px;
+  list-style: disc;
+}
+
+.role-list ul li {
+  border-bottom: none;
+  padding: 4px 0;
+}
+
+/* ==========================================================================
+   INFO BOX
+   ========================================================================== */
+
+.role-info-box {
+  background: var(--mbaa-gray-100);
+  padding: 24px;
+  border-radius: 12px;
+  border: 2px solid var(--mbaa-primary);
+}
+
+.role-info-box h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--mbaa-black);
+  font-family: var(--mbaa-font);
+}
+
+.role-info-box p {
+  font-size: 14px;
+  color: var(--mbaa-gray-600);
+  margin-bottom: 8px;
+}
+
+.role-info-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   TAGS & BADGES
+   ========================================================================== */
+
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--mbaa-white);
+  border: 1px solid var(--mbaa-gray-400);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--mbaa-black);
+}
+
+.role-badge.primary {
+  background: var(--mbaa-primary);
+  color: var(--mbaa-white);
+  border-color: var(--mbaa-primary);
+}
+
+.role-badge.success {
+  color: var(--mbaa-green);
+  border-color: var(--mbaa-green);
+}
+
+.role-badge code {
+  background: var(--mbaa-gray-200);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: monospace;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .role-header-content {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .role-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .role-page-title {
+    font-size: 28px;
+  }
+}
+
+/* ==========================================================================
+   WORDPRESS ADMIN OVERRIDES
+   ========================================================================== */
+
+.role-wrap h1 {
+  font-family: "Clash Display variable", var(--mbaa-font);
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+.role-wrap h2 {
+  font-family: "Clash Display variable", var(--mbaa-font);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.role-wrap h3 {
+  font-family: var(--mbaa-font);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   LEGACY WP STYLES (pour compatibilité)
+   ========================================================================== */
+
+.role-wrap .wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.role-wrap .card {
+  background: var(--mbaa-white);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--mbaa-gray-300);
+}
+
+.role-wrap .notice {
+  border-radius: 10px;
+}
