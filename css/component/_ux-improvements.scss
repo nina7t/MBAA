@@ -127,7 +127,7 @@
     border-radius: 4px;
     font-family: $font-secondary;
     font-size: clamp(0.6875rem, 1.2vw, 0.75rem);
-    font-weight: 600;
+   
     text-transform: uppercase;
     letter-spacing: 0.05em;
     z-index: 5;
@@ -228,7 +228,7 @@
     &__title {
         font-family: $font-primary;
         font-size: clamp(1.25rem, 3vw, 1.75rem);
-        font-weight: 600;
+       
         color: $color-primary-white;
         margin: 0 0 0.75rem 0;
     }
@@ -284,7 +284,7 @@
         border-radius: 10px;
         font-family: $font-secondary;
         font-size: 1rem;
-        font-weight: 600;
+       
         cursor: pointer;
         transition: all 0.3s ease;
         white-space: nowrap;
@@ -437,7 +437,7 @@
     color: $color-primary-white;
     font-family: $font-primary;
     font-size: clamp(0.75rem, 1.5vw, 0.875rem);
-    font-weight: 600;
+   
     text-transform: uppercase;
     letter-spacing: 0.1em;
     border-radius: 4px;

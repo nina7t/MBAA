@@ -66,7 +66,7 @@
 
   h2 {
     font-size: 1.25rem;
-    font-weight: 600;
+   
     margin: 0;
   }
 }
@@ -255,7 +255,7 @@
 
   div {
     text-align: center;
-    font-weight: 600;
+   
     color: #374151;
     font-size: 0.875rem;
 
@@ -341,7 +341,7 @@
 
   .day-number {
     font-size: 1.125rem;
-    font-weight: 600;
+   
     color: #9ca3af;
   }
 
@@ -528,5 +528,38 @@
   .toggle-btn {
     flex: 1;
     justify-content: center;
+  }
+}
+
+// Bouton voir plus/moins sidebar
+.sidebar-toggle-btn {
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.6rem 1rem;
+  background: transparent;
+  border: 1px dashed #d1d5db;
+  border-radius: 10px;
+  font-family: $font-secondary;
+  font-size: 0.8rem;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+
+  &:hover {
+    background: #f3f4f6;
+    color: #374151;
+    border-color: #9ca3af;
+  }
+}
+
+// Événements passés légèrement atténués
+.event-preview-card--past {
+  opacity: 0.55;
+  filter: grayscale(30%);
+
+  &:hover {
+    opacity: 0.8;
+    filter: grayscale(0%);
   }
 }

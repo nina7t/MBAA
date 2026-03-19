@@ -2,7 +2,6 @@
 
 .techniques-grid-section {
   padding: 4rem 2rem;
-  background-color: #f9fafb;
 
   @media (min-width: 1024px) {
     padding: 5rem 3rem;
@@ -33,7 +32,7 @@
 
 .technique-card {
   position: relative;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
   aspect-ratio: 4 / 4;
   cursor: pointer;

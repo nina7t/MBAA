@@ -51,24 +51,7 @@ $(document).ready(function () {
                 position: relative;
             }
             
-            .filtre__list-item::before {
-                content: '';
-                position: absolute;
-                left: -20px;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
-                background-color: transparent;
-                opacity: 0;
-                transition: all 0.3s ease;
-            }
-            
-            .filtre__list-item:hover::before {
-                opacity: 0.5;
-                background-color: #1a1a1a;
-            }
+        
             
             .filtre__list-item.filtre__list-item--active::before {
                 opacity: 1;

@@ -42,7 +42,6 @@
     border: none;
     border-radius: 10px;
     font-size: 0.9rem;
-    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: $font-secondary;
@@ -374,7 +373,7 @@
     th {
         padding: 1.2rem;
         text-align: left;
-        font-weight: 600;
+
         font-size: 0.9rem;
         font-family: $font-secondary;
         border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -445,7 +444,7 @@
     font-size: 0.8rem;
     color: #999;
     margin: 0;
-    font-weight: 300;
+   
 }
 
 .status-badge {
@@ -453,7 +452,7 @@
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
     font-size: 0.8rem;
-    font-weight: 600;
+   
 
     &.online {
         background: rgba($bg-or, 0.15);
@@ -682,7 +681,7 @@
 
     h3 {
         font-size: 0.95rem;
-        font-weight: 600;
+       
         color: $color-primary-dark;
         margin: 0 0 0.6rem 0;
         font-family: $font-secondary;
@@ -751,7 +750,7 @@
     th {
         padding: 1.2rem;
         text-align: left;
-        font-weight: 600;
+       
         font-size: 0.9rem;
         font-family: $font-secondary;
         border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -794,7 +793,7 @@
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
     font-size: 0.8rem;
-    font-weight: 600;
+   
 
     &.complete {
         background: rgba($bg-or, 0.15);
@@ -850,7 +849,7 @@
 .collection-count {
     font-size: 0.85rem;
     color: $bg-or;
-    font-weight: 600;
+   
     font-family: $font-secondary;
 }
 
@@ -921,7 +920,7 @@
 .exposition-dates {
     font-size: 0.9rem;
     color: $bg-or;
-    font-weight: 600;
+   
     margin: 0 0 0.5rem 0;
     font-family: $font-secondary;
 }
@@ -944,7 +943,7 @@
     padding: 0.4rem 0.8rem;
     border-radius: 4px;
     font-size: 0.8rem;
-    font-weight: 600;
+   
     background: #f0f0f0;
     color: #666;
     font-family: $font-secondary;
@@ -1092,7 +1091,7 @@
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
     font-size: 0.8rem;
-    font-weight: 600;
+   
 
     &.high {
         background: rgba($bg-or, 0.15);
@@ -1177,7 +1176,7 @@
 
     h4 {
         font-size: 0.95rem;
-        font-weight: 600;
+       
         color: #333;
         margin: 0;
         font-family: $font-secondary;
@@ -1427,7 +1426,7 @@
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-weight: 600;
+   
     transition: all 0.3s ease;
     font-family: $font-secondary;
     font-size: 0.85rem;
@@ -1445,7 +1444,7 @@
     border: 1px solid #d63031;
     border-radius: 6px;
     cursor: pointer;
-    font-weight: 600;
+   
     transition: all 0.3s ease;
     font-family: $font-secondary;
     font-size: 0.85rem;
@@ -1498,7 +1497,7 @@
     border: none;
     border-radius: 6px;
     font-size: 0.9rem;
-    font-weight: 600;
+   
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: $font-secondary;
@@ -1548,7 +1547,7 @@
     color: $bg-or;
     cursor: pointer;
     font-size: 0.85rem;
-    font-weight: 600;
+   
     padding: 0.4rem 0.8rem;
     transition: all 0.3s ease;
     font-family: $font-secondary;
@@ -1619,7 +1618,7 @@
 
     .format-label {
         font-size: 1rem;
-        font-weight: 600;
+       
         margin-bottom: 0.3rem;
         font-family: $font-secondary;
     }
@@ -1698,7 +1697,7 @@
     border: none;
     border-radius: 10px;
     font-size: 1rem;
-    font-weight: 600;
+   
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: $font-secondary;
@@ -1849,7 +1848,7 @@
     border: none;
     border-radius: 10px;
     font-size: 1rem;
-    font-weight: 600;
+   
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: $font-secondary;
@@ -1867,7 +1866,7 @@
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
     font-size: 0.8rem;
-    font-weight: 600;
+   
 
     &.admin {
         background: rgba($bg-or, 0.15);
@@ -1974,7 +1973,7 @@
         th {
             padding: 1rem;
             text-align: left;
-            font-weight: 600;
+           
             font-size: 0.85rem;
             color: #666;
             // Texte en majuscules
@@ -2047,7 +2046,7 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.85rem;
-    font-weight: 600;
+   
     font-family: $font-secondary;
     // Transition lisse pour l'effet hover
     transition: all 0.3s ease;
@@ -2203,7 +2202,7 @@
     // Bordure très arrondie pour effet "pill"
     border-radius: 20px;
     font-size: 0.8rem;
-    font-weight: 600;
+   
     font-family: $font-secondary;
 }
 
@@ -2453,7 +2452,6 @@
     // Titre de la zone d'upload
     h4 {
         font-size: 0.95rem;
-        font-weight: 600;
         color: #333;
         margin: 1rem 0 0.5rem 0;
         font-family: $font-secondary;

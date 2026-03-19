@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="./asset/Img/logo/logo-mat-small.png" />
   <link rel="stylesheet" href="./style.css" />
+  <link href="https://db.onlinewebfonts.com/c/5d86f2e8ccc2811b9392aa03b7ce4a63?family=Styrene+B+Regular+Regular" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
@@ -12,7 +13,7 @@
   <title>MBAA - Musée des Beaux-Arts et d'Archéologie de Besançon</title>
 </head>
 <body data-scroll-container="">
-  <header class="header">
+  <header class="header header--collections">
     <!-- ====== NAVBAR (preserved) ====== -->
     <div class="header__container">
       <a class="header__logo-link" href="./index.html">
@@ -49,7 +50,7 @@
             </a>
           </li>
           <li class="header__nav-item">
-            <a class="header__nav-link" href="#" aria-label="Billetterie">
+            <a class="header__nav-link" href="./reservation.html" aria-label="Billetterie">
               <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path
@@ -62,7 +63,7 @@
             </a>
           </li>
           <li class="header__nav-item">
-            <a class="header__nav-link" href="#" aria-label="Recherche">
+            <a class="header__nav-link" href="./reservation.html" aria-label="Recherche">
               <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8"></circle>
@@ -89,24 +90,23 @@
         <h1 class="hero__title">
           La<br>
           collection<br>
-          <em>des Beaux Arts</em>
+          <em>Beaux Arts</em>
         </h1>
       </div>
 
       <!-- Right: description + CTA -->
-      <div class="hero__right">
+      
+       <div class="hero__right">
         <p class="hero__description">
           Peinture, sculpture, dessin — explorez cinq siècles de création artistique conservés dans nos collections
           permanentes.
         </p>
-        <a href="#" class="hero__cta">
+           <a href="./reservation.html?event=1" class="hero__cta">
           Réserver ma place
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
+          <img class="hero__cta-icon" src="./asset/Img/svg/icon-arrow-droite.svg" alt="Flèche vers la droite">
         </a>
       </div>
+
 
       <!-- Bottom strip: stats + scroll -->
       <div class="hero__strip">
@@ -137,85 +137,6 @@
     </div>
   </header>
 
-
-
-  <!-- <header class="header header--collections header--scrolled">
-    <div class="header__container">
-      <a class="header__logo-link" href="./index.html">
-        <img class="header__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
-      </a>
-      <button class="header__menu-toggle" aria-label="menu" aria-expanded="false" aria-controls="headerNav">
-        <span class="header__menu-bar"></span>
-      </button>
-      <nav class="header__nav" id="headerNav" aria-hidden="true">
-        <ul class="header__nav-list header__nav-list--main">
-          <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./infos.html">Infos pratiques</a>
-          </li>
-          <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./collections.html">Collections</a>
-          </li>
-          <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./evenement.html">Évènement</a>
-          </li>
-          <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./musee-histoire.html">Le musée</a>
-          </li>
-          <li class="header__nav-item nav-dot">
-            <a class="header__nav-link nav-dot" href="./infos.html">Contact</a>
-          </li>
-        </ul>
-        <ul class="header__nav-list header__nav-list--secondary">
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="./connexion.html" aria-label="Connexion">
-              <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-            </a>
-          </li>
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="#" aria-label="Billetterie">
-              <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z">
-                </path>
-                <path d="M13 5v2"></path>
-                <path d="M13 17v2"></path>
-                <path d="M13 11v2"></path>
-              </svg>
-            </a>
-          </li>
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="#" aria-label="Recherche">
-              <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.35-4.35"></path>
-              </svg>
-            </a>
-          </li>
-          <li class="header__nav-item">
-            <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">FR</a>
-          </li>
-          <li class="header__nav-item">
-            <a class="header__nav-link-fr" href="#" aria-label="Changer de langue">EN</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <div class="header__hero-content header__hero-content--reduced">
-      <h1 class="header__title">La<br>collection<br>
-        <span id="sous-menu-header">Des beaux arts</span>
-        <img class="header__cross" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche">
-      </h1>
-      <a href="#" class="header__reserve-btn">Je réserve ma place</a>
-    </div>
-    <div class="header__scroll">
-      <img class="header__scroll-icon" src="./asset/Img/svg/icon-arrow_bas.svg" alt="Défiler vers le bas">
-    </div>
-  </header> -->
 
   <main style="padding-top: 90px;">
 
@@ -513,6 +434,664 @@
 
     </section>
 
+    
+
+    <section class="main__banniere">
+      <section class="main__banniere--explorer">
+        <img class="main__banniere-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche">
+        <h2 class="main__banniere-titre">ESPACE<br>PÉDAGOGIQUE</h2>
+      </section>
+      <section class="main__banniere-contenu">
+        <h3 class="main__banniere-sous-titre">Comprendre une œuvre d'art</h3>
+        <p class="main__banniere-description">Comment regarder une œuvre d'art ? Découvrir une œuvre, c'est apprendre à
+          observer, ressentir et comprendre ce que l'artiste a voulu exprimer.</p>
+      </section>
+    </section>
+ <section class="pedagogical-elements-section">
+      <div class="pedagogical-elements-container">
+        <div class="pedagogical-elements-left">
+          <button class="pedagogical-element-item" data-filter="couleur">
+            <span class="pedagogical-element-text">La couleur</span>
+            <img src="./asset/Img/svg/icon-arrow-filtre.svg">
+          </button>
+          <div class="pedagogical-element-separator"></div>
+          <button class="pedagogical-element-item" data-filter="ligne">
+            <span class="pedagogical-element-text">La ligne</span>
+            <img src="./asset/Img/svg/icon-arrow-filtre.svg">
+          </button>
+          <div class="pedagogical-element-separator"></div>
+          <button class="pedagogical-element-item" data-filter="forme">
+            <span class="pedagogical-element-text">La forme</span>
+            <img src="./asset/Img/svg/icon-arrow-filtre.svg">
+          </button>
+          <div class="pedagogical-element-separator"></div>
+          <button class="pedagogical-element-item" data-filter="espace">
+            <span class="pedagogical-element-text">L'espace</span>
+            <img src="./asset/Img/svg/icon-arrow-filtre.svg">
+          </button>
+        </div>
+        <div class="pedagogical-elements-right">
+          <img src="./asset/Img/tableaux/tableau-signac-venise.jpg" alt="Peinture de Venise"
+            class="pedagogical-painting">
+        </div>
+      </div>
+    </section>
+
+
+
+<section class="pedagogical-elements-section">
+      <div class="pedagogical-elements-container">
+        <div class="pedagogical-elements-left">
+          <button class="pedagogical-element-item" data-filter="nature-morte">
+            <span class="pedagogical-element-text">Nature morte</span>
+            <img src="./asset/Img/svg/icon-arrow-filtre.svg">
+          </button>
+          <div class="pedagogical-element-separator"></div>
+          <button class="pedagogical-element-item" data-filter="paysage">
+            <span class="pedagogical-element-text">Paysage</span>
+            <img src="./asset/Img/svg/icon-arrow-filtre.svg">
+          </button>
+          <div class="pedagogical-element-separator"></div>
+          <button class="pedagogical-element-item" data-filter="palette">
+            <span class="pedagogical-element-text">Palette</span>
+            <img src="./asset/Img/svg/icon-arrow-filtre.svg">
+          </button>
+          <div class="pedagogical-element-separator"></div>
+          <button class="pedagogical-element-item" data-filter="scene">
+            <span class="pedagogical-element-text">Scène de genre</span>
+            <img src="./asset/Img/svg/icon-arrow-filtre.svg">
+          </button>
+    
+    <div class="pedagogical-element-separator"></div>
+          <button class="pedagogical-element-item" data-filter="perspective">
+            <span class="pedagogical-element-text">Perspective</span>
+            <img src="./asset/Img/svg/icon-arrow-filtre.svg">
+          </button>
+        <div class="pedagogical-element-separator"></div>
+          <button class="pedagogical-element-item" data-filter="clair-obscur">
+            <span class="pedagogical-element-text">Clair-obscur</span>
+            <img src="./asset/Img/svg/icon-arrow-filtre.svg">
+          </button>
+        </div>
+
+        <div class="pedagogical-elements-right">
+          <img src="./asset/Img/tableaux/tableau-nu-nature-morte.png" alt="Nu et nature morte"
+            class="pedagogical-painting">
+        </div>
+      </div>
+
+    </section>
+
+
+
+<!-- FIN DE LA SECTION PEDAGOGICAL ELEMENTS -->
+
+
+     <section class="main__banniere">
+      <section class="main__banniere--explorer">
+        <img class="main__banniere-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche">
+        <h2 class="main__banniere-titre">MOUVEMENTS
+<br>artistiques</h2>
+      </section>
+      <section class="main__banniere-contenu">
+        <h3 class="main__banniere-sous-titre">Les grands courants artistiques</h3>
+        <p class="main__banniere-description">Un voyage à travers le temps et les styles.</p>
+        <p class="main__banniere-description">Histoire de l'art occidental du XVe au XXIe siècle.</p>
+      </section>
+    </section>
+
+    <section class="art-movements-table-section">
+      <div class="art-movements-table">
+        <div class="table-header">
+          <div class="header-cell">Période</div>
+          <div class="header-cell">Mouvement</div>
+          <div class="header-cell">Caractéristiques</div>
+          <div class="header-cell">Artistes majeurs</div>
+        </div>
+        
+        <!-- Ligne 1 -->
+        <div class="table-row">
+          <div class="cell period">1400-1600</div>
+          <div class="cell movement">Renaissance</div>
+          <div class="cell characteristics">Retour à l'Antiquité classique, maîtrise de la perspective, réalisme anatomique et humanisme. Célébration de la beauté et de la dignité humaine.</div>
+          <div class="cell artists">
+            <span class="artist-badge">Léonard de Vinci</span>
+            <span class="artist-badge">Michel-Ange</span>
+            <span class="artist-badge">Raphaël</span>
+            <span class="artist-badge">Botticelli</span>
+            <span class="artist-badge">Titien</span>
+          </div>
+        </div>
+        
+        <!-- Ligne 2 -->
+        <div class="table-row">
+          <div class="cell period">1600-1750</div>
+          <div class="cell movement">Baroque</div>
+          <div class="cell characteristics">Dramatisme, mouvement intense, contrastes lumineux (clair-obscur) et compositions dynamiques. Grandeur théâtrale et émotionnelle.</div>
+          <div class="cell artists">
+            <span class="artist-badge">Caravage</span>
+            <span class="artist-badge">Rembrandt</span>
+            <span class="artist-badge">Rubens</span>
+            <span class="artist-badge">Vélasquez</span>
+            <span class="artist-badge">Bernini</span>
+          </div>
+        </div>
+        
+        <!-- Ligne 3 -->
+        <div class="table-row">
+          <div class="cell period">1750-1820</div>
+          <div class="cell movement">Néoclassicisme</div>
+          <div class="cell characteristics">Retour aux valeurs antiques gréco-romaines. Rigueur, simplicité, noblesse et célébration des vertus civiques et héroïques.</div>
+          <div class="cell artists">
+            <span class="artist-badge">Jacques-Louis David</span>
+            <span class="artist-badge">Ingres</span>
+            <span class="artist-badge">Canova</span>
+            <span class="artist-badge">Gros</span>
+          </div>
+        </div>
+        
+        <!-- Ligne 4 -->
+        <div class="table-row">
+          <div class="cell period">1800-1850</div>
+          <div class="cell movement">Romantisme</div>
+          <div class="cell characteristics">Primauté de l'émotion et de l'imagination. Nature sauvage, sublime, mystère et expression des passions humaines intenses.</div>
+          <div class="cell artists">
+            <span class="artist-badge">Delacroix</span>
+            <span class="artist-badge">Géricault</span>
+            <span class="artist-badge">Turner</span>
+            <span class="artist-badge">Friedrich</span>
+            <span class="artist-badge">Goya</span>
+          </div>
+        </div>
+        
+        <!-- Ligne 5 -->
+        <div class="table-row">
+          <div class="cell period">1850-1900</div>
+          <div class="cell movement">Réalisme</div>
+          <div class="cell characteristics">Représentation fidèle de la réalité quotidienne et des classes laborieuses. Rejet de l'idéalisation au profit de l'observation sociale.</div>
+          <div class="cell artists">
+            <span class="artist-badge">Courbet</span>
+            <span class="artist-badge">Millet</span>
+            <span class="artist-badge">Daumier</span>
+            <span class="artist-badge">Manet</span>
+          </div>
+        </div>
+        
+        <!-- Ligne 6 -->
+        <div class="table-row">
+          <div class="cell period">1870-1900</div>
+          <div class="cell movement">Impressionnisme</div>
+          <div class="cell characteristics">Capture des effets de lumière et de l'instant. Touches rapides, couleurs vives, peinture en plein air et dissolution des formes.</div>
+          <div class="cell artists">
+            <span class="artist-badge">Monet</span>
+            <span class="artist-badge">Renoir</span>
+            <span class="artist-badge">Degas</span>
+            <span class="artist-badge">Pissarro</span>
+            <span class="artist-badge">Sisley</span>
+          </div>
+        </div>
+        
+        <!-- Ligne 7 -->
+        <div class="table-row">
+          <div class="cell period">1885-1910</div>
+          <div class="cell movement">Post-Impressionnisme</div>
+          <div class="cell characteristics">Recherche de structures, émotions intenses et symbolisme. Exploration personnelle au-delà de la simple impression visuelle.</div>
+          <div class="cell artists">
+            <span class="artist-badge">Van Gogh</span>
+            <span class="artist-badge">Cézanne</span>
+            <span class="artist-badge">Gauguin</span>
+            <span class="artist-badge">Seurat</span>
+            <span class="artist-badge">Toulouse-Lautrec</span>
+          </div>
+        </div>
+        
+        <!-- Ligne 8 -->
+        <div class="table-row">
+          <div class="cell period">1905-1910</div>
+          <div class="cell movement">Fauvisme</div>
+          <div class="cell characteristics">Couleurs pures et violentes appliquées directement. Simplification des formes et libération totale de la couleur.</div>
+          <div class="cell artists">
+            <span class="artist-badge">Matisse</span>
+            <span class="artist-badge">Derain</span>
+            <span class="artist-badge">Vlaminck</span>
+            <span class="artist-badge">Dufy</span>
+          </div>
+        </div>
+        
+        <!-- Ligne 9 -->
+        <div class="table-row">
+          <div class="cell period">1907-1920</div>
+          <div class="cell movement">Cubisme</div>
+          <div class="cell characteristics">Déconstruction géométrique des formes, multiples points de vue simultanés. Révolution de la représentation spatiale.</div>
+          <div class="cell artists">
+            <span class="artist-badge">Picasso</span>
+            <span class="artist-badge">Braque</span>
+            <span class="artist-badge">Léger</span>
+            <span class="artist-badge">Juan Gris</span>
+          </div>
+        </div>
+        
+        <!-- Ligne 10 -->
+        <div class="table-row">
+          <div class="cell period">1910-1925</div>
+          <div class="cell movement">Expressionnisme</div>
+          <div class="cell characteristics">Déformation de la réalité pour exprimer angoisses et émotions. Couleurs violentes et formes torturées reflétant les traumatismes.</div>
+          <div class="cell artists">
+            <span class="artist-badge">Munch</span>
+            <span class="artist-badge">Kirchner</span>
+            <span class="artist-badge">Schiele</span>
+            <span class="artist-badge">Kokoschka</span>
+            <span class="artist-badge">Nolde</span>
+          </div>
+        </div>
+        
+        <!-- Ligne 11 -->
+        <div class="table-row">
+          <div class="cell period">1916-1925</div>
+          <div class="cell movement">Dadaïsme</div>
+          <div class="cell characteristics">Provocation, absurde et rejet des conventions. Mouvement nihiliste né de la désillusion face aux horreurs de la guerre.</div>
+          <div class="cell artists">
+            <span class="artist-badge">Duchamp</span>
+            <span class="artist-badge">Man Ray</span>
+            <span class="artist-badge">Picabia</span>
+            <span class="artist-badge">Arp</span>
+          </div>
+        </div>
+        
+        <!-- Ligne 12 -->
+        <div class="table-row">
+          <div class="cell period">1924-1950</div>
+          <div class="cell movement">Surréalisme</div>
+          <div class="cell characteristics">Exploration de l'inconscient, du rêve et de l'irrationnel. Automatisme psychique et libération de l'imagination inspirés par Freud.</div>
+          <div class="cell artists">
+            <span class="artist-badge">Dalí</span>
+            <span class="artist-badge">Magritte</span>
+            <span class="artist-badge">Miró</span>
+            <span class="artist-badge">Ernst</span>
+            <span class="artist-badge">Tanguy</span>
+          </div>
+        </div>
+        
+        <!-- Ligne 13 -->
+        <div class="table-row">
+          <div class="cell period">1940-1960</div>
+          <div class="cell movement">Expressionnisme abstrait</div>
+          <div class="cell characteristics">Abstraction gestuelle et émotionnelle, grands formats. Action painting et affirmation de l'école américaine d'après-guerre.</div>
+          <div class="cell artists">
+            <span class="artist-badge">Pollock</span>
+            <span class="artist-badge">Rothko</span>
+            <span class="artist-badge">De Kooning</span>
+            <span class="artist-badge">Newman</span>
+            <span class="artist-badge">Motherwell</span>
+          </div>
+        </div>
+        
+        <!-- Ligne 14 -->
+        <div class="table-row">
+          <div class="cell period">1950-1970</div>
+          <div class="cell movement">Pop Art</div>
+          <div class="cell characteristics">Appropriation des images de la culture populaire et de la publicité. Critique ironique de la société de consommation.</div>
+          <div class="cell artists">
+            <span class="artist-badge">Warhol</span>
+            <span class="artist-badge">Lichtenstein</span>
+            <span class="artist-badge">Hockney</span>
+            <span class="artist-badge">Oldenburg</span>
+            <span class="artist-badge">Rosenquist</span>
+          </div>
+        </div>
+        
+        <!-- Ligne 15 -->
+        <div class="table-row">
+          <div class="cell period">1960-1975</div>
+          <div class="cell movement">Minimalisme</div>
+          <div class="cell characteristics">Réduction à l'essentiel et formes géométriques pures. Économie de moyens et retrait de toute expression subjective.</div>
+          <div class="cell artists">
+            <span class="artist-badge">Judd</span>
+            <span class="artist-badge">Andre</span>
+            <span class="artist-badge">LeWitt</span>
+            <span class="artist-badge">Morris</span>
+            <span class="artist-badge">Stella</span>
+          </div>
+        </div>
+        
+        <!-- Ligne 16 -->
+        <div class="table-row">
+          <div class="cell period">1960-1980</div>
+          <div class="cell movement">Art Conceptuel</div>
+          <div class="cell characteristics">L'idée prime sur la réalisation matérielle. Remise en question de l'objet d'art et valorisation du processus intellectuel.</div>
+          <div class="cell artists">
+            <span class="artist-badge">Kosuth</span>
+            <span class="artist-badge">Weiner</span>
+            <span class="artist-badge">Buren</span>
+            <span class="artist-badge">Baldessari</span>
+          </div>
+        </div>
+        
+        <!-- Ligne 17 -->
+        <div class="table-row">
+          <div class="cell period">1980-2000</div>
+          <div class="cell movement">Art Contemporain</div>
+          <div class="cell characteristics">Pluralité des pratiques et mélange des médiums. Installation, performance, vidéo, numérique et engagement politique.</div>
+          <div class="cell artists">
+            <span class="artist-badge">Jeff Koons</span>
+            <span class="artist-badge">Damien Hirst</span>
+            <span class="artist-badge">Ai Weiwei</span>
+            <span class="artist-badge">Banksy</span>
+            <span class="artist-badge">Yayoi Kusama</span>
+          </div>
+        </div>
+
+        <div class="table-row">
+          <div class="cell period">1885-1910</div>
+          <div class="cell movement">Post-Impressionnisme</div>
+          <div class="cell characteristics">Recherche de structures, émotions intenses et symbolisme</div>
+          <div class="cell artists">
+            <span class="artist-badge">Van Gogh</span>
+            <span class="artist-badge">Cézanne</span>
+            <span class="artist-badge">Gauguin</span>
+          </div>
+        </div>
+        
+        <div class="table-row">
+          <div class="cell period">1905-1910</div>
+          <div class="cell movement">Fauvisme</div>
+          <div class="cell characteristics">Couleurs pures et violentes, simplification des formes</div>
+          <div class="cell artists">
+            <span class="artist-badge">Matisse</span>
+            <span class="artist-badge">Derain</span>
+          </div>
+        </div>
+        
+        <div class="table-row">
+          <div class="cell period">1907-1920</div>
+          <div class="cell movement">Cubisme</div>
+          <div class="cell characteristics">Déconstruction géométrique des formes</div>
+          <div class="cell artists">
+            <span class="artist-badge">Picasso</span>
+            <span class="artist-badge">Braque</span>
+          </div>
+        </div>
+        
+        <div class="table-row">
+          <div class="cell period">1910-1925</div>
+          <div class="cell movement">Expressionnisme</div>
+          <div class="cell characteristics">Déformation de la réalité pour exprimer émotions</div>
+          <div class="cell artists">
+            <span class="artist-badge">Munch</span>
+            <span class="artist-badge">Kirchner</span>
+          </div>
+        </div>
+        
+        <div class="table-row">
+          <div class="cell period">1924-1966</div>
+          <div class="cell movement">Surréalisme</div>
+          <div class="cell characteristics">Rêves, inconscient et automatisme psychologique</div>
+          <div class="cell artists">
+            <span class="artist-badge">Dalí</span>
+            <span class="artist-badge">Magritte</span>
+            <span class="artist-badge">Breton</span>
+          </div>
+        </div>
+        
+        <div class="table-row">
+          <div class="cell period">1940-1960</div>
+          <div class="cell movement">Expressionnisme abstrait</div>
+          <div class="cell characteristics">Gestes spontanés, émotion pure et abstraction</div>
+          <div class="cell artists">
+            <span class="artist-badge">Pollock</span>
+            <span class="artist-badge">Rothko</span>
+            <span class="artist-badge">Kline</span>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="main__banniere">
+      <section class="main__banniere--explorer">
+        <img class="main__banniere-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche">
+        <h2 class="main__banniere-titre">SAVOIR
+<br>DISTINGUER</h2>
+<p class="main__banniere-description">Les différentes techniques artistiques.</p>
+      </section>
+</section>
+
+    <section class="techniques-grid-section">
+
+      <div class="techniques-grid-container">
+        <div class="techniques-grid">
+          <div class="technique-card">
+            <div class="technique-card-image">
+              <img src="./asset/Img/tableaux/tableau-classicisme.jpg" alt="Peinture à l'huile">
+              <div class="technique-card-overlay"></div>
+            </div>
+            <div class="technique-card-content">
+              <h3 class="technique-card-title">Peinture à l'huile</h3>
+              <p class="technique-card-description">Riche en couleurs et en relief, elle permet des effets de lumière subtils.</p>
+            </div>
+          </div>
+          <div class="technique-card">
+            <div class="technique-card-image">
+              <img src="./asset/Img/tableaux/tableau-turner-ocean.jpg" alt="Aquarelle">
+              <div class="technique-card-overlay"></div>
+            </div>
+            <div class="technique-card-content">
+              <h3 class="technique-card-title">Aquarelle</h3>
+              <p class="technique-card-description">Légère et transparente, elle joue avec l’eau et le papier.</p>
+            </div>
+          </div>
+          <div class="technique-card">
+            <div class="technique-card-image">
+              <img src="./asset/Img/statues-groupe.jpg" alt="Sculpture">
+              <div class="technique-card-overlay"></div>
+            </div>
+            <div class="technique-card-content">
+              <h3 class="technique-card-title">Sculpture</h3>
+              <p class="technique-card-description">Travail de la matière : pierre, bois, métal, plâtre ou argile. L’artiste modèle ou taille pour donner forme au volume.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="techniques-grid-container">
+        <div class="techniques-grid">
+          <div class="technique-card">
+            <div class="technique-card-image">
+              <img src="./asset/Img/tableaux/tableau-toffoli-vendeuse.jpg" alt="Peinture à l'huile">
+              <div class="technique-card-overlay"></div>
+            </div>
+            <div class="technique-card-content">
+              <h3 class="technique-card-title">Craie grasse</h3>
+              <p class="technique-card-description">Technique de dessin utilisant la craie grasse pour créer des effets de lumière et de texture.</p>
+            </div>
+          </div>
+          <div class="technique-card">
+            <div class="technique-card-image">
+              <img src="./asset/Img/tableaux/tableau-composition-abstraite.jpg" alt="Aquarelle">
+              <div class="technique-card-overlay"></div>
+            </div>
+            <div class="technique-card-content">
+              <h3 class="technique-card-title">Fusain</h3>
+              <p class="technique-card-description">Technique graphique utilisant le fusain pour créer des dessins expressifs.</p>
+            </div>
+          </div>
+          <div class="technique-card">
+            <div class="technique-card-image">
+              <img src="./asset/Img/tableaux/tableau-hokusai-vague.jpg" alt="Sculpture">
+              <div class="technique-card-overlay"></div>
+            </div>
+            <div class="technique-card-content">
+              <h3 class="technique-card-title">Encre</h3>
+              <p class="technique-card-description">Technique d’expression graphique utilisant l’encre pour créer des lignes et des formes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- bouton en savoir+ -->
+ <a href="#" class="btn-collection">En savoir plus</a>
+
+    </section>
+
+
+<section class="pedagogical-elements-section">
+      <div class="pedagogical-elements-container">
+        <div class="pedagogical-elements-left">
+          <button class="pedagogical-element-item" data-filter="nature-morte">
+            <span class="pedagogical-element-text">Nature morte</span>
+            <img src="./asset/Img/svg/icon-arrow-filtre.svg">
+          </button>
+          <div class="pedagogical-element-separator"></div>
+          <button class="pedagogical-element-item" data-filter="paysage">
+            <span class="pedagogical-element-text">Paysage</span>
+            <img src="./asset/Img/svg/icon-arrow-filtre.svg">
+          </button>
+          <div class="pedagogical-element-separator"></div>
+          <button class="pedagogical-element-item" data-filter="palette">
+            <span class="pedagogical-element-text">Palette</span>
+            <img src="./asset/Img/svg/icon-arrow-filtre.svg">
+          </button>
+          <div class="pedagogical-element-separator"></div>
+          <button class="pedagogical-element-item" data-filter="scene">
+            <span class="pedagogical-element-text">Scène de genre</span>
+            <img src="./asset/Img/svg/icon-arrow-filtre.svg">
+          </button>
+    
+    <div class="pedagogical-element-separator"></div>
+          <button class="pedagogical-element-item" data-filter="perspective">
+            <span class="pedagogical-element-text">Perspective</span>
+            <img src="./asset/Img/svg/icon-arrow-filtre.svg">
+          </button>
+        <div class="pedagogical-element-separator"></div>
+          <button class="pedagogical-element-item" data-filter="clair-obscur">
+            <span class="pedagogical-element-text">Clair-obscur</span>
+            <img src="./asset/Img/svg/icon-arrow-filtre.svg">
+          </button>
+        </div>
+
+        <div class="pedagogical-elements-right">
+          <img src="./asset/Img/tableaux/tableau-nu-nature-morte.png" alt="Nu et nature morte"
+            class="pedagogical-painting">
+        </div>
+      </div>
+
+    </section>
+
+
+    <section class="pedagogical-elements-compo">
+      <img class="pedagogical-elements-compo" src="./asset/Img/tableaux/tableau-mondrian.jpg" alt="Icône éléments pédagogiques">
+      <div class="pedagogical-elements-compo-text">
+      <h2 class="pedagogical-elements-compo-title">La composition et l’équilibre</h2>
+      <p class="pedagogical-elements-compo-text">Chaque élément est placé avec soin pour attirer notre regard vers ce que l’artiste veut montrer. Certains équilibrent les formes, d’autres jouent sur le désordre pour créer une émotion.</p>
+      <h2 class="pedagogical-elements-compo-title">L’intention de l’artiste</h2>
+      <p class="pedagogical-elements-compo-text">Une œuvre peut raconter une histoire, dénoncer, célébrer ou simplement faire rêver. Observer, c’est aussi imaginer ce que l’artiste a voulu dire.</p>
+      <h2 class="pedagogical-elements-compo-title">Le contexte historique et culturel</h2>
+      <p class="pedagogical-elements-compo-text">L’époque et la société influencent l’artiste. Comprendre quand et pourquoi une œuvre a été créée aide à mieux la lire.</p>
+      </div>
+    </section>
+
+    </section>
+
+
+
+<div class="pedagogical-file">
+<h2 class="pedagogical-file-title">Fichier pedagogique</h2>
+<p class="pedagogical-file-text">Télécharger le fichier pédagogique complet au format PDF pour une exploration approfondie des collections des Beaux-Arts du musée. Ce document offre des informations détaillées, des analyses d'œuvres, et des ressources éducatives pour enrichir votre compréhension de l'art et de son histoire.</p>
+<a class="pedagogical-file-link" href="#">
+  Télécharger la brochure
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 16L8 12H11V4H13V12H16L12 16ZM20 18V20H4V18H2V20C2 21.1 2.9 22 4 22H20C21.1 22 22 21.1 22 20V18H20Z" fill="currentColor"/>
+</svg>
+  </a>
+</div>
+
+
+
+
+
+    <footer class="footer">
+      <div class="footer__contain-form">
+        <div class="footer__logo-container">
+          <a class="footer__logo-link" href="#">
+            <img class="footer__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
+            <h2 class="footer__title">Suivez-nous pour recevoir la newsletter</h2>
+          </a>
+          <form class="footer__form">
+            <input class="footer__input" type="email" placeholder="Entrez votre adresse e-mail" required />
+            <button class="footer__button" type="submit">S'abonner</button>
+          </form>
+        </div>
+        <section class="footer__nav">
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <h4 class="footer__nav-title">Le musée</h4>
+            </li>
+            <li class="footer__nav-item">
+              <a class="footer__nav-link" href="./musee-histoire.html">Présentation & histoire</a>
+            </li>
+            <li class="footer__nav-item">
+              <a class="footer__nav-link" href="./collections.html">Collections</a>
+            </li>
+          </ul>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <h4 class="footer__nav-title">Programmation</h4>
+            </li>
+            <li class="footer__nav-item">
+              <a class="footer__nav-link" href="./evenement.html">Événements</a>
+            </li>
+          </ul>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <h4 class="footer__nav-title">Contact</h4>
+            </li>
+            <li class="footer__nav-item">
+              <a class="footer__nav-link" href="#">Nous contacter</a>
+            </li>
+          </ul>
+        </section>
+        <section class="footer__social">
+          <h2>Nos réseaux sociaux</h2>
+          <section class="footer__social-media">
+            <a class="footer__social-link" href="#" aria-label="Facebook">
+              <img class="footer__social-icon" src="./asset/Img/svg/facebook.svg" alt="Facebook" />
+            </a>
+            <a class="footer__social-link" href="#" aria-label="Instagram">
+              <img class="footer__social-icon" src="./asset/Img/svg/insta.svg" alt="Instagram" />
+            </a>
+            <a class="footer__social-link" href="#" aria-label="LinkedIn">
+              <img class="footer__social-icon" src="./asset/Img/svg/linkdin.svg" alt="LinkedIn" />
+            </a>
+          </section>
+          <section class="footer__links">
+            <a class="footer__link" href="#">Mentions légales</a>
+            <a class="footer__link" href="#">Politique de confidentialité</a>
+          </section>
+        </section>
+      </div>
+    </footer>
+    <script src="./js/menu.js"></script>
+    <script src="./js/header-adaptive.js"></script>
+    <script src="./js/art-gallery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.umd.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        new LocomotiveScroll({
+          el: document.querySelector('[data-scroll-container]'),
+          smooth: true
+        });
+      });
+    </script>
     <script>
       // ─── DATA ───────────────────────────────────────────────────────────────────
 
@@ -648,15 +1227,26 @@
           const title = (item.dataset.title || '').toLowerCase();
           const artist = (item.dataset.artist || '').toLowerCase();
 
-          // search match
-          const matchSearch = !q || title.includes(q) || artist.includes(q);
+          // search match (case-insensitive)
+          const matchSearch = !q || title.toLowerCase().includes(q.toLowerCase()) || artist.toLowerCase().includes(q.toLowerCase());
 
           // filter match
           let matchFilter = true;
           if (activeFilter !== 'toutVoir') {
             if (activeSubfilter) {
-              // match on the specific subfilter value within the active filter dimension
-              matchFilter = (item.dataset[activeFilter] || '').split(' ').includes(activeSubfilter);
+              // match on specific subfilter value within active filter dimension
+              const filterValue = item.dataset[activeFilter] || '';
+              const artistValue = item.dataset.artistes || '';
+              
+              // Handle empty values and multiple values with case-insensitive matching
+              if (filterValue) {
+                matchFilter = filterValue.toLowerCase().split(' ').includes(activeSubfilter.toLowerCase());
+              } else if (artistValue) {
+                matchFilter = artistValue.toLowerCase().split(' ').includes(activeSubfilter.toLowerCase());
+              } else {
+                // If no specific filter value, check if this item should be hidden
+                matchFilter = false;
+              }
             }
             // if no subfilter selected, just show all (we already changed the label)
           }
@@ -681,321 +1271,6 @@
         applyFilters();
       });
     </script>
-
-
-
-    <!-- </main>
-
-
-
-
-
-  <section class="art-gallery-section">
-    <div class="art-gallery-container">
-      <div class="art-gallery-nav">
-        <button class="art-gallery-nav-btn" data-filter="toutVoir">
-          <img class="art-gallery-nav-arrow" src="./asset/Img/svg/icon-arrow-filtre.svg" alt="Flèche">
-          <span>Tout voir</span>
-        </button>
-        <button class="art-gallery-nav-btn active" data-filter="collections">
-          <img class="art-gallery-nav-arrow" src="./asset/Img/svg/icon-arrow-filtre.svg" alt="Flèche">
-          <span>Collections</span>
-        </button>
-        <button class="art-gallery-nav-btn" data-filter="epoque">
-          <img class="art-gallery-nav-arrow" src="./asset/Img/svg/icon-arrow-filtre.svg" alt="Flèche">
-          <span>Époque</span>
-        </button>
-        <button class="art-gallery-nav-btn" data-filter="artistes">
-          <img class="art-gallery-nav-arrow" src="./asset/Img/svg/icon-arrow-filtre.svg" alt="Flèche">
-          <span>Artistes</span>
-        </button>
-        <button class="art-gallery-nav-btn" data-filter="medium">
-          <img class="art-gallery-nav-arrow" src="./asset/Img/svg/icon-arrow-filtre.svg" alt="Flèche">
-          <span>Medium</span>
-        </button>
-        <div class="art-gallery-search-wrapper">
-          <img class="art-gallery-search-icon" src="./asset/Img/svg/Search.svg" alt="Rechercher">
-          <input type="text" id="artGallerySearch" placeholder="Rechercher une oeuvre" class="art-gallery-search-input">
-        </div>
-        <div class="art-gallery-subfilters" id="subfiltersMenu">
-          <button class="art-gallery-subfilterbtn" data-subfilter="peinture"
-            data-mainfilter="collections">Peinture</button>
-          <button class="art-gallery-subfilterbtn" data-subfilter="sculpture"
-            data-mainfilter="collections">Sculpture</button>
-          <button class="art-gallery-subfilterbtn" data-subfilter="dessin" data-mainfilter="collections">Dessin</button>
-        </div>
-      </div>
-      <div class="art-gallery-grid" id="artGalleryGrid">
-        <div class="art-gallery-item" data-id="1" style="display: block;">
-          <img src="./asset/Img/tableaux/tableau-hokusai-vague.jpg" alt="La Grande Vague de Kanagawa - Hokusai">
-        </div>
-        <div class="art-gallery-item" data-id="2" style="display: block;">
-          <a href="fiche_oeuvre.html">
-            <img src="./asset/Img/tableaux/tableau-collomb-1.png" alt="Le Repas des Amis - Paul Collomb">
-          </a>
-        </div>
-        <div class="art-gallery-item" data-id="3" style="display: block;">
-          <img src="./asset/Img/tableaux/tableau-ceija-stojka-sans-titre.jpg" alt="Ceija Stojka - Sans titre">
-        </div>
-        <div class="art-gallery-item" data-id="4" style="display: block;">
-          <img src="./asset/Img/tableaux/tableau-boucher-chinoiserie.jpg" alt="Chinoiserie - Boucher">
-        </div>
-        <div class="art-gallery-item" data-id="5" style="display: block;">
-          <img src="./asset/Img/tableaux/tableau-pointillisme.jpg" alt="Paysage pointilliste">
-        </div>
-        <div class="art-gallery-item" data-id="6" style="display: block;">
-          <img src="./asset/Img/tableaux/tableau-turner-ocean.jpg" alt="Océan - Turner">
-        </div>
-        <div class="art-gallery-item" data-id="7" style="display: block;">
-          <img src="./asset/Img/statue-1.png" alt="Statue antique">
-        </div>
-        <div class="art-gallery-item" data-id="8" style="display: block;">
-          <img src="./asset/Img/tableaux/tableau-classicisme.jpg" alt="Scène classiciste">
-        </div>
-        <div class="art-gallery-item" data-id="9" style="display: block;">
-          <img src="./asset/Img/tableaux/tableau-art-contemporain.png" alt="Art contemporain">
-        </div>
-        <div class="art-gallery-item" data-id="10" style="display: block;">
-          <img src="./asset/Img/tableaux/tableau-guenat-paysage.png" alt="Paysage - Guénat">
-        </div>
-        <div class="art-gallery-item" data-id="11" style="display: block;">
-          <img src="./asset/Img/statue-2.png" alt="Statue moderne">
-        </div>
-        <div class="art-gallery-item" data-id="12" style="display: block;">
-          <img src="./asset/Img/tableaux/tableau-ocean-contemporain.png" alt="Océan contemporain">
-        </div>
-        <div class="art-gallery-item" data-id="13" style="display: block;">
-          <img src="./asset/Img/tableaux/tableau-turner.webp" alt="Turner - Vue de ville">
-        </div>
-        <div class="art-gallery-item" data-id="14" style="display: block;">
-          <img src="./asset/Img/tableaux/tableau-guenat-vieillard.jpg" alt="Portrait de vieillard - Guénat">
-        </div>
-        <div class="art-gallery-item" data-id="15" style="display: block;">
-          <img src="./asset/Img/tableaux/tableau-ornans-ferme.webp" alt="La Ferme d'Ornans - Courbet">
-        </div>
-        <div class="art-gallery-item" data-id="16" style="display: block;">
-          <img src="./asset/Img/tableaux/tableau-collomb-2.webp" alt="Composition - Paul Collomb">
-        </div>
-        <div class="art-gallery-item" data-id="17" style="display: block;">
-          <img src="./asset/Img/statues-groupe.jpg" alt="Groupe de statues">
-        </div>
-        <div class="art-gallery-item" data-id="18" style="display: block;">
-          <img src="./asset/Img/tableaux/tableau-nu-nature-morte.png" alt="Nu et nature morte">
-        </div>
-      </div>
-    </div>
-  </section> -->
-    <section class="main__banniere">
-      <section class="main__banniere--explorer">
-        <img class="main__banniere-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche">
-        <h2 class="main__banniere-titre">ESPACE<br>PÉDAGOGIQUE</h2>
-      </section>
-      <section class="main__banniere-contenu">
-        <h3 class="main__banniere-sous-titre">Comprendre une œuvre d'art</h3>
-        <p class="main__banniere-description">Comment regarder une œuvre d'art ? Découvrir une œuvre, c'est apprendre à
-          observer, ressentir et comprendre ce que l'artiste a voulu exprimer.</p>
-      </section>
-    </section>
-    <section class="pedagogical-timeline-section">
-      <h2>Mouvements et Périodes Artistiques</h2>
-      <ul class="timeline-list">
-        <li class="timeline-item">
-          <div class="timeline-content">
-            <span class="timeline-period">1885-1910</span>
-            <h3 class="timeline-title">Post-Impressionnisme</h3>
-            <p class="timeline-characteristics">Recherche de structures, émotions intenses et symbolisme.</p>
-            <div class="timeline-artists">
-              <span class="artist-label">Artistes</span>
-              <div class="artists-badges">
-                <span class="artist">Van Gogh</span>
-                <span class="artist">Cézanne</span>
-                <span class="artist">Gauguin</span>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div class="timeline-content">
-            <span class="timeline-period">1905-1910</span>
-            <h3 class="timeline-title">Fauvisme</h3>
-            <p class="timeline-characteristics">Couleurs pures et violentes, simplification des formes.</p>
-            <div class="timeline-artists">
-              <span class="artist-label">Artistes</span>
-              <div class="artists-badges">
-                <span class="artist">Matisse</span>
-                <span class="artist">Derain</span>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div class="timeline-content">
-            <span class="timeline-period">1907-1920</span>
-            <h3 class="timeline-title">Cubisme</h3>
-            <p class="timeline-characteristics">Déconstruction géométrique des formes.</p>
-            <div class="timeline-artists">
-              <span class="artist-label">Artistes</span>
-              <div class="artists-badges">
-                <span class="artist">Picasso</span>
-                <span class="artist">Braque</span>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div class="timeline-content">
-            <span class="timeline-period">1910-1925</span>
-            <h3 class="timeline-title">Expressionnisme</h3>
-            <p class="timeline-characteristics">Déformation de la réalité pour exprimer émotions.</p>
-            <div class="timeline-artists">
-              <span class="artist-label">Artistes</span>
-              <div class="artists-badges">
-                <span class="artist">Munch</span>
-                <span class="artist">Kirchner</span>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </section>
-    <section class="pedagogical-elements-section">
-      <div class="pedagogical-elements-container">
-        <div class="pedagogical-elements-left">
-          <button class="pedagogical-element-item" data-filter="couleur">
-            <span class="pedagogical-element-text">La couleur</span>
-            <span class="pedagogical-element-arrow">↗</span>
-          </button>
-          <div class="pedagogical-element-separator"></div>
-          <button class="pedagogical-element-item" data-filter="ligne">
-            <span class="pedagogical-element-text">La ligne</span>
-            <span class="pedagogical-element-arrow">↗</span>
-          </button>
-          <div class="pedagogical-element-separator"></div>
-          <button class="pedagogical-element-item" data-filter="forme">
-            <span class="pedagogical-element-text">La forme</span>
-            <span class="pedagogical-element-arrow">↗</span>
-          </button>
-          <div class="pedagogical-element-separator"></div>
-          <button class="pedagogical-element-item" data-filter="espace">
-            <span class="pedagogical-element-text">L'espace</span>
-            <span class="pedagogical-element-arrow">↗</span>
-          </button>
-        </div>
-        <div class="pedagogical-elements-right">
-          <img src="./asset/Img/tableaux/tableau-signac-venise.jpg" alt="Peinture de Venise"
-            class="pedagogical-painting">
-        </div>
-      </div>
-    </section>
-    <section class="techniques-grid-section">
-      <div class="techniques-grid-container">
-        <div class="techniques-grid">
-          <div class="technique-card">
-            <div class="technique-card-image">
-              <img src="./asset/Img/tableaux/tableau-classicisme.jpg" alt="Peinture à l'huile">
-              <div class="technique-card-overlay"></div>
-            </div>
-            <div class="technique-card-content">
-              <h3 class="technique-card-title">Peinture à l'huile</h3>
-              <p class="technique-card-description">Riche en couleurs et en relief.</p>
-            </div>
-          </div>
-          <div class="technique-card">
-            <div class="technique-card-image">
-              <img src="./asset/Img/tableaux/tableau-turner-ocean.jpg" alt="Aquarelle">
-              <div class="technique-card-overlay"></div>
-            </div>
-            <div class="technique-card-content">
-              <h3 class="technique-card-title">Aquarelle</h3>
-              <p class="technique-card-description">Légère et transparente.</p>
-            </div>
-          </div>
-          <div class="technique-card">
-            <div class="technique-card-image">
-              <img src="./asset/Img/statues-groupe.jpg" alt="Sculpture">
-              <div class="technique-card-overlay"></div>
-            </div>
-            <div class="technique-card-content">
-              <h3 class="technique-card-title">Sculpture</h3>
-              <p class="technique-card-description">Travail de la matière.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    </section>
-    <footer class="footer">
-      <div class="footer__contain-form">
-        <div class="footer__logo-container">
-          <a class="footer__logo-link" href="#">
-            <img class="footer__logo-img" src="./asset/Img/logo/logo-mat-small.png" alt="Logo MBAA" />
-            <h2 class="footer__title">Suivez-nous pour recevoir la newsletter</h2>
-          </a>
-          <form class="footer__form">
-            <input class="footer__input" type="email" placeholder="Entrez votre adresse e-mail" required />
-            <button class="footer__button" type="submit">S'abonner</button>
-          </form>
-        </div>
-        <section class="footer__nav">
-          <ul class="footer__nav-list">
-            <li class="footer__nav-item">
-              <h4 class="footer__nav-title">Le musée</h4>
-            </li>
-            <li class="footer__nav-item">
-              <a class="footer__nav-link" href="./musee-histoire.html">Présentation & histoire</a>
-            </li>
-            <li class="footer__nav-item">
-              <a class="footer__nav-link" href="./collections.html">Collections</a>
-            </li>
-          </ul>
-          <ul class="footer__nav-list">
-            <li class="footer__nav-item">
-              <h4 class="footer__nav-title">Programmation</h4>
-            </li>
-            <li class="footer__nav-item">
-              <a class="footer__nav-link" href="./evenement.html">Événements</a>
-            </li>
-          </ul>
-          <ul class="footer__nav-list">
-            <li class="footer__nav-item">
-              <h4 class="footer__nav-title">Contact</h4>
-            </li>
-            <li class="footer__nav-item">
-              <a class="footer__nav-link" href="#">Nous contacter</a>
-            </li>
-          </ul>
-        </section>
-        <section class="footer__social">
-          <h2>Nos réseaux sociaux</h2>
-          <section class="footer__social-media">
-            <a class="footer__social-link" href="#" aria-label="Facebook">
-              <img class="footer__social-icon" src="./asset/Img/svg/facebook.svg" alt="Facebook" />
-            </a>
-            <a class="footer__social-link" href="#" aria-label="Instagram">
-              <img class="footer__social-icon" src="./asset/Img/svg/insta.svg" alt="Instagram" />
-            </a>
-            <a class="footer__social-link" href="#" aria-label="LinkedIn">
-              <img class="footer__social-icon" src="./asset/Img/svg/linkdin.svg" alt="LinkedIn" />
-            </a>
-          </section>
-          <section class="footer__links">
-            <a class="footer__link" href="#">Mentions légales</a>
-            <a class="footer__link" href="#">Politique de confidentialité</a>
-          </section>
-        </section>
-      </div>
-    </footer>
-    <script src="./js/menu.js"></script>
-    <script src="./js/header-adaptive.js"></script>
-    <script src="./js/art-gallery.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.umd.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        new LocomotiveScroll({
-          el: document.querySelector('[data-scroll-container]'),
-          smooth: true
-        });
-      });
-    </script>
+<script src="./js/pedagogical.js"></script>
 </body>
 </html>

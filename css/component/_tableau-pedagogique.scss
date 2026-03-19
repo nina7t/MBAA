@@ -39,7 +39,7 @@
     th {
         padding: 1.2rem;
         text-align: left;
-        font-weight: 600;
+       
         border-bottom: 3px solid $bg-or;
 
         &.period-col {
@@ -87,7 +87,7 @@
         color: $color-primary-dark;
 
         &.period-cell {
-            font-weight: 600;
+           
             background-color: rgba($bg-or, 0.15);
             color: $bg-or;
             text-align: center;
@@ -96,7 +96,7 @@
 
         &.movement-cell {
             font-size: 1.1rem;
-            font-weight: 600;
+           
             color: $bg-or;
 
             strong {

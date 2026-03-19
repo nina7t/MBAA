@@ -72,36 +72,42 @@ $audioguide-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 // ============================================
 
 .block-description{
+    // Mobile first : column (vertical)
     display: flex;
-    flex-direction: column !important;
+    flex-direction: column;
     justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
 
-
-    @media (max-width: 767px) {
+    @media (min-width: 767px) {
         display: flex;
         flex-direction: row !important;
         justify-content: center;
-        align-content: center;
+        align-items: stretch;
         gap: 2rem;
         
         
     }
 
-    @media (max-width: 1607px) {
+    @media (min-width: 1607px) {
         display: flex !important;
         flex-direction: row !important;
         justify-content: center;
-        align-content: center;
+        align-items: stretch;
         gap: 2rem;
     
     }
 
 }
 .description {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    
     // ELEMENT: Image
     &__img {
-        width: auto;
-        height: -webkit-fill-available;
+        width: 100%;
+        height: 100%;
         border-radius: 10px;
         object-fit: cover;
         display: block;
@@ -110,12 +116,15 @@ $audioguide-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
         
         @media (max-width: 767px) {
             width: 100%;
+            max-height: 300px;
+            object-fit: cover;
         }
     }
 
     &__texte {
         display: flex;
         flex-direction: column !important;
+        flex: 1;
 
 
         p {
@@ -177,7 +186,7 @@ $audioguide-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     &__label {
         display: block;
         font-size: 0.75rem;
-        font-weight: 600;
+       
         text-transform: uppercase;
         letter-spacing: 0.05em;
         color: $audioguide-text-secondary;
@@ -201,7 +210,7 @@ $audioguide-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     // ELEMENT: Title
     &__title {
         font-size: clamp(1.75rem, 3vw, 3.5rem);
-        font-weight: 600;
+       
         color: $audioguide-text-primary;
         letter-spacing: -0.01em;
         margin: none;
@@ -290,7 +299,7 @@ $audioguide-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     // ELEMENT: Label
     &__label {
         font-size: 0.75rem;
-        font-weight: 600;
+       
         text-transform: uppercase;
         letter-spacing: 0.1em;
         color: rgba(255, 255, 255, 0.6);
@@ -299,7 +308,7 @@ $audioguide-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     // ELEMENT: Title
     &__title {
         font-size: 1rem;
-        font-weight: 600;
+       
         color: #fff;
         margin: none;
     }
@@ -618,7 +627,7 @@ $audioguide-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     &__description {
         font-size: 0.875rem;
         line-height: 1.5;
-        font-weight: 300;
+       
         opacity: 0.9;
     }
 }
@@ -712,7 +721,7 @@ $audioguide-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     &__description {
         font-size: 0.875rem;
         line-height: 1.5;
-        font-weight: 300;
+       
     }
 }
 
@@ -833,7 +842,7 @@ $audioguide-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
     &__description {
         font-size: 0.9rem;
         line-height: 1.6;
-        font-weight: 300;
+       
         opacity: 0.9;
     }
 }
@@ -851,7 +860,7 @@ $audioguide-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
         background: transparent;
         color: $audioguide-text-primary;
         font-size: 1rem;
-        font-weight: 600;
+       
         letter-spacing: 0.05em;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -892,6 +901,397 @@ $audioguide-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
             height: 500px;
         }
     }
+}
+
+// ============================================
+// SCANNER PAGE STYLES
+// ============================================
+
+.scanner-page {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.page-eyebrow {
+  font-family: $font-secondary;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: $color-secondary-gold;
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.page-title {
+  font-family: $font-primary;
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: $color-primary-white;
+  text-align: center;
+  line-height: 1.1;
+}
+
+/* ─── Bouton caméra ───────────────────────────────────────── */
+.cam-btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cam-btn {
+  position: relative;
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  border: none;
+  background: #1a1a1a;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.22s ease;
+  isolation: isolate;
+}
+
+.cam-btn:hover  { transform: scale(1.07); }
+.cam-btn:active { transform: scale(0.95); }
+
+/* Anneau or tournant */
+.cam-btn::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: conic-gradient(
+    $color-secondary-gold 0deg,
+    #c4a830 80deg,
+    transparent 180deg,
+    $color-secondary-gold 360deg
+  );
+  animation: ring-spin 5s linear infinite;
+  z-index: -1;
+}
+
+.cam-btn::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: #0c0c0c;
+  z-index: -1;
+}
+
+@keyframes ring-spin { to { transform: rotate(360deg); } }
+
+.cam-btn svg {
+  width: 44px;
+  height: 44px;
+  color: $color-secondary-gold;
+  filter: drop-shadow(0 0 9px rgba(149,126,24,0.6));
+  transition: filter 0.3s;
+}
+
+.cam-btn:hover svg {
+  filter: drop-shadow(0 0 16px rgba(149,126,24,0.9));
+}
+
+/* Badge "Appuyer" au survol */
+.cam-btn-badge {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: $color-secondary-gold;
+  color: $color-primary-white;
+  font-family: $font-secondary;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 20px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.cam-btn:hover .cam-btn-badge { opacity: 1; }
+
+.cam-btn-label {
+  font-family: $font-secondary;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: $color-text-secondary;
+  text-align: center;
+}
+
+/* ─── Séparateur ──────────────────────────────────────────── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  width: 200px;
+}
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #333333;
+}
+.divider-diamond {
+  width: 5px;
+  height: 5px;
+  background: $color-secondary-gold;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.page-note {
+  font-family: $font-secondary;
+  font-size: 0.78rem;
+  color: $color-text-secondary;
+  letter-spacing: 0.02em;
+  text-align: center;
+  max-width: 280px;
+  line-height: 1.7;
+}
+
+/* ─── MODAL ───────────────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.96);
+  backdrop-filter: blur(14px);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 480px;
+}
+
+.modal-title {
+  font-family: $font-primary;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: $color-secondary-gold;
+}
+
+.close-btn {
+  background: none;
+  border: 1px solid #333333;
+  color: $color-primary-white;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  border-color: $color-secondary-gold;
+  color: $color-secondary-gold;
+}
+
+/* ─── Vidéo ───────────────────────────────────────────────── */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #333333;
+  background: #000;
+}
+
+video, canvas {
+  width: 100%;
+  display: block;
+}
+canvas { display: none; }
+
+/* Coins du viseur */
+.viewfinder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 190px;
+  height: 190px;
+  pointer-events: none;
+}
+
+.vf-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: $color-secondary-gold;
+  border-style: solid;
+  border-width: 0;
+}
+.vf-corner.tl { top:0; left:0;  border-top-width:2px;    border-left-width:2px;  border-radius:3px 0 0 0; }
+.vf-corner.tr { top:0; right:0; border-top-width:2px;    border-right-width:2px; border-radius:0 3px 0 0; }
+.vf-corner.bl { bottom:0; left:0;  border-bottom-width:2px; border-left-width:2px;  border-radius:0 0 0 3px; }
+.vf-corner.br { bottom:0; right:0; border-bottom-width:2px; border-right-width:2px; border-radius:0 0 3px 0; }
+
+.scan-line {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, $color-secondary-gold, transparent);
+  animation: scan-move 2.4s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(149,126,24,0.65);
+}
+
+@keyframes scan-move {
+  0%   { top: 0%; }
+  50%  { top: 100%; }
+  100% { top: 0%; }
+}
+
+.video-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.55) 100%);
+  pointer-events: none;
+}
+
+/* ─── Status ──────────────────────────────────────────────── */
+.scanner-status {
+  font-family: $font-secondary;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $color-text-secondary;
+  text-align: center;
+  animation: blink 2.6s ease-in-out infinite;
+}
+
+.scanner-status.found {
+  color: $color-secondary-gold;
+  animation: none;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ─── Résultat ────────────────────────────────────────────── */
+.result-card {
+  width: 100%;
+  max-width: 480px;
+  background: #1a1a1a;
+  border: 1px solid $color-secondary-gold;
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.65rem;
+  animation: slide-up 0.35s ease;
+}
+
+.result-card.visible { display: flex; }
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.result-eyebrow {
+  font-family: $font-secondary;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: $color-secondary-gold;
+}
+
+.result-text {
+  font-family: $font-secondary;
+  font-size: 0.88rem;
+  color: $color-primary-white;
+  word-break: break-all;
+  line-height: 1.6;
+}
+
+.result-actions {
+  display: flex;
+  gap: 0.55rem;
+  margin-top: 0.15rem;
+}
+
+/* Bouton outline — charte .btn--more */
+.btn-outline {
+  flex: 1;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #333333;
+  background: transparent;
+  color: $color-primary-white;
+  font-family: $font-secondary;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  border-color: $color-secondary-gold;
+  color: $color-secondary-gold;
+}
+
+/* Bouton or — charte .header__reserve-btn */
+.btn-gold {
+  flex: 1;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: $color-secondary-gold;
+  color: $color-primary-white;
+  font-family: $font-secondary;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(149, 126, 24, 0.4);
+}
+
+.btn-gold:hover {
+  background: $color-gold-hover;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(149, 126, 24, 0.4);
 }
 
 // ============================================
@@ -996,7 +1396,7 @@ audio {
 
   .panel-content p {
     font-size: 0.82rem;
-    font-weight: 300;
+   
     line-height: 1.6;
     opacity: 0;
     transform: translateY(12px);
@@ -1048,4 +1448,244 @@ audio {
   }
 
 
-  
+
+  #btn {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  background: #111;
+  z-index: 10;
+
+  &::before {
+    content: "📷";
+    font-size: 64px;
+  }
+
+  &:active {
+    background: #222;
+    transform: scale(0.98);
+  }
+}
+
+#reader {
+  width: 100vw;
+  height: 100vh;
+
+  video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+  }
+}
+
+// ============================================
+// QR SCANNER SECTION
+// ============================================
+
+
+
+// ============================================
+// Variables
+// ============================================
+// BLOCK: QR Scanner
+// ============================================
+
+.qr-scan{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem;
+}
+
+.qr-scan-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 1.75rem;
+  background: $color-secondary-gold;
+  color: $color-primary-white;
+  border: none;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-family: $font-secondary;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(149, 126, 24, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(149, 126, 24, 0.4);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.qr-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  &.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 420px;
+  }
+
+  &__label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $color-secondary-gold;
+  }
+
+  &__close {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: none;
+    color: $color-primary-white;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      border-color: $color-secondary-gold;
+      color: $color-secondary-gold;
+    }
+  }
+}
+
+#qr-reader {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  video {
+    border-radius: 16px;
+  }
+}
+
+.qr-result {
+  display: none;
+  flex-direction: column;
+  gap: 0.65rem;
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid $color-secondary-gold;
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  animation: qr-slide-up 0.3s ease;
+
+  &.visible {
+    display: flex;
+  }
+
+  &__eyebrow {
+    font-size: 0.58rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: $color-secondary-gold;
+  }
+
+  &__text {
+    font-size: 0.88rem;
+    color: $color-primary-white;
+    word-break: break-all;
+    line-height: 1.6;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+  }
+}
+
+@keyframes qr-slide-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.btn-outline {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: $color-primary-white;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    border-color: $color-secondary-gold;
+    color: $color-secondary-gold;
+  }
+}
+
+.btn-gold {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: $color-secondary-gold;
+  color: $color-primary-white;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background: $color-gold-hover;
+    transform: translateY(-1px);
+  }
+}

@@ -17,18 +17,18 @@
 }
 
 .gallery-topbar__label {
-    font-family: "Styrene B Web";
+    font-family: $font-primary;
     font-size: 1.7rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: $color-text-secondary;
+    color: $color-primary-dark;
 }
 
 .gallery-topbar__count {
-    font-family: "Styrene B Web";
+    font-family: $font-secondary;
     font-size: 1.7rem;
     letter-spacing: 0.12em;
-    color: $color-text-secondary;
+    color: $bg-or;
 }
 
 .gallery-topbar__count span {
@@ -124,7 +124,7 @@
     border: none;
     outline: none;
     background: transparent;
-    font-family: "Styrene B Web", sans-serif;
+    font-family: $font-secondary, sans-serif;
     font-size: 0.82rem;
     color: $color-primary-dark;
     width: 100%;
@@ -154,7 +154,7 @@
 
 .subfilter-pill {
     padding: 0.65rem 1.3rem;
-    font-family: "Styrene B Web";
+    font-family: $font-secondary;
     font-size: 0.7rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -181,7 +181,7 @@
 
 .subfilters-label {
     padding: 0.65rem 1.2rem;
-    font-family: "Styrene B Web";
+    font-family: $font-secondary;
     font-size: 0.65rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -265,7 +265,7 @@
 }
 
 .gallery-item__meta {
-    font-family: "Styrene B Web";
+    font-family: $font-secondary;
     font-size: 0.62rem;
     letter-spacing: 0.1em;
     color: rgba(255, 255, 255, 0.5);
@@ -277,7 +277,7 @@
     position: absolute;
     top: 0.7rem;
     left: 0.7rem;
-    font-family: "Styrene B Web";
+    font-family: $font-secondary;
     font-size: 0.6rem;
     letter-spacing: 0.08em;
     color: rgba(255, 255, 255, 0.6);
@@ -313,7 +313,7 @@
 }
 
 .gallery-grid-header__tag {
-    font-family: "Styrene B Web", monospace;
+    font-family: $font-secondary, monospace;
     font-size: 0.65rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -333,7 +333,7 @@
 }
 
 .gallery-empty p {
-    font-family: "Styrene B Web", serif;
+    font-family: $font-secondary, serif;
     font-size: 1.4rem;
     font-style: italic;
     color: $color-primary-dark;
@@ -352,5 +352,36 @@
         padding: 0.8rem 0.9rem;
         font-size: 1rem;
         
+    }
+}
+
+
+
+
+.btn-collection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: max-content;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    color: $color-primary-dark;
+    margin: 3rem auto;
+    border: 2px solid $color-primary-dark;
+
+    &:hover {
+        background: $color-primary-dark;
+        color: $color-white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    &:active {
+        transform: translateY(0);
     }
 }

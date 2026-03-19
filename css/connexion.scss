@@ -16,7 +16,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("/asset/Img/statues-groupe.jpg") center/cover;
+    background: url("./asset/Img/statues-groupe.jpg") center/cover;
     opacity: 0.05;
     z-index: 0;
 }
@@ -60,7 +60,7 @@
         font-size: 0.95rem;
         color: #999;
         margin: 0;
-        font-weight: 300;
+       
         transition: all 0.3s ease;
     }
 }
@@ -98,7 +98,7 @@
 
 .role-text {
     font-size: 1rem;
-    font-weight: 600;
+   
     color: $color-primary-dark;
 }
 
@@ -168,7 +168,7 @@
     border: none;
     border-radius: 6px;
     font-size: 1rem;
-    font-weight: 600;
+   
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     font-family: $font-secondary;
@@ -192,7 +192,7 @@
     border: 1px solid $bg-or;
     border-radius: 6px;
     font-size: 0.95rem;
-    font-weight: 600;
+   
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: $font-secondary;
@@ -227,7 +227,7 @@
     .login-link {
         color: $bg-or;
         text-decoration: none;
-        font-weight: 600;
+       
         transition: color 0.3s ease;
 
         &:hover {

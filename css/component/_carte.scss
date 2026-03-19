@@ -91,7 +91,7 @@
         // Utilise la hiérarchie H3 pour les sous-titres de cartes
         color: $color-primary-white;
         font-size: clamp(1.5rem, 3vw, 2rem);
-        font-weight: 600;
+       
         line-height: $line-height-compact;
         margin-top: 0;
         letter-spacing: -0.01em;
@@ -186,7 +186,7 @@
     &-subtitle{
         // Utilise la hiérarchie H4 pour les sous-titres de cartes de visite
         font-size: clamp($font-size-h4-mobile, 2vw + 0.125rem, $font-size-h4-desktop);
-        font-weight: 600;
+       
         line-height: $line-height-normal;
         margin-top: $spacing-h4-top;
         margin-bottom: $spacing-h4-bottom;
@@ -207,7 +207,7 @@
         flex-direction: column;
         gap: 1.25rem;
         margin-bottom: 1rem;
-        font-weight: 300;
+       
 
         @media (min-width: 768px) {
             gap: 1.5rem;
@@ -240,14 +240,14 @@
     }
 
     &-arrow {
-        width: 18px;
+        width: 28px;
         height: 18px;
         flex-shrink: 0;
         background-color: $color-white-svg;
         stroke-width: 2px;
 
         @media (min-width: 768px) {
-            width: 20px;
+            width: 30px;
             height: 20px;
         }
     }
@@ -329,7 +329,7 @@
 
     &-subtitle{
         margin: 20px 0;
-        font-weight: 600;
+       
         
         &-white{
             color: $color-primary-white;

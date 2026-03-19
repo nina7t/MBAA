@@ -5,9 +5,9 @@
     min-height: $touch-target-min;
     padding: clamp(0.875rem, 2.5vw, 15px) clamp(1.25rem, 4vw, 30px);
     border-radius: 10px;
-    font-weight: 600;
+   
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
     font-size: clamp(0.875rem, 2.5vw, 1rem);
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
@@ -31,15 +31,15 @@
 .main__button--savoir-white{
     @include button-base;
     color: $color-primary-white;
-   
     border: 3px solid $color-primary-white;
 
-    @media (min-width: 1024px) {
-        width: inherit;
-        &:hover {
+     &:hover {
             color: $color-primary-dark;
             background-color: $color-primary-white;
         }
+    @media (min-width: 1024px) {
+        width: inherit;
+       
     }
 
     @include button-responsive;
@@ -60,17 +60,14 @@
 
     width: 100%;
     border: 3px solid $bg-or;
+    
+    &:hover {
+            color: $color-primary-white;
+            background-color: $bg-or;
+        }
 
     @media (min-width: 768px) {
         width: auto;
-    }
-
-    @media (min-width: 1024px) {
-        &:hover {
-            color: $color-primary-white;
-            background-color: $color-primary-dark;
-            border-color: $color-primary-dark;
-        }
     }
 
     @include button-responsive;
@@ -82,17 +79,14 @@
 
     width: 100%;
     border: 3px solid $color-primary-dark;
-
+      &:hover {
+            color: $color-primary-white;
+            background-color: $color-primary-dark;
+        }
     @media (min-width: 768px) {
         width: auto;
     }
 
-    @media (min-width: 1024px) {
-        &:hover {
-            color: $color-primary-white;
-            background-color: $color-primary-dark;
-        }
-    }
 
     @include button-responsive;
 }
@@ -103,16 +97,14 @@
 
     width: 100%;
     border: 3px solid $color-primary-dark;
-
-    @media (min-width: 768px) {
-        width: auto;
-    }
-
-    @media (min-width: 1024px) {
-        &:hover {
+      &:hover {
             color: $color-primary-white;
             background-color: $color-primary-dark;
         }
+
+
+    @media (min-width: 768px) {
+        width: auto;
     }
 
     @include button-responsive;
@@ -123,15 +115,14 @@
     color: $color-primary-dark;
     width: 100%;
     border: 3px solid $color-primary-dark;
-    @media (min-width: 768px) {
-        width: auto;
-    }
-
-    @media (min-width: 1024px) {
-        &:hover {
+    
+    &:hover {
             color: $color-primary-white;
             background-color: $color-primary-dark;
         }
+
+    @media (min-width: 768px) {
+        width: auto;
     }
 
     @include button-responsive;

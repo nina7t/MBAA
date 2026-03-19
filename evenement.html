@@ -3,17 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Découvrez les événements du Musée des Beaux-Arts et d'Archéologie de Besançon : ateliers, concerts jazz, expositions temporaires, visites guidées et soirées culturelles." />
+  <meta name="keywords" content="événements musée Besançon, ateliers art, concert jazz musée, exposition temporaire, visite guidée MBAA" />
+  <meta property="og:title" content="Événements & Agenda — Musée MAT Besançon" />
+  <meta property="og:description" content="Agenda culturel du Musée des Beaux-Arts de Besançon. Ateliers, concerts, expositions et soirées." />
+  <meta property="og:type" content="website" />
   <link rel="icon" type="image/png" href="./asset/Img/logo/logo-mat-small.png" />
   <link rel="stylesheet" href="./style.css" />
+  <link href="https://db.onlinewebfonts.com/c/5d86f2e8ccc2811b9392aa03b7ce4a63?family=Styrene+B+Regular+Regular" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <script src="./js/menu.js"></script>
-    <script src="./js/header-adaptive.js"></script>
-  <title>MBAA - Musée des Beaux-Arts et d'Archéologie de Besançon</title>
+  <script src="./js/menu.js"></script>
+  <script src="./js/header-adaptive.js"></script>
+  <title>Événements & Agenda — Musée des Beaux-Arts MAT | Besançon</title>
 </head>
 <body data-scroll-container="">
-  <header class="header">
+  <header class="header header--evenement">
     <!-- ====== NAVBAR (preserved) ====== -->
     <div class="header__container">
       <a class="header__logo-link" href="./index.html">
@@ -50,7 +56,7 @@
             </a>
           </li>
           <li class="header__nav-item">
-            <a class="header__nav-link" href="#" aria-label="Billetterie">
+            <a class="header__nav-link" href="./reservation.html" aria-label="Billetterie">
               <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path
@@ -63,7 +69,7 @@
             </a>
           </li>
           <li class="header__nav-item">
-            <a class="header__nav-link" href="#" aria-label="Recherche">
+            <a class="header__nav-link" href="./reservation.html" aria-label="Recherche">
               <svg class="header__nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8"></circle>
@@ -82,43 +88,36 @@
     </div>
 
     <!-- ====== HERO — NEW LAYOUT ====== -->
-    <div class="header__hero">
-
-      <!-- Left: title block -->
+    <div class="header__hero header__hero--evenement">
       <div class="hero__left">
-        <p class="hero__eyebrow">Les ÉVÈNEMENTS — Musée des Beaux-Arts</p>
+        <p class="hero__eyebrow">AGENDA CULTUREL — Musée des Beaux-Arts</p>
         <h1 class="hero__title">
-          Les<br>
-          ÉVÈNEMENTS<br>
+          Agenda<br>
+          & Événements<br>
           <em>au Musée</em>
         </h1>
       </div>
 
-      <!-- Right: description + CTA -->
       <div class="hero__right">
         <p class="hero__description">
-          Peinture, sculpture, dessin — explorez cinq siècles de création artistique conservés dans nos collections
-          permanentes.
+          Ateliers créatifs, concerts jazz, expositions temporaires et soirées exclusives — 
+          vivez le musée autrement toute l'année.
         </p>
-        <a href="#" class="hero__cta">
-          Réserver ma place
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
+        <a href="#event-calendar" class="hero__cta">
+          Voir l'agenda
+          <img class="hero__cta-icon" src="./asset/Img/svg/icon-arrow-droite.svg" alt="Flèche vers la droite">
         </a>
       </div>
 
-      <!-- Bottom strip: stats + scroll -->
       <div class="hero__strip">
         <div class="hero__stat">
-          <span class="hero__stat-number">5 600</span>
-          <span class="hero__stat-label">Œuvres exposées</span>
+          <span class="hero__stat-number" id="heroUpcomingCount">--</span>
+          <span class="hero__stat-label">Événements à venir</span>
         </div>
         <div class="hero__strip-divider"></div>
         <div class="hero__stat">
-          <span class="hero__stat-number">XVI<sup style="font-size:0.55em">e</sup></span>
-          <span class="hero__stat-label">Période la plus ancienne</span>
+          <span class="hero__stat-number">4</span>
+          <span class="hero__stat-label">Catégories d'activités</span>
         </div>
         <div class="hero__strip-divider"></div>
         <div class="hero__stat">
@@ -134,11 +133,93 @@
           Défiler
         </div>
       </div>
-
     </div>
   </header>
 
-  <section class="event-calendar-section">
+  <!-- ====== ÉVÉNEMENT VEDETTE ====== -->
+  <section class="event-featured" id="event-featured">
+    <div class="event-featured__container">
+
+      <div class="event-featured__media">
+        <img 
+          src="./asset/Img/activite-performance-break.jpg" 
+          alt="Nuit Européenne des Musées 2026"
+          loading="eager"
+          class="event-featured__img"
+        />
+        <div class="event-featured__media-badge">
+          <span>À ne pas manquer</span>
+        </div>
+      </div>
+
+      <div class="event-featured__content">
+        <span class="event-featured__eyebrow">Événement du moment</span>
+        <h2 class="event-featured__title">Nuit Européenne<br>des Musées</h2>
+        
+        <div class="event-featured__meta">
+          <div class="event-featured__meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>15 Mai 2026</span>
+          </div>
+          <div class="event-featured__meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>20h00 — 00h00</span>
+          </div>
+          <div class="event-featured__meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Musée MAT — Besançon</span>
+          </div>
+          <div class="event-featured__meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <path d="M12 2v20M8 8h8M8 12h8M8 16h6M17 8c0-1.1-.9-2-2-2h-3c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h3c1.1 0 2-.9 2-2"/>
+</svg>
+            <span class="event-featured__price-tag">Gratuit</span>
+          </div>
+        </div>
+
+        <p class="event-featured__desc">
+          Une nuit exceptionnelle pour découvrir le musée sous un angle inédit. Performances live, 
+          visites nocturnes, installations lumineuses et concerts — le musée ouvre ses portes 
+          jusqu'à minuit pour une expérience culturelle unique.
+        </p>
+
+        <!-- Compteur de places -->
+        <div class="event-featured__spots">
+          <div class="event-featured__spots-bar">
+            <div class="event-featured__spots-fill" style="width: 68%"></div>
+          </div>
+          <span class="event-featured__spots-label">68% des places réservées — <strong>dépêchez-vous !</strong></span>
+        </div>
+
+        <div class="event-featured__actions">
+          <a href="./reservation.html?event=37" class="event-featured__btn-primary">
+            Réserver ma place gratuite
+            <img src="./asset/Img/svg/icon-arrow-droite.svg" alt="" class="event-featured__btn-icon">
+          </a>
+          <button class="event-featured__btn-secondary" onclick="selectEventById(37); document.getElementById('event-calendar').scrollIntoView({behavior:'smooth'})">
+            Voir dans le calendrier
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEO: Événements indexables par les moteurs de recherche -->
+<section class="events-seo-index" aria-hidden="true">
+  <h2>Agenda des événements</h2>
+  <ul>
+    <li><article><h3>Ateliers Peinture</h3><time datetime="2025-12-03">3 décembre 2025</time><p>Atelier adultes - Musée MAT Besançon</p><a href="./reservation.html?event=1">Réserver</a></article></li>
+    <li><article><h3>Ateliers Poterie</h3><time datetime="2025-12-08">8 décembre 2025</time><p>Atelier enfants - Musée MAT Besançon</p><a href="./reservation.html?event=2">Réserver</a></article></li>
+    <li><article><h3>Soirée Jazz au musée</h3><time datetime="2025-12-09">9 décembre 2025</time><p>Soirée musée - Musée MAT Besançon</p><a href="./reservation.html?event=3">Réserver</a></article></li>
+    <li><article><h3>Concert de Noël</h3><time datetime="2025-12-11">11 décembre 2025</time><p>Tout public - Musée MAT Besançon</p><a href="./reservation.html?event=4">Réserver</a></article></li>
+    <li><article><h3>Atelier Sculpture</h3><time datetime="2025-12-14">14 décembre 2025</time><p>Atelier adultes - Musée MAT Besançon</p><a href="./reservation.html?event=5">Réserver</a></article></li>
+    <li><article><h3>Visite Guidée</h3><time datetime="2025-12-15">15 décembre 2025</time><p>Tout public - Musée MAT Besançon</p><a href="./reservation.html?event=6">Réserver</a></article></li>
+    <li><article><h3>Nuit Européenne des Musées</h3><time datetime="2026-05-15">15 mai 2026</time><p>Soirée musée - Musée MAT Besançon</p><a href="./reservation.html?event=37">Réserver</a></article></li>
+  </ul>
+</section>
+
+<section class="event-calendar-section" id="event-calendar">
     <div class="event-calendar-container">
       <div class="event-calendar-grid">
         <!-- Sidebar gauche -->
@@ -147,7 +228,7 @@
           <div class="filter-group">
             <div class="filter-header">
               <i data-lucide="filter"></i>
-              <h2>Filtres</h2>
+              <h3>Filtres</h3>
             </div>
             <div class="filter-options" id="filterOptions">
               <!-- Les filtres seront générés par JS -->
@@ -156,7 +237,7 @@
 
           <!-- Liste des événements -->
           <div class="events-preview">
-            <h2 class="events-preview-title">Tous les événements</h2>
+            <h3 class="events-preview-title">Tous les événements</h3>
             <div class="events-list-container" id="eventsList">
               <!-- Les cartes d'événements seront générées par JS -->
             </div>
@@ -171,9 +252,9 @@
               <button onclick="previousMonth()" class="nav-arrow-btn">
                 <i data-lucide="chevron-left"></i>
               </button>
-              <h1 class="calendar-current-title" id="calendarTitle">
+              <h2 class="calendar-current-title" id="calendarTitle">
                 <!-- Titre généré par JS -->
-              </h1>
+              </h2>
               <button onclick="nextMonth()" class="nav-arrow-btn">
                 <i data-lucide="chevron-right"></i>
               </button>
@@ -200,85 +281,208 @@
     </div>
   </section>
 
-    <section class="main__banniere">
-      <section class="main__banniere--explorer">
-        <img class="main__banniere-img" src="./asset/Img/svg/croix-blanche.svg" alt="Croix blanche" />
+  <!-- ====== GALERIE ÉVÉNEMENTS PASSÉS ====== -->
+  <section class="event-gallery" id="event-gallery">
+    <div class="event-gallery__container">
 
-        <h2 class="main__banniere-titre">
-          LES<br>
-          ÉVÈNEMENTS
-        </h2>
-      </section>
-      <section class="main__banniere-contenu">
-        <p class="main__banniere-description">
-          Plongez dans l'effervescence culturelle du Musée des Beaux-Arts et d'Archéologie de Besançon à travers une
-          variété d'événements captivants. Que vous soyez amateur d'art, passionné d'histoire ou simplement curieux,
-          notre calendrier d'événements est conçu pour offrir des expériences enrichissantes à tous les visiteurs.
+      <div class="event-gallery__header">
+        <div>
+          <span class="event-gallery__eyebrow">Nos souvenirs</span>
+          <h2 class="event-gallery__title">Les événements passés</h2>
+        </div>
+        <p class="event-gallery__subtitle">
+          Revivez l'ambiance de nos dernières soirées, ateliers et concerts.
         </p>
-    </section>
-  </section>
-
-
-  <section class="Atelier">
-    <section class="Atelier__container">
-      <div class="Atelier__header">
-        <h2 class="Atelier__title">Ateliers</h2>
-        <span class="Atelier__label">Tout public</span>
       </div>
-      <p class="Atelier__description">
-        Participez à nos ateliers interactifs conçus pour tous les âges et niveaux d'expérience. Que vous soyez un
-        artiste en herbe ou simplement curieux, nos ateliers offrent une opportunité unique d'explorer votre créativité
-        tout en découvrant les techniques artistiques.
-      </p>
-      <a href="./reservation.html?event=1" class="Atelier__link">Reserver un billet</a>
-    </section>
-  </section>
 
-  <section class="Conférences">
-    <section class="Conférences__container">
-      <div class="Conférences__header">
-        <h2 class="Conférences__title">Conférences</h2>
-        <span class="Conférences__label">Adultes</span>
+      <div class="event-gallery__grid">
+        <!-- Grande image gauche -->
+        <div class="event-gallery__item event-gallery__item--large">
+          <img src="./asset/Img/activite-performance-break.jpg" alt="Soirée Jazz au musée" loading="lazy">
+          <div class="event-gallery__overlay">
+            <span class="event-gallery__overlay-tag">Soirée Jazz</span>
+            <span class="event-gallery__overlay-date">Décembre 2025</span>
+          </div>
+        </div>
+
+        <!-- 4 petites images droite -->
+        <div class="event-gallery__item">
+          <img src="./asset/Img/atelier-jeunes.jpg" alt="Atelier Peinture" loading="lazy">
+          <div class="event-gallery__overlay">
+            <span class="event-gallery__overlay-tag">Atelier Peinture</span>
+            <span class="event-gallery__overlay-date">Nov. 2025</span>
+          </div>
+        </div>
+
+        <div class="event-gallery__item">
+          <img src="./asset/Img/atelier-scolaire.jpg" alt="Atelier Poterie" loading="lazy">
+          <div class="event-gallery__overlay">
+            <span class="event-gallery__overlay-tag">Atelier Poterie</span>
+            <span class="event-gallery__overlay-date">Oct. 2025</span>
+          </div>
+        </div>
+
+        <div class="event-gallery__item">
+          <img src="./asset/Img/misc-discussion.jpg" alt="Conférence" loading="lazy">
+          <div class="event-gallery__overlay">
+            <span class="event-gallery__overlay-tag">Conférence</span>
+            <span class="event-gallery__overlay-date">Oct. 2025</span>
+          </div>
+        </div>
+
+        <div class="event-gallery__item">
+          <img src="./asset/Img/visite-groupe.jpg" alt="Visite guidée" loading="lazy">
+          <div class="event-gallery__overlay">
+            <span class="event-gallery__overlay-tag">Visite guidée</span>
+            <span class="event-gallery__overlay-date">Sept. 2025</span>
+          </div>
+        </div>
       </div>
-      <p class="Conférences__description">
-        Rejoignez-nous pour des conférences captivantes animées par des experts renommés dans le domaine de l'art et de
-        l'archéologie. Plongez dans des discussions enrichissantes sur des sujets variés, allant des mouvements
-        artistiques aux découvertes archéologiques récentes.
-      </p>
-      <a href="./reservation.html?event=8" class="Conférences__link">Reserver un billet</a>
-    </section>
-  </section>
 
-  <section class="Porterie">
-    <section class="Porterie__container">
-      <div class="Porterie__header">
-        <h2 class="Porterie__title">Atelier poterie</h2>
-        <span class="Porterie__label">Enfants + Familles</span>
+      <!-- CTA sous la galerie -->
+      <div class="event-gallery__cta">
+        <p>Vous aussi, vivez ces moments uniques.</p>
+        <a href="./reservation.html" class="event-gallery__cta-btn">
+          Réserver un événement
+          <img src="./asset/Img/svg/icon-arrow-droite.svg" alt="" style="width:14px; filter:invert(1)">
+        </a>
       </div>
-      <p class="Porterie__description">
-        Découvrez nos ateliers spéciaux organisés à la Poterie, un espace dédié à la créativité et à l'apprentissage.
-        Ces ateliers offrent une expérience immersive où les participants peuvent explorer diverses formes d'art tout en
-        s'inspirant de l'histoire et de la culture locale.
-      </p>
-      <a href="./reservation.html?event=2" class="Porterie__link">Reserver un billet</a>
-    </section>
+
+    </div>
   </section>
 
-  <section class="Jazz">
-    <section class="Jazz__container">
-      <div class="Jazz__header">
-        <h2 class="Jazz__title">Soirées Jazz au Musée</h2>
-        <span class="Jazz__label">Tout public</span>
+  <section class="event-categories" id="event-categories">
+  <div class="event-categories__container">
+    <h2 class="event-categories__title">Nos activités</h2>
+    <div class="event-categories__grid">
+
+      <div class="category-card" onclick="setActiveFilter('Ateliers Adultes')">
+        <div class="category-card__image">
+          <img src="./asset/Img/atelier-jeunes.jpg" alt="Ateliers adultes au musée" loading="lazy">
+        </div>
+        <div class="category-card__content">
+          <span class="category-card__tag">Tout au long de l'année</span>
+          <h3 class="category-card__title">Ateliers Adultes</h3>
+          <p class="category-card__desc">Peinture, sculpture, aquarelle — explorez votre créativité avec nos artistes.</p>
+          <span class="category-card__cta">Voir les dates →</span>
+        </div>
       </div>
-      <p class="Jazz__description">
-        Vivez des soirées inoubliables au rythme du jazz dans le cadre unique du Musée des Beaux-Arts et d'Archéologie
-        de Besançon. Chaque mois, nous accueillons des musiciens de talent pour des performances live qui créent une
-        ambiance chaleureuse et conviviale.
-      </p>
-      <a href="./reservation.html?event=3" class="Jazz__link">Reserver un billet</a>
-    </section>
-  </section>
 
+      <div class="category-card" onclick="setActiveFilter('Ateliers Enfants')">
+        <div class="category-card__image">
+          <img src="./asset/Img/atelier-scolaire.jpg" alt="Ateliers enfants et familles" loading="lazy">
+        </div>
+        <div class="category-card__content">
+          <span class="category-card__tag">Familles & Enfants</span>
+          <h3 class="category-card__title">Ateliers Enfants</h3>
+          <p class="category-card__desc">Poterie, dessin, modelage — des ateliers ludiques pour les jeunes artistes.</p>
+          <span class="category-card__cta">Voir les dates →</span>
+        </div>
+      </div>
+
+      <div class="category-card" onclick="setActiveFilter('Soirées Musées')">
+        <div class="category-card__image">
+          <img src="./asset/Img/activite-performance-break.jpg" alt="Soirées jazz et concerts au musée" loading="lazy">
+        </div>
+        <div class="category-card__content">
+          <span class="category-card__tag">Soirées exclusives</span>
+          <h3 class="category-card__title">Soirées & Concerts</h3>
+          <p class="category-card__desc">Jazz, concerts de chambre, soirées électro — le musée vit la nuit.</p>
+          <span class="category-card__cta">Voir les dates →</span>
+        </div>
+      </div>
+
+      <div class="category-card" onclick="setActiveFilter('Tout public')">
+        <div class="category-card__image">
+          <img src="./asset/Img/misc-discussion.jpg" alt="Conférences et visites guidées" loading="lazy">
+        </div>
+        <div class="category-card__content">
+          <span class="category-card__tag">Tout public</span>
+          <h3 class="category-card__title">Conférences & Visites</h3>
+          <p class="category-card__desc">Conférences d'experts, visites thématiques et nocturnes pour tous.</p>
+          <span class="category-card__cta">Voir les dates →</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- ====== TÉMOIGNAGES VISITEURS ====== -->
+  <section class="event-testimonials" id="event-testimonials">
+    <div class="event-testimonials__container">
+
+      <div class="event-testimonials__header">
+        <span class="event-testimonials__eyebrow">Ce qu'ils en disent</span>
+        <h2 class="event-testimonials__title">Avis de nos visiteurs</h2>
+        <div class="event-testimonials__rating-global">
+          <div class="rating-stars">★★★★★</div>
+          <span>4.8 / 5 — basé sur 124 avis</span>
+        </div>
+      </div>
+
+      <div class="event-testimonials__grid">
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <blockquote class="testimonial-card__quote">
+            "La soirée Jazz au musée était une expérience magique. 
+            L'ambiance dans les galeries avec la musique live, c'est quelque chose qu'on n'oublie pas."
+          </blockquote>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">ML</div>
+            <div>
+              <span class="testimonial-card__name">Marie-Laure D.</span>
+              <span class="testimonial-card__event">Soirée Jazz — Décembre 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card testimonial-card--featured">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <blockquote class="testimonial-card__quote">
+            "Mon fils de 8 ans a adoré l'atelier poterie. Les animateurs sont patients, 
+            pédagogues et vraiment passionnés. On reviendra sans hésiter !"
+          </blockquote>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">SC</div>
+            <div>
+              <span class="testimonial-card__name">Sophie C.</span>
+              <span class="testimonial-card__event">Atelier Poterie Enfants — Nov. 2025</span>
+            </div>
+          </div>
+          <div class="testimonial-card__badge">Coup de cœur</div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★☆</div>
+          <blockquote class="testimonial-card__quote">
+            "La conférence sur l'art moderne était passionnante. 
+            L'intervenant a su rendre le sujet accessible à tous. 
+            Je recommande vivement."
+          </blockquote>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">PT</div>
+            <div>
+              <span class="testimonial-card__name">Pierre T.</span>
+              <span class="testimonial-card__event">Conférence Art Moderne — Jan. 2026</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA réservation -->
+      <div class="event-testimonials__cta">
+        <p>Rejoignez les <strong>+2 400 visiteurs</strong> qui ont vécu une expérience unique au musée.</p>
+        <a href="./reservation.html" class="event-testimonials__cta-btn">
+          Je réserve mon expérience
+          <img src="./asset/Img/svg/icon-arrow-droite.svg" alt="" style="width:14px; filter:invert(1)">
+        </a>
+      </div>
+
+    </div>
+  </section>
 
   <section class="bibliotheque">
     <div class="bibliotheque__section">
@@ -434,6 +638,112 @@
     </div>
   </section>
   -->
+  
+  <!-- ====== FAQ ====== -->
+  <section class="event-faq" id="event-faq">
+    <div class="event-faq__container">
+
+      <div class="event-faq__header">
+        <span class="event-faq__eyebrow">Questions fréquentes</span>
+        <h2 class="event-faq__title">Tout ce que vous devez savoir</h2>
+      </div>
+
+      <div class="event-faq__grid">
+        <div class="faq-list">
+
+          <details class="faq-item">
+            <summary class="faq-item__question">
+              Comment réserver un événement ?
+              <span class="faq-item__icon">+</span>
+            </summary>
+            <p class="faq-item__answer">
+              Cliquez sur le bouton "Réserver" de l'événement qui vous intéresse, 
+              remplissez le formulaire avec vos informations et confirmez. 
+              Vous recevrez un numéro de réservation à présenter le jour J.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">
+              Puis-je annuler ou modifier ma réservation ?
+              <span class="faq-item__icon">+</span>
+            </summary>
+            <p class="faq-item__answer">
+              Les annulations sont acceptées jusqu'à 48h avant l'événement. 
+              Passé ce délai, les places ne peuvent être ni remboursées ni échangées. 
+              Contactez-nous à contact@mbaa-besancon.fr pour toute demande.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">
+              Les événements sont-ils accessibles aux personnes à mobilité réduite ?
+              <span class="faq-item__icon">+</span>
+            </summary>
+            <p class="faq-item__answer">
+              Oui, le musée est entièrement accessible PMR. 
+              Des places prioritaires sont réservées pour les personnes en situation de handicap. 
+              Mentionnez-le lors de votre réservation pour que nous puissions adapter l'accueil.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">
+              Y a-t-il des tarifs réduits pour les enfants et les étudiants ?
+              <span class="faq-item__icon">+</span>
+            </summary>
+            <p class="faq-item__answer">
+              L'entrée au musée est gratuite pour les moins de 26 ans. 
+              Pour les événements payants, des tarifs adaptés sont appliqués automatiquement 
+              selon votre âge lors de la réservation.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">
+              Que se passe-t-il si un événement est complet ?
+              <span class="faq-item__icon">+</span>
+            </summary>
+            <p class="faq-item__answer">
+              Vous pouvez vous inscrire sur liste d'attente via le formulaire de réservation. 
+              En cas de désistement, vous serez contacté par email dans les 24h précédant l'événement.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">
+              Faut-il imprimer son billet ?
+              <span class="faq-item__icon">+</span>
+            </summary>
+            <p class="faq-item__answer">
+              Non, votre numéro de réservation suffit. 
+              Présentez-le à l'accueil sur votre téléphone ou notez-le — 
+              nos équipes retrouveront votre réservation en quelques secondes.
+            </p>
+          </details>
+
+        </div>
+
+        <!-- Panneau contact rapide -->
+        <div class="faq-contact">
+          <div class="faq-contact__inner">
+            <div class="faq-contact__icon">💬</div>
+            <h3 class="faq-contact__title">Une autre question ?</h3>
+            <p class="faq-contact__text">
+              Notre équipe répond en moins de 24h du mardi au dimanche, de 10h à 18h.
+            </p>
+            <a href="./infos.html" class="faq-contact__btn">Nous contacter</a>
+            <div class="faq-contact__divider">ou</div>
+            <a href="./reservation.html" class="faq-contact__reserve">
+              Réserver directement →
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
       <footer class="footer">
         <div class="footer__contain-form">
           <div class="footer__logo-container">
@@ -514,8 +824,7 @@
       <script src="./js/bibliotheque-filter.js"></script>
       <script src="./js/event-calendar.js"></script>
 
-
-      Locomotive Scroll JS
+      <!-- Locomotive Scroll JS -->
       <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.3/dist/locomotive-scroll.umd.js"></script>
 
       <script>

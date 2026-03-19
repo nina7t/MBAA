@@ -41,7 +41,7 @@
         border-radius: 10px;
         font-family: $font-secondary;
         font-size: clamp(1rem, 2vw, 1.125rem);
-        font-weight: 600;
+       
         text-decoration: none;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -128,7 +128,7 @@
         border-radius: 10px;
         font-family: $font-secondary;
         font-size: 1rem;
-        font-weight: 600;
+       
         cursor: pointer;
         transition: all 0.3s ease;
         white-space: nowrap;
@@ -259,7 +259,7 @@
     &__title {
         font-family: $font-primary;
         font-size: clamp(1.5rem, 4vw, 2rem);
-        font-weight: 600;
+       
         color: $color-primary-white;
         margin: 0;
     }
@@ -354,7 +354,7 @@
         border-radius: 4px;
         font-family: $font-secondary;
         font-size: 0.6875rem;
-        font-weight: 600;
+       
         text-transform: uppercase;
         letter-spacing: 0.05em;
 
@@ -440,7 +440,7 @@
     &__title {
         font-family: $font-primary;
         font-size: clamp(1.125rem, 2.5vw, 1.35rem);
-        font-weight: 600;
+       
         color: $color-primary-white;
         margin: 0 0 0.75rem 0;
         line-height: 1.3;
@@ -488,7 +488,7 @@
     &__price {
         font-family: $font-secondary;
         font-size: 1.125rem;
-        font-weight: 600;
+       
         color: $bg-or;
 
         &--free {
@@ -504,7 +504,7 @@
         border-radius: 6px;
         font-family: $font-secondary;
         font-size: 0.875rem;
-        font-weight: 600;
+       
         cursor: pointer;
         transition: all 0.3s ease;
         text-decoration: none;
@@ -587,7 +587,7 @@
     &__title {
         font-family: $font-primary;
         font-size: clamp(1.25rem, 3vw, 1.5rem);
-        font-weight: 600;
+       
         color: $color-primary-white;
         margin: 0 0 0.5rem 0;
     }
@@ -639,7 +639,7 @@
         border-radius: 10px;
         font-family: $font-secondary;
         font-size: 0.9375rem;
-        font-weight: 600;
+       
         cursor: pointer;
         transition: background-color 0.3s ease;
 
@@ -705,7 +705,7 @@
     &__title {
         font-family: $font-primary;
         font-size: clamp(1.5rem, 4vw, 2rem);
-        font-weight: 600;
+       
         color: $color-primary-white;
         margin: 0 0 0.75rem 0;
     }
@@ -725,7 +725,7 @@
         border-radius: 10px;
         font-family: $font-secondary;
         font-size: 1rem;
-        font-weight: 600;
+       
         cursor: pointer;
         transition: all 0.3s ease;
 
@@ -780,7 +780,7 @@
     background: transparent;
     color: #6b7280;
     font-size: 0.8rem;
-    font-weight: 600;
+   
     font-family: $font-secondary;
     cursor: pointer;
     transition: all 0.2s;
@@ -870,7 +870,7 @@
 
     .mec-weekday {
       font-size: 0.65rem;
-      font-weight: 600;
+     
       text-transform: uppercase;
       letter-spacing: 0.06em;
       color: #9ca3af;
@@ -901,7 +901,7 @@
       align-items: center;
       font-family: $font-secondary;
       font-size: 0.7rem;
-      font-weight: 600;
+     
       padding: 0.2rem 0.6rem;
       border-radius: 6px;
       color: #ffffff;
@@ -960,7 +960,7 @@
   border: 1px dashed #d1d5db;
   border-radius: 10px;
   font-size: 0.85rem;
-  font-weight: 600;
+ 
   color: #6b7280;
   font-family: $font-secondary;
   cursor: pointer;

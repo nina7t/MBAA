@@ -8,7 +8,7 @@
     gap: 1rem;
     background-color: #957e18;
     color: #fffdf3;
-    padding: clamp(1.25rem, 3vw, 3rem);
+    padding: clamp(2rem, 3vw, 3rem);
     max-width: 100%;
     box-sizing: border-box;
     margin: 5rem 4rem 4rem 0rem;
@@ -54,7 +54,7 @@
     &-titre-fonce {
         // Utilise la hiérarchie H3 pour les titres foncés
         font-size: clamp($font-size-h3-mobile, 3vw + 0.25rem, $font-size-h3-desktop);
-        font-weight: 600;
+       
         color: $color-dark-svg;
         line-height: $line-height-compact;
         margin-top: 0;
@@ -134,6 +134,7 @@
 
     @media (min-width: 768px) {
         gap: 20px;
+        padding: clamp(4rem, 3vw, 4rem);
     }
 }
 .main_evenement {
@@ -155,6 +156,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    gap: 1rem;
 
     @media (min-width: 768px) {
         gap: 20px;

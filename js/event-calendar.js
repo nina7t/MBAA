@@ -3,6 +3,51 @@
 // ============================================================
 
 // ========================================
+// VARIABLES GLOBALES
+// ========================================
+
+let sidebarShowAll = false;
+const SIDEBAR_LIMIT = 5;
+
+// ========================================
+// FONCTIONS SEO - SCHEMA.ORG
+// ========================================
+
+function injectSchemaOrg() {
+  const schemas = events.map(ev => ({
+    "@type": "Event",
+    "name": ev.title,
+    "startDate": `${ev.year}-${String(ev.month + 1).padStart(2, '0')}-${String(ev.date).padStart(2, '0')}`,
+    "location": {
+      "@type": "Place",
+      "name": "Musée des Beaux-Arts et d'Archéologie de Besançon",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1 Place de la Révolution",
+        "addressLocality": "Besançon",
+        "postalCode": "25000",
+        "addressCountry": "FR"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Musée MAT Besançon",
+      "url": "https://www.mbaa.besancon.fr"
+    },
+    "eventCategory": ev.type,
+    "url": `./reservation.html?event=${ev.id}` 
+  }));
+
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": schemas
+  });
+  document.head.appendChild(script);
+}
+
+// ========================================
 // DONNÉES
 // ========================================
 
@@ -135,10 +180,17 @@ function setActiveFilter(filter) {
   activeFilter  = filter;
   selectedEvent = null;
   showAllEvents = false;
+  sidebarShowAll = false; // ← ajouter cette ligne
   renderFilters();
   renderCalendar();
   renderSidebarList();
   renderMobileList();
+
+  // Nouveau : scroller vers le calendrier
+  const calSection = document.getElementById('event-calendar');
+  if (calSection) {
+    calSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
 
 // ========================================
@@ -233,6 +285,7 @@ function renderSidebarList() {
   const previewTitle = document.querySelector('.events-preview-title');
   if (!container) return;
 
+  // Mode détail d'un événement sélectionné — inchangé
   if (selectedEvent) {
     if (previewTitle) previewTitle.textContent = "Détails de l'événement";
     const ev = selectedEvent;
@@ -254,7 +307,7 @@ function renderSidebarList() {
           </div>
         </div>
       </div>
-      <button onclick="selectedEvent=null; renderCalendar(); renderSidebarList();"
+      <button onclick="selectedEvent=null; sidebarShowAll=false; renderCalendar(); renderSidebarList();"
               class="filter-pill"
               style="margin-top:1rem;width:100%;">
         ← Voir tous les événements
@@ -262,15 +315,28 @@ function renderSidebarList() {
     return;
   }
 
+  // Mode liste
   if (previewTitle) {
     previewTitle.textContent = activeFilter === 'Tous les événements'
       ? 'Tous les événements' : activeFilter;
   }
 
+  // Trier par date et filtrer les événements à venir en priorité
+  const today = new Date();
   const filtered = getFilteredEvents().sort((a, b) => eventToDate(a) - eventToDate(b));
+  
+  // Mettre les événements à venir en premier, puis les passés
+  const upcoming = filtered.filter(e => eventToDate(e) >= today);
+  const past     = filtered.filter(e => eventToDate(e) < today);
+  const sorted   = [...upcoming, ...past];
 
-  container.innerHTML = filtered.map(ev => `
-    <div class="event-preview-card" style="background-color:${ev.colorHex}; cursor:pointer;"
+  // Limiter à 5 ou tout afficher
+  const toShow  = sidebarShowAll ? sorted : sorted.slice(0, SIDEBAR_LIMIT);
+  const hasMore = sorted.length > SIDEBAR_LIMIT;
+
+  container.innerHTML = toShow.map(ev => `
+    <div class="event-preview-card ${eventToDate(ev) < today ? 'event-preview-card--past' : ''}"
+         style="background-color:${ev.colorHex}; cursor:pointer;"
          onclick="selectEventById(${ev.id})">
       <div class="event-date-box">
         <span class="event-month-abbr">${monthNames[ev.month].substring(0, 3)}</span>
@@ -282,6 +348,20 @@ function renderSidebarList() {
       </div>
     </div>
   `).join('');
+
+  // Bouton "Voir plus" / "Voir moins"
+  if (hasMore) {
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'sidebar-toggle-btn';
+    toggleBtn.textContent = sidebarShowAll 
+      ? '↑ Voir moins' 
+      : `↓ Voir les ${sorted.length - SIDEBAR_LIMIT} autres événements`;
+    toggleBtn.onclick = () => {
+      sidebarShowAll = !sidebarShowAll;
+      renderSidebarList();
+    };
+    container.appendChild(toggleBtn);
+  }
 }
 
 // ========================================
@@ -435,6 +515,15 @@ function showAllEventsToggle() {
 // ========================================
 
 function initCalendar() {
+  // Inject Schema.org pour SEO
+  injectSchemaOrg();
+  
+  // Mettre à jour le compteur d'événements à venir dans le hero
+  const today = new Date();
+  const upcomingCount = events.filter(e => new Date(e.year, e.month, e.date) >= today).length;
+  const heroCount = document.getElementById('heroUpcomingCount');
+  if (heroCount) heroCount.textContent = upcomingCount;
+  
   renderFilters();
   renderCalendar();
   renderSidebarList();

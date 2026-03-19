@@ -1,0 +1,90 @@
+
+@use '../utils/variables' as *;
+
+$preloader-bg    : #0a0a0a;
+$preloader-accent: #c9a96e;  // or musée
+$text-muted      : #444444;
+
+// Bloque le scroll pendant le chargement
+body.is-loading {
+  overflow: hidden;
+}
+
+// ── OVERLAY ────────────────────────────────────────────────
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: $preloader-bg;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 32px;
+  overflow: hidden;
+}
+
+// ── LABEL ──────────────────────────────────────────────────
+.pre-label {
+    font-family: $font-primary;
+  font-size: clamp(0.85rem, 2vw, 1.1rem);
+  letter-spacing: 0.45em;
+  color: $text-muted;
+  opacity: 0;
+  text-transform: uppercase;
+}
+
+// ── GRILLE MASONRY ─────────────────────────────────────────
+.preloader__grid {
+  column-count: 4;
+  column-gap: 10px;
+  width: 100%;
+  max-width: 1000px;
+
+  @media (max-width: 900px) { column-count: 3; }
+  @media (max-width: 600px) { column-count: 2; }
+}
+
+.preloader__item {
+  break-inside: avoid;
+  margin-bottom: 10px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(24px);
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: grayscale(30%);
+  }
+}
+
+// ── COMPTEUR ───────────────────────────────────────────────
+#preloader-counter {
+    font-family: $font-primary;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: $preloader-accent;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  line-height: 1;
+
+  sup {
+    font-size: 0.38em;
+    letter-spacing: 0.2em;
+    color: $text-muted;
+    vertical-align: super;
+  }
+}
+
+.hero-title {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+
+    .hero-subtitle {
+      opacity: 0;
+      transform: translateX(-50px);
+    }

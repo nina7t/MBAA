@@ -36,10 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Fermer le menu au clic sur un lien (mobile)
-    const links = document.querySelectorAll('.header__nav-link');
+    const links = document.querySelectorAll('.header__nav-link, .header__nav-link-fr');
     links.forEach(link => {
       link.addEventListener('click', (e) => {
         if (window.innerWidth < 1024) {
+          // Ne pas empêcher la navigation par défaut
           // Fermer le menu après un délai pour voir l'animation
           setTimeout(() => {
             if (toggle.getAttribute('aria-expanded') === 'true') {
